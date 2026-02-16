@@ -43,9 +43,17 @@ def generate_price_chart(raw_indices, date_str, output_dir):
         if len(data) < 2:
             continue
 
-        dates = [datetime.strptime(d["date"], "%Y-%m-%d") for d in data]
-        base = data[0]["open"]
-        pct_changes = [((d["close"] - base) / base) * 100 for d in data]
+        # Filter to weekdays only (Mon-Fri)
+        weekday_data = [
+            d for d in data
+            if datetime.strptime(d["date"], "%Y-%m-%d").weekday() < 5
+        ]
+        if len(weekday_data) < 2:
+            continue
+
+        dates = [datetime.strptime(d["date"], "%Y-%m-%d") for d in weekday_data]
+        base = weekday_data[0]["open"]
+        pct_changes = [((d["close"] - base) / base) * 100 for d in weekday_data]
 
         color = COLORS.get(name, DEFAULT_COLOR)
         ax.plot(dates, pct_changes, marker="o", linewidth=2, label=name,

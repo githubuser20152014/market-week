@@ -23,9 +23,12 @@ class NewsletterPDF(FPDF):
         self.set_text_color(*self.WHITE)
         self.set_y(6)
         self.cell(0, 10, "Framework Foundry Weekly", ln=True, align="C")
+        self.set_font("Helvetica", "I", 11)
+        self.cell(0, 7, "Research for the serious investor", ln=True, align="C")
+        self.ln(2)
         self.set_font("Helvetica", "", 9)
-        self.cell(0, 6, self._subtitle, ln=True, align="C")
-        self.set_y(32)
+        self.cell(0, 5, self._subtitle, ln=True, align="C")
+        self.set_y(36)
 
     def footer(self):
         self.set_y(-15)

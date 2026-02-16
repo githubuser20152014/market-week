@@ -129,9 +129,15 @@ def render_html(ctx, chart_filename):
             font-weight: 700;
             margin-bottom: 6px;
         }}
+        .header .byline {{
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-top: 4px;
+            margin-bottom: 10px;
+        }}
         .header .subtitle {{
-            font-size: 1rem;
-            opacity: 0.85;
+            font-size: 0.95rem;
+            opacity: 0.75;
         }}
         .container {{
             max-width: 900px;
@@ -235,6 +241,7 @@ def render_html(ctx, chart_filename):
 <body>
     <div class="header">
         <h1>Framework Foundry Weekly</h1>
+        <div class="byline">Research for the serious investor</div>
         <div class="subtitle">Week ending {ctx['date']}</div>
     </div>
 
