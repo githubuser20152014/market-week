@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build a static HTML site from the newsletter for Vercel deployment."""
 
-import shutil
+import argparse
+from datetime import date
 from pathlib import Path
 
 from data.fetch_data import fetch_index_data, fetch_econ_calendar
@@ -11,20 +12,18 @@ from data.chart import generate_price_chart
 BASE_DIR = Path(__file__).resolve().parent
 PUBLIC_DIR = BASE_DIR / "public"
 
-DATE_STR = "2026-02-15"
 
-
-def build():
+def build(date_str, use_mock=True):
     PUBLIC_DIR.mkdir(exist_ok=True)
 
     # Fetch and process data
-    raw_indices = fetch_index_data(DATE_STR, use_mock=True)
-    econ = fetch_econ_calendar(DATE_STR, use_mock=True)
+    raw_indices = fetch_index_data(date_str, use_mock=use_mock)
+    econ = fetch_econ_calendar(date_str, use_mock=use_mock)
     index_data = process_index_data(raw_indices)
-    context = build_template_context(index_data, econ, DATE_STR)
+    context = build_template_context(index_data, econ, date_str)
 
     # Generate chart into public/
-    chart_path = generate_price_chart(raw_indices, DATE_STR, PUBLIC_DIR)
+    chart_path = generate_price_chart(raw_indices, date_str, PUBLIC_DIR)
 
     # Build HTML
     html = render_html(context, chart_path.name)
@@ -333,4 +332,18 @@ def render_html(ctx, chart_filename):
 
 
 if __name__ == "__main__":
-    build()
+    parser = argparse.ArgumentParser(
+        description="Build a static HTML site from the newsletter."
+    )
+    parser.add_argument(
+        "--date",
+        default=date.today().isoformat(),
+        help="Newsletter date (YYYY-MM-DD). Default: today.",
+    )
+    parser.add_argument(
+        "--live",
+        action="store_true",
+        help="Fetch live index data via yfinance (default: use mock fixtures).",
+    )
+    args = parser.parse_args()
+    build(args.date, use_mock=not args.live)
