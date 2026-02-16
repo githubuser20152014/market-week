@@ -52,7 +52,7 @@
 | Date | Event | Importance |
 |------|-------|:----------:|
 {% for ev in upcoming_events -%}
-| {{ ev.date }} | {{ ev.event }} | {{ "*" * ev.importance }} |
+| {{ ev.date }} | {{ ev.event }} | {{ "High" if ev.importance >= 3 else ("Medium" if ev.importance == 2 else "Low") }} |
 {% endfor %}
 
 ---

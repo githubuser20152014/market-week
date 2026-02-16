@@ -10,6 +10,7 @@ from jinja2 import Environment, FileSystemLoader
 from data.fetch_data import fetch_index_data, fetch_econ_calendar
 from data.process_data import process_index_data, build_template_context
 from data.chart import generate_price_chart
+from data.pdf_export import generate_pdf
 
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "output"
@@ -42,6 +43,11 @@ def main():
         action="store_true",
         help="Fetch live data via yfinance (default: use mock fixtures).",
     )
+    parser.add_argument(
+        "--pdf",
+        action="store_true",
+        help="Also generate a PDF version of the newsletter.",
+    )
     args = parser.parse_args()
 
     use_mock = not args.live
@@ -72,6 +78,11 @@ def main():
         out_path.write_text(newsletter, encoding="utf-8")
         print(f"Newsletter saved to {out_path}")
         print(f"Chart saved to {chart_path}")
+
+    # PDF export
+    if args.pdf:
+        pdf_path = generate_pdf(context, chart_path, OUTPUT_DIR, date_str)
+        print(f"PDF saved to {pdf_path}")
 
 
 if __name__ == "__main__":
