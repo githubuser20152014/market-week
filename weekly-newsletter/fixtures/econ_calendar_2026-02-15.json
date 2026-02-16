@@ -1,0 +1,75 @@
+{
+  "past_week": [
+    {
+      "date": "2026-02-10",
+      "event": "CPI (Year-over-Year)",
+      "importance": 3,
+      "actual": 3.1,
+      "expected": 2.9,
+      "previous": 2.9,
+      "unit": "%",
+      "surprise": "above",
+      "impact": "Hotter-than-expected inflation pressures the Fed to hold rates higher for longer. Bond prices may fall, and rate-sensitive sectors (REITs, utilities) could underperform. Consider inflation hedges like TIPS or commodities."
+    },
+    {
+      "date": "2026-02-11",
+      "event": "Core CPI (Month-over-Month)",
+      "importance": 3,
+      "actual": 0.3,
+      "expected": 0.3,
+      "previous": 0.2,
+      "unit": "%",
+      "surprise": "inline",
+      "impact": "In-line core CPI is neutral -- no new signal for the Fed. Markets may look through this and focus on the headline number that came in hot."
+    },
+    {
+      "date": "2026-02-12",
+      "event": "Initial Jobless Claims",
+      "importance": 2,
+      "actual": 218000,
+      "expected": 225000,
+      "previous": 222000,
+      "unit": "",
+      "surprise": "below",
+      "impact": "Fewer layoffs than expected signals continued labor market strength. Good for consumer spending and cyclical stocks, but reinforces the Fed's case to stay hawkish."
+    },
+    {
+      "date": "2026-02-13",
+      "event": "Retail Sales (Month-over-Month)",
+      "importance": 3,
+      "actual": 0.6,
+      "expected": 0.3,
+      "previous": 0.4,
+      "unit": "%",
+      "surprise": "above",
+      "impact": "Consumers are spending more than expected -- bullish for retail and discretionary ETFs (XLY, XRT). But strong demand can also feed inflation, keeping rate-cut expectations in check."
+    }
+  ],
+  "upcoming_week": [
+    {
+      "date": "2026-02-16",
+      "event": "Presidents' Day -- Markets Closed",
+      "importance": 1
+    },
+    {
+      "date": "2026-02-18",
+      "event": "FOMC Meeting Minutes",
+      "importance": 3
+    },
+    {
+      "date": "2026-02-19",
+      "event": "Housing Starts",
+      "importance": 2
+    },
+    {
+      "date": "2026-02-20",
+      "event": "S&P Global Flash US Manufacturing PMI",
+      "importance": 3
+    },
+    {
+      "date": "2026-02-20",
+      "event": "S&P Global Flash US Services PMI",
+      "importance": 3
+    }
+  ]
+}

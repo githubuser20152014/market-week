@@ -1,0 +1,26 @@
+{
+  "S&P 500": {
+    "symbol": "^GSPC",
+    "etf_proxy": "SPY"
+  },
+  "Dow Jones": {
+    "symbol": "^DJI",
+    "etf_proxy": "DIA"
+  },
+  "Nasdaq": {
+    "symbol": "^IXIC",
+    "etf_proxy": "QQQ"
+  },
+  "Russell 2000": {
+    "symbol": "^RUT",
+    "etf_proxy": "IWM"
+  },
+  "Gold": {
+    "symbol": "GC=F",
+    "etf_proxy": "GLD"
+  },
+  "10Y Treasury": {
+    "symbol": "^TNX",
+    "etf_proxy": "TLT"
+  }
+}
