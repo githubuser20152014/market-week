@@ -66,6 +66,9 @@ def _fetch_live_indices(end_date):
                               end=(end + timedelta(days=1)).strftime("%Y-%m-%d"))
         rows = []
         for idx, row in hist.iterrows():
+            # Skip weekends -- some assets (Gold, futures) have weekend data
+            if idx.weekday() >= 5:
+                continue
             rows.append({
                 "date": idx.strftime("%Y-%m-%d"),
                 "open": round(row["Open"], 2),
