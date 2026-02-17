@@ -57,13 +57,16 @@ def _fetch_live_indices(end_date):
         indices = json.load(f)
 
     end = datetime.strptime(end_date, "%Y-%m-%d")
-    start = end - timedelta(days=10)  # extra buffer for weekends/holidays
+    # Find the most recent Friday (at or before end_date) to cap the week
+    days_since_friday = (end.weekday() - 4) % 7
+    friday = end - timedelta(days=days_since_friday) if days_since_friday else end
+    start = friday - timedelta(days=10)  # extra buffer for holidays
 
     result = {}
     for name, info in indices.items():
         ticker = yf.Ticker(info["symbol"])
         hist = ticker.history(start=start.strftime("%Y-%m-%d"),
-                              end=(end + timedelta(days=1)).strftime("%Y-%m-%d"))
+                              end=(friday + timedelta(days=1)).strftime("%Y-%m-%d"))
         rows = []
         for idx, row in hist.iterrows():
             # Skip weekends -- some assets (Gold, futures) have weekend data

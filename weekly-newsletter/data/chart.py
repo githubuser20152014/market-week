@@ -67,7 +67,7 @@ def generate_price_chart(raw_indices, date_str, output_dir):
     ax.axhline(y=0, color="gray", linewidth=0.8, linestyle="--", alpha=0.6)
 
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %d"))
-    ax.xaxis.set_major_locator(mdates.DayLocator())
+    ax.xaxis.set_major_locator(mdates.WeekdayLocator(byweekday=(0, 1, 2, 3, 4)))
     fig.autofmt_xdate(rotation=0, ha="center")
 
     ax.legend(loc="upper left", fontsize=9, framealpha=0.9)
