@@ -218,6 +218,17 @@ def generate_positioning_tips(econ, index_data=None):
                 "Flash Manufacturing PMI on {date} -- a key read on factory activity. "
                 "Watch industrials (XLI) for directional cues.".format(**event)
             )
+        if "pce" in name:
+            tips.append(
+                "PCE Price Index on {date} -- the Fed's preferred inflation gauge. "
+                "A hot print could reprice rate-cut expectations; consider hedging bond duration (TLT) "
+                "and adding inflation protection (TIPS, GLD).".format(**event)
+            )
+        if "gdp" in name:
+            tips.append(
+                "GDP release on {date} -- a weak print could shift sentiment toward defensives (XLU, XLP); "
+                "a strong beat supports risk-on positioning in cyclicals (XLY, XLI).".format(**event)
+            )
 
     if not tips:
         tips.append("No strong macro signals this week -- maintain current allocations.")
