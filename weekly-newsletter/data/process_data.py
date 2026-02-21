@@ -193,6 +193,18 @@ def generate_positioning_tips(econ, index_data=None):
                 "Jobless claims came in lower than expected ({actual:,} vs. {expected:,}) -- "
                 "labor market remains tight, supporting risk-on positioning.".format(**event)
             )
+        if "services pmi" in name and surprise == "below":
+            tips.append(
+                "Services PMI missed at {actual} vs. {expected} expected -- "
+                "services sector contraction is a caution signal. "
+                "Consider trimming consumer discretionary (XLY) and adding defensives (XLP, XLU).".format(**event)
+            )
+        if "housing starts" in name and surprise == "below":
+            tips.append(
+                "Housing Starts missed at {actual}{unit} vs. {expected}{unit} -- "
+                "affordability pressure weighs on homebuilders (ITB, XHB). "
+                "Watch mortgage rate trajectory before adding real estate exposure.".format(**event)
+            )
 
     for event in upcoming:
         name = event.get("event", "").lower()

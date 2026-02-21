@@ -18,17 +18,17 @@ class NewsletterPDF(FPDF):
 
     def header(self):
         self.set_fill_color(*self.NAVY)
-        self.rect(0, 0, 210, 36, "F")
+        self.rect(0, 0, 210, 42, "F")
         self.set_font("Helvetica", "B", 18)
         self.set_text_color(*self.WHITE)
-        self.set_y(6)
+        self.set_y(7)
         self.cell(0, 10, "Framework Foundry Weekly", ln=True, align="C")
         self.set_font("Helvetica", "I", 11)
         self.cell(0, 7, "Research for the serious investor", ln=True, align="C")
-        self.ln(2)
+        self.ln(3)
         self.set_font("Helvetica", "", 9)
         self.cell(0, 5, self._subtitle, ln=True, align="C")
-        self.set_y(36)
+        self.set_y(46)
 
     def footer(self):
         self.set_y(-15)
