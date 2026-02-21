@@ -153,25 +153,27 @@ def render_html(ctx, chart_filename):
             line-height: 1.6;
         }}
         .header {{
-            background: linear-gradient(135deg, #0f3460, #1a5276);
+            background: #142850;
             color: white;
-            padding: 40px 20px;
+            padding: 36px 20px 32px;
             text-align: center;
         }}
         .header h1 {{
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
+            letter-spacing: -0.01em;
         }}
         .header .byline {{
-            font-size: 1.15rem;
+            font-size: 1.1rem;
+            font-style: italic;
             opacity: 0.9;
-            margin-top: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 18px;
         }}
         .header .subtitle {{
-            font-size: 0.95rem;
-            opacity: 0.75;
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.8;
         }}
         .container {{
             max-width: 960px;
@@ -279,8 +281,8 @@ def render_html(ctx, chart_filename):
 </head>
 <body>
     <div class="header">
-        <h1>Framework Foundry Weekly</h1>
-        <div class="byline">International Edition &mdash; Research for the serious global investor</div>
+        <h1>Framework Foundry Weekly - International Edition</h1>
+        <div class="byline">Research for the serious investor</div>
         <div class="subtitle">Week ending {ctx['date']}</div>
     </div>
 
