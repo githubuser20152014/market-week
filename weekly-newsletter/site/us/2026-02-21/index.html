@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Framework Foundry — US Edition · 2026-02-21</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --navy:      #0f1f3d;
+    --accent:    #4a7fb5;
+    --accent-lt: #7aabda;
+    --white:     #ffffff;
+    --off-white: #f5f4f0;
+    --text:      #1a1a2e;
+    --border:    #ddd8cc;
+    --muted:     #6b7280;
+    --green:     #2a7d4f;
+    --red:       #b91c1c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #dde3ea;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    padding: 32px 16px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px 24px;
+    gap: 24px;
+  }
+
+  .logo-icon { flex-shrink: 0; width: 64px; height: 64px; }
+  .logo-text { flex: 1; }
+
+  .logo-name-framework {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+  }
+
+  .logo-name-foundry {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    color: var(--accent);
+    display: block;
+    margin-top: 5px;
+    line-height: 1;
+  }
+
+  .logo-rule {
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 8px 0 6px;
+  }
+
+  .logo-tagline {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8.5px;
+    font-weight: 300;
+    letter-spacing: 3.5px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+
+  .header-meta { text-align: right; flex-shrink: 0; }
+
+  .header-meta .issue-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .header-meta .issue-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--white);
+    display: block;
+    margin-top: 3px;
+    line-height: 1.1;
+  }
+
+  .header-meta .issue-week {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    display: block;
+    margin-top: 4px;
+  }
+
+  .header-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
+  }
+
+  /* REGION BANNER */
+  .region-banner {
+    background: var(--accent);
+    padding: 7px 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .region-banner span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+  }
+
+  .region-dots { display: flex; gap: 6px; margin-left: auto; }
+  .region-dot { font-size: 14px; line-height: 1; }
+
+  /* CONTENT */
+  .content { padding: 36px 40px; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+
+  .section-block { margin-bottom: 36px; }
+
+  .brief-text {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #2c2c3e;
+    font-weight: 300;
+  }
+
+  .brief-text + .brief-text { margin-top: 12px; }
+
+  /* INDEX CARDS */
+  .index-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .index-card {
+    border-top: 3px solid var(--accent);
+    padding: 14px;
+    background: var(--off-white);
+  }
+
+  .index-card h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .index-card .idx-row {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .pct-pos { color: var(--green); font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; }
+  .pct-neg { color: var(--red);   font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; }
+
+  /* MARKET SNAPSHOT TABLE */
+  .snapshot-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+  }
+
+  .snapshot-table thead tr { background: var(--navy); color: var(--white); }
+  .snapshot-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  .snapshot-table tbody tr { border-bottom: 1px solid var(--border); }
+  .snapshot-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .snapshot-table tbody td { padding: 10px 14px; }
+
+  .pct { font-weight: 600; }
+  .pct.positive { color: var(--green); }
+  .pct.negative { color: var(--red); }
+
+  .snapshot-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .snapshot-footer .best  { color: var(--green); }
+  .snapshot-footer .worst { color: var(--red); }
+
+  /* ECONOMIC EVENTS */
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+  }
+
+  .events-table thead tr { background: var(--navy); color: var(--white); }
+  .events-table thead th {
+    padding: 9px 12px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .events-table tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .events-table tbody tr:nth-child(even) { background: var(--off-white); }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .tag.above  { background: #d4edda; color: #155724; }
+  .tag.below  { background: #f8d7da; color: #721c24; }
+  .tag.inline { background: #e8e8e8; color: #555; }
+
+  /* ANALYSIS CARDS */
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .analysis-card {
+    border-left: 3px solid var(--accent);
+    padding: 12px 14px;
+    background: var(--off-white);
+  }
+
+  .analysis-card h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .analysis-card p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #3a3a4a;
+    font-weight: 300;
+  }
+
+  /* UPCOMING TABLE */
+  .upcoming-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+  }
+
+  .upcoming-table thead tr { background: var(--navy); color: var(--white); }
+  .upcoming-table thead th {
+    padding: 9px 12px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .upcoming-table tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .upcoming-table tbody tr:nth-child(even) { background: var(--off-white); }
+
+  .imp-high   { color: var(--red);   font-weight: 700; font-size: 11px; }
+  .imp-medium { color: #d97706;      font-weight: 600; font-size: 11px; }
+  .imp-low    { color: var(--muted); font-weight: 400; font-size: 11px; }
+
+  /* POSITIONING TIPS */
+  .tips-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+  }
+
+  .tips-table thead tr { background: var(--navy); color: var(--white); }
+  .tips-table thead th {
+    padding: 9px 14px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .tips-table tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.55;
+    vertical-align: top;
+  }
+
+  .tips-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .tips-table .signal-col { color: var(--navy); font-weight: 500; width: 45%; }
+  .tips-table .action-col { color: #2c2c3e; font-weight: 300; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-disclaimer {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8.5px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.5px;
+    text-align: right;
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 20px 20px 16px; flex-wrap: wrap; }
+    .content { padding: 24px 20px; }
+    .index-grid { grid-template-columns: 1fr; }
+    .analysis-grid { grid-template-columns: 1fr; }
+    .footer { padding: 14px 20px; flex-direction: column; gap: 10px; }
+  }
+
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+        <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">US Edition &nbsp;·&nbsp; Research for the serious investor</span>
+      </div>
+      <div class="header-meta">
+        <span class="issue-label">Week Ending</span>
+        <span class="issue-date">Feb 21, 2026</span>
+        <span class="issue-week">US Edition</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <!-- REGION BANNER -->
+  <div class="region-banner">
+    <span>Coverage: Equities · Fixed Income · Commodities · Macro · Positioning</span>
+    <div class="region-dots">
+      <span class="region-dot">🇺🇸</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- THE WEEK IN BRIEF -->
+    <div class="section-block">
+      <div class="section-title">The Week in Brief</div>
+      <p class="brief-text">Markets rallied across the board this week, with Russell 2000 leading at +2.77% and USD Index lagging at +0.79%. On the safe-haven front, Gold climbing 2.68% to $2,942.10 while the 10-year yield rising to 4.53% while the dollar strengthening 0.79% to 109.05.</p>
+<p class="brief-text">The macro picture was busy. Housing Starts came in below expectations (1.37M vs. 1.42M). S&P Global Flash Services PMI came in below expectations (49.7 vs. 53.0).</p>
+<p class="brief-text">Looking ahead, the key events to watch are: Q4 GDP (Second Estimate), PCE Price Index. Position sizing and hedges should reflect the potential for volatility around these releases.</p>
+
+    </div>
+
+    <!-- INDEX SNAPSHOT CARDS -->
+    <div class="section-block">
+      <div class="section-title">Index Snapshot</div>
+      <div class="index-grid">
+        <div class="index-card">
+          <h4>📈 Large Cap</h4>
+          <div class="idx-row"><span>S&P 500</span><span class="pct-pos">+1.12%</span></div>
+<div class="idx-row"><span>Dow Jones</span><span class="pct-pos">+1.07%</span></div>
+<div class="idx-row"><span>Nasdaq</span><span class="pct-pos">+1.66%</span></div>
+
+        </div>
+        <div class="index-card">
+          <h4>📊 Broad Market</h4>
+          <div class="idx-row"><span>Russell 2000</span><span class="pct-pos">+2.77%</span></div>
+<div class="idx-row"><span>Gold</span><span class="pct-pos">+2.68%</span></div>
+
+        </div>
+        <div class="index-card">
+          <h4>🏦 Fixed Income</h4>
+          <div class="idx-row"><span>10Y Treasury</span><span class="pct-pos">+5 bps</span></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKET SNAPSHOT TABLE -->
+    <div class="section-block">
+      <div class="section-title">Market Snapshot</div>
+      <table class="snapshot-table">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Close</th>
+            <th>Weekly %</th>
+            <th>Week Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td>Russell 2000</td>
+              <td>2,343.20</td>
+              <td class="pct positive">+2.77%</td>
+              <td>2,270.00 – 2,365.00</td>
+            </tr>
+            <tr>
+              <td>Gold</td>
+              <td>2,942.10</td>
+              <td class="pct positive">+2.68%</td>
+              <td>2,858.20 – 2,948.20</td>
+            </tr>
+            <tr>
+              <td>Nasdaq</td>
+              <td>20,005.80</td>
+              <td class="pct positive">+1.66%</td>
+              <td>19,620.50 – 20,080.50</td>
+            </tr>
+            <tr>
+              <td>S&P 500</td>
+              <td>6,106.40</td>
+              <td class="pct positive">+1.12%</td>
+              <td>6,020.10 – 6,130.50</td>
+            </tr>
+            <tr>
+              <td>10Y Treasury</td>
+              <td>4.53</td>
+              <td class="pct positive">+5 bps</td>
+              <td>4.46 – 4.60</td>
+            </tr>
+            <tr>
+              <td>Dow Jones</td>
+              <td>44,795.10</td>
+              <td class="pct positive">+1.07%</td>
+              <td>44,250.00 – 44,800.00</td>
+            </tr>
+            <tr>
+              <td>USD Index</td>
+              <td>109.05</td>
+              <td class="pct positive">+0.79%</td>
+              <td>107.90 – 109.40</td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="snapshot-footer">
+        <span class="best">▲ Best: Russell 2000 (+2.77%)</span>
+        <span class="worst">▼ Worst: USD Index (+0.79%)</span>
+      </div>
+    </div>
+
+    <!-- ECONOMIC EVENTS -->
+    <div class="section-block">
+      <div class="section-title">Last Week’s Economic Events</div>
+      <table class="events-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Actual</th>
+            <th>Expected</th>
+            <th>Previous</th>
+            <th>Surprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td>2026-02-18</td>
+              <td>FOMC Meeting Minutes</td>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+              <td><span class="tag inline">Inline</span></td>
+            </tr>
+            <tr>
+              <td>2026-02-19</td>
+              <td>Housing Starts</td>
+              <td>1.37M</td>
+              <td>1.42M</td>
+              <td>1.5M</td>
+              <td><span class="tag below">Below</span></td>
+            </tr>
+            <tr>
+              <td>2026-02-20</td>
+              <td>S&P Global Flash Manufacturing PMI</td>
+              <td>51.6</td>
+              <td>51.5</td>
+              <td>51.2</td>
+              <td><span class="tag inline">Inline</span></td>
+            </tr>
+            <tr>
+              <td>2026-02-20</td>
+              <td>S&P Global Flash Services PMI</td>
+              <td>49.7</td>
+              <td>53.0</td>
+              <td>52.9</td>
+              <td><span class="tag below">Below</span></td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="analysis-grid">
+        
+        <div class="analysis-card">
+          <h4>📊 FOMC Meeting Minutes</h4>
+          <p>Minutes reaffirmed the Fed's data-dependent stance with no imminent rate cuts. Officials noted progress on inflation but flagged uncertainty around tariffs and labor market resilience.</p>
+        </div>
+        <div class="analysis-card">
+          <h4>📊 Housing Starts</h4>
+          <p>Weaker housing starts signal affordability pressure and builder caution. Rate-sensitive homebuilder ETFs (ITB, XHB) may face headwinds until mortgage rates ease.</p>
+        </div>
+        <div class="analysis-card">
+          <h4>📊 S&P Global Flash Manufacturing PMI</h4>
+          <p>Manufacturing activity continues to expand modestly. Neutral to mildly positive for industrials (XLI). No major change to the macro narrative.</p>
+        </div>
+        <div class="analysis-card">
+          <h4>📊 S&P Global Flash Services PMI</h4>
+          <p>Services sector unexpectedly contracted -- a notable miss. Consumer-facing and discretionary sectors (XLY, XLP) may see volatility. Watch for confirmation in ISM Services next week.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPCOMING WEEK -->
+    <div class="section-block">
+      <div class="section-title">Upcoming Week</div>
+      <table class="upcoming-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Importance</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td>2026-02-24</td>
+              <td>Consumer Confidence</td>
+              <td><span class="imp-medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td>2026-02-25</td>
+              <td>Durable Goods Orders</td>
+              <td><span class="imp-medium">Medium</span></td>
+            </tr>
+            <tr>
+              <td>2026-02-26</td>
+              <td>Q4 GDP (Second Estimate)</td>
+              <td><span class="imp-high">High</span></td>
+            </tr>
+            <tr>
+              <td>2026-02-27</td>
+              <td>PCE Price Index</td>
+              <td><span class="imp-high">High</span></td>
+            </tr>
+            <tr>
+              <td>2026-02-27</td>
+              <td>Personal Income & Spending</td>
+              <td><span class="imp-medium">Medium</span></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- POSITIONING TIPS -->
+    <div class="section-block">
+      <div class="section-title">Positioning Tips</div>
+      <table class="tips-table">
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>Suggested Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="signal-col">USD Index strengthened +0.79% this week</td>
+              <td class="action-col">A stronger dollar weighs on multinational earnings and commodities. Consider reducing exposure to export-heavy sectors and commodity ETFs (GLD, DJP).</td>
+            </tr>
+            <tr>
+              <td class="signal-col">Housing Starts missed at 1.37M vs. 1.42M</td>
+              <td class="action-col">Affordability pressure weighs on homebuilders (ITB, XHB). Watch mortgage rate trajectory before adding real estate exposure.</td>
+            </tr>
+            <tr>
+              <td class="signal-col">Services PMI missed at 49.7 vs. 53.0 expected</td>
+              <td class="action-col">Services sector contraction is a caution signal. Consider trimming consumer discretionary (XLY) and adding defensives (XLP, XLU).</td>
+            </tr>
+            <tr>
+              <td class="signal-col">GDP release on 2026-02-26</td>
+              <td class="action-col">A weak print could shift sentiment toward defensives (XLU, XLP); a strong beat supports risk-on positioning in cyclicals (XLY, XLI).</td>
+            </tr>
+            <tr>
+              <td class="signal-col">PCE Price Index on 2026-02-27</td>
+              <td class="action-col">The Fed's preferred inflation gauge. A hot print could reprice rate-cut expectations; consider hedging bond duration (TLT) and adding inflation protection (TIPS, GLD).</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.35); font-size:10px; letter-spacing:1px;">US EDITION</span></div>
+    <div class="footer-disclaimer">
+      Disclaimer: For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Framework Foundry &mdash; Weekly Economic Intelligence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --navy:      #0f1f3d;
+    --accent:    #4a7fb5;
+    --accent-lt: #7aabda;
+    --white:     #ffffff;
+    --off-white: #f5f4f0;
+    --text:      #1a1a2e;
+    --border:    #ddd8cc;
+    --muted:     #6b7280;
+    --green:     #2a7d4f;
+    --red:       #b91c1c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #dde3ea;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    padding: 32px 16px;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px 24px;
+    gap: 24px;
+  }
+
+  .logo-icon { flex-shrink: 0; width: 64px; height: 64px; }
+  .logo-text { flex: 1; }
+
+  .logo-name-framework {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+  }
+
+  .logo-name-foundry {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    color: var(--accent);
+    display: block;
+    margin-top: 5px;
+    line-height: 1;
+  }
+
+  .logo-rule {
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 8px 0 6px;
+  }
+
+  .logo-tagline {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8.5px;
+    font-weight: 300;
+    letter-spacing: 3.5px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+
+  .header-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
+  }
+
+  /* NAV STRIP */
+  .nav-strip {
+    background: var(--accent);
+    padding: 7px 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+  }
+
+  /* CONTENT */
+  .content { padding: 40px; }
+
+  .section-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  /* HERO CARDS */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .hero-card {
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    background: var(--off-white);
+    padding: 24px;
+  }
+
+  .hero-card-edition {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .hero-card-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .hero-idx-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--navy);
+  }
+
+  .hero-idx-row:last-child { border-bottom: none; }
+
+  .pct-pos { color: var(--green); font-weight: 600; }
+  .pct-neg { color: var(--red);   font-weight: 600; }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 18px;
+  }
+
+  .hero-cta:hover { background: var(--accent); }
+
+  .hero-card.no-issue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: var(--muted);
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* ARCHIVE TABLE */
+  .archive-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+  }
+
+  .archive-table thead tr { background: var(--navy); color: var(--white); }
+  .archive-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  .archive-table tbody tr { border-bottom: 1px solid var(--border); }
+  .archive-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .archive-table tbody td { padding: 10px 14px; vertical-align: middle; }
+
+  .archive-link {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 3px 10px;
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+
+  .archive-link:hover { background: var(--accent); color: var(--white); }
+  .archive-link.pdf { color: var(--muted); border-color: var(--muted); }
+  .archive-link.pdf:hover { background: var(--muted); color: var(--white); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-disclaimer {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8.5px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.5px;
+    text-align: right;
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 20px 20px 16px; flex-wrap: wrap; }
+    .content { padding: 24px 20px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .footer { padding: 14px 20px; flex-direction: column; gap: 10px; }
+  }
+
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="header-inner">
+      <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+        <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Weekly Economic Intelligence &nbsp;&middot;&nbsp; US &amp; International Editions</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <div class="nav-strip">Current Issues &nbsp;&middot;&nbsp; Archive &nbsp;&middot;&nbsp; frameworkfoundry.info</div>
+
+  <div class="content">
+
+    <div class="section-label">Current Issues</div>
+    <div class="hero-grid">
+      
+    <div class="hero-card">
+      <div class="hero-card-edition">&#127482;&#127480; US Edition</div>
+      <div class="hero-card-date">Feb 21, 2026</div>
+      <div class="hero-indices"><div class="hero-idx-row"><span>S&P 500</span><span class="pct-pos">+1.12%</span></div>
+<div class="hero-idx-row"><span>Dow Jones</span><span class="pct-pos">+1.07%</span></div>
+<div class="hero-idx-row"><span>Nasdaq</span><span class="pct-pos">+1.66%</span></div>
+</div>
+      <a class="hero-cta" href="us/2026-02-21/">Read Issue &rarr;</a>
+    </div>
+      
+    <div class="hero-card">
+      <div class="hero-card-edition">&#127758; International Edition</div>
+      <div class="hero-card-date">Feb 21, 2026</div>
+      <div class="hero-indices"><div class="hero-idx-row"><span>Nikkei 225</span><span class="pct-neg">-0.68%</span></div>
+<div class="hero-idx-row"><span>FTSE 100</span><span class="pct-pos">+2.30%</span></div>
+<div class="hero-idx-row"><span>Euro Stoxx 50</span><span class="pct-pos">+2.30%</span></div>
+</div>
+      <a class="hero-cta" href="intl/2026-02-21/">Read Issue &rarr;</a>
+    </div>
+    </div>
+
+    <div class="section-label">Archive</div>
+    <table class="archive-table">
+      <thead>
+        <tr>
+          <th>Week Ending</th>
+          <th>US Edition</th>
+          <th>International Edition</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>Feb 21, 2026</td>
+            <td><a class="archive-link" href="us/2026-02-21/">Read</a><a class="archive-link pdf" href="downloads/newsletter_us_2026-02-21.pdf">PDF</a></td>
+            <td><a class="archive-link" href="intl/2026-02-21/">Read</a><a class="archive-link pdf" href="downloads/intl_newsletter_2026-02-21.pdf">PDF</a></td>
+          </tr>
+          <tr>
+            <td>Feb 16, 2026</td>
+            <td><a class="archive-link" href="us/2026-02-16/">Read</a><a class="archive-link pdf" href="downloads/newsletter_2026-02-16.pdf">PDF</a></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Feb 15, 2026</td>
+            <td><a class="archive-link" href="us/2026-02-15/">Read</a><a class="archive-link pdf" href="downloads/newsletter_2026-02-15.pdf">PDF</a></td>
+            <td>&mdash;</td>
+          </tr>
+      </tbody>
+    </table>
+
+  </div><!-- /content -->
+
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
