@@ -1,0 +1,75 @@
+{
+  "past_week": [
+    {
+      "date": "2026-02-18",
+      "event": "FOMC Meeting Minutes",
+      "importance": 3,
+      "actual": "--",
+      "expected": "--",
+      "previous": "--",
+      "unit": "",
+      "surprise": "neutral",
+      "impact": "Minutes reaffirmed the Fed's data-dependent stance with no imminent rate cuts. Officials noted progress on inflation but flagged uncertainty around tariffs and labor market resilience."
+    },
+    {
+      "date": "2026-02-19",
+      "event": "Housing Starts",
+      "importance": 2,
+      "actual": 1.37,
+      "expected": 1.42,
+      "previous": 1.50,
+      "unit": "M",
+      "surprise": "below",
+      "impact": "Weaker housing starts signal affordability pressure and builder caution. Rate-sensitive homebuilder ETFs (ITB, XHB) may face headwinds until mortgage rates ease."
+    },
+    {
+      "date": "2026-02-20",
+      "event": "S&P Global Flash Manufacturing PMI",
+      "importance": 3,
+      "actual": 51.6,
+      "expected": 51.5,
+      "previous": 51.2,
+      "unit": "",
+      "surprise": "inline",
+      "impact": "Manufacturing activity continues to expand modestly. Neutral to mildly positive for industrials (XLI). No major change to the macro narrative."
+    },
+    {
+      "date": "2026-02-20",
+      "event": "S&P Global Flash Services PMI",
+      "importance": 3,
+      "actual": 49.7,
+      "expected": 53.0,
+      "previous": 52.9,
+      "unit": "",
+      "surprise": "below",
+      "impact": "Services sector unexpectedly contracted -- a notable miss. Consumer-facing and discretionary sectors (XLY, XLP) may see volatility. Watch for confirmation in ISM Services next week."
+    }
+  ],
+  "upcoming_week": [
+    {
+      "date": "2026-02-24",
+      "event": "Consumer Confidence",
+      "importance": 2
+    },
+    {
+      "date": "2026-02-25",
+      "event": "Durable Goods Orders",
+      "importance": 2
+    },
+    {
+      "date": "2026-02-26",
+      "event": "Q4 GDP (Second Estimate)",
+      "importance": 3
+    },
+    {
+      "date": "2026-02-27",
+      "event": "PCE Price Index",
+      "importance": 3
+    },
+    {
+      "date": "2026-02-27",
+      "event": "Personal Income & Spending",
+      "importance": 2
+    }
+  ]
+}

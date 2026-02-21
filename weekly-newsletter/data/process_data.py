@@ -52,9 +52,10 @@ def generate_narrative(index_data, econ):
     up_count = sum(1 for i in index_data if i["weekly_pct"] > 0)
     down_count = len(index_data) - up_count
 
-    # Find gold and treasury specifically
+    # Find gold, treasury, and USD specifically
     gold = next((i for i in index_data if i["name"] == "Gold"), None)
     treasury = next((i for i in index_data if "Treasury" in i["name"]), None)
+    usd = next((i for i in index_data if i["name"] == "USD Index"), None)
 
     # Build the opening paragraph about overall market direction
     if up_count == len(index_data):
@@ -82,6 +83,12 @@ def generate_narrative(index_data, econ):
         direction = "rising" if treasury["weekly_pct"] > 0 else "falling"
         safe_haven_notes.append(
             f"the 10-year yield {direction} to {treasury['close']:.2f}%"
+        )
+
+    if usd:
+        direction = "strengthening" if usd["weekly_pct"] > 0 else "weakening"
+        safe_haven_notes.append(
+            f"the dollar {direction} {abs(usd['weekly_pct']):.2f}% to {usd['close']:.2f}"
         )
 
     if safe_haven_notes:
@@ -133,8 +140,8 @@ def generate_narrative(index_data, econ):
     return f"{para1}\n\n{para2}\n\n{para3}"
 
 
-def generate_positioning_tips(econ):
-    """Generate rule-based positioning tips from economic events.
+def generate_positioning_tips(econ, index_data=None):
+    """Generate rule-based positioning tips from economic events and index data.
 
     Rules:
     - CPI above expected -> consider defensives / TIPS
@@ -142,10 +149,29 @@ def generate_positioning_tips(econ):
     - FOMC minutes upcoming -> reduce position size
     - PMI upcoming -> watch industrials
     - Jobless claims below expected -> labor market strong, stay risk-on
+    - USD strong -> headwind for multinationals/commodities
+    - USD weak -> tailwind for EM and commodities
     """
     tips = []
     past = econ.get("past_week", [])
     upcoming = econ.get("upcoming_week", [])
+
+    # USD-based tips
+    if index_data:
+        usd = next((i for i in index_data if i["name"] == "USD Index"), None)
+        if usd and abs(usd["weekly_pct"]) >= 0.5:
+            if usd["weekly_pct"] > 0:
+                tips.append(
+                    f"USD Index strengthened {usd['weekly_pct']:+.2f}% this week -- "
+                    "a stronger dollar weighs on multinational earnings and commodities. "
+                    "Consider reducing exposure to export-heavy sectors and commodity ETFs (GLD, DJP)."
+                )
+            else:
+                tips.append(
+                    f"USD Index weakened {usd['weekly_pct']:+.2f}% this week -- "
+                    "a softer dollar is a tailwind for emerging markets (EEM, VWO) and commodities (GLD, DJP). "
+                    "Consider tilting toward international and commodity exposure."
+                )
 
     for event in past:
         name = event.get("event", "").lower()
@@ -198,7 +224,7 @@ def build_template_context(index_data, econ, date_str):
     Returns:
         Dict ready for Jinja2 rendering.
     """
-    tips = generate_positioning_tips(econ)
+    tips = generate_positioning_tips(econ, index_data)
     narrative = generate_narrative(index_data, econ)
 
     best = index_data[0] if index_data else None

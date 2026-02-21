@@ -16,6 +16,7 @@ COLORS = {
     "Russell 2000": "#d62728",
     "Gold": "#FFD700",
     "10Y Treasury": "#9467bd",
+    "USD Index": "#17becf",
 }
 
 DEFAULT_COLOR = "#8c564b"

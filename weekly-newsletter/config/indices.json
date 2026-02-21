@@ -22,5 +22,9 @@
   "10Y Treasury": {
     "symbol": "^TNX",
     "etf_proxy": "TLT"
+  },
+  "USD Index": {
+    "symbol": "DX=F",
+    "etf_proxy": "UUP"
   }
 }

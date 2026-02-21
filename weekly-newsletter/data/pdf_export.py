@@ -18,7 +18,7 @@ class NewsletterPDF(FPDF):
 
     def header(self):
         self.set_fill_color(*self.NAVY)
-        self.rect(0, 0, 210, 28, "F")
+        self.rect(0, 0, 210, 36, "F")
         self.set_font("Helvetica", "B", 18)
         self.set_text_color(*self.WHITE)
         self.set_y(6)

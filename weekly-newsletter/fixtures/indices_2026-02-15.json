@@ -58,5 +58,15 @@
       {"date": "2026-02-12", "open": 4.55, "high": 4.59, "low": 4.50, "close": 4.52, "volume": 0},
       {"date": "2026-02-13", "open": 4.52, "high": 4.55, "low": 4.48, "close": 4.53, "volume": 0}
     ]
+  },
+  "USD Index": {
+    "symbol": "DX=F",
+    "data": [
+      {"date": "2026-02-09", "open": 108.20, "high": 108.55, "low": 107.90, "close": 108.35, "volume": 0},
+      {"date": "2026-02-10", "open": 108.35, "high": 108.80, "low": 108.10, "close": 108.60, "volume": 0},
+      {"date": "2026-02-11", "open": 108.60, "high": 109.10, "low": 108.40, "close": 108.95, "volume": 0},
+      {"date": "2026-02-12", "open": 108.95, "high": 109.30, "low": 108.70, "close": 109.15, "volume": 0},
+      {"date": "2026-02-13", "open": 109.15, "high": 109.40, "low": 108.85, "close": 109.05, "volume": 0}
+    ]
   }
 }
