@@ -636,8 +636,8 @@ def render_html(ctx):
         <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
         <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
         <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
-        <line x1="18" y1="62" x2="62" y2="18" stroke="#4a7fb5" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="40" cy="40" r="3" fill="#4a7fb5"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
       </svg>
       <div class="logo-text">
         <span class="logo-name-framework">FRAMEWORK</span>
