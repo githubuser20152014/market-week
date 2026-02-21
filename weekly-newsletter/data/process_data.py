@@ -162,13 +162,13 @@ def generate_positioning_tips(econ, index_data=None):
         if usd and abs(usd["weekly_pct"]) >= 0.5:
             if usd["weekly_pct"] > 0:
                 tips.append(
-                    f"USD Index strengthened {usd['weekly_pct']:+.2f}% this week -- "
+                    f"USD Index strengthened {usd['weekly_pct']:+.2f}% this week: "
                     "a stronger dollar weighs on multinational earnings and commodities. "
                     "Consider reducing exposure to export-heavy sectors and commodity ETFs (GLD, DJP)."
                 )
             else:
                 tips.append(
-                    f"USD Index weakened {usd['weekly_pct']:+.2f}% this week -- "
+                    f"USD Index weakened {usd['weekly_pct']:+.2f}% this week: "
                     "a softer dollar is a tailwind for emerging markets (EEM, VWO) and commodities (GLD, DJP). "
                     "Consider tilting toward international and commodity exposure."
                 )
@@ -179,29 +179,29 @@ def generate_positioning_tips(econ, index_data=None):
 
         if "cpi" in name and "core" not in name and surprise == "above":
             tips.append(
-                "CPI came in hot at {actual}{unit} vs. {expected}{unit} expected -- "
+                "CPI came in hot at {actual}{unit} vs. {expected}{unit} expected: "
                 "inflation-sensitive sectors may see pressure. "
                 "Consider TIPS (TIP) or defensive tilts (XLU, XLP).".format(**event)
             )
         if "retail sales" in name and surprise == "above":
             tips.append(
-                "Retail sales surprised to the upside ({actual}{unit} vs. {expected}{unit}) -- "
+                "Retail sales surprised to the upside ({actual}{unit} vs. {expected}{unit}): "
                 "consumer discretionary (XLY) and cyclicals may benefit.".format(**event)
             )
         if "jobless claims" in name and surprise == "below":
             tips.append(
-                "Jobless claims came in lower than expected ({actual:,} vs. {expected:,}) -- "
+                "Jobless claims came in lower than expected ({actual:,} vs. {expected:,}): "
                 "labor market remains tight, supporting risk-on positioning.".format(**event)
             )
         if "services pmi" in name and surprise == "below":
             tips.append(
-                "Services PMI missed at {actual} vs. {expected} expected -- "
+                "Services PMI missed at {actual} vs. {expected} expected: "
                 "services sector contraction is a caution signal. "
                 "Consider trimming consumer discretionary (XLY) and adding defensives (XLP, XLU).".format(**event)
             )
         if "housing starts" in name and surprise == "below":
             tips.append(
-                "Housing Starts missed at {actual}{unit} vs. {expected}{unit} -- "
+                "Housing Starts missed at {actual}{unit} vs. {expected}{unit}: "
                 "affordability pressure weighs on homebuilders (ITB, XHB). "
                 "Watch mortgage rate trajectory before adding real estate exposure.".format(**event)
             )
@@ -210,28 +210,28 @@ def generate_positioning_tips(econ, index_data=None):
         name = event.get("event", "").lower()
         if "fomc" in name:
             tips.append(
-                "FOMC Meeting Minutes drop {date} -- expect volatility. "
+                "FOMC Meeting Minutes on {date}: expect volatility. "
                 "Consider trimming position sizes or hedging with VIX calls.".format(**event)
             )
         if "pmi" in name and "manufacturing" in name:
             tips.append(
-                "Flash Manufacturing PMI on {date} -- a key read on factory activity. "
+                "Flash Manufacturing PMI on {date}: a key read on factory activity. "
                 "Watch industrials (XLI) for directional cues.".format(**event)
             )
         if "pce" in name:
             tips.append(
-                "PCE Price Index on {date} -- the Fed's preferred inflation gauge. "
+                "PCE Price Index on {date}: the Fed's preferred inflation gauge. "
                 "A hot print could reprice rate-cut expectations; consider hedging bond duration (TLT) "
                 "and adding inflation protection (TIPS, GLD).".format(**event)
             )
         if "gdp" in name:
             tips.append(
-                "GDP release on {date} -- a weak print could shift sentiment toward defensives (XLU, XLP); "
+                "GDP release on {date}: a weak print could shift sentiment toward defensives (XLU, XLP); "
                 "a strong beat supports risk-on positioning in cyclicals (XLY, XLI).".format(**event)
             )
 
     if not tips:
-        tips.append("No strong macro signals this week -- maintain current allocations.")
+        tips.append("No strong macro signals this week: maintain current allocations.")
 
     return tips
 

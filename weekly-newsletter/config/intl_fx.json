@@ -1,0 +1,7 @@
+{
+  "EUR/USD": { "symbol": "EURUSD=X", "etf_proxy": "FXE" },
+  "GBP/USD": { "symbol": "GBPUSD=X", "etf_proxy": "FXB" },
+  "JPY/USD": { "symbol": "JPYUSD=X", "etf_proxy": "FXY" },
+  "AUD/USD": { "symbol": "AUDUSD=X", "etf_proxy": "FXA" },
+  "CHF/USD": { "symbol": "CHFUSD=X", "etf_proxy": "FXF" }
+}

@@ -1,0 +1,80 @@
+{
+  "past_week": [
+    {
+      "date": "2026-02-17",
+      "event": "Japan Q4 GDP (Preliminary)",
+      "importance": 3,
+      "actual": -0.4,
+      "expected": 0.3,
+      "previous": 0.9,
+      "unit": "%",
+      "surprise": "below",
+      "impact": "Japan's economy unexpectedly contracted in Q4, raising doubts about the BOJ's path toward policy normalization. Growth weakness undercuts the case for further rate hikes and may weigh on EWJ near-term."
+    },
+    {
+      "date": "2026-02-18",
+      "event": "ECB Meeting Minutes",
+      "importance": 3,
+      "actual": "--",
+      "expected": "--",
+      "previous": "--",
+      "unit": "",
+      "surprise": "neutral",
+      "impact": "Minutes showed broad consensus to hold rates steady at 2.75%, with most members citing improving but still elevated services inflation. The tone was modestly hawkish -- no imminent cuts, but the door is open for H2 2026 if disinflation continues."
+    },
+    {
+      "date": "2026-02-19",
+      "event": "UK CPI (YoY)",
+      "importance": 3,
+      "actual": 3.1,
+      "expected": 2.8,
+      "previous": 2.9,
+      "unit": "%",
+      "surprise": "above",
+      "impact": "UK inflation re-accelerated, complicating the Bank of England's rate-cut path. Sterling firmed on the print. EWU may benefit from a higher-for-longer BOE stance, but persistently high inflation is a risk to UK consumer spending."
+    },
+    {
+      "date": "2026-02-19",
+      "event": "China Caixin Services PMI",
+      "importance": 2,
+      "actual": 52.3,
+      "expected": 51.8,
+      "previous": 52.0,
+      "unit": "",
+      "surprise": "above",
+      "impact": "China's service sector continues to expand at a healthy pace, supporting the domestic recovery narrative. Positive for EM-tilted ETFs (EEM, FXI) and commodity exporters."
+    }
+  ],
+  "upcoming_week": [
+    {
+      "date": "2026-02-24",
+      "event": "BOJ Meeting Minutes",
+      "importance": 3
+    },
+    {
+      "date": "2026-02-25",
+      "event": "Germany Ifo Business Climate",
+      "importance": 2
+    },
+    {
+      "date": "2026-02-26",
+      "event": "ECB Rate Decision",
+      "importance": 3
+    },
+    {
+      "date": "2026-02-26",
+      "event": "Australia Q4 GDP",
+      "importance": 2
+    },
+    {
+      "date": "2026-02-27",
+      "event": "Eurozone CPI Flash (YoY)",
+      "importance": 3
+    },
+    {
+      "date": "2026-02-27",
+      "event": "UK Retail Sales (MoM)",
+      "importance": 2
+    }
+  ]
+}

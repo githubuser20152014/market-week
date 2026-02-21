@@ -22,7 +22,7 @@ class NewsletterPDF(FPDF):
         self.set_font("Helvetica", "B", 18)
         self.set_text_color(*self.WHITE)
         self.set_y(7)
-        self.cell(0, 10, "Framework Foundry Weekly", ln=True, align="C")
+        self.cell(0, 10, self._title, ln=True, align="C")
         self.set_font("Helvetica", "I", 11)
         self.cell(0, 7, "Research for the serious investor", ln=True, align="C")
         self.ln(3)
@@ -35,6 +35,7 @@ class NewsletterPDF(FPDF):
         self.set_font("Helvetica", "I", 7)
         self.set_text_color(*self.GRAY)
         self.cell(0, 10,
+                  "Published by Framework Foundry. "
                   "Disclaimer: For informational purposes only. "
                   "Not investment advice. Past performance is not indicative of future results.",
                   align="C")
@@ -59,7 +60,7 @@ class NewsletterPDF(FPDF):
         self.ln(2)
 
 
-def generate_pdf(context, chart_path, output_dir, date_str):
+def generate_pdf(context, chart_path, output_dir, date_str, title="Framework Foundry Weekly"):
     """Generate a PDF newsletter.
 
     Args:
@@ -72,6 +73,7 @@ def generate_pdf(context, chart_path, output_dir, date_str):
         Path to the saved PDF.
     """
     pdf = NewsletterPDF()
+    pdf._title = title
     pdf._subtitle = f"Week ending {date_str}"
     pdf.set_auto_page_break(auto=True, margin=20)
     pdf.add_page()
@@ -135,6 +137,49 @@ def generate_pdf(context, chart_path, output_dir, date_str):
         pdf.cell(90, 5, f"Best: {best['name']} ({best['weekly_pct']:+.2f}%)")
         pdf.set_text_color(*pdf.RED)
         pdf.cell(90, 5, f"Worst: {worst['name']} ({worst['weekly_pct']:+.2f}%)", align="R")
+        pdf.ln()
+
+    # -- FX Rates Table (international edition only) --
+    fx_rates = context.get("fx_rates")
+    if fx_rates:
+        pdf.ln(4)
+        pdf.set_font("Helvetica", "B", 10)
+        pdf.set_text_color(*pdf.NAVY)
+        pdf.cell(0, 6, "FX Rates", ln=True)
+        pdf.ln(1)
+
+        fx_cols = [50, 40, 40]
+        fx_headers = ["Currency Pair", "Rate", "Weekly %"]
+
+        pdf.set_font("Helvetica", "B", 9)
+        pdf.set_fill_color(*pdf.NAVY)
+        pdf.set_text_color(*pdf.WHITE)
+        for i, h in enumerate(fx_headers):
+            align = "L" if i == 0 else "R"
+            pdf.cell(fx_cols[i], 7, h, border=0, fill=True, align=align)
+        pdf.ln()
+
+        pdf.set_font("Helvetica", "", 9)
+        for row_idx, fx in enumerate(fx_rates):
+            bg = pdf.LIGHT_BG if row_idx % 2 == 0 else pdf.WHITE
+            pdf.set_fill_color(*bg)
+            pdf.set_text_color(*pdf.DARK)
+            pdf.cell(fx_cols[0], 6, fx["name"], border=0, fill=True)
+            pdf.cell(fx_cols[1], 6, f"{fx['rate']:.4f}", border=0, fill=True, align="R")
+            pct = fx["weekly_pct"]
+            pdf.set_text_color(*pdf.GREEN if pct >= 0 else pdf.RED)
+            pdf.cell(fx_cols[2], 6, f"{pct:+.2f}%", border=0, fill=True, align="R")
+            pdf.ln()
+
+        # Best / Worst FX mover callout
+        fx_best = max(fx_rates, key=lambda x: x["weekly_pct"])
+        fx_worst = min(fx_rates, key=lambda x: x["weekly_pct"])
+        pdf.ln(2)
+        pdf.set_font("Helvetica", "B", 9)
+        pdf.set_text_color(*pdf.GREEN)
+        pdf.cell(65, 5, f"Best: {fx_best['name']} ({fx_best['weekly_pct']:+.2f}%)")
+        pdf.set_text_color(*pdf.RED)
+        pdf.cell(65, 5, f"Worst: {fx_worst['name']} ({fx_worst['weekly_pct']:+.2f}%)", align="R")
         pdf.ln()
 
     # -- Economic Events Table --
@@ -221,9 +266,11 @@ def generate_pdf(context, chart_path, output_dir, date_str):
     for row_idx, tip in enumerate(context.get("tips", [])):
         bg = pdf.LIGHT_BG if row_idx % 2 == 0 else pdf.WHITE
 
-        # Split on " -- " to get signal and action
+        # Split on " -- " (US tips) or first ": " (intl tips) to get signal and action
         if " -- " in tip:
             signal, action = tip.split(" -- ", 1)
+        elif ": " in tip:
+            signal, action = tip.split(": ", 1)
         else:
             signal, action = tip, ""
 

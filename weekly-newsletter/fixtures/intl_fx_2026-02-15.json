@@ -1,0 +1,57 @@
+{
+  "EUR/USD": {
+    "symbol": "EURUSD=X",
+    "etf_proxy": "FXE",
+    "data": [
+      {"date": "2026-02-09", "open": 1.0438, "high": 1.0462, "low": 1.0420, "close": 1.0448, "volume": 0},
+      {"date": "2026-02-10", "open": 1.0448, "high": 1.0470, "low": 1.0432, "close": 1.0455, "volume": 0},
+      {"date": "2026-02-11", "open": 1.0455, "high": 1.0478, "low": 1.0440, "close": 1.0462, "volume": 0},
+      {"date": "2026-02-12", "open": 1.0462, "high": 1.0480, "low": 1.0445, "close": 1.0452, "volume": 0},
+      {"date": "2026-02-13", "open": 1.0452, "high": 1.0465, "low": 1.0428, "close": 1.0435, "volume": 0}
+    ]
+  },
+  "GBP/USD": {
+    "symbol": "GBPUSD=X",
+    "etf_proxy": "FXB",
+    "data": [
+      {"date": "2026-02-09", "open": 1.2580, "high": 1.2612, "low": 1.2562, "close": 1.2595, "volume": 0},
+      {"date": "2026-02-10", "open": 1.2595, "high": 1.2630, "low": 1.2580, "close": 1.2618, "volume": 0},
+      {"date": "2026-02-11", "open": 1.2618, "high": 1.2648, "low": 1.2600, "close": 1.2635, "volume": 0},
+      {"date": "2026-02-12", "open": 1.2635, "high": 1.2658, "low": 1.2615, "close": 1.2642, "volume": 0},
+      {"date": "2026-02-13", "open": 1.2642, "high": 1.2660, "low": 1.2622, "close": 1.2638, "volume": 0}
+    ]
+  },
+  "JPY/USD": {
+    "symbol": "JPYUSD=X",
+    "etf_proxy": "FXY",
+    "data": [
+      {"date": "2026-02-09", "open": 0.006482, "high": 0.006495, "low": 0.006468, "close": 0.006478, "volume": 0},
+      {"date": "2026-02-10", "open": 0.006478, "high": 0.006492, "low": 0.006462, "close": 0.006470, "volume": 0},
+      {"date": "2026-02-11", "open": 0.006470, "high": 0.006485, "low": 0.006455, "close": 0.006462, "volume": 0},
+      {"date": "2026-02-12", "open": 0.006462, "high": 0.006475, "low": 0.006448, "close": 0.006455, "volume": 0},
+      {"date": "2026-02-13", "open": 0.006455, "high": 0.006468, "low": 0.006440, "close": 0.006448, "volume": 0}
+    ]
+  },
+  "AUD/USD": {
+    "symbol": "AUDUSD=X",
+    "etf_proxy": "FXA",
+    "data": [
+      {"date": "2026-02-09", "open": 0.6332, "high": 0.6355, "low": 0.6318, "close": 0.6342, "volume": 0},
+      {"date": "2026-02-10", "open": 0.6342, "high": 0.6368, "low": 0.6330, "close": 0.6358, "volume": 0},
+      {"date": "2026-02-11", "open": 0.6358, "high": 0.6375, "low": 0.6342, "close": 0.6365, "volume": 0},
+      {"date": "2026-02-12", "open": 0.6365, "high": 0.6380, "low": 0.6348, "close": 0.6352, "volume": 0},
+      {"date": "2026-02-13", "open": 0.6352, "high": 0.6362, "low": 0.6328, "close": 0.6338, "volume": 0}
+    ]
+  },
+  "CHF/USD": {
+    "symbol": "CHFUSD=X",
+    "etf_proxy": "FXF",
+    "data": [
+      {"date": "2026-02-09", "open": 1.1082, "high": 1.1105, "low": 1.1068, "close": 1.1092, "volume": 0},
+      {"date": "2026-02-10", "open": 1.1092, "high": 1.1118, "low": 1.1078, "close": 1.1108, "volume": 0},
+      {"date": "2026-02-11", "open": 1.1108, "high": 1.1130, "low": 1.1095, "close": 1.1122, "volume": 0},
+      {"date": "2026-02-12", "open": 1.1122, "high": 1.1145, "low": 1.1108, "close": 1.1138, "volume": 0},
+      {"date": "2026-02-13", "open": 1.1138, "high": 1.1152, "low": 1.1120, "close": 1.1145, "volume": 0}
+    ]
+  }
+}

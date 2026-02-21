@@ -1,0 +1,10 @@
+{
+  "DAX": { "symbol": "^GDAXI", "region": "Europe", "etf_proxy": "EWG" },
+  "FTSE 100": { "symbol": "^FTSE", "region": "Europe", "etf_proxy": "EWU" },
+  "CAC 40": { "symbol": "^FCHI", "region": "Europe", "etf_proxy": "EWQ" },
+  "Euro Stoxx 50": { "symbol": "^STOXX50E", "region": "Europe", "etf_proxy": "FEZ" },
+  "Nikkei 225": { "symbol": "^N225", "region": "Asia-Pacific", "etf_proxy": "EWJ" },
+  "Hang Seng": { "symbol": "^HSI", "region": "Asia-Pacific", "etf_proxy": "EWH" },
+  "ASX 200": { "symbol": "^AXJO", "region": "Asia-Pacific", "etf_proxy": "EWA" },
+  "MSCI EM": { "symbol": "EEM", "region": "Emerging Markets", "etf_proxy": "EEM" }
+}
