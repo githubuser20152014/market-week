@@ -1,5 +1,6 @@
 weekly-newsletter/output/
 weekly-newsletter/public/
+weekly-newsletter/public_intl/
 __pycache__/
 *.pyc
 .env
