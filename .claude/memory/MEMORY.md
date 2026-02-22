@@ -1,5 +1,9 @@
 # Market Week — Workflow Memory
 
+> **SYNC NOTE:** This file exists in two places. When updating either, always write to both:
+> - Repo (version-controlled): `.claude/memory/MEMORY.md`
+> - Global (Claude reads this): `~/.claude/projects/C--Users-Akhil-Documents-cc4e-course-market-week/memory/MEMORY.md`
+
 ## Fixture Data Workflow
 
 ### REQUIRED: Verify all prices against 2 independent sources before writing any fixture file
