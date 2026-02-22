@@ -42,9 +42,22 @@ def fetch_index_data(end_date, use_mock=True):
         except Exception as e:
             print(f"Live fetch failed ({e}), falling back to fixtures.")
 
-    fixture_path = _find_closest_fixture("indices", end_date)
-    if fixture_path is None:
+    candidates = []
+    target = datetime.strptime(end_date, "%Y-%m-%d")
+    for f in FIXTURES_DIR.glob("indices_*.json"):
+        date_str = f.stem.replace("indices_", "")
+        try:
+            d = datetime.strptime(date_str, "%Y-%m-%d")
+            candidates.append((abs((d - target).days), f))
+        except ValueError:
+            continue
+    if not candidates:
         raise FileNotFoundError(f"No index fixture found near {end_date}")
+    candidates.sort(key=lambda x: x[0])
+    days_off, fixture_path = candidates[0]
+    if days_off > 2:
+        print(f"WARNING: No fixture for {end_date}. Using {fixture_path.name} "
+              f"({days_off} days off). Data may be stale — consider running with --live.")
     with open(fixture_path) as f:
         return json.load(f)
 

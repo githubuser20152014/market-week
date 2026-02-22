@@ -44,6 +44,16 @@ def main():
         help="Fetch live data via yfinance (default: use mock fixtures).",
     )
     parser.add_argument(
+        "--verify",
+        action="store_true",
+        help="Cross-check prices from a second source (FRED + Stooq) before generating.",
+    )
+    parser.add_argument(
+        "--no-verify",
+        action="store_true",
+        help="Skip price verification even in --live mode.",
+    )
+    parser.add_argument(
         "--pdf",
         action="store_true",
         help="Also generate a PDF version of the newsletter.",
@@ -56,6 +66,11 @@ def main():
     # Fetch
     raw_indices = fetch_index_data(date_str, use_mock=use_mock)
     econ = fetch_econ_calendar(date_str, use_mock=use_mock)
+
+    # Cross-validate prices if requested (auto-enabled for --live unless --no-verify)
+    if (args.live and not args.no_verify) or args.verify:
+        from data.verify_prices import verify_prices
+        verify_prices(raw_indices, date_str)
 
     # Process
     index_data = process_index_data(raw_indices)
