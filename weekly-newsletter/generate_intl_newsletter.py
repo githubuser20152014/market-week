@@ -65,15 +65,11 @@ def main():
 
     # Generate chart (indices only — keeps the chart readable)
     OUTPUT_DIR.mkdir(exist_ok=True)
-    chart_path_raw = generate_price_chart(
+    intl_chart_path = generate_price_chart(
         raw_indices, date_str, OUTPUT_DIR,
-        title="Framework Foundry Weekly - International Edition -- Performance (% Change from Monday Open)"
+        title="Framework Foundry Weekly - International Edition -- Performance (% Change from Monday Open)",
+        prefix="intl_chart",
     )
-
-    # Rename to intl_ prefix to avoid collision with the US edition chart
-    intl_chart_path = OUTPUT_DIR / f"intl_chart_{date_str}.png"
-    if chart_path_raw.exists():
-        chart_path_raw.replace(intl_chart_path)
     context["chart_path"] = intl_chart_path.name
 
     # Render

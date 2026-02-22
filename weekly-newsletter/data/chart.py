@@ -29,7 +29,7 @@ COLORS = {
 }
 
 
-def generate_price_chart(raw_indices, date_str, output_dir, title=None):
+def generate_price_chart(raw_indices, date_str, output_dir, title=None, prefix="chart"):
     """Generate a normalized weekly performance chart.
 
     Instead of plotting raw prices (which span $4 to $44,000), we normalize
@@ -116,7 +116,7 @@ def generate_price_chart(raw_indices, date_str, output_dir, title=None):
     # Save
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True)
-    chart_path = output_dir / f"chart_{date_str}.png"
+    chart_path = output_dir / f"{prefix}_{date_str}.png"
     fig.savefig(chart_path, dpi=150, bbox_inches="tight",
                 facecolor="white", edgecolor="none")
     plt.close(fig)
