@@ -7,26 +7,29 @@ from pathlib import Path
 class NewsletterPDF(FPDF):
     """Custom PDF class with Framework Foundry branding."""
 
-    NAVY = (20, 40, 80)
+    NAVY = (15, 31, 61)
     DARK = (30, 30, 30)
     GRAY = (100, 100, 100)
-    LIGHT_BG = (245, 247, 250)
+    LIGHT_BG = (245, 244, 240)
     WHITE = (255, 255, 255)
     GREEN = (34, 139, 34)
     RED = (180, 30, 30)
-    ACCENT = (50, 100, 180)
+    ACCENT = (74, 127, 181)
+    GOLD = (201, 168, 76)
 
     def header(self):
         self.set_fill_color(*self.NAVY)
         self.rect(0, 0, 210, 42, "F")
-        self.set_font("Helvetica", "B", 18)
+        self.set_font("Helvetica", "B", 20)
         self.set_text_color(*self.WHITE)
         self.set_y(7)
         self.cell(0, 10, self._title, ln=True, align="C")
-        self.set_font("Helvetica", "I", 11)
-        self.cell(0, 7, "Research for the serious investor", ln=True, align="C")
-        self.ln(3)
-        self.set_font("Helvetica", "", 9)
+        self.set_font("Helvetica", "", 10)
+        self.set_text_color(*self.GOLD)
+        self.cell(0, 6, "Weekly Economic Intelligence", ln=True, align="C")
+        self.ln(2)
+        self.set_font("Helvetica", "", 8)
+        self.set_text_color(200, 210, 230)
         self.cell(0, 5, self._subtitle, ln=True, align="C")
         self.set_y(46)
 
