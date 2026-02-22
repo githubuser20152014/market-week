@@ -38,7 +38,7 @@ def _chart_img_tag(chart_path):
 
 
 def generate_pdf(context, chart_path, output_dir, date_str,
-                 title="Framework Foundry Weekly"):
+                 title="Framework Foundry Weekly", filename=None):
     """Render the newsletter HTML and convert to PDF via Playwright/Chromium.
 
     Args:
@@ -74,7 +74,7 @@ def generate_pdf(context, chart_path, output_dir, date_str,
 
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True)
-    pdf_path = output_dir / f"newsletter_{date_str}.pdf"
+    pdf_path = output_dir / (filename or f"newsletter_{date_str}.pdf")
 
     try:
         with sync_playwright() as p:

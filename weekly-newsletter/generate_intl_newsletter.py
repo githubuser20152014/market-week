@@ -87,12 +87,11 @@ def main():
 
     # PDF export
     if args.pdf:
-        pdf_path_raw = generate_pdf(context, intl_chart_path, OUTPUT_DIR, date_str,
-                                    title="Framework Foundry Weekly - International Edition")
-        # Rename to intl_ prefix
-        intl_pdf_path = OUTPUT_DIR / f"intl_newsletter_{date_str}.pdf"
-        if pdf_path_raw.exists() and pdf_path_raw != intl_pdf_path:
-            pdf_path_raw.replace(intl_pdf_path)
+        intl_pdf_path = generate_pdf(
+            context, intl_chart_path, OUTPUT_DIR, date_str,
+            title="Framework Foundry Weekly - International Edition",
+            filename=f"intl_newsletter_{date_str}.pdf",
+        )
         print(f"PDF saved to {intl_pdf_path}")
 
 
