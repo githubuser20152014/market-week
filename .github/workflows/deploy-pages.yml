@@ -4,6 +4,7 @@ on:
     branches: [master]
     paths:
       - 'weekly-newsletter/site/**'
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
