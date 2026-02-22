@@ -64,12 +64,7 @@ def generate_pdf(context, chart_path, output_dir, date_str,
     # Inject PDF CSS overrides
     html_str = html_str.replace("</head>", _PDF_OVERRIDES + "</head>", 1)
 
-    # Inject chart image after "Week in Brief" section
-    chart_tag = _chart_img_tag(chart_path)
-    if chart_tag:
-        marker = "<!-- INDEX SNAPSHOT"
-        if marker in html_str:
-            html_str = html_str.replace(marker, chart_tag + "\n\n    " + marker, 1)
+    # Chart intentionally excluded from PDF (not in online version)
 
     # Write HTML to a temp file so Playwright can load it with file:// (resolves fonts)
     with tempfile.NamedTemporaryFile(suffix=".html", delete=False,
