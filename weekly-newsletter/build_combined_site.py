@@ -397,7 +397,7 @@ def _render_us_hero(date_str, ctx):
       <div class="hero-card-edition">&#127482;&#127480; US Edition</div>
       <div class="hero-card-date">{display}</div>
       <div class="hero-indices">{rows}</div>
-      <a class="hero-cta" href="us/{date_str}/">Read Issue &rarr;</a>
+      <a class="hero-cta" href="us/{date_str}/index.html">Read Issue &rarr;</a>
     </div>"""
 
 
@@ -424,7 +424,7 @@ def _render_intl_hero(date_str, ctx):
       <div class="hero-card-edition">&#127758; International Edition</div>
       <div class="hero-card-date">{display}</div>
       <div class="hero-indices">{rows}</div>
-      <a class="hero-cta" href="intl/{date_str}/">Read Issue &rarr;</a>
+      <a class="hero-cta" href="intl/{date_str}/index.html">Read Issue &rarr;</a>
     </div>"""
 
 
@@ -449,7 +449,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
         display = fmt_date(d)
         # US column
         if d in us_dates:
-            us_html_link = f'<a class="archive-link" href="us/{d}/">Read</a>'
+            us_html_link = f'<a class="archive-link" href="us/{d}/index.html">Read</a>'
             us_pdf_name = pdf_map.get(("us", d))
             us_pdf_link = f'<a class="archive-link pdf" href="downloads/{us_pdf_name}">PDF</a>' \
                 if us_pdf_name else ""
@@ -458,7 +458,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
             us_pdf_link = ""
         # Intl column
         if d in intl_dates:
-            intl_html_link = f'<a class="archive-link" href="intl/{d}/">Read</a>'
+            intl_html_link = f'<a class="archive-link" href="intl/{d}/index.html">Read</a>'
             intl_pdf_name = pdf_map.get(("intl", d))
             intl_pdf_link = f'<a class="archive-link pdf" href="downloads/{intl_pdf_name}">PDF</a>' \
                 if intl_pdf_name else ""
