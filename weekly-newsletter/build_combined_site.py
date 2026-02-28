@@ -644,7 +644,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
   <!-- SUBSCRIBE -->
   <div class="subscribe-section">
     <h2>Stay in the loop</h2>
-    <p>Free weekly market intelligence, every weekend</p>
+    <p>Free weekly market intelligence, every weekend.</p>
     <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
       <input type="email" name="email" placeholder="your@email.com" required />
       <button type="submit">Subscribe</button>
