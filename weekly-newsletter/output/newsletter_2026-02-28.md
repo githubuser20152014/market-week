@@ -6,7 +6,7 @@
 
 ## The Week in Brief
 
-Markets were mixed this week, with Gold leading at +2.15% and 10Y Treasury lagging at -2.70%. On the safe-haven front, Gold climbing 2.15% to $5,230.50 while the 10-year yield falling to 3.96% while the dollar weakening 0.08% to 97.57.
+It was a rough week across the board, with S&P 500 leading at -0.32% and Dow Jones lagging at -1.13%. On the safe-haven front, Gold climbing 2.15% to $5,230.50 while the 10-year yield falling to 3.96% while the dollar weakening 0.08% to 97.57.
 
 The macro picture was busy. Consumer Confidence (CB, February) came in above expectations (91.2 vs. 88.4). PPI (January 2026, MoM) came in above expectations (0.5% vs. 0.3%).
 

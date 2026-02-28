@@ -49,22 +49,33 @@ def generate_narrative(index_data, econ):
     if not index_data:
         return "Markets were closed this week."
 
-    best = index_data[0]
-    worst = index_data[-1]
-
-    # Count how many indices were positive vs negative
-    up_count = sum(1 for i in index_data if i["weekly_pct"] > 0)
-    down_count = len(index_data) - up_count
-
     # Find gold, treasury, and USD specifically
     gold = next((i for i in index_data if i["name"] == "Gold"), None)
     treasury = next((i for i in index_data if "Treasury" in i["name"]), None)
     usd = next((i for i in index_data if i["name"] == "USD Index"), None)
 
+    # Equity indices only — exclude gold, treasury, USD from best/worst ranking
+    # (treasury weekly_pct is yield % change, not price return; comparing it to
+    # equity % returns is misleading)
+    _NON_EQUITY = {"Gold", "USD Index"}
+    equity_indices = [
+        i for i in index_data
+        if i["name"] not in _NON_EQUITY and "Treasury" not in i["name"]
+    ]
+    ranked = equity_indices if equity_indices else index_data
+    best = ranked[0]
+    worst = ranked[-1]
+
+    # Count direction across equity indices only
+    up_count = sum(1 for i in equity_indices if i["weekly_pct"] > 0)
+    down_count = len(equity_indices) - up_count
+
     # Build the opening paragraph about overall market direction
-    if up_count == len(index_data):
+    if not equity_indices:
+        tone = "Markets were mixed this week"
+    elif up_count == len(equity_indices):
         tone = "Markets rallied across the board this week"
-    elif down_count == len(index_data):
+    elif down_count == len(equity_indices):
         tone = "It was a rough week across the board"
     elif up_count > down_count:
         tone = "Most markets posted gains this week"
