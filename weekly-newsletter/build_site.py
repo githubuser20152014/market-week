@@ -200,6 +200,18 @@ _CSS = """\
 
   .brief-text + .brief-text { margin-top: 12px; }
 
+  .plain-list {
+    margin: 8px 0 8px 20px;
+    padding: 0;
+  }
+  .plain-list li {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #2c2c3e;
+    font-weight: 300;
+    margin-bottom: 6px;
+  }
+
   /* INDEX CARDS */
   .index-grid {
     display: grid;
@@ -604,6 +616,27 @@ def render_html(ctx):
         if para:
             narrative_html += f'<p class="brief-text">{para}</p>\n'
 
+    # ── Plain-English Summary ("What This Means") ──────────────────────────
+    import re as _re
+    plain_html = ""
+    raw_plain = ctx.get("plain_summary", "")
+    for block in raw_plain.split("\n\n"):
+        block = block.strip()
+        if not block:
+            continue
+        # Bullet list block
+        if block.startswith("- "):
+            items = [line[2:].strip() for line in block.splitlines() if line.startswith("- ")]
+            items_html = "".join(
+                f'<li>{_re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", item)}</li>'
+                for item in items
+            )
+            plain_html += f'<ul class="plain-list">{items_html}</ul>\n'
+        else:
+            # Regular paragraph — convert **bold**
+            para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", block)
+            plain_html += f'<p class="brief-text">{para}</p>\n'
+
     # ── Best / Worst ──────────────────────────────────────────────────────────
     best = ctx.get("best") or {}
     worst = ctx.get("worst") or {}
@@ -668,6 +701,12 @@ def render_html(ctx):
     <div class="section-block">
       <div class="section-title">The Week in Brief</div>
       {narrative_html}
+    </div>
+
+    <!-- WHAT THIS MEANS -->
+    <div class="section-block">
+      <div class="section-title">What This Means</div>
+      {plain_html}
     </div>
 
     <!-- INDEX SNAPSHOT CARDS -->

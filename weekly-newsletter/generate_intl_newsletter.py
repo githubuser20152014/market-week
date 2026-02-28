@@ -2,6 +2,7 @@
 """Generate the Framework Foundry Weekly — International Edition newsletter."""
 
 import argparse
+import json
 from datetime import date
 from pathlib import Path
 
@@ -57,6 +58,18 @@ def main():
     raw_indices = fetch_intl_index_data(date_str, use_mock=use_mock)
     raw_fx = fetch_intl_fx_data(date_str, use_mock=use_mock)
     econ = fetch_intl_econ_calendar(date_str, use_mock=use_mock)
+
+    # Persist live data as fixtures so build_combined_site.py uses the same prices
+    if args.live:
+        fixtures_dir = BASE_DIR / "fixtures"
+        fixtures_dir.mkdir(exist_ok=True)
+        (fixtures_dir / f"intl_indices_{date_str}.json").write_text(
+            json.dumps(raw_indices, indent=2), encoding="utf-8"
+        )
+        (fixtures_dir / f"intl_fx_{date_str}.json").write_text(
+            json.dumps(raw_fx, indent=2), encoding="utf-8"
+        )
+        print(f"Fixtures saved to {fixtures_dir}/intl_indices_{date_str}.json + intl_fx_{date_str}.json")
 
     # Process
     index_data = process_intl_index_data(raw_indices)

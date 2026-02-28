@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Framework Foundry — International Edition · 2026-02-28</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
-  <style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Framework Foundry — US Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<style>
   :root {
     --navy:      #0f1f3d;
     --accent:    #4a7fb5;
@@ -35,7 +35,7 @@
     box-shadow: 0 8px 48px rgba(0,0,0,0.18);
   }
 
-  /* HEADER */
+  /* ══ HEADER ══ */
   .header {
     background: var(--navy);
     position: relative;
@@ -62,6 +62,7 @@
   }
 
   .logo-icon { flex-shrink: 0; width: 64px; height: 64px; }
+
   .logo-text { flex: 1; }
 
   .logo-name-framework {
@@ -135,7 +136,7 @@
     background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
   }
 
-  /* REGION BANNER */
+  /* ── REGION BANNER ── */
   .region-banner {
     background: var(--accent);
     padding: 7px 40px;
@@ -153,10 +154,15 @@
     text-transform: uppercase;
   }
 
-  .region-dots { display: flex; gap: 6px; margin-left: auto; }
+  .region-dots {
+    display: flex;
+    gap: 6px;
+    margin-left: auto;
+  }
+
   .region-dot { font-size: 14px; line-height: 1; }
 
-  /* CONTENT */
+  /* ══ CONTENT ══ */
   .content { padding: 36px 40px; }
 
   .section-title {
@@ -182,7 +188,7 @@
 
   .brief-text + .brief-text { margin-top: 12px; }
 
-  /* INDEX CARDS */
+  /* ── US INDEX SUMMARY CARDS ── */
   .index-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -220,16 +226,16 @@
   .pct-pos { color: var(--green); font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; }
   .pct-neg { color: var(--red);   font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; }
 
-  /* TABLES */
-  .snapshot-table, .fx-table {
+  /* ── MARKET SNAPSHOT TABLE ── */
+  .snapshot-table {
     width: 100%;
     border-collapse: collapse;
     font-family: 'Raleway', sans-serif;
     font-size: 13px;
   }
 
-  .snapshot-table thead tr, .fx-table thead tr { background: var(--navy); color: var(--white); }
-  .snapshot-table thead th, .fx-table thead th {
+  .snapshot-table thead tr { background: var(--navy); color: var(--white); }
+  .snapshot-table thead th {
     padding: 10px 14px;
     text-align: left;
     font-weight: 500;
@@ -238,9 +244,9 @@
     text-transform: uppercase;
   }
 
-  .snapshot-table tbody tr, .fx-table tbody tr { border-bottom: 1px solid var(--border); }
-  .snapshot-table tbody tr:nth-child(even), .fx-table tbody tr:nth-child(even) { background: var(--off-white); }
-  .snapshot-table tbody td, .fx-table tbody td { padding: 10px 14px; }
+  .snapshot-table tbody tr { border-bottom: 1px solid var(--border); }
+  .snapshot-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .snapshot-table tbody td { padding: 10px 14px; }
 
   .pct { font-weight: 600; }
   .pct.positive { color: var(--green); }
@@ -258,17 +264,7 @@
   .snapshot-footer .best  { color: var(--green); }
   .snapshot-footer .worst { color: var(--red); }
 
-  .fx-title {
-    font-family: 'Raleway', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin: 24px 0 10px;
-  }
-
-  /* ECONOMIC EVENTS */
+  /* ── ECONOMIC EVENTS ── */
   .events-table {
     width: 100%;
     border-collapse: collapse;
@@ -303,11 +299,11 @@
     letter-spacing: 0.5px;
   }
 
-  .tag.above  { background: #d4edda; color: #155724; }
-  .tag.below  { background: #f8d7da; color: #721c24; }
+  .tag.above  { background: #fff3cd; color: #856404; }
+  .tag.below  { background: #d4edda; color: #155724; }
   .tag.inline { background: #e8e8e8; color: #555; }
 
-  /* ANALYSIS CARDS */
+  /* ── ANALYSIS CARDS ── */
   .analysis-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -338,7 +334,7 @@
     font-weight: 300;
   }
 
-  /* UPCOMING TABLE */
+  /* ── UPCOMING TABLE ── */
   .upcoming-table {
     width: 100%;
     border-collapse: collapse;
@@ -367,7 +363,7 @@
   .imp-medium { color: #d97706;      font-weight: 600; font-size: 11px; }
   .imp-low    { color: var(--muted); font-weight: 400; font-size: 11px; }
 
-  /* POSITIONING TIPS */
+  /* ── POSITIONING TIPS ── */
   .tips-table {
     width: 100%;
     border-collapse: collapse;
@@ -396,7 +392,7 @@
   .tips-table .signal-col { color: var(--navy); font-weight: 500; width: 45%; }
   .tips-table .action-col { color: #2c2c3e; font-weight: 300; }
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   .footer {
     background: var(--navy);
     padding: 16px 40px;
@@ -424,23 +420,15 @@
     max-width: 380px;
     line-height: 1.6;
   }
-
-  @media (max-width: 600px) {
-    .header-inner { padding: 20px 20px 16px; flex-wrap: wrap; }
-    .content { padding: 24px 20px; }
-    .index-grid { grid-template-columns: 1fr; }
-    .analysis-grid { grid-template-columns: 1fr; }
-    .footer { padding: 14px 20px; flex-direction: column; gap: 10px; }
-  }
-
-  </style>
+</style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HEADER -->
+  <!-- ══ HEADER ══ -->
   <header class="header">
     <div class="header-inner">
+      <!-- Same SVG globe/chart logo as international edition -->
       <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
         <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
         <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
@@ -449,31 +437,31 @@
         <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
         <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
         <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
-        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#4a7fb5" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#4a7fb5"/>
       </svg>
+
       <div class="logo-text">
         <span class="logo-name-framework">FRAMEWORK</span>
         <span class="logo-name-foundry">FOUNDRY</span>
         <div class="logo-rule"></div>
-        <span class="logo-tagline">International Edition &nbsp;·&nbsp; Research for the serious investor</span>
+        <span class="logo-tagline">US Edition &nbsp;·&nbsp; Research for the serious investor</span>
       </div>
+
       <div class="header-meta">
         <span class="issue-label">Week Ending</span>
-        <span class="issue-date">Feb 28, 2026</span>
-        <span class="issue-week">International Edition</span>
+        <span class="issue-date">Feb 16, 2026</span>
+        <span class="issue-week">Vol. 1 &nbsp;·&nbsp; Issue 7</span>
       </div>
     </div>
     <div class="header-accent"></div>
   </header>
 
-  <!-- REGION BANNER -->
+  <!-- ── REGION BANNER ── -->
   <div class="region-banner">
-    <span>Coverage: Europe · Asia-Pacific · Emerging Markets · FX · Macro</span>
+    <span>Coverage: Equities · Fixed Income · Commodities · Macro · Positioning</span>
     <div class="region-dots">
-      <span class="region-dot">🇪🇺</span>
-      <span class="region-dot">🇯🇵</span>
-      <span class="region-dot">🌏</span>
+      <span class="region-dot">🇺🇸</span>
     </div>
   </div>
 
@@ -482,35 +470,36 @@
     <!-- THE WEEK IN BRIEF -->
     <div class="section-block">
       <div class="section-title">The Week in Brief</div>
-      <p class="brief-text">International markets posted mostly gains this week, with Nikkei 225 (Asia-Pacific) leading at +3.28% and Hang Seng (Asia-Pacific) lagging at -0.63%. European indices outperformed on average (+1.04%); Asia-Pacific led (+1.31% average); Emerging Markets (MSCI EM) moved +0.90%. On the FX front, the Japanese Yen weakened 0.97%, all against the USD.</p>
-<p class="brief-text">The macro picture was eventful. Germany Ifo Business Climate (February) came in above expectations (88.6 vs. 88.4).</p>
-<p class="brief-text">Looking ahead, key events to watch are: Eurozone CPI Flash (February, YoY), Australia Q4 2025 GDP (QoQ). Central bank decisions in particular can drive sharp FX and equity moves; position sizing should reflect that risk.</p>
-
+      <p class="brief-text">
+        Markets were mixed this week, with Gold leading at +0.09% and 10Y Treasury lagging at -4.25%. On the safe-haven front, Gold climbed 0.09% to $5,022.00 while the 10-year yield fell to 4.06%.
+      </p>
+      <p class="brief-text">
+        The macro picture was busy. CPI (Year-over-Year) came in above expectations (3.1% vs. 2.9%). Initial Jobless Claims came in below expectations (218,000 vs. 225,000). Retail Sales (Month-over-Month) came in above expectations (0.6% vs. 0.3%). The combination of hot inflation and strong consumer spending paints a picture of an economy that's running warm — good for earnings, but it keeps rate cuts off the table for now.
+      </p>
+      <p class="brief-text">
+        Looking ahead, the key events to watch are: FOMC Meeting Minutes, S&P Global Flash US Manufacturing PMI, S&P Global Flash US Services PMI. Position sizing and hedges should reflect the potential for volatility around these releases.
+      </p>
     </div>
 
-    <!-- INDEX SNAPSHOT CARDS -->
+    <!-- US INDEX SUMMARY CARDS -->
     <div class="section-block">
       <div class="section-title">Index Snapshot</div>
       <div class="index-grid">
         <div class="index-card">
-          <h4>🇪🇺 Europe</h4>
-          <div class="idx-row"><span>Euro Stoxx 50</span><span class="pct-pos">+0.40%</span></div>
-<div class="idx-row"><span>CAC 40</span><span class="pct-pos">+0.99%</span></div>
-<div class="idx-row"><span>DAX</span><span class="pct-pos">+0.68%</span></div>
-<div class="idx-row"><span>FTSE 100</span><span class="pct-pos">+2.09%</span></div>
-
+          <h4>📈 Large Cap</h4>
+          <div class="idx-row"><span>S&amp;P 500</span><span class="pct-neg">−1.17%</span></div>
+          <div class="idx-row"><span>Dow Jones</span><span class="pct-neg">−1.09%</span></div>
+          <div class="idx-row"><span>Nasdaq</span><span class="pct-neg">−1.77%</span></div>
         </div>
         <div class="index-card">
-          <h4>🌏 Asia-Pacific</h4>
-          <div class="idx-row"><span>Nikkei 225</span><span class="pct-pos">+3.28%</span></div>
-<div class="idx-row"><span>Hang Seng</span><span class="pct-neg">-0.63%</span></div>
-<div class="idx-row"><span>ASX 200</span><span class="pct-pos">+1.29%</span></div>
-
+          <h4>📊 Broad Market</h4>
+          <div class="idx-row"><span>Russell 2000</span><span class="pct-neg">−0.78%</span></div>
+          <div class="idx-row"><span>Gold</span><span class="pct-pos">+0.09%</span></div>
         </div>
         <div class="index-card">
-          <h4>🌍 Emerging Markets</h4>
-          <div class="idx-row"><span>MSCI EM</span><span class="pct-pos">+0.90%</span></div>
-
+          <h4>🏦 Fixed Income</h4>
+          <div class="idx-row"><span>10Y Treasury</span><span class="pct-neg">−4.25%</span></div>
+          <div class="idx-row"><span>Yield</span><span class="pct-neg">4.06%</span></div>
         </div>
       </div>
     </div>
@@ -522,125 +511,59 @@
         <thead>
           <tr>
             <th>Index</th>
-            <th>Region</th>
             <th>Close</th>
             <th>Weekly %</th>
             <th>Week Range</th>
           </tr>
         </thead>
         <tbody>
-          
-            <tr>
-              <td>Nikkei 225</td>
-              <td>Asia-Pacific</td>
-              <td>58,850.27</td>
-              <td class="pct positive">+3.28%</td>
-              <td>56,680.88 – 59,332.43</td>
-            </tr>
-            <tr>
-              <td>FTSE 100</td>
-              <td>Europe</td>
-              <td>10,910.60</td>
-              <td class="pct positive">+2.09%</td>
-              <td>10,645.80 – 10,934.90</td>
-            </tr>
-            <tr>
-              <td>ASX 200</td>
-              <td>Asia-Pacific</td>
-              <td>9,198.60</td>
-              <td class="pct positive">+1.29%</td>
-              <td>8,987.20 – 9,202.90</td>
-            </tr>
-            <tr>
-              <td>CAC 40</td>
-              <td>Europe</td>
-              <td>8,580.75</td>
-              <td class="pct positive">+0.99%</td>
-              <td>8,461.88 – 8,642.23</td>
-            </tr>
-            <tr>
-              <td>MSCI EM</td>
-              <td>Emerging Markets</td>
-              <td>62.58</td>
-              <td class="pct positive">+0.90%</td>
-              <td>61.51 – 65.96</td>
-            </tr>
-            <tr>
-              <td>DAX</td>
-              <td>Europe</td>
-              <td>25,284.26</td>
-              <td class="pct positive">+0.68%</td>
-              <td>24,878.10 – 25,405.97</td>
-            </tr>
-            <tr>
-              <td>Euro Stoxx 50</td>
-              <td>Europe</td>
-              <td>6,138.41</td>
-              <td class="pct positive">+0.40%</td>
-              <td>6,084.69 – 6,199.78</td>
-            </tr>
-            <tr>
-              <td>Hang Seng</td>
-              <td>Asia-Pacific</td>
-              <td>26,630.54</td>
-              <td class="pct negative">-0.63%</td>
-              <td>26,373.01 – 27,156.28</td>
-            </tr>
-        </tbody>
-      </table>
-      <div class="snapshot-footer">
-        <span class="best">▲ Best: Nikkei 225 (+3.28%)</span>
-        <span class="worst">▼ Worst: Hang Seng (-0.63%)</span>
-      </div>
-
-      <div class="fx-title">FX Rates</div>
-      <table class="fx-table">
-        <thead>
           <tr>
-            <th>Currency Pair</th>
-            <th>Rate</th>
-            <th>Weekly %</th>
+            <td>Gold</td>
+            <td>5,022.00</td>
+            <td class="pct positive">+0.09%</td>
+            <td>4,892.00 – 5,111.30</td>
           </tr>
-        </thead>
-        <tbody>
-          
-            <tr>
-              <td>AUD/USD</td>
-              <td>0.7102</td>
-              <td class="pct negative">-0.08%</td>
-            </tr>
-            <tr>
-              <td>CHF/USD</td>
-              <td>1.2933</td>
-              <td class="pct negative">-0.17%</td>
-            </tr>
-            <tr>
-              <td>EUR/USD</td>
-              <td>1.1803</td>
-              <td class="pct negative">-0.23%</td>
-            </tr>
-            <tr>
-              <td>GBP/USD</td>
-              <td>1.3491</td>
-              <td class="pct negative">-0.28%</td>
-            </tr>
-            <tr>
-              <td>JPY/USD</td>
-              <td>0.0064</td>
-              <td class="pct negative">-0.97%</td>
-            </tr>
+          <tr>
+            <td>Russell 2000</td>
+            <td>2,646.70</td>
+            <td class="pct negative">−0.78%</td>
+            <td>2,604.50 – 2,706.36</td>
+          </tr>
+          <tr>
+            <td>Dow Jones</td>
+            <td>49,500.93</td>
+            <td class="pct negative">−1.09%</td>
+            <td>49,084.35 – 50,512.79</td>
+          </tr>
+          <tr>
+            <td>S&amp;P 500</td>
+            <td>6,836.17</td>
+            <td class="pct negative">−1.17%</td>
+            <td>6,794.55 – 6,993.48</td>
+          </tr>
+          <tr>
+            <td>Nasdaq</td>
+            <td>22,546.67</td>
+            <td class="pct negative">−1.77%</td>
+            <td>22,402.38 – 23,320.62</td>
+          </tr>
+          <tr>
+            <td>10Y Treasury</td>
+            <td>4.06</td>
+            <td class="pct negative">−4.25%</td>
+            <td>4.05 – 4.24</td>
+          </tr>
         </tbody>
       </table>
-      
       <div class="snapshot-footer">
-        <span class="best">▲ Best: AUD/USD (-0.08%)</span>
-        <span class="worst">▼ Worst: JPY/USD (-0.97%)</span>
+        <span class="best">▲ Best: Gold (+0.09%)</span>
+        <span class="worst">▼ Worst: 10Y Treasury (−4.25%)</span>
       </div>
     </div>
 
     <!-- ECONOMIC EVENTS -->
     <div class="section-block">
-      <div class="section-title">Last Week’s Economic Events</div>
+      <div class="section-title">Last Week's Economic Events</div>
       <table class="events-table">
         <thead>
           <tr>
@@ -653,46 +576,57 @@
           </tr>
         </thead>
         <tbody>
-          
-            <tr>
-              <td>2026-02-23</td>
-              <td>Germany Ifo Business Climate (February)</td>
-              <td>88.6</td>
-              <td>88.4</td>
-              <td>87.6</td>
-              <td><span class="tag above">Above</span></td>
-            </tr>
-            <tr>
-              <td>2026-02-24</td>
-              <td>BOJ Summary of Opinions (January MPM)</td>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-              <td><span class="tag inline">Inline</span></td>
-            </tr>
-            <tr>
-              <td>2026-02-25</td>
-              <td>Eurozone CPI Final (January, YoY)</td>
-              <td>1.7%</td>
-              <td>1.7%</td>
-              <td>2.0%</td>
-              <td><span class="tag inline">Inline</span></td>
-            </tr>
+          <tr>
+            <td>Feb 10</td>
+            <td>CPI (Year-over-Year)</td>
+            <td>3.1%</td>
+            <td>2.9%</td>
+            <td>2.9%</td>
+            <td><span class="tag above">Above</span></td>
+          </tr>
+          <tr>
+            <td>Feb 11</td>
+            <td>Core CPI (Month-over-Month)</td>
+            <td>0.3%</td>
+            <td>0.3%</td>
+            <td>0.2%</td>
+            <td><span class="tag inline">Inline</span></td>
+          </tr>
+          <tr>
+            <td>Feb 12</td>
+            <td>Initial Jobless Claims</td>
+            <td>218,000</td>
+            <td>225,000</td>
+            <td>222,000</td>
+            <td><span class="tag below">Below</span></td>
+          </tr>
+          <tr>
+            <td>Feb 13</td>
+            <td>Retail Sales (Month-over-Month)</td>
+            <td>0.6%</td>
+            <td>0.3%</td>
+            <td>0.4%</td>
+            <td><span class="tag above">Above</span></td>
+          </tr>
         </tbody>
       </table>
+
       <div class="analysis-grid">
-        
         <div class="analysis-card">
-          <h4>📈 Germany Ifo Business Climate (February)</h4>
-          <p>German business confidence rose for the second consecutive month, reaching its highest level since August 2025. Manufacturing expectations improved on stronger order flows and upward production planning revisions. However, at 88.6 the index remains well below the long-run average, signaling a recovery that is tentative at best. Euro edged higher on the data; a sustained move above 90 would be needed to confirm a genuine turnaround in Europe's largest economy.</p>
+          <h4>🔥 CPI — Year-over-Year</h4>
+          <p>Hotter-than-expected inflation pressures the Fed to hold rates higher for longer. Bond prices may fall, and rate-sensitive sectors (REITs, utilities) could underperform. Consider inflation hedges like TIPS or commodities.</p>
         </div>
         <div class="analysis-card">
-          <h4>🏦 BOJ Summary of Opinions (January MPM)</h4>
-          <p>The summary of opinions from the BOJ's January 22-23 meeting (at which the policy rate was held at 0.75%) revealed an increasingly hawkish internal debate. Multiple members indicated readiness to raise rates further if spring Shunto wage negotiations confirm broad-based pay increases above 3%. The yen firmed modestly on publication. EWJ outlook remains mixed: a stronger yen pressures exporters, but a normalizing BOJ signals macro confidence. Next BOJ meeting in late March is now a live event for markets.</p>
+          <h4>➡️ Core CPI — Month-over-Month</h4>
+          <p>In-line core CPI is neutral — no new signal for the Fed. Markets may look through this and focus on the headline number that came in hot.</p>
         </div>
         <div class="analysis-card">
-          <h4>🔥 Eurozone CPI Final (January, YoY)</h4>
-          <p>Final Eurozone CPI for January confirmed the flash estimate at 1.7% â€” the lowest since September 2024 and well below the ECB's 2% target. Core CPI was confirmed at 2.2%, its lowest since October 2021. The print reinforces the ECB's data-dependent hold stance adopted at its February 5 meeting. Modestly positive for Eurozone rate-sensitive assets (EZU, FXE); the low inflation backdrop gives the ECB room to cut later in 2026 if growth disappoints.</p>
+          <h4>💼 Initial Jobless Claims</h4>
+          <p>Fewer layoffs than expected signals continued labor market strength. Good for consumer spending and cyclical stocks, but reinforces the Fed's case to stay hawkish.</p>
+        </div>
+        <div class="analysis-card">
+          <h4>🛒 Retail Sales — Month-over-Month</h4>
+          <p>Consumers are spending more than expected — bullish for retail and discretionary ETFs (XLY, XRT). But strong demand can also feed inflation, keeping rate-cut expectations in check.</p>
         </div>
       </div>
     </div>
@@ -702,34 +636,34 @@
       <div class="section-title">Upcoming Week</div>
       <table class="upcoming-table">
         <thead>
-          <tr>
-            <th>Date</th>
-            <th>Event</th>
-            <th>Importance</th>
-          </tr>
+          <tr><th>Date</th><th>Event</th><th>Importance</th></tr>
         </thead>
         <tbody>
-          
-            <tr>
-              <td>2026-03-02</td>
-              <td>China NBS Manufacturing PMI (February)</td>
-              <td><span class="imp-medium">Medium</span></td>
-            </tr>
-            <tr>
-              <td>2026-03-03</td>
-              <td>Eurozone CPI Flash (February, YoY)</td>
-              <td><span class="imp-high">High</span></td>
-            </tr>
-            <tr>
-              <td>2026-03-04</td>
-              <td>Australia Q4 2025 GDP (QoQ)</td>
-              <td><span class="imp-high">High</span></td>
-            </tr>
-            <tr>
-              <td>2026-03-06</td>
-              <td>Eurozone Q4 2025 GDP Final (YoY)</td>
-              <td><span class="imp-medium">Medium</span></td>
-            </tr>
+          <tr>
+            <td>Feb 16</td>
+            <td>Presidents' Day — Markets Closed</td>
+            <td><span class="imp-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>Feb 18</td>
+            <td>FOMC Meeting Minutes</td>
+            <td><span class="imp-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Feb 19</td>
+            <td>Housing Starts</td>
+            <td><span class="imp-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Feb 20</td>
+            <td>S&amp;P Global Flash US Manufacturing PMI</td>
+            <td><span class="imp-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Feb 20</td>
+            <td>S&amp;P Global Flash US Services PMI</td>
+            <td><span class="imp-high">High</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -739,30 +673,38 @@
       <div class="section-title">Positioning Tips</div>
       <table class="tips-table">
         <thead>
-          <tr>
-            <th>Signal</th>
-            <th>Suggested Action</th>
-          </tr>
+          <tr><th>Signal</th><th>Suggested Action</th></tr>
         </thead>
         <tbody>
-          
-            <tr>
-              <td class="signal-col">The Japanese Yen weakened 0.97% against the USD</td>
-              <td class="action-col">This reduces USD returns on unhedged Japan exposure (EWJ). Watch BOJ policy signals; any rate hike could trigger a sharp Yen reversal.</td>
-            </tr>
-            <tr>
-              <td class="signal-col">Eurozone CPI Flash on 2026-03-03</td>
-              <td class="action-col">A hot print would extend the ECB hold and pressure European bond proxies, while a soft print opens the door for H2 rate cuts, supportive of EFA, FEZ, and EUR-denominated duration.</td>
-            </tr>
+          <tr>
+            <td class="signal-col">CPI came in hot at 3.1% vs. 2.9% expected</td>
+            <td class="action-col">Inflation-sensitive sectors may see pressure. Consider TIPS (TIP) or defensive tilts (XLU, XLP).</td>
+          </tr>
+          <tr>
+            <td class="signal-col">Jobless claims below expectations (218K vs. 225K)</td>
+            <td class="action-col">Labor market remains tight, supporting risk-on positioning.</td>
+          </tr>
+          <tr>
+            <td class="signal-col">Retail sales surprised to the upside (0.6% vs. 0.3%)</td>
+            <td class="action-col">Consumer discretionary (XLY) and cyclicals may benefit.</td>
+          </tr>
+          <tr>
+            <td class="signal-col">FOMC Meeting Minutes drop Feb 18</td>
+            <td class="action-col">Expect volatility. Consider trimming position sizes or hedging with VIX calls.</td>
+          </tr>
+          <tr>
+            <td class="signal-col">Flash Manufacturing PMI on Feb 20</td>
+            <td class="action-col">A key read on factory activity. Watch industrials (XLI) for directional cues.</td>
+          </tr>
         </tbody>
       </table>
     </div>
 
   </div><!-- /content -->
 
-  <!-- FOOTER -->
+  <!-- ══ FOOTER ══ -->
   <footer class="footer">
-    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.35); font-size:10px; letter-spacing:1px;">INTERNATIONAL EDITION</span></div>
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.35); font-size:10px; letter-spacing:1px;">US EDITION</span></div>
     <div class="footer-disclaimer">
       Disclaimer: For informational purposes only. Not investment advice.<br/>
       Past performance is not indicative of future results.

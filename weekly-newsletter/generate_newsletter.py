@@ -2,6 +2,7 @@
 """Generate the Framework Foundry Weekly newsletter."""
 
 import argparse
+import json
 from datetime import date
 from pathlib import Path
 
@@ -66,6 +67,14 @@ def main():
     # Fetch
     raw_indices = fetch_index_data(date_str, use_mock=use_mock)
     econ = fetch_econ_calendar(date_str, use_mock=use_mock)
+
+    # Persist live data as fixture so build_combined_site.py uses the same prices
+    if args.live:
+        fixtures_dir = BASE_DIR / "fixtures"
+        fixtures_dir.mkdir(exist_ok=True)
+        fixture_path = fixtures_dir / f"indices_{date_str}.json"
+        fixture_path.write_text(json.dumps(raw_indices, indent=2), encoding="utf-8")
+        print(f"Fixture saved to {fixture_path}")
 
     # Cross-validate prices if requested (auto-enabled for --live unless --no-verify)
     if (args.live and not args.no_verify) or args.verify:
