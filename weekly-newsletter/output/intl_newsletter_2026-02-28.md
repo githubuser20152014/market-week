@@ -14,6 +14,36 @@ Looking ahead, key events to watch are: Eurozone CPI Flash (February, YoY), Aust
 
 ---
 
+## What This Means
+
+**International markets mostly rose this week.** The best performer was Nikkei 225 (Asia-Pacific) at +3.3%, while Hang Seng (Asia-Pacific) was the weakest at -0.6%.
+
+European stocks had a solid week (up +1.0% on average). If you hold European ETFs, that worked in your favour.
+
+Asia-Pacific was the standout region this week (+1.3% average). Japan's Nikkei led the region at +3.3%.
+
+Emerging markets (MSCI EM) gained +0.9% — a positive week for EM-tilted ETFs.
+
+
+**On currencies:**
+
+- The Japanese Yen weakened 1.0% against the dollar. If you hold Japan ETFs without a currency hedge, some of those stock gains were eaten up by the weaker Yen.
+
+
+**On the economic data front:**
+
+- Germany's Ifo Business Climate index ticked up to 88.6 — a tentative sign that Europe's largest economy may be stabilising. Not a recovery, but the direction is improving.
+
+- The Bank of Japan released meeting minutes that showed growing debate internally about raising rates further. If the BOJ does hike, the Yen typically strengthens — good for dollar-based Japan investors, but exporters (a big chunk of Japan's market) can suffer.
+
+- Eurozone inflation came in as expected at 1.7%. Inflation is on a cooling trend, which gives the ECB room to cut rates later in the year — a quiet positive for European bonds and dividend-paying sectors.
+
+**The bottom line:** A decent week for international holdings. If you're globally diversified, this week rewarded that. Keep an eye on currency moves — they can quietly add or subtract from your returns even when the underlying stocks look fine.
+
+**Watch next week:** Eurozone CPI Flash (February, YoY) and Australia Q4 2025 GDP (QoQ). These can move both local markets and currencies sharply — worth being positioned before the releases rather than reacting after.
+
+---
+
 ## Market Snapshot
 
 ![Weekly Performance Chart](intl_chart_2026-02-28.png)

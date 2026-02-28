@@ -10,6 +10,12 @@
 
 ---
 
+## What This Means
+
+{{ plain_summary }}
+
+---
+
 ## Market Snapshot
 
 ![Weekly Performance Chart]({{ chart_path }})
