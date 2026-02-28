@@ -144,6 +144,253 @@ def generate_narrative(index_data, econ):
     return f"{para1}\n\n{para2}\n\n{para3}"
 
 
+def generate_plain_english_summary(index_data, econ):
+    """Generate a plain-English 'What This Means' section for active investors.
+
+    Written for someone who just read the data and wants the so-what —
+    no jargon, no abbreviations unexplained, just clear takeaways.
+    """
+    if not index_data:
+        return "Not enough data to summarize this week."
+
+    lines = []
+
+    # ── 1. What happened in markets ──────────────────────────────────────────
+    sp = next((i for i in index_data if "S&P" in i["name"]), None)
+    nasdaq = next((i for i in index_data if "Nasdaq" in i["name"]), None)
+    dow = next((i for i in index_data if "Dow" in i["name"]), None)
+    gold = next((i for i in index_data if i["name"] == "Gold"), None)
+    treasury = next((i for i in index_data if "Treasury" in i["name"]), None)
+    usd = next((i for i in index_data if i["name"] == "USD Index"), None)
+
+    up_indices = [i for i in index_data if i["weekly_pct"] > 0 and i["name"] not in ("Gold", "USD Index", "10Y Treasury")]
+    down_indices = [i for i in index_data if i["weekly_pct"] < 0 and i["name"] not in ("Gold", "USD Index", "10Y Treasury")]
+
+    # Stock market direction sentence
+    if sp:
+        if sp["weekly_pct"] > 1.5:
+            stock_line = (f"**Stocks had a strong week.** The S&P 500 gained {sp['weekly_pct']:+.1f}%, "
+                          f"meaning a $10,000 portfolio tracking it grew by about ${abs(sp['weekly_pct']) * 100:,.0f}.")
+        elif sp["weekly_pct"] > 0:
+            stock_line = (f"**Stocks inched higher but nothing to write home about.** The S&P 500 was up just "
+                          f"{sp['weekly_pct']:+.1f}% — markets moved but didn't go anywhere decisive.")
+        elif sp["weekly_pct"] > -1.5:
+            stock_line = (f"**Stocks slipped modestly.** The S&P 500 lost {sp['weekly_pct']:.1f}% — a quiet "
+                          f"pullback, not a panic, but the direction was down.")
+        else:
+            stock_line = (f"**Stocks had a rough week.** The S&P 500 dropped {sp['weekly_pct']:.1f}%, "
+                          f"meaning a $10,000 portfolio tracking it lost about ${abs(sp['weekly_pct']) * 100:,.0f}.")
+        lines.append(stock_line)
+
+    # Tech vs broader market split
+    if nasdaq and sp:
+        diff = nasdaq["weekly_pct"] - sp["weekly_pct"]
+        if diff > 0.8:
+            lines.append(f"Tech led the way — Nasdaq outperformed the broader market by {diff:.1f} percentage points, "
+                         f"meaning growth and tech stocks had a relatively better week.")
+        elif diff < -0.8:
+            lines.append(f"Tech lagged — Nasdaq underperformed the broader market by {abs(diff):.1f} percentage points. "
+                         f"If you're heavy in tech ETFs, this week stung a bit more.")
+
+    # Gold signal
+    if gold:
+        if gold["weekly_pct"] > 1.5:
+            lines.append(f"**Gold surged {gold['weekly_pct']:+.1f}% to ${gold['close']:,.0f}.** "
+                         f"When gold runs like this it usually means investors are nervous — they're moving money "
+                         f"to something that holds value when everything else feels uncertain.")
+        elif gold["weekly_pct"] < -1.5:
+            lines.append(f"**Gold fell {gold['weekly_pct']:.1f}%.** Investors feel confident enough that they're not "
+                         f"rushing to safety. That's generally a good sign for risk assets.")
+        elif gold["weekly_pct"] > 0:
+            lines.append(f"Gold was up slightly ({gold['weekly_pct']:+.1f}%) — a mild safe-haven bid, "
+                         f"but nothing that signals serious alarm.")
+
+    # Treasury yield signal
+    if treasury:
+        if treasury["weekly_pct"] < -2:
+            lines.append(f"**Bond yields fell sharply** (the 10-year Treasury dropped to {treasury['close']:.2f}%). "
+                         f"Lower yields mean the bond market thinks the economy may be slowing, "
+                         f"or that inflation is cooling — either way, it's a signal worth watching. "
+                         f"It also means existing bonds in your portfolio went up in value.")
+        elif treasury["weekly_pct"] > 2:
+            lines.append(f"**Bond yields rose** (the 10-year Treasury climbed to {treasury['close']:.2f}%). "
+                         f"Rising yields mean bonds are losing value — if you hold long-dated bond ETFs (like TLT), "
+                         f"that hurt this week. It also makes borrowing more expensive, which weighs on growth stocks.")
+        else:
+            lines.append(f"Bond yields were relatively stable at {treasury['close']:.2f}% — "
+                         f"no dramatic signal from the rates market this week.")
+
+    # USD signal
+    if usd and abs(usd["weekly_pct"]) >= 0.4:
+        if usd["weekly_pct"] > 0:
+            lines.append(f"The dollar strengthened {usd['weekly_pct']:+.1f}%. A stronger dollar is a quiet headwind "
+                         f"if you hold international stock ETFs — the gains overseas get partially erased when "
+                         f"converted back to USD.")
+        else:
+            lines.append(f"The dollar weakened {usd['weekly_pct']:.1f}%. A softer dollar is a tailwind for "
+                         f"international ETFs and commodities like gold — it makes foreign assets worth more in "
+                         f"dollar terms when you bring the money home.")
+
+    # ── 2. What the economic data meant in plain English ─────────────────────
+    past = econ.get("past_week", [])
+    data_lines = []
+
+    for ev in past:
+        name = ev.get("event", "")
+        surprise = ev.get("surprise", "neutral")
+        actual = ev.get("actual", "--")
+        unit = ev.get("unit", "")
+
+        name_lower = name.lower()
+
+        if "consumer confidence" in name_lower:
+            if surprise == "above":
+                data_lines.append(f"The Consumer Confidence index came in at {actual} — higher than expected. "
+                                   f"Translation: everyday Americans feel relatively okay about their jobs and finances. "
+                                   f"That tends to support continued spending, which is good for the economy.")
+            elif surprise == "below":
+                data_lines.append(f"Consumer Confidence disappointed at {actual}. "
+                                   f"People are feeling less optimistic about the economy — when confidence drops, "
+                                   f"spending usually follows. Worth monitoring.")
+
+        elif "ppi" in name_lower or "producer price" in name_lower:
+            if surprise == "above":
+                data_lines.append(f"The Producer Price Index — basically what businesses pay for their inputs — "
+                                   f"came in hotter than expected at {actual}{unit}. "
+                                   f"This matters because when businesses pay more to make things, "
+                                   f"they eventually pass those costs on to you as higher prices. "
+                                   f"It also signals the Fed probably won't be cutting interest rates anytime soon.")
+            elif surprise == "below":
+                data_lines.append(f"Producer prices came in cooler than expected — good news on the inflation front. "
+                                   f"Lower input costs for businesses can eventually mean lower prices for consumers, "
+                                   f"and it gives the Fed more room to think about cutting rates.")
+
+        elif "pce" in name_lower:
+            if surprise == "above":
+                data_lines.append(f"The PCE inflation reading — the Fed's preferred way to measure inflation — "
+                                   f"came in hotter than expected at {actual}{unit}. "
+                                   f"This is a big deal: it tells the Fed that inflation isn't beaten yet, "
+                                   f"making interest rate cuts less likely and keeping pressure on stocks.")
+            elif surprise == "below":
+                data_lines.append(f"PCE inflation — the Fed's preferred gauge — cooled more than expected. "
+                                   f"That's the kind of data the Fed needs to see before cutting rates. "
+                                   f"Good news for growth stocks and bond prices.")
+
+        elif "cpi" in name_lower:
+            if surprise == "above":
+                data_lines.append(f"Inflation (CPI) ran hotter than expected at {actual}{unit}. "
+                                   f"Higher-than-expected inflation means the Fed is less likely to cut interest rates soon. "
+                                   f"Rate cuts are generally good for stocks — so this delays that tailwind.")
+            elif surprise == "below":
+                data_lines.append(f"Inflation (CPI) came in cooler than expected at {actual}{unit}. "
+                                   f"Progress on inflation gives the Fed more room to cut interest rates, "
+                                   f"which tends to be a positive for both stocks and bonds.")
+
+        elif "gdp" in name_lower:
+            if surprise == "above":
+                data_lines.append(f"GDP — the broadest measure of economic output — beat expectations at {actual}{unit}. "
+                                   f"A stronger economy generally means better corporate earnings ahead.")
+            elif surprise == "below":
+                data_lines.append(f"GDP growth came in below expectations at {actual}{unit}. "
+                                   f"The economy grew, but more slowly than hoped — a reminder that growth isn't guaranteed. "
+                                   f"Defensives (utilities, consumer staples) tend to hold up better in slower-growth environments.")
+
+        elif "tariff" in name_lower or "scotus" in name_lower:
+            data_lines.append(f"The big non-data story this week was trade policy. A court ruling challenged existing tariffs, "
+                               f"and a new 10% blanket import tax was announced. "
+                               f"Tariffs raise costs for U.S. companies that import goods — that pressure can squeeze profit margins "
+                               f"and eventually show up as higher prices. It's adding an extra layer of uncertainty "
+                               f"that the market doesn't love.")
+
+        elif "durable goods" in name_lower:
+            if surprise == "above":
+                data_lines.append(f"Durable goods orders — think big purchases like machinery and equipment — "
+                                   f"beat expectations. Businesses are still investing, which is a healthy economic signal.")
+            elif surprise == "below":
+                data_lines.append(f"Durable goods orders disappointed. Businesses are pulling back on big-ticket purchases "
+                                   f"— a caution signal for the industrial and manufacturing sector.")
+
+        elif "services pmi" in name_lower or "flash services" in name_lower:
+            if surprise == "below" and actual != "--":
+                try:
+                    val = float(actual)
+                    if val < 50:
+                        data_lines.append(f"The services sector — which drives most of the U.S. economy — "
+                                           f"unexpectedly contracted (PMI of {actual}, below the 50 line that separates "
+                                           f"growth from contraction). That's a meaningful warning sign.")
+                    else:
+                        data_lines.append(f"Services activity expanded but came in softer than expected at {actual}. "
+                                           f"The services sector is still growing but losing momentum.")
+                except (ValueError, TypeError):
+                    pass
+
+        elif "manufacturing pmi" in name_lower or "flash manufacturing" in name_lower:
+            if actual != "--":
+                try:
+                    val = float(actual)
+                    if val > 50:
+                        data_lines.append(f"Manufacturing activity expanded this week (PMI of {actual}). "
+                                           f"Factories are busier — generally positive for industrial stocks.")
+                    else:
+                        data_lines.append(f"Manufacturing activity contracted (PMI of {actual}, below 50). "
+                                           f"A slowdown in factory output can signal broader economic weakness ahead.")
+                except (ValueError, TypeError):
+                    pass
+
+    if data_lines:
+        lines.append("\n**On the economic data front:**")
+        lines.extend([f"- {dl}" for dl in data_lines])
+
+    # ── 3. Bottom line ────────────────────────────────────────────────────────
+    upcoming = econ.get("upcoming_week", [])
+    high_next = [e for e in upcoming if e.get("importance", 0) >= 3]
+
+    # Assess overall macro tone
+    hot_inflation = any(
+        ("ppi" in e.get("event", "").lower() or "pce" in e.get("event", "").lower() or "cpi" in e.get("event", "").lower())
+        and e.get("surprise") == "above"
+        for e in past
+    )
+    tariff_risk = any("tariff" in e.get("event", "").lower() or "scotus" in e.get("event", "").lower() for e in past)
+
+    bottom = []
+    if hot_inflation and tariff_risk:
+        bottom.append("**The bottom line:** It was an uncomfortable week to be an investor. "
+                       "Inflation is still sticky, trade policy is unpredictable, and the Fed has no reason to rescue "
+                       "markets with rate cuts yet. That's not a reason to panic — but it is a reason to make sure "
+                       "your portfolio isn't leaning too hard into rate-sensitive or import-dependent sectors.")
+    elif hot_inflation:
+        bottom.append("**The bottom line:** Inflation data came in hotter than hoped. "
+                       "Until that cools, don't expect the Fed to ride to the rescue with rate cuts. "
+                       "Portfolios tilted toward growth and long-duration bonds may face continued headwinds.")
+    elif tariff_risk:
+        bottom.append("**The bottom line:** Trade policy uncertainty is the dominant theme right now. "
+                       "Markets don't like uncertainty, and tariffs add costs across many sectors. "
+                       "Domestically-focused companies tend to be less exposed than global multinationals.")
+    elif gold and gold["weekly_pct"] > 1.5 and sp and sp["weekly_pct"] < 0:
+        bottom.append("**The bottom line:** Investors were in risk-off mode this week — "
+                       "selling stocks and buying gold. It's a defensive posture. "
+                       "Not necessarily a signal to sell everything, but worth checking whether your portfolio "
+                       "has enough defensive exposure for this kind of environment.")
+    elif sp and sp["weekly_pct"] > 1:
+        bottom.append("**The bottom line:** A solid week. The macro backdrop is supportive, "
+                       "and the market reflected that. Stay invested but keep an eye on the data "
+                       "coming next week — a surprise in either direction can quickly change the tone.")
+    else:
+        bottom.append("**The bottom line:** A relatively uneventful week with no dramatic shifts. "
+                       "Use quiet weeks like this to review your allocations rather than react to noise.")
+
+    if high_next:
+        next_names = [e["event"] for e in high_next[:2]]
+        bottom.append(f"**Watch next week:** {' and '.join(next_names)} are the key releases. "
+                       f"These can move markets — particularly bonds and rate-sensitive sectors — "
+                       f"so it's worth being positioned before the prints rather than reacting after.")
+
+    lines.extend(bottom)
+
+    return "\n\n".join(lines)
+
+
 def generate_positioning_tips(econ, index_data=None):
     """Generate rule-based positioning tips from economic events and index data.
 
@@ -255,6 +502,7 @@ def build_template_context(index_data, econ, date_str):
     """
     tips = generate_positioning_tips(econ, index_data)
     narrative = generate_narrative(index_data, econ)
+    plain_summary = generate_plain_english_summary(index_data, econ)
 
     best = index_data[0] if index_data else None
     worst = index_data[-1] if index_data else None
@@ -262,6 +510,7 @@ def build_template_context(index_data, econ, date_str):
     return {
         "date": date_str,
         "narrative": narrative,
+        "plain_summary": plain_summary,
         "indices": index_data,
         "best": best,
         "worst": worst,

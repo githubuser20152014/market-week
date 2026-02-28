@@ -14,6 +14,29 @@ Looking ahead, the key events to watch are: ISM Manufacturing PMI (February), IS
 
 ---
 
+## What This Means
+
+**Stocks slipped modestly.** The S&P 500 lost -0.3% — a quiet pullback, not a panic, but the direction was down.
+
+**Gold surged +2.1% to $5,230.** When gold runs like this it usually means investors are nervous — they're moving money to something that holds value when everything else feels uncertain.
+
+**Bond yields fell sharply** (the 10-year Treasury dropped to 3.96%). Lower yields mean the bond market thinks the economy may be slowing, or that inflation is cooling — either way, it's a signal worth watching. It also means existing bonds in your portfolio went up in value.
+
+
+**On the economic data front:**
+
+- The Consumer Confidence index came in at 91.2 — higher than expected. Translation: everyday Americans feel relatively okay about their jobs and finances. That tends to support continued spending, which is good for the economy.
+
+- The Producer Price Index — basically what businesses pay for their inputs — came in hotter than expected at 0.5%. This matters because when businesses pay more to make things, they eventually pass those costs on to you as higher prices. It also signals the Fed probably won't be cutting interest rates anytime soon.
+
+- The big non-data story this week was trade policy. A court ruling challenged existing tariffs, and a new 10% blanket import tax was announced. Tariffs raise costs for U.S. companies that import goods — that pressure can squeeze profit margins and eventually show up as higher prices. It's adding an extra layer of uncertainty that the market doesn't love.
+
+**The bottom line:** It was an uncomfortable week to be an investor. Inflation is still sticky, trade policy is unpredictable, and the Fed has no reason to rescue markets with rate cuts yet. That's not a reason to panic — but it is a reason to make sure your portfolio isn't leaning too hard into rate-sensitive or import-dependent sectors.
+
+**Watch next week:** ISM Manufacturing PMI (February) and ISM Services PMI (February) are the key releases. These can move markets — particularly bonds and rate-sensitive sectors — so it's worth being positioned before the prints rather than reacting after.
+
+---
+
 ## Market Snapshot
 
 ![Weekly Performance Chart](chart_2026-02-28.png)
