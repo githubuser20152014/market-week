@@ -605,6 +605,7 @@ def _render_daybreak_hero(date_str, ctx):
     <div class="hero-card hero-card--daily" style="border-top-color:#c9a84c;">
       <div class="hero-card-edition" style="color:#c9a84c;">&#127760; Daily Edition</div>
       <div class="hero-card-date">{display}</div>
+      <div style="font-family:'Raleway',sans-serif;font-size:9px;letter-spacing:1.5px;color:#6b7280;text-transform:uppercase;margin-bottom:14px;">Data as of 5:00 AM EST</div>
       <div class="hero-indices">{rows}</div>
       <a class="hero-cta" href="daily/{date_str}/index.html">Read Brief &rarr;</a>
     </div>"""
