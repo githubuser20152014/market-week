@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "date": "2026-03-03",
+    "generated_at": "2026-03-03T06:00:00Z",
+    "generation_source": "fixture"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 5940.0,
+      "close": 5983.99,
+      "daily_pct": 0.74
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 43800.0,
+      "close": 43840.91,
+      "daily_pct": 0.09
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 18900.0,
+      "close": 19026.39,
+      "daily_pct": 0.67
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2120.0,
+      "close": 2090.15,
+      "daily_pct": -1.41
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 2870.0,
+      "close": 2902.50,
+      "daily_pct": 1.13
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.27,
+      "close": 4.21,
+      "daily_pct": -1.41,
+      "is_yield": true,
+      "yield_change_bps": -6.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 108.5,
+      "close": 107.1,
+      "daily_pct": -1.29
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 37155.50,
+      "prev_close": 37800.0,
+      "daily_pct": -1.70,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23521.80,
+      "prev_close": 23200.0,
+      "daily_pct": 1.39,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8312.40,
+      "prev_close": 8280.0,
+      "daily_pct": 0.39,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22850.10,
+      "prev_close": 22750.0,
+      "daily_pct": 0.44,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8715.60,
+      "prev_close": 8680.0,
+      "daily_pct": 0.41,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8270.30,
+      "prev_close": 8210.0,
+      "daily_pct": 0.73,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.0523,
+      "prev_close": 1.0480,
+      "daily_pct": 0.41
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.2701,
+      "prev_close": 1.2670,
+      "daily_pct": 0.24
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 149.82,
+      "prev_close": 151.10,
+      "daily_pct": -0.85
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6310,
+      "prev_close": 0.6280,
+      "daily_pct": 0.48
+    },
+    "USD/CNH": {
+      "symbol": "CNYUSD=X",
+      "rate": 7.2415,
+      "prev_close": 7.2500,
+      "daily_pct": -0.12
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 5972.25,
+      "prev_close": 5983.99,
+      "daily_pct": -0.20
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 18985.50,
+      "prev_close": 19026.39,
+      "daily_pct": -0.21
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 43790.00,
+      "prev_close": 43840.91,
+      "daily_pct": -0.12
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "ISM Manufacturing PMI",
+        "actual": "50.3",
+        "expected": "49.5",
+        "previous": "50.9",
+        "unit": "",
+        "importance": 3,
+        "time_est": "10:00 AM",
+        "surprise": "above"
+      }
+    ],
+    "today": [
+      {
+        "event": "JOLTS Job Openings",
+        "actual": "--",
+        "expected": "7.7M",
+        "previous": "7.6M",
+        "unit": "",
+        "importance": 3,
+        "time_est": "10:00 AM"
+      },
+      {
+        "event": "Fed Chair Powell Testimony",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "10:00 AM"
+      }
+    ]
+  }
+}

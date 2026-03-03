@@ -1,0 +1,32 @@
+{
+  "futures": {
+    "S&P Futures":     { "symbol": "ES=F",  "label": "S&P 500 Futures" },
+    "Nasdaq Futures":  { "symbol": "NQ=F",  "label": "Nasdaq 100 Futures" },
+    "Dow Futures":     { "symbol": "YM=F",  "label": "Dow Futures" }
+  },
+  "us_indices": {
+    "S&P 500":       { "symbol": "^GSPC" },
+    "Dow Jones":     { "symbol": "^DJI"  },
+    "Nasdaq":        { "symbol": "^IXIC" },
+    "Russell 2000":  { "symbol": "^RUT"  },
+    "Gold":          { "symbol": "GC=F"  },
+    "10Y Treasury":  { "symbol": "^TNX", "is_yield": true },
+    "USD Index":     { "symbol": "DX-Y.NYB" }
+  },
+  "intl_indices": {
+    "Nikkei 225":    { "symbol": "^N225",     "region": "Asia-Pacific" },
+    "Hang Seng":     { "symbol": "^HSI",      "region": "Asia-Pacific" },
+    "ASX 200":       { "symbol": "^AXJO",     "region": "Asia-Pacific" },
+    "DAX":           { "symbol": "^GDAXI",    "region": "Europe" },
+    "FTSE 100":      { "symbol": "^FTSE",     "region": "Europe" },
+    "CAC 40":        { "symbol": "^FCHI",     "region": "Europe" },
+    "Euro Stoxx 50": { "symbol": "^STOXX50E", "region": "Europe" }
+  },
+  "fx": {
+    "EUR/USD": { "symbol": "EURUSD=X" },
+    "GBP/USD": { "symbol": "GBPUSD=X" },
+    "USD/JPY": { "symbol": "JPY=X"    },
+    "AUD/USD": { "symbol": "AUDUSD=X" },
+    "USD/CNH": { "symbol": "CNYUSD=X" }
+  }
+}

@@ -18,10 +18,13 @@ sys.path.insert(0, str(BASE_DIR))
 
 from build_site import render_html as render_us_html
 from intl_build_site import render_html as render_intl_html
+from daybreak_build_site import render_html as render_daybreak_html
 from data.fetch_data import fetch_index_data, fetch_econ_calendar
 from data.process_data import process_index_data, build_template_context
 from data.fetch_intl_data import fetch_intl_index_data, fetch_intl_fx_data, fetch_intl_econ_calendar
 from data.intl_process_data import process_intl_index_data, process_fx_data, build_intl_template_context
+from data.fetch_daybreak_data import fetch_daybreak_data
+from data.daybreak_process_data import build_daybreak_context
 
 OUTPUT_DIR = BASE_DIR / "output"
 SITE_DIR = BASE_DIR / "site"
@@ -129,17 +132,30 @@ _CSS = """\
     background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
   }
 
-  /* NAV STRIP */
-  .nav-strip {
-    background: var(--accent);
-    padding: 7px 40px;
+  /* NAV TABS */
+  .nav-tabs {
+    background: var(--navy);
+    padding: 0 40px;
+    display: flex;
+    border-bottom: 2px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-tab {
     font-family: 'Raleway', sans-serif;
     font-size: 9px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 3px;
-    color: rgba(255,255,255,0.9);
     text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
   }
+
+  .nav-tab:hover { color: rgba(255,255,255,0.75); }
+  .nav-tab.active--weekly { color: #fff; border-bottom-color: var(--accent); }
+  .nav-tab.active--daily  { color: #c9a84c; border-bottom-color: #c9a84c; }
 
   /* CONTENT */
   .content { padding: 40px; }
@@ -436,6 +452,19 @@ _LOGO_SVG = """\
         <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
       </svg>"""
 
+_NAV_TABS_WEEKLY = """\
+  <div class="nav-tabs">
+    <a class="nav-tab active--weekly" href="index.html">Weekly Editions</a>
+    <a class="nav-tab" href="daily/index.html">Market Day Break</a>
+  </div>"""
+
+_NAV_TABS_DAILY = """\
+  <div class="nav-tabs">
+    <a class="nav-tab" href="../index.html">Weekly Editions</a>
+    <a class="nav-tab active--daily" href="index.html">Market Day Break</a>
+  </div>"""
+
+
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def fmt_date(date_str):
@@ -467,6 +496,16 @@ def find_intl_dates():
     return sorted(dates, reverse=True)
 
 
+def find_daybreak_dates():
+    """Sorted (newest first) list of Market Day Break dates in output/."""
+    dates = []
+    for f in OUTPUT_DIR.glob("market_day_break_*.md"):
+        m = re.match(r"market_day_break_(\d{4}-\d{2}-\d{2})\.md$", f.name)
+        if m:
+            dates.append(m.group(1))
+    return sorted(dates, reverse=True)
+
+
 def find_pdf_src(date_str, edition="us"):
     """Return Path to the PDF in output/ for this date/edition, or None."""
     if edition == "us":
@@ -474,10 +513,14 @@ def find_pdf_src(date_str, edition="us"):
             OUTPUT_DIR / f"newsletter_us_{date_str}.pdf",
             OUTPUT_DIR / f"newsletter_{date_str}.pdf",
         ]
-    else:
+    elif edition == "intl":
         candidates = [
             OUTPUT_DIR / f"intl_newsletter_{date_str}.pdf",
             OUTPUT_DIR / f"intl_newsletter_us_{date_str}.pdf",
+        ]
+    else:  # daily
+        candidates = [
+            OUTPUT_DIR / f"market_day_break_{date_str}.pdf",
         ]
     for p in candidates:
         if p.exists():
@@ -543,13 +586,36 @@ def _render_intl_hero(date_str, ctx):
     </div>"""
 
 
+_DAYBREAK_PREVIEW_FUTURES = ["S&P Futures", "Nasdaq Futures", "Dow Futures"]
+
+
+def _render_daybreak_hero(date_str, ctx):
+    display = fmt_date(date_str)
+    futures_lookup = {f["name"]: f for f in ctx.get("futures", [])}
+    rows = ""
+    for name in _DAYBREAK_PREVIEW_FUTURES:
+        fut = futures_lookup.get(name)
+        if not fut:
+            continue
+        pct  = fut.get("daily_pct")
+        val  = f"{pct:+.2f}%" if pct is not None else "--"
+        cls  = "pct-pos" if (pct is not None and pct >= 0) else "pct-neg"
+        rows += f'<div class="hero-idx-row"><span>{name}</span><span class="{cls}">{val}</span></div>\n'
+    return f"""
+    <div class="hero-card hero-card--daily" style="border-top-color:#c9a84c;">
+      <div class="hero-card-edition" style="color:#c9a84c;">&#127760; Daily Edition</div>
+      <div class="hero-card-date">{display}</div>
+      <div class="hero-indices">{rows}</div>
+      <a class="hero-cta" href="daily/{date_str}/index.html">Read Brief &rarr;</a>
+    </div>"""
+
+
 # ── Landing page ──────────────────────────────────────────────────────────────
 
 def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
-    """Render site/index.html."""
-
-    # Hero cards (latest of each edition)
-    latest_us = us_dates[0] if us_dates else None
+    """Render site/index.html — Weekly Editions hub."""
+    # Hero cards (latest of each weekly edition)
+    latest_us   = us_dates[0]   if us_dates   else None
     latest_intl = intl_dates[0] if intl_dates else None
 
     us_hero = _render_us_hero(latest_us, us_ctxs[latest_us]) if latest_us else \
@@ -557,29 +623,27 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
     intl_hero = _render_intl_hero(latest_intl, intl_ctxs[latest_intl]) if latest_intl else \
         '<div class="hero-card no-issue">No International issue yet</div>'
 
-    # Archive: all unique dates sorted newest-first
+    # Archive: weekly dates only (US + Intl), 3 columns
     all_dates = sorted(set(us_dates) | set(intl_dates), reverse=True)
     archive_rows = ""
     for d in all_dates:
         display = fmt_date(d)
-        # US column
         if d in us_dates:
             us_html_link = f'<a class="archive-link" href="us/{d}/index.html">Read</a>'
-            us_pdf_name = pdf_map.get(("us", d))
-            us_pdf_link = f'<a class="archive-link pdf" href="downloads/{us_pdf_name}">PDF</a>' \
+            us_pdf_name  = pdf_map.get(("us", d))
+            us_pdf_link  = f'<a class="archive-link pdf" href="downloads/{us_pdf_name}">PDF</a>' \
                 if us_pdf_name else ""
         else:
             us_html_link = "&mdash;"
-            us_pdf_link = ""
-        # Intl column
+            us_pdf_link  = ""
         if d in intl_dates:
             intl_html_link = f'<a class="archive-link" href="intl/{d}/index.html">Read</a>'
-            intl_pdf_name = pdf_map.get(("intl", d))
-            intl_pdf_link = f'<a class="archive-link pdf" href="downloads/{intl_pdf_name}">PDF</a>' \
+            intl_pdf_name  = pdf_map.get(("intl", d))
+            intl_pdf_link  = f'<a class="archive-link pdf" href="downloads/{intl_pdf_name}">PDF</a>' \
                 if intl_pdf_name else ""
         else:
             intl_html_link = "&mdash;"
-            intl_pdf_link = ""
+            intl_pdf_link  = ""
 
         archive_rows += f"""
           <tr>
@@ -609,13 +673,13 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
         <span class="logo-name-framework">FRAMEWORK</span>
         <span class="logo-name-foundry">FOUNDRY</span>
         <div class="logo-rule"></div>
-        <span class="logo-tagline">Weekly Economic Intelligence &nbsp;&middot;&nbsp; US &amp; International Editions</span>
+        <span class="logo-tagline">US &amp; International Editions &nbsp;&middot;&nbsp; Research for the serious investor</span>
       </div>
     </div>
     <div class="header-accent"></div>
   </header>
 
-  <div class="nav-strip">Current Issues &nbsp;&middot;&nbsp; Archive &nbsp;&middot;&nbsp; <a href="https://frameworkfoundry.carrd.co" style="color:inherit;text-decoration:underline;">frameworkfoundry.info</a></div>
+{_NAV_TABS_WEEKLY}
 
   <div class="content">
 
@@ -686,6 +750,131 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
 </html>"""
 
 
+# ── Daily hub page ────────────────────────────────────────────────────────────
+
+def render_daily_hub(daybreak_dates, daybreak_ctxs, pdf_map):
+    """Render site/daily/index.html — Market Day Break hub."""
+    latest = daybreak_dates[0] if daybreak_dates else None
+
+    if latest:
+        daily_hero = _render_daybreak_hero(latest, daybreak_ctxs[latest])
+        # Patch the CTA link: from daily hub the brief is at ./{date}/index.html
+        daily_hero = daily_hero.replace(
+            f'href="daily/{latest}/index.html"',
+            f'href="{latest}/index.html"'
+        )
+    else:
+        daily_hero = '<div class="hero-card no-issue" style="border-top-color:#c9a84c;">No Daily Brief yet</div>'
+
+    archive_rows = ""
+    for d in daybreak_dates:
+        display = fmt_date(d)
+        html_link = f'<a class="archive-link" href="{d}/index.html">Read</a>'
+        pdf_name  = pdf_map.get(("daily", d))
+        pdf_link  = f'<a class="archive-link pdf" href="../downloads/{pdf_name}">PDF</a>' \
+            if pdf_name else ""
+        archive_rows += f"""
+          <tr>
+            <td>{display}</td>
+            <td>{html_link}{pdf_link}</td>
+          </tr>"""
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Framework Foundry &mdash; Market Day Break</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+{_CSS}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="header-inner">
+{_LOGO_SVG}
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Market Day Break &nbsp;&middot;&nbsp; Daily intelligence at the open</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+{_NAV_TABS_DAILY}
+
+  <div class="content">
+
+    <div class="section-label">Latest Brief</div>
+    <div class="hero-grid" style="grid-template-columns:1fr;">
+      {daily_hero}
+    </div>
+
+    <div class="section-label">Archive</div>
+    <table class="archive-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Daily Brief</th>
+        </tr>
+      </thead>
+      <tbody>
+        {archive_rows}
+      </tbody>
+    </table>
+
+  </div><!-- /content -->
+
+  <!-- SUBSCRIBE -->
+  <div class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Free daily market intelligence, every morning.</p>
+    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span class="share-label">Share Framework Foundry</span>
+    <div class="share-buttons">
+      <a class="share-btn twitter" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('Framework Foundry \u2014 free daily market intelligence:  '+window.location.href);return true;"
+         title="Share on X / Twitter">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="share-btn linkedin" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href);return true;"
+         title="Share on LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a class="share-btn facebook" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href);return true;"
+         title="Share on Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>"""
+
+
 # ── Main build ────────────────────────────────────────────────────────────────
 
 def build(use_mock=True):
@@ -704,9 +893,10 @@ def build(use_mock=True):
         print(f"  chart  -> assets/{chart.name}")
 
     # Copy PDFs → site/downloads/ and build map
-    pdf_map = {}  # ("us"|"intl", date_str) → filename
-    us_dates = find_us_dates()
-    intl_dates = find_intl_dates()
+    pdf_map = {}  # ("us"|"intl"|"daily", date_str) → filename
+    us_dates       = find_us_dates()
+    intl_dates     = find_intl_dates()
+    daybreak_dates = find_daybreak_dates()
 
     for date_str in us_dates:
         src = find_pdf_src(date_str, "us")
@@ -720,6 +910,13 @@ def build(use_mock=True):
         if src:
             shutil.copy2(src, downloads_dir / src.name)
             pdf_map[("intl", date_str)] = src.name
+            print(f"  pdf    -> downloads/{src.name}")
+
+    for date_str in daybreak_dates:
+        src = find_pdf_src(date_str, "daily")
+        if src:
+            shutil.copy2(src, downloads_dir / src.name)
+            pdf_map[("daily", date_str)] = src.name
             print(f"  pdf    -> downloads/{src.name}")
 
     # Build US issue pages
@@ -756,10 +953,34 @@ def build(use_mock=True):
         (issue_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  -> site/intl/{date_str}/index.html")
 
-    # Build landing page
+    # Build Daily (Market Day Break) issue pages
+    (SITE_DIR / "daily").mkdir(exist_ok=True)
+    daybreak_ctxs = {}
+    for date_str in daybreak_dates:
+        print(f"Building Daily {date_str} …")
+        try:
+            raw = fetch_daybreak_data(date_str, use_mock=use_mock)
+            ctx = build_daybreak_context(raw)
+        except Exception as e:
+            print(f"  WARNING: could not build daybreak context for {date_str}: {e}")
+            continue
+        daybreak_ctxs[date_str] = ctx
+
+        issue_dir = SITE_DIR / "daily" / date_str
+        issue_dir.mkdir(parents=True, exist_ok=True)
+        html = render_daybreak_html(ctx)
+        (issue_dir / "index.html").write_text(html, encoding="utf-8")
+        print(f"  -> site/daily/{date_str}/index.html")
+
+    # Build landing page (weekly editions hub)
     landing_html = render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map)
     (SITE_DIR / "index.html").write_text(landing_html, encoding="utf-8")
     print(f"  -> site/index.html")
+
+    # Build daily hub page
+    daily_hub_html = render_daily_hub(daybreak_dates, daybreak_ctxs, pdf_map)
+    (SITE_DIR / "daily" / "index.html").write_text(daily_hub_html, encoding="utf-8")
+    print(f"  -> site/daily/index.html")
 
     print(f"\nDone. Site built at {SITE_DIR}")
     print("Open site/index.html in a browser to preview.")

@@ -54,7 +54,12 @@ def generate_pdf(context, chart_path, output_dir, date_str,
     from playwright.sync_api import sync_playwright
 
     # Choose renderer based on edition
-    if context.get("fx_rates"):
+    # futures key → daybreak daily edition
+    # fx_rates key (without futures) → intl weekly edition
+    # neither → US weekly edition
+    if context.get("futures"):
+        from daybreak_build_site import render_html
+    elif context.get("fx_rates"):
         from intl_build_site import render_html
     else:
         from build_site import render_html

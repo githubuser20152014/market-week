@@ -1,0 +1,478 @@
+"""Process raw daybreak data into newsletter-ready content."""
+
+
+def process_us_close(raw: dict) -> list:
+    """Convert raw us_close dict to a sorted list (best daily_pct first).
+
+    Returns:
+        List of dicts with keys: name, symbol, close, daily_pct,
+        is_yield, yield_change_bps (last two only for treasury entries).
+    """
+    results = []
+    for name, info in raw.items():
+        daily_pct = info.get("daily_pct")
+        entry = {
+            "name":      name,
+            "symbol":    info.get("symbol", ""),
+            "close":     info.get("close"),
+            "daily_pct": daily_pct,
+        }
+        if info.get("is_yield"):
+            entry["is_yield"]         = True
+            entry["yield_change_bps"] = info.get("yield_change_bps")
+        results.append(entry)
+
+    results.sort(
+        key=lambda x: (x["daily_pct"] is None, -(x["daily_pct"] or 0))
+    )
+    return results
+
+
+def process_intl_overnight(raw: dict) -> list:
+    """Convert raw intl_overnight dict to a list: APAC first, then Europe.
+
+    Returns:
+        List of dicts with keys: name, symbol, region, status,
+        close, daily_pct, session_note.
+    """
+    apac   = []
+    europe = []
+    other  = []
+
+    for name, info in raw.items():
+        entry = {
+            "name":         name,
+            "symbol":       info.get("symbol", ""),
+            "region":       info.get("region", ""),
+            "status":       info.get("status", "closed"),
+            "close":        info.get("close"),
+            "daily_pct":    info.get("daily_pct"),
+            "session_note": info.get("session_note", ""),
+        }
+        region = info.get("region", "")
+        if region == "Asia-Pacific":
+            apac.append(entry)
+        elif region == "Europe":
+            europe.append(entry)
+        else:
+            other.append(entry)
+
+    return apac + europe + other
+
+
+def process_fx(raw: dict) -> list:
+    """Convert raw fx dict to a list."""
+    results = []
+    for name, info in raw.items():
+        results.append({
+            "name":       name,
+            "symbol":     info.get("symbol", ""),
+            "rate":       info.get("rate"),
+            "prev_close": info.get("prev_close"),
+            "daily_pct":  info.get("daily_pct"),
+        })
+    return results
+
+
+def process_futures(raw: dict) -> list:
+    """Convert raw futures dict to a list."""
+    results = []
+    for name, info in raw.items():
+        results.append({
+            "name":       name,
+            "symbol":     info.get("symbol", ""),
+            "price":      info.get("price"),
+            "prev_close": info.get("prev_close"),
+            "daily_pct":  info.get("daily_pct"),
+        })
+    return results
+
+
+# ── Narrative ─────────────────────────────────────────────────────────────────
+
+def generate_daybreak_narrative(us_indices: list, intl_indices: list,
+                                 fx: list, futures: list) -> str:
+    """Generate a 2-paragraph morning brief narrative.
+
+    Para 1: US close direction + FX/gold/treasury signals.
+    Para 2: APAC overnight + European early session + futures pre-market signal.
+    """
+    # ── Para 1: US close ─────────────────────────────────────────────────────
+    sp      = next((i for i in us_indices if "S&P" in i["name"]), None)
+    nasdaq  = next((i for i in us_indices if "Nasdaq" in i["name"]), None)
+    gold    = next((i for i in us_indices if i["name"] == "Gold"), None)
+    treasury = next((i for i in us_indices if "Treasury" in i["name"]), None)
+    eur_usd = next((f for f in fx if "EUR" in f["name"]), None)
+
+    if sp and sp["daily_pct"] is not None:
+        pct = sp["daily_pct"]
+        if pct > 1:
+            tone = "US stocks rallied on Monday's close"
+        elif pct > 0:
+            tone = "US stocks edged higher"
+        elif pct > -1:
+            tone = "US stocks slipped modestly"
+        else:
+            tone = "US stocks fell sharply"
+        para1 = f"{tone} — the S&P 500 ended {pct:+.2f}%"
+        if nasdaq and nasdaq["daily_pct"] is not None:
+            para1 += f", while the Nasdaq finished {nasdaq['daily_pct']:+.2f}%"
+        para1 += "."
+    else:
+        para1 = "US market data unavailable for yesterday's session."
+
+    safe_notes = []
+    if gold and gold["daily_pct"] is not None:
+        direction = "climbed" if gold["daily_pct"] > 0 else "fell"
+        safe_notes.append(
+            f"Gold {direction} {abs(gold['daily_pct']):.2f}% to "
+            f"${gold['close']:,.2f}" if gold["close"] else
+            f"Gold {direction} {abs(gold['daily_pct']):.2f}%"
+        )
+    if treasury and treasury.get("yield_change_bps") is not None:
+        bps = treasury["yield_change_bps"]
+        direction = "rose" if bps > 0 else "fell"
+        safe_notes.append(
+            f"the 10-year Treasury yield {direction} {abs(bps):.0f} bps "
+            f"to {treasury['close']:.2f}%"
+        )
+    if eur_usd and eur_usd["daily_pct"] is not None:
+        direction = "strengthened" if eur_usd["daily_pct"] < 0 else "softened"
+        safe_notes.append(
+            f"the dollar {direction} (EUR/USD {eur_usd['rate']:.4f})"
+            if eur_usd["rate"] else
+            f"the dollar {direction} against the euro"
+        )
+
+    if safe_notes:
+        para1 += " On the safe-haven front, " + ", while ".join(safe_notes) + "."
+
+    # ── Para 2: Overnight + futures ───────────────────────────────────────────
+    apac_entries   = [i for i in intl_indices if i["region"] == "Asia-Pacific"
+                      and i["daily_pct"] is not None]
+    europe_entries = [i for i in intl_indices if i["region"] == "Europe"
+                      and i["daily_pct"] is not None]
+
+    para2_parts = []
+    if apac_entries:
+        apac_up   = sum(1 for i in apac_entries if i["daily_pct"] >= 0)
+        apac_down = len(apac_entries) - apac_up
+        if apac_up == len(apac_entries):
+            apac_tone = "APAC markets closed broadly higher overnight"
+        elif apac_down == len(apac_entries):
+            apac_tone = "APAC markets closed broadly lower overnight"
+        else:
+            apac_tone = "APAC markets were mixed overnight"
+
+        best_apac  = max(apac_entries, key=lambda x: x["daily_pct"])
+        worst_apac = min(apac_entries, key=lambda x: x["daily_pct"])
+        if best_apac["name"] != worst_apac["name"]:
+            apac_tone += (
+                f", with {best_apac['name']} leading at {best_apac['daily_pct']:+.2f}% "
+                f"and {worst_apac['name']} lagging at {worst_apac['daily_pct']:+.2f}%"
+            )
+        para2_parts.append(apac_tone + ".")
+
+    if europe_entries:
+        eu_up   = sum(1 for i in europe_entries if i["daily_pct"] >= 0)
+        eu_down = len(europe_entries) - eu_up
+        partial = any(i["status"] == "partial" for i in europe_entries)
+        eu_label = "European markets are trading" if partial else "European markets closed"
+        if eu_up == len(europe_entries):
+            eu_tone = f"{eu_label} higher"
+        elif eu_down == len(europe_entries):
+            eu_tone = f"{eu_label} lower"
+        else:
+            eu_tone = f"{eu_label} mixed"
+        para2_parts.append(eu_tone + ".")
+
+    # Futures direction
+    fut_with_data = [f for f in futures if f["daily_pct"] is not None]
+    if fut_with_data:
+        all_green = all(f["daily_pct"] >= 0 for f in fut_with_data)
+        all_red   = all(f["daily_pct"] < 0  for f in fut_with_data)
+        if all_green:
+            para2_parts.append(
+                "US futures are pointing to a positive open across the board."
+            )
+        elif all_red:
+            para2_parts.append(
+                "US futures are signalling a cautious open — all three major contracts "
+                "are in the red heading into the session."
+            )
+        else:
+            para2_parts.append(
+                "US futures are sending a mixed signal ahead of the open."
+            )
+
+    para2 = " ".join(para2_parts) if para2_parts else \
+        "Overnight market data unavailable."
+
+    return f"{para1}\n\n{para2}"
+
+
+# ── Plain-English Summary ─────────────────────────────────────────────────────
+
+def generate_daybreak_plain_summary(us_indices: list, intl_indices: list,
+                                     futures: list, today_events: list) -> str:
+    """Plain-English 'What This Means' section for the morning brief."""
+    lines = []
+
+    sp = next((i for i in us_indices if "S&P" in i["name"]), None)
+    gold = next((i for i in us_indices if i["name"] == "Gold"), None)
+    treasury = next((i for i in us_indices if "Treasury" in i["name"]), None)
+
+    if sp and sp["daily_pct"] is not None:
+        pct = sp["daily_pct"]
+        if pct > 1.5:
+            lines.append(
+                f"**Yesterday was a strong session.** The S&P 500 gained {pct:+.1f}%, "
+                f"meaning a $10,000 index portfolio grew by about ${abs(pct) * 100:,.0f}."
+            )
+        elif pct > 0:
+            lines.append(
+                f"**Stocks edged higher yesterday.** The S&P 500 was up {pct:+.1f}% "
+                f"— a quiet positive session, nothing dramatic."
+            )
+        elif pct > -1.5:
+            lines.append(
+                f"**Stocks pulled back modestly yesterday.** The S&P 500 lost {abs(pct):.1f}% "
+                f"— a routine dip, not a panic."
+            )
+        else:
+            lines.append(
+                f"**Yesterday was a rough session.** The S&P 500 dropped {abs(pct):.1f}%, "
+                f"meaning a $10,000 index portfolio lost about ${abs(pct) * 100:,.0f}."
+            )
+
+    if gold and gold["daily_pct"] is not None:
+        if abs(gold["daily_pct"]) >= 0.8:
+            direction = "surged" if gold["daily_pct"] > 0 else "fell"
+            lines.append(
+                f"**Gold {direction} {abs(gold['daily_pct']):.1f}% yesterday.** "
+                + ("Investors are moving into safe havens — a sign of caution."
+                   if gold["daily_pct"] > 0 else
+                   "Investors feel confident enough to step away from safety assets.")
+            )
+
+    if treasury and treasury.get("yield_change_bps") is not None:
+        bps = treasury["yield_change_bps"]
+        if abs(bps) >= 5:
+            if bps > 0:
+                lines.append(
+                    f"**Bond yields rose {bps:.0f} bps** (10-year now at "
+                    f"{treasury['close']:.2f}%). Higher yields weigh on growth stocks "
+                    f"and raise borrowing costs."
+                )
+            else:
+                lines.append(
+                    f"**Bond yields fell {abs(bps):.0f} bps** (10-year now at "
+                    f"{treasury['close']:.2f}%). Falling yields typically support "
+                    f"growth stocks and bond prices."
+                )
+
+    # Futures signal
+    fut_with_data = [f for f in futures if f["daily_pct"] is not None]
+    if fut_with_data:
+        all_green = all(f["daily_pct"] >= 0 for f in fut_with_data)
+        all_red   = all(f["daily_pct"] < 0  for f in fut_with_data)
+        if all_green:
+            lines.append(
+                "**Pre-market futures are green** — the market is leaning toward a "
+                "risk-on open. Watch for follow-through once cash markets open."
+            )
+        elif all_red:
+            lines.append(
+                "**Pre-market futures are red** — the market is signalling caution. "
+                "It's worth watching whether sellers extend yesterday's weakness or "
+                "buyers step in at the open."
+            )
+
+    # Today's watch list preview
+    high_today = [e for e in today_events if e.get("importance", 0) >= 3]
+    if high_today:
+        names = [e["event"] for e in high_today[:2]]
+        lines.append(
+            f"**Today's key events:** {' and '.join(names)} are on the calendar. "
+            "These can move markets — particularly bonds and rate-sensitive sectors — "
+            "so be positioned before the prints rather than reacting after."
+        )
+
+    if not lines:
+        return "No strong signals to call out this morning."
+
+    return "\n\n".join(lines)
+
+
+# ── Positioning Tips ──────────────────────────────────────────────────────────
+
+def generate_daybreak_positioning_tips(us_indices: list, futures: list,
+                                        yesterday_events: list,
+                                        today_events: list) -> list:
+    """Generate 4-6 rule-based positioning tips for the daily brief.
+
+    Rules mirror process_data.py's generate_positioning_tips() and add
+    a futures-direction rule:
+    - All futures green → risk-on open signal
+    - All futures red   → cautious open signal
+    """
+    tips = []
+
+    # ── Futures direction ─────────────────────────────────────────────────────
+    fut_with_data = [f for f in futures if f["daily_pct"] is not None]
+    if fut_with_data:
+        all_green = all(f["daily_pct"] >= 0 for f in fut_with_data)
+        all_red   = all(f["daily_pct"] < 0  for f in fut_with_data)
+        if all_green:
+            sp_fut = next((f for f in fut_with_data if "S&P" in f["name"]), None)
+            val = f"{sp_fut['daily_pct']:+.2f}%" if sp_fut else "positive"
+            tips.append(
+                f"All three futures contracts are green (S&P Futures {val})"
+                " -- risk-on open signalled. Consider maintaining or adding to "
+                "broad market exposure (SPY, QQQ) early in the session."
+            )
+        elif all_red:
+            sp_fut = next((f for f in fut_with_data if "S&P" in f["name"]), None)
+            val = f"{sp_fut['daily_pct']:+.2f}%" if sp_fut else "negative"
+            tips.append(
+                f"All three futures contracts are red (S&P Futures {val})"
+                " -- cautious open expected. Consider reducing intraday risk or "
+                "waiting for price to stabilise before adding long exposure."
+            )
+
+    # ── USD direction ─────────────────────────────────────────────────────────
+    usd = next((i for i in us_indices if i["name"] == "USD Index"), None)
+    if usd and usd["daily_pct"] is not None and abs(usd["daily_pct"]) >= 0.5:
+        if usd["daily_pct"] > 0:
+            tips.append(
+                f"USD Index strengthened {usd['daily_pct']:+.2f}% yesterday"
+                " -- a stronger dollar weighs on multinational earnings and commodities. "
+                "Consider trimming exposure to export-heavy sectors and commodity ETFs (GLD, DJP)."
+            )
+        else:
+            tips.append(
+                f"USD Index weakened {usd['daily_pct']:+.2f}% yesterday"
+                " -- a softer dollar is a tailwind for emerging markets (EEM, VWO) "
+                "and commodities (GLD, DJP). Consider tilting toward international "
+                "and commodity exposure."
+            )
+
+    # ── Yesterday's event-based tips ─────────────────────────────────────────
+    for event in yesterday_events:
+        name     = event.get("event", "").lower()
+        surprise = event.get("surprise", "")
+        actual   = event.get("actual", "--")
+        expected = event.get("expected", "--")
+        unit     = event.get("unit", "")
+
+        if "cpi" in name and "core" not in name and surprise == "above":
+            tips.append(
+                f"CPI came in hot at {actual}{unit} vs. {expected}{unit} expected yesterday"
+                " -- inflation-sensitive sectors may see continued pressure. "
+                "Consider TIPS (TIP) or defensive tilts (XLU, XLP)."
+            )
+        if "retail sales" in name and surprise == "above":
+            tips.append(
+                f"Retail sales surprised to the upside ({actual}{unit} vs. {expected}{unit})"
+                " -- consumer discretionary (XLY) and cyclicals may extend gains."
+            )
+        if "jobless claims" in name and surprise == "below":
+            tips.append(
+                "Jobless claims came in lower than expected"
+                " -- labor market remains tight, supporting risk-on positioning."
+            )
+
+    # ── Today's event-based tips ──────────────────────────────────────────────
+    for event in today_events:
+        name = event.get("event", "").lower()
+        if "fomc" in name:
+            tips.append(
+                f"FOMC event today"
+                " -- expect volatility around the announcement. "
+                "Consider trimming position sizes or hedging with VIX calls."
+            )
+        if "pce" in name:
+            tips.append(
+                "PCE Price Index releases today"
+                " -- the Fed's preferred inflation gauge. "
+                "A hot print could reprice rate-cut expectations; "
+                "consider hedging bond duration (TLT) and adding inflation protection (TIPS, GLD)."
+            )
+        if "gdp" in name:
+            tips.append(
+                "GDP releases today"
+                " -- a weak print shifts sentiment toward defensives (XLU, XLP); "
+                "a strong beat supports risk-on positioning in cyclicals (XLY, XLI)."
+            )
+        if "cpi" in name and "today" not in tips[-1] if tips else True:
+            tips.append(
+                "CPI releases today"
+                " -- watch for a surprise in either direction. "
+                "Hot print → TIPS and defensives; cool print → growth stocks and long bonds."
+            )
+
+    if not tips:
+        tips.append(
+            "No strong directional signals this morning -- maintain current allocations "
+            "and watch for intraday cues."
+        )
+
+    return tips[:6]  # cap at 6 tips
+
+
+# ── Context builder ───────────────────────────────────────────────────────────
+
+def build_daybreak_context(raw: dict) -> dict:
+    """Build the full template context for the daybreak edition.
+
+    Args:
+        raw: Full daybreak payload from fetch_daybreak_data().
+
+    Returns:
+        Dict ready for Jinja2 rendering and HTML generation.
+    """
+    date_str = raw.get("meta", {}).get("date", "")
+
+    us_indices   = process_us_close(raw.get("us_close", {}))
+    intl_indices = process_intl_overnight(raw.get("intl_overnight", {}))
+    fx_rates     = process_fx(raw.get("fx", {}))
+    futures      = process_futures(raw.get("futures", {}))
+
+    yesterday_events = raw.get("econ_calendar", {}).get("yesterday", [])
+    today_events     = raw.get("econ_calendar", {}).get("today", [])
+
+    narrative    = generate_daybreak_narrative(us_indices, intl_indices,
+                                               fx_rates, futures)
+    plain_summary = generate_daybreak_plain_summary(us_indices, intl_indices,
+                                                     futures, today_events)
+    tips         = generate_daybreak_positioning_tips(us_indices, futures,
+                                                       yesterday_events, today_events)
+
+    # Best / worst US performers (equity only)
+    _NON_EQUITY = {"Gold", "USD Index"}
+    equity_us = [
+        i for i in us_indices
+        if i["name"] not in _NON_EQUITY
+        and "Treasury" not in i["name"]
+        and i["daily_pct"] is not None
+    ]
+    us_best  = equity_us[0]  if equity_us else None
+    us_worst = equity_us[-1] if equity_us else None
+
+    return {
+        "date":           date_str,
+        "edition":        "Daily Edition",
+        "tagline":        "Daily Edition \u00b7 Market intelligence at the open",
+        "region_banner":  "Coverage: US Close \u00b7 Asia-Pacific \u00b7 Europe \u00b7 FX \u00b7 Macro",
+        "narrative":      narrative,
+        "plain_summary":  plain_summary,
+        "us_indices":     us_indices,
+        "intl_indices":   intl_indices,
+        "fx_rates":       fx_rates,
+        "futures":        futures,
+        "yesterday_events": yesterday_events,
+        "today_events":     today_events,
+        "tips":           tips,
+        "us_best":        us_best,
+        "us_worst":       us_worst,
+    }
