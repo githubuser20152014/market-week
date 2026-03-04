@@ -6,7 +6,7 @@
 
 ## Morning Brief
 
-US stocks slipped modestly — the S&P 500 ended -0.94%, while the Nasdaq finished -1.02%. On the safe-haven front, Gold climbed 1.71% to $5,194.80, while the 10-year Treasury yield rose 1 bps to 4.06%, while the dollar strengthened (EUR/USD 1.1636). WTI crude fell 0.09% to $74.49/bbl.
+US stocks slipped modestly — the S&P 500 ended -0.94%, while the Nasdaq finished -1.02%. On the safe-haven front, Gold climbed 1.70% to $5,194.20, while the 10-year Treasury yield rose 1 bps to 4.06%, while the dollar strengthened (EUR/USD 1.1635). WTI crude fell 0.05% to $74.52/bbl.
 
 APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and Nikkei 225 lagging at -3.61%. European markets are trading higher. US futures are sending a mixed signal ahead of the open.
 
@@ -24,14 +24,14 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | # | Headline | Source |
 |---|----------|--------|
-| 1 | [Treasury Secretary Bessent says U.S. will make 'series of announcements' to support oil trade in the Gulf](https://www.cnbc.com/2026/03/04/treasury-secretary-bessent-says-us-will-make-series-of-announcements-to-support-oil-trade-in-the-gulf.html) | CNBC |
-| 2 | ['No to war’: Spain PM hits back over Trump’s threats to cut trade over military base access](https://www.cnbc.com/2026/03/04/spain-pm-sanchez-trump-trade-nato-defense-iran-israel-crisis.html) | CNBC |
-| 3 | [Weekly mortgage demand surged 11% higher last week, as rates sat near 4-year low](https://www.cnbc.com/2026/03/04/weekly-mortgage-demand-surged-11percent-higher-last-week.html) | CNBC |
-| 4 | [Goldman's David Solomon surprised by ‘benign’ market reaction to Iran war](https://www.cnbc.com/2026/03/04/goldman-david-solomon-iran-war-market-reaction-stocks.html) | CNBC |
-| 5 | [Democrats tread cautiously around another Trump impeachment after 'illegal' Iran strikes](https://www.cnbc.com/2026/03/04/trump-impeachment-iran-strikes-war-democrats.html) | CNBC |
-| 6 | [Apple raises MacBook prices across the board as M5 chips, new displays signal AI-first strategy](https://www.cnbc.com/2026/03/03/apple-macbook-prices-m5-ai.html) | CNBC |
-| 7 | [China's Xiaomi tells CNBC it's planning a yearly smartphone chip release and its own AI assistant for overseas](https://www.cnbc.com/2026/03/04/xiaomi-plans-yearly-smartphone-chip-release-ai-assistant-for-overseas.html) | CNBC |
-| 8 | [The lead U.S. cyber agency is stretched thin as Iran hacking threat escalates](https://www.cnbc.com/2026/03/03/iran-cisa-cybersecurity-war-threat.html) | CNBC |
+| 1 | [Bessent says global 15% tariff starts this week, move back to prior rates within 5 months](https://www.cnbc.com/2026/03/04/bessent-says-global-15percent-tariff-starts-this-week-move-back-to-prior-rates-within-5-months.html) | CNBC |
+| 2 | [Treasury Secretary Bessent says U.S. will make 'series of announcements' to support oil trade in the Gulf](https://www.cnbc.com/2026/03/04/treasury-secretary-bessent-says-us-will-make-series-of-announcements-to-support-oil-trade-in-the-gulf.html) | CNBC |
+| 3 | ['No to war’: Spain PM hits back over Trump’s threats to cut trade over military base access](https://www.cnbc.com/2026/03/04/spain-pm-sanchez-trump-trade-nato-defense-iran-israel-crisis.html) | CNBC |
+| 4 | [Weekly mortgage demand surged 11% higher last week, as rates sat near 4-year low](https://www.cnbc.com/2026/03/04/weekly-mortgage-demand-surged-11percent-higher-last-week.html) | CNBC |
+| 5 | [Goldman's David Solomon surprised by ‘benign’ market reaction to Iran war](https://www.cnbc.com/2026/03/04/goldman-david-solomon-iran-war-market-reaction-stocks.html) | CNBC |
+| 6 | [Democrats tread cautiously around another Trump impeachment after 'illegal' Iran strikes](https://www.cnbc.com/2026/03/04/trump-impeachment-iran-strikes-war-democrats.html) | CNBC |
+| 7 | [Apple raises MacBook prices across the board as M5 chips, new displays signal AI-first strategy](https://www.cnbc.com/2026/03/03/apple-macbook-prices-m5-ai.html) | CNBC |
+| 8 | [China's Xiaomi tells CNBC it's planning a yearly smartphone chip release and its own AI assistant for overseas](https://www.cnbc.com/2026/03/04/xiaomi-plans-yearly-smartphone-chip-release-ai-assistant-for-overseas.html) | CNBC |
 
 ---
 
@@ -39,9 +39,9 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Index | Close | Daily % |
 |-------|-------|---------|
-| Gold | 5194.80 | +1.71% |
+| Gold | 5194.20 | +1.70% |
 | 10Y Treasury | 4.06% | +1 bps |
-| USD Index | 98.76 | -0.29% |
+| USD Index | 98.85 | -0.20% |
 | Dow Jones | 48501.27 | -0.83% |
 | S&P 500 | 6816.63 | -0.94% |
 | Nasdaq | 22516.69 | -1.02% |
@@ -67,10 +67,10 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Index | Price | Daily % | Session |
 |-------|-------|---------|---------|
-| DAX | 24156.43 | +1.54% | Early session (~3h in) |
-| FTSE 100 | 10560.06 | +0.72% | Early session (~3h in) |
-| CAC 40 | 8190.35 | +1.07% | Early session (~3h in) |
-| Euro Stoxx 50 | 5870.66 | +1.71% | Early session (~3h in) |
+| DAX | 24084.86 | +1.24% | Early session (~3h in) |
+| FTSE 100 | 10542.83 | +0.56% | Early session (~3h in) |
+| CAC 40 | 8169.41 | +0.81% | Early session (~3h in) |
+| Euro Stoxx 50 | 5851.26 | +1.38% | Early session (~3h in) |
 
 
 ---
@@ -79,12 +79,12 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Pair | Rate | Daily % |
 |------|------|---------|
-| EUR/USD | 1.1636 | -0.52% |
-| GBP/USD | 1.3366 | -0.33% |
-| USD/JPY | 157.2090 | -0.03% |
-| AUD/USD | 0.7047 | -0.83% |
-| USD/CNH | 6.9021 | -0.12% |
-| CHF/USD | 1.2812 | -0.23% |
+| EUR/USD | 1.1635 | -0.54% |
+| GBP/USD | 1.3368 | -0.32% |
+| USD/JPY | 157.1840 | -0.05% |
+| AUD/USD | 0.7044 | -0.87% |
+| USD/CNH | 6.9003 | -0.15% |
+| CHF/USD | 1.2819 | -0.17% |
 
 
 ---
@@ -93,10 +93,12 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Contract | Price | Daily % |
 |----------|-------|---------|
-| S&P Futures | 6826.50 | +0.03% |
-| Nasdaq Futures | 24777.50 | +0.09% |
-| Dow Futures | 48533.00 | -0.06% |
-| WTI Crude Oil | 74.49 | -0.09% |
+| S&P Futures | 6821.00 | -0.05% |
+| Nasdaq Futures | 24759.00 | +0.01% |
+| Dow Futures | 48494.00 | -0.14% |
+| Gold Futures | 5194.60 | +1.71% |
+| 10Y T-Note | 112.84 | -0.23% |
+| WTI Crude Oil | 74.52 | -0.05% |
 
 
 ---

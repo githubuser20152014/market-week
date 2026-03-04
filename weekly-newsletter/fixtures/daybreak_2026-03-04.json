@@ -1,7 +1,7 @@
 {
   "meta": {
     "date": "2026-03-04",
-    "generated_at": "2026-03-04T12:30:16.667794Z",
+    "generated_at": "2026-03-04T12:35:56.145409Z",
     "generation_source": "live"
   },
   "us_close": {
@@ -32,8 +32,8 @@
     "Gold": {
       "symbol": "GC=F",
       "prev_close": 5107.3999,
-      "close": 5194.7998,
-      "daily_pct": 1.7112
+      "close": 5194.2002,
+      "daily_pct": 1.6995
     },
     "10Y Treasury": {
       "symbol": "^TNX",
@@ -46,8 +46,8 @@
     "USD Index": {
       "symbol": "DX-Y.NYB",
       "prev_close": 99.05,
-      "close": 98.759,
-      "daily_pct": -0.2938
+      "close": 98.852,
+      "daily_pct": -0.1999
     }
   },
   "intl_overnight": {
@@ -82,101 +82,113 @@
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24156.43,
+      "close": 24084.86,
       "prev_close": 23790.65,
-      "daily_pct": 1.5375,
+      "daily_pct": 1.2367,
       "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10560.06,
+      "close": 10542.83,
       "prev_close": 10484.1,
-      "daily_pct": 0.7245,
+      "daily_pct": 0.5602,
       "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8190.35,
+      "close": 8169.41,
       "prev_close": 8103.84,
-      "daily_pct": 1.0675,
+      "daily_pct": 0.8091,
       "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5870.66,
+      "close": 5851.26,
       "prev_close": 5771.73,
-      "daily_pct": 1.714,
+      "daily_pct": 1.3779,
       "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.1636,
+      "rate": 1.16347,
       "prev_close": 1.16973,
-      "daily_pct": -0.5236
+      "daily_pct": -0.5352
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.33659,
+      "rate": 1.33676,
       "prev_close": 1.34106,
-      "daily_pct": -0.3328
+      "daily_pct": -0.3208
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 157.209,
+      "rate": 157.18401,
       "prev_close": 157.257,
-      "daily_pct": -0.0305
+      "daily_pct": -0.0464
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": 0.70467,
+      "rate": 0.70437,
       "prev_close": 0.71058,
-      "daily_pct": -0.8314
+      "daily_pct": -0.8734
     },
     "USD/CNH": {
       "symbol": "USDCNH=X",
-      "rate": 6.90209,
+      "rate": 6.9003,
       "prev_close": 6.91068,
-      "daily_pct": -0.1243
+      "daily_pct": -0.1502
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28123,
+      "rate": 1.28194,
       "prev_close": 1.28418,
-      "daily_pct": -0.2293
+      "daily_pct": -0.1743
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6826.5,
+      "price": 6821.0,
       "prev_close": 6824.75,
-      "daily_pct": 0.0256
+      "daily_pct": -0.0549
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 24777.5,
+      "price": 24759.0,
       "prev_close": 24755.75,
-      "daily_pct": 0.0879
+      "daily_pct": 0.0131
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": 48533.0,
+      "price": 48494.0,
       "prev_close": 48560.0,
-      "daily_pct": -0.0556
+      "daily_pct": -0.1359
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5194.6,
+      "prev_close": 5107.4,
+      "daily_pct": 1.7073
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 112.84,
+      "prev_close": 113.11,
+      "daily_pct": -0.2348
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": 74.49,
+      "price": 74.52,
       "prev_close": 74.56,
-      "daily_pct": -0.0939
+      "daily_pct": -0.0536
     }
   },
   "econ_calendar": {
@@ -184,6 +196,13 @@
     "today": []
   },
   "market_news": [
+    {
+      "headline": "Bessent says global 15% tariff starts this week, move back to prior rates within 5 months",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 12:35:06 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/bessent-says-global-15percent-tariff-starts-this-week-move-back-to-prior-rates-within-5-months.html",
+      "summary": ""
+    },
     {
       "headline": "Treasury Secretary Bessent says U.S. will make 'series of announcements' to support oil trade in the Gulf",
       "source": "CNBC",
@@ -232,13 +251,6 @@
       "published": "Wed, 04 Mar 2026 10:58:28 GMT",
       "url": "https://www.cnbc.com/2026/03/04/xiaomi-plans-yearly-smartphone-chip-release-ai-assistant-for-overseas.html",
       "summary": "Last year, Xiaomi launched the XRing O1, a system-on-chip (SoC) based on an advanced 3 nanometer manufacturing process."
-    },
-    {
-      "headline": "The lead U.S. cyber agency is stretched thin as Iran hacking threat escalates",
-      "source": "CNBC",
-      "published": "Tue, 03 Mar 2026 22:39:12 GMT",
-      "url": "https://www.cnbc.com/2026/03/03/iran-cisa-cybersecurity-war-threat.html",
-      "summary": "Last week, CISA's acting director was reassigned to a new division within DHS and the agency is operating under a partial shutdown."
     }
   ]
 }
