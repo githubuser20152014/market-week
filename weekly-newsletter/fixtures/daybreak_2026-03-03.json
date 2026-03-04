@@ -136,6 +136,12 @@
       "rate": 7.2415,
       "prev_close": 7.2500,
       "daily_pct": -0.12
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
     }
   },
   "futures": {
