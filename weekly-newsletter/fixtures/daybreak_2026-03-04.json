@@ -1,7 +1,7 @@
 {
   "meta": {
     "date": "2026-03-04",
-    "generated_at": "2026-03-04T12:20:43.116425Z",
+    "generated_at": "2026-03-04T12:22:37.169730Z",
     "generation_source": "live"
   },
   "us_close": {
@@ -32,8 +32,8 @@
     "Gold": {
       "symbol": "GC=F",
       "prev_close": 5107.3999,
-      "close": 5211.8999,
-      "daily_pct": 2.0461
+      "close": 5210.0,
+      "daily_pct": 2.0089
     },
     "10Y Treasury": {
       "symbol": "^TNX",
@@ -46,8 +46,8 @@
     "USD Index": {
       "symbol": "DX-Y.NYB",
       "prev_close": 99.05,
-      "close": 98.752,
-      "daily_pct": -0.3009
+      "close": 98.748,
+      "daily_pct": -0.3049
     }
   },
   "intl_overnight": {
@@ -82,63 +82,63 @@
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24149.84,
+      "close": 24159.42,
       "prev_close": 23790.65,
-      "daily_pct": 1.5098,
+      "daily_pct": 1.5501,
       "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10562.92,
+      "close": 10561.23,
       "prev_close": 10484.1,
-      "daily_pct": 0.7518,
+      "daily_pct": 0.7357,
       "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8187.27,
+      "close": 8188.19,
       "prev_close": 8103.84,
-      "daily_pct": 1.0295,
+      "daily_pct": 1.0409,
       "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5870.29,
+      "close": 5872.28,
       "prev_close": 5771.73,
-      "daily_pct": 1.7076,
+      "daily_pct": 1.7421,
       "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.16496,
+      "rate": 1.16455,
       "prev_close": 1.16973,
-      "daily_pct": -0.4077
+      "daily_pct": -0.4425
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.33829,
+      "rate": 1.33804,
       "prev_close": 1.34106,
-      "daily_pct": -0.2061
+      "daily_pct": -0.2248
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 157.063,
+      "rate": 157.146,
       "prev_close": 157.257,
-      "daily_pct": -0.1234
+      "daily_pct": -0.0706
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": 0.70552,
+      "rate": 0.70567,
       "prev_close": 0.71058,
-      "daily_pct": -0.7125
+      "daily_pct": -0.6915
     },
     "USD/CNH": {
       "symbol": "CNYUSD=X",
@@ -148,35 +148,35 @@
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28238,
+      "rate": 1.28179,
       "prev_close": 1.28418,
-      "daily_pct": -0.1398
+      "daily_pct": -0.1859
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6835.5,
+      "price": 6835.25,
       "prev_close": 6824.75,
-      "daily_pct": 0.1575
+      "daily_pct": 0.1539
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 24811.0,
+      "price": 24812.0,
       "prev_close": 24755.75,
-      "daily_pct": 0.2232
+      "daily_pct": 0.2272
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": 48584.0,
+      "price": 48589.0,
       "prev_close": 48560.0,
-      "daily_pct": 0.0494
+      "daily_pct": 0.0597
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": 74.83,
+      "price": 74.69,
       "prev_close": 74.56,
-      "daily_pct": 0.3621
+      "daily_pct": 0.1744
     }
   },
   "econ_calendar": {
