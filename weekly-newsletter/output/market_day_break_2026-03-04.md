@@ -6,7 +6,7 @@
 
 ## Morning Brief
 
-US stocks slipped modestly — the S&P 500 ended -0.94%, while the Nasdaq finished -1.02%. On the safe-haven front, Gold climbed 1.91% to $5,204.70, while the 10-year Treasury yield rose 1 bps to 4.06%, while the dollar strengthened (EUR/USD 1.1637).
+US stocks slipped modestly — the S&P 500 ended -0.94%, while the Nasdaq finished -1.02%. On the safe-haven front, Gold climbed 1.96% to $5,207.50, while the 10-year Treasury yield rose 1 bps to 4.06%, while the dollar strengthened (EUR/USD 1.1648).
 
 APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and Nikkei 225 lagging at -3.61%. European markets are trading higher. US futures are pointing to a positive open across the board.
 
@@ -16,9 +16,24 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 **Stocks pulled back modestly yesterday.** The S&P 500 lost 0.9% — a routine dip, not a panic.
 
-**Gold surged 1.9% yesterday.** Investors are moving into safe havens — a sign of caution.
+**Gold surged 2.0% yesterday.** Investors are moving into safe havens — a sign of caution.
 
 **Pre-market futures are green** — the market is leaning toward a risk-on open. Watch for follow-through once cash markets open.
+
+---
+
+## Market-Moving Headlines
+
+| # | Headline | Source |
+|---|----------|--------|
+| 1 | ['No to war’: Spain PM hits back over Trump’s threats to cut trade over military base access](https://www.cnbc.com/2026/03/04/spain-pm-sanchez-trump-trade-nato-defense-iran-israel-crisis.html) | CNBC |
+| 2 | [Weekly mortgage demand surged 11% higher last week, as rates sat near 4-year low](https://www.cnbc.com/2026/03/04/weekly-mortgage-demand-surged-11percent-higher-last-week.html) | CNBC |
+| 3 | [Goldman's David Solomon surprised by ‘benign’ market reaction to Iran war](https://www.cnbc.com/2026/03/04/goldman-david-solomon-iran-war-market-reaction-stocks.html) | CNBC |
+| 4 | [Democrats tread cautiously around another Trump impeachment after 'illegal' Iran strikes](https://www.cnbc.com/2026/03/04/trump-impeachment-iran-strikes-war-democrats.html) | CNBC |
+| 5 | [Apple raises MacBook prices across the board as M5 chips, new displays signal AI-first strategy](https://www.cnbc.com/2026/03/03/apple-macbook-prices-m5-ai.html) | CNBC |
+| 6 | [The lead U.S. cyber agency is stretched thin as Iran hacking threat escalates](https://www.cnbc.com/2026/03/03/iran-cisa-cybersecurity-war-threat.html) | CNBC |
+| 7 | [China's Xiaomi tells CNBC it's planning a yearly smartphone chip release and its own AI assistant for overseas](https://www.cnbc.com/2026/03/04/xiaomi-plans-yearly-smartphone-chip-release-ai-assistant-for-overseas.html) | CNBC |
+| 8 | [I was on an Emirates flight to Dubai that turned around twice because of Iranian missiles](https://www.cnbc.com/2026/03/03/emirates-flight-dubai-iran-missile-strikes.html) | CNBC |
 
 ---
 
@@ -26,7 +41,7 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Index | Close | Daily % |
 |-------|-------|---------|
-| Gold | 5204.70 | +1.91% |
+| Gold | 5207.50 | +1.96% |
 | 10Y Treasury | 4.06% | +1 bps |
 | USD Index | 98.84 | -0.21% |
 | Dow Jones | 48501.27 | -0.83% |
@@ -54,10 +69,10 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Index | Price | Daily % | Session |
 |-------|-------|---------|---------|
-| DAX | 24149.97 | +1.51% | Early session (~3h in) |
-| FTSE 100 | 10545.20 | +0.58% | Early session (~3h in) |
-| CAC 40 | 8186.04 | +1.01% | Early session (~3h in) |
-| Euro Stoxx 50 | 5869.26 | +1.69% | Early session (~3h in) |
+| DAX | 24152.78 | +1.52% | Early session (~3h in) |
+| FTSE 100 | 10554.87 | +0.68% | Early session (~3h in) |
+| CAC 40 | 8187.08 | +1.03% | Early session (~3h in) |
+| Euro Stoxx 50 | 5870.18 | +1.71% | Early session (~3h in) |
 
 
 ---
@@ -66,12 +81,12 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Pair | Rate | Daily % |
 |------|------|---------|
-| EUR/USD | 1.1637 | -0.51% |
-| GBP/USD | 1.3376 | -0.26% |
-| USD/JPY | 157.1890 | -0.04% |
-| AUD/USD | 0.7055 | -0.71% |
+| EUR/USD | 1.1648 | -0.42% |
+| GBP/USD | 1.3384 | -0.20% |
+| USD/JPY | 157.0830 | -0.11% |
+| AUD/USD | 0.7064 | -0.59% |
 | USD/CNH | 0.1450 | -0.21% |
-| CHF/USD | 1.2807 | -0.27% |
+| CHF/USD | 1.2825 | -0.13% |
 
 
 ---
@@ -80,9 +95,9 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Contract | Price | Daily % |
 |----------|-------|---------|
-| S&P Futures | 6834.75 | +0.15% |
-| Nasdaq Futures | 24814.00 | +0.24% |
-| Dow Futures | 48584.00 | +0.05% |
+| S&P Futures | 6835.25 | +0.15% |
+| Nasdaq Futures | 24816.25 | +0.24% |
+| Dow Futures | 48587.00 | +0.06% |
 
 
 ---

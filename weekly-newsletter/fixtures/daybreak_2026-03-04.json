@@ -1,7 +1,7 @@
 {
   "meta": {
     "date": "2026-03-04",
-    "generated_at": "2026-03-04T11:55:49.521777Z",
+    "generated_at": "2026-03-04T12:11:34.695118Z",
     "generation_source": "live"
   },
   "us_close": {
@@ -32,8 +32,8 @@
     "Gold": {
       "symbol": "GC=F",
       "prev_close": 5107.3999,
-      "close": 5204.7002,
-      "daily_pct": 1.9051
+      "close": 5207.5,
+      "daily_pct": 1.9599
     },
     "10Y Treasury": {
       "symbol": "^TNX",
@@ -46,8 +46,8 @@
     "USD Index": {
       "symbol": "DX-Y.NYB",
       "prev_close": 99.05,
-      "close": 98.839,
-      "daily_pct": -0.213
+      "close": 98.841,
+      "daily_pct": -0.211
     }
   },
   "intl_overnight": {
@@ -82,63 +82,63 @@
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24149.97,
+      "close": 24152.78,
       "prev_close": 23790.65,
-      "daily_pct": 1.5103,
+      "daily_pct": 1.5221,
       "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10545.2,
+      "close": 10554.87,
       "prev_close": 10484.1,
-      "daily_pct": 0.5828,
+      "daily_pct": 0.675,
       "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8186.04,
+      "close": 8187.08,
       "prev_close": 8103.84,
-      "daily_pct": 1.0143,
+      "daily_pct": 1.0272,
       "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5869.26,
+      "close": 5870.18,
       "prev_close": 5771.73,
-      "daily_pct": 1.6898,
+      "daily_pct": 1.7057,
       "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.16374,
+      "rate": 1.16482,
       "prev_close": 1.16973,
-      "daily_pct": -0.512
+      "daily_pct": -0.4193
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.33761,
+      "rate": 1.33837,
       "prev_close": 1.34106,
-      "daily_pct": -0.2568
+      "daily_pct": -0.2008
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 157.189,
+      "rate": 157.08299,
       "prev_close": 157.257,
-      "daily_pct": -0.0432
+      "daily_pct": -0.1107
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": 0.70552,
+      "rate": 0.70641,
       "prev_close": 0.71058,
-      "daily_pct": -0.7125
+      "daily_pct": -0.5862
     },
     "USD/CNH": {
       "symbol": "CNYUSD=X",
@@ -148,33 +148,91 @@
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28066,
+      "rate": 1.28248,
       "prev_close": 1.28418,
-      "daily_pct": -0.2741
+      "daily_pct": -0.1321
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6834.75,
+      "price": 6835.25,
       "prev_close": 6824.75,
-      "daily_pct": 0.1465
+      "daily_pct": 0.1539
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 24814.0,
+      "price": 24816.25,
       "prev_close": 24755.75,
-      "daily_pct": 0.2353
+      "daily_pct": 0.2444
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": 48584.0,
+      "price": 48587.0,
       "prev_close": 48560.0,
-      "daily_pct": 0.0494
+      "daily_pct": 0.0556
     }
   },
   "econ_calendar": {
     "yesterday": [],
     "today": []
-  }
+  },
+  "market_news": [
+    {
+      "headline": "'No to war\u2019: Spain PM hits back over Trump\u2019s threats to cut trade over military base access",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 10:47:58 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/spain-pm-sanchez-trump-trade-nato-defense-iran-israel-crisis.html",
+      "summary": "His comments come after the U.S. president pledged to cut off all trade with Madrid over its position on the Iran conflict."
+    },
+    {
+      "headline": "Weekly mortgage demand surged 11% higher last week, as rates sat near 4-year low",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 12:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/weekly-mortgage-demand-surged-11percent-higher-last-week.html",
+      "summary": "Lower mortgage rates last week caused a run on refinancing and renewed interest from homebuyers, but rates have already moved higher again."
+    },
+    {
+      "headline": "Goldman's David Solomon surprised by \u2018benign\u2019 market reaction to Iran war",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 11:12:29 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/goldman-david-solomon-iran-war-market-reaction-stocks.html",
+      "summary": "\"I think it's going to take a couple of weeks for markets to really digest the implications of what's happened,\" Goldman chief David Solomon said."
+    },
+    {
+      "headline": "Democrats tread cautiously around another Trump impeachment after 'illegal' Iran strikes",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 11:00:02 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/trump-impeachment-iran-strikes-war-democrats.html",
+      "summary": ""
+    },
+    {
+      "headline": "Apple raises MacBook prices across the board as M5 chips, new displays signal AI-first strategy",
+      "source": "CNBC",
+      "published": "Tue, 03 Mar 2026 18:49:45 GMT",
+      "url": "https://www.cnbc.com/2026/03/03/apple-macbook-prices-m5-ai.html",
+      "summary": "Apple\u2019s Mac refresh moves the lineup further upmarket, pairing higher prices with faster performance in a push to give customers a reason to upgrade."
+    },
+    {
+      "headline": "The lead U.S. cyber agency is stretched thin as Iran hacking threat escalates",
+      "source": "CNBC",
+      "published": "Tue, 03 Mar 2026 22:39:12 GMT",
+      "url": "https://www.cnbc.com/2026/03/03/iran-cisa-cybersecurity-war-threat.html",
+      "summary": "Last week, CISA's acting director was reassigned to a new division within DHS and the agency is operating under a partial shutdown."
+    },
+    {
+      "headline": "China's Xiaomi tells CNBC it's planning a yearly smartphone chip release and its own AI assistant for overseas",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 10:58:28 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/xiaomi-plans-yearly-smartphone-chip-release-ai-assistant-for-overseas.html",
+      "summary": "Last year, Xiaomi launched the XRing O1, a system-on-chip (SoC) based on an advanced 3 nanometer manufacturing process."
+    },
+    {
+      "headline": "I was on an Emirates flight to Dubai that turned around twice because of Iranian missiles",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 02:06:48 GMT",
+      "url": "https://www.cnbc.com/2026/03/03/emirates-flight-dubai-iran-missile-strikes.html",
+      "summary": "CNBC's Emma Graham flew home to the UAE on an Emirates flight that turned around just 30 minutes from Dubai because of an Iran missile threat."
+    }
+  ]
 }
