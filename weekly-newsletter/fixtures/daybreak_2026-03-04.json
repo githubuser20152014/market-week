@@ -1,53 +1,53 @@
 {
   "meta": {
     "date": "2026-03-04",
-    "generated_at": "2026-03-04T11:54:29.724178Z",
+    "generated_at": "2026-03-04T11:55:49.521777Z",
     "generation_source": "live"
   },
   "us_close": {
     "S&P 500": {
       "symbol": "^GSPC",
-      "prev_close": null,
-      "close": null,
-      "daily_pct": null
+      "prev_close": 6881.6201,
+      "close": 6816.6299,
+      "daily_pct": -0.9444
     },
     "Dow Jones": {
       "symbol": "^DJI",
-      "prev_close": null,
-      "close": null,
-      "daily_pct": null
+      "prev_close": 48904.7812,
+      "close": 48501.2695,
+      "daily_pct": -0.8251
     },
     "Nasdaq": {
       "symbol": "^IXIC",
-      "prev_close": null,
-      "close": null,
-      "daily_pct": null
+      "prev_close": 22748.8594,
+      "close": 22516.6895,
+      "daily_pct": -1.0206
     },
     "Russell 2000": {
       "symbol": "^RUT",
-      "prev_close": null,
-      "close": null,
-      "daily_pct": null
+      "prev_close": 2655.9399,
+      "close": 2608.3601,
+      "daily_pct": -1.7914
     },
     "Gold": {
       "symbol": "GC=F",
-      "prev_close": null,
-      "close": null,
-      "daily_pct": null
+      "prev_close": 5107.3999,
+      "close": 5204.7002,
+      "daily_pct": 1.9051
     },
     "10Y Treasury": {
       "symbol": "^TNX",
-      "prev_close": null,
-      "close": null,
-      "daily_pct": null,
+      "prev_close": 4.048,
+      "close": 4.056,
+      "daily_pct": 0.1976,
       "is_yield": true,
-      "yield_change_bps": null
+      "yield_change_bps": 0.8
     },
     "USD Index": {
       "symbol": "DX-Y.NYB",
-      "prev_close": null,
-      "close": null,
-      "daily_pct": null
+      "prev_close": 99.05,
+      "close": 98.839,
+      "daily_pct": -0.213
     }
   },
   "intl_overnight": {
@@ -55,122 +55,122 @@
       "symbol": "^N225",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": null,
-      "prev_close": null,
-      "daily_pct": null,
-      "session_note": "No data"
+      "close": 54245.54,
+      "prev_close": 56279.05,
+      "daily_pct": -3.6133,
+      "session_note": "Previous close"
     },
     "Hang Seng": {
       "symbol": "^HSI",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": null,
-      "prev_close": null,
-      "daily_pct": null,
-      "session_note": "No data"
+      "close": 25249.48,
+      "prev_close": 25768.08,
+      "daily_pct": -2.0126,
+      "session_note": "Previous close"
     },
     "ASX 200": {
       "symbol": "^AXJO",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": null,
-      "prev_close": null,
-      "daily_pct": null,
-      "session_note": "No data"
+      "close": 8901.2,
+      "prev_close": 9077.3,
+      "daily_pct": -1.94,
+      "session_note": "Previous close"
     },
     "DAX": {
       "symbol": "^GDAXI",
       "region": "Europe",
-      "status": "closed",
-      "close": null,
-      "prev_close": null,
-      "daily_pct": null,
-      "session_note": "No data"
+      "status": "partial",
+      "close": 24149.97,
+      "prev_close": 23790.65,
+      "daily_pct": 1.5103,
+      "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
-      "status": "closed",
-      "close": null,
-      "prev_close": null,
-      "daily_pct": null,
-      "session_note": "No data"
+      "status": "partial",
+      "close": 10545.2,
+      "prev_close": 10484.1,
+      "daily_pct": 0.5828,
+      "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
-      "status": "closed",
-      "close": null,
-      "prev_close": null,
-      "daily_pct": null,
-      "session_note": "No data"
+      "status": "partial",
+      "close": 8186.04,
+      "prev_close": 8103.84,
+      "daily_pct": 1.0143,
+      "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
-      "status": "closed",
-      "close": null,
-      "prev_close": null,
-      "daily_pct": null,
-      "session_note": "No data"
+      "status": "partial",
+      "close": 5869.26,
+      "prev_close": 5771.73,
+      "daily_pct": 1.6898,
+      "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": null,
-      "prev_close": null,
-      "daily_pct": null
+      "rate": 1.16374,
+      "prev_close": 1.16973,
+      "daily_pct": -0.512
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": null,
-      "prev_close": null,
-      "daily_pct": null
+      "rate": 1.33761,
+      "prev_close": 1.34106,
+      "daily_pct": -0.2568
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": null,
-      "prev_close": null,
-      "daily_pct": null
+      "rate": 157.189,
+      "prev_close": 157.257,
+      "daily_pct": -0.0432
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": null,
-      "prev_close": null,
-      "daily_pct": null
+      "rate": 0.70552,
+      "prev_close": 0.71058,
+      "daily_pct": -0.7125
     },
     "USD/CNH": {
       "symbol": "CNYUSD=X",
-      "rate": null,
-      "prev_close": null,
-      "daily_pct": null
+      "rate": 0.145,
+      "prev_close": 0.14531,
+      "daily_pct": -0.2088
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": null,
-      "prev_close": null,
-      "daily_pct": null
+      "rate": 1.28066,
+      "prev_close": 1.28418,
+      "daily_pct": -0.2741
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": null,
-      "prev_close": null,
-      "daily_pct": null
+      "price": 6834.75,
+      "prev_close": 6824.75,
+      "daily_pct": 0.1465
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": null,
-      "prev_close": null,
-      "daily_pct": null
+      "price": 24814.0,
+      "prev_close": 24755.75,
+      "daily_pct": 0.2353
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": null,
-      "prev_close": null,
-      "daily_pct": null
+      "price": 48584.0,
+      "prev_close": 48560.0,
+      "daily_pct": 0.0494
     }
   },
   "econ_calendar": {
