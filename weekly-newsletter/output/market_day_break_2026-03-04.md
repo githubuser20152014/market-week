@@ -6,7 +6,7 @@
 
 ## Morning Brief
 
-US stocks slipped modestly — the S&P 500 ended -0.94%, while the Nasdaq finished -1.02%. On the safe-haven front, Gold climbed 1.96% to $5,207.50, while the 10-year Treasury yield rose 1 bps to 4.06%, while the dollar strengthened (EUR/USD 1.1648).
+US stocks slipped modestly — the S&P 500 ended -0.94%, while the Nasdaq finished -1.02%. On the safe-haven front, Gold climbed 2.05% to $5,211.90, while the 10-year Treasury yield rose 1 bps to 4.06%, while the dollar strengthened (EUR/USD 1.1650).
 
 APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and Nikkei 225 lagging at -3.61%. European markets are trading higher. US futures are pointing to a positive open across the board.
 
@@ -41,9 +41,9 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Index | Close | Daily % |
 |-------|-------|---------|
-| Gold | 5207.50 | +1.96% |
+| Gold | 5211.90 | +2.05% |
 | 10Y Treasury | 4.06% | +1 bps |
-| USD Index | 98.84 | -0.21% |
+| USD Index | 98.75 | -0.30% |
 | Dow Jones | 48501.27 | -0.83% |
 | S&P 500 | 6816.63 | -0.94% |
 | Nasdaq | 22516.69 | -1.02% |
@@ -69,10 +69,10 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Index | Price | Daily % | Session |
 |-------|-------|---------|---------|
-| DAX | 24152.78 | +1.52% | Early session (~3h in) |
-| FTSE 100 | 10554.87 | +0.68% | Early session (~3h in) |
-| CAC 40 | 8187.08 | +1.03% | Early session (~3h in) |
-| Euro Stoxx 50 | 5870.18 | +1.71% | Early session (~3h in) |
+| DAX | 24149.84 | +1.51% | Early session (~3h in) |
+| FTSE 100 | 10562.92 | +0.75% | Early session (~3h in) |
+| CAC 40 | 8187.27 | +1.03% | Early session (~3h in) |
+| Euro Stoxx 50 | 5870.29 | +1.71% | Early session (~3h in) |
 
 
 ---
@@ -81,12 +81,12 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Pair | Rate | Daily % |
 |------|------|---------|
-| EUR/USD | 1.1648 | -0.42% |
-| GBP/USD | 1.3384 | -0.20% |
-| USD/JPY | 157.0830 | -0.11% |
-| AUD/USD | 0.7064 | -0.59% |
+| EUR/USD | 1.1650 | -0.41% |
+| GBP/USD | 1.3383 | -0.21% |
+| USD/JPY | 157.0630 | -0.12% |
+| AUD/USD | 0.7055 | -0.71% |
 | USD/CNH | 0.1450 | -0.21% |
-| CHF/USD | 1.2825 | -0.13% |
+| CHF/USD | 1.2824 | -0.14% |
 
 
 ---
@@ -95,9 +95,10 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 | Contract | Price | Daily % |
 |----------|-------|---------|
-| S&P Futures | 6835.25 | +0.15% |
-| Nasdaq Futures | 24816.25 | +0.24% |
-| Dow Futures | 48587.00 | +0.06% |
+| S&P Futures | 6835.50 | +0.16% |
+| Nasdaq Futures | 24811.00 | +0.22% |
+| Dow Futures | 48584.00 | +0.05% |
+| WTI Crude Oil | 74.83 | +0.36% |
 
 
 ---
@@ -122,7 +123,7 @@ APAC markets closed broadly lower overnight, with ASX 200 leading at -1.94% and 
 
 ## Positioning Notes
 
-- All three futures contracts are green (S&P Futures +0.15%) -- risk-on open signalled. Consider maintaining or adding to broad market exposure (SPY, QQQ) early in the session.
+- All three futures contracts are green (S&P Futures +0.16%) -- risk-on open signalled. Consider maintaining or adding to broad market exposure (SPY, QQQ) early in the session.
 
 
 ---
