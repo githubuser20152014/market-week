@@ -64,6 +64,12 @@ _DAYBREAK_CSS = _BASE_CSS + """
   }
 
   .sub-section-label:first-child { margin-top: 0; }
+
+  /* News table */
+  .news-table td.idx-col    { width: 2rem; color: #888; text-align: center; }
+  .news-table td.source-col { width: 7rem; color: #555; font-size: 0.85rem; }
+  .news-table a             { color: #1a5276; text-decoration: none; }
+  .news-table a:hover       { text-decoration: underline; }
 """
 
 
@@ -117,6 +123,31 @@ def render_html(ctx: dict) -> str:
         else:
             para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", block)
             plain_html += f'<p class="brief-text">{para}</p>\n'
+
+    # ── Market-Moving Headlines ───────────────────────────────────────────────
+    news_html = ""
+    if ctx.get("market_news"):
+        news_rows = ""
+        for i, item in enumerate(ctx["market_news"], 1):
+            url       = item.get("url", "#")
+            headline  = item.get("headline", "")
+            source    = item.get("source", "")
+            summary   = item.get("summary", "")
+            title_attr = summary.replace('"', "&quot;") if summary else ""
+            news_rows += (
+                f'<tr><td class="idx-col">{i}</td>'
+                f'<td><a href="{url}" target="_blank" title="{title_attr}">{headline}</a></td>'
+                f'<td class="source-col">{source}</td></tr>\n'
+            )
+        news_html = (
+            '<div class="section-block">\n'
+            '  <div class="section-title">Market-Moving Headlines</div>\n'
+            '  <table class="snapshot-table news-table">\n'
+            '    <thead><tr><th>#</th><th>Headline</th><th>Source</th></tr></thead>\n'
+            f'    <tbody>\n{news_rows}    </tbody>\n'
+            '  </table>\n'
+            '</div>\n'
+        )
 
     # ── US Market Close Table ─────────────────────────────────────────────────
     us_rows = ""
@@ -342,6 +373,8 @@ def render_html(ctx: dict) -> str:
       <div class="section-title">What This Means</div>
       {plain_html}
     </div>
+
+    {news_html}
 
     <!-- US MARKET CLOSE -->
     <div class="section-block">

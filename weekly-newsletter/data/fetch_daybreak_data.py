@@ -9,7 +9,8 @@ Fixture schema  fixtures/daybreak_YYYY-MM-DD.json:
                                session_note } },
   "fx":             { name: { symbol, rate, prev_close, daily_pct } },
   "futures":        { name: { symbol, price, prev_close, daily_pct } },
-  "econ_calendar":  { "yesterday": [...], "today": [...] }
+  "econ_calendar":  { "yesterday": [...], "today": [...] },
+  "market_news":    [ { headline, source, published, url, summary } ]
 }
 """
 
@@ -86,6 +87,7 @@ def _fetch_live(date_str: str) -> dict:
     fx             = _fetch_fx(date_str, cfg["fx"])
     futures        = _fetch_futures(date_str, cfg["futures"])
     econ_calendar  = _fetch_econ_calendar(date_str)
+    market_news    = _fetch_market_news(date_str)
 
     return {
         "meta": {
@@ -98,6 +100,7 @@ def _fetch_live(date_str: str) -> dict:
         "fx":             fx,
         "futures":        futures,
         "econ_calendar":  econ_calendar,
+        "market_news":    market_news,
     }
 
 
@@ -122,6 +125,8 @@ def _fetch_us_close(date_str: str, index_cfg: dict) -> dict:
         try:
             df = yf.download(symbol, start=start, end=end,
                              progress=False, auto_adjust=True)
+            if isinstance(df.columns, __import__("pandas").MultiIndex):
+                df.columns = df.columns.droplevel(1)
             df = df[df.index.dayofweek < 5]  # drop weekends
             if len(df) < 2:
                 result[name] = _empty_us_entry(symbol, is_yield)
@@ -178,6 +183,8 @@ def _fetch_intl_overnight(date_str: str, index_cfg: dict) -> dict:
             # First get daily data for prev_close and last available close
             df_daily = yf.download(symbol, start=start, end=end,
                                    progress=False, auto_adjust=True)
+            if isinstance(df_daily.columns, __import__("pandas").MultiIndex):
+                df_daily.columns = df_daily.columns.droplevel(1)
             df_daily = df_daily[df_daily.index.dayofweek < 5]
 
             if len(df_daily) < 1:
@@ -192,6 +199,8 @@ def _fetch_intl_overnight(date_str: str, index_cfg: dict) -> dict:
                 try:
                     df_1m = yf.download(symbol, period="1d", interval="1m",
                                         progress=False, auto_adjust=True)
+                    if isinstance(df_1m.columns, __import__("pandas").MultiIndex):
+                        df_1m.columns = df_1m.columns.droplevel(1)
                     if not df_1m.empty:
                         live_price = float(df_1m["Close"].iloc[-1])
                         daily_pct  = ((live_price / prev_close) - 1) * 100 if prev_close else None
@@ -260,10 +269,34 @@ def _fetch_fx(date_str: str, fx_cfg: dict) -> dict:
         try:
             df = yf.download(symbol, start=start, end=end,
                              progress=False, auto_adjust=True)
+            if isinstance(df.columns, __import__("pandas").MultiIndex):
+                df.columns = df.columns.droplevel(1)
             df = df[df.index.dayofweek < 5]
             if len(df) < 2:
-                result[name] = {"symbol": symbol, "rate": None,
-                                "prev_close": None, "daily_pct": None}
+                # Fallback: hourly data over 5 days (handles pairs like CNH=X)
+                try:
+                    df_h = yf.download(symbol, period="5d", interval="1h",
+                                       progress=False, auto_adjust=True)
+                    if isinstance(df_h.columns, __import__("pandas").MultiIndex):
+                        df_h.columns = df_h.columns.droplevel(1)
+                    if len(df_h) >= 2:
+                        # ~24h ago as prev_close proxy
+                        prev_close = float(df_h["Close"].iloc[-25]) \
+                            if len(df_h) > 25 else float(df_h["Close"].iloc[0])
+                        rate      = float(df_h["Close"].iloc[-1])
+                        daily_pct = (rate / prev_close - 1) * 100
+                        result[name] = {
+                            "symbol":     symbol,
+                            "rate":       round(rate, 5),
+                            "prev_close": round(prev_close, 5),
+                            "daily_pct":  round(daily_pct, 4),
+                        }
+                    else:
+                        result[name] = {"symbol": symbol, "rate": None,
+                                        "prev_close": None, "daily_pct": None}
+                except Exception:
+                    result[name] = {"symbol": symbol, "rate": None,
+                                    "prev_close": None, "daily_pct": None}
                 continue
 
             prev_close = float(df["Close"].iloc[-2])
@@ -313,6 +346,8 @@ def _fetch_futures(date_str: str, futures_cfg: dict) -> dict:
             # Daily data for prev_close
             df = yf.download(symbol, start=start, end=end,
                              progress=False, auto_adjust=True)
+            if isinstance(df.columns, __import__("pandas").MultiIndex):
+                df.columns = df.columns.droplevel(1)
             df = df[df.index.dayofweek < 5]
 
             if len(df) < 2:
@@ -395,3 +430,64 @@ def _fetch_econ_calendar(date_str: str) -> dict:
             result["today"].append(entry)
 
     return result
+
+
+# ── Market News (RSS) ──────────────────────────────────────────────────────────
+
+_RSS_FEEDS = [
+    ("Reuters", "https://feeds.reuters.com/reuters/topNews"),
+    ("AP News", "https://rsshub.app/apnews/topics/apf-topnews"),
+    ("CNBC",    "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
+]
+
+_MARKET_KEYWORDS = {
+    "war", "iran", "sanction", "tariff", "trade", "oil", "opec", "fed", "rate",
+    "inflation", "election", "crisis", "ceasefire", "attack", "china", "taiwan",
+    "russia", "ukraine", "nato", "g7", "g20", "budget", "debt", "default", "strike",
+    "embargo", "nuclear", "missile", "troops", "geopolit", "conflict", "accord",
+}
+
+
+def _fetch_market_news(date_str: str, max_items: int = 8) -> list:
+    """Fetch market-relevant headlines from RSS feeds, filtered by keyword."""
+    try:
+        import feedparser
+    except ImportError:
+        print("  feedparser not installed — skipping market news.")
+        return []
+
+    seen_titles = set()
+    results = []
+
+    for source_name, url in _RSS_FEEDS:
+        try:
+            feed = feedparser.parse(url)
+            for entry in feed.entries:
+                title   = entry.get("title", "").strip()
+                summary = entry.get("summary", "")
+                link    = entry.get("link", "")
+                published = entry.get("published", "")
+
+                combined = (title + " " + summary).lower()
+                if not any(kw in combined for kw in _MARKET_KEYWORDS):
+                    continue
+                if title in seen_titles:
+                    continue
+
+                seen_titles.add(title)
+                results.append({
+                    "headline":  title,
+                    "source":    source_name,
+                    "published": published,
+                    "url":       link,
+                    "summary":   summary[:200] if summary else "",
+                })
+                if len(results) >= max_items:
+                    break
+        except Exception as e:
+            print(f"  RSS fetch failed for {source_name} ({e})")
+
+        if len(results) >= max_items:
+            break
+
+    return results

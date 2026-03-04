@@ -15,7 +15,16 @@
 {{ plain_summary }}
 
 ---
+{% if market_news %}
+## Market-Moving Headlines
 
+| # | Headline | Source |
+|---|----------|--------|
+{% for item in market_news -%}
+| {{ loop.index }} | [{{ item.headline }}]({{ item.url }}) | {{ item.source }} |
+{% endfor %}
+---
+{% endif %}
 ## US Market Close
 
 | Index | Close | Daily % |

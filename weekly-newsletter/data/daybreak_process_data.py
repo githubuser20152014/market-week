@@ -1,6 +1,20 @@
 """Process raw daybreak data into newsletter-ready content."""
 
 
+def process_market_news(raw_news: list) -> list:
+    """Pass through news items, truncating long summaries."""
+    out = []
+    for item in raw_news:
+        out.append({
+            "headline":  item.get("headline", ""),
+            "source":    item.get("source", ""),
+            "published": item.get("published", ""),
+            "url":       item.get("url", ""),
+            "summary":   item.get("summary", "")[:180],
+        })
+    return out
+
+
 def process_us_close(raw: dict) -> list:
     """Convert raw us_close dict to a sorted list (best daily_pct first).
 
@@ -103,6 +117,7 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
     gold    = next((i for i in us_indices if i["name"] == "Gold"), None)
     treasury = next((i for i in us_indices if "Treasury" in i["name"]), None)
     eur_usd = next((f for f in fx if "EUR" in f["name"]), None)
+    oil     = next((f for f in futures if "WTI" in f["name"] or "Crude" in f["name"]), None)
 
     if sp and sp["daily_pct"] is not None:
         pct = sp["daily_pct"]
@@ -143,9 +158,17 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
             if eur_usd["rate"] else
             f"the dollar {direction} against the euro"
         )
-
     if safe_notes:
         para1 += " On the safe-haven front, " + ", while ".join(safe_notes) + "."
+
+    if oil and oil["daily_pct"] is not None:
+        direction = "rose" if oil["daily_pct"] > 0 else "fell"
+        oil_str = (
+            f"WTI crude {direction} {abs(oil['daily_pct']):.2f}% to ${oil['price']:,.2f}/bbl."
+            if oil["price"] else
+            f"WTI crude {direction} {abs(oil['daily_pct']):.2f}%."
+        )
+        para1 += f" {oil_str}"
 
     # ── Para 2: Overnight + futures ───────────────────────────────────────────
     apac_entries   = [i for i in intl_indices if i["region"] == "Asia-Pacific"
@@ -448,16 +471,11 @@ def build_daybreak_context(raw: dict) -> dict:
     tips         = generate_daybreak_positioning_tips(us_indices, futures,
                                                        yesterday_events, today_events)
 
-    # Best / worst US performers (equity only)
-    _NON_EQUITY = {"Gold", "USD Index"}
-    equity_us = [
-        i for i in us_indices
-        if i["name"] not in _NON_EQUITY
-        and "Treasury" not in i["name"]
-        and i["daily_pct"] is not None
-    ]
-    us_best  = equity_us[0]  if equity_us else None
-    us_worst = equity_us[-1] if equity_us else None
+    # Best / worst across all US entries
+    all_us = [i for i in us_indices if i["daily_pct"] is not None]
+    all_us_sorted = sorted(all_us, key=lambda x: x["daily_pct"], reverse=True)
+    us_best  = all_us_sorted[0]  if all_us_sorted else None
+    us_worst = all_us_sorted[-1] if all_us_sorted else None
 
     return {
         "date":           date_str,
@@ -466,6 +484,7 @@ def build_daybreak_context(raw: dict) -> dict:
         "region_banner":  "Coverage: US Close \u00b7 Asia-Pacific \u00b7 Europe \u00b7 FX \u00b7 Macro",
         "narrative":      narrative,
         "plain_summary":  plain_summary,
+        "market_news":    process_market_news(raw.get("market_news", [])),
         "us_indices":     us_indices,
         "intl_indices":   intl_indices,
         "fx_rates":       fx_rates,

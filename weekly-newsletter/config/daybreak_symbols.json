@@ -2,7 +2,10 @@
   "futures": {
     "S&P Futures":     { "symbol": "ES=F",  "label": "S&P 500 Futures" },
     "Nasdaq Futures":  { "symbol": "NQ=F",  "label": "Nasdaq 100 Futures" },
-    "Dow Futures":     { "symbol": "YM=F",  "label": "Dow Futures" }
+    "Dow Futures":     { "symbol": "YM=F",  "label": "Dow Futures" },
+    "Gold Futures":    { "symbol": "GC=F",  "label": "Gold Futures" },
+    "10Y T-Note":      { "symbol": "ZN=F",  "label": "10-Year T-Note Futures" },
+    "WTI Crude Oil":   { "symbol": "CL=F",  "label": "WTI Crude Oil" }
   },
   "us_indices": {
     "S&P 500":       { "symbol": "^GSPC" },
@@ -16,6 +19,8 @@
   "intl_indices": {
     "Nikkei 225":    { "symbol": "^N225",     "region": "Asia-Pacific" },
     "Hang Seng":     { "symbol": "^HSI",      "region": "Asia-Pacific" },
+    "KOSPI":         { "symbol": "^KS11",     "region": "Asia-Pacific" },
+    "Nifty 50":      { "symbol": "^NSEI",     "region": "Asia-Pacific" },
     "ASX 200":       { "symbol": "^AXJO",     "region": "Asia-Pacific" },
     "DAX":           { "symbol": "^GDAXI",    "region": "Europe" },
     "FTSE 100":      { "symbol": "^FTSE",     "region": "Europe" },
@@ -27,7 +32,7 @@
     "GBP/USD": { "symbol": "GBPUSD=X" },
     "USD/JPY": { "symbol": "JPY=X"    },
     "AUD/USD": { "symbol": "AUDUSD=X" },
-    "USD/CNH": { "symbol": "CNYUSD=X" },
+    "USD/CNH": { "symbol": "USDCNH=X" },
     "CHF/USD": { "symbol": "CHFUSD=X" }
   }
 }
