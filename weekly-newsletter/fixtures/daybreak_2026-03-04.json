@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "date": "2026-03-04",
+    "generated_at": "2026-03-04T11:54:29.724178Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null,
+      "is_yield": true,
+      "yield_change_bps": null
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "closed",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "closed",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "closed",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "closed",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "USD/CNH": {
+      "symbol": "CNYUSD=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  }
+}
