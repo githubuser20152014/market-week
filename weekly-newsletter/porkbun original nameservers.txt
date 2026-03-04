@@ -1,0 +1,7 @@
+porkbun original nameservers:
+fish.ns.cloudflare.com
+neil.ns.cloudflare.com
+
+changed to:
+ns1.porkbun.com
+ns2.porkbun.com

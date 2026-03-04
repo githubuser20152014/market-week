@@ -1,0 +1,20 @@
+> create a to do list that you will execute next week to generate both editions, push to github and make it available on frameworkfoundry.info
+
+● Tasks are queued in order:
+
+  1. Generate US edition (week ending 2026-02-28)
+  2. Generate International edition
+  3. Rebuild combined site
+  4. Commit & push to GitHub
+  5. Verify both editions live on frameworkfoundry.info
+
+  When you're ready next week, just say "run the newsletter tasks" and I'll execute them in sequence from weekly-newsletter/.
+
+✻ Cogitated for 35s
+
+  5 tasks (0 done, 5 open)
+  □ Generate US edition newsletter for week ending 2026-02-28
+  □ Generate International edition newsletter for week ending 2026-02-28 › blocked by #1
+  □ Rebuild combined site with new editions › blocked by #1, #2
+  □ Commit and push to GitHub to deploy to frameworkfoundry.info › blocked by #3
+  □ Verify both editions are live on frameworkfoundry.info › blocked by #4

@@ -50,7 +50,10 @@
       "WebFetch(domain:news.rthk.hk)",
       "WebFetch(domain:www.marketscreener.com)",
       "WebFetch(domain:www.marketindex.com.au)",
-      "WebFetch(domain:jen.jiji.com)"
+      "WebFetch(domain:jen.jiji.com)",
+      "Bash(cmd:*)",
+      "Bash(powershell:*)",
+      "Bash(start:*)"
     ]
   }
 }
