@@ -1,7 +1,7 @@
 {
   "meta": {
     "date": "2026-03-04",
-    "generated_at": "2026-03-04T12:24:18.996838Z",
+    "generated_at": "2026-03-04T12:30:16.667794Z",
     "generation_source": "live"
   },
   "us_close": {
@@ -32,8 +32,8 @@
     "Gold": {
       "symbol": "GC=F",
       "prev_close": 5107.3999,
-      "close": 5212.2998,
-      "daily_pct": 2.0539
+      "close": 5194.7998,
+      "daily_pct": 1.7112
     },
     "10Y Treasury": {
       "symbol": "^TNX",
@@ -46,8 +46,8 @@
     "USD Index": {
       "symbol": "DX-Y.NYB",
       "prev_close": 99.05,
-      "close": 98.745,
-      "daily_pct": -0.3079
+      "close": 98.759,
+      "daily_pct": -0.2938
     }
   },
   "intl_overnight": {
@@ -82,101 +82,101 @@
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24163.85,
+      "close": 24156.43,
       "prev_close": 23790.65,
-      "daily_pct": 1.5687,
+      "daily_pct": 1.5375,
       "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10562.12,
+      "close": 10560.06,
       "prev_close": 10484.1,
-      "daily_pct": 0.7442,
+      "daily_pct": 0.7245,
       "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8190.2,
+      "close": 8190.35,
       "prev_close": 8103.84,
-      "daily_pct": 1.0657,
+      "daily_pct": 1.0675,
       "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5873.54,
+      "close": 5870.66,
       "prev_close": 5771.73,
-      "daily_pct": 1.7639,
+      "daily_pct": 1.714,
       "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.16442,
+      "rate": 1.1636,
       "prev_close": 1.16973,
-      "daily_pct": -0.4541
+      "daily_pct": -0.5236
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.33738,
+      "rate": 1.33659,
       "prev_close": 1.34106,
-      "daily_pct": -0.2742
+      "daily_pct": -0.3328
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 157.164,
+      "rate": 157.209,
       "prev_close": 157.257,
-      "daily_pct": -0.0591
+      "daily_pct": -0.0305
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": 0.70532,
+      "rate": 0.70467,
       "prev_close": 0.71058,
-      "daily_pct": -0.7405
+      "daily_pct": -0.8314
     },
     "USD/CNH": {
-      "symbol": "CNYUSD=X",
-      "rate": 0.145,
-      "prev_close": 0.14531,
-      "daily_pct": -0.2088
+      "symbol": "USDCNH=X",
+      "rate": 6.90209,
+      "prev_close": 6.91068,
+      "daily_pct": -0.1243
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28174,
+      "rate": 1.28123,
       "prev_close": 1.28418,
-      "daily_pct": -0.1897
+      "daily_pct": -0.2293
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6837.25,
+      "price": 6826.5,
       "prev_close": 6824.75,
-      "daily_pct": 0.1832
+      "daily_pct": 0.0256
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 24823.25,
+      "price": 24777.5,
       "prev_close": 24755.75,
-      "daily_pct": 0.2727
+      "daily_pct": 0.0879
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": 48596.0,
+      "price": 48533.0,
       "prev_close": 48560.0,
-      "daily_pct": 0.0741
+      "daily_pct": -0.0556
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": 74.66,
+      "price": 74.49,
       "prev_close": 74.56,
-      "daily_pct": 0.1341
+      "daily_pct": -0.0939
     }
   },
   "econ_calendar": {
@@ -184,6 +184,13 @@
     "today": []
   },
   "market_news": [
+    {
+      "headline": "Treasury Secretary Bessent says U.S. will make 'series of announcements' to support oil trade in the Gulf",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 12:26:15 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/treasury-secretary-bessent-says-us-will-make-series-of-announcements-to-support-oil-trade-in-the-gulf.html",
+      "summary": ""
+    },
     {
       "headline": "'No to war\u2019: Spain PM hits back over Trump\u2019s threats to cut trade over military base access",
       "source": "CNBC",
@@ -220,13 +227,6 @@
       "summary": "Apple\u2019s Mac refresh moves the lineup further upmarket, pairing higher prices with faster performance in a push to give customers a reason to upgrade."
     },
     {
-      "headline": "The lead U.S. cyber agency is stretched thin as Iran hacking threat escalates",
-      "source": "CNBC",
-      "published": "Tue, 03 Mar 2026 22:39:12 GMT",
-      "url": "https://www.cnbc.com/2026/03/03/iran-cisa-cybersecurity-war-threat.html",
-      "summary": "Last week, CISA's acting director was reassigned to a new division within DHS and the agency is operating under a partial shutdown."
-    },
-    {
       "headline": "China's Xiaomi tells CNBC it's planning a yearly smartphone chip release and its own AI assistant for overseas",
       "source": "CNBC",
       "published": "Wed, 04 Mar 2026 10:58:28 GMT",
@@ -234,11 +234,11 @@
       "summary": "Last year, Xiaomi launched the XRing O1, a system-on-chip (SoC) based on an advanced 3 nanometer manufacturing process."
     },
     {
-      "headline": "I was on an Emirates flight to Dubai that turned around twice because of Iranian missiles",
+      "headline": "The lead U.S. cyber agency is stretched thin as Iran hacking threat escalates",
       "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 02:06:48 GMT",
-      "url": "https://www.cnbc.com/2026/03/03/emirates-flight-dubai-iran-missile-strikes.html",
-      "summary": "CNBC's Emma Graham flew home to the UAE on an Emirates flight that turned around just 30 minutes from Dubai because of an Iran missile threat."
+      "published": "Tue, 03 Mar 2026 22:39:12 GMT",
+      "url": "https://www.cnbc.com/2026/03/03/iran-cisa-cybersecurity-war-threat.html",
+      "summary": "Last week, CISA's acting director was reassigned to a new division within DHS and the agency is operating under a partial shutdown."
     }
   ]
 }
