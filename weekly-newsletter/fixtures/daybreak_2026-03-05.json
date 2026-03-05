@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-03-05",
+    "generated_at": "2026-03-05T10:56:23.077804Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6816.6299,
+      "close": 6869.5,
+      "daily_pct": 0.7756,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 48501.2695,
+      "close": 48739.4102,
+      "daily_pct": 0.491,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22516.6895,
+      "close": 22807.4805,
+      "daily_pct": 1.2914,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2608.3601,
+      "close": 2636.01,
+      "daily_pct": 1.06,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5120.2002,
+      "close": 5167.1001,
+      "daily_pct": 0.916,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.056,
+      "close": 4.08,
+      "daily_pct": 0.5917,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.77,
+      "close": 98.995,
+      "daily_pct": 0.2278,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 74.66,
+      "close": 76.53,
+      "daily_pct": 2.5047,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 55278.06,
+      "prev_close": 54245.54,
+      "daily_pct": 1.9034,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25321.34,
+      "prev_close": 25249.48,
+      "daily_pct": 0.2846,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5583.9,
+      "prev_close": 5093.54,
+      "daily_pct": 9.6271,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24765.9,
+      "prev_close": 24480.5,
+      "daily_pct": 1.1658,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8940.3,
+      "prev_close": 8901.2,
+      "daily_pct": 0.4393,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24266.48,
+      "prev_close": 24205.36,
+      "daily_pct": 0.2525,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10603.87,
+      "prev_close": 10567.7,
+      "daily_pct": 0.3423,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8195.26,
+      "prev_close": 8167.73,
+      "daily_pct": 0.3371,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5894.08,
+      "prev_close": 5870.92,
+      "daily_pct": 0.3945,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16158,
+      "prev_close": 1.16122,
+      "daily_pct": 0.0302
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33531,
+      "prev_close": 1.33536,
+      "daily_pct": -0.004
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.284,
+      "prev_close": 157.77299,
+      "daily_pct": -0.3099
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70497,
+      "prev_close": 0.70407,
+      "daily_pct": 0.1278
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.89759,
+      "prev_close": 6.90334,
+      "daily_pct": -0.0833
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28215,
+      "prev_close": 1.2789,
+      "daily_pct": 0.2539
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6872.0,
+      "prev_close": 6876.0,
+      "daily_pct": -0.0582
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 25116.25,
+      "prev_close": 25128.25,
+      "daily_pct": -0.0478
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 48689.0,
+      "prev_close": 48796.0,
+      "daily_pct": -0.2193
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5167.3,
+      "prev_close": 5120.2,
+      "daily_pct": 0.9199
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 112.58,
+      "prev_close": 112.91,
+      "daily_pct": -0.2906
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 76.55,
+      "prev_close": 74.66,
+      "daily_pct": 2.5315
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Spain rejects White House claim it agreed to cooperate with U.S. forces amid Iran war",
+      "source": "CNBC",
+      "published": "Thu, 05 Mar 2026 10:19:06 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/iran-war-us-spain-trump-sanchez-defense-trade-eu.html",
+      "summary": "The White House says Spain will now cooperate with the U.S. militarily over the Iran conflict. Madrid swiftly rejected this claim."
+    },
+    {
+      "headline": "BYD sales plunge in first two months of 2026 as EV giant loses more ground to competitors",
+      "source": "CNBC",
+      "published": "Thu, 05 Mar 2026 09:40:34 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/drawdown-byd-chinese-ev-sales-mixed-results-holiday-lull.html",
+      "summary": "BYD lost ground to its domestic competitors over the first two months of 2026, as overall demand in China's electric vehicle market slowed."
+    },
+    {
+      "headline": "Emmanuel Macron spelled out a pivot in France's nuclear strategy. Here's why it's so significant",
+      "source": "CNBC",
+      "published": "Thu, 05 Mar 2026 07:07:46 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/-france-nuclear-deterrence-strategy-macron.html",
+      "summary": "The French president spelled out a new doctrine of 'forward deterrence' for France. Here's"
+    },
+    {
+      "headline": "Amazon's Bahrain data center targeted by Iran for support of U.S. military, state media says",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 23:09:58 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/amazon-bahrain-data-centers-targeted-iran-drone-strike.html",
+      "summary": "Amazon said the Bahrain facility was damaged due to a nearby drone strike, and two data centers in the UAE were directly hit by drones."
+    },
+    {
+      "headline": "Cramer says the oil market is signaling the Iran war won't spiral \u2014 and that's bullish for stocks",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 23:47:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/jim-cramer-oil-is-flashing-a-bullish-signal-for-stocks-amid-iran-war.html",
+      "summary": "\"The oil market always seems to know everything,\" CNBC's Jim Cramer said Wednesday."
+    },
+    {
+      "headline": "Iran's Shahed drone: How 'the poor man\u2019s cruise missile\u2019 is shaping Tehran\u2019s retaliation",
+      "source": "CNBC",
+      "published": "Thu, 05 Mar 2026 10:54:55 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/iran-shahed-136-drone-cost-air-defense-gulf-war-us-israel-gulf-scorpion-strike-centcom.html",
+      "summary": "After years on the front lines of Russia's invasion of Ukraine, the Iranian Shahed-136 drone is at the center of Tehran's retaliation against recent U.S. strikes."
+    },
+    {
+      "headline": "Google's AI chatbot allegedly told user to stage 'mass casualty attack,' wrongful death suit claims",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 20:19:30 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/google-gemini-ai-told-user-stage-mass-casualty-attack-suit-claims.html",
+      "summary": "The father of Jonathan Gavalas accused Google of convincing his son to commit suicide after first encouraging him to execute a \"mass casualty attack.\""
+    },
+    {
+      "headline": "Apple announces MacBook Neo, its most affordable laptop ever",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 19:47:34 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/apple-macbook-neo-budget-laptop.html",
+      "summary": "Apple\u2019s new MacBook Neo gives the company its cheapest laptop ever, creating a budget entry into the Mac lineup."
+    }
+  ]
+}
