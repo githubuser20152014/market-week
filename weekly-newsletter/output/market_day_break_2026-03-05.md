@@ -6,7 +6,7 @@
 
 ## Morning Brief
 
-US stocks edged higher — the S&P 500 ended +0.78%, while the Nasdaq finished +1.29%. On the safe-haven front, Gold climbed 0.92% to $5,167.10, while the 10-year Treasury yield rose 2 bps to 4.08%, while the dollar softened (EUR/USD 1.1616). WTI crude rose 2.50% to $76.53/bbl.
+US stocks edged higher — the S&P 500 ended +0.78%, while the Nasdaq finished +1.29%. On the safe-haven front, Gold climbed 1.00% to $5,171.60, while the 10-year Treasury yield rose 2 bps to 4.08%, while the dollar softened (EUR/USD 1.1616). WTI crude rose 2.52% to $76.54/bbl.
 
 APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and Hang Seng lagging at +0.28%. European markets are trading higher. US futures are sending a mixed signal ahead of the open.
 
@@ -16,7 +16,7 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 **Stocks edged higher yesterday.** The S&P 500 was up +0.8% — a quiet positive session, nothing dramatic.
 
-**Gold surged 0.9% yesterday.** Investors are moving into safe havens — a sign of caution.
+**Gold surged 1.0% yesterday.** Investors are moving into safe havens — a sign of caution.
 
 ---
 
@@ -39,17 +39,17 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Index | Close | Daily % |
 |-------|-------|---------|
-| WTI Crude Oil | 76.53 | +2.50% |
+| WTI Crude Oil | 76.54 | +2.52% |
 | Nasdaq | 22807.48 | +1.29% |
 | Russell 2000 | 2636.01 | +1.06% |
-| Gold | 5167.10 | +0.92% |
+| Gold | 5171.60 | +1.00% |
 | S&P 500 | 6869.50 | +0.78% |
 | 10Y Treasury | 4.08% | +2 bps |
 | Dow Jones | 48739.41 | +0.49% |
-| USD Index | 99.00 | +0.23% |
+| USD Index | 98.99 | +0.23% |
 
 
-**Best:** WTI Crude Oil (+2.50%) | **Worst:** USD Index (+0.23%)
+**Best:** WTI Crude Oil (+2.52%) | **Worst:** USD Index (+0.23%)
 
 ---
 
@@ -70,10 +70,10 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Index | Price | Daily % | Session |
 |-------|-------|---------|---------|
-| DAX | 24266.48 | +0.25% | Early session (~3h in) |
-| FTSE 100 | 10603.87 | +0.34% | Early session (~3h in) |
-| CAC 40 | 8195.26 | +0.34% | Early session (~3h in) |
-| Euro Stoxx 50 | 5894.08 | +0.39% | Early session (~3h in) |
+| DAX | 24262.45 | +0.24% | Early session (~3h in) |
+| FTSE 100 | 10600.11 | +0.31% | Early session (~3h in) |
+| CAC 40 | 8194.43 | +0.33% | Early session (~3h in) |
+| Euro Stoxx 50 | 5893.86 | +0.39% | Early session (~3h in) |
 
 
 ---
@@ -83,11 +83,11 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 | Pair | Rate | Daily % |
 |------|------|---------|
 | EUR/USD | 1.1616 | +0.03% |
-| GBP/USD | 1.3353 | -0.00% |
-| USD/JPY | 157.2840 | -0.31% |
+| GBP/USD | 1.3351 | -0.02% |
+| USD/JPY | 157.2610 | -0.32% |
 | AUD/USD | 0.7050 | +0.13% |
-| USD/CNH | 6.8976 | -0.08% |
-| CHF/USD | 1.2821 | +0.25% |
+| USD/CNH | 6.8982 | -0.08% |
+| CHF/USD | 1.2820 | +0.24% |
 
 
 ---
@@ -96,12 +96,12 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Contract | Price | Daily % |
 |----------|-------|---------|
-| S&P Futures | 6872.00 | -0.06% |
-| Nasdaq Futures | 25116.25 | -0.05% |
-| Dow Futures | 48689.00 | -0.22% |
-| Gold Futures | 5167.30 | +0.92% |
-| 10Y T-Note | 112.58 | -0.29% |
-| WTI Crude Oil | 76.55 | +2.53% |
+| S&P Futures | 6871.25 | -0.07% |
+| Nasdaq Futures | 25113.00 | -0.06% |
+| Dow Futures | 48679.00 | -0.24% |
+| Gold Futures | 5171.60 | +1.00% |
+| 10Y T-Note | 112.56 | -0.30% |
+| WTI Crude Oil | 76.52 | +2.49% |
 
 
 ---
