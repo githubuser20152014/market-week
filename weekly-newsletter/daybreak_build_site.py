@@ -152,6 +152,8 @@ def render_html(ctx: dict) -> str:
     # ── US Market Close Table ─────────────────────────────────────────────────
     us_rows = ""
     for idx in ctx["us_indices"]:
+        if not idx.get("table", True):
+            continue
         if idx.get("is_yield"):
             close_str = f"{idx['close']:.2f}%" if idx["close"] is not None else "--"
             perf_str  = _pct_str(None, is_yield=True, bps=idx.get("yield_change_bps"))

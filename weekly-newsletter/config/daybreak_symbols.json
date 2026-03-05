@@ -14,7 +14,8 @@
     "Russell 2000":  { "symbol": "^RUT"  },
     "Gold":          { "symbol": "GC=F"  },
     "10Y Treasury":  { "symbol": "^TNX", "is_yield": true },
-    "USD Index":     { "symbol": "DX-Y.NYB" }
+    "USD Index":     { "symbol": "DX-Y.NYB" },
+    "WTI Crude Oil": { "symbol": "CL=F" }
   },
   "intl_indices": {
     "Nikkei 225":    { "symbol": "^N225",     "region": "Asia-Pacific" },

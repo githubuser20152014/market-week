@@ -129,7 +129,7 @@ def _fetch_us_close(date_str: str, index_cfg: dict) -> dict:
                 df.columns = df.columns.droplevel(1)
             df = df[df.index.dayofweek < 5]  # drop weekends
             if len(df) < 2:
-                result[name] = _empty_us_entry(symbol, is_yield)
+                result[name] = _empty_us_entry(symbol, is_yield, table=info.get("table", True))
                 continue
 
             prev_close = float(df["Close"].iloc[-2])
@@ -141,6 +141,7 @@ def _fetch_us_close(date_str: str, index_cfg: dict) -> dict:
                 "prev_close": round(prev_close, 4),
                 "close":      round(close, 4),
                 "daily_pct":  round(daily_pct, 4),
+                "table":      info.get("table", True),
             }
             if is_yield:
                 entry["is_yield"]          = True
@@ -148,13 +149,13 @@ def _fetch_us_close(date_str: str, index_cfg: dict) -> dict:
             result[name] = entry
         except Exception as e:
             print(f"  US close fetch failed for {name} ({e})")
-            result[name] = _empty_us_entry(symbol, is_yield)
+            result[name] = _empty_us_entry(symbol, is_yield, table=info.get("table", True))
 
     return result
 
 
-def _empty_us_entry(symbol: str, is_yield: bool = False) -> dict:
-    entry = {"symbol": symbol, "prev_close": None, "close": None, "daily_pct": None}
+def _empty_us_entry(symbol: str, is_yield: bool = False, table: bool = True) -> dict:
+    entry = {"symbol": symbol, "prev_close": None, "close": None, "daily_pct": None, "table": table}
     if is_yield:
         entry["is_yield"] = True
         entry["yield_change_bps"] = None

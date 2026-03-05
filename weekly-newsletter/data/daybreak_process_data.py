@@ -30,6 +30,7 @@ def process_us_close(raw: dict) -> list:
             "symbol":    info.get("symbol", ""),
             "close":     info.get("close"),
             "daily_pct": daily_pct,
+            "table":     info.get("table", True),
         }
         if info.get("is_yield"):
             entry["is_yield"]         = True
@@ -117,7 +118,7 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
     gold    = next((i for i in us_indices if i["name"] == "Gold"), None)
     treasury = next((i for i in us_indices if "Treasury" in i["name"]), None)
     eur_usd = next((f for f in fx if "EUR" in f["name"]), None)
-    oil     = next((f for f in futures if "WTI" in f["name"] or "Crude" in f["name"]), None)
+    oil     = next((i for i in us_indices if "WTI" in i["name"] or "Crude" in i["name"]), None)
 
     if sp and sp["daily_pct"] is not None:
         pct = sp["daily_pct"]
@@ -164,8 +165,8 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
     if oil and oil["daily_pct"] is not None:
         direction = "rose" if oil["daily_pct"] > 0 else "fell"
         oil_str = (
-            f"WTI crude {direction} {abs(oil['daily_pct']):.2f}% to ${oil['price']:,.2f}/bbl."
-            if oil["price"] else
+            f"WTI crude {direction} {abs(oil['daily_pct']):.2f}% to ${oil['close']:,.2f}/bbl."
+            if oil["close"] else
             f"WTI crude {direction} {abs(oil['daily_pct']):.2f}%."
         )
         para1 += f" {oil_str}"
@@ -471,8 +472,8 @@ def build_daybreak_context(raw: dict) -> dict:
     tips         = generate_daybreak_positioning_tips(us_indices, futures,
                                                        yesterday_events, today_events)
 
-    # Best / worst across all US entries
-    all_us = [i for i in us_indices if i["daily_pct"] is not None]
+    # Best / worst across all US entries (exclude non-table entries like WTI Crude Oil)
+    all_us = [i for i in us_indices if i["daily_pct"] is not None and i.get("table", True)]
     all_us_sorted = sorted(all_us, key=lambda x: x["daily_pct"], reverse=True)
     us_best  = all_us_sorted[0]  if all_us_sorted else None
     us_worst = all_us_sorted[-1] if all_us_sorted else None
