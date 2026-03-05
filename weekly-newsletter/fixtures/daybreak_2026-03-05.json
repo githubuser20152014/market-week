@@ -1,7 +1,7 @@
 {
   "meta": {
     "date": "2026-03-05",
-    "generated_at": "2026-03-05T11:06:05.953646Z",
+    "generated_at": "2026-03-05T11:06:43.132935Z",
     "generation_source": "live"
   },
   "us_close": {
@@ -36,8 +36,8 @@
     "Gold": {
       "symbol": "GC=F",
       "prev_close": 5120.2002,
-      "close": 5177.5,
-      "daily_pct": 1.1191,
+      "close": 5177.0,
+      "daily_pct": 1.1093,
       "table": true
     },
     "10Y Treasury": {
@@ -52,15 +52,15 @@
     "USD Index": {
       "symbol": "DX-Y.NYB",
       "prev_close": 98.77,
-      "close": 98.976,
-      "daily_pct": 0.2086,
+      "close": 98.973,
+      "daily_pct": 0.2055,
       "table": true
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
       "prev_close": 74.66,
-      "close": 76.55,
-      "daily_pct": 2.5315,
+      "close": 76.56,
+      "daily_pct": 2.5449,
       "table": true
     }
   },
@@ -114,57 +114,57 @@
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24244.68,
+      "close": 24253.13,
       "prev_close": 24205.36,
-      "daily_pct": 0.1624,
+      "daily_pct": 0.1974,
       "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10590.47,
+      "close": 10591.27,
       "prev_close": 10567.7,
-      "daily_pct": 0.2155,
+      "daily_pct": 0.223,
       "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8188.05,
+      "close": 8189.1,
       "prev_close": 8167.73,
-      "daily_pct": 0.2488,
+      "daily_pct": 0.2616,
       "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5887.54,
+      "close": 5888.31,
       "prev_close": 5870.92,
-      "daily_pct": 0.2831,
+      "daily_pct": 0.2962,
       "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.16184,
+      "rate": 1.16171,
       "prev_close": 1.16122,
-      "daily_pct": 0.0534
+      "daily_pct": 0.0418
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.33588,
+      "rate": 1.33579,
       "prev_close": 1.33536,
-      "daily_pct": 0.0387
+      "daily_pct": 0.0321
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 157.25301,
+      "rate": 157.258,
       "prev_close": 157.77299,
-      "daily_pct": -0.3296
+      "daily_pct": -0.3264
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
@@ -174,53 +174,53 @@
     },
     "USD/CNH": {
       "symbol": "USDCNH=X",
-      "rate": 6.89728,
+      "rate": 6.89783,
       "prev_close": 6.90167,
-      "daily_pct": -0.0636
+      "daily_pct": -0.0556
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28241,
+      "rate": 1.2823,
       "prev_close": 1.2789,
-      "daily_pct": 0.2744
+      "daily_pct": 0.2654
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6873.0,
+      "price": 6869.75,
       "prev_close": 6876.0,
-      "daily_pct": -0.0436
+      "daily_pct": -0.0909
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 25118.5,
+      "price": 25106.0,
       "prev_close": 25128.25,
-      "daily_pct": -0.0388
+      "daily_pct": -0.0885
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": 48700.0,
+      "price": 48683.0,
       "prev_close": 48796.0,
-      "daily_pct": -0.1967
+      "daily_pct": -0.2316
     },
     "Gold Futures": {
       "symbol": "GC=F",
-      "price": 5177.3,
+      "price": 5176.4,
       "prev_close": 5120.2,
-      "daily_pct": 1.1152
+      "daily_pct": 1.0976
     },
     "10Y T-Note": {
       "symbol": "ZN=F",
-      "price": 112.53,
+      "price": 112.55,
       "prev_close": 112.91,
-      "daily_pct": -0.3321
+      "daily_pct": -0.3183
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": 76.6,
+      "price": 76.54,
       "prev_close": 74.66,
-      "daily_pct": 2.5984
+      "daily_pct": 2.5181
     }
   },
   "econ_calendar": {
@@ -259,7 +259,7 @@
     {
       "headline": "Iran's Shahed drone: How 'the poor man\u2019s cruise missile\u2019 is shaping Tehran\u2019s retaliation",
       "source": "CNBC",
-      "published": "Thu, 05 Mar 2026 11:01:41 GMT",
+      "published": "Thu, 05 Mar 2026 11:06:16 GMT",
       "url": "https://www.cnbc.com/2026/03/05/iran-shahed-136-drone-cost-air-defense-gulf-war-us-israel-gulf-scorpion-strike-centcom.html",
       "summary": "After years on the front lines of Russia's invasion of Ukraine, the Iranian Shahed-136 drone is at the center of Tehran's retaliation against recent U.S. strikes."
     },
