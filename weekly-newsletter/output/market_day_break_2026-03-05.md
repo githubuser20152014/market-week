@@ -6,7 +6,7 @@
 
 ## Morning Brief
 
-US stocks edged higher — the S&P 500 ended +0.78%, while the Nasdaq finished +1.29%. On the safe-haven front, Gold climbed 1.00% to $5,171.60, while the 10-year Treasury yield rose 2 bps to 4.08%, while the dollar softened (EUR/USD 1.1616). WTI crude rose 2.52% to $76.54/bbl.
+US stocks edged higher — the S&P 500 ended +0.78%, while the Nasdaq finished +1.29%. On the safe-haven front, Gold climbed 1.05% to $5,174.00, while the 10-year Treasury yield rose 2 bps to 4.08%, while the dollar softened (EUR/USD 1.1614). WTI crude rose 2.46% to $76.50/bbl.
 
 APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and Hang Seng lagging at +0.28%. European markets are trading higher. US futures are sending a mixed signal ahead of the open.
 
@@ -16,7 +16,7 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 **Stocks edged higher yesterday.** The S&P 500 was up +0.8% — a quiet positive session, nothing dramatic.
 
-**Gold surged 1.0% yesterday.** Investors are moving into safe havens — a sign of caution.
+**Gold surged 1.1% yesterday.** Investors are moving into safe havens — a sign of caution.
 
 ---
 
@@ -39,17 +39,17 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Index | Close | Daily % |
 |-------|-------|---------|
-| WTI Crude Oil | 76.54 | +2.52% |
+| WTI Crude Oil | 76.50 | +2.46% |
 | Nasdaq | 22807.48 | +1.29% |
 | Russell 2000 | 2636.01 | +1.06% |
-| Gold | 5171.60 | +1.00% |
+| Gold | 5174.00 | +1.05% |
 | S&P 500 | 6869.50 | +0.78% |
 | 10Y Treasury | 4.08% | +2 bps |
 | Dow Jones | 48739.41 | +0.49% |
-| USD Index | 98.99 | +0.23% |
+| USD Index | 99.00 | +0.23% |
 
 
-**Best:** WTI Crude Oil (+2.52%) | **Worst:** USD Index (+0.23%)
+**Best:** WTI Crude Oil (+2.46%) | **Worst:** USD Index (+0.23%)
 
 ---
 
@@ -70,10 +70,10 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Index | Price | Daily % | Session |
 |-------|-------|---------|---------|
-| DAX | 24262.45 | +0.24% | Early session (~3h in) |
-| FTSE 100 | 10600.11 | +0.31% | Early session (~3h in) |
-| CAC 40 | 8194.43 | +0.33% | Early session (~3h in) |
-| Euro Stoxx 50 | 5893.86 | +0.39% | Early session (~3h in) |
+| DAX | 24258.36 | +0.22% | Early session (~3h in) |
+| FTSE 100 | 10594.34 | +0.25% | Early session (~3h in) |
+| CAC 40 | 8191.06 | +0.29% | Early session (~3h in) |
+| Euro Stoxx 50 | 5890.34 | +0.33% | Early session (~3h in) |
 
 
 ---
@@ -82,12 +82,12 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Pair | Rate | Daily % |
 |------|------|---------|
-| EUR/USD | 1.1616 | +0.03% |
-| GBP/USD | 1.3351 | -0.02% |
-| USD/JPY | 157.2610 | -0.32% |
+| EUR/USD | 1.1614 | +0.02% |
+| GBP/USD | 1.3353 | -0.01% |
+| USD/JPY | 157.2780 | -0.31% |
 | AUD/USD | 0.7050 | +0.13% |
-| USD/CNH | 6.8982 | -0.08% |
-| CHF/USD | 1.2820 | +0.24% |
+| USD/CNH | 6.8983 | -0.05% |
+| CHF/USD | 1.2819 | +0.24% |
 
 
 ---
@@ -96,12 +96,12 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Contract | Price | Daily % |
 |----------|-------|---------|
-| S&P Futures | 6871.25 | -0.07% |
-| Nasdaq Futures | 25113.00 | -0.06% |
+| S&P Futures | 6870.25 | -0.08% |
+| Nasdaq Futures | 25107.25 | -0.08% |
 | Dow Futures | 48679.00 | -0.24% |
-| Gold Futures | 5171.60 | +1.00% |
-| 10Y T-Note | 112.56 | -0.30% |
-| WTI Crude Oil | 76.52 | +2.49% |
+| Gold Futures | 5174.00 | +1.05% |
+| 10Y T-Note | 112.55 | -0.32% |
+| WTI Crude Oil | 76.51 | +2.48% |
 
 
 ---
@@ -110,7 +110,14 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Event | Actual | Expected | Previous | Surprise |
 |-------|--------|----------|----------|---------|
-| *No major events* | | | | |
+| ADP National Employment Report | -- | -- | -- | Neutral |
+| Chicago Fed National Financial Conditions Index | -- | -- | -- | Neutral |
+| Daily Treasury Inflation-Indexed Securities | -- | -- | -- | Neutral |
+| Federal Funds Data | -- | -- | -- | Neutral |
+| FOMC Press Release | -- | -- | -- | Neutral |
+| Kansas City Fed Policy Rate Uncertainty | -- | -- | -- | Neutral |
+| Key ECB Interest Rates | -- | -- | -- | Neutral |
+| St. Louis Fed Financial Stress Index | -- | -- | -- | Neutral |
 
 
 ---
@@ -119,14 +126,20 @@ APAC markets closed broadly higher overnight, with KOSPI leading at +9.63% and H
 
 | Time (EST) | Event | Importance | Expected |
 |-----------|-------|------------|---------|
-| | *No high-importance events today* | | |
+| -- | Daily Treasury Inflation-Indexed Securities | Medium | -- |
+| -- | Federal Funds Data | Medium | -- |
+| -- | FOMC Press Release | Medium | -- |
+| -- | Kansas City Fed Policy Rate Uncertainty | Medium | -- |
+| -- | Key ECB Interest Rates | Medium | -- |
+| -- | Unemployment Insurance Weekly Claims Report | Medium | -- |
 
 
 ---
 
 ## Positioning Notes
 
-- No strong directional signals this morning -- maintain current allocations and watch for intraday cues.
+- CPI releases today -- watch for a surprise in either direction. Hot print → TIPS and defensives; cool print → growth stocks and long bonds.
+- FOMC event today -- expect volatility around the announcement. Consider trimming position sizes or hedging with VIX calls.
 
 
 ---

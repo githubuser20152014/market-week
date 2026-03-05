@@ -1,7 +1,7 @@
 {
   "meta": {
     "date": "2026-03-05",
-    "generated_at": "2026-03-05T10:58:32.732838Z",
+    "generated_at": "2026-03-05T11:02:52.640276Z",
     "generation_source": "live"
   },
   "us_close": {
@@ -36,8 +36,8 @@
     "Gold": {
       "symbol": "GC=F",
       "prev_close": 5120.2002,
-      "close": 5171.6001,
-      "daily_pct": 1.0039,
+      "close": 5174.0,
+      "daily_pct": 1.0507,
       "table": true
     },
     "10Y Treasury": {
@@ -52,15 +52,15 @@
     "USD Index": {
       "symbol": "DX-Y.NYB",
       "prev_close": 98.77,
-      "close": 98.994,
-      "daily_pct": 0.2268,
+      "close": 98.997,
+      "daily_pct": 0.2298,
       "table": true
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
       "prev_close": 74.66,
-      "close": 76.54,
-      "daily_pct": 2.5181,
+      "close": 76.5,
+      "daily_pct": 2.4645,
       "table": true
     }
   },
@@ -114,89 +114,89 @@
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24262.45,
+      "close": 24258.36,
       "prev_close": 24205.36,
-      "daily_pct": 0.2359,
+      "daily_pct": 0.219,
       "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10600.11,
+      "close": 10594.34,
       "prev_close": 10567.7,
-      "daily_pct": 0.3067,
+      "daily_pct": 0.2521,
       "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8194.43,
+      "close": 8191.06,
       "prev_close": 8167.73,
-      "daily_pct": 0.3269,
+      "daily_pct": 0.2856,
       "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5893.86,
+      "close": 5890.34,
       "prev_close": 5870.92,
-      "daily_pct": 0.3907,
+      "daily_pct": 0.3308,
       "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.16158,
+      "rate": 1.16144,
       "prev_close": 1.16122,
-      "daily_pct": 0.0302
+      "daily_pct": 0.0186
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.33511,
+      "rate": 1.33527,
       "prev_close": 1.33536,
-      "daily_pct": -0.0187
+      "daily_pct": -0.0067
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 157.261,
+      "rate": 157.278,
       "prev_close": 157.77299,
-      "daily_pct": -0.3245
+      "daily_pct": -0.3137
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": 0.70497,
+      "rate": 0.70502,
       "prev_close": 0.70407,
-      "daily_pct": 0.1278
+      "daily_pct": 0.1349
     },
     "USD/CNH": {
       "symbol": "USDCNH=X",
-      "rate": 6.89815,
-      "prev_close": 6.90334,
-      "daily_pct": -0.0752
+      "rate": 6.89833,
+      "prev_close": 6.90167,
+      "daily_pct": -0.0484
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28199,
+      "rate": 1.28194,
       "prev_close": 1.2789,
-      "daily_pct": 0.241
+      "daily_pct": 0.2372
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6871.25,
+      "price": 6870.25,
       "prev_close": 6876.0,
-      "daily_pct": -0.0691
+      "daily_pct": -0.0836
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 25113.0,
+      "price": 25107.25,
       "prev_close": 25128.25,
-      "daily_pct": -0.0607
+      "daily_pct": -0.0836
     },
     "Dow Futures": {
       "symbol": "YM=F",
@@ -206,26 +206,168 @@
     },
     "Gold Futures": {
       "symbol": "GC=F",
-      "price": 5171.6,
+      "price": 5174.0,
       "prev_close": 5120.2,
-      "daily_pct": 1.0039
+      "daily_pct": 1.0507
     },
     "10Y T-Note": {
       "symbol": "ZN=F",
-      "price": 112.56,
+      "price": 112.55,
       "prev_close": 112.91,
-      "daily_pct": -0.3045
+      "daily_pct": -0.3183
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": 76.52,
+      "price": 76.51,
       "prev_close": 74.66,
-      "daily_pct": 2.4913
+      "daily_pct": 2.4779
     }
   },
   "econ_calendar": {
-    "yesterday": [],
-    "today": []
+    "yesterday": [
+      {
+        "event": "ADP National Employment Report",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Chicago Fed National Financial Conditions Index",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Daily Treasury Inflation-Indexed Securities",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Federal Funds Data",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "FOMC Press Release",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Kansas City Fed Policy Rate Uncertainty",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Key ECB Interest Rates",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "St. Louis Fed Financial Stress Index",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Daily Treasury Inflation-Indexed Securities",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Federal Funds Data",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "FOMC Press Release",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Kansas City Fed Policy Rate Uncertainty",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Key ECB Interest Rates",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "Unemployment Insurance Weekly Claims Report",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "",
+        "source": "FRED"
+      }
+    ]
   },
   "market_news": [
     {
@@ -266,7 +408,7 @@
     {
       "headline": "Iran's Shahed drone: How 'the poor man\u2019s cruise missile\u2019 is shaping Tehran\u2019s retaliation",
       "source": "CNBC",
-      "published": "Thu, 05 Mar 2026 10:57:32 GMT",
+      "published": "Thu, 05 Mar 2026 11:01:41 GMT",
       "url": "https://www.cnbc.com/2026/03/05/iran-shahed-136-drone-cost-air-defense-gulf-war-us-israel-gulf-scorpion-strike-centcom.html",
       "summary": "After years on the front lines of Russia's invasion of Ukraine, the Iranian Shahed-136 drone is at the center of Tehran's retaliation against recent U.S. strikes."
     },
