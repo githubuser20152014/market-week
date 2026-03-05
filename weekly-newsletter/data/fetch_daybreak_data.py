@@ -374,60 +374,140 @@ def _fetch_futures(date_str: str, futures_cfg: dict) -> dict:
 
 
 def _fetch_econ_calendar(date_str: str) -> dict:
-    """Fetch economic calendar via Finnhub, split into yesterday/today buckets.
+    """Fetch economic calendar events for yesterday + today.
 
-    Falls back to an empty calendar if the API key is missing or the call fails.
+    Primary source: FRED releases/dates API (free).
+    Fallback: Finnhub /calendar/economic (paid — 403 on free tier).
+    Returns empty calendar if both fail.
     """
     import os
-    target = datetime.strptime(date_str, "%Y-%m-%d")
+    target    = datetime.strptime(date_str, "%Y-%m-%d")
     yesterday = (target - timedelta(days=1)).strftime("%Y-%m-%d")
+    result    = {"yesterday": [], "today": []}
+
+    fred_key = os.environ.get("FRED_API_KEY", "")
+    if fred_key:
+        try:
+            return _fetch_econ_calendar_fred(yesterday, date_str, fred_key)
+        except Exception as e:
+            print(f"  FRED econ calendar fetch failed ({e})")
+            # Fall through to Finnhub only if FRED errored out
+
+    finnhub_key = os.environ.get("FINNHUB_API_KEY", "")
+    if not fred_key and finnhub_key:
+        try:
+            return _fetch_econ_calendar_finnhub(yesterday, date_str, finnhub_key)
+        except Exception as e:
+            print(f"  Finnhub econ calendar fetch failed ({e})")
+
+    if not fred_key and not finnhub_key:
+        print("  No FRED_API_KEY or FINNHUB_API_KEY — skipping live econ calendar.")
+
+    return result
+
+
+# FRED release IDs for key macro events (free tier, no auth tier restriction)
+_FRED_RELEASES = {
+    10:  ("Consumer Price Index",         3, "CPI"),
+    53:  ("Gross Domestic Product",        3, "GDP"),
+    54:  ("Personal Income and Outlays",   3, "PCE / Personal Income"),
+    50:  ("Employment Situation",          3, "Nonfarm Payrolls / Unemployment"),
+    44:  ("Advance Monthly Sales",         2, "Retail Sales"),
+    31:  ("Producer Price Index",          2, "PPI"),
+    21:  ("Existing Home Sales",           1, "Existing Home Sales"),
+    22:  ("New Residential Sales",         1, "New Home Sales"),
+    17:  ("Industrial Production",         2, "Industrial Production"),
+    46:  ("Durable Goods",                 2, "Durable Goods Orders"),
+    82:  ("Trade Balance",                 2, "Trade Balance"),
+    175: ("University of Michigan",        2, "UMich Consumer Sentiment"),
+    19:  ("Housing Starts",               1, "Housing Starts"),
+    23:  ("Manufacturers' New Orders",     1, "Factory Orders"),
+}
+
+def _fetch_econ_calendar_fred(yesterday: str, today: str, api_key: str) -> dict:
+    """Fetch upcoming FRED release dates and map to human-readable event names."""
+    import requests
 
     result = {"yesterday": [], "today": []}
 
-    api_key = os.environ.get("FINNHUB_API_KEY", "")
-    if not api_key:
-        print("  No FINNHUB_API_KEY — skipping live econ calendar.")
-        return result
+    url = "https://api.stlouisfed.org/fred/releases/dates"
+    params = {
+        "realtime_start":                   yesterday,
+        "realtime_end":                     today,
+        "include_release_dates_with_no_data": "true",
+        "sort_order":                       "asc",
+        "api_key":                          api_key,
+        "file_type":                        "json",
+    }
+    resp = requests.get(url, params=params, timeout=10)
+    resp.raise_for_status()
+    release_dates = resp.json().get("release_dates", [])
 
-    try:
-        import requests
-        url = "https://finnhub.io/api/v1/calendar/economic"
-        params = {"from": yesterday, "to": date_str, "token": api_key}
-        resp = requests.get(url, params=params, timeout=10)
-        resp.raise_for_status()
-        events = resp.json().get("economicCalendar", [])
-    except Exception as e:
-        print(f"  Finnhub econ calendar fetch failed ({e})")
-        return result
+    for rd in release_dates:
+        release_id   = rd.get("release_id")
+        release_date = rd.get("date", "")
 
-    _HIGH_IMPORTANCE_KEYWORDS = {"cpi", "gdp", "fomc", "fed", "ecb", "pce",
-                                 "jobs", "nonfarm", "unemployment", "retail"}
+        # Only include releases explicitly in our allowlist — no keyword fallback
+        if release_id not in _FRED_RELEASES:
+            continue
+        _, importance, label = _FRED_RELEASES[release_id]
+
+        entry = {
+            "event":      label,
+            "actual":     "--",
+            "expected":   "--",
+            "previous":   "--",
+            "unit":       "",
+            "importance": importance,
+            "time_est":   "",
+            "source":     "FRED",
+        }
+        if release_date == yesterday:
+            result["yesterday"].append(entry)
+        elif release_date == today:
+            result["today"].append(entry)
+
+    return result
+
+
+def _fetch_econ_calendar_finnhub(yesterday: str, today: str, api_key: str) -> dict:
+    """Fetch economic calendar from Finnhub (premium endpoint)."""
+    import requests
+
+    _KEYWORDS = {"cpi", "gdp", "fomc", "fed", "ecb", "pce", "jobs",
+                 "nonfarm", "unemployment", "retail", "payroll", "inflation"}
+
+    result = {"yesterday": [], "today": []}
+    url    = "https://finnhub.io/api/v1/calendar/economic"
+    params = {"from": yesterday, "to": today, "token": api_key}
+    resp   = requests.get(url, params=params, timeout=10)
+    resp.raise_for_status()
+    events = resp.json().get("economicCalendar", [])
 
     for ev in events:
         importance = ev.get("importance", 0)
         event_name = ev.get("event", "")
-        # Filter to importance > 1 and macro-relevant keywords
         if importance < 2:
             continue
         name_lower = event_name.lower()
-        if not any(kw in name_lower for kw in _HIGH_IMPORTANCE_KEYWORDS):
-            # Still include if importance is high
+        if not any(kw in name_lower for kw in _KEYWORDS):
             if importance < 3:
                 continue
 
         entry = {
-            "event":    event_name,
-            "actual":   ev.get("actual", "--"),
-            "expected": ev.get("estimate", "--"),
-            "previous": ev.get("prev", "--"),
-            "unit":     ev.get("unit", ""),
+            "event":      event_name,
+            "actual":     ev.get("actual", "--"),
+            "expected":   ev.get("estimate", "--"),
+            "previous":   ev.get("prev", "--"),
+            "unit":       ev.get("unit", ""),
             "importance": importance,
-            "time_est": ev.get("time", ""),
+            "time_est":   ev.get("time", ""),
+            "source":     "Finnhub",
         }
         ev_date = ev.get("time", "")[:10] if ev.get("time") else ev.get("date", "")
         if ev_date == yesterday:
             result["yesterday"].append(entry)
-        elif ev_date == date_str:
+        elif ev_date == today:
             result["today"].append(entry)
 
     return result

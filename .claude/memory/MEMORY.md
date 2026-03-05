@@ -51,6 +51,17 @@ are used. The intl generator used to rename outputs, deleting the US files.
 `fetch_data.py` prints a WARNING if the closest fixture is >2 days from the
 requested date. This means data is stale — use `--live` or create a new fixture.
 
+## Workflow Preferences
+
+### End-of-session GitHub commit
+When a session's work looks complete and content looks good, always ask:
+"Ready to commit the code changes to GitHub?"
+before committing source code. The `publish_daybreak.sh` script auto-commits
+generated content (fixtures, site), but source code changes should be committed
+separately with explicit user sign-off.
+
+---
+
 ### Price verification (--verify flag)
 `generate_newsletter.py --live --verify` cross-checks yfinance prices against
 FRED (Gold, 10Y Treasury) and Stooq (equities, USD Index) before generating.

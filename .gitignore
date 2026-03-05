@@ -3,4 +3,5 @@ weekly-newsletter/public_intl/
 __pycache__/
 *.pyc
 .env
+weekly-newsletter/config/api_keys.env
 .vercel/

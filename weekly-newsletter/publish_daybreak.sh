@@ -11,6 +11,12 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DATE_STR="${1:-$(date +%Y-%m-%d)}"
 
+# Load API keys if present
+ENV_FILE="$SCRIPT_DIR/config/api_keys.env"
+if [[ -f "$ENV_FILE" ]]; then
+  set -a; source "$ENV_FILE"; set +a
+fi
+
 echo "==> Generating Market Day Break for $DATE_STR ..."
 cd "$SCRIPT_DIR"
 python generate_market_day_break.py --date "$DATE_STR" --live --pdf
