@@ -1,53 +1,67 @@
 {
   "meta": {
     "date": "2026-03-04",
-    "generated_at": "2026-03-04T12:46:54.689638Z",
+    "generated_at": "2026-03-05T00:43:24.774250Z",
     "generation_source": "live"
   },
   "us_close": {
     "S&P 500": {
       "symbol": "^GSPC",
-      "prev_close": 6881.6201,
-      "close": 6816.6299,
-      "daily_pct": -0.9444
+      "prev_close": 6816.6299,
+      "close": 6869.5,
+      "daily_pct": 0.7756,
+      "table": true
     },
     "Dow Jones": {
       "symbol": "^DJI",
-      "prev_close": 48904.7812,
-      "close": 48501.2695,
-      "daily_pct": -0.8251
+      "prev_close": 48501.2695,
+      "close": 48739.4102,
+      "daily_pct": 0.491,
+      "table": true
     },
     "Nasdaq": {
       "symbol": "^IXIC",
-      "prev_close": 22748.8594,
-      "close": 22516.6895,
-      "daily_pct": -1.0206
+      "prev_close": 22516.6895,
+      "close": 22807.4844,
+      "daily_pct": 1.2915,
+      "table": true
     },
     "Russell 2000": {
       "symbol": "^RUT",
-      "prev_close": 2655.9399,
-      "close": 2608.3601,
-      "daily_pct": -1.7914
+      "prev_close": 2608.3601,
+      "close": 2636.0122,
+      "daily_pct": 1.0601,
+      "table": true
     },
     "Gold": {
       "symbol": "GC=F",
       "prev_close": 5107.3999,
-      "close": 5186.2002,
-      "daily_pct": 1.5429
+      "close": 5185.0,
+      "daily_pct": 1.5194,
+      "table": true
     },
     "10Y Treasury": {
       "symbol": "^TNX",
-      "prev_close": 4.048,
-      "close": 4.056,
-      "daily_pct": 0.1976,
+      "prev_close": 4.056,
+      "close": 4.08,
+      "daily_pct": 0.5917,
+      "table": true,
       "is_yield": true,
-      "yield_change_bps": 0.8
+      "yield_change_bps": 2.4
     },
     "USD Index": {
       "symbol": "DX-Y.NYB",
       "prev_close": 99.05,
-      "close": 98.842,
-      "daily_pct": -0.21
+      "close": 98.775,
+      "daily_pct": -0.2776,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 74.56,
+      "close": 75.78,
+      "daily_pct": 1.6363,
+      "table": true
     }
   },
   "intl_overnight": {
@@ -55,9 +69,9 @@
       "symbol": "^N225",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": 54245.54,
-      "prev_close": 56279.05,
-      "daily_pct": -3.6133,
+      "close": 56279.05,
+      "prev_close": 58057.24,
+      "daily_pct": -3.0628,
       "session_note": "Previous close"
     },
     "Hang Seng": {
@@ -73,9 +87,9 @@
       "symbol": "^KS11",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": 5093.54,
-      "prev_close": 5791.91,
-      "daily_pct": -12.0577,
+      "close": 5791.91,
+      "prev_close": 6244.13,
+      "daily_pct": -7.2423,
       "session_note": "Previous close"
     },
     "Nifty 50": {
@@ -91,122 +105,122 @@
       "symbol": "^AXJO",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": 8901.2,
-      "prev_close": 9077.3,
-      "daily_pct": -1.94,
+      "close": 9077.3,
+      "prev_close": 9167.5,
+      "daily_pct": -0.9839,
       "session_note": "Previous close"
     },
     "DAX": {
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24048.74,
+      "close": 24218.84,
       "prev_close": 23790.65,
-      "daily_pct": 1.0848,
+      "daily_pct": 1.7998,
       "session_note": "Early session (~3h in)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10536.96,
+      "close": 10551.87,
       "prev_close": 10484.1,
-      "daily_pct": 0.5042,
+      "daily_pct": 0.6464,
       "session_note": "Early session (~3h in)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8159.41,
+      "close": 8174.76,
       "prev_close": 8103.84,
-      "daily_pct": 0.6857,
+      "daily_pct": 0.8751,
       "session_note": "Early session (~3h in)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5841.33,
+      "close": 5873.67,
       "prev_close": 5771.73,
-      "daily_pct": 1.2059,
+      "daily_pct": 1.7662,
       "session_note": "Early session (~3h in)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.16374,
+      "rate": 1.16122,
       "prev_close": 1.16973,
-      "daily_pct": -0.512
+      "daily_pct": -0.7269
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.33649,
+      "rate": 1.33536,
       "prev_close": 1.34106,
-      "daily_pct": -0.3408
+      "daily_pct": -0.4247
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 157.202,
+      "rate": 157.77299,
       "prev_close": 157.257,
-      "daily_pct": -0.035
+      "daily_pct": 0.3281
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": 0.70512,
+      "rate": 0.70407,
       "prev_close": 0.71058,
-      "daily_pct": -0.7685
+      "daily_pct": -0.9161
     },
     "USD/CNH": {
       "symbol": "USDCNH=X",
-      "rate": 6.89869,
-      "prev_close": 6.91068,
-      "daily_pct": -0.1735
+      "rate": 6.8847,
+      "prev_close": 6.91521,
+      "daily_pct": -0.4412
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28157,
+      "rate": 1.2789,
       "prev_close": 1.28418,
-      "daily_pct": -0.2025
+      "daily_pct": -0.4105
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6819.0,
+      "price": 6895.75,
       "prev_close": 6824.75,
-      "daily_pct": -0.0843
+      "daily_pct": 1.0403
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 24754.25,
+      "price": 25218.0,
       "prev_close": 24755.75,
-      "daily_pct": -0.0061
+      "daily_pct": 1.8672
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": 48483.0,
+      "price": 48858.0,
       "prev_close": 48560.0,
-      "daily_pct": -0.1586
+      "daily_pct": 0.6137
     },
     "Gold Futures": {
       "symbol": "GC=F",
-      "price": 5187.2,
+      "price": 5184.9,
       "prev_close": 5107.4,
-      "daily_pct": 1.5624
+      "daily_pct": 1.5174
     },
     "10Y T-Note": {
       "symbol": "ZN=F",
-      "price": 112.86,
+      "price": 112.7,
       "prev_close": 113.11,
-      "daily_pct": -0.221
+      "daily_pct": -0.3592
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": 74.68,
+      "price": 75.78,
       "prev_close": 74.56,
-      "daily_pct": 0.1609
+      "daily_pct": 1.6363
     }
   },
   "econ_calendar": {
@@ -215,60 +229,60 @@
   },
   "market_news": [
     {
-      "headline": "Bessent says global 15% tariff starts this week, move back to prior rates within 5 months",
+      "headline": "Google's AI chatbot allegedly told user to stage 'mass casualty attack,' wrongful death suit claims",
       "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 12:46:28 GMT",
+      "published": "Wed, 04 Mar 2026 20:19:30 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/google-gemini-ai-told-user-stage-mass-casualty-attack-suit-claims.html",
+      "summary": "The father of Jonathan Gavalas accused Google of convincing his son to commit suicide after first encouraging him to execute a \"mass casualty attack.\""
+    },
+    {
+      "headline": "Deflation and tariff-hit China reportedly sets lowest growth target on record at 4.5% to 5%",
+      "source": "CNBC",
+      "published": "Thu, 05 Mar 2026 00:29:06 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/china-gdp-two-sessions-.html",
+      "summary": "That marks a slight downgrade from the \"around 5%\" target set in the past three years."
+    },
+    {
+      "headline": "Apple announces MacBook Neo, its most affordable laptop ever",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 19:47:34 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/apple-macbook-neo-budget-laptop.html",
+      "summary": "Apple\u2019s new MacBook Neo gives the company its cheapest laptop ever, creating a budget entry into the Mac lineup."
+    },
+    {
+      "headline": "Bessent says global 15% tariff starts this week, predicts Trump duties will return to old levels later this year",
+      "source": "CNBC",
+      "published": "Wed, 04 Mar 2026 14:38:23 GMT",
       "url": "https://www.cnbc.com/2026/03/04/bessent-says-global-15percent-tariff-starts-this-week-move-back-to-prior-rates-within-5-months.html",
       "summary": "The Supreme Court last month ruled that President Donald Trump's sweeping global tariffs are not authorized under the law known as IEEPA."
     },
     {
-      "headline": "Treasury Secretary Bessent says U.S. will make 'series of announcements' to support oil trade in the Gulf",
+      "headline": "Trump officially nominates Kevin Warsh as Fed chair to replace Jerome Powell",
       "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 12:45:36 GMT",
-      "url": "https://www.cnbc.com/2026/03/04/treasury-secretary-bessent-says-us-will-make-series-of-announcements-to-support-oil-trade-in-the-gulf.html",
-      "summary": "Bessent sought to calm concerns about a potential energy shock, arguing that oil markets are well supplied even as tensions escalate in the Middle East."
+      "published": "Wed, 04 Mar 2026 19:16:10 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/trump-federal-reserve-kevin-warsh-senate.html",
+      "summary": "Sen. Thom Tillis has said he would block Kevin Warsh's nomination until a federal criminal investigation of Fed Chair Jerome Powell is dropped"
     },
     {
-      "headline": "'No to war\u2019: Spain PM hits back over Trump\u2019s threats to cut trade over military base access",
+      "headline": "The U.S. is not the place to be for investors in 2026 so far. Where they are turning to for gains",
       "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 10:47:58 GMT",
-      "url": "https://www.cnbc.com/2026/03/04/spain-pm-sanchez-trump-trade-nato-defense-iran-israel-crisis.html",
-      "summary": "His comments come after the U.S. president pledged to cut off all trade with Madrid over its position on the Iran conflict."
+      "published": "Wed, 04 Mar 2026 18:00:02 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/the-us-is-not-the-place-to-be-for-investors-this-year-so-far.html",
+      "summary": "International stocks remain compelling for investors even amid heightened fears from the U.S.-Iran conflict this week."
     },
     {
-      "headline": "Goldman's David Solomon surprised by \u2018benign\u2019 market reaction to Iran war",
+      "headline": "2 reasons why the market is rallying Wednesday and defying Iran war fears",
       "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 11:12:29 GMT",
-      "url": "https://www.cnbc.com/2026/03/04/goldman-david-solomon-iran-war-market-reaction-stocks.html",
-      "summary": "\"I think it's going to take a couple of weeks for markets to really digest the implications of what's happened,\" Goldman chief David Solomon said."
+      "published": "Wed, 04 Mar 2026 19:51:33 GMT",
+      "url": "https://www.cnbc.com/2026/03/04/these-are-2-reasons-why-stocks-are-rallying-wednesday-defying-iran-war-concerns.html",
+      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
     },
     {
       "headline": "Democrats tread cautiously around another Trump impeachment after 'illegal' Iran strikes",
       "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 11:00:02 GMT",
+      "published": "Wed, 04 Mar 2026 19:37:57 GMT",
       "url": "https://www.cnbc.com/2026/03/04/trump-impeachment-iran-strikes-war-democrats.html",
-      "summary": ""
-    },
-    {
-      "headline": "Weekly mortgage demand surged 11% higher last week, as rates sat near 4-year low",
-      "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 12:00:01 GMT",
-      "url": "https://www.cnbc.com/2026/03/04/weekly-mortgage-demand-surged-11percent-higher-last-week.html",
-      "summary": "Lower mortgage rates last week caused a run on refinancing and renewed interest from homebuyers, but rates have already moved higher again."
-    },
-    {
-      "headline": "I was on an Emirates flight to Dubai that turned around twice because of Iranian missiles",
-      "source": "CNBC",
-      "published": "Wed, 04 Mar 2026 02:06:48 GMT",
-      "url": "https://www.cnbc.com/2026/03/03/emirates-flight-dubai-iran-missile-strikes.html",
-      "summary": "CNBC's Emma Graham flew home to the UAE on an Emirates flight that turned around just 30 minutes from Dubai because of an Iran missile threat."
-    },
-    {
-      "headline": "Apple raises MacBook prices across the board as M5 chips, new displays signal AI-first strategy",
-      "source": "CNBC",
-      "published": "Tue, 03 Mar 2026 18:49:45 GMT",
-      "url": "https://www.cnbc.com/2026/03/03/apple-macbook-prices-m5-ai.html",
-      "summary": "Apple\u2019s Mac refresh moves the lineup further upmarket, pairing higher prices with faster performance in a push to give customers a reason to upgrade."
+      "summary": "Since the attack on Iran, congressional Democrats have called the operation unconstitutional. But another impeachment hasn't seriously entered the conversation."
     }
   ]
 }
