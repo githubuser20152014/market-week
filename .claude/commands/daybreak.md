@@ -1,15 +1,30 @@
-Run the Market Day Break generator and publish to GitHub Pages.
+Run the Market Day Break generator with a review checkpoint before publishing.
 
-From the repo root, run:
+**Step 1 — Generate the newsletter:**
 
 ```bash
 bash weekly-newsletter/publish_daybreak.sh $ARGUMENTS
 ```
 
-This will:
-1. Fetch live market data and save a fixture
-2. Generate the Markdown brief and PDF
-3. Rebuild the static site
-4. Commit and push to deploy to frameworkfoundry.info/daily/
+This fetches live data and produces the `.md` and `.pdf` — but does NOT publish yet.
 
-If $ARGUMENTS is empty, the script defaults to today's date.
+After running, read the generated Markdown file and display its full contents to the user for review.
+
+**Step 2 — Review checkpoint:**
+
+Ask the user:
+> "Here's the newsletter for [date]. Does everything look good, or would you like any changes before I publish?"
+
+Wait for the user's response. If they request changes, make the edits to the `.md` file directly, then show the updated sections and ask again.
+
+**Step 3 — Publish (only after user confirms):**
+
+Once the user says they're ready, run:
+
+```bash
+bash weekly-newsletter/publish_daybreak.sh [DATE] --publish
+```
+
+This rebuilds the static site, commits, and pushes to GitHub Pages.
+
+If $ARGUMENTS is empty, use today's date for both steps.

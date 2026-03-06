@@ -2,14 +2,16 @@
 # publish_daybreak.sh — Generate and publish the Market Day Break daily brief.
 #
 # Usage:
-#   bash publish_daybreak.sh              # today's date
-#   bash publish_daybreak.sh 2026-03-04   # specific date
+#   bash publish_daybreak.sh                        # generate only (today)
+#   bash publish_daybreak.sh 2026-03-06             # generate only (specific date)
+#   bash publish_daybreak.sh 2026-03-06 --publish   # build site + commit + push
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DATE_STR="${1:-$(date +%Y-%m-%d)}"
+PUBLISH="${2:-}"
 
 # Load API keys if present
 ENV_FILE="$SCRIPT_DIR/config/api_keys.env"
@@ -20,6 +22,17 @@ fi
 echo "==> Generating Market Day Break for $DATE_STR ..."
 cd "$SCRIPT_DIR"
 python generate_market_day_break.py --date "$DATE_STR" --live --pdf
+
+echo ""
+echo "Newsletter ready for review:"
+echo "  $SCRIPT_DIR/output/market_day_break_${DATE_STR}.md"
+
+if [[ "$PUBLISH" != "--publish" ]]; then
+  echo ""
+  echo "Review the newsletter above, then run with --publish to deploy:"
+  echo "  bash weekly-newsletter/publish_daybreak.sh $DATE_STR --publish"
+  exit 0
+fi
 
 echo ""
 echo "==> Rebuilding site ..."

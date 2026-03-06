@@ -407,6 +407,7 @@ def _fetch_econ_calendar(date_str: str) -> dict:
 
 
 # FRED release IDs for key macro events (free tier, no auth tier restriction)
+# Schema: release_id -> (description, importance, label)
 _FRED_RELEASES = {
     10:  ("Consumer Price Index",         3, "CPI"),
     53:  ("Gross Domestic Product",        3, "GDP"),
@@ -423,6 +424,26 @@ _FRED_RELEASES = {
     19:  ("Housing Starts",               1, "Housing Starts"),
     23:  ("Manufacturers' New Orders",     1, "Factory Orders"),
 }
+
+# Typical ET release times for each FRED release ID.
+# Source: BLS/BEA/Census release schedules (these times rarely change).
+_FRED_RELEASE_TIMES = {
+    10:  "8:30 AM ET",   # CPI
+    53:  "8:30 AM ET",   # GDP
+    54:  "8:30 AM ET",   # PCE / Personal Income
+    50:  "8:30 AM ET",   # Nonfarm Payrolls / Unemployment
+    44:  "8:30 AM ET",   # Retail Sales
+    31:  "8:30 AM ET",   # PPI
+    21:  "10:00 AM ET",  # Existing Home Sales
+    22:  "10:00 AM ET",  # New Home Sales
+    17:  "9:15 AM ET",   # Industrial Production
+    46:  "8:30 AM ET",   # Durable Goods Orders
+    82:  "8:30 AM ET",   # Trade Balance
+    175: "10:00 AM ET",  # UMich Consumer Sentiment
+    19:  "8:30 AM ET",   # Housing Starts
+    23:  "10:00 AM ET",  # Factory Orders
+}
+
 
 def _fetch_econ_calendar_fred(yesterday: str, today: str, api_key: str) -> dict:
     """Fetch upcoming FRED release dates and map to human-readable event names."""
@@ -455,11 +476,11 @@ def _fetch_econ_calendar_fred(yesterday: str, today: str, api_key: str) -> dict:
         entry = {
             "event":      label,
             "actual":     "--",
-            "expected":   "--",
+            "expected":   "See tradingeconomics.com",
             "previous":   "--",
             "unit":       "",
             "importance": importance,
-            "time_est":   "",
+            "time_est":   _FRED_RELEASE_TIMES.get(release_id, ""),
             "source":     "FRED",
         }
         if release_date == yesterday:
