@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "date": "2026-03-06",
+    "generated_at": "2026-03-06T10:17:06.524736Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6869.5,
+      "close": 6830.71,
+      "daily_pct": -0.5647,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 48739.4102,
+      "close": 47954.7383,
+      "daily_pct": -1.6099,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22807.4805,
+      "close": 22748.9902,
+      "daily_pct": -0.2565,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2636.01,
+      "close": 2585.5701,
+      "daily_pct": -1.9135,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5065.2998,
+      "close": 5086.2002,
+      "daily_pct": 0.4126,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.08,
+      "close": 4.146,
+      "daily_pct": 1.6176,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 6.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.32,
+      "close": 99.237,
+      "daily_pct": -0.0836,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 81.01,
+      "close": 84.0,
+      "daily_pct": 3.6909,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 55620.84,
+      "prev_close": 55278.06,
+      "daily_pct": 0.6201,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25757.29,
+      "prev_close": 25321.34,
+      "daily_pct": 1.7217,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5584.87,
+      "prev_close": 5583.9,
+      "daily_pct": 0.0174,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24450.45,
+      "prev_close": 24765.9,
+      "daily_pct": -1.2737,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8851.0,
+      "prev_close": 8940.3,
+      "daily_pct": -0.9988,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23812.45,
+      "prev_close": 23815.75,
+      "daily_pct": -0.0139,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10423.18,
+      "prev_close": 10413.9,
+      "daily_pct": 0.0891,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8040.72,
+      "prev_close": 8045.8,
+      "daily_pct": -0.0631,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5771.97,
+      "prev_close": 5782.89,
+      "daily_pct": -0.1888,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15821,
+      "prev_close": 1.16356,
+      "daily_pct": -0.4598
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33337,
+      "prev_close": 1.33695,
+      "daily_pct": -0.268
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.813,
+      "prev_close": 156.983,
+      "daily_pct": 0.5287
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70053,
+      "prev_close": 0.7076,
+      "daily_pct": -0.9998
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.91487,
+      "prev_close": 6.8979,
+      "daily_pct": 0.246
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27985,
+      "prev_close": 1.28345,
+      "daily_pct": -0.2803
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6814.5,
+      "prev_close": 6835.25,
+      "daily_pct": -0.3036
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24955.5,
+      "prev_close": 25049.5,
+      "daily_pct": -0.3753
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47872.0,
+      "prev_close": 47983.0,
+      "daily_pct": -0.2313
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5086.6,
+      "prev_close": 5065.3,
+      "daily_pct": 0.4205
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 112.16,
+      "prev_close": 112.42,
+      "daily_pct": -0.2363
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 84.01,
+      "prev_close": 81.01,
+      "daily_pct": 3.7032
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Nonfarm Payrolls / Unemployment",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "",
+        "source": "FRED"
+      },
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "--",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Maersk, a bellwether for global trade, suspends two key shipping services due to Iran war",
+      "source": "CNBC",
+      "published": "Fri, 06 Mar 2026 09:24:21 GMT",
+      "url": "https://www.cnbc.com/2026/03/06/iran-war-shipping-maersk-middle-east-strait-of-hormuz-gulf.html",
+      "summary": "The update comes as the Iran war enters its seventh day and the escalating regional conflict continues to disrupt global supply chains."
+    },
+    {
+      "headline": "How Iran and Venezuela strikes transform the Trump-Xi trade talks",
+      "source": "CNBC",
+      "published": "Fri, 06 Mar 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/06/trump-iran-war-china-trade-tariffs.html",
+      "summary": "The Iran war and the U.S. attack in Venezuela show a Trump administration more willing to eschew diplomacy and take military action."
+    },
+    {
+      "headline": "Iran foreign minister: Not seeking ceasefire, warns U.S. invasion would be 'big disaster for them'",
+      "source": "CNBC",
+      "published": "Thu, 05 Mar 2026 20:49:59 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/iran-us-war-invasion-abbas-araghchi.html",
+      "summary": "Foreign Minister Abbas Araghchi told NBC News that the U.S. \"has failed to achieve its main goal\" by attacking Iran, \"which was a clean, rapid victory.\""
+    },
+    {
+      "headline": "U.S. offers India a 30-day waiver for buying Russian oil as Iran war deepens energy supply worries",
+      "source": "CNBC",
+      "published": "Fri, 06 Mar 2026 05:41:08 GMT",
+      "url": "https://www.cnbc.com/2026/03/06/us-india-waiver-russian-oil-iran-war-energy-supply-worries-.html",
+      "summary": "U.S. has given India a waiver to buy Russian oil for 30 days as conflict in Middle East impacts global energy supply."
+    },
+    {
+      "headline": "UAE mulls freezing Iranian assets as Middle East conflict escalates: WSJ",
+      "source": "CNBC",
+      "published": "Fri, 06 Mar 2026 05:03:50 GMT",
+      "url": "https://www.cnbc.com/2026/03/06/uae-mulls-freezing-iranian-assets-as-middle-east-conflict-escalates-wsj-.html",
+      "summary": "The UAE is considering freezing billions of dollars of Iranian assets held in the Gulf state, potentially severing one of Tehran's most critical economic lifelines."
+    },
+    {
+      "headline": "Trump hints U.S. will turn to Cuba after Iran: 'Just a question of time'",
+      "source": "CNBC",
+      "published": "Thu, 05 Mar 2026 23:00:49 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/trump-cuba-iran-regime-change.html",
+      "summary": "The Cuba comments show Trump, less than a week into an escalating military conflict in Iran, is considering another major foreign policy move."
+    },
+    {
+      "headline": "Amazon says hours-long outage was triggered by 'software code deployment'",
+      "source": "CNBC",
+      "published": "Fri, 06 Mar 2026 01:25:12 GMT",
+      "url": "https://www.cnbc.com/2026/03/05/amazon-online-store-suffers-outage-for-some-users.html",
+      "summary": "Amazon users reported trouble accessing checkout and account information, as well as viewing product detail pages."
+    },
+    {
+      "headline": "Dubai real estate magnate: There could be a property cooldown, but I don't see it",
+      "source": "CNBC",
+      "published": "Fri, 06 Mar 2026 10:04:11 GMT",
+      "url": "https://www.cnbc.com/2026/03/06/dubai-real-estate-uae-iran-missile-strikes-mohammed-alabbar.html",
+      "summary": "Mohamed Alabbar acknowledged the attacks but insisted investors were still confident in Dubai and that \"smart capital\" will continue to flow into the city."
+    }
+  ]
+}
