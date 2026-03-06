@@ -4,14 +4,21 @@
 # Usage:
 #   bash publish_daybreak.sh                        # generate only (today)
 #   bash publish_daybreak.sh 2026-03-06             # generate only (specific date)
-#   bash publish_daybreak.sh 2026-03-06 --publish   # build site + commit + push
+#   bash publish_daybreak.sh 2026-03-06 --publish   # build site + commit + push + email
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DATE_STR="${1:-$(date +%Y-%m-%d)}"
-PUBLISH="${2:-}"
+
+# Parse flags
+PUBLISH=""
+for arg in "${@:2}"; do
+  case "$arg" in
+    --publish) PUBLISH="--publish" ;;
+  esac
+done
 
 # Load API keys if present
 ENV_FILE="$SCRIPT_DIR/config/api_keys.env"
@@ -61,3 +68,7 @@ git push origin master
 
 echo ""
 echo "Done. Live at https://frameworkfoundry.info/daily/"
+
+echo ""
+echo "==> Sending email to subscribers ..."
+python send_email.py --edition daybreak --date "$DATE_STR"
