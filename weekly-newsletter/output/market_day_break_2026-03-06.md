@@ -6,9 +6,9 @@
 
 ## Morning Brief
 
-US stocks slipped modestly — the S&P 500 ended -0.56%, while the Nasdaq finished -0.26%. On the safe-haven front, Gold climbed 0.41% to $5,086.20, while the 10-year Treasury yield rose 7 bps to 4.15%, while the dollar strengthened (EUR/USD 1.1582). WTI crude rose 3.69% to $84.00/bbl.
+US stocks slipped modestly — the S&P 500 ended -0.56%, while the Nasdaq finished -0.26%. On the safe-haven front, Gold climbed 0.51% to $5,091.30, while the 10-year Treasury yield rose 7 bps to 4.15%, while the dollar strengthened (EUR/USD 1.1582). WTI crude rose 3.48% to $83.83/bbl.
 
-APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50 lagging at -1.27%. European markets are trading mixed. US futures are sending a mixed signal ahead of the open.
+APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50 lagging at -1.27%. European markets are trading higher. US futures are sending a mixed signal ahead of the open.
 
 ---
 
@@ -28,12 +28,12 @@ APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50
 |---|----------|--------|
 | 1 | [Maersk, a bellwether for global trade, suspends two key shipping services due to Iran war](https://www.cnbc.com/2026/03/06/iran-war-shipping-maersk-middle-east-strait-of-hormuz-gulf.html) | CNBC |
 | 2 | [How Iran and Venezuela strikes transform the Trump-Xi trade talks](https://www.cnbc.com/2026/03/06/trump-iran-war-china-trade-tariffs.html) | CNBC |
-| 3 | [Iran foreign minister: Not seeking ceasefire, warns U.S. invasion would be 'big disaster for them'](https://www.cnbc.com/2026/03/05/iran-us-war-invasion-abbas-araghchi.html) | CNBC |
-| 4 | [U.S. offers India a 30-day waiver for buying Russian oil as Iran war deepens energy supply worries](https://www.cnbc.com/2026/03/06/us-india-waiver-russian-oil-iran-war-energy-supply-worries-.html) | CNBC |
-| 5 | [UAE mulls freezing Iranian assets as Middle East conflict escalates: WSJ](https://www.cnbc.com/2026/03/06/uae-mulls-freezing-iranian-assets-as-middle-east-conflict-escalates-wsj-.html) | CNBC |
-| 6 | [Trump hints U.S. will turn to Cuba after Iran: 'Just a question of time'](https://www.cnbc.com/2026/03/05/trump-cuba-iran-regime-change.html) | CNBC |
-| 7 | [Amazon says hours-long outage was triggered by 'software code deployment'](https://www.cnbc.com/2026/03/05/amazon-online-store-suffers-outage-for-some-users.html) | CNBC |
-| 8 | [Dubai real estate magnate: There could be a property cooldown, but I don't see it](https://www.cnbc.com/2026/03/06/dubai-real-estate-uae-iran-missile-strikes-mohammed-alabbar.html) | CNBC |
+| 3 | [Oil rally resumes after brief dip in prices as Brent tops $87 a barrel](https://www.cnbc.com/2026/03/06/iran-us-war-oil-prices-brent-wti-barrel-futures.html) | CNBC |
+| 4 | [Jim Cramer says the market is stuck in limbo – and the Iran war isn't the only cause](https://www.cnbc.com/2026/03/05/jim-cramer-market-is-stuck-in-limbo-iran-war-isnt-only-cause.html) | CNBC |
+| 5 | [Trump hints U.S. will turn to Cuba after Iran: 'Just a question of time'](https://www.cnbc.com/2026/03/05/trump-cuba-iran-regime-change.html) | CNBC |
+| 6 | [Iran war threatens $11.7 trillion global travel industry as passengers get caught in crossfire](https://www.cnbc.com/2026/03/05/iran-war-travel-flights-cruise-hotels.html) | CNBC |
+| 7 | [Iran foreign minister: Not seeking ceasefire, warns U.S. invasion would be 'big disaster for them'](https://www.cnbc.com/2026/03/05/iran-us-war-invasion-abbas-araghchi.html) | CNBC |
+| 8 | [UAE mulls freezing Iranian assets as Middle East conflict escalates: WSJ](https://www.cnbc.com/2026/03/06/uae-mulls-freezing-iranian-assets-as-middle-east-conflict-escalates-wsj-.html) | CNBC |
 
 ---
 
@@ -41,9 +41,9 @@ APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50
 
 | Index | Close | Daily % |
 |-------|-------|---------|
-| WTI Crude Oil | 84.00 | +3.69% |
+| WTI Crude Oil | 83.83 | +3.48% |
 | 10Y Treasury | 4.15% | +7 bps |
-| Gold | 5086.20 | +0.41% |
+| Gold | 5091.30 | +0.51% |
 | USD Index | 99.24 | -0.08% |
 | Nasdaq | 22748.99 | -0.26% |
 | S&P 500 | 6830.71 | -0.56% |
@@ -51,7 +51,7 @@ APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50
 | Russell 2000 | 2585.57 | -1.91% |
 
 
-**Best:** WTI Crude Oil (+3.69%) | **Worst:** Russell 2000 (-1.91%)
+**Best:** WTI Crude Oil (+3.48%) | **Worst:** Russell 2000 (-1.91%)
 
 ---
 
@@ -72,10 +72,10 @@ APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50
 
 | Index | Price | Daily % | Session |
 |-------|-------|---------|---------|
-| DAX | 23812.45 | -0.01% | Early session (~3h in) |
-| FTSE 100 | 10423.18 | +0.09% | Early session (~3h in) |
-| CAC 40 | 8040.72 | -0.06% | Early session (~3h in) |
-| Euro Stoxx 50 | 5771.97 | -0.19% | Early session (~3h in) |
+| DAX | 23876.85 | +0.26% | Early session (~3h in) |
+| FTSE 100 | 10432.10 | +0.17% | Early session (~3h in) |
+| CAC 40 | 8055.90 | +0.13% | Early session (~3h in) |
+| Euro Stoxx 50 | 5787.20 | +0.07% | Early session (~3h in) |
 
 
 ---
@@ -85,11 +85,11 @@ APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50
 | Pair | Rate | Daily % |
 |------|------|---------|
 | EUR/USD | 1.1582 | -0.46% |
-| GBP/USD | 1.3334 | -0.27% |
-| USD/JPY | 157.8130 | +0.53% |
-| AUD/USD | 0.7005 | -1.00% |
-| USD/CNH | 6.9149 | +0.25% |
-| CHF/USD | 1.2798 | -0.28% |
+| GBP/USD | 1.3331 | -0.29% |
+| USD/JPY | 157.8210 | +0.53% |
+| AUD/USD | 0.7010 | -0.93% |
+| USD/CNH | 6.9128 | +0.22% |
+| CHF/USD | 1.2795 | -0.30% |
 
 
 ---
@@ -98,12 +98,12 @@ APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50
 
 | Contract | Price | Daily % |
 |----------|-------|---------|
-| S&P Futures | 6814.50 | -0.30% |
-| Nasdaq Futures | 24955.50 | -0.38% |
-| Dow Futures | 47872.00 | -0.23% |
-| Gold Futures | 5086.60 | +0.42% |
+| S&P Futures | 6816.25 | -0.28% |
+| Nasdaq Futures | 24961.50 | -0.35% |
+| Dow Futures | 47882.00 | -0.21% |
+| Gold Futures | 5091.30 | +0.51% |
 | 10Y T-Note | 112.16 | -0.24% |
-| WTI Crude Oil | 84.01 | +3.70% |
+| WTI Crude Oil | 83.83 | +3.48% |
 
 
 ---
@@ -121,8 +121,8 @@ APAC markets were mixed overnight, with Hang Seng leading at +1.72% and Nifty 50
 
 | Time (EST) | Event | Importance | Expected |
 |-----------|-------|------------|---------|
-| -- | Nonfarm Payrolls / Unemployment | High | -- |
-| -- | New Home Sales | Low | -- |
+| 8:30 AM ET | Nonfarm Payrolls / Unemployment | High | See tradingeconomics.com |
+| 10:00 AM ET | New Home Sales | Low | See tradingeconomics.com |
 
 
 ---
