@@ -79,5 +79,6 @@ echo "Done. Live at https://frameworkfoundry.info/"
 
 echo ""
 echo "==> Sending email to subscribers ..."
+cd "$SCRIPT_DIR"
 python send_email.py --edition weekly --date "$DATE_STR"
 python send_email.py --edition intl   --date "$DATE_STR"
