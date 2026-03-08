@@ -413,6 +413,275 @@
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
   }
 
+  /* FEATURED FLIP CARD */
+  .featured-card-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+  }
+
+  .flip-card {
+    perspective: 1400px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 620px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+  }
+
+  .flip-card-front {
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    background: var(--off-white);
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    background: var(--off-white);
+  }
+
+  .flip-front-header {
+    background: var(--navy); padding: 32px 36px 28px;
+    position: relative; overflow: hidden;
+  }
+
+  .flip-front-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .flip-front-header-inner { position: relative; }
+
+  .flip-front-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+
+  .flip-front-term {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 600;
+    color: var(--white); line-height: 1; letter-spacing: 1px;
+  }
+
+  .flip-front-fullname {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; font-weight: 300; font-style: italic;
+    color: var(--accent-lt); margin-top: 10px;
+  }
+
+  .flip-front-body {
+    padding: 0 36px; flex: 1; overflow: visible;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .flip-front-what-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 16px;
+  }
+
+  .flip-front-def {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; line-height: 1.8;
+    color: var(--text); font-weight: 300; margin-bottom: 32px;
+  }
+
+  .flip-front-formula {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px; margin-bottom: 24px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.7;
+    color: #3a3a4a; font-weight: 300; font-style: italic;
+  }
+
+  .flip-front-context {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.7;
+    color: #3a3a4a; font-weight: 300; margin: 0;
+  }
+
+  .flip-front-footer {
+    padding: 20px 36px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-hint {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* BACK */
+  .flip-back-header {
+    background: var(--navy-mid); padding: 22px 36px;
+    position: relative; overflow: hidden;
+  }
+
+  .flip-back-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .flip-back-header-inner {
+    position: relative;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-back-source-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+
+  .flip-back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; color: var(--white);
+  }
+
+  .flip-back-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300; line-height: 1;
+  }
+
+  .flip-back-value-period {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-top: 2px;
+    text-align: right;
+  }
+
+  .flip-back-body {
+    padding: 24px 36px; flex: 1;
+    display: flex; flex-direction: column; gap: 20px;
+    overflow: visible;
+  }
+
+  /* Mini bar chart */
+  .mini-bar-chart-wrap {
+    background: var(--navy);
+    padding: 20px 24px 16px; border-radius: 1px;
+  }
+
+  .mini-bar-chart {
+    display: flex; align-items: flex-end;
+    gap: 10px; height: 88px;
+  }
+
+  .mini-bar-col {
+    display: flex; flex-direction: column;
+    align-items: center; flex: 1;
+  }
+
+  .mini-bar-value-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.5px; margin-bottom: 3px;
+  }
+
+  .mini-bar {
+    width: 100%; min-height: 4px;
+    border-radius: 1px 1px 0 0;
+  }
+
+  .mini-bar-period-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  /* Stat tiles */
+  .stat-tile-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+
+  .stat-tile {
+    border: 1px solid var(--border);
+    background: var(--white); padding: 18px 20px;
+  }
+
+  .stat-tile-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+
+  .stat-tile-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 600; line-height: 1;
+  }
+
+  .stat-tile-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 500;
+    color: var(--muted); margin-top: 8px;
+  }
+
+  /* Insight callout */
+  .insight-callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    background: var(--white);
+    padding: 18px 20px;
+  }
+
+  .insight-callout-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+
+  .insight-callout-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.75;
+    color: #3a3a4a; font-weight: 300; margin: 0;
+  }
+
+  .flip-back-footer {
+    padding: 18px 36px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-back-source {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+  }
+
   /* PERSONAL INVESTING */
   .investing-intro {
     font-family: 'Source Serif 4', serif;

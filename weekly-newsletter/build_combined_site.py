@@ -8,6 +8,7 @@ Run from weekly-newsletter/:
 
 import argparse
 import csv
+import json as _json
 import re
 import shutil
 import sys
@@ -438,6 +439,275 @@ _CSS = """\
   .iq-see-all a {
     color: var(--accent); text-decoration: none;
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+  }
+
+  /* FEATURED FLIP CARD */
+  .featured-card-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+  }
+
+  .flip-card {
+    perspective: 1400px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 620px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+  }
+
+  .flip-card-front {
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    background: var(--off-white);
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    background: var(--off-white);
+  }
+
+  .flip-front-header {
+    background: var(--navy); padding: 32px 36px 28px;
+    position: relative; overflow: hidden;
+  }
+
+  .flip-front-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .flip-front-header-inner { position: relative; }
+
+  .flip-front-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+
+  .flip-front-term {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 600;
+    color: var(--white); line-height: 1; letter-spacing: 1px;
+  }
+
+  .flip-front-fullname {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; font-weight: 300; font-style: italic;
+    color: var(--accent-lt); margin-top: 10px;
+  }
+
+  .flip-front-body {
+    padding: 0 36px; flex: 1; overflow: visible;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .flip-front-what-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 16px;
+  }
+
+  .flip-front-def {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; line-height: 1.8;
+    color: var(--text); font-weight: 300; margin-bottom: 32px;
+  }
+
+  .flip-front-formula {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px; margin-bottom: 24px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.7;
+    color: #3a3a4a; font-weight: 300; font-style: italic;
+  }
+
+  .flip-front-context {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.7;
+    color: #3a3a4a; font-weight: 300; margin: 0;
+  }
+
+  .flip-front-footer {
+    padding: 20px 36px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-hint {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* BACK */
+  .flip-back-header {
+    background: var(--navy-mid); padding: 22px 36px;
+    position: relative; overflow: hidden;
+  }
+
+  .flip-back-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .flip-back-header-inner {
+    position: relative;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-back-source-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+
+  .flip-back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; color: var(--white);
+  }
+
+  .flip-back-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300; line-height: 1;
+  }
+
+  .flip-back-value-period {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-top: 2px;
+    text-align: right;
+  }
+
+  .flip-back-body {
+    padding: 24px 36px; flex: 1;
+    display: flex; flex-direction: column; gap: 20px;
+    overflow: visible;
+  }
+
+  /* Mini bar chart */
+  .mini-bar-chart-wrap {
+    background: var(--navy);
+    padding: 20px 24px 16px; border-radius: 1px;
+  }
+
+  .mini-bar-chart {
+    display: flex; align-items: flex-end;
+    gap: 10px; height: 88px;
+  }
+
+  .mini-bar-col {
+    display: flex; flex-direction: column;
+    align-items: center; flex: 1;
+  }
+
+  .mini-bar-value-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.5px; margin-bottom: 3px;
+  }
+
+  .mini-bar {
+    width: 100%; min-height: 4px;
+    border-radius: 1px 1px 0 0;
+  }
+
+  .mini-bar-period-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  /* Stat tiles */
+  .stat-tile-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+
+  .stat-tile {
+    border: 1px solid var(--border);
+    background: var(--white); padding: 18px 20px;
+  }
+
+  .stat-tile-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+
+  .stat-tile-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 600; line-height: 1;
+  }
+
+  .stat-tile-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 500;
+    color: var(--muted); margin-top: 8px;
+  }
+
+  /* Insight callout */
+  .insight-callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    background: var(--white);
+    padding: 18px 20px;
+  }
+
+  .insight-callout-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+
+  .insight-callout-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.75;
+    color: #3a3a4a; font-weight: 300; margin: 0;
+  }
+
+  .flip-back-footer {
+    padding: 18px 36px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-back-source {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
   }
 
   /* PERSONAL INVESTING */
@@ -948,12 +1218,141 @@ def load_articles(articles_dir=None):
     return articles
 
 
+def _render_mini_bar_chart(chart_data_json):
+    """Render HTML mini bar chart from JSON string."""
+    try:
+        data = _json.loads(chart_data_json)
+    except (ValueError, TypeError):
+        return ""
+    if not data:
+        return ""
+    max_val = max(d["value"] for d in data)
+    cols = ""
+    for i, d in enumerate(data):
+        is_last = (i == len(data) - 1)
+        pct = (d["value"] / max_val) * 100 if max_val else 0
+        bar_color = ("linear-gradient(180deg,#b91c1c,#7f1111)" if is_last
+                     else "linear-gradient(180deg,var(--accent-lt),var(--accent))")
+        val_color = "var(--red)" if is_last else "var(--accent-lt)"
+        lbl_color = "var(--gold)" if is_last else "rgba(255,255,255,0.45)"
+        cols += f"""
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:{val_color};">{d['value']}%</span>
+        <div class="mini-bar" style="height:{pct}%;background:{bar_color};"></div>
+        <span class="mini-bar-period-label" style="color:{lbl_color};">{d['label']}</span>
+      </div>"""
+    return f'<div class="mini-bar-chart">{cols}\n    </div>'
+
+
+def render_featured_flip_card(card):
+    """Render front+back HTML for the featured flip card."""
+    _color_map = {"red": "var(--red)", "green": "var(--green)"}
+
+    def _color(key):
+        return _color_map.get(card.get(key, ""), "var(--text)")
+
+    category    = card.get("category", "")
+    term        = card.get("term", "")
+    full_name   = card.get("full_name", "")
+    formula     = card.get("formula", "")
+    definition  = card.get("definition", "")
+    context     = card.get("context", "")
+    frequency   = card.get("frequency", "")
+    trend_class = card.get("trend_class", "trend-flat")
+    trend_label = card.get("trend_label", "")
+
+    cur_value  = card.get("current_value", "")
+    cur_period = card.get("current_value_period", "")
+    chart_html = _render_mini_bar_chart(card.get("chart_data", ""))
+
+    stat1_label = card.get("stat1_label", "")
+    stat1_value = card.get("stat1_value", "")
+    stat1_sub   = card.get("stat1_sub", "")
+    stat2_label = card.get("stat2_label", "")
+    stat2_value = card.get("stat2_value", "")
+    stat2_sub   = card.get("stat2_sub", "")
+    insight     = card.get("insight", "")
+    source      = card.get("source", "")
+
+    return f"""<div class="featured-card-label">&#9733; Featured Concept</div>
+<div class="flip-card" id="featured-flip">
+  <div class="flip-card-inner">
+
+    <!-- FRONT -->
+    <div class="flip-card-front">
+      <div class="flip-front-header">
+        <div class="flip-front-header-inner">
+          <div class="flip-front-eyebrow">{category}</div>
+          <div class="flip-front-term">{term}</div>
+          <div class="flip-front-fullname">{full_name}</div>
+        </div>
+      </div>
+      <div class="flip-front-body">
+        <div class="flip-front-what-label">What it is</div>
+        <p class="flip-front-def">{definition}</p>
+        <div class="flip-front-formula">{formula}</div>
+        {f'<p class="flip-front-context">{context}</p>' if context else ""}
+      </div>
+      <div class="flip-front-footer">
+        <span class="iq-card-trend {trend_class}">{trend_label}</span>
+        <span class="flip-hint">Flip for latest data &rarr;</span>
+      </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="flip-card-back">
+      <div class="flip-back-header">
+        <div class="flip-back-header-inner">
+          <div>
+            <div class="flip-back-source-label">Latest Reading</div>
+            <div class="flip-back-title">{term} &mdash; {full_name}</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="flip-back-value" style="color:{_color('current_value_color')};">{cur_value}</div>
+            <div class="flip-back-value-period">{cur_period}</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-back-body">
+        <div class="mini-bar-chart-wrap">
+          {chart_html}
+        </div>
+        <div class="stat-tile-grid">
+          <div class="stat-tile">
+            <div class="stat-tile-label">{stat1_label}</div>
+            <div class="stat-tile-value" style="color:{_color('stat1_color')};">{stat1_value}</div>
+            <div class="stat-tile-sub">{stat1_sub}</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-tile-label">{stat2_label}</div>
+            <div class="stat-tile-value" style="color:{_color('stat2_color')};">{stat2_value}</div>
+            <div class="stat-tile-sub">{stat2_sub}</div>
+          </div>
+        </div>
+        <div class="insight-callout">
+          <div class="insight-callout-label">Analyst Insight</div>
+          <p class="insight-callout-text">{insight}</p>
+        </div>
+      </div>
+      <div class="flip-back-footer">
+        <span class="flip-back-source">{source}</span>
+        <span class="flip-hint">&larr; Flip back</span>
+      </div>
+    </div>
+
+  </div>
+</div>"""
+
+
 def render_market_iq_panel(cards):
     """Render the Market IQ panel HTML."""
-    # Extract unique categories preserving order
+    featured = next((c for c in cards if c.get("featured") == "true"), None)
+    grid_cards = [c for c in cards if c.get("featured") != "true"]
+
+    # Extract unique categories from grid cards preserving order
     seen = set()
     categories = []
-    for c in cards:
+    for c in grid_cards:
         cat = c.get("category", "")
         if cat and cat not in seen:
             seen.add(cat)
@@ -964,7 +1363,7 @@ def render_market_iq_panel(cards):
         cat_buttons += f'      <button class="iq-cat-btn">{cat}</button>\n'
 
     card_html = ""
-    for c in cards:
+    for c in grid_cards:
         term = c.get("term", "")
         category = c.get("category", "")
         definition = c.get("definition", "")
@@ -986,6 +1385,8 @@ def render_market_iq_panel(cards):
         </div>
       </div>"""
 
+    featured_html = render_featured_flip_card(featured) if featured else ""
+
     return f"""<div id="panel-marketiq" class="section-panel">
   <div class="content">
     <div class="section-label">Market IQ &mdash; Economic Concepts, Plain &amp; Simple</div>
@@ -993,6 +1394,7 @@ def render_market_iq_panel(cards):
       No economics degree required. Each card explains one concept &mdash; what it is, why it matters,
       how often it&rsquo;s published, and what the recent trend means for your money.
     </p>
+    {featured_html}
     <div class="iq-categories">
       {cat_buttons}
     </div>
@@ -1105,6 +1507,11 @@ document.querySelectorAll('.iq-categories .iq-cat-btn, .article-filters .iq-cat-
       this.classList.add('active');
     });
   });
+document.querySelectorAll('.flip-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    this.classList.toggle('flipped');
+  });
+});
 </script>"""
 
 
