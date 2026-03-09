@@ -123,14 +123,14 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
     if sp and sp["daily_pct"] is not None:
         pct = sp["daily_pct"]
         if pct > 1:
-            tone = "US stocks rallied on Monday's close"
+            tone = "US stocks rallied"
         elif pct > 0:
             tone = "US stocks edged higher"
         elif pct > -1:
             tone = "US stocks slipped modestly"
         else:
             tone = "US stocks fell sharply"
-        para1 = f"{tone} — the S&P 500 ended {pct:+.2f}%"
+        para1 = f"At market close, {tone} — the S&P 500 ended {pct:+.2f}%"
         if nasdaq and nasdaq["daily_pct"] is not None:
             para1 += f", while the Nasdaq finished {nasdaq['daily_pct']:+.2f}%"
         para1 += "."
