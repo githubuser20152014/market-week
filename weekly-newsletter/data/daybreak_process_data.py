@@ -472,6 +472,15 @@ def build_daybreak_context(raw: dict) -> dict:
     tips         = generate_daybreak_positioning_tips(us_indices, futures,
                                                        yesterday_events, today_events)
 
+    # ── Editorial overrides (stored in fixture under "editorial" key) ──────────
+    editorial = raw.get("editorial", {})
+    if editorial.get("narrative_suffix"):
+        narrative = narrative.rstrip() + " " + editorial["narrative_suffix"]
+    if editorial.get("plain_summary"):
+        plain_summary = editorial["plain_summary"]
+    for extra_tip in editorial.get("extra_tips", []):
+        tips.append(extra_tip)
+
     # Best / worst across all US entries (exclude non-table entries like WTI Crude Oil)
     all_us = [i for i in us_indices if i["daily_pct"] is not None and i.get("table", True)]
     all_us_sorted = sorted(all_us, key=lambda x: x["daily_pct"], reverse=True)
