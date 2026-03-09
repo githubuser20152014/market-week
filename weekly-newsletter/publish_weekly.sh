@@ -20,6 +20,14 @@ for arg in "${@:2}"; do
   esac
 done
 
+# Ensure we are on master before publishing
+CURRENT_BRANCH="$(git -C "$REPO_ROOT" rev-parse --abbrev-ref HEAD)"
+if [[ "$CURRENT_BRANCH" != "master" ]]; then
+  echo "ERROR: You are on branch '$CURRENT_BRANCH'. Switch to master before publishing."
+  echo "  git checkout master"
+  exit 1
+fi
+
 # Load API keys if present
 ENV_FILE="$SCRIPT_DIR/config/api_keys.env"
 if [[ -f "$ENV_FILE" ]]; then
