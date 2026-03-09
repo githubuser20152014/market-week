@@ -8,13 +8,17 @@
 
 US stocks fell sharply — the S&P 500 ended -1.33%, while the Nasdaq finished -1.59%. On the safe-haven front, Gold fell 0.19% to $5,136.30, while the 10-year Treasury yield fell 1 bps to 4.13%, while the dollar strengthened (EUR/USD 1.1559). WTI crude rose 9.58% to $99.61/bbl.
 
-APAC markets closed broadly lower overnight, with Hang Seng leading at -1.35% and KOSPI lagging at -5.96%. European markets are trading lower. US futures are sending a mixed signal ahead of the open.
+APAC markets closed broadly lower overnight, with Hang Seng leading at -1.35% and KOSPI lagging at -5.96%. European markets are trading lower. US futures are sending a mixed signal ahead of the open. The VIX — Wall Street's "fear gauge," which measures expected volatility over the next 30 days — surged to 32, well above its normal range of 15–20, signalling that institutional investors are bracing for sharp, unpredictable swings.
 
 ---
 
 ## What This Means
 
-**Stocks pulled back modestly yesterday.** The S&P 500 lost 1.3% — a routine dip, not a panic.
+**This is a risk-off session driven by geopolitical shock.** The Iran conflict is the story — WTI crude surged +13% to $103/bbl as markets price in a genuine supply disruption risk. That's not a routine move; it's the kind of oil spike that historically pressures consumer spending, widens inflation expectations, and hits growth stocks hard.
+
+**Global equity markets are pricing in real fear.** Overnight, Japan fell 5.2%, South Korea nearly 6%, and Australia 2.9%. European markets are down ~2.5% in early trade. The S&P 500's -1.3% close yesterday now looks like a preview — futures are pointing to another -1% at the open. When you see this kind of synchronized selling across regions, it's a flight to safety, not a dip to buy blindly.
+
+**What to watch:** If crude sustains above $100, expect pressure on airlines, consumer discretionary, and anything with tight margins. Energy names and defense stocks are the relative winners in this environment.
 
 ---
 
@@ -125,6 +129,7 @@ APAC markets closed broadly lower overnight, with Hang Seng leading at -1.35% an
 ## Positioning Notes
 
 - CPI releases today -- watch for a surprise in either direction. Hot print → TIPS and defensives; cool print → growth stocks and long bonds.
+- **VIX at 32 — brace for extreme turbulence.** The VIX (often called the "fear gauge") measures how much volatility options traders expect over the next 30 days — think of it as Wall Street's anxiety reading. Normal markets run around 15–20. Above 30 means professionals are genuinely scared: institutions are hedging hard, bid-ask spreads widen, and the market can whipsaw 2–3% intraday in either direction. At 32, this is not a normal tape — size down, avoid leverage, and don't chase moves.
 
 
 ---
