@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-09",
+    "generated_at": "2026-03-09T09:42:50.964382Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6830.71,
+      "close": 6740.02,
+      "daily_pct": -1.3277,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 47954.7383,
+      "close": 47501.5508,
+      "daily_pct": -0.945,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22748.9902,
+      "close": 22387.6797,
+      "daily_pct": -1.5882,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2585.5701,
+      "close": 2525.3,
+      "daily_pct": -2.331,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5146.1001,
+      "close": 5136.2998,
+      "daily_pct": -0.1904,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.146,
+      "close": 4.133,
+      "daily_pct": -0.3136,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.99,
+      "close": 99.293,
+      "daily_pct": 0.3061,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 90.9,
+      "close": 99.61,
+      "daily_pct": 9.582,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 52728.72,
+      "prev_close": 55620.84,
+      "daily_pct": -5.1997,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25408.46,
+      "prev_close": 25757.29,
+      "daily_pct": -1.3543,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5251.87,
+      "prev_close": 5584.87,
+      "daily_pct": -5.9625,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24054.65,
+      "prev_close": 24450.45,
+      "daily_pct": -1.6188,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8599.0,
+      "prev_close": 8851.0,
+      "daily_pct": -2.8471,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23138.89,
+      "prev_close": 23591.03,
+      "daily_pct": -1.9166,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10149.2,
+      "prev_close": 10284.8,
+      "daily_pct": -1.3184,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7827.24,
+      "prev_close": 7993.49,
+      "daily_pct": -2.0798,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5600.05,
+      "prev_close": 5719.9,
+      "daily_pct": -2.0953,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15594,
+      "prev_close": 1.16081,
+      "daily_pct": -0.4196
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33417,
+      "prev_close": 1.33574,
+      "daily_pct": -0.1174
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.373,
+      "prev_close": 157.534,
+      "daily_pct": 0.5326
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70171,
+      "prev_close": 0.70113,
+      "daily_pct": 0.082
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.92165,
+      "prev_close": 6.90073,
+      "daily_pct": 0.3032
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28299,
+      "prev_close": 1.28097,
+      "daily_pct": 0.1578
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6691.75,
+      "prev_close": 6743.75,
+      "daily_pct": -0.7711
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24455.75,
+      "prev_close": 24670.25,
+      "daily_pct": -0.8695
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47087.0,
+      "prev_close": 47517.0,
+      "daily_pct": -0.9049
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5137.5,
+      "prev_close": 5146.1,
+      "daily_pct": -0.1671
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 112.11,
+      "prev_close": 112.56,
+      "daily_pct": -0.4026
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 99.27,
+      "prev_close": 90.9,
+      "daily_pct": 9.2079
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices pull back after breaching $110 as G7 nations consider tapping emergency reserves",
+      "source": "CNBC",
+      "published": "Mon, 09 Mar 2026 08:06:53 GMT",
+      "url": "https://www.cnbc.com/2026/03/08/crude-oil-prices-today-iran-war.html",
+      "summary": "Gulf Arab oil producers are cutting production as they run out of storage space because they can't export through the Strait of Hormuz"
+    },
+    {
+      "headline": "Congressional Democrats demand reversal of Russian oil sales into India as energy prices soar",
+      "source": "CNBC",
+      "published": "Mon, 09 Mar 2026 09:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/09/bessent-russian-oil-sales-india.html",
+      "summary": "Russia is reportedly helping Iran target U.S. forces in the Middle East, and could now benefit from a windfall of new oil and gas sales."
+    },
+    {
+      "headline": "Iran's strategic oil island thrust into the spotlight as Middle East conflict escalates",
+      "source": "CNBC",
+      "published": "Mon, 09 Mar 2026 08:45:52 GMT",
+      "url": "https://www.cnbc.com/2026/03/09/iran-war-us-israel-conflict-oil-prices-kharg-island.html",
+      "summary": "Kharg Island serves as the centerpiece for Iran's oil industry, accounting for roughly 90% of the country\u2019s crude exports."
+    },
+    {
+      "headline": "Iran names Ayatollah Khamenei's son, Mojtaba, as new supreme leader: Media reports",
+      "source": "CNBC",
+      "published": "Sun, 08 Mar 2026 23:03:08 GMT",
+      "url": "https://www.cnbc.com/2026/03/08/iranian-projectiles-continue-to-strike-gulf-countries-infrastructure.html",
+      "summary": "Bahrain and the United Arab Emirates report more strikes on civilian targets as U.S.-Israeli attacks on Iran continue."
+    },
+    {
+      "headline": "U.S. orders staff to leave Saudi Arabia as Iran war spreads",
+      "source": "CNBC",
+      "published": "Mon, 09 Mar 2026 09:24:58 GMT",
+      "url": "https://www.cnbc.com/2026/03/09/iran-war-updates-oil-brent-wti-crude-110-gulf-gcc-uae-iraq-saudi-arabia-kurds.html",
+      "summary": "The U.S. ordered non-emergency government staff to leave Saudi Arabia as the widening Iran war rattled global markets."
+    },
+    {
+      "headline": "In a jobs apocalypse, look to \u2018AI-proof\u2019 skilled trades, career experts say",
+      "source": "CNBC",
+      "published": "Sun, 08 Mar 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/08/jobs-apocalypse-ai-proof-skilled-trades.html",
+      "summary": "The skilled trades are considered more insulated from AI-driven job cuts, experts say."
+    },
+    {
+      "headline": "One year after Trump\u2019s sovereignty threats, Canadians keep \u2018elbows up\u2019",
+      "source": "CNBC",
+      "published": "Mon, 09 Mar 2026 03:08:29 GMT",
+      "url": "https://www.cnbc.com/2026/03/07/canada-boycott-trump-travel-alcohol-economy.html",
+      "summary": "An unusual swell of Canadian patriotism seen after Trump's threats and tariffs last year has evolved into a new social and economic order."
+    },
+    {
+      "headline": "How China is challenging the U.S. to become the next great space power",
+      "source": "CNBC",
+      "published": "Sat, 07 Mar 2026 13:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/07/china-us-space-race-rockets.html",
+      "summary": "A new report warns that the U.S. could lose its dominance in space to China in the next few years."
+    }
+  ]
+}
