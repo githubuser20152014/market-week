@@ -26,13 +26,21 @@ if [[ -f "$ENV_FILE" ]]; then
   set -a; source "$ENV_FILE"; set +a
 fi
 
-echo "==> Generating Market Day Break for $DATE_STR ..."
 cd "$SCRIPT_DIR"
-python generate_market_day_break.py --date "$DATE_STR" --live --pdf
+MD_PATH="$SCRIPT_DIR/output/market_day_break_${DATE_STR}.md"
+PDF_PATH="$SCRIPT_DIR/output/market_day_break_${DATE_STR}.pdf"
+
+# Only generate if not already present (preserves manual edits on --publish)
+if [[ ! -f "$MD_PATH" ]]; then
+  echo "==> Generating Market Day Break for $DATE_STR ..."
+  python generate_market_day_break.py --date "$DATE_STR" --live --pdf
+else
+  echo "==> Using existing newsletter for $DATE_STR (skipping regeneration)"
+fi
 
 echo ""
 echo "Newsletter ready for review:"
-echo "  $SCRIPT_DIR/output/market_day_break_${DATE_STR}.md"
+echo "  $MD_PATH"
 
 if [[ "$PUBLISH" != "--publish" ]]; then
   echo ""
@@ -71,4 +79,4 @@ echo "Done. Live at https://frameworkfoundry.info/daily/"
 
 echo ""
 echo "==> Sending email to subscribers ..."
-python send_email.py --edition daybreak --date "$DATE_STR"
+python "$SCRIPT_DIR/send_email.py" --edition daybreak --date "$DATE_STR"
