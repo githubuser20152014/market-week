@@ -177,6 +177,41 @@ body {
 }
 .search-no-results.visible { display: block; }
 
+/* ── ALPHA NAV ── */
+.alpha-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.alpha-btn {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1px;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: default;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.alpha-btn.alpha-has-cards {
+  color: var(--navy);
+  border-color: var(--navy);
+  cursor: pointer;
+}
+.alpha-btn.alpha-has-cards:hover {
+  background: var(--off-white);
+}
+.alpha-btn.alpha-active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
 /* ── FILTER BUTTONS ── */
 .filter-row {
   display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
@@ -677,6 +712,9 @@ body {
       <button class="filter-btn"           onclick="filterCards(this,'markets')">Markets</button>
       <button class="filter-btn"           onclick="filterCards(this,'trade-fx')">Trade &amp; FX</button>
     </div>
+
+    <!-- ALPHA INDEX (built by JS) -->
+    <div class="alpha-row" id="alpha-row"></div>
 
 
     <!-- ═══════════════════════════════════════════
@@ -4075,10 +4113,14 @@ renderBarChart('chart-cny', [
 })();
 
 function filterCards(btn, category) {
+  // Reset alpha and search state
+  document.querySelectorAll('.alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
+  var si = document.querySelector('.search-input');
+  if (si && si.value) { si.value = ''; document.querySelector('.search-clear').classList.remove('visible'); }
+  document.getElementById('no-results').classList.remove('visible');
+
   // Update active button
-  document.querySelectorAll('.filter-btn').forEach(function(b) {
-    b.classList.remove('active');
-  });
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
 
   var wrappers  = document.querySelectorAll('.flip-wrapper');
@@ -4109,6 +4151,60 @@ function filterCards(btn, category) {
   });
 }
 
+/* ── ALPHA NAV ── */
+function buildAlphaNav() {
+  // Collect the first letter of every .card-term
+  var hasCards = {};
+  document.querySelectorAll('.flip-wrapper .card-term').forEach(function(el) {
+    var ch = el.textContent.trim()[0];
+    if (ch) hasCards[ch.toUpperCase()] = true;
+  });
+
+  var row = document.getElementById('alpha-row');
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(function(letter) {
+    var btn = document.createElement('button');
+    btn.className = 'alpha-btn' + (hasCards[letter] ? ' alpha-has-cards' : '');
+    btn.textContent = letter;
+    btn.dataset.letter = letter;
+    if (hasCards[letter]) {
+      btn.addEventListener('click', function() { filterByLetter(this, letter); });
+    }
+    row.appendChild(btn);
+  });
+}
+
+function filterByLetter(btn, letter) {
+  // If already active, toggle off → restore All
+  if (btn.classList.contains('alpha-active')) {
+    btn.classList.remove('alpha-active');
+    filterCards(document.querySelector('.filter-btn'), 'all');
+    return;
+  }
+
+  // Reset other controls
+  document.querySelectorAll('.alpha-btn').forEach(function(b)   { b.classList.remove('alpha-active'); });
+  document.querySelectorAll('.filter-btn').forEach(function(b)  { b.classList.remove('active'); });
+  var si = document.querySelector('.search-input');
+  if (si) { si.value = ''; document.querySelector('.search-clear').classList.remove('visible'); }
+  document.getElementById('no-results').classList.remove('visible');
+
+  btn.classList.add('alpha-active');
+
+  // Hide dividers while filtered
+  document.querySelectorAll('.card-divider').forEach(function(d) { d.style.display = 'none'; });
+
+  document.querySelectorAll('.flip-wrapper').forEach(function(wrapper) {
+    var term = wrapper.querySelector('.card-term');
+    var firstLetter = term ? term.textContent.trim()[0].toUpperCase() : '';
+    var match = firstLetter === letter;
+    wrapper.style.display = match ? '' : 'none';
+    var prev = wrapper.previousElementSibling;
+    if (prev && prev.classList.contains('card-section-label')) {
+      prev.style.display = match ? '' : 'none';
+    }
+  });
+}
+
 /* ── SEARCH ── */
 function searchCards(query) {
   var q = query.trim().toLowerCase();
@@ -4125,8 +4221,9 @@ function searchCards(query) {
     return;
   }
 
-  // Deactivate category buttons while searching
-  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  // Deactivate category and alpha buttons while searching
+  document.querySelectorAll('.filter-btn').forEach(function(b)  { b.classList.remove('active'); });
+  document.querySelectorAll('.alpha-btn').forEach(function(b)   { b.classList.remove('alpha-active'); });
 
   // Hide all dividers
   document.querySelectorAll('.card-divider').forEach(function(d) { d.style.display = 'none'; });
@@ -4170,6 +4267,8 @@ function clearSearch() {
    We temporarily make each face position:relative, measure its scrollHeight,
    then restore and set the container height to the max of the two. */
 window.addEventListener('load', function () {
+  buildAlphaNav();
+
   document.querySelectorAll('.flip-wrapper').forEach(function (wrapper) {
     var inner   = wrapper.querySelector('.flip-inner');
     var front   = inner.querySelector('.card-face.front');
