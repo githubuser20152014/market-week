@@ -62,6 +62,10 @@ echo "==> Rebuilding site ..."
 python build_combined_site.py
 
 echo ""
+echo "==> Verifying site content matches approved MD ..."
+python verify_site_content.py "$DATE_STR"
+
+echo ""
 echo "==> Staging changes ..."
 cd "$REPO_ROOT"
 
