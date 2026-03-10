@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 """
-verify_site_content.py — Check that the published HTML matches the final .md file.
+verify_site_content.py — Verify the published HTML matches the approved .md exactly.
 
-Compares free-text narrative sections (Morning Brief, What This Means) between
-the approved .md file and the built site HTML.  Exits non-zero if any mismatch
-is found, which causes publish_daybreak.sh to abort before committing.
+Checks every section of the Market Day Break newsletter:
+  Paragraphs  — Morning Brief, What This Means
+  Tables      — Market-Moving Headlines, US Market Close, Overnight Markets,
+                Currencies & Safe Havens, Pre-Market Futures
+  Event rows  — What Moved Markets Yesterday, Today's Watch List
+  Tips        — Positioning Notes (Signal -- Action format)
+
+Known formatting differences between .md and HTML are normalised before
+comparison (thousand-separators, HTML entities, markdown markup, session
+labels, placeholder wording).  Exits non-zero on any mismatch so that
+publish_daybreak.sh aborts before committing.
 
 Usage:
     python verify_site_content.py 2026-03-10
@@ -17,128 +25,340 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
 
-# Narrative sections whose paragraph text must match exactly.
-SECTIONS_TO_CHECK = ["Morning Brief", "What This Means"]
 
+# ── Normalisation ─────────────────────────────────────────────────────────────
 
-# ── Text normalisation ────────────────────────────────────────────────────────
-
-def strip_md(text: str) -> str:
-    """Convert a markdown paragraph to plain text."""
-    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)   # bold
-    text = re.sub(r'__(.+?)__',     r'\1', text)   # bold alt
-    text = re.sub(r'\*(.+?)\*',     r'\1', text)   # italic
-    text = re.sub(r'_(.+?)_',       r'\1', text)   # italic alt
-    text = re.sub(r'\[(.+?)\]\(.+?\)', r'\1', text)  # links → link text
-    text = re.sub(r'^[-*]\s+', '', text)            # list bullet
-    return text.strip()
-
-
-def strip_html(text: str) -> str:
-    """Strip HTML tags and decode common entities."""
+def strip_html_tags(text: str) -> str:
     text = re.sub(r'<[^>]+>', '', text)
-    text = (text
-            .replace('&amp;', '&')
-            .replace('&lt;', '<')
-            .replace('&gt;', '>')
-            .replace('&nbsp;', ' ')
-            .replace('&#39;', "'")
-            .replace('&quot;', '"'))
-    return text.strip()
+    return (text
+            .replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+            .replace('&nbsp;', ' ').replace('&#39;', "'").replace('&quot;', '"')
+            .replace('\u2019', "'").replace('\u2018', "'")   # curly apostrophes → straight
+            .replace('\u201c', '"').replace('\u201d', '"')   # curly quotes → straight
+            .replace('\u2013', '-').replace('\u2014', '--')) # en/em dash → ASCII
 
 
-# ── Parsers ───────────────────────────────────────────────────────────────────
+def strip_md_markup(text: str) -> str:
+    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)
+    text = re.sub(r'\*(.+?)\*',     r'\1', text)
+    text = re.sub(r'_(.+?)_',       r'\1', text)
+    text = re.sub(r'\[(.+?)\]\(.+?\)', r'\1', text)   # [link text](url) → text
+    text = re.sub(r'^[-*]\s+', '', text.strip())       # list bullet
+    return text
 
-def parse_md_sections(md_path: Path) -> dict[str, list[str]]:
-    """Return {section_title: [paragraph, …]} for every ## section in the MD."""
-    content = md_path.read_text(encoding='utf-8')
-    sections: dict[str, list[str]] = {}
-    current: str | None = None
-    paras: list[str] = []
 
-    for line in content.splitlines():
+def norm(text: str, *, lower: bool = False) -> str:
+    """Strip HTML tags, strip MD markup, remove thousand-separators, collapse spaces."""
+    text = strip_html_tags(text)
+    text = strip_md_markup(text)
+    text = re.sub(r'(\d),(\d{3})\b', r'\1\2', text)   # 5,190.80 → 5190.80
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text.lower() if lower else text
+
+
+# ── MD parsing ────────────────────────────────────────────────────────────────
+
+def split_md_sections(md: str) -> dict[str, str]:
+    """Return {section_title: raw_text} for every ## heading."""
+    sections: dict[str, str] = {}
+    current, buf = None, []
+    for line in md.splitlines():
         if line.startswith('## '):
             if current is not None:
-                sections[current] = paras
-            current = line[3:].strip()
-            paras = []
+                sections[current] = '\n'.join(buf)
+            current, buf = line[3:].strip(), []
         elif current is not None:
-            stripped = line.strip()
-            # Skip blank lines, horizontal rules, table rows, sub-headings,
-            # and the italicised tagline at the top.
-            if (not stripped
-                    or stripped.startswith('|')
-                    or stripped.startswith('#')
-                    or stripped == '---'
-                    or stripped.startswith('*Daily')):
-                continue
-            paras.append(strip_md(stripped))
-
+            buf.append(line)
     if current is not None:
-        sections[current] = paras
+        sections[current] = '\n'.join(buf)
     return sections
 
 
-def parse_html_sections(html_path: Path) -> dict[str, list[str]]:
-    """Return {section_title: [paragraph, …]} extracted from brief-text <p> tags."""
-    content = html_path.read_text(encoding='utf-8')
+def md_paragraphs(text: str) -> list[str]:
+    """Extract non-table, non-heading paragraph lines."""
+    result = []
+    for line in text.splitlines():
+        s = line.strip()
+        if not s or s.startswith('|') or s.startswith('#') or s == '---':
+            continue
+        result.append(norm(s))
+    return result
 
-    # Split on section-title divs to get (title, body) pairs.
-    parts = re.split(r'<div class="section-title">(.*?)</div>', content, flags=re.DOTALL)
-    # parts[0] = preamble, then alternating [title, body, title, body, …]
-    sections: dict[str, list[str]] = {}
+
+def md_table_rows(text: str) -> list[list[str]]:
+    """
+    Parse one or more MD tables in *text*.
+    Skips separator rows (|---|) and header rows (those immediately followed
+    by a separator row), so only data rows are returned.
+    """
+    # Collect only pipe-starting lines (preserving order)
+    pipe_lines = [l.strip() for l in text.splitlines() if l.strip().startswith('|')]
+
+    def is_separator(line: str) -> bool:
+        cells = [c.strip() for c in line.split('|') if c.strip()]
+        return bool(cells) and all(re.fullmatch(r'[-:]+', c) for c in cells)
+
+    rows = []
+    for i, line in enumerate(pipe_lines):
+        if is_separator(line):
+            continue
+        # header row: next pipe-line is a separator
+        if i + 1 < len(pipe_lines) and is_separator(pipe_lines[i + 1]):
+            continue
+        cells = [c.strip() for c in line.split('|') if c.strip()]
+        rows.append([norm(c) for c in cells])
+    return rows
+
+
+# ── HTML parsing ──────────────────────────────────────────────────────────────
+
+def split_html_sections(html: str) -> dict[str, str]:
+    """Return {section_title: raw_html_body} for every section-title div."""
+    parts = re.split(r'<div class="section-title">(.*?)</div>', html, flags=re.DOTALL)
+    sections: dict[str, str] = {}
     for i in range(1, len(parts), 2):
-        title = strip_html(parts[i]).strip()
-        body  = parts[i + 1] if i + 1 < len(parts) else ''
-        paras = re.findall(r'<p class="brief-text">(.*?)</p>', body, re.DOTALL)
-        sections[title] = [strip_html(p) for p in paras]
+        title = norm(parts[i])
+        sections[title] = parts[i + 1] if i + 1 < len(parts) else ''
     return sections
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+def html_brief_paras(html: str) -> list[str]:
+    """Extract <p class="brief-text"> paragraph text."""
+    return [norm(p) for p in re.findall(r'<p class="brief-text">(.*?)</p>', html, re.DOTALL)]
+
+
+def _tbody_rows(tbody_html: str) -> list[list[str]]:
+    rows = []
+    for tr in re.findall(r'<tr[^>]*>(.*?)</tr>', tbody_html, re.DOTALL):
+        cells = re.findall(r'<t[dh][^>]*>(.*?)</t[dh]>', tr, re.DOTALL)
+        rows.append([norm(c) for c in cells])
+    return rows
+
+
+def html_first_tbody_rows(html: str) -> list[list[str]]:
+    tbody = re.search(r'<tbody>(.*?)</tbody>', html, re.DOTALL)
+    return _tbody_rows(tbody.group(1)) if tbody else []
+
+
+def html_all_tbody_rows(html: str) -> list[list[str]]:
+    """Flatten rows from ALL <tbody> elements in order."""
+    rows = []
+    for tbody in re.findall(r'<tbody>(.*?)</tbody>', html, re.DOTALL):
+        rows.extend(_tbody_rows(tbody))
+    return rows
+
+
+# ── Section comparators ───────────────────────────────────────────────────────
+
+def _diff_rows(section: str, md: list[list[str]], html: list[list[str]],
+               errors: list[str]) -> None:
+    if len(md) != len(html):
+        errors.append(
+            f"[{section}] row count differs — MD: {len(md)}, HTML: {len(html)}"
+        )
+    for i, (mr, hr) in enumerate(zip(md, html), 1):
+        if mr != hr:
+            errors.append(
+                f"[{section}] row {i} mismatch:\n"
+                f"  MD  : {mr}\n"
+                f"  HTML: {hr}"
+            )
+
+
+def check_paragraphs(section: str, md_text: str, html: str, errors: list[str]) -> None:
+    md_paras   = md_paragraphs(md_text)
+    html_paras = html_brief_paras(html)
+    if len(md_paras) != len(html_paras):
+        errors.append(
+            f"[{section}] paragraph count — MD: {len(md_paras)}, HTML: {len(html_paras)}"
+        )
+    for i, (m, h) in enumerate(zip(md_paras, html_paras), 1):
+        if m != h:
+            errors.append(
+                f"[{section}] paragraph {i} mismatch:\n"
+                f"  MD  : {m}\n"
+                f"  HTML: {h}"
+            )
+
+
+def check_simple_table(section: str, md_text: str, html: str, errors: list[str]) -> None:
+    """Compare a straightforward table (same columns in MD and HTML)."""
+    _diff_rows(section, md_table_rows(md_text), html_first_tbody_rows(html), errors)
+
+
+def check_headlines(md_text: str, html: str, errors: list[str]) -> None:
+    """
+    Compare Market-Moving Headlines.
+    MD:   | # | [Headline text](url) | Source |
+    HTML: | # | <a href="url">Headline text</a> | Source |
+    norm() strips both link formats to plain text.
+    """
+    _diff_rows('Market-Moving Headlines',
+               md_table_rows(md_text),
+               html_first_tbody_rows(html),
+               errors)
+
+
+def check_overnight(md_text: str, html: str, errors: list[str]) -> None:
+    """
+    Overnight Markets has two sub-tables (APAC + Europe).
+    The Session column is formatted differently (MD: 'Early session (~3h in)',
+    HTML: 'Early Session') so we compare only the first 3 columns.
+    """
+    md_rows   = [r[:3] for r in md_table_rows(md_text)]
+    html_rows = [r[:3] for r in html_all_tbody_rows(html)]
+    _diff_rows('Overnight Markets', md_rows, html_rows, errors)
+
+
+def _is_placeholder(rows: list[list[str]], keyword: str) -> bool:
+    """True if the first data row contains the placeholder keyword in any cell."""
+    if not rows:
+        return False
+    return any(keyword.lower() in c.lower() for c in rows[0])
+
+
+def check_events(section: str, md_text: str, html: str, errors: list[str],
+                 placeholder_keyword: str) -> None:
+    """
+    Compare event tables (What Moved / Watch List).
+    Treats MD placeholder '*No major events*' and HTML 'No major events recorded.'
+    as equivalent — both contain the same keyword phrase.
+    """
+    md_rows   = md_table_rows(md_text)
+    html_rows = html_first_tbody_rows(html)
+
+    md_empty   = _is_placeholder(md_rows, placeholder_keyword)
+    html_empty = _is_placeholder(html_rows, placeholder_keyword)
+
+    if md_empty and html_empty:
+        return   # both sides agree: no events
+    if md_empty != html_empty:
+        errors.append(
+            f"[{section}] placeholder mismatch — one side has events, the other does not:\n"
+            f"  MD  : {md_rows}\n  HTML: {html_rows}"
+        )
+        return
+    _diff_rows(section, md_rows, html_rows, errors)
+
+
+def check_positioning(md_text: str, html: str, errors: list[str]) -> None:
+    """
+    Positioning Notes.
+    MD:   - Signal text -- Action text.
+    HTML: Signal column | Action column  (two separate <td>s).
+    Normalise by replacing ' -- ' with ' ' and comparing case-insensitively.
+    """
+    md_tips = []
+    for line in md_text.splitlines():
+        s = line.strip()
+        if not re.match(r'^[-*]\s', s):   # actual bullet only (not --- separator)
+            continue
+        text = re.sub(r'^[-*]\s+', '', s)           # strip bullet
+        text = re.sub(r'\s+--\s+', ' ', text)       # -- → space
+        md_tips.append(norm(text, lower=True))
+
+    html_rows = html_first_tbody_rows(html)
+    html_tips = []
+    for row in html_rows:
+        if len(row) >= 2:
+            html_tips.append(norm(row[0] + ' ' + row[1], lower=True))
+        elif row:
+            html_tips.append(norm(row[0], lower=True))
+
+    if len(md_tips) != len(html_tips):
+        errors.append(
+            f"[Positioning Notes] tip count — MD: {len(md_tips)}, HTML: {len(html_tips)}"
+        )
+    for i, (m, h) in enumerate(zip(md_tips, html_tips), 1):
+        if m != h:
+            errors.append(
+                f"[Positioning Notes] tip {i} mismatch:\n"
+                f"  MD  : {m}\n"
+                f"  HTML: {h}"
+            )
+
+
+# ── Entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
     date_str = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
 
-    md_path   = SCRIPT_DIR / 'output' / f'market_day_break_{date_str}.md'
+    md_path   = SCRIPT_DIR / 'output'         / f'market_day_break_{date_str}.md'
     html_path = SCRIPT_DIR / 'site' / 'daily' / date_str / 'index.html'
 
-    for path in (md_path, html_path):
-        if not path.exists():
-            print(f"ERROR: File not found: {path}")
+    for p in (md_path, html_path):
+        if not p.exists():
+            print(f"ERROR: File not found: {p}")
             sys.exit(1)
 
-    md_sections   = parse_md_sections(md_path)
-    html_sections = parse_html_sections(html_path)
+    md   = md_path.read_text(encoding='utf-8')
+    html = html_path.read_text(encoding='utf-8')
 
-    mismatches: list[str] = []
+    md_secs   = split_md_sections(md)
+    html_secs = split_html_sections(html)
 
-    for section in SECTIONS_TO_CHECK:
-        md_paras   = md_sections.get(section, [])
-        html_paras = html_sections.get(section, [])
+    errors: list[str] = []
 
-        if len(md_paras) != len(html_paras):
-            mismatches.append(
-                f"[{section}] paragraph count differs — MD: {len(md_paras)}, HTML: {len(html_paras)}"
-            )
+    # Helper: warn if a section is absent from either file
+    def require(section: str) -> bool:
+        if section not in md_secs or section not in html_secs:
+            errors.append(f"[{section}] section missing from MD or HTML")
+            return False
+        return True
 
-        for j, (md_p, html_p) in enumerate(zip(md_paras, html_paras), 1):
-            if md_p != html_p:
-                mismatches.append(
-                    f"[{section}] paragraph {j} mismatch:\n"
-                    f"  MD  : {md_p}\n"
-                    f"  HTML: {html_p}"
-                )
+    # ── Narrative paragraphs ──────────────────────────────────────────────────
+    for s in ('Morning Brief', 'What This Means'):
+        if require(s):
+            check_paragraphs(s, md_secs[s], html_secs[s], errors)
 
-    if mismatches:
-        print(f"\nCONTENT MISMATCH — {len(mismatches)} issue(s) found for {date_str}:\n")
-        for m in mismatches:
-            print(f"  {m}\n")
-        print("Fix the source data / generator so the HTML matches the approved MD, then re-run.")
+    # ── News table ────────────────────────────────────────────────────────────
+    if require('Market-Moving Headlines'):
+        check_headlines(md_secs['Market-Moving Headlines'],
+                        html_secs['Market-Moving Headlines'], errors)
+
+    # ── Numeric data tables ───────────────────────────────────────────────────
+    for s in ('US Market Close', 'Currencies & Safe Havens', 'Pre-Market Futures'):
+        if require(s):
+            check_simple_table(s, md_secs[s], html_secs[s], errors)
+
+    # ── Overnight Markets (two sub-tables; session column excluded) ────────────
+    if require('Overnight Markets'):
+        check_overnight(md_secs['Overnight Markets'], html_secs['Overnight Markets'], errors)
+
+    # ── Event tables (with placeholder equivalence) ───────────────────────────
+    if require('What Moved Markets Yesterday'):
+        check_events('What Moved Markets Yesterday',
+                     md_secs['What Moved Markets Yesterday'],
+                     html_secs['What Moved Markets Yesterday'],
+                     errors, placeholder_keyword='No major events')
+
+    if require("Today's Watch List"):
+        check_events("Today's Watch List",
+                     md_secs["Today's Watch List"],
+                     html_secs["Today's Watch List"],
+                     errors, placeholder_keyword='No high-importance events')
+
+    # ── Positioning Notes ─────────────────────────────────────────────────────
+    if require('Positioning Notes'):
+        check_positioning(md_secs['Positioning Notes'], html_secs['Positioning Notes'], errors)
+
+    # ── Report ────────────────────────────────────────────────────────────────
+    sections_checked = [
+        'Morning Brief', 'What This Means', 'Market-Moving Headlines',
+        'US Market Close', 'Overnight Markets', 'Currencies & Safe Havens',
+        'Pre-Market Futures', 'What Moved Markets Yesterday',
+        "Today's Watch List", 'Positioning Notes',
+    ]
+
+    if errors:
+        print(f"\nCONTENT MISMATCH — {len(errors)} issue(s) found for {date_str}:\n")
+        for e in errors:
+            print(f"  {e}\n")
+        print("Fix the source / generator so HTML matches the approved MD, then rebuild.")
         sys.exit(1)
 
-    checked = ', '.join(SECTIONS_TO_CHECK)
-    print(f"OK — HTML matches {md_path.name}  [{checked}]")
+    print(f"OK — HTML matches {md_path.name}")
+    print(f"     Verified: {', '.join(sections_checked)}")
 
 
 if __name__ == '__main__':
