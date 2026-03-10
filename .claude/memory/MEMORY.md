@@ -53,6 +53,22 @@ requested date. This means data is stale — use `--live` or create a new fixtur
 
 ## Market IQ Flashcards
 
+### Go-live: link newsletter indicator mentions to flashcards
+When the Market IQ flashcards are integrated into the live site, every mention
+of a tracked indicator in the newsletter HTML should be hyperlinked to its
+flashcard. Examples:
+- "CPI" → `/market-iq#cpi`
+- "NFP" / "non-farm payrolls" → `/market-iq#nfp`
+- "yield curve" → `/market-iq#yield-curve`
+- "Fed funds rate" / "FFR" → `/market-iq#ffr`
+
+Implementation notes:
+- Add `id` anchors to each flashcard block when building the live page
+- In `build_site.py` / `build_combined_site.py`, add a post-render pass that
+  regex-replaces known indicator terms in the newsletter body with `<a>` tags
+- Maintain a term→anchor mapping dict (abbreviations + full names + press shorthand)
+- Links open the Market IQ page scrolled to the right card (anchor link, same-site)
+
 ### Go-live: use auto-pull for card data
 When integrating Market IQ flashcards into the live site, card data must be
 populated from the existing pipeline (`fetch_data.py` / FRED / yfinance fixtures)
