@@ -62,7 +62,11 @@ echo "==> Rebuilding site ..."
 python build_combined_site.py
 
 echo ""
-echo "==> Verifying site content matches approved MD ..."
+echo "==> Regenerating PDF from verified site HTML ..."
+python regen_daybreak_pdf.py "$DATE_STR"
+
+echo ""
+echo "==> Verifying HTML and PDF match approved MD ..."
 python verify_site_content.py "$DATE_STR"
 
 echo ""

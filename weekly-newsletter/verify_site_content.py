@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-verify_site_content.py — Verify the published HTML matches the approved .md exactly.
+verify_site_content.py — Verify the published HTML AND PDF match the approved .md exactly.
 
 Checks every section of the Market Day Break newsletter:
   Paragraphs  — Morning Brief, What This Means
@@ -9,7 +9,11 @@ Checks every section of the Market Day Break newsletter:
   Event rows  — What Moved Markets Yesterday, Today's Watch List
   Tips        — Positioning Notes (Signal -- Action format)
 
-Known formatting differences between .md and HTML are normalised before
+Also verifies the PDF: extracts text via pypdf and checks that every
+narrative paragraph (Morning Brief, What This Means) and every headline
+appears verbatim in the PDF text.
+
+Known formatting differences between .md and HTML/PDF are normalised before
 comparison (thousand-separators, HTML entities, markdown markup, session
 labels, placeholder wording).  Exits non-zero on any mismatch so that
 publish_daybreak.sh aborts before committing.
@@ -278,13 +282,103 @@ def check_positioning(md_text: str, html: str, errors: list[str]) -> None:
             )
 
 
+# ── PDF verification ─────────────────────────────────────────────────────────
+
+def _pdf_text(pdf_path: Path) -> str:
+    """Extract and normalise all text from the PDF."""
+    import pypdf
+    reader  = pypdf.PdfReader(str(pdf_path))
+    raw     = ' '.join(page.extract_text() or '' for page in reader.pages)
+    # Strip emoji and other non-BMP characters (not in editable MD content)
+    raw     = raw.encode('utf-16', 'surrogatepass').decode('utf-16')
+    raw     = re.sub(r'[\U00010000-\U0010ffff]', '', raw)   # non-BMP (emoji etc.)
+    # Collapse whitespace and normalise dashes / quotes to match MD norm()
+    text    = re.sub(r'\s+', ' ', raw).strip()
+    text    = text.replace('\u2019', "'").replace('\u2018', "'")
+    text    = text.replace('\u201c', '"').replace('\u201d', '"')
+    text    = text.replace('\u2013', '--').replace('\u2014', '--')
+    # Remove thousand separators so 5,190.80 == 5190.80
+    text    = re.sub(r'(\d),(\d{3})\b', r'\1\2', text)
+    return text
+
+
+def check_pdf(md_path: Path, pdf_path: Path, md_secs: dict, errors: list[str]) -> None:
+    """
+    Verify PDF content against the approved MD.
+
+    Checks:
+    - Every Morning Brief and What This Means paragraph appears verbatim in PDF text.
+    - Every headline text appears in PDF text.
+    - Every positioning note appears in PDF text (case-insensitive, space-collapsed
+      to tolerate letter-spacing / word-break rendering artifacts in PDF tables).
+    """
+    if not pdf_path.exists():
+        errors.append(f"[PDF] file not found: {pdf_path}")
+        return
+
+    pdf      = _pdf_text(pdf_path)
+    pdf_low  = pdf.lower()
+    pdf_nsp  = re.sub(r'\s+', '', pdf).lower()   # no-space version for table cells
+
+    def _snippet(text: str) -> str:
+        idx = pdf.lower().find(text[:40].lower())
+        if idx >= 0:
+            return f"...{pdf[max(0,idx-20):idx+120]}..."
+        return "(not found in PDF)"
+
+    def pdf_contains_exact(expected: str, label: str) -> None:
+        """Exact substring match (after norm) — used for narrative paragraphs."""
+        n = norm(expected)
+        if n and n not in pdf:
+            errors.append(
+                f"[PDF] {label} not found:\n"
+                f"  expected : {n}\n"
+                f"  pdf text : {_snippet(n)}"
+            )
+
+    def pdf_contains_fuzzy(expected: str, label: str) -> None:
+        """Case-insensitive, space-collapsed match — used for table cells where
+        PDF rendering can introduce letter-spacing gaps (e.g. 'VW O', 'commo dities')."""
+        n = re.sub(r'\s+', '', norm(expected, lower=True))
+        if n and n not in pdf_nsp:
+            errors.append(
+                f"[PDF] {label} not found:\n"
+                f"  expected : {norm(expected)}\n"
+                f"  pdf text : {_snippet(norm(expected))}"
+            )
+
+    # Narrative paragraphs — exact match (extract cleanly from PDF)
+    for section in ('Morning Brief', 'What This Means'):
+        for i, para in enumerate(md_paragraphs(md_secs.get(section, '')), 1):
+            pdf_contains_exact(para, f"{section} para {i}")
+
+    # Headlines — exact match (plain text in PDF)
+    for row in md_table_rows(md_secs.get('Market-Moving Headlines', '')):
+        if len(row) >= 2:
+            pdf_contains_exact(row[1], f"Headline '{row[1][:50]}'")
+
+    # Positioning notes — fuzzy (table cells may have spacing artifacts)
+    for line in md_secs.get('Positioning Notes', '').splitlines():
+        s = line.strip()
+        if not re.match(r'^[-*]\s', s):
+            continue
+        text = re.sub(r'^[-*]\s+', '', s)
+        text = re.sub(r'\s+--\s+', ' ', text)
+        pdf_contains_fuzzy(text, f"Positioning note '{text[:50]}'")
+
+
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
+    # Ensure UTF-8 output on Windows consoles
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
     date_str = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
 
     md_path   = SCRIPT_DIR / 'output'         / f'market_day_break_{date_str}.md'
     html_path = SCRIPT_DIR / 'site' / 'daily' / date_str / 'index.html'
+    pdf_path  = SCRIPT_DIR / 'output'         / f'market_day_break_{date_str}.pdf'
 
     for p in (md_path, html_path):
         if not p.exists():
@@ -342,22 +436,25 @@ def main() -> None:
     if require('Positioning Notes'):
         check_positioning(md_secs['Positioning Notes'], html_secs['Positioning Notes'], errors)
 
+    # ── PDF ───────────────────────────────────────────────────────────────────
+    check_pdf(md_path, pdf_path, md_secs, errors)
+
     # ── Report ────────────────────────────────────────────────────────────────
     sections_checked = [
         'Morning Brief', 'What This Means', 'Market-Moving Headlines',
         'US Market Close', 'Overnight Markets', 'Currencies & Safe Havens',
         'Pre-Market Futures', 'What Moved Markets Yesterday',
-        "Today's Watch List", 'Positioning Notes',
+        "Today's Watch List", 'Positioning Notes', 'PDF',
     ]
 
     if errors:
         print(f"\nCONTENT MISMATCH — {len(errors)} issue(s) found for {date_str}:\n")
         for e in errors:
             print(f"  {e}\n")
-        print("Fix the source / generator so HTML matches the approved MD, then rebuild.")
+        print("Fix the source / generator so HTML and PDF match the approved MD, then rebuild.")
         sys.exit(1)
 
-    print(f"OK — HTML matches {md_path.name}")
+    print(f"OK — HTML and PDF match {md_path.name}")
     print(f"     Verified: {', '.join(sections_checked)}")
 
 
