@@ -169,7 +169,7 @@ body {
 .flip-inner {
   position: relative;
   width: 100%;
-  height: 420px;
+  /* height set by JS after measuring natural face heights */
   transform-style: preserve-3d;
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
@@ -1245,6 +1245,34 @@ renderBarChart('chart-yc', [
   { label: "Jan '26", value: 0.10,  displayValue: '+0.10%' },
   { label: "Feb '26", value: 0.18,  displayValue: '+0.18%' },
 ]);
+
+/* ── AUTO-SIZE FLIP CARDS ── */
+/* Both faces are position:absolute so the parent has no natural height.
+   We temporarily make each face position:relative, measure its scrollHeight,
+   then restore and set the container height to the max of the two. */
+window.addEventListener('load', function () {
+  document.querySelectorAll('.flip-wrapper').forEach(function (wrapper) {
+    var inner   = wrapper.querySelector('.flip-inner');
+    var front   = inner.querySelector('.card-face.front');
+    var back    = inner.querySelector('.card-face.back');
+
+    // Measure front
+    front.style.position = 'relative';
+    var frontH = front.scrollHeight;
+    front.style.position = '';
+
+    // Measure back (has rotateY transform — neutralise it temporarily)
+    back.style.transform  = 'none';
+    back.style.position   = 'relative';
+    back.style.visibility = 'hidden';
+    var backH = back.scrollHeight;
+    back.style.transform  = 'rotateY(180deg)';
+    back.style.position   = '';
+    back.style.visibility = '';
+
+    inner.style.height = Math.max(frontH, backH) + 'px';
+  });
+});
 </script>
 
 </body>
