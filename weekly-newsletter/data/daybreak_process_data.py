@@ -147,11 +147,14 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
         )
     if treasury and treasury.get("yield_change_bps") is not None:
         bps = treasury["yield_change_bps"]
-        direction = "rose" if bps > 0 else "fell"
-        safe_notes.append(
-            f"the 10-year Treasury yield {direction} {abs(bps):.0f} bps "
-            f"to {treasury['close']:.2f}%"
-        )
+        if round(abs(bps)) == 0:
+            safe_notes.append(f"the 10-year Treasury yield held flat at {treasury['close']:.2f}%")
+        else:
+            direction = "rose" if bps > 0 else "fell"
+            safe_notes.append(
+                f"the 10-year Treasury yield {direction} {round(abs(bps)):.0f} bps "
+                f"to {treasury['close']:.2f}%"
+            )
     if eur_usd and eur_usd["daily_pct"] is not None:
         direction = "strengthened" if eur_usd["daily_pct"] < 0 else "softened"
         safe_notes.append(
@@ -160,7 +163,13 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
             f"the dollar {direction} against the euro"
         )
     if safe_notes:
-        para1 += " On the safe-haven front, " + ", while ".join(safe_notes) + "."
+        if len(safe_notes) == 1:
+            joined = safe_notes[0]
+        elif len(safe_notes) == 2:
+            joined = f"{safe_notes[0]}, while {safe_notes[1]}"
+        else:
+            joined = ", ".join(safe_notes[:-1]) + f", and {safe_notes[-1]}"
+        para1 += " On the safe-haven front, " + joined + "."
 
     if oil and oil["daily_pct"] is not None:
         direction = "rose" if oil["daily_pct"] > 0 else "fell"
