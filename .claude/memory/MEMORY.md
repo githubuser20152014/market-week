@@ -51,6 +51,21 @@ are used. The intl generator used to rename outputs, deleting the US files.
 `fetch_data.py` prints a WARNING if the closest fixture is >2 days from the
 requested date. This means data is stale — use `--live` or create a new fixture.
 
+## Market IQ Flashcards
+
+### Go-live: use auto-pull for card data
+When integrating Market IQ flashcards into the live site, card data must be
+populated from the existing pipeline (`fetch_data.py` / FRED / yfinance fixtures)
+— **not** hardcoded. The current `output/market-iq-flashcards_mockup.html` has
+hardcoded values for review only.
+
+Update cadences per card:
+- CPI → monthly (~2nd Tuesday, BLS)
+- FFR → 8× / year (FOMC decision days)
+- NFP → monthly (1st Friday, BLS)
+- PCE → monthly (~last Friday, BEA)
+- Yield Curve → monthly snapshot (10Y & 2Y already in fixtures)
+
 ## Workflow Preferences
 
 ### End-of-session GitHub commit
