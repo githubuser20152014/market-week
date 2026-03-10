@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Framework Foundry — Market IQ Flashcards</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ── */
+:root {
+  --navy:       #0f1f3d;
+  --navy-mid:   #1a3260;
+  --accent:     #4a7fb5;
+  --accent-lt:  #7aabda;
+  --gold:       #c9a84c;
+  --gold-lt:    #e0c97a;
+  --white:      #ffffff;
+  --off-white:  #f5f4f0;
+  --text:       #1a1a2e;
+  --border:     #ddd8cc;
+  --muted:      #6b7280;
+  --green:      #2a7d4f;
+  --red:        #b91c1c;
+  --bg:         #dde3ea;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: 'Source Serif 4', Georgia, serif;
+  color: var(--text);
+  padding: 32px 16px;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 22px 40px 18px;
+  gap: 16px;
+}
+.logo-name-framework {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600;
+  letter-spacing: 4px; color: var(--white);
+  display: block; line-height: 1;
+}
+.logo-name-foundry {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px; font-weight: 300;
+  letter-spacing: 11px; color: var(--accent);
+  display: block; margin-top: 4px;
+}
+.logo-rule { height: 1px; background: rgba(255,255,255,0.15); margin: 6px 0 5px; }
+.logo-tagline {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px; font-weight: 300;
+  letter-spacing: 3px; color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+.header-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
+}
+
+/* ── NAV ── */
+.section-nav {
+  background: var(--navy);
+  padding: 0 40px;
+  display: flex;
+  border-bottom: 2px solid rgba(255,255,255,0.08);
+}
+.nav-tab {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  padding: 13px 22px;
+  color: rgba(255,255,255,0.45);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-tab.active {
+  color: var(--white);
+  border-bottom-color: var(--gold);
+}
+.nav-tab.dim { color: rgba(255,255,255,0.2); font-style: italic; }
+
+/* ── CONTENT AREA ── */
+.content { padding: 36px 40px; }
+
+.section-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px;
+}
+
+.intro-blurb {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px; line-height: 1.7;
+  color: #2c2c3e; font-weight: 300;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── FILTER BUTTONS ── */
+.filter-row {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
+}
+.filter-btn {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  cursor: pointer;
+}
+.filter-btn.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+/* ── CARD SECTION LABEL ── */
+.card-section-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 14px;
+}
+
+/* ── FLIP CARD WRAPPER ── */
+.flip-wrapper {
+  perspective: 1400px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 0;
+}
+.flip-wrapper:hover .flip-hint { opacity: 1; }
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.flip-inner.flipped { transform: rotateY(180deg); }
+
+/* ── CARD FACE (shared) ── */
+.card-face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  background: var(--off-white);
+  display: flex;
+  flex-direction: column;
+}
+.card-face.back {
+  transform: rotateY(180deg);
+  border-top-color: var(--gold);
+}
+
+/* ── CARD HEADER (front — navy band) ── */
+.card-header {
+  background: var(--navy);
+  padding: 20px 28px 18px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.card-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.card-header-inner { position: relative; }
+.card-cat-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.card-term {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 600;
+  color: var(--white); line-height: 1; letter-spacing: 1px;
+}
+.card-full-name {
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px; font-weight: 300;
+  font-style: italic;
+  color: var(--accent-lt); margin-top: 6px;
+}
+
+/* ── CARD BODY (front) ── */
+.card-body {
+  padding: 28px 28px 0;
+  flex: 1;
+  overflow: hidden;
+}
+.card-body-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.card-definition {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px; line-height: 1.72;
+  color: var(--text); font-weight: 300;
+  margin-bottom: 20px;
+}
+.card-formula {
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px; line-height: 1.65;
+  color: #3a3a4a; font-weight: 300;
+  font-style: italic;
+}
+.card-context {
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px; line-height: 1.65;
+  color: #3a3a4a; font-weight: 300;
+}
+
+/* ── CARD FOOTER (front) ── */
+.card-footer {
+  padding: 16px 28px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.card-freq {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted);
+}
+.flip-hint {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── TREND BADGES ── */
+.badge {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.badge-up   { background: #d4edda; color: #155724; }
+.badge-down { background: #f8d7da; color: #721c24; }
+.badge-flat { background: #e8e8e8; color: #555; }
+.badge-green { background: #d1fae5; color: #065f46; }
+
+/* ── BACK HEADER ── */
+.back-header {
+  background: var(--navy-mid);
+  padding: 16px 28px;
+  position: relative; overflow: hidden;
+  flex-shrink: 0;
+}
+.back-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.back-header-inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back-header-left {}
+.back-source-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 4px;
+}
+.back-term-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  color: var(--white);
+}
+.back-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 300;
+  line-height: 1;
+}
+.back-value-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-top: 2px;
+  text-align: right;
+}
+
+/* ── BACK BODY ── */
+.back-body {
+  padding: 20px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+.chart-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 12px;
+}
+.chart-container {
+  background: var(--navy);
+  padding: 16px 18px 12px;
+  border-radius: 1px;
+}
+
+/* ── MINI BAR CHART ── */
+.mini-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 68px;
+}
+.bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.bar-value-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 700;
+  margin-bottom: 3px; letter-spacing: 0.5px;
+}
+.bar {
+  width: 100%;
+  min-height: 4px;
+  border-radius: 1px 1px 0 0;
+}
+.bar-period-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* ── RATE TIMELINE ── */
+.rate-timeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 68px;
+  padding: 0 4px;
+}
+.rate-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+.rate-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent-lt);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+.rate-dot.current { background: var(--gold); width: 13px; height: 13px; }
+.rate-connector {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.2);
+  z-index: 0;
+}
+.rate-node:last-child .rate-connector { display: none; }
+.rate-value {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 700;
+  color: var(--accent-lt);
+  text-align: center; letter-spacing: 0.3px;
+}
+.rate-node.current-node .rate-value { color: var(--gold); }
+.rate-period {
+  font-family: 'Raleway', sans-serif;
+  font-size: 7.5px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  text-align: center; margin-top: 4px;
+}
+.rate-node.current-node .rate-period { color: rgba(255,255,255,0.65); }
+
+/* ── STAT TILES ── */
+.stat-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.stat-tile {
+  border: 1px solid var(--border);
+  background: var(--white);
+  padding: 12px 14px;
+}
+.stat-tile-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 5px;
+}
+.stat-tile-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600;
+  line-height: 1;
+}
+.stat-tile-sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 500;
+  color: var(--muted); margin-top: 3px;
+}
+
+/* ── INSIGHT CALLOUT ── */
+.insight-callout {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  background: var(--white);
+  padding: 12px 14px;
+}
+.insight-heading {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 7px;
+}
+.insight-text {
+  font-family: 'Source Serif 4', serif;
+  font-size: 12.5px; line-height: 1.6;
+  color: #3a3a4a; font-weight: 300;
+}
+
+/* ── BACK FOOTER ── */
+.back-footer {
+  padding: 12px 28px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.back-source {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted);
+}
+.flip-back-hint {
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── CARD DIVIDER ── */
+.card-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 40px 0;
+  position: relative;
+}
+.card-divider::after {
+  content: '· · ·';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--white);
+  padding: 0 12px;
+  color: var(--border);
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy);
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 3px; color: rgba(255,255,255,0.5);
+}
+.footer-brand span { color: var(--accent); }
+.footer-disclaimer {
+  font-family: 'Raleway', sans-serif;
+  font-size: 8.5px; color: rgba(255,255,255,0.3);
+  letter-spacing: 0.5px; text-align: right; line-height: 1.6;
+}
+
+/* helpers */
+.em-red   { color: var(--red);   font-weight: 600; }
+.em-green { color: var(--green); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <svg width="52" height="52" viewBox="0 0 80 80" aria-hidden="true">
+        <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+        <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+      </svg>
+      <div>
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Economic Intelligence · Research for the Serious Investor</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="section-nav">
+    <a class="nav-tab" href="#">Markets</a>
+    <a class="nav-tab active" href="#">Market IQ</a>
+    <a class="nav-tab" href="#">Investing</a>
+    <a class="nav-tab dim" href="#">Expat Investing ↗</a>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="section-label">Market IQ — Economic Concepts, Plain &amp; Simple</div>
+
+    <p class="intro-blurb">
+      No economics degree required. Each card explains one concept — what it is, why it matters,
+      how often it's published, and what the recent trend means for your money.
+    </p>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-row">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Macro Indicators</button>
+      <button class="filter-btn active">Inflation</button>
+      <button class="filter-btn active">Employment</button>
+      <button class="filter-btn active">Central Banks</button>
+      <button class="filter-btn active">Markets</button>
+      <button class="filter-btn">Trade &amp; FX</button>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         CARD 02 — CPI
+    ════════════════════════════════════════════ -->
+    <div class="card-section-label">Inflation · Card 02</div>
+
+    <div class="flip-wrapper" onclick="toggleFlip(this)">
+      <div class="flip-inner">
+
+        <!-- FRONT -->
+        <div class="card-face front">
+          <div class="card-header">
+            <div class="card-header-inner">
+              <div class="card-cat-label">Inflation · Card 02</div>
+              <div class="card-term">CPI</div>
+              <div class="card-full-name">Consumer Price Index</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-body-label">What is it?</div>
+            <p class="card-definition">
+              CPI measures how much a fixed "basket" of goods and services — groceries,
+              rent, gasoline, medical care — costs compared to a base period. If the
+              basket costs more today, inflation is rising.
+            </p>
+            <div class="card-formula">
+              CPI tracks price changes across 8 major categories: Food &amp; Beverage,
+              Housing, Apparel, Transportation, Medical Care, Recreation, Education, and Other.
+            </div>
+            <p class="card-context">
+              The Fed watches CPI closely alongside PCE. When CPI runs persistently above 2%,
+              the Fed considers raising rates to cool demand. When it falls sharply, it may signal
+              a weakening economy.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div style="display:flex;gap:18px;align-items:center;">
+              <span class="card-freq">Published: Monthly</span>
+              <span class="badge badge-up">↑ Elevated</span>
+            </div>
+            <span class="flip-hint">Flip for latest data →</span>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="card-face back">
+          <div class="back-header">
+            <div class="back-header-inner">
+              <div class="back-header-left">
+                <div class="back-source-label">Latest Data · BLS</div>
+                <div class="back-term-title">CPI — Current Trend</div>
+              </div>
+              <div>
+                <div class="back-value" style="color:#b91c1c;">3.1%</div>
+                <div class="back-value-label">YoY · Feb 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="back-body">
+            <div>
+              <div class="chart-label">CPI YoY — Monthly</div>
+              <div class="chart-container">
+                <div class="mini-bar-chart" id="chart-cpi"></div>
+              </div>
+            </div>
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <div class="stat-tile-label">Core CPI</div>
+                <div class="stat-tile-value" style="color:#b91c1c;">3.4%</div>
+                <div class="stat-tile-sub">Excl. food &amp; energy</div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-tile-label">Fed Target</div>
+                <div class="stat-tile-value" style="color:#6b7280;">2.0%</div>
+                <div class="stat-tile-sub">Still above target</div>
+              </div>
+            </div>
+            <div class="insight-callout">
+              <div class="insight-heading">What This Means For You</div>
+              <p class="insight-text">
+                Shelter costs keep headline CPI sticky above target — rent and equivalent
+                homeowner costs make up ~35% of the index and are slow to fall.
+                The Fed is watching <strong class="em-red">core CPI</strong> closely;
+                until it drops toward 2.5%, rate cuts remain on hold.
+              </p>
+            </div>
+          </div>
+          <div class="back-footer">
+            <span class="back-source">Source: U.S. Bureau of Labor Statistics · Feb 2026</span>
+            <span class="flip-back-hint">← Flip back</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+
+    <!-- ═══════════════════════════════════════════
+         CARD 03 — FFR
+    ════════════════════════════════════════════ -->
+    <div class="card-section-label">Central Banks · Card 03</div>
+
+    <div class="flip-wrapper" onclick="toggleFlip(this)">
+      <div class="flip-inner">
+
+        <!-- FRONT -->
+        <div class="card-face front">
+          <div class="card-header">
+            <div class="card-header-inner">
+              <div class="card-cat-label">Central Banks · Card 03</div>
+              <div class="card-term">FFR</div>
+              <div class="card-full-name">Federal Funds Rate</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-body-label">What is it?</div>
+            <p class="card-definition">
+              The Federal Funds Rate is the interest rate at which banks lend money to
+              each other overnight. The Federal Reserve sets a target range for this rate —
+              it is the most powerful lever in U.S. monetary policy.
+            </p>
+            <div class="card-formula">
+              When FFR rises → borrowing costs increase → spending slows → inflation cools.<br/>
+              When FFR falls → cheaper credit → spending rises → economy stimulated.
+            </div>
+            <p class="card-context">
+              The FOMC (Federal Open Market Committee) meets 8 times per year to review
+              the rate. Every quarter-point move ripples through mortgages, car loans,
+              credit cards, and bond yields within days.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div style="display:flex;gap:18px;align-items:center;">
+              <span class="card-freq">Updated: 8× per year</span>
+              <span class="badge badge-flat">→ Hold</span>
+            </div>
+            <span class="flip-hint">Flip for latest data →</span>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="card-face back">
+          <div class="back-header">
+            <div class="back-header-inner">
+              <div class="back-header-left">
+                <div class="back-source-label">Latest Decision · FOMC</div>
+                <div class="back-term-title">Fed Funds Rate — Current</div>
+              </div>
+              <div>
+                <div class="back-value" style="color:#6b7280;">4.25–4.50%</div>
+                <div class="back-value-label">Held · Dec 2025</div>
+              </div>
+            </div>
+          </div>
+          <div class="back-body">
+            <div>
+              <div class="chart-label">Rate Path — Last 4 FOMC Decisions</div>
+              <div class="chart-container">
+                <div class="rate-timeline" id="timeline-ffr"></div>
+              </div>
+            </div>
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <div class="stat-tile-label">Last Cut</div>
+                <div class="stat-tile-value" style="color:#4a7fb5;font-size:18px;padding-top:4px;">Dec 18, 2025</div>
+                <div class="stat-tile-sub">−25 bps</div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-tile-label">Next FOMC</div>
+                <div class="stat-tile-value" style="color:#4a7fb5;font-size:18px;padding-top:4px;">Mar 19, 2026</div>
+                <div class="stat-tile-sub">Hold expected</div>
+              </div>
+            </div>
+            <div class="insight-callout">
+              <div class="insight-heading">What This Means For You</div>
+              <p class="insight-text">
+                The Fed is in wait-and-see mode after three cuts in late 2025.
+                Markets have <strong class="em-green">1–2 more cuts priced in for 2026</strong>,
+                but only if inflation cooperates. Higher rates mean bond yields stay elevated —
+                a challenge for growth stocks but an opportunity for fixed-income investors.
+              </p>
+            </div>
+          </div>
+          <div class="back-footer">
+            <span class="back-source">Source: Federal Reserve · Dec 2025 FOMC</span>
+            <span class="flip-back-hint">← Flip back</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+
+    <!-- ═══════════════════════════════════════════
+         CARD 04 — NFP
+    ════════════════════════════════════════════ -->
+    <div class="card-section-label">Employment · Card 04</div>
+
+    <div class="flip-wrapper" onclick="toggleFlip(this)">
+      <div class="flip-inner">
+
+        <!-- FRONT -->
+        <div class="card-face front">
+          <div class="card-header">
+            <div class="card-header-inner">
+              <div class="card-cat-label">Employment · Card 04</div>
+              <div class="card-term">NFP</div>
+              <div class="card-full-name">Non-Farm Payrolls</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-body-label">What is it?</div>
+            <p class="card-definition">
+              NFP counts how many jobs the U.S. economy added (or lost) in the prior month,
+              excluding farm workers, private household employees, and non-profit organization
+              employees. Released the first Friday of every month.
+            </p>
+            <div class="card-formula">
+              NFP &gt; 150K/month → healthy labor market<br/>
+              NFP &lt; 75K/month → potential slowdown<br/>
+              NFP negative → jobs being cut
+            </div>
+            <p class="card-context">
+              Markets treat NFP as the most market-moving data release of the month. A strong
+              print can delay rate cuts; a weak one can accelerate them. It's the first
+              hard look at the prior month's economic activity.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div style="display:flex;gap:18px;align-items:center;">
+              <span class="card-freq">Published: Monthly (1st Friday)</span>
+              <span class="badge badge-down">↓ Softening</span>
+            </div>
+            <span class="flip-hint">Flip for latest data →</span>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="card-face back">
+          <div class="back-header">
+            <div class="back-header-inner">
+              <div class="back-header-left">
+                <div class="back-source-label">Latest Data · BLS</div>
+                <div class="back-term-title">Non-Farm Payrolls — Current</div>
+              </div>
+              <div>
+                <div class="back-value" style="color:#b91c1c;">+150K</div>
+                <div class="back-value-label">Feb 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="back-body">
+            <div>
+              <div class="chart-label">Monthly Job Additions (thousands)</div>
+              <div class="chart-container">
+                <div class="mini-bar-chart" id="chart-nfp"></div>
+              </div>
+            </div>
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <div class="stat-tile-label">Unemployment Rate</div>
+                <div class="stat-tile-value" style="color:#4a7fb5;">4.1%</div>
+                <div class="stat-tile-sub">Historically low</div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-tile-label">Avg Hourly Earnings</div>
+                <div class="stat-tile-value" style="color:#b91c1c;">+4.0%</div>
+                <div class="stat-tile-sub">YoY · above inflation</div>
+              </div>
+            </div>
+            <div class="insight-callout">
+              <div class="insight-heading">What This Means For You</div>
+              <p class="insight-text">
+                Payrolls are cooling from 2025's strong pace but still positive — a
+                <strong class="em-green">"soft landing" signal</strong>. Wage growth above
+                4% keeps consumer spending firm, which supports corporate earnings but
+                also keeps the Fed cautious about cutting rates too fast.
+              </p>
+            </div>
+          </div>
+          <div class="back-footer">
+            <span class="back-source">Source: U.S. Bureau of Labor Statistics · Feb 2026</span>
+            <span class="flip-back-hint">← Flip back</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+
+    <!-- ═══════════════════════════════════════════
+         CARD 05 — PCE
+    ════════════════════════════════════════════ -->
+    <div class="card-section-label">Inflation · Card 05</div>
+
+    <div class="flip-wrapper" onclick="toggleFlip(this)">
+      <div class="flip-inner">
+
+        <!-- FRONT -->
+        <div class="card-face front">
+          <div class="card-header">
+            <div class="card-header-inner">
+              <div class="card-cat-label">Inflation · Card 05</div>
+              <div class="card-term">PCE</div>
+              <div class="card-full-name">Personal Consumption Expenditures</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-body-label">What is it?</div>
+            <p class="card-definition">
+              PCE measures how much Americans spend on goods and services, and how those
+              prices change over time. It is the <em>Federal Reserve's preferred inflation
+              gauge</em> — the one they explicitly target at 2%.
+            </p>
+            <div class="card-formula">
+              PCE differs from CPI: it adjusts for substitution behavior (when prices rise,
+              consumers switch to cheaper alternatives) — making it a more realistic
+              measure of actual purchasing patterns.
+            </div>
+            <p class="card-context">
+              When Fed officials say "inflation is near our target," they're talking about
+              PCE, not CPI. Core PCE (excluding food and energy) is the number
+              that drives rate decisions.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div style="display:flex;gap:18px;align-items:center;">
+              <span class="card-freq">Published: Monthly</span>
+              <span class="badge badge-up">↑ Above Target</span>
+            </div>
+            <span class="flip-hint">Flip for latest data →</span>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="card-face back">
+          <div class="back-header">
+            <div class="back-header-inner">
+              <div class="back-header-left">
+                <div class="back-source-label">Latest Data · BEA</div>
+                <div class="back-term-title">Core PCE — Current Trend</div>
+              </div>
+              <div>
+                <div class="back-value" style="color:#b91c1c;">2.8%</div>
+                <div class="back-value-label">Core YoY · Jan 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="back-body">
+            <div>
+              <div class="chart-label">Core PCE YoY — Monthly</div>
+              <div class="chart-container">
+                <div class="mini-bar-chart" id="chart-pce"></div>
+              </div>
+            </div>
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <div class="stat-tile-label">Headline PCE</div>
+                <div class="stat-tile-value" style="color:#b91c1c;">2.5%</div>
+                <div class="stat-tile-sub">Incl. food &amp; energy</div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-tile-label">Fed Target</div>
+                <div class="stat-tile-value" style="color:#6b7280;">2.0%</div>
+                <div class="stat-tile-sub">Still above target</div>
+              </div>
+            </div>
+            <div class="insight-callout">
+              <div class="insight-heading">What This Means For You</div>
+              <p class="insight-text">
+                Core PCE above target keeps the Fed cautious, but the
+                <strong class="em-red">pace of rise</strong> matters most — it's ticking
+                up slowly, not surging. If it stalls or reverses in coming months,
+                the door opens for mid-2026 rate cuts, which would benefit
+                bond holders and rate-sensitive sectors like real estate.
+              </p>
+            </div>
+          </div>
+          <div class="back-footer">
+            <span class="back-source">Source: U.S. Bureau of Economic Analysis · Jan 2026</span>
+            <span class="flip-back-hint">← Flip back</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-divider"></div>
+
+
+    <!-- ═══════════════════════════════════════════
+         CARD 06 — YIELD CURVE
+    ════════════════════════════════════════════ -->
+    <div class="card-section-label">Markets · Card 06</div>
+
+    <div class="flip-wrapper" onclick="toggleFlip(this)">
+      <div class="flip-inner">
+
+        <!-- FRONT -->
+        <div class="card-face front">
+          <div class="card-header">
+            <div class="card-header-inner">
+              <div class="card-cat-label">Markets · Card 06</div>
+              <div class="card-term" style="font-size:36px;letter-spacing:0;">Yield Curve</div>
+              <div class="card-full-name">U.S. Treasury Yield Curve (10Y–2Y)</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-body-label">What is it?</div>
+            <p class="card-definition">
+              The yield curve plots interest rates on U.S. Treasury bonds across different
+              maturities. The <em>10Y–2Y spread</em> — the difference between 10-year and
+              2-year yields — is the most-watched recession indicator in finance.
+            </p>
+            <div class="card-formula">
+              Normal: 10Y yield &gt; 2Y yield (positive spread) → growth expected<br/>
+              Inverted: 10Y yield &lt; 2Y yield (negative spread) → recession signal<br/>
+              Uninverting: spread returning to positive → mixed signal
+            </div>
+            <p class="card-context">
+              Every U.S. recession since 1955 was preceded by a yield curve inversion.
+              The curve inverted in mid-2022 and remained inverted for over two years —
+              one of the longest inversions on record.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div style="display:flex;gap:18px;align-items:center;">
+              <span class="card-freq">Published: Daily</span>
+              <span class="badge badge-green">→ Uninverting</span>
+            </div>
+            <span class="flip-hint">Flip for latest data →</span>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="card-face back">
+          <div class="back-header">
+            <div class="back-header-inner">
+              <div class="back-header-left">
+                <div class="back-source-label">Latest Data · U.S. Treasury</div>
+                <div class="back-term-title">10Y–2Y Spread — Current</div>
+              </div>
+              <div>
+                <div class="back-value" style="color:#2a7d4f;">+0.18%</div>
+                <div class="back-value-label">Mar 2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="back-body">
+            <div>
+              <div class="chart-label">10Y–2Y Spread — Monthly</div>
+              <div class="chart-container">
+                <div class="mini-bar-chart" id="chart-yc"></div>
+              </div>
+            </div>
+            <div class="stat-tiles">
+              <div class="stat-tile">
+                <div class="stat-tile-label">10Y Treasury</div>
+                <div class="stat-tile-value" style="color:#4a7fb5;">4.06%</div>
+                <div class="stat-tile-sub">Benchmark yield</div>
+              </div>
+              <div class="stat-tile">
+                <div class="stat-tile-label">2Y Treasury</div>
+                <div class="stat-tile-value" style="color:#4a7fb5;">3.88%</div>
+                <div class="stat-tile-sub">Policy-sensitive</div>
+              </div>
+            </div>
+            <div class="insight-callout">
+              <div class="insight-heading">What This Means For You</div>
+              <p class="insight-text">
+                The curve is finally <strong class="em-green">uninverting</strong> after a
+                record inversion — historically a mixed signal that can precede either
+                recovery or the actual onset of recession. Watch the trend:
+                a <em>sustained</em> positive spread with improving growth data points to
+                recovery; a quick re-inversion would be a warning sign.
+              </p>
+            </div>
+          </div>
+          <div class="back-footer">
+            <span class="back-source">Source: U.S. Treasury / FRED · Mar 2026</span>
+            <span class="flip-back-hint">← Flip back</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+
+<script>
+/* ── FLIP TOGGLE ── */
+function toggleFlip(wrapper) {
+  const inner = wrapper.querySelector('.flip-inner');
+  inner.classList.toggle('flipped');
+}
+
+/* ── MINI BAR CHART RENDERER ── */
+function renderBarChart(containerId, bars) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const maxAbs = Math.max(...bars.map(b => Math.abs(b.value)));
+
+  bars.forEach((b, i) => {
+    const isLast = i === bars.length - 1;
+    const pct = (Math.abs(b.value) / maxAbs) * 100;
+
+    // For yield curve: green if positive, red if negative
+    let barColor, valueLabelColor, periodLabelColor;
+    if (containerId === 'chart-yc') {
+      barColor = b.value >= 0
+        ? 'linear-gradient(180deg,#4ade80,#2a7d4f)'
+        : 'linear-gradient(180deg,#fca5a5,#b91c1c)';
+      valueLabelColor = isLast ? (b.value >= 0 ? '#4ade80' : '#fca5a5') : 'rgba(255,255,255,0.5)';
+      periodLabelColor = isLast ? '#c9a84c' : 'rgba(255,255,255,0.45)';
+    } else {
+      barColor = isLast
+        ? 'linear-gradient(180deg,#b91c1c,#7f1111)'
+        : 'linear-gradient(180deg,#7aabda,#4a7fb5)';
+      valueLabelColor = isLast ? '#b91c1c' : '#7aabda';
+      periodLabelColor = isLast ? '#c9a84c' : 'rgba(255,255,255,0.45)';
+    }
+
+    const col = document.createElement('div');
+    col.className = 'bar-col';
+
+    const valLabel = document.createElement('div');
+    valLabel.className = 'bar-value-label';
+    valLabel.style.color = valueLabelColor;
+    valLabel.textContent = b.displayValue || (b.value + '%');
+
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    bar.style.height = pct + '%';
+    bar.style.background = barColor;
+    // For negative values in yield curve, flip the gradient direction
+    if (containerId === 'chart-yc' && b.value < 0) {
+      bar.style.borderRadius = '0 0 1px 1px';
+    }
+
+    const periodLabel = document.createElement('div');
+    periodLabel.className = 'bar-period-label';
+    periodLabel.style.color = periodLabelColor;
+    periodLabel.textContent = b.label;
+
+    col.appendChild(valLabel);
+    col.appendChild(bar);
+    col.appendChild(periodLabel);
+    container.appendChild(col);
+  });
+}
+
+/* ── RATE TIMELINE RENDERER ── */
+function renderRateTimeline(containerId, nodes) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  nodes.forEach((n, i) => {
+    const isLast = i === nodes.length - 1;
+    const node = document.createElement('div');
+    node.className = 'rate-node' + (isLast ? ' current-node' : '');
+
+    const dot = document.createElement('div');
+    dot.className = 'rate-dot' + (isLast ? ' current' : '');
+
+    const connector = document.createElement('div');
+    connector.className = 'rate-connector';
+
+    const val = document.createElement('div');
+    val.className = 'rate-value';
+    val.textContent = n.rate;
+
+    const period = document.createElement('div');
+    period.className = 'rate-period';
+    period.textContent = n.label;
+
+    node.appendChild(connector);
+    node.appendChild(dot);
+    node.appendChild(val);
+    node.appendChild(period);
+    container.appendChild(node);
+  });
+}
+
+/* ── CHART DATA ── */
+renderBarChart('chart-cpi', [
+  { label: "Nov '25", value: 2.7 },
+  { label: "Dec '25", value: 2.9 },
+  { label: "Jan '26", value: 3.0 },
+  { label: "Feb '26", value: 3.1 },
+]);
+
+renderRateTimeline('timeline-ffr', [
+  { rate: '5.25–5.50%', label: 'Jul 2025' },
+  { rate: '5.00–5.25%', label: 'Sep 2025' },
+  { rate: '4.75–5.00%', label: 'Nov 2025' },
+  { rate: '4.25–4.50%', label: 'Dec 2025' },
+]);
+
+renderBarChart('chart-nfp', [
+  { label: "Nov '25", value: 227, displayValue: '227K' },
+  { label: "Dec '25", value: 256, displayValue: '256K' },
+  { label: "Jan '26", value: 143, displayValue: '143K' },
+  { label: "Feb '26", value: 150, displayValue: '150K' },
+]);
+
+renderBarChart('chart-pce', [
+  { label: "Oct '25", value: 2.4 },
+  { label: "Nov '25", value: 2.6 },
+  { label: "Dec '25", value: 2.7 },
+  { label: "Jan '26", value: 2.8 },
+]);
+
+renderBarChart('chart-yc', [
+  { label: "Nov '25", value: -0.15, displayValue: '-0.15%' },
+  { label: "Dec '25", value: -0.05, displayValue: '-0.05%' },
+  { label: "Jan '26", value: 0.10,  displayValue: '+0.10%' },
+  { label: "Feb '26", value: 0.18,  displayValue: '+0.18%' },
+]);
+</script>
+
+</body>
+</html>
