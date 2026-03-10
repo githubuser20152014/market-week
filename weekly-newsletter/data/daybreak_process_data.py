@@ -453,6 +453,89 @@ def generate_daybreak_positioning_tips(us_indices: list, futures: list,
     return tips[:6]  # cap at 6 tips
 
 
+# ── LinkedIn Post Generator ───────────────────────────────────────────────────
+
+def _strip_markdown(text: str) -> str:
+    """Remove Markdown formatting for plain-text platforms like LinkedIn."""
+    import re
+    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)   # **bold** → bold
+    text = re.sub(r'\*(.+?)\*', r'\1', text)         # *italic* → italic
+    text = re.sub(r'^- ', '', text, flags=re.MULTILINE)  # list items
+    return text
+
+
+def generate_linkedin_post(context: dict) -> str:
+    """Generate a LinkedIn-ready plain-text post from the daybreak context.
+
+    Format:
+        Hook sentence (first paragraph of plain_summary, bold stripped)
+
+        Body (remaining plain_summary paragraphs, markdown stripped)
+
+        Best: {label} ({pct}%) | Worst: {label} ({pct}%)
+
+        Positioning: {first tip, markdown stripped}
+
+        Full breakdown → frameworkfoundry.info
+
+        #MacroInvesting #ETFs #MarketOpen
+    """
+    plain_summary = context.get("plain_summary", "")
+    paragraphs = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
+
+    if paragraphs:
+        hook = _strip_markdown(paragraphs[0])
+        body_parts = [_strip_markdown(p) for p in paragraphs[1:]]
+        body = "\n\n".join(body_parts)
+    else:
+        hook = ""
+        body = ""
+
+    # Best / worst line
+    us_best  = context.get("us_best")
+    us_worst = context.get("us_worst")
+    if us_best and us_worst:
+        best_line = (
+            f"Best: {us_best['name']} ({us_best['daily_pct']:+.2f}%)"
+            f" | Worst: {us_worst['name']} ({us_worst['daily_pct']:+.2f}%)"
+        )
+    else:
+        best_line = ""
+
+    # First positioning tip
+    tips = context.get("tips") or context.get("positioning_tips") or []
+    positioning = _strip_markdown(tips[0]) if tips else ""
+
+    # Assemble post
+    parts = []
+    if hook:
+        parts.append(hook)
+    if body:
+        parts.append(body)
+    if best_line:
+        parts.append(best_line)
+    if positioning:
+        parts.append(f"Positioning: {positioning}")
+    parts.append("Full breakdown → frameworkfoundry.info")
+    parts.append("#MacroInvesting #ETFs #MarketOpen")
+
+    post = "\n\n".join(parts)
+
+    # LinkedIn personal post limit is 3,000 characters
+    LINKEDIN_LIMIT = 3000
+    if len(post) > LINKEDIN_LIMIT:
+        overage = len(post) - LINKEDIN_LIMIT
+        import warnings
+        warnings.warn(
+            f"LinkedIn post is {len(post)} chars — {overage} over the 3,000-char limit. "
+            "Trim the plain_summary or positioning tip before posting.",
+            UserWarning,
+            stacklevel=2,
+        )
+
+    return post
+
+
 # ── Context builder ───────────────────────────────────────────────────────────
 
 def build_daybreak_context(raw: dict) -> dict:

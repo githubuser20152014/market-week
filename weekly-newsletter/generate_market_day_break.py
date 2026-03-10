@@ -19,7 +19,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
 from data.fetch_daybreak_data import fetch_daybreak_data
-from data.daybreak_process_data import build_daybreak_context
+from data.daybreak_process_data import build_daybreak_context, generate_linkedin_post
 from data.pdf_export import generate_pdf
 
 BASE_DIR     = Path(__file__).resolve().parent
@@ -98,6 +98,17 @@ def main():
             encoding="utf-8"
         )
         print(f"Newsletter saved (minimal) -> {md_path}")
+
+    # ── LinkedIn post ─────────────────────────────────────────────────────────
+    import warnings
+    with warnings.catch_warnings(record=True) as _w:
+        warnings.simplefilter("always")
+        linkedin_post = generate_linkedin_post(context)
+    linkedin_path = OUTPUT_DIR / f"linkedin_{date_str}.txt"
+    linkedin_path.write_text(linkedin_post, encoding="utf-8")
+    char_count = len(linkedin_post)
+    limit_note = f" *** OVER LIMIT by {char_count - 3000} chars ***" if char_count > 3000 else ""
+    print(f"LinkedIn post saved -> {linkedin_path}  ({char_count}/3,000 chars{limit_note})")
 
     # ── PDF export ────────────────────────────────────────────────────────────
     if args.pdf:

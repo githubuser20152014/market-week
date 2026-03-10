@@ -10,12 +10,22 @@ This fetches live data and produces the `.md` and `.pdf` — but does NOT publis
 
 After running, read the generated Markdown file and display its full contents to the user for review.
 
+Then read `weekly-newsletter/output/linkedin_[date].txt` and display it under a clear heading:
+
+---
+**LinkedIn post — ready to copy:**
+
+[contents of linkedin_[date].txt]
+
+Character count: [n] / 3,000
+---
+
 **Step 2 — Review checkpoint:**
 
 Ask the user:
-> "Here's the newsletter for [date]. Does everything look good, or would you like any changes before I publish?"
+> "Here's the newsletter and LinkedIn post for [date]. Does everything look good, or would you like any changes before I publish?"
 
-Wait for the user's response. If they request changes, make the edits to the `.md` file directly, then show the updated sections and ask again.
+Wait for the user's response. If they request changes, make the edits to the relevant file(s) directly, then show the updated sections and ask again.
 
 **Step 3 — Publish (only after user confirms):**
 

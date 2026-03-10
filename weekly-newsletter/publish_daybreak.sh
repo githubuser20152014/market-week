@@ -78,6 +78,7 @@ _add() { git add "$@" 2>/dev/null || true; }
 _add "weekly-newsletter/fixtures/daybreak_${DATE_STR}.json"
 _add "weekly-newsletter/output/market_day_break_${DATE_STR}.md"
 _add "weekly-newsletter/output/market_day_break_${DATE_STR}.pdf"
+_add "weekly-newsletter/output/linkedin_${DATE_STR}.txt"
 _add "weekly-newsletter/site/daily/"
 _add "weekly-newsletter/site/index.html"
 _add "weekly-newsletter/site/downloads/"
