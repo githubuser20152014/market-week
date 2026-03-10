@@ -601,13 +601,13 @@ body {
 
     <!-- FILTER BUTTONS -->
     <div class="filter-row">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Macro Indicators</button>
-      <button class="filter-btn active">Inflation</button>
-      <button class="filter-btn active">Employment</button>
-      <button class="filter-btn active">Central Banks</button>
-      <button class="filter-btn active">Markets</button>
-      <button class="filter-btn">Trade &amp; FX</button>
+      <button class="filter-btn active"    onclick="filterCards(this,'all')">All</button>
+      <button class="filter-btn"           onclick="filterCards(this,'macro-indicators')">Macro Indicators</button>
+      <button class="filter-btn"           onclick="filterCards(this,'inflation')">Inflation</button>
+      <button class="filter-btn"           onclick="filterCards(this,'employment')">Employment</button>
+      <button class="filter-btn"           onclick="filterCards(this,'central-banks')">Central Banks</button>
+      <button class="filter-btn"           onclick="filterCards(this,'markets')">Markets</button>
+      <button class="filter-btn"           onclick="filterCards(this,'trade-fx')">Trade &amp; FX</button>
     </div>
 
 
@@ -3979,6 +3979,67 @@ renderBarChart('chart-cny', [
   { label: "Jan '26", value: 7.27, displayValue: '7.27' },
   { label: "Feb '26", value: 7.25, displayValue: '7.25' },
 ]);
+
+/* ── CATEGORY FILTER ── */
+// Auto-assign data-category to each flip-wrapper by reading the text of its
+// immediately preceding .card-section-label sibling.
+(function assignCategories() {
+  var MAP = {
+    'macro':   'macro-indicators',
+    'inflat':  'inflation',
+    'employ':  'employment',
+    'central': 'central-banks',
+    'market':  'markets',
+    'trade':   'trade-fx',
+  };
+  document.querySelectorAll('.flip-wrapper').forEach(function(wrapper) {
+    var prev = wrapper.previousElementSibling;
+    if (!prev || !prev.classList.contains('card-section-label')) return;
+    var text = prev.textContent.toLowerCase();
+    for (var key in MAP) {
+      if (text.indexOf(key) !== -1) {
+        wrapper.dataset.category = MAP[key];
+        prev.dataset.category    = MAP[key];
+        break;
+      }
+    }
+  });
+})();
+
+function filterCards(btn, category) {
+  // Update active button
+  document.querySelectorAll('.filter-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
+
+  var wrappers  = document.querySelectorAll('.flip-wrapper');
+  var labels    = document.querySelectorAll('.card-section-label');
+  var dividers  = document.querySelectorAll('.card-divider');
+
+  if (category === 'all') {
+    wrappers.forEach(function(w) { w.style.display = ''; });
+    labels.forEach(function(l)   { l.style.display = ''; });
+    dividers.forEach(function(d) { d.style.display = ''; });
+    return;
+  }
+
+  // Hide everything first
+  wrappers.forEach(function(w)  { w.style.display = 'none'; });
+  labels.forEach(function(l)    { l.style.display = 'none'; });
+  dividers.forEach(function(d)  { d.style.display = 'none'; });
+
+  // Show matching cards + their labels
+  wrappers.forEach(function(wrapper) {
+    if (wrapper.dataset.category === category) {
+      wrapper.style.display = '';
+      var prev = wrapper.previousElementSibling;
+      if (prev && prev.classList.contains('card-section-label')) {
+        prev.style.display = '';
+      }
+    }
+  });
+}
 
 /* ── AUTO-SIZE FLIP CARDS ── */
 /* Both faces are position:absolute so the parent has no natural height.
