@@ -129,6 +129,54 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+/* ── SEARCH BAR ── */
+.search-row { margin-bottom: 20px; }
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  position: absolute;
+  left: 13px;
+  width: 15px; height: 15px;
+  color: var(--muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.search-input {
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px; font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 11px 40px 11px 38px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input:focus { border-color: var(--accent); }
+.search-input::placeholder { color: var(--muted); font-weight: 300; }
+.search-clear {
+  position: absolute; right: 12px;
+  background: none; border: none;
+  color: var(--muted); font-size: 20px;
+  cursor: pointer; line-height: 1; padding: 0 2px;
+  display: none;
+}
+.search-clear.visible { display: block; }
+.search-no-results {
+  display: none;
+  font-family: 'Source Serif 4', serif;
+  font-size: 14px; font-weight: 300;
+  color: var(--muted);
+  padding: 32px 0;
+  text-align: center;
+  font-style: italic;
+}
+.search-no-results.visible { display: block; }
+
 /* ── FILTER BUTTONS ── */
 .filter-row {
   display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
@@ -598,6 +646,26 @@ body {
       No economics degree required. Each card explains one concept — what it is, why it matters,
       how often it's published, and what the recent trend means for your money.
     </p>
+
+    <!-- SEARCH BAR -->
+    <div class="search-row">
+      <div class="search-wrapper">
+        <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5"/>
+          <line x1="13" y1="13" x2="18" y2="18"/>
+        </svg>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search concepts — e.g. CPI, yield curve, employment…"
+          oninput="searchCards(this.value)"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="search-clear" onclick="clearSearch()" aria-label="Clear search">&#times;</button>
+      </div>
+    </div>
+    <div class="search-no-results" id="no-results">No cards match "<span id="no-results-term"></span>" — try a shorter term or browse by category.</div>
 
     <!-- FILTER BUTTONS -->
     <div class="filter-row">
@@ -4039,6 +4107,62 @@ function filterCards(btn, category) {
       }
     }
   });
+}
+
+/* ── SEARCH ── */
+function searchCards(query) {
+  var q = query.trim().toLowerCase();
+  var clearBtn    = document.querySelector('.search-clear');
+  var noResults   = document.getElementById('no-results');
+  var noResultsTerm = document.getElementById('no-results-term');
+
+  clearBtn.classList.toggle('visible', q.length > 0);
+
+  if (!q) {
+    // Restore the "All" filter state
+    noResults.classList.remove('visible');
+    filterCards(document.querySelector('.filter-btn[onclick*="\'all\'"]'), 'all');
+    return;
+  }
+
+  // Deactivate category buttons while searching
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+
+  // Hide all dividers
+  document.querySelectorAll('.card-divider').forEach(function(d) { d.style.display = 'none'; });
+
+  var matchCount = 0;
+
+  document.querySelectorAll('.flip-wrapper').forEach(function(wrapper) {
+    // Build searchable text: term + full name + category label + definition
+    var parts = [
+      wrapper.dataset.category || '',
+      wrapper.querySelector('.card-term')      ? wrapper.querySelector('.card-term').textContent      : '',
+      wrapper.querySelector('.card-full-name') ? wrapper.querySelector('.card-full-name').textContent : '',
+      wrapper.querySelector('.card-cat-label') ? wrapper.querySelector('.card-cat-label').textContent : '',
+      wrapper.querySelector('.card-definition')? wrapper.querySelector('.card-definition').textContent: '',
+    ];
+    var text  = parts.join(' ').toLowerCase();
+    var match = text.indexOf(q) !== -1;
+
+    wrapper.style.display = match ? '' : 'none';
+    var prev = wrapper.previousElementSibling;
+    if (prev && prev.classList.contains('card-section-label')) {
+      prev.style.display = match ? '' : 'none';
+    }
+    if (match) matchCount++;
+  });
+
+  // Show/hide empty state
+  if (noResultsTerm) noResultsTerm.textContent = query.trim();
+  noResults.classList.toggle('visible', matchCount === 0);
+}
+
+function clearSearch() {
+  var input = document.querySelector('.search-input');
+  input.value = '';
+  searchCards('');
+  input.focus();
 }
 
 /* ── AUTO-SIZE FLIP CARDS ── */
