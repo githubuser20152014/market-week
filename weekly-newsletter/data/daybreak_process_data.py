@@ -325,8 +325,9 @@ def generate_daybreak_plain_summary(us_indices: list, intl_indices: list,
     high_today = [e for e in today_events if e.get("importance", 0) >= 3]
     if high_today:
         names = [e["event"] for e in high_today[:2]]
+        verb = "are" if len(names) > 1 else "is"
         lines.append(
-            f"**Today's key events:** {' and '.join(names)} are on the calendar. "
+            f"**Today's key events:** {' and '.join(names)} {verb} on the calendar. "
             "These can move markets — particularly bonds and rate-sensitive sectors — "
             "so be positioned before the prints rather than reacting after."
         )
@@ -534,6 +535,211 @@ def generate_linkedin_post(context: dict) -> str:
         )
 
     return post
+
+
+def generate_x_post(context: dict) -> str:
+    """Generate a 3-tweet thread for X (Twitter) from the daybreak context.
+
+    Returns three blocks separated by '\\n---\\n', each ≤280 chars.
+    Warns via UserWarning if any block exceeds the limit.
+    """
+    import warnings
+
+    plain_summary = context.get("plain_summary", "")
+    paragraphs = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
+    first_sentence = ""
+    if paragraphs:
+        raw = _strip_markdown(paragraphs[0])
+        # Take just the first sentence
+        end = raw.find(". ")
+        first_sentence = raw[: end + 1].strip() if end != -1 else raw.strip()
+
+    us_best  = context.get("us_best")
+    us_worst = context.get("us_worst")
+    if us_best and us_worst:
+        best_line = (
+            f"Best: {us_best['name']} {us_best['daily_pct']:+.2f}%"
+            f" | Worst: {us_worst['name']} {us_worst['daily_pct']:+.2f}%"
+        )
+    else:
+        best_line = ""
+
+    today_events = context.get("today_events") or []
+    if today_events:
+        event_names = ", ".join(e.get("event", e.get("name", "")) for e in today_events)
+        calendar_line = f"Today's calendar: {event_names}"
+    else:
+        calendar_line = "Quiet day — no major releases"
+
+    tips = context.get("tips") or context.get("positioning_tips") or []
+    first_tip = _strip_markdown(tips[0]) if tips else ""
+
+    tweet1_parts = [p for p in [first_sentence, best_line, "🧵 1/3"] if p]
+    tweet1 = "\n\n".join(tweet1_parts)
+
+    tweet2_parts = [p for p in [calendar_line, first_tip, "🧵 2/3"] if p]
+    tweet2 = "\n\n".join(tweet2_parts)
+
+    tweet3 = "Full daily brief → frameworkfoundry.info\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 3/3"
+
+    TWEET_LIMIT = 280
+    for i, tweet in enumerate([tweet1, tweet2, tweet3], start=1):
+        if len(tweet) > TWEET_LIMIT:
+            overage = len(tweet) - TWEET_LIMIT
+            warnings.warn(
+                f"X thread tweet {i}/3 is {len(tweet)} chars — {overage} over the 280-char limit. "
+                "Trim before posting.",
+                UserWarning,
+                stacklevel=2,
+            )
+
+    return f"{tweet1}\n---\n{tweet2}\n---\n{tweet3}"
+
+
+def _generate_substack_title(context: dict) -> str:
+    """Generate a catchy Substack title from the day's top event and market direction."""
+    today_events = context.get("today_events") or []
+    top_event = today_events[0].get("event", today_events[0].get("name", "")) if today_events else ""
+
+    # Determine broad market direction from S&P 500 or us_indices
+    us_indices = context.get("us_indices") or []
+    sp500 = next((i for i in us_indices if "S&P" in i.get("name", "") or "SPX" in i.get("symbol", "")), None)
+    spx_pct = sp500["daily_pct"] if sp500 and sp500.get("daily_pct") is not None else None
+
+    if spx_pct is not None:
+        if spx_pct >= 1.0:
+            direction = "rally"
+        elif spx_pct >= 0.2:
+            direction = "gains"
+        elif spx_pct > -0.2:
+            direction = "flat"
+        elif spx_pct > -1.0:
+            direction = "dip"
+        else:
+            direction = "selloff"
+    else:
+        direction = "mixed session"
+
+    # Build title from event + direction
+    if top_event:
+        templates = {
+            "rally":        f"{top_event} Ahead — Markets Rallied. Stay Positioned.",
+            "gains":        f"{top_event} Day: Stocks Nudged Higher. Here's the Playbook.",
+            "flat":         f"{top_event} Prints Today — Markets Treading Water.",
+            "dip":          f"{top_event} Day: Stocks Dipped. Here's Where to Stand.",
+            "selloff":      f"{top_event} Looms After Yesterday's Selloff.",
+            "mixed session": f"{top_event} on the Calendar — Markets Sent Mixed Signals.",
+        }
+        return templates.get(direction, f"{top_event}: What to Watch Before the Open")
+    else:
+        templates = {
+            "rally":   "Markets Rallied — Here's What It Means for Your ETFs",
+            "gains":   "Quiet Gains Yesterday — What to Watch Today",
+            "flat":    "Flat Open Ahead — No Major Catalysts, But Stay Sharp",
+            "dip":     "Stocks Slipped — Dip or Warning Sign?",
+            "selloff": "After the Selloff: Where to Position Now",
+            "mixed session": "Mixed Signals — How to Read Today's Open",
+        }
+        return templates.get(direction, "Market Day Break — Daily Brief")
+
+
+def _md_to_html(text: str) -> str:
+    """Convert a block of Markdown text to HTML paragraphs.
+
+    Handles: **bold**, *italic*, [text](url), bare paragraphs, bullet lists,
+    numbered lists, and --- dividers.
+    """
+    import re
+
+    def inline(t: str) -> str:
+        t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+        t = re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
+        t = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', t)
+        return t
+
+    lines = text.split("\n")
+    html_parts = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+
+        if re.match(r'^---+$', line.strip()):
+            html_parts.append("<hr>")
+        elif re.match(r'^## ', line):
+            html_parts.append(f"<h2>{inline(line[3:].strip())}</h2>")
+        elif re.match(r'^# ', line):
+            html_parts.append(f"<h1>{inline(line[2:].strip())}</h1>")
+        elif re.match(r'^- ', line):
+            # Collect consecutive bullet items
+            items = []
+            while i < len(lines) and re.match(r'^- ', lines[i]):
+                items.append(f"<li>{inline(lines[i][2:].strip())}</li>")
+                i += 1
+            html_parts.append("<ul>" + "".join(items) + "</ul>")
+            continue
+        elif re.match(r'^\d+\. ', line):
+            # Collect consecutive numbered items
+            items = []
+            while i < len(lines) and re.match(r'^\d+\. ', lines[i]):
+                items.append(f"<li>{inline(re.sub(r'^\d+\. ', '', lines[i]))}</li>")
+                i += 1
+            html_parts.append("<ol>" + "".join(items) + "</ol>")
+            continue
+        elif line.strip():
+            html_parts.append(f"<p>{inline(line.strip())}</p>")
+
+        i += 1
+
+    return "\n".join(html_parts)
+
+
+def generate_substack_post(context: dict) -> str:
+    """Generate an HTML draft for pasting into Substack's editor."""
+    from datetime import datetime
+
+    date_str = context.get("date", "")
+    try:
+        date_display = datetime.strptime(date_str, "%Y-%m-%d").strftime("%B %-d, %Y")
+    except (ValueError, TypeError):
+        date_display = date_str
+
+    title = _generate_substack_title(context)
+    narrative = context.get("narrative", "")
+    plain_summary = context.get("plain_summary", "")
+
+    today_events = context.get("today_events") or []
+    if today_events:
+        events_lines = "\n".join(
+            f"- **{e.get('event', e.get('name', ''))}**"
+            + (f" — {e.get('time', '')}" if e.get("time") else "")
+            for e in today_events
+        )
+    else:
+        events_lines = "_No major economic releases scheduled today._"
+
+    tips = context.get("tips") or context.get("positioning_tips") or []
+    tips_lines = "\n".join(f"{n}. {tip}" for n, tip in enumerate(tips, start=1)) if tips else "_No positioning notes for today._"
+
+    subtitle = f"Daily macro intelligence for ETF investors · {date_display}"
+
+    body_md = "\n\n".join([
+        narrative,
+        "---",
+        f"## What This Means for Your Portfolio\n\n{plain_summary}",
+        "---",
+        f"## Today's Watch List\n\n{events_lines}",
+        "---",
+        f"## Positioning Notes\n\n{tips_lines}",
+        "---",
+        "*Full data tables and overnight markets: [frameworkfoundry.info](https://frameworkfoundry.info)*\n\n*Framework Capital Weekly · Unsubscribe*",
+    ])
+
+    return (
+        f"<h1>{title}</h1>\n"
+        f"<h3>{subtitle}</h3>\n"
+        f"<hr>\n"
+        f"{_md_to_html(body_md)}\n"
+    )
 
 
 # ── Context builder ───────────────────────────────────────────────────────────
