@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-11",
+    "generated_at": "2026-03-11T11:14:20.200565Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6795.9902,
+      "close": 6781.48,
+      "daily_pct": -0.2135,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 47740.8008,
+      "close": 47706.5117,
+      "daily_pct": -0.0718,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22695.9492,
+      "close": 22697.0996,
+      "daily_pct": 0.0051,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2553.6699,
+      "close": 2548.0801,
+      "daily_pct": -0.2189,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5229.7002,
+      "close": 5199.2002,
+      "daily_pct": -0.5832,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.136,
+      "close": 4.136,
+      "daily_pct": 0.0,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.83,
+      "close": 98.945,
+      "daily_pct": 0.1164,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 83.45,
+      "close": 85.19,
+      "daily_pct": 2.0851,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 55025.37,
+      "prev_close": 54248.39,
+      "daily_pct": 1.4323,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25898.76,
+      "prev_close": 25959.9,
+      "daily_pct": -0.2355,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5609.95,
+      "prev_close": 5532.59,
+      "daily_pct": 1.3983,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23866.85,
+      "prev_close": 24261.6,
+      "daily_pct": -1.6271,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8743.5,
+      "prev_close": 8692.6,
+      "daily_pct": 0.5856,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23796.14,
+      "prev_close": 23968.63,
+      "daily_pct": -0.7196,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10354.03,
+      "prev_close": 10412.2,
+      "daily_pct": -0.5587,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8032.72,
+      "prev_close": 8057.36,
+      "daily_pct": -0.3058,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5812.74,
+      "prev_close": 5837.17,
+      "daily_pct": -0.4185,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16077,
+      "prev_close": 1.16172,
+      "daily_pct": -0.0824
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34419,
+      "prev_close": 1.3425,
+      "daily_pct": 0.1264
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.265,
+      "prev_close": 157.84801,
+      "daily_pct": 0.2642
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71649,
+      "prev_close": 0.70686,
+      "daily_pct": 1.362
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.86882,
+      "prev_close": 6.87624,
+      "daily_pct": -0.1079
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28465,
+      "prev_close": 1.28555,
+      "daily_pct": -0.0694
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6802.75,
+      "prev_close": 6787.25,
+      "daily_pct": 0.2284
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 25032.25,
+      "prev_close": 24982.5,
+      "daily_pct": 0.1991
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47860.0,
+      "prev_close": 47745.0,
+      "daily_pct": 0.2409
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5199.0,
+      "prev_close": 5229.7,
+      "daily_pct": -0.587
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 112.27,
+      "prev_close": 112.58,
+      "daily_pct": -0.2776
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 85.15,
+      "prev_close": 83.45,
+      "daily_pct": 2.0372
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "CPI",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Three cargo ships struck off Iran's coast, UK says, including one in Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 09:36:13 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/cargo-ship-struck-strait-of-hormuz-uk-iran-war.html",
+      "summary": "The incidents mark the latest in a string of reported attacks in or near to the Strait of Hormuz, where shipping traffic has virtually ground to a halt."
+    },
+    {
+      "headline": "Rheinmetall\u00a0sees sales growth of up to 45% in 2026, says it's in 'prime position' to arm the U.S. amid war in Iran",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 08:58:11 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/rheinmetall-rhm-fy-earnings-stock-2025.html",
+      "summary": "Arms maker Rheinmetall reported full-year sales that grew 29% year-over-year and said revenue would grow by even more this year."
+    },
+    {
+      "headline": "Oil hovers around $90 as traders shrug off prospect of historic reserve release",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 11:07:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/oil-price-today-crude-wti-us-iran-war-strait-hormuz-iea.html",
+      "summary": "Oil prices moved higher on Wednesday as markets continue to watch developments in the U.S.-Iran war."
+    },
+    {
+      "headline": "Weekly mortgage demand from homebuyers increased despite big interest rate volatility",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/weekly-mortgage-demand-from-homebuyers-increased-despite-big-interest-rate-volatility.html",
+      "summary": "Mortgage rates surged higher last week to due rising oil prices, causing a recent boom in  refinancing to pull back."
+    },
+    {
+      "headline": "Senators call for investigation into release, redaction of Epstein files",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/senators-epstein-files-investigation.html",
+      "summary": "The Department of Justice has come under fire for its handling of documents related to disgraced sex offender Jeffrey Epstein."
+    },
+    {
+      "headline": "Ford launches new AI to grow multibillion-dollar Pro commercial business",
+      "source": "CNBC",
+      "published": "Tue, 10 Mar 2026 21:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/10/ford-pro-ai.html",
+      "summary": "Ford CEO Jim Farley last month said diversifying Pro's revenue \u2014 specifically in software \u2014 is a crucial growth area for the company."
+    },
+    {
+      "headline": "Where the auto supply chain is most threatened by the Iran war",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/autos-supply-chain-iran.html",
+      "summary": "Oil prices above $100 per barrel, rising fuel costs for consumers and shortages of metals and petrochemicals refined in the Gulf region could hurt automakers."
+    },
+    {
+      "headline": "Who is Markwayne Mullin? Trump ally will bring conservative immigration policies to DHS",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/trump-markwayne-mullin-dhs.html",
+      "summary": "Republicans are optimistic about Markwayne Mullin taking over the reins at DHS, while Democrats warn his tenure will be more of the same after Kristi Noem."
+    }
+  ]
+}
