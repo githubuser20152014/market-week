@@ -64,7 +64,15 @@ def main():
     gmail_addr    = os.environ.get("GMAIL_ADDRESS", "")
     gmail_pass    = os.environ.get("GMAIL_APP_PASSWORD", "")
 
-    subject = SUBJECTS[args.edition].format(date=args.date)
+    # For daybreak, use the newsworthy title saved during generation if available
+    if args.edition == "daybreak":
+        title_path = OUTPUT_DIR / f"title_{args.date}.txt"
+        if title_path.exists():
+            subject = f"Market Day Break — {title_path.read_text(encoding='utf-8').strip()}"
+        else:
+            subject = SUBJECTS[args.edition].format(date=args.date)
+    else:
+        subject = SUBJECTS[args.edition].format(date=args.date)
     md_path = resolve_md_path(args.edition, args.date)
 
     if not md_path.exists():

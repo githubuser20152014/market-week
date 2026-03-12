@@ -299,6 +299,8 @@ def _pdf_text(pdf_path: Path) -> str:
     text    = text.replace('\u2013', '--').replace('\u2014', '--')
     # Remove thousand separators so 5,190.80 == 5190.80
     text    = re.sub(r'(\d),(\d{3})\b', r'\1\2', text)
+    # Rejoin words broken by PDF line-hyphenation: "rate- sensitive" → "rate-sensitive"
+    text    = re.sub(r'(\w)- (\w)', r'\1-\2', text)
     return text
 
 

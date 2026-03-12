@@ -24,6 +24,7 @@ from data.daybreak_process_data import (
     generate_linkedin_post,
     generate_x_post,
     generate_substack_post,
+    _generate_post_title,
 )
 from data.pdf_export import generate_pdf
 
@@ -103,6 +104,10 @@ def main():
             encoding="utf-8"
         )
         print(f"Newsletter saved (minimal) -> {md_path}")
+
+    # ── Email subject (sidecar file read by send_email.py) ────────────────────
+    title_path = OUTPUT_DIR / f"title_{date_str}.txt"
+    title_path.write_text(_generate_post_title(context), encoding="utf-8")
 
     # ── LinkedIn post ─────────────────────────────────────────────────────────
     import warnings

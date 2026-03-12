@@ -508,7 +508,10 @@ def generate_linkedin_post(context: dict) -> str:
     positioning = _strip_markdown(tips[0]) if tips else ""
 
     # Assemble post
+    title = _generate_post_title(context)
     parts = []
+    if title:
+        parts.append(title)
     if hook:
         parts.append(hook)
     if body:
@@ -574,7 +577,8 @@ def generate_x_post(context: dict) -> str:
     tips = context.get("tips") or context.get("positioning_tips") or []
     first_tip = _strip_markdown(tips[0]) if tips else ""
 
-    tweet1_parts = [p for p in [first_sentence, best_line, "🧵 1/3"] if p]
+    title = _generate_post_title(context)
+    tweet1_parts = [p for p in [title or first_sentence, best_line, "🧵 1/3"] if p]
     tweet1 = "\n\n".join(tweet1_parts)
 
     tweet2_parts = [p for p in [calendar_line, first_tip, "🧵 2/3"] if p]
@@ -596,51 +600,108 @@ def generate_x_post(context: dict) -> str:
     return f"{tweet1}\n---\n{tweet2}\n---\n{tweet3}"
 
 
-def _generate_substack_title(context: dict) -> str:
-    """Generate a catchy Substack title from the day's top event and market direction."""
-    today_events = context.get("today_events") or []
-    top_event = today_events[0].get("event", today_events[0].get("name", "")) if today_events else ""
+def _generate_post_title(context: dict) -> str:
+    """Generate the most newsworthy title from the day's data.
 
-    # Determine broad market direction from S&P 500 or us_indices
-    us_indices = context.get("us_indices") or []
-    sp500 = next((i for i in us_indices if "S&P" in i.get("name", "") or "SPX" in i.get("symbol", "")), None)
-    spx_pct = sp500["daily_pct"] if sp500 and sp500.get("daily_pct") is not None else None
+    Priority:
+    1. Extreme mover (>3% in any single asset) — leads the headline.
+       If a high-importance event also printed yesterday, append it.
+    2. High-importance yesterday event with a confirmed actual value.
+    3. Fallback: market direction + today's calendar.
+    """
+    us_indices       = context.get("us_indices") or []
+    yesterday_events = context.get("yesterday_events") or []
+    today_events     = context.get("today_events") or []
 
-    if spx_pct is not None:
-        if spx_pct >= 1.0:
-            direction = "rally"
-        elif spx_pct >= 0.2:
-            direction = "gains"
-        elif spx_pct > -0.2:
-            direction = "flat"
-        elif spx_pct > -1.0:
-            direction = "dip"
-        else:
-            direction = "selloff"
+    _SHORT_NAMES = {
+        "WTI Crude Oil": "Oil", "Gold": "Gold", "S&P 500": "S&P 500",
+        "Nasdaq": "Nasdaq", "Dow Jones": "Dow", "Russell 2000": "Small Caps",
+        "10Y Treasury": "Treasuries", "USD Index": "Dollar",
+    }
+
+    def _spx_direction(indices):
+        sp = next((i for i in indices if "S&P" in i.get("name", "")), None)
+        pct = sp["daily_pct"] if sp and sp.get("daily_pct") is not None else 0
+        if pct >= 1.0:   return "rallied"
+        if pct >= 0.2:   return "edged higher"
+        if pct > -0.2:   return "held flat"
+        if pct > -1.0:   return "pulled back"
+        return "sold off"
+
+    def _event_actual_short(event):
+        """Return just the MoM figure if the actual is a combined MoM/YoY string."""
+        actual = event.get("actual", "--")
+        if actual == "--":
+            return None
+        return actual.split(" MoM")[0] if " MoM" in actual else actual
+
+    # 1. Extreme mover
+    big_movers = [
+        (i["name"], i["daily_pct"])
+        for i in us_indices
+        if i.get("daily_pct") is not None and abs(i["daily_pct"]) >= 3.0
+    ]
+    if big_movers:
+        big_movers.sort(key=lambda x: abs(x[1]), reverse=True)
+        name, pct = big_movers[0]
+        short = _SHORT_NAMES.get(name, name)
+        verb  = "Surges" if pct > 0 else "Tumbles"
+        mover = f"{short} {verb} {abs(pct):.0f}%"
+
+        high = [e for e in yesterday_events
+                if e.get("importance", 0) >= 3 and _event_actual_short(e)]
+        if high:
+            ev_name = high[0].get("event", "")
+            actual  = _event_actual_short(high[0])
+            return f"{mover} — {ev_name} Prints {actual}"
+        return f"{mover} — What It Means at the Open"
+
+    # 2. Key event printed yesterday
+    high = [e for e in yesterday_events
+            if e.get("importance", 0) >= 3 and _event_actual_short(e)]
+    if high:
+        ev_name  = high[0].get("event", "")
+        actual   = _event_actual_short(high[0])
+        surprise = high[0].get("surprise", "neutral").lower()
+        direction = _spx_direction(us_indices)
+        if surprise == "above":
+            return f"{ev_name} Comes in Hot at {actual} — Markets {direction.title()}"
+        if surprise == "below":
+            return f"{ev_name} Misses at {actual} — Markets {direction.title()}"
+        return f"{ev_name} Prints {actual} — Markets {direction.title()}"
+
+    # 3. Fallback: direction + today's calendar
+    top_event = (today_events[0].get("event", today_events[0].get("name", ""))
+                 if today_events else "")
+    sp = next((i for i in us_indices if "S&P" in i.get("name", "")), None)
+    pct = sp["daily_pct"] if sp and sp.get("daily_pct") is not None else None
+    if pct is not None:
+        if pct >= 1.0:   d = "rally"
+        elif pct >= 0.2: d = "gains"
+        elif pct > -0.2: d = "flat"
+        elif pct > -1.0: d = "dip"
+        else:            d = "selloff"
     else:
-        direction = "mixed session"
+        d = "mixed session"
 
-    # Build title from event + direction
     if top_event:
-        templates = {
+        return {
             "rally":        f"{top_event} Ahead — Markets Rallied. Stay Positioned.",
             "gains":        f"{top_event} Day: Stocks Nudged Higher. Here's the Playbook.",
             "flat":         f"{top_event} Prints Today — Markets Treading Water.",
             "dip":          f"{top_event} Day: Stocks Dipped. Here's Where to Stand.",
             "selloff":      f"{top_event} Looms After Yesterday's Selloff.",
             "mixed session": f"{top_event} on the Calendar — Markets Sent Mixed Signals.",
-        }
-        return templates.get(direction, f"{top_event}: What to Watch Before the Open")
-    else:
-        templates = {
-            "rally":   "Markets Rallied — Here's What It Means for Your ETFs",
-            "gains":   "Quiet Gains Yesterday — What to Watch Today",
-            "flat":    "Flat Open Ahead — No Major Catalysts, But Stay Sharp",
-            "dip":     "Stocks Slipped — Dip or Warning Sign?",
-            "selloff": "After the Selloff: Where to Position Now",
-            "mixed session": "Mixed Signals — How to Read Today's Open",
-        }
-        return templates.get(direction, "Market Day Break — Daily Brief")
+        }.get(d, f"{top_event}: What to Watch Before the Open")
+
+    return {
+        "rally":        "Markets Rallied — Here's What It Means for Your ETFs",
+        "gains":        "Quiet Gains Yesterday — What to Watch Today",
+        "flat":         "Flat Open Ahead — No Major Catalysts, But Stay Sharp",
+        "dip":          "Stocks Slipped — Dip or Warning Sign?",
+        "selloff":      "After the Selloff: Where to Position Now",
+        "mixed session": "Mixed Signals — How to Read Today's Open",
+    }.get(d, "Market Day Break — Daily Brief")
 
 
 def _md_to_html(text: str) -> str:
@@ -703,7 +764,7 @@ def generate_substack_post(context: dict) -> str:
     except (ValueError, TypeError):
         date_display = date_str
 
-    title = _generate_substack_title(context)
+    title = _generate_post_title(context)
     narrative = context.get("narrative", "")
     plain_summary = context.get("plain_summary", "")
 

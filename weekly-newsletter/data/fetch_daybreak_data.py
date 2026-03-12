@@ -406,6 +406,108 @@ def _fetch_econ_calendar(date_str: str) -> dict:
     return result
 
 
+# FRED series to fetch actual values for releases that landed yesterday.
+# Schema: release_id -> (series_id, transform, unit, label_suffix)
+#   transform: "mom_pct"        = (curr - prev) / prev * 100  (1 decimal)
+#              "mom_and_yoy_pct" = MoM + YoY combined string (14 obs needed)
+#              "yoy_pct"        = (curr - year_ago) / year_ago * 100
+#              "level"          = raw latest observation value
+#              "mom_diff"       = curr - prev  (e.g. thousands of jobs)
+# Optional 5th element: separate series_id to use for the YoY leg of mom_and_yoy_pct.
+# BLS reports YoY CPI using the NOT seasonally adjusted series (CPIAUCNS),
+# while MoM uses the seasonally adjusted series (CPIAUCSL).
+_FRED_SERIES = {
+    10:  ("CPIAUCSL",  "mom_and_yoy_pct", "%", "", "CPIAUCNS"),  # CPI: SA for MoM, NSA for YoY
+    31:  ("PPIACO",    "mom_pct",  "%",  "MoM"),          # PPI
+    54:  ("PCE",       "mom_pct",  "%",  "MoM"),          # PCE
+    50:  ("PAYEMS",    "mom_diff", "K",  "MoM chg"),      # NFP (thousands)
+    44:  ("RSAFS",     "mom_pct",  "%",  "MoM"),          # Retail Sales
+    53:  ("A191RL1Q225SBEA", "level", "%", "QoQ SAAR"),   # GDP real growth rate
+    17:  ("INDPRO",    "mom_pct",  "%",  "MoM"),          # Industrial Production
+    82:  ("BOPGSTB",   "level",    "B",  ""),             # Trade Balance ($B)
+    175: ("UMCSENT",   "level",    "",   ""),             # UMich Sentiment
+    19:  ("HOUST",     "level",    "K",  "SAAR"),         # Housing Starts
+}
+
+
+def _fetch_fred_observation(series_id: str, api_key: str, n: int = 13,
+                            units: str = "lin") -> list:
+    """Fetch the last n observations for a FRED series. Returns list of (date, value) tuples.
+
+    units: "lin" = raw level, "pch" = MoM % change, "pc1" = YoY % change from a year ago.
+    """
+    import requests
+    url = "https://api.stlouisfed.org/fred/series/observations"
+    params = {
+        "series_id":   series_id,
+        "api_key":     api_key,
+        "file_type":   "json",
+        "sort_order":  "desc",
+        "limit":       n,
+        "units":       units,
+    }
+    resp = requests.get(url, params=params, timeout=10)
+    resp.raise_for_status()
+    obs = resp.json().get("observations", [])
+    result = []
+    for o in obs:
+        try:
+            result.append((o["date"], float(o["value"])))
+        except (ValueError, KeyError):
+            pass
+    return result  # descending order: [0] = latest
+
+
+def _compute_actual(series_id: str, transform: str, unit: str, label_suffix: str,
+                    api_key: str, yoy_series_id: str = "") -> tuple:
+    """Returns (actual_str, previous_str, unit_str) by fetching FRED observations."""
+    try:
+        obs = _fetch_fred_observation(series_id, api_key)
+        if not obs:
+            return "--", "--", unit
+        latest_val = obs[0][1]
+
+        if transform == "level":
+            actual = f"{latest_val:,.1f}"
+            prev   = f"{obs[1][1]:,.1f}" if len(obs) > 1 else "--"
+            return actual, prev, unit  # unit appended by template
+
+        if transform == "mom_and_yoy_pct":
+            # Ask FRED to compute MoM and YoY directly — avoids manual index math
+            # and lag issues. SA series for MoM (pch), NSA series for YoY (pc1).
+            mom_str = "--"
+            yoy_str = "--"
+            mom_obs = _fetch_fred_observation(series_id, api_key, n=2, units="pch")
+            if mom_obs:
+                mom_str = f"{mom_obs[0][1]:+.1f}%"
+            yoy_series = yoy_series_id or series_id
+            yoy_obs = _fetch_fred_observation(yoy_series, api_key, n=2, units="pc1")
+            if yoy_obs:
+                yoy_str = f"{yoy_obs[0][1]:+.1f}%"
+            actual = f"{mom_str} MoM / {yoy_str} YoY" if yoy_str != "--" else mom_str
+            return actual, "--", ""
+
+        if transform == "mom_pct" and len(obs) >= 2:
+            prev_val = obs[1][1]
+            pct      = (latest_val - prev_val) / abs(prev_val) * 100
+            return f"{pct:+.1f}%", "--", ""
+
+        if transform == "yoy_pct" and len(obs) >= 5:
+            year_ago = obs[4][1]
+            pct      = (latest_val - year_ago) / abs(year_ago) * 100
+            return f"{pct:+.1f}%", "--", ""
+
+        if transform == "mom_diff" and len(obs) >= 2:
+            diff = latest_val - obs[1][1]
+            prev = obs[1][1]
+            # Embed unit in value strings; pass empty unit to template
+            return f"{diff:+,.0f}{unit}", f"{prev:,.0f}{unit}", ""
+
+    except Exception:
+        pass
+    return "--", "--", unit
+
+
 # FRED release IDs for key macro events (free tier, no auth tier restriction)
 # Schema: release_id -> (description, importance, label)
 _FRED_RELEASES = {
@@ -473,12 +575,31 @@ def _fetch_econ_calendar_fred(yesterday: str, today: str, api_key: str) -> dict:
             continue
         _, importance, label = _FRED_RELEASES[release_id]
 
+        actual   = "--"
+        previous = "--"
+        unit     = ""
+        expected = "See tradingeconomics.com"
+
+        # For releases that landed yesterday, fetch the actual reported value from FRED
+        if release_date == yesterday and release_id in _FRED_SERIES:
+            fred_entry   = _FRED_SERIES[release_id]
+            series_id, transform, unit, label_suffix = fred_entry[:4]
+            yoy_series   = fred_entry[4] if len(fred_entry) > 4 else ""
+            try:
+                actual, previous, unit = _compute_actual(
+                    series_id, transform, unit, label_suffix, api_key,
+                    yoy_series_id=yoy_series
+                )
+                print(f"    {label}: actual={actual}, previous={previous}")
+            except Exception as e:
+                print(f"    {label} observation fetch failed ({e})")
+
         entry = {
             "event":      label,
-            "actual":     "--",
-            "expected":   "See tradingeconomics.com",
-            "previous":   "--",
-            "unit":       "",
+            "actual":     actual,
+            "expected":   expected,
+            "previous":   previous,
+            "unit":       unit,
             "importance": importance,
             "time_est":   _FRED_RELEASE_TIMES.get(release_id, ""),
             "source":     "FRED",

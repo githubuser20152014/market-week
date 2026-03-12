@@ -82,7 +82,7 @@
 | Event | Actual | Expected | Previous | Surprise |
 |-------|--------|----------|----------|---------|
 {% for ev in yesterday_events -%}
-| {{ ev.event }} | {{ ev.actual }}{{ ev.get('unit', '') }} | {{ ev.expected }}{{ ev.get('unit', '') }} | {{ ev.previous }}{{ ev.get('unit', '') }} | {{ ev.get('surprise', 'neutral') | title }} |
+| {{ ev.event }} | {{ ev.actual }}{{ ev.get('unit', '') }} | {{ ev.expected }}{{ ev.get('unit', '') }} | {{ ev.previous }}{{ ev.get('unit', '') }} | {{ ev.get('surprise', 'inline') | title }} |
 {% else -%}
 | *No major events* | | | | |
 {% endfor %}

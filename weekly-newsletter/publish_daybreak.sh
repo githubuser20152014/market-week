@@ -77,6 +77,7 @@ cd "$REPO_ROOT"
 _add() { git add "$@" 2>/dev/null || true; }
 _add "weekly-newsletter/fixtures/daybreak_${DATE_STR}.json"
 _add "weekly-newsletter/output/market_day_break_${DATE_STR}.md"
+_add "weekly-newsletter/output/title_${DATE_STR}.txt"
 _add "weekly-newsletter/output/market_day_break_${DATE_STR}.pdf"
 _add "weekly-newsletter/output/linkedin_${DATE_STR}.txt"
 _add "weekly-newsletter/output/x_${DATE_STR}.txt"
