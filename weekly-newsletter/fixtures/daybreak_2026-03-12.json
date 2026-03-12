@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-12",
+    "generated_at": "2026-03-12T09:59:42.011367Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6781.48,
+      "close": 6775.7998,
+      "daily_pct": -0.0838,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 47706.5117,
+      "close": 47417.2695,
+      "daily_pct": -0.6063,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22697.0996,
+      "close": 22716.1309,
+      "daily_pct": 0.0838,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2548.0801,
+      "close": 2542.8999,
+      "daily_pct": -0.2033,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5167.3999,
+      "close": 5190.2998,
+      "daily_pct": 0.4432,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.136,
+      "close": 4.208,
+      "daily_pct": 1.7408,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 7.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.23,
+      "close": 99.304,
+      "daily_pct": 0.0746,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 87.25,
+      "close": 91.6,
+      "daily_pct": 4.9857,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 54452.96,
+      "prev_close": 55025.37,
+      "daily_pct": -1.0403,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25716.76,
+      "prev_close": 25898.76,
+      "daily_pct": -0.7027,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5583.25,
+      "prev_close": 5609.95,
+      "daily_pct": -0.4759,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23635.65,
+      "prev_close": 23866.85,
+      "daily_pct": -0.9687,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8629.0,
+      "prev_close": 8743.5,
+      "daily_pct": -1.3095,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23631.72,
+      "prev_close": 23640.03,
+      "daily_pct": -0.0351,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10317.87,
+      "prev_close": 10353.8,
+      "daily_pct": -0.347,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8019.75,
+      "prev_close": 8041.81,
+      "daily_pct": -0.2743,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5770.27,
+      "prev_close": 5794.68,
+      "daily_pct": -0.4213,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15634,
+      "prev_close": 1.16113,
+      "daily_pct": -0.4128
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33941,
+      "prev_close": 1.3419,
+      "daily_pct": -0.1862
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.741,
+      "prev_close": 158.114,
+      "daily_pct": 0.3965
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71408,
+      "prev_close": 0.7121,
+      "daily_pct": 0.2783
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.86988,
+      "prev_close": 6.87485,
+      "daily_pct": -0.0723
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28139,
+      "prev_close": 1.28439,
+      "daily_pct": -0.2335
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6754.75,
+      "prev_close": 6779.5,
+      "daily_pct": -0.3651
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24898.5,
+      "prev_close": 24983.5,
+      "daily_pct": -0.3402
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47231.0,
+      "prev_close": 47448.0,
+      "daily_pct": -0.4573
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5190.3,
+      "prev_close": 5167.4,
+      "daily_pct": 0.4432
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.92,
+      "prev_close": 112.12,
+      "daily_pct": -0.1812
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 91.63,
+      "prev_close": 87.25,
+      "daily_pct": 5.0201
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "CPI",
+        "actual": "+0.3% MoM / +2.4% YoY",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices touch $100 again as Iran ramps up shipping attacks in the Persian Gulf",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 09:30:13 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/oil-prices-jump-iea-record-reserve-release-markets-doubt-relief.html",
+      "summary": "Strategists said oil prices were trading higher because there appears to be no end in sight to oil supply disruptions through the Strait of Hormuz."
+    },
+    {
+      "headline": "Three more ships struck in the Persian Gulf as Iran warns of oil prices hitting $200",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 09:52:45 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/iran-war-persian-gulf-strait-of-hormuz-ships-uae-iraq.html",
+      "summary": "The latest incidents in or near the Strait of Hormuz come shortly after Iran warned the world to prepare for $200 oil prices."
+    },
+    {
+      "headline": "Trump administration launches Section 301 trade probes into Mexico, China, EU, others",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 23:48:34 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/trump-trade-investigations-ieepa-tariffs.html",
+      "summary": "The Supreme Court, in a 6-3 ruling, said President Trump was not authorized by the International Emergency Economic Powers Act, IEEPA, to impose tariffs."
+    },
+    {
+      "headline": "Jim Cramer says these 3 stock market themes could work if the oil shock eases",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 23:01:49 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/jim-cramer-says-these-3-stock-market-themes-could-work-if-the-oil-shock-eases.html",
+      "summary": "Once the dust clears, the \"Mad Money\" host said investors could look to AI data centers, memory chips, and discount retailers."
+    },
+    {
+      "headline": "Food prices could rise as Iran conflict disrupts fertilizer supply chain",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 19:28:17 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/iran-news-food-prices-could-rise-due-to-fertilizer-shortages.html",
+      "summary": "The Iran conflict is disrupting fertilizer shipments through the Strait of Hormuz, raising supply concerns and potentially increasing global food inflation."
+    },
+    {
+      "headline": "Social Security 2027 cost-of-living adjustment forecast may rise with high oil prices",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 20:18:27 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/social-security-cola-oil-prices.html",
+      "summary": "The Social Security cost-of-living adjustment for 2027 may be 1.7% to 2.8%, according to new estimates. But that could increase if inflation climbs higher."
+    },
+    {
+      "headline": "South Korea passes special bill to implement its $350 billion U.S. investment pledge",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 07:56:12 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/south-korea-350-billion-investment-special-bill-us-trump.html",
+      "summary": "Seoul will now have the legal framework it needs to carry out its investment commitment made to Washington in exchange for more favorable \"reciprocal\" tariff rates."
+    },
+    {
+      "headline": "Oracle's TikTok stake sits at just over $2 billion, filing shows",
+      "source": "CNBC",
+      "published": "Wed, 11 Mar 2026 19:18:02 GMT",
+      "url": "https://www.cnbc.com/2026/03/11/oracle-tiktok-us-stake-outages.html",
+      "summary": "Oracle bought 15% of TikTok's U.S. operations in January after China's ByteDance was forced by U.S. law to divest."
+    }
+  ]
+}
