@@ -53,7 +53,8 @@
       "WebFetch(domain:jen.jiji.com)",
       "Bash(cmd:*)",
       "Bash(powershell:*)",
-      "Bash(start:*)"
+      "Bash(start:*)",
+      "Bash(ls -la /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/ | grep -E \"\\\\.py$\")"
     ]
   }
 }

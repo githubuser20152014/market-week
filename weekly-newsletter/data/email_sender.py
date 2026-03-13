@@ -45,9 +45,20 @@ def fetch_subscribers(api_key: str, form_id: str) -> list[str]:
     return emails
 
 
-def build_email_html(md_content: str, subject: str, subscription_name: str = "Framework Foundry Weekly") -> str:
-    """Convert Markdown content to a minimal inline-styled HTML email."""
+def build_email_html(
+    md_content: str,
+    subject: str,
+    subscription_name: str = "Framework Foundry Weekly",
+    edition_label: str = "",
+) -> str:
+    """Convert Markdown content to an inline-styled HTML email with branded header."""
     body_html = md.markdown(md_content, extensions=["tables"])
+
+    edition_line = (
+        f'<div style="font-size:12px;color:#c9a84c;letter-spacing:0.12em;'
+        f'text-transform:uppercase;margin-top:6px;">{edition_label}</div>'
+        if edition_label else ""
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -55,10 +66,59 @@ def build_email_html(md_content: str, subject: str, subscription_name: str = "Fr
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{subject}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
 <body style="margin:0;padding:0;background:#f5f5f5;font-family:Georgia,serif;">
   <div style="max-width:680px;margin:32px auto;background:#ffffff;border-radius:6px;
               overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.08);">
+
+    <!-- Branded header -->
+    <div style="background:#0f1f3d;
+                background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+                                 linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+                background-size:28px 28px;">
+      <!-- Header inner -->
+      <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
+             style="border:none;padding:28px 40px 24px;">
+        <tr>
+          <!-- SVG logo -->
+          <td style="vertical-align:middle;padding-right:18px;width:64px;">
+            <svg width="64" height="64" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+              <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+              <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+              <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+              <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+              <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+              <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+              <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+            </svg>
+          </td>
+          <!-- Logo text -->
+          <td style="vertical-align:middle;">
+            <span style="display:block;font-family:'Cormorant Garamond',Georgia,serif;
+                         font-size:30px;font-weight:600;letter-spacing:4px;
+                         color:#ffffff;line-height:1;">FRAMEWORK</span>
+            <span style="display:block;font-family:'Raleway',Arial,sans-serif;
+                         font-size:14px;font-weight:300;letter-spacing:12px;
+                         color:#4a7fb5;margin-top:5px;line-height:1;">FOUNDRY</span>
+            <div style="height:1px;background:rgba(255,255,255,0.15);margin:8px 0 6px;"></div>
+            <span style="font-family:'Raleway',Arial,sans-serif;font-size:8.5px;font-weight:300;
+                         letter-spacing:3.5px;color:rgba(255,255,255,0.4);text-transform:uppercase;">
+              Research for the serious investor</span>
+          </td>
+          <!-- Right meta -->
+          {f'''<td style="vertical-align:middle;text-align:right;padding-left:16px;">
+            <span style="display:block;font-family:'Raleway',Arial,sans-serif;font-size:9px;
+                         letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase;">
+              {edition_label}</span>
+          </td>''' if edition_label else ''}
+        </tr>
+      </table>
+      <!-- Accent bar -->
+      <div style="height:3px;background:linear-gradient(90deg,#4a7fb5 0%,#7aabda 50%,transparent 100%);"></div>
+    </div>
 
     <div style="padding:32px 40px 24px;">
       {body_html}

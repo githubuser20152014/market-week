@@ -51,6 +51,11 @@ are used. The intl generator used to rename outputs, deleting the US files.
 `fetch_data.py` prints a WARNING if the closest fixture is >2 days from the
 requested date. This means data is stale — use `--live` or create a new fixture.
 
+## Publishing Standards
+
+- Subscriber emails must include the **Framework Foundry banner**
+- Substack posts must be delivered as **HTML** (not Markdown) — save to `output/` as `.html` and paste into Substack editor
+
 ## Workflow Preferences
 
 ### End-of-session GitHub commit
