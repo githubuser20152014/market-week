@@ -948,6 +948,42 @@ _CSS = """\
 
   .subscribe-form button:hover { background: var(--accent-lt); }
 
+  /* FEEDBACK */
+  .feedback-section {
+    background: var(--navy); padding: 48px 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .feedback-inner {
+    max-width: 560px; margin: 0 auto;
+  }
+  .feedback-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px; font-weight: 600; color: var(--white);
+    letter-spacing: 0.5px; margin-bottom: 20px;
+  }
+  .feedback-form { display: flex; flex-direction: column; gap: 12px; }
+  .feedback-row  { display: flex; gap: 12px; }
+  .feedback-row input { flex: 1; }
+  .feedback-form input,
+  .feedback-form textarea {
+    width: 100%; padding: 10px 14px; border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08); color: var(--white);
+    font-family: 'Raleway', sans-serif; font-size: 13px;
+    box-sizing: border-box;
+  }
+  .feedback-form input::placeholder,
+  .feedback-form textarea::placeholder { color: rgba(255,255,255,0.4); }
+  .feedback-form textarea { resize: vertical; min-height: 90px; }
+  .feedback-form button {
+    align-self: flex-start; padding: 10px 28px;
+    background: var(--accent); color: var(--white);
+    border: none; border-radius: 4px; cursor: pointer;
+    font-family: 'Raleway', sans-serif; font-size: 12px;
+    font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .feedback-form button:hover { background: var(--accent-lt); }
+
   @media (max-width: 600px) {
     .subscribe-section { padding: 28px 20px; }
     .subscribe-form { flex-direction: column; }
@@ -1366,15 +1402,14 @@ def render_fundaa_article_page(article):
     .fundaa-body hr {{ border: none; border-top: 1px solid var(--border); margin: 28px 0; }}
     .fundaa-body ul, .fundaa-body ol {{ padding-left: 24px; margin-bottom: 18px; }}
     .fundaa-body li {{ font-size: 15px; line-height: 1.7; margin-bottom: 6px; }}
-    .back-link {{
-      display: inline-block;
+    .breadcrumb {{
       font-family: 'Raleway', sans-serif;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: 2px; text-transform: uppercase;
-      color: var(--accent); text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 2px; margin-bottom: 32px;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px;
     }}
+    .breadcrumb a {{ color: var(--accent); text-decoration: none; }}
+    .breadcrumb a:hover {{ text-decoration: underline; }}
+    .breadcrumb .sep {{ margin: 0 8px; color: var(--border); }}
   </style>
 </head>
 <body>
@@ -1394,7 +1429,15 @@ def render_fundaa_article_page(article):
   </header>
 
   <div class="content">
-    <a class="back-link" href="../../index.html">&larr; Back to Framework Foundry</a>
+    <nav class="breadcrumb">
+      <a href="../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <span>Market IQ</span>
+      <span class="sep">/</span>
+      <span>Friday Fundaa</span>
+      <span class="sep">/</span>
+      <span>{title}</span>
+    </nav>
     <div class="fundaa-eyebrow">Friday Fundaa</div>
     <div class="fundaa-title">{title}</div>
     <div class="fundaa-date">{display_date}</div>
@@ -1967,6 +2010,23 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
     </div>
   </div>
 
+  <!-- FEEDBACK -->
+  <section class="feedback-section">
+    <div class="feedback-inner">
+      <div class="feedback-title">Leave a comment</div>
+      <form class="feedback-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+        <input type="hidden" name="_subject" value="Framework Foundry - You have a new comment" />
+        <input type="hidden" name="_replyto" value="" />
+        <div class="feedback-row">
+          <input type="text"  name="name"    placeholder="Your name (optional)" />
+          <input type="email" name="email"   placeholder="Your email (optional)" />
+        </div>
+        <textarea name="message" rows="4" placeholder="Your comment or feedback..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
     <div class="footer-disclaimer">
@@ -2092,6 +2152,23 @@ def render_daily_hub(daybreak_dates, daybreak_ctxs, pdf_map):
       </a>
     </div>
   </div>
+
+  <!-- FEEDBACK -->
+  <section class="feedback-section">
+    <div class="feedback-inner">
+      <div class="feedback-title">Leave a comment</div>
+      <form class="feedback-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+        <input type="hidden" name="_subject" value="Framework Foundry - You have a new comment" />
+        <input type="hidden" name="_replyto" value="" />
+        <div class="feedback-row">
+          <input type="text"  name="name"    placeholder="Your name (optional)" />
+          <input type="email" name="email"   placeholder="Your email (optional)" />
+        </div>
+        <textarea name="message" rows="4" placeholder="Your comment or feedback..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
