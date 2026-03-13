@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Framework Foundry &mdash; Weekly Economic Intelligence</title>
+  <title>Friday Fundaa — Your Chocolate Bar Is Lying to You | Framework Foundry</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
   <style>
   :root {
@@ -991,6 +991,39 @@
     .iq-grid { grid-template-columns: 1fr; }
   }
 
+    /* Article page extras */
+    .fundaa-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 8px;
+    }
+    .fundaa-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 600;
+      color: var(--navy); line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .fundaa-date {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .fundaa-body p { font-size: 16px; line-height: 1.8; margin-bottom: 18px; font-weight: 300; }
+    .fundaa-body strong { font-weight: 600; }
+    .fundaa-body em { font-style: italic; }
+    .fundaa-body hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+    .fundaa-body ul, .fundaa-body ol { padding-left: 24px; margin-bottom: 18px; }
+    .fundaa-body li { font-size: 15px; line-height: 1.7; margin-bottom: 6px; }
+    .back-link {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px; margin-bottom: 32px;
+    }
   </style>
 </head>
 <body>
@@ -1019,465 +1052,27 @@
     <div class="header-accent"></div>
   </header>
 
-  <nav class="section-nav">
-    <a class="section-tab active" onclick="showSection('markets')">Markets</a>
-    <a class="section-tab" onclick="showSection('marketiq')">Market IQ</a>
-    <a class="section-tab" onclick="showSection('investing')">Investing</a>
-    <a class="section-tab future" onclick="showSection('expat')">Expat Investing &#8599;</a>
-  </nav>
-
-  <!-- ══ PANEL: MARKETS ══ -->
-  <div id="panel-markets" class="section-panel active">
-
-    <div class="sub-nav">
-      <a class="sub-tab active" data-target="sub-weekly" onclick="showSubNav(this)">Weekly Editions</a>
-      <a class="sub-tab" data-target="sub-daybreak" onclick="showSubNav(this)">Market Day Break</a>
-    </div>
-
-    <!-- Sub-panel: Weekly Editions -->
-    <div id="sub-weekly" class="sub-panel active">
-      <div class="content">
-        <div class="section-label">Current Issues</div>
-        <div class="hero-grid">
-          
-    <div class="hero-card">
-      <div class="hero-card-edition">&#127482;&#127480; US Edition</div>
-      <div class="hero-card-date">Mar 7, 2026</div>
-      <div class="hero-indices"><div class="hero-idx-row"><span>S&P 500</span><span class="pct-neg">-1.24%</span></div>
-<div class="hero-idx-row"><span>Dow Jones</span><span class="pct-neg">-2.65%</span></div>
-<div class="hero-idx-row"><span>Nasdaq</span><span class="pct-pos">+0.29%</span></div>
-</div>
-      <a class="hero-cta" href="us/2026-03-07/index.html">Read Issue &rarr;</a>
-    </div>
-          
-    <div class="hero-card">
-      <div class="hero-card-edition">&#127758; International Edition</div>
-      <div class="hero-card-date">Mar 7, 2026</div>
-      <div class="hero-indices"><div class="hero-idx-row"><span>Nikkei 225</span><span class="pct-neg">-4.06%</span></div>
-<div class="hero-idx-row"><span>FTSE 100</span><span class="pct-neg">-5.74%</span></div>
-<div class="hero-idx-row"><span>Euro Stoxx 50</span><span class="pct-neg">-6.03%</span></div>
-</div>
-      <a class="hero-cta" href="intl/2026-03-07/index.html">Read Issue &rarr;</a>
-    </div>
-        </div>
-
-        <div class="section-label">Archive</div>
-        <table class="archive-table">
-          <thead>
-            <tr>
-              <th>Week Ending</th>
-              <th>US Edition</th>
-              <th>International Edition</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          <tr>
-            <td>Mar 7, 2026</td>
-            <td><a class="archive-link" href="us/2026-03-07/index.html">Read</a><a class="archive-link pdf" href="downloads/newsletter_2026-03-07.pdf">PDF</a></td>
-            <td><a class="archive-link" href="intl/2026-03-07/index.html">Read</a><a class="archive-link pdf" href="downloads/intl_newsletter_2026-03-07.pdf">PDF</a></td>
-          </tr>
-          <tr>
-            <td>Feb 28, 2026</td>
-            <td><a class="archive-link" href="us/2026-02-28/index.html">Read</a><a class="archive-link pdf" href="downloads/newsletter_2026-02-28.pdf">PDF</a></td>
-            <td><a class="archive-link" href="intl/2026-02-28/index.html">Read</a><a class="archive-link pdf" href="downloads/intl_newsletter_2026-02-28.pdf">PDF</a></td>
-          </tr>
-          <tr>
-            <td>Feb 21, 2026</td>
-            <td><a class="archive-link" href="us/2026-02-21/index.html">Read</a><a class="archive-link pdf" href="downloads/newsletter_2026-02-21.pdf">PDF</a></td>
-            <td><a class="archive-link" href="intl/2026-02-21/index.html">Read</a><a class="archive-link pdf" href="downloads/intl_newsletter_2026-02-21.pdf">PDF</a></td>
-          </tr>
-          <tr>
-            <td>Feb 16, 2026</td>
-            <td><a class="archive-link" href="us/2026-02-16/index.html">Read</a><a class="archive-link pdf" href="downloads/newsletter_2026-02-16.pdf">PDF</a></td>
-            <td>&mdash;</td>
-          </tr>
-          <tr>
-            <td>Feb 15, 2026</td>
-            <td><a class="archive-link" href="us/2026-02-15/index.html">Read</a><a class="archive-link pdf" href="downloads/newsletter_2026-02-15.pdf">PDF</a></td>
-            <td>&mdash;</td>
-          </tr>
-          </tbody>
-        </table>
-      </div><!-- /content -->
-    </div><!-- /sub-weekly -->
-
-    <!-- Sub-panel: Market Day Break -->
-    
-    <div id="sub-daybreak" class="sub-panel">
-      <div class="content">
-        <div class="section-label">Latest Brief</div>
-        <div class="hero-grid" style="grid-template-columns:1fr;">
-          
-    <div class="hero-card hero-card--daily" style="border-top-color:#c9a84c;">
-      <div class="hero-card-edition" style="color:#c9a84c;">&#127760; Daily Edition</div>
-      <div class="hero-card-date">Mar 9, 2026</div>
-      <div style="font-family:'Raleway',sans-serif;font-size:9px;letter-spacing:1.5px;color:#6b7280;text-transform:uppercase;margin-bottom:14px;">Data as of 5:00 AM EST</div>
-      <div class="hero-indices"><div class="hero-idx-row"><span>S&P Futures</span><span class="pct-neg">-0.77%</span></div>
-<div class="hero-idx-row"><span>Nasdaq Futures</span><span class="pct-neg">-0.87%</span></div>
-<div class="hero-idx-row"><span>Dow Futures</span><span class="pct-neg">-0.90%</span></div>
-</div>
-      <a class="hero-cta" href="daily/2026-03-09/index.html">Read Brief &rarr;</a>
-    </div>
-        </div>
-        <div class="section-label">Archive</div>
-        <table class="archive-table">
-          <thead><tr><th>Date</th><th>Daily Brief</th></tr></thead>
-          <tbody>
-              <tr>
-                <td>Mar 9, 2026</td>
-                <td><a class="archive-link" href="daily/2026-03-09/index.html">Read</a><a class="archive-link pdf" href="downloads/market_day_break_2026-03-09.pdf">PDF</a></td>
-              </tr>
-              <tr>
-                <td>Mar 6, 2026</td>
-                <td><a class="archive-link" href="daily/2026-03-06/index.html">Read</a><a class="archive-link pdf" href="downloads/market_day_break_2026-03-06.pdf">PDF</a></td>
-              </tr>
-              <tr>
-                <td>Mar 5, 2026</td>
-                <td><a class="archive-link" href="daily/2026-03-05/index.html">Read</a><a class="archive-link pdf" href="downloads/market_day_break_2026-03-05.pdf">PDF</a></td>
-              </tr>
-              <tr>
-                <td>Mar 4, 2026</td>
-                <td><a class="archive-link" href="daily/2026-03-04/index.html">Read</a><a class="archive-link pdf" href="downloads/market_day_break_2026-03-04.pdf">PDF</a></td>
-              </tr>
-              <tr>
-                <td>Mar 3, 2026</td>
-                <td><a class="archive-link" href="daily/2026-03-03/index.html">Read</a></td>
-              </tr></tbody>
-        </table>
-      </div>
-    </div>
-
-  </div><!-- /panel-markets -->
-
-  <!-- ══ PANEL: MARKET IQ ══ -->
-  <div id="panel-marketiq" class="section-panel">
   <div class="content">
-    <div class="section-label">Market IQ &mdash; Economic Concepts, Plain &amp; Simple</div>
-
-    <div class="iq-sub-nav sub-nav">
-      <a class="iq-sub-tab sub-tab active" data-target="iq-sub-flashcards" onclick="showSubNav(this)">Market IQ</a>
-      <a class="iq-sub-tab sub-tab" data-target="iq-sub-fundaa" onclick="showSubNav(this)">Friday Fundaa</a>
-    </div>
-
-    <div id="iq-sub-flashcards" class="sub-panel active">
-      <p class="iq-intro">
-        No economics degree required. Each card explains one concept &mdash; what it is, why it matters,
-        how often it&rsquo;s published, and what the recent trend means for your money.
-      </p>
-      <div class="featured-card-label">&#9733; Featured Concept</div>
-<div class="flip-card" id="featured-flip">
-  <div class="flip-card-inner">
-
-    <!-- FRONT -->
-    <div class="flip-card-front">
-      <div class="flip-front-header">
-        <div class="flip-front-header-inner">
-          <div class="flip-front-eyebrow">Macro Indicators</div>
-          <div class="flip-front-term">GDP</div>
-          <div class="flip-front-fullname">Gross Domestic Product</div>
-        </div>
-      </div>
-      <div class="flip-front-body">
-        <div class="flip-front-what-label">What it is</div>
-        <p class="flip-front-def">GDP is the total dollar value of everything a country produces — every good made, every service sold — within a given period. Think of it as the economy's annual report card.</p>
-        <div class="flip-front-formula">GDP = Consumer Spending + Business Investment + Government Spending + (Exports − Imports)</div>
-        <p class="flip-front-context">When GDP grows, the economy is expanding — more jobs, rising incomes, stronger corporate profits. When it shrinks for two quarters in a row, that's the textbook definition of a recession.</p>
-      </div>
-      <div class="flip-front-footer">
-        <span class="iq-card-trend trend-down">↓ Slowing</span>
-        <span class="flip-hint">Flip for latest data &rarr;</span>
-      </div>
-    </div>
-
-    <!-- BACK -->
-    <div class="flip-card-back">
-      <div class="flip-back-header">
-        <div class="flip-back-header-inner">
-          <div>
-            <div class="flip-back-source-label">Latest Reading</div>
-            <div class="flip-back-title">GDP &mdash; Gross Domestic Product</div>
-          </div>
-          <div style="text-align:right;">
-            <div class="flip-back-value" style="color:var(--red);">1.4%</div>
-            <div class="flip-back-value-period">Q4 2025 (Annualized)</div>
-          </div>
-        </div>
-      </div>
-      <div class="flip-back-body">
-        <div class="mini-bar-chart-wrap">
-          <div class="mini-bar-chart">
-      <div class="mini-bar-col">
-        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.4%</span>
-        <div class="mini-bar" style="height:54.54545454545454%;background:linear-gradient(180deg,var(--accent-lt),var(--accent));"></div>
-        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q1 '25</span>
-      </div>
-      <div class="mini-bar-col">
-        <span class="mini-bar-value-label" style="color:var(--accent-lt);">3.8%</span>
-        <div class="mini-bar" style="height:86.36363636363636%;background:linear-gradient(180deg,var(--accent-lt),var(--accent));"></div>
-        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q2 '25</span>
-      </div>
-      <div class="mini-bar-col">
-        <span class="mini-bar-value-label" style="color:var(--accent-lt);">4.4%</span>
-        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,var(--accent-lt),var(--accent));"></div>
-        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q3 '25</span>
-      </div>
-      <div class="mini-bar-col">
-        <span class="mini-bar-value-label" style="color:var(--red);">1.4%</span>
-        <div class="mini-bar" style="height:31.818181818181813%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
-        <span class="mini-bar-period-label" style="color:var(--gold);">Q4 '25</span>
-      </div>
-    </div>
-        </div>
-        <div class="stat-tile-grid">
-          <div class="stat-tile">
-            <div class="stat-tile-label">Full Year 2025</div>
-            <div class="stat-tile-value" style="color:var(--red);">2.2%</div>
-            <div class="stat-tile-sub">↓ from 2.8% in 2024</div>
-          </div>
-          <div class="stat-tile">
-            <div class="stat-tile-label">2026 Forecast</div>
-            <div class="stat-tile-value" style="color:var(--green);">2.5%</div>
-            <div class="stat-tile-sub">Goldman Sachs est.</div>
-          </div>
-        </div>
-        <div class="insight-callout">
-          <div class="insight-callout-label">Analyst Insight</div>
-          <p class="insight-callout-text">Q4 2025 stumbled to 1.4% — dragged by the federal government shutdown and tariff headwinds. The slowdown is expected to be temporary; economists project a bounce-back in early 2026 as those one-off drags fade and consumer spending stays resilient.</p>
-        </div>
-      </div>
-      <div class="flip-back-footer">
-        <span class="flip-back-source">U.S. Bureau of Economic Analysis · Feb 2026</span>
-        <span class="flip-hint">&larr; Flip back</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-      <div class="iq-categories">
-        <button class="iq-cat-btn active">All</button>
-      <button class="iq-cat-btn">Inflation</button>
-      <button class="iq-cat-btn">Central Banks</button>
-      <button class="iq-cat-btn">Employment</button>
-      <button class="iq-cat-btn">Markets</button>
-
-      </div>
-      <div class="iq-grid">
-        
-      <div class="iq-card">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Inflation</div>
-          <div class="iq-card-term">CPI</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">Prices go up over time — that's inflation. CPI measures exactly how much. It tracks a basket of everyday items — groceries, rent, gas, clothing — and shows how much more (or less) they cost compared to a year ago. When CPI climbs fast, your money buys less than it used to.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Monthly</span>
-            <span class="iq-card-trend trend-up">↑ Elevated</span>
-          </div>
-        </div>
-      </div>
-      <div class="iq-card">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Central Banks</div>
-          <div class="iq-card-term">Fed Funds Rate</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">The single most powerful interest rate in the world. It's what banks charge each other for overnight loans — and it ripples through everything else: your mortgage rate, your car loan, your credit card APR. When the Fed raises it, borrowing gets more expensive across the board.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: 8× per year</span>
-            <span class="iq-card-trend trend-flat">→ Hold</span>
-          </div>
-        </div>
-      </div>
-      <div class="iq-card">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Employment</div>
-          <div class="iq-card-term">Non-Farm Payrolls</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">Every first Friday of the month, the government reveals how many jobs were added or lost — excluding farm workers. It's the most market-moving number of the month. A big miss can send stocks down hundreds of points within minutes of the release.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Monthly</span>
-            <span class="iq-card-trend trend-up">↑ Strong</span>
-          </div>
-        </div>
-      </div>
-      <div class="iq-card">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Inflation</div>
-          <div class="iq-card-term">PCE</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">Similar to CPI, but the Fed trusts it more. PCE measures what Americans actually spend on goods and services — and it adjusts when people swap expensive items for cheaper ones. That makes it a more honest picture of real-world inflation. When PCE runs hot, rate cuts get pushed back.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Monthly</span>
-            <span class="iq-card-trend trend-up">↑ Above Target</span>
-          </div>
-        </div>
-      </div>
-      <div class="iq-card">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Markets</div>
-          <div class="iq-card-term">Yield Curve</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">A snapshot of how much interest the government pays to borrow money at different time horizons — 2 years, 10 years, 30 years. Normally, longer loans pay higher rates. When that flips — short-term rates above long-term ones — it's called an inversion, and every U.S. recession in the past 50 years was preceded by one.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Real-time</span>
-            <span class="iq-card-trend trend-flat">→ Normalizing</span>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="iq-see-all"><a href="#">View all concepts &rarr;</a></div>
-    </div>
-
-    <div id="iq-sub-fundaa" class="sub-panel">
-      <p class="iq-intro">
-        A short weekly moment of &ldquo;huh, didn&rsquo;t know that&rdquo; from the world of markets and money.
-        Plain English. No jargon. Just one idea you can actually use.
-      </p>
-      <div class="article-list">
-        
-      <a class="article-row" href="fundaa/2026-03-13/index.html">
-        <div class="article-tag-col">
-          <span class="article-tag guide">Fundaa</span>
-        </div>
-        <div class="article-content">
-          <div class="article-title">Your Chocolate Bar Is Lying to You</div>
-          <div class="article-excerpt">*A short weekly moment of "huh, didn't know that" from the world of markets and money.*</div>
-        </div>
-        <div class="article-meta-col">
-          <span class="article-date">Mar 13, 2026</span>
-        </div>
-      </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-  <!-- ══ PANEL: INVESTING ══ -->
-  <div id="panel-investing" class="section-panel">
-  <div class="content">
-    <div class="section-label">Personal Investing &mdash; Practical Guides for Long-Term Investors</div>
-    <p class="investing-intro">
-      Research-backed guides on building a diversified portfolio with low-cost index ETFs.
-      No jargon, no stock tips &mdash; just clear frameworks for the patient investor.
-    </p>
-    <div class="article-filters">
-      <button class="iq-cat-btn active">All</button>
-      <button class="iq-cat-btn">ETF Basics</button>
-      <button class="iq-cat-btn">US Portfolios</button>
-      <button class="iq-cat-btn">International</button>
-      <button class="iq-cat-btn">Sector ETFs</button>
-      <button class="iq-cat-btn">Strategy</button>
-    </div>
-    <div class="article-list">
-      
-      <a class="article-row" href="#">
-        <div class="article-tag-col">
-          <span class="article-tag guide">Guide</span>
-        </div>
-        <div class="article-content">
-          <div class="article-title">The Three-Fund Portfolio: Everything You Need, Nothing You Don't</div>
-          <div class="article-excerpt">How a total US market fund, an international fund, and a bond fund can cover the entire investable world — and why simplicity is your biggest edge.</div>
-        </div>
-        <div class="article-meta-col">
-          <span class="article-date">Mar 1, 2026</span>
-          <span class="article-read-time">8 min read</span>
-        </div>
-      </a>
-      <a class="article-row" href="#">
-        <div class="article-tag-col">
-          <span class="article-tag etf">ETF</span>
-        </div>
-        <div class="article-content">
-          <div class="article-title">VTI vs. VOO: Which US Index ETF Is Right For You?</div>
-          <div class="article-excerpt">Both track US stocks. Both are cheap. Here's the actual difference — and why it's smaller than you think.</div>
-        </div>
-        <div class="article-meta-col">
-          <span class="article-date">Feb 22, 2026</span>
-          <span class="article-read-time">5 min read</span>
-        </div>
-      </a>
-      <a class="article-row" href="#">
-        <div class="article-tag-col">
-          <span class="article-tag intl">Intl</span>
-        </div>
-        <div class="article-content">
-          <div class="article-title">Building an International Portfolio: VXUS, IXUS, and What They Cover</div>
-          <div class="article-excerpt">A plain-English breakdown of the main ex-US ETFs, what countries they include, and how much international exposure actually makes sense.</div>
-        </div>
-        <div class="article-meta-col">
-          <span class="article-date">Feb 15, 2026</span>
-          <span class="article-read-time">7 min read</span>
-        </div>
-      </a>
-      <a class="article-row" href="#">
-        <div class="article-tag-col">
-          <span class="article-tag etf">ETF</span>
-        </div>
-        <div class="article-content">
-          <div class="article-title">Sector ETFs: When They Help, When They Hurt</div>
-          <div class="article-excerpt">Technology, healthcare, energy — sector tilts can improve returns or add risk. Here's how to think about them before adding one to your portfolio.</div>
-        </div>
-        <div class="article-meta-col">
-          <span class="article-date">Feb 8, 2026</span>
-          <span class="article-read-time">6 min read</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-
-  <!-- ══ PANEL: EXPAT ══ -->
-  <div id="panel-expat" class="section-panel">
-  <div class="coming-soon-panel">
-    <div class="coming-soon-eyebrow">Coming Soon</div>
-    <div class="coming-soon-title">Expat Investing</div>
-    <p class="coming-soon-body">
-      A dedicated resource for Americans living abroad &mdash; navigating PFIC rules, FBAR reporting,
-      tax-efficient investing from outside the US, and building wealth across borders.
-      Leave your email to be notified when we launch.
-    </p>
-    <div class="notify-form">
-      <input type="email" placeholder="your@email.com"/>
-      <button>Notify Me</button>
-    </div>
-  </div>
-</div>
-
-  <!-- SUBSCRIBE -->
-  <div class="subscribe-section">
-    <h2>Stay in the loop</h2>
-    <p>Free market intelligence &mdash; weekly editions &amp; daily briefs.</p>
-    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
-      <input type="email" name="email" placeholder="your@email.com" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-
-  <!-- SHARE BAR -->
-  <div class="share-bar">
-    <span class="share-label">Share Framework Foundry</span>
-    <div class="share-buttons">
-      <a class="share-btn twitter" href="#" target="_blank" rel="noopener"
-         onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('Framework Foundry — free weekly US & international market intelligence:  '+window.location.href);return true;"
-         title="Share on X / Twitter">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a class="share-btn linkedin" href="#" target="_blank" rel="noopener"
-         onclick="this.href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href);return true;"
-         title="Share on LinkedIn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a class="share-btn facebook" href="#" target="_blank" rel="noopener"
-         onclick="this.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href);return true;"
-         title="Share on Facebook">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
+    <a class="back-link" href="../../index.html">&larr; Back to Framework Foundry</a>
+    <div class="fundaa-eyebrow">Friday Fundaa</div>
+    <div class="fundaa-title">Your Chocolate Bar Is Lying to You</div>
+    <div class="fundaa-date">Mar 13, 2026</div>
+    <div class="fundaa-body">
+      <p><strong>Friday Fundaa | Your chocolate bar is lying to you</strong></p>
+<p><em>A short weekly moment of "huh, didn't know that" from the world of markets and money.</em></p>
+<hr />
+<p>Same price. Same wrapper. Fewer chips.</p>
+<p>That's shrinkflation — the sneaky cousin of regular inflation that nobody talks about, because it's technically not inflation at all. Prices didn't go up. You just got... less.</p>
+<p>Companies love it for one simple reason: consumers notice a price hike immediately. A price tag jumping from $4.99 to $5.49 feels like a gut punch. A bag that's 15% lighter? You shrug and chalk it up to "felt like more last time."</p>
+<p>Shrinkflation spiked hard in 2022-23 when companies faced rising input costs and couldn't pass everything through the sticker price cleanly. Orange juice cartons shrank from 64oz to 52oz. A "family size" bag of Doritos quietly lost around 20% of its contents. Toilet paper rolls got narrower — same cardboard tube, less paper.</p>
+<p>Here's the part that should bother you: <strong>official CPI doesn't fully capture this.</strong> It tracks <em>price per unit</em> — but when the unit quietly shrinks, the data looks tame while your actual grocery bill keeps climbing. Economists have a term for it: quality-adjusted inflation. It's one reason why "inflation is cooling" and "everything still feels expensive" can both be true at the same time.</p>
+<p>Next time something tastes like there used to be more of it — there probably was.</p>
+<hr />
+<p><em>Friday Fundaa runs weekly. If you're not already getting our full editions:</em>
+- <strong><em>Market Day Break</em></strong> <em>— a daily market briefing, out each morning</em>
+- <strong><em>Framework Foundry Weekly</em></strong> <em>— macro trends, index moves, and what it means for your money</em></p>
+<p><em>Read the latest at <a href="https://frameworkfoundry.info">frameworkfoundry.info</a></em></p>
+<hr />
     </div>
   </div>
 
@@ -1490,40 +1085,5 @@
   </footer>
 
 </div><!-- /page -->
-<script>
-function showSection(id) {
-  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('panel-' + id).classList.add('active');
-  var labels = { markets: 0, marketiq: 1, investing: 2, expat: 3 };
-  var tabs = document.querySelectorAll('.section-tab');
-  if (labels[id] !== undefined) tabs[labels[id]].classList.add('active');
-}
-function showSubNav(el) {
-  var nav = el.closest('.sub-nav');
-  nav.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  var target = el.getAttribute('data-target');
-  if (target) {
-    el.closest('.section-panel').querySelectorAll('.sub-panel')
-      .forEach(p => p.classList.remove('active'));
-    document.getElementById(target).classList.add('active');
-  }
-}
-document.querySelectorAll('.iq-categories .iq-cat-btn, .article-filters .iq-cat-btn')
-  .forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      this.closest('.iq-categories, .article-filters')
-          .querySelectorAll('.iq-cat-btn')
-          .forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-    });
-  });
-document.querySelectorAll('.flip-card').forEach(function(card) {
-  card.addEventListener('click', function() {
-    this.classList.toggle('flipped');
-  });
-});
-</script>
 </body>
 </html>

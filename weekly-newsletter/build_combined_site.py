@@ -9,6 +9,7 @@ Run from weekly-newsletter/:
 import argparse
 import csv
 import json as _json
+import markdown
 import re
 import shutil
 import sys
@@ -195,9 +196,35 @@ _CSS = """\
   .section-panel { display: none; }
   .section-panel.active { display: block; }
 
-  /* SUB-PANELS (within Markets) */
+  /* SUB-PANELS (within Markets / Market IQ) */
   .sub-panel { display: none; }
   .sub-panel.active { display: block; }
+
+  /* IQ SUB-NAV (inside Market IQ panel) */
+  .iq-sub-nav {
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    margin: 0 -40px 28px;
+  }
+
+  .iq-sub-tab {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .iq-sub-tab:hover { color: var(--navy); }
+  .iq-sub-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* CONTENT */
   .content { padding: 36px 40px; }
@@ -1218,6 +1245,190 @@ def load_articles(articles_dir=None):
     return articles
 
 
+def parse_fundaa_articles(articles_dir=None):
+    """Parse Friday Fundaa articles from content/articles/friday-fundaa-*.md.
+
+    Returns a list of dicts (newest first):
+      {title, slug, date, display_date, body_html, excerpt}
+    """
+    if articles_dir is None:
+        articles_dir = BASE_DIR / "content" / "articles"
+    articles = []
+    try:
+        for md_file in sorted(Path(articles_dir).glob("friday-fundaa-*.md")):
+            text = md_file.read_text(encoding="utf-8")
+            lines = text.splitlines()
+
+            # Title: first non-empty line matching "# Friday Fundaa — …"
+            title = ""
+            for line in lines:
+                m = re.match(r'^#\s+Friday Fundaa\s+[—–-]+\s*(.+)', line)
+                if m:
+                    title = m.group(1).strip()
+                    break
+
+            # Date + slug: italic line "*Topic: Slug | Date: YYYY-MM-DD …*"
+            slug = ""
+            date_str = ""
+            for line in lines:
+                m = re.match(r'^\*Topic:\s*([^|]+)\|\s*Date:\s*(\d{4}-\d{2}-\d{2})', line)
+                if m:
+                    slug = m.group(1).strip().lower().replace(" ", "-")
+                    date_str = m.group(2).strip()
+                    break
+
+            if not title or not date_str:
+                continue
+
+            # Substack body: between "## Substack" and next "## " or EOF
+            body_lines = []
+            in_substack = False
+            for line in lines:
+                if re.match(r'^##\s+Substack', line):
+                    in_substack = True
+                    continue
+                if in_substack:
+                    if re.match(r'^##\s+', line):
+                        break
+                    body_lines.append(line)
+            body_md = "\n".join(body_lines).strip()
+            body_html = markdown.markdown(body_md)
+
+            # Excerpt: first non-empty non-heading paragraph
+            excerpt = ""
+            for line in body_lines:
+                stripped = line.strip()
+                if stripped and not stripped.startswith("#") and not stripped.startswith("**Friday Fundaa"):
+                    excerpt = stripped[:160]
+                    if len(stripped) > 160:
+                        excerpt += "…"
+                    break
+
+            try:
+                d = datetime.strptime(date_str, "%Y-%m-%d")
+                display_date = f"{d.strftime('%b')} {d.day}, {d.year}"
+            except ValueError:
+                display_date = date_str
+
+            articles.append({
+                "title": title,
+                "slug": slug,
+                "date": date_str,
+                "display_date": display_date,
+                "body_html": body_html,
+                "excerpt": excerpt,
+            })
+    except (FileNotFoundError, OSError):
+        pass
+
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    articles = [a for a in articles if a["date"] <= today]
+    articles.sort(key=lambda a: a["date"], reverse=True)
+    return articles
+
+
+def render_fundaa_article_page(article):
+    """Render a standalone HTML page for a Friday Fundaa article."""
+    title = article["title"]
+    display_date = article["display_date"]
+    body_html = article["body_html"]
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Friday Fundaa — {title} | Framework Foundry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
+  <style>
+{_CSS}
+    /* Article page extras */
+    .fundaa-eyebrow {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 8px;
+    }}
+    .fundaa-title {{
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 600;
+      color: var(--navy); line-height: 1.2;
+      margin-bottom: 6px;
+    }}
+    .fundaa-date {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; color: var(--muted);
+      margin-bottom: 28px;
+    }}
+    .fundaa-body p {{ font-size: 16px; line-height: 1.8; margin-bottom: 18px; font-weight: 300; }}
+    .fundaa-body strong {{ font-weight: 600; }}
+    .fundaa-body em {{ font-style: italic; }}
+    .fundaa-body hr {{ border: none; border-top: 1px solid var(--border); margin: 28px 0; }}
+    .fundaa-body ul, .fundaa-body ol {{ padding-left: 24px; margin-bottom: 18px; }}
+    .fundaa-body li {{ font-size: 15px; line-height: 1.7; margin-bottom: 6px; }}
+    .back-link {{
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px; margin-bottom: 32px;
+    }}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="header-inner">
+{_LOGO_SVG}
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Economic Intelligence &nbsp;&middot;&nbsp; Research for the Serious Investor</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <div class="content">
+    <a class="back-link" href="../../index.html">&larr; Back to Framework Foundry</a>
+    <div class="fundaa-eyebrow">Friday Fundaa</div>
+    <div class="fundaa-title">{title}</div>
+    <div class="fundaa-date">{display_date}</div>
+    <div class="fundaa-body">
+      {body_html}
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>"""
+
+
+def generate_fundaa_pages(articles, site_dir):
+    """Write site/fundaa/{date}/index.html for each Friday Fundaa article."""
+    fundaa_dir = Path(site_dir) / "fundaa"
+    fundaa_dir.mkdir(exist_ok=True)
+    for article in articles:
+        date_str = article["date"]
+        article_dir = fundaa_dir / date_str
+        article_dir.mkdir(parents=True, exist_ok=True)
+        html = render_fundaa_article_page(article)
+        (article_dir / "index.html").write_text(html, encoding="utf-8")
+        print(f"  -> site/fundaa/{date_str}/index.html")
+
+
 def _render_mini_bar_chart(chart_data_json):
     """Render HTML mini bar chart from JSON string."""
     try:
@@ -1344,8 +1555,11 @@ def render_featured_flip_card(card):
 </div>"""
 
 
-def render_market_iq_panel(cards):
-    """Render the Market IQ panel HTML."""
+def render_market_iq_panel(cards, fundaa_articles=None):
+    """Render the Market IQ panel HTML with Market IQ / Friday Fundaa sub-tabs."""
+    if fundaa_articles is None:
+        fundaa_articles = []
+
     featured = next((c for c in cards if c.get("featured") == "true"), None)
     grid_cards = [c for c in cards if c.get("featured") != "true"]
 
@@ -1387,21 +1601,60 @@ def render_market_iq_panel(cards):
 
     featured_html = render_featured_flip_card(featured) if featured else ""
 
+    # Friday Fundaa article list
+    fundaa_rows = ""
+    for a in fundaa_articles:
+        fundaa_rows += f"""
+      <a class="article-row" href="fundaa/{a['date']}/index.html">
+        <div class="article-tag-col">
+          <span class="article-tag guide">Fundaa</span>
+        </div>
+        <div class="article-content">
+          <div class="article-title">{a['title']}</div>
+          <div class="article-excerpt">{a['excerpt']}</div>
+        </div>
+        <div class="article-meta-col">
+          <span class="article-date">{a['display_date']}</span>
+        </div>
+      </a>"""
+
+    if not fundaa_rows:
+        fundaa_rows = '<p style="color:var(--muted);font-family:\'Raleway\',sans-serif;font-size:12px;padding:24px 0;">No Friday Fundaa articles yet.</p>'
+
     return f"""<div id="panel-marketiq" class="section-panel">
   <div class="content">
     <div class="section-label">Market IQ &mdash; Economic Concepts, Plain &amp; Simple</div>
-    <p class="iq-intro">
-      No economics degree required. Each card explains one concept &mdash; what it is, why it matters,
-      how often it&rsquo;s published, and what the recent trend means for your money.
-    </p>
-    {featured_html}
-    <div class="iq-categories">
-      {cat_buttons}
+
+    <div class="iq-sub-nav sub-nav">
+      <a class="iq-sub-tab sub-tab active" data-target="iq-sub-flashcards" onclick="showSubNav(this)">Market IQ</a>
+      <a class="iq-sub-tab sub-tab" data-target="iq-sub-fundaa" onclick="showSubNav(this)">Friday Fundaa</a>
     </div>
-    <div class="iq-grid">
-      {card_html}
+
+    <div id="iq-sub-flashcards" class="sub-panel active">
+      <p class="iq-intro">
+        No economics degree required. Each card explains one concept &mdash; what it is, why it matters,
+        how often it&rsquo;s published, and what the recent trend means for your money.
+      </p>
+      {featured_html}
+      <div class="iq-categories">
+        {cat_buttons}
+      </div>
+      <div class="iq-grid">
+        {card_html}
+      </div>
+      <div class="iq-see-all"><a href="#">View all concepts &rarr;</a></div>
     </div>
-    <div class="iq-see-all"><a href="#">View all concepts &rarr;</a></div>
+
+    <div id="iq-sub-fundaa" class="sub-panel">
+      <p class="iq-intro">
+        A short weekly moment of &ldquo;huh, didn&rsquo;t know that&rdquo; from the world of markets and money.
+        Plain English. No jargon. Just one idea you can actually use.
+      </p>
+      <div class="article-list">
+        {fundaa_rows}
+      </div>
+    </div>
+
   </div>
 </div>"""
 
@@ -1519,7 +1772,7 @@ document.querySelectorAll('.flip-card').forEach(function(card) {
 
 def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
                    daybreak_dates=None, daybreak_ctxs=None,
-                   market_iq_cards=None, articles=None):
+                   market_iq_cards=None, articles=None, fundaa_articles=None):
     """Render site/index.html — 4-tab hub (Markets / Market IQ / Investing / Expat)."""
     if daybreak_dates is None:
         daybreak_dates = []
@@ -1527,6 +1780,8 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
         market_iq_cards = []
     if articles is None:
         articles = []
+    if fundaa_articles is None:
+        fundaa_articles = []
 
     # Hero cards (latest of each weekly edition)
     latest_us   = us_dates[0]   if us_dates   else None
@@ -1601,7 +1856,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
         daybreak_sub = '<div id="sub-daybreak" class="sub-panel"><div class="content"><p style="color:var(--muted);font-family:\'Raleway\',sans-serif;font-size:12px;">No daily briefs yet.</p></div></div>'
 
     # Market IQ and Investing panels
-    marketiq_panel = render_market_iq_panel(market_iq_cards)
+    marketiq_panel = render_market_iq_panel(market_iq_cards, fundaa_articles)
     investing_panel = render_investing_panel(articles)
 
     return f"""<!DOCTYPE html>
@@ -1951,10 +2206,13 @@ def build(use_mock=True):
     # Build landing page (4-tab hub)
     market_iq_cards = load_market_iq_cards()
     articles = load_articles()
+    fundaa_articles = parse_fundaa_articles()
+    generate_fundaa_pages(fundaa_articles, SITE_DIR)
     landing_html = render_landing(
         us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
         daybreak_dates=daybreak_dates, daybreak_ctxs=daybreak_ctxs,
         market_iq_cards=market_iq_cards, articles=articles,
+        fundaa_articles=fundaa_articles,
     )
     (SITE_DIR / "index.html").write_text(landing_html, encoding="utf-8")
     print(f"  -> site/index.html")
