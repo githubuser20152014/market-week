@@ -56,6 +56,37 @@ requested date. This means data is stale — use `--live` or create a new fixtur
 - Subscriber emails must include the **Framework Foundry banner**
 - Substack posts must be delivered as **HTML** (not Markdown) — save to `output/` as `.html` and paste into Substack editor
 
+## Market IQ Flashcards
+
+### Go-live: link newsletter indicator mentions to flashcards
+When the Market IQ flashcards are integrated into the live site, every mention
+of a tracked indicator in the newsletter HTML should be hyperlinked to its
+flashcard. Examples:
+- "CPI" → `/market-iq#cpi`
+- "NFP" / "non-farm payrolls" → `/market-iq#nfp`
+- "yield curve" → `/market-iq#yield-curve`
+- "Fed funds rate" / "FFR" → `/market-iq#ffr`
+
+Implementation notes:
+- Add `id` anchors to each flashcard block when building the live page
+- In `build_site.py` / `build_combined_site.py`, add a post-render pass that
+  regex-replaces known indicator terms in the newsletter body with `<a>` tags
+- Maintain a term→anchor mapping dict (abbreviations + full names + press shorthand)
+- Links open the Market IQ page scrolled to the right card (anchor link, same-site)
+
+### Go-live: use auto-pull for card data
+When integrating Market IQ flashcards into the live site, card data must be
+populated from the existing pipeline (`fetch_data.py` / FRED / yfinance fixtures)
+— **not** hardcoded. The current `output/market-iq-flashcards_mockup.html` has
+hardcoded values for review only.
+
+Update cadences per card:
+- CPI → monthly (~2nd Tuesday, BLS)
+- FFR → 8× / year (FOMC decision days)
+- NFP → monthly (1st Friday, BLS)
+- PCE → monthly (~last Friday, BEA)
+- Yield Curve → monthly snapshot (10Y & 2Y already in fixtures)
+
 ## Workflow Preferences
 
 ### End-of-session GitHub commit
