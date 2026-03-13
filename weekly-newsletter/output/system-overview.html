@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Foundry — Content System Overview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1a1a2e;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 40px 48px 60px;
+    background: #fff;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .doc-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 3px solid #0f1f3d;
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  .logo-mark {
+    width: 52px; height: 52px; flex-shrink: 0;
+  }
+  .doc-header h1 {
+    font-size: 22px; font-weight: 700; color: #0f1f3d; letter-spacing: -0.3px;
+  }
+  .doc-header p {
+    font-size: 12px; color: #6b7280; margin-top: 3px;
+  }
+  .doc-header .badge {
+    margin-left: auto;
+    background: #0f1f3d;
+    color: #c9a84c;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 14px;
+  }
+
+  /* ── PIPELINE FLOW ── */
+  .pipeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 44px;
+    overflow-x: auto;
+  }
+
+  .stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 148px;
+    flex: 1;
+  }
+
+  .stage-header {
+    width: 100%;
+    text-align: center;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .stage-body {
+    width: 100%;
+    border: 1.5px solid #e5e7eb;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 12px 10px;
+    background: #fafafa;
+    min-height: 160px;
+  }
+
+  .node {
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 5px;
+    padding: 7px 9px;
+    margin-bottom: 7px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #1a1a2e;
+    line-height: 1.35;
+  }
+  .node:last-child { margin-bottom: 0; }
+  .node .sub {
+    font-size: 10px;
+    font-weight: 400;
+    color: #6b7280;
+    margin-top: 2px;
+  }
+  .node.accent {
+    border-color: #c9a84c;
+    background: #fffbf0;
+  }
+  .node.muted {
+    background: #f9fafb;
+    border-style: dashed;
+    color: #6b7280;
+  }
+
+  /* ── CONNECTOR ARROWS ── */
+  .arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 40px; /* align with stage body */
+    flex-shrink: 0;
+    width: 28px;
+  }
+  .arrow svg { width: 28px; height: 20px; }
+
+  /* Stage header colours */
+  .s1 .stage-header { background: #374151; }
+  .s2 .stage-header { background: #1d4ed8; }
+  .s3 .stage-header { background: #0f766e; }
+  .s4 .stage-header { background: #7c3aed; }
+  .s5 .stage-header { background: #0f1f3d; }
+  .s6 .stage-header { background: #b45309; }
+
+  /* ── CHANNEL GRID ── */
+  .channels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 44px;
+  }
+  .channel-card {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 7px;
+    padding: 14px 12px;
+    text-align: center;
+    background: #fafafa;
+  }
+  .channel-card .icon {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .channel-card .name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+  }
+  .channel-card .detail {
+    font-size: 10.5px;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+  .channel-card.primary { border-color: #4a7fb5; background: #f0f7ff; }
+
+  /* ── TABLES ── */
+  .tables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+  .tables-grid .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .ref-table-wrap { }
+  .ref-table-wrap h3 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  thead tr {
+    background: #0f1f3d;
+    color: #fff;
+  }
+  thead th {
+    padding: 7px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 0.3px;
+  }
+  tbody tr:nth-child(even) { background: #f8f9fb; }
+  tbody tr:nth-child(odd)  { background: #fff; }
+  tbody td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #374151;
+    vertical-align: top;
+  }
+  tbody td:first-child { font-weight: 500; color: #1a1a2e; }
+  .tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .tag.green  { background: #d1fae5; color: #065f46; }
+  .tag.blue   { background: #dbeafe; color: #1e40af; }
+  .tag.amber  { background: #fef3c7; color: #92400e; }
+  .tag.purple { background: #ede9fe; color: #5b21b6; }
+  .tag.gray   { background: #f3f4f6; color: #374151; }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #9ca3af;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: #fff; font-size: 11px; }
+    .page { padding: 24px 32px 40px; max-width: 100%; }
+    .pipeline { page-break-inside: avoid; }
+    .tables-grid { page-break-before: always; }
+    .channels { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <svg class="logo-mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="34" fill="none" stroke="#0f1f3d" stroke-width="1.8"/>
+      <line x1="10" y1="30" x2="70" y2="30" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="8"  y1="40" x2="72" y2="40" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="10" y1="50" x2="70" y2="50" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="30" y1="8"  x2="30" y2="72" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="40" y1="6"  x2="40" y2="74" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="50" y1="8"  x2="50" y2="72" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="40" cy="40" r="3.5" fill="#c9a84c"/>
+    </svg>
+    <div>
+      <h1>Framework Foundry — Content System Overview</h1>
+      <p>How content is produced, built, published, and distributed across all channels</p>
+    </div>
+    <div class="badge">System Diagram</div>
+  </div>
+
+
+  <!-- PIPELINE -->
+  <div class="section-label">End-to-End Content Pipeline</div>
+  <div class="pipeline">
+
+    <!-- STAGE 1: DATA INGESTION -->
+    <div class="stage s1">
+      <div class="stage-header">① Data Ingestion</div>
+      <div class="stage-body">
+        <div class="node">
+          Yahoo Finance
+          <div class="sub">Indices · FX rates · Futures</div>
+        </div>
+        <div class="node">
+          FRED API
+          <div class="sub">Econ calendar · Release values</div>
+        </div>
+        <div class="node">
+          RSS Feeds
+          <div class="sub">Reuters · AP · CNBC</div>
+        </div>
+        <div class="node muted">
+          Manual input
+          <div class="sub">Articles · Flashcard CSV</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg viewBox="0 0 28 20"><path d="M0 10 H20 M14 4 L22 10 L14 16" stroke="#9ca3af" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- STAGE 2: CONTENT GENERATION -->
+    <div class="stage s2">
+      <div class="stage-header">② Content Generation</div>
+      <div class="stage-body">
+        <div class="node">
+          Weekly US
+          <div class="sub">generate_newsletter.py</div>
+        </div>
+        <div class="node">
+          Weekly Intl
+          <div class="sub">generate_intl_newsletter.py</div>
+        </div>
+        <div class="node accent">
+          Market Day Break
+          <div class="sub">generate_market_day_break.py</div>
+        </div>
+        <div class="node">
+          Friday Fundaa
+          <div class="sub">Markdown article + social drafts</div>
+        </div>
+        <div class="node">
+          Market IQ Cards
+          <div class="sub">market_iq.csv → flashcard data</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg viewBox="0 0 28 20"><path d="M0 10 H20 M14 4 L22 10 L14 16" stroke="#9ca3af" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- STAGE 3: OUTPUT FORMATS -->
+    <div class="stage s3">
+      <div class="stage-header">③ Output Formats</div>
+      <div class="stage-body">
+        <div class="node">
+          Markdown (.md)
+          <div class="sub">Source of truth for all editions</div>
+        </div>
+        <div class="node">
+          PDF (.pdf)
+          <div class="sub">Downloadable archive</div>
+        </div>
+        <div class="node">
+          Email HTML
+          <div class="sub">Branded template, inline CSS</div>
+        </div>
+        <div class="node accent">
+          Social drafts
+          <div class="sub">LinkedIn .txt · X thread · Substack .html</div>
+        </div>
+        <div class="node">
+          JSON fixtures
+          <div class="sub">Verified price snapshots</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg viewBox="0 0 28 20"><path d="M0 10 H20 M14 4 L22 10 L14 16" stroke="#9ca3af" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- STAGE 4: SITE BUILD -->
+    <div class="stage s4">
+      <div class="stage-header">④ Site Build</div>
+      <div class="stage-body">
+        <div class="node accent">
+          build_combined_site.py
+          <div class="sub">Master orchestrator</div>
+        </div>
+        <div class="node">
+          Landing page
+          <div class="sub">4-tab hub (Markets · Market IQ · Investing · Expat)</div>
+        </div>
+        <div class="node">
+          Edition pages
+          <div class="sub">US · Intl · Daily per-date</div>
+        </div>
+        <div class="node">
+          Friday Fundaa pages
+          <div class="sub">Standalone article pages</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg viewBox="0 0 28 20"><path d="M0 10 H20 M14 4 L22 10 L14 16" stroke="#9ca3af" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- STAGE 5: DEPLOY -->
+    <div class="stage s5">
+      <div class="stage-header">⑤ Deploy</div>
+      <div class="stage-body">
+        <div class="node accent">
+          git push → master
+          <div class="sub">Triggers auto-deploy</div>
+        </div>
+        <div class="node">
+          GitHub Pages
+          <div class="sub">Hosts static site (site/)</div>
+        </div>
+        <div class="node">
+          Porkbun DNS
+          <div class="sub">frameworkfoundry.info → GitHub Pages</div>
+        </div>
+        <div class="node muted">
+          No CI/CD pipeline
+          <div class="sub">Push = live. No build step needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow">
+      <svg viewBox="0 0 28 20"><path d="M0 10 H20 M14 4 L22 10 L14 16" stroke="#9ca3af" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- STAGE 6: DISTRIBUTION -->
+    <div class="stage s6">
+      <div class="stage-header">⑥ Distribution</div>
+      <div class="stage-body">
+        <div class="node accent">
+          Email (send_email.py)
+          <div class="sub">Gmail SMTP → subscribers list</div>
+        </div>
+        <div class="node">
+          Website
+          <div class="sub">frameworkfoundry.info (live)</div>
+        </div>
+        <div class="node muted">
+          Substack
+          <div class="sub">Paste .html → publish manually</div>
+        </div>
+        <div class="node muted">
+          LinkedIn / X
+          <div class="sub">Copy .txt → post manually</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pipeline -->
+
+
+  <!-- DISTRIBUTION CHANNELS -->
+  <div class="section-label">Distribution Channels</div>
+  <div class="channels" style="margin-bottom: 44px;">
+    <div class="channel-card primary">
+      <div class="icon">🌐</div>
+      <div class="name">Website</div>
+      <div class="detail">frameworkfoundry.info<br>Static site on GitHub Pages.<br>Always live after push.</div>
+    </div>
+    <div class="channel-card primary">
+      <div class="icon">✉️</div>
+      <div class="name">Email Newsletter</div>
+      <div class="detail">Gmail SMTP via send_email.py.<br>Weekly US, Intl, and<br>daily Market Day Break.</div>
+    </div>
+    <div class="channel-card">
+      <div class="icon">📝</div>
+      <div class="name">Substack</div>
+      <div class="detail">HTML draft auto-generated.<br>Manually pasted into<br>Substack editor.</div>
+    </div>
+    <div class="channel-card">
+      <div class="icon">💼</div>
+      <div class="name">LinkedIn</div>
+      <div class="detail">Plain-text post (~3,000 chars)<br>auto-generated as .txt.<br>Posted manually.</div>
+    </div>
+    <div class="channel-card">
+      <div class="icon">𝕏</div>
+      <div class="name">X / Twitter</div>
+      <div class="detail">Thread format auto-generated<br>as .txt (1/, 2/, etc.).<br>Posted manually.</div>
+    </div>
+  </div>
+
+
+  <!-- REFERENCE TABLES -->
+  <div class="section-label">Reference Tables</div>
+
+  <div class="tables-grid">
+
+    <!-- DATA SOURCES -->
+    <div class="ref-table-wrap">
+      <h3>Data Sources</h3>
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Provides</th><th>Used by</th><th>Tier</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Yahoo Finance<br><span style="font-weight:400;color:#6b7280;font-size:10px;">via yfinance</span></td>
+            <td>US &amp; intl indices, FX rates, pre-market futures</td>
+            <td>All editions</td>
+            <td><span class="tag green">Free</span></td>
+          </tr>
+          <tr>
+            <td>FRED<br><span style="font-weight:400;color:#6b7280;font-size:10px;">Federal Reserve</span></td>
+            <td>Economic calendar, CPI / NFP / GDP actual values, Treasury yields</td>
+            <td>Daybreak, weekly</td>
+            <td><span class="tag green">Free</span></td>
+          </tr>
+          <tr>
+            <td>RSS Feeds<br><span style="font-weight:400;color:#6b7280;font-size:10px;">Reuters · AP · CNBC</span></td>
+            <td>Breaking market news, filtered by keyword</td>
+            <td>Daybreak</td>
+            <td><span class="tag green">Free</span></td>
+          </tr>
+          <tr>
+            <td>JSON Fixtures<br><span style="font-weight:400;color:#6b7280;font-size:10px;">fixtures/ directory</span></td>
+            <td>Verified price snapshots saved on each live run; reused by site builder</td>
+            <td>Site build</td>
+            <td><span class="tag gray">Local</span></td>
+          </tr>
+          <tr>
+            <td>market_iq.csv<br><span style="font-weight:400;color:#6b7280;font-size:10px;">content/</span></td>
+            <td>Market IQ flashcard definitions, values, chart data</td>
+            <td>Landing page</td>
+            <td><span class="tag gray">Manual</span></td>
+          </tr>
+          <tr>
+            <td>Markdown articles<br><span style="font-weight:400;color:#6b7280;font-size:10px;">content/articles/</span></td>
+            <td>Friday Fundaa &amp; Investing Hub long-form content</td>
+            <td>Site build</td>
+            <td><span class="tag gray">Manual</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- INTEGRATIONS -->
+    <div class="ref-table-wrap">
+      <h3>Integrations</h3>
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Purpose</th><th>How connected</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GitHub Pages</td>
+            <td>Hosts the static site</td>
+            <td><span class="tag blue">git push → auto-deploy</span></td>
+          </tr>
+          <tr>
+            <td>Porkbun DNS</td>
+            <td>Custom domain routing</td>
+            <td>CNAME → GitHub Pages</td>
+          </tr>
+          <tr>
+            <td>Gmail SMTP</td>
+            <td>Email delivery to subscribers</td>
+            <td>App password via api_keys.env</td>
+          </tr>
+          <tr>
+            <td>Formspree</td>
+            <td>Subscriber signup + feedback form on site</td>
+            <td>HTML form POST to formspree.io</td>
+          </tr>
+          <tr>
+            <td>Substack</td>
+            <td>Secondary publishing channel</td>
+            <td><span class="tag amber">Manual paste of .html output</span></td>
+          </tr>
+          <tr>
+            <td>LinkedIn</td>
+            <td>Social distribution</td>
+            <td><span class="tag amber">Manual post of .txt output</span></td>
+          </tr>
+          <tr>
+            <td>X / Twitter</td>
+            <td>Social distribution</td>
+            <td><span class="tag amber">Manual thread from .txt output</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TECHNOLOGIES — full width -->
+    <div class="ref-table-wrap full-width">
+      <h3>Technologies</h3>
+      <table>
+        <thead>
+          <tr><th>Tool / Library</th><th>Category</th><th>Role in the system</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Python 3</td>
+            <td><span class="tag blue">Language</span></td>
+            <td>All generators, data fetchers, site builders, and email scripts</td>
+          </tr>
+          <tr>
+            <td>yfinance</td>
+            <td><span class="tag blue">Data</span></td>
+            <td>Fetches live OHLCV price data for indices, FX pairs, and futures from Yahoo Finance</td>
+          </tr>
+          <tr>
+            <td>pandas / pandas_datareader</td>
+            <td><span class="tag blue">Data</span></td>
+            <td>Data transformation, % change calculations, FRED cross-verification</td>
+          </tr>
+          <tr>
+            <td>Jinja2</td>
+            <td><span class="tag purple">Templating</span></td>
+            <td>Renders newsletter Markdown from structured data context</td>
+          </tr>
+          <tr>
+            <td>markdown (Python lib)</td>
+            <td><span class="tag purple">Templating</span></td>
+            <td>Converts newsletter Markdown to HTML for email delivery</td>
+          </tr>
+          <tr>
+            <td>weasyprint</td>
+            <td><span class="tag purple">Rendering</span></td>
+            <td>Generates PDF exports from HTML (newsletter + daybreak archives)</td>
+          </tr>
+          <tr>
+            <td>matplotlib</td>
+            <td><span class="tag green">Visualisation</span></td>
+            <td>Generates price chart PNGs (5-day OHLC bar chart) embedded in newsletters</td>
+          </tr>
+          <tr>
+            <td>smtplib (stdlib)</td>
+            <td><span class="tag gray">Email</span></td>
+            <td>Gmail SMTP with STARTTLS for sending newsletters and welcome emails</td>
+          </tr>
+          <tr>
+            <td>requests / feedparser</td>
+            <td><span class="tag gray">Network</span></td>
+            <td>RSS feed fetching (Reuters, AP, CNBC) for Daybreak market news section</td>
+          </tr>
+          <tr>
+            <td>python-dotenv</td>
+            <td><span class="tag gray">Config</span></td>
+            <td>Loads API keys and Gmail credentials from config/api_keys.env</td>
+          </tr>
+          <tr>
+            <td>Static HTML / CSS</td>
+            <td><span class="tag amber">Frontend</span></td>
+            <td>All site pages — no JS framework, no build step. CSS Grid + Flexbox, inline styles for email</td>
+          </tr>
+          <tr>
+            <td>Git / GitHub</td>
+            <td><span class="tag amber">Infra</span></td>
+            <td>Version control + deployment trigger. Push to master = site live in ~60 seconds</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /tables-grid -->
+
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <span>Framework Foundry — Internal Reference</span>
+    <span>frameworkfoundry.info</span>
+    <span>Generated 2026-03-13</span>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
