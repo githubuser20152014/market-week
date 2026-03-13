@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "date": "2026-03-13",
+    "generated_at": "2026-03-13T09:13:17.579424Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6775.7998,
+      "close": 6672.6201,
+      "daily_pct": -1.5228,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 47417.2695,
+      "close": 46677.8516,
+      "daily_pct": -1.5594,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22716.1309,
+      "close": 22311.9805,
+      "daily_pct": -1.7791,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2542.8999,
+      "close": 2488.99,
+      "daily_pct": -2.12,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5115.7998,
+      "close": 5096.2998,
+      "daily_pct": -0.3812,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.208,
+      "close": 4.273,
+      "daily_pct": 1.5447,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 6.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 95.73,
+      "close": 95.06,
+      "daily_pct": -0.6999,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53819.61,
+      "prev_close": 54452.96,
+      "daily_pct": -1.1631,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25465.6,
+      "prev_close": 25716.76,
+      "daily_pct": -0.9766,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5487.24,
+      "prev_close": 5583.25,
+      "daily_pct": -1.7196,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23210.25,
+      "prev_close": 23639.15,
+      "daily_pct": -1.8144,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8617.1,
+      "prev_close": 8629.0,
+      "daily_pct": -0.1379,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23420.08,
+      "prev_close": 23589.65,
+      "daily_pct": -0.7188,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10252.3,
+      "prev_close": 10305.2,
+      "daily_pct": -0.5133,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7918.66,
+      "prev_close": 7984.44,
+      "daily_pct": -0.8238,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5710.35,
+      "prev_close": 5748.89,
+      "daily_pct": -0.6704,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14561,
+      "prev_close": 1.15432,
+      "daily_pct": -0.755
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32693,
+      "prev_close": 1.33819,
+      "daily_pct": -0.8413
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.328,
+      "prev_close": 159.075,
+      "daily_pct": 0.159
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70442,
+      "prev_close": 0.71292,
+      "daily_pct": -1.1919
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.89766,
+      "prev_close": 6.8696,
+      "daily_pct": 0.4085
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26868,
+      "prev_close": 1.2792,
+      "daily_pct": -0.8221
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6682.5,
+      "prev_close": 6677.5,
+      "daily_pct": 0.0749
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24569.0,
+      "prev_close": 24560.0,
+      "daily_pct": 0.0366
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46759.0,
+      "prev_close": 46721.0,
+      "daily_pct": 0.0813
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5096.3,
+      "prev_close": 5115.8,
+      "daily_pct": -0.3812
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.52,
+      "prev_close": 111.56,
+      "daily_pct": -0.042
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 95.03,
+      "prev_close": 95.73,
+      "daily_pct": -0.7312
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "GDP",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "U.S. allows temporary purchases of Russian oil already at sea to stabilize energy markets",
+      "source": "CNBC",
+      "published": "Fri, 13 Mar 2026 04:49:41 GMT",
+      "url": "https://www.cnbc.com/2026/03/13/bessent-us-allows-purchase-russian-oil-stranded-sea-energy-markets.html",
+      "summary": "The U.S. has temporarily authorized the purchase of Russian oil stranded at sea to stabilize energy markets."
+    },
+    {
+      "headline": "U.S. launches fresh Section 301 probes into 60 economies over forced-labor trade practices",
+      "source": "CNBC",
+      "published": "Fri, 13 Mar 2026 06:25:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/13/us-section-301-probe-trade-trump-labor-practices.html",
+      "summary": "The forced-labor probes follow Section 301 investigations launched on Wednesday, targeting excess industrial capacity across more than a dozen economies."
+    },
+    {
+      "headline": "Adobe CEO Shantanu Narayen says he will step down after company installs successor",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 22:22:21 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/adobe-ceo-shantanu-narayen-step-down.html",
+      "summary": "Shantanu Narayen led Adobe through a transition to subscription software, and he's been positioning the company to grow in the artificial intelligence age."
+    },
+    {
+      "headline": "Markets' hopes for Fed interest rate cuts are rapidly fading away",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 20:41:02 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/markets-hopes-for-fed-interest-rate-cuts-are-rapidly-fading-away.html",
+      "summary": "As both energy prices and inflation fears pop higher, expectations for cuts are sliding lower."
+    },
+    {
+      "headline": "Tesla's China sales climb in the first two months of 2026 while BYD numbers drop",
+      "source": "CNBC",
+      "published": "Fri, 13 Mar 2026 07:02:05 GMT",
+      "url": "https://www.cnbc.com/2026/03/13/teslas-china-sales-climb-in-the-first-two-months-of-2026-while-byd-numbers-drop.html",
+      "summary": "Sales of Tesla's China-made electric vehicles rose in the first two months of 2026, from the year before, regaining lost ground to China's BYD."
+    },
+    {
+      "headline": "Jim Cramer: Don't let Iran war-induced market volatility scare you out of stocks",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 23:23:55 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/jim-cramer-dont-let-iran-war-induced-market-volatility-scare-you-out-of-stocks.html",
+      "summary": "\"Believe me, you'll be kicking yourself if you sell everything and then you have to watch this market rebound without you,\" CNBC Jim Cramer said Thursday."
+    },
+    {
+      "headline": "Warren calls on State Department to provide more aid to Americans stuck in Middle East",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 21:23:31 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/warren-state-department-americans-stuck-middle-east-iran-israel-war.html",
+      "summary": "The State Department said this week that 36,000 Americans had returned to the U.S. after the start of the war with Iran."
+    },
+    {
+      "headline": "Trump tariffs: Martin Heinrich bill would give families tax rebate for higher import costs",
+      "source": "CNBC",
+      "published": "Thu, 12 Mar 2026 17:37:48 GMT",
+      "url": "https://www.cnbc.com/2026/03/12/trump-trade-tariffs-tax-rebates-martin-heinrich-2026-elections.html",
+      "summary": "The Supreme Court in a 6-3 ruling Feb. 20 ruled that President Donald Trumps IEEPA tariffs were illegal."
+    }
+  ]
+}
