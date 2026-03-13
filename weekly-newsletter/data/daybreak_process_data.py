@@ -246,69 +246,345 @@ def generate_daybreak_narrative(us_indices: list, intl_indices: list,
 
 # ── Plain-English Summary ─────────────────────────────────────────────────────
 
+def _detect_dominant_themes(news_items: list, yesterday_events: list) -> dict:
+    """Return {theme: score} from scanning headlines and event names."""
+    all_text = " ".join([
+        item.get("headline", "") + " " + item.get("summary", "")
+        for item in (news_items or [])
+    ] + [e.get("event", "") for e in (yesterday_events or [])]).lower()
+
+    return {
+        "fed": sum(1 for kw in [
+            "rate cut", "fed ", "fomc", "hawkish", "dovish", "rate hike",
+            "monetary policy", "interest rate", "rate-cut", "cuts are fading",
+            "cut expectations",
+        ] if kw in all_text),
+        "trade": sum(1 for kw in [
+            "tariff", "trade war", "section 301", "forced labor",
+            "import duty", "trade probe", "sanction", "trade tension",
+            "trade practice",
+        ] if kw in all_text),
+        "geopolitics": sum(1 for kw in [
+            "war", "iran", "israel", "ukraine", "geopolit",
+            "conflict", "missile", "escalat", "military", "middle east",
+        ] if kw in all_text),
+        "earnings": sum(1 for kw in [
+            "earnings", "eps beat", "revenue miss", "guidance",
+            "quarterly results", "beat estimates",
+        ] if kw in all_text),
+    }
+
+
+def _build_cross_indicator_para(us_indices: list, news_items: list,
+                                 yesterday_events: list) -> str:
+    """Return a paragraph connecting the dominant theme to yield/equity/gold signals."""
+    sp       = next((i for i in us_indices if "S&P" in i["name"]), None)
+    nasdaq   = next((i for i in us_indices if "Nasdaq" in i["name"]), None)
+    russell  = next((i for i in us_indices if "Russell" in i["name"]), None)
+    treasury = next((i for i in us_indices if "Treasury" in i["name"]), None)
+    gold     = next((i for i in us_indices if i["name"] == "Gold"), None)
+
+    sp_pct    = sp["daily_pct"]              if sp      and sp.get("daily_pct")      is not None else None
+    tsy_bps   = treasury.get("yield_change_bps") if treasury else None
+    tsy_close = treasury.get("close")        if treasury else None
+    gold_pct  = gold["daily_pct"]            if gold    and gold.get("daily_pct")    is not None else None
+
+    themes          = _detect_dominant_themes(news_items or [], yesterday_events or [])
+    fed_prominent   = themes.get("fed", 0) > 0
+    trade_prominent = themes.get("trade", 0) > 0
+    geo_prominent   = themes.get("geopolitics", 0) > 0
+
+    parts = []
+
+    # ── Yield + equity connection ──────────────────────────────────────────────
+    if tsy_bps is not None and abs(tsy_bps) >= 4 and tsy_close is not None:
+        bps = round(abs(tsy_bps))
+        if tsy_bps > 0 and sp_pct is not None and sp_pct < 0:
+            if fed_prominent:
+                lead = (
+                    f"**Markets are repricing the Fed.** Bond yields climbed {bps} bps "
+                    f"to {tsy_close:.2f}% as headlines confirmed what the bond market has "
+                    f"been telegraphing: hopes for rate cuts are rapidly fading. "
+                    f"Higher yields at current levels make it harder to justify equity "
+                    f"valuations, particularly in growth and small caps"
+                )
+                if nasdaq and nasdaq.get("daily_pct") and russell and russell.get("daily_pct"):
+                    lead += (
+                        f" — which explains why the Nasdaq ({nasdaq['daily_pct']:+.2f}%) "
+                        f"and Russell ({russell['daily_pct']:+.2f}%) led the decline."
+                    )
+                else:
+                    lead += "."
+                parts.append(lead)
+            else:
+                parts.append(
+                    f"**Bond yields climbed {bps} bps to {tsy_close:.2f}%**, making it "
+                    f"harder to justify equity valuations — particularly in growth and small caps."
+                )
+        elif tsy_bps < 0 and sp_pct is not None and sp_pct < 0:
+            parts.append(
+                f"**Bond yields fell {bps} bps to {tsy_close:.2f}%** — a flight-to-safety "
+                f"signal that reinforces the risk-off read."
+            )
+        elif tsy_bps > 0 and sp_pct is not None and sp_pct > 0:
+            parts.append(
+                f"**Bond yields rose {bps} bps to {tsy_close:.2f}%** alongside stocks — "
+                f"a sign of growth optimism, not inflation fear."
+            )
+        elif tsy_bps < 0:
+            parts.append(
+                f"**Bond yields fell {bps} bps to {tsy_close:.2f}%** — falling yields "
+                f"typically support growth stocks and bond prices."
+            )
+
+    # ── Trade / geopolitics paragraph ─────────────────────────────────────────
+    if trade_prominent or geo_prominent:
+        trade_headline = ""
+        geo_context    = ""
+        for item in (news_items or []):
+            hl_lower = item.get("headline", "").lower()
+            if not trade_headline and any(
+                kw in hl_lower for kw in ["section 301", "tariff", "forced labor", "trade probe"]
+            ):
+                trade_headline = item.get("headline", "")
+            if not geo_context and any(
+                kw in hl_lower for kw in ["iran", "israel", "war", "middle east"]
+            ):
+                geo_context = "Iran-Israel war tensions"
+
+        if trade_headline:
+            risk_para = f"**Trade risk added fuel.** {trade_headline}."
+            if geo_context:
+                risk_para += (
+                    f" Combined with ongoing {geo_context}, investors are pricing in "
+                    f"more geopolitical premium."
+                )
+            parts.append(risk_para)
+        elif geo_prominent and geo_context:
+            parts.append(
+                f"**Geopolitical risk remains elevated.** {geo_context.capitalize()} "
+                f"continued to weigh on sentiment."
+            )
+
+    # ── Gold: fold counter-intuitive move into last paragraph ─────────────────
+    if gold_pct is not None and sp_pct is not None and sp_pct < -0.5:
+        if gold_pct < 0:
+            dollar_driver = "tariff-driven " if trade_prominent else ""
+            gold_note = (
+                f"Worth noting: gold fell {abs(gold_pct):.2f}% despite the equity selloff — "
+                f"a sign the dollar's {dollar_driver}strength is the dominant force, "
+                f"not a simple flight to safety."
+            )
+            if parts:
+                parts[-1] = parts[-1].rstrip(".") + ". " + gold_note
+            else:
+                parts.append(gold_note)
+        elif gold_pct > 0.5:
+            parts.append(
+                f"Gold climbed {gold_pct:.2f}% alongside the equity selloff — "
+                f"investors are rotating into safe havens, amplifying the risk-off signal."
+            )
+
+    return "\n\n".join(parts)
+
+
+def _build_binary_event_para(high_today: list, fut_with_data: list) -> str:
+    """Frame today's key events as a binary outcome with a futures-lean signal."""
+    event_names       = [e.get("event", "") for e in high_today]
+    event_names_lower = [n.lower() for n in event_names]
+
+    has_gdp = any("gdp" in n for n in event_names_lower)
+    has_pce = any("pce" in n for n in event_names_lower)
+    has_cpi = any("cpi" in n for n in event_names_lower)
+
+    # Build futures lean string
+    fut_lean = ""
+    if fut_with_data:
+        equity_futs = [f for f in fut_with_data if any(
+            kw in f.get("name", "") for kw in ["S&P", "Nasdaq", "Dow"]
+        )]
+        all_green = equity_futs and all(f["daily_pct"] >= 0 for f in equity_futs)
+        all_red   = equity_futs and all(f["daily_pct"] < 0  for f in equity_futs)
+        sp_fut    = next((f for f in fut_with_data if "S&P" in f.get("name", "")), None)
+        pct_str   = f" ({sp_fut['daily_pct']:+.2f}%)" if sp_fut else ""
+        if all_green:
+            fut_lean = f"mildly green futures{pct_str} suggest the market is leaning that way, but isn't committing"
+        elif all_red:
+            fut_lean = f"mildly red futures{pct_str} suggest caution heading into the print"
+
+    # Shared time string
+    times = list({
+        e.get("time_est", e.get("time", ""))
+        for e in high_today
+        if e.get("time_est") or e.get("time")
+    })
+    time_str = f" at {times[0]}" if len(times) == 1 else ""
+
+    if has_gdp and has_pce:
+        gdp_name = next((n for n in event_names if "gdp" in n.lower()), "GDP")
+        pce_name = next((n for n in event_names if "pce" in n.lower()), "PCE")
+        para = (
+            f"**This morning is binary.** {gdp_name} and {pce_name} both print{time_str}. "
+            f"A weak {gdp_name} + hot {pce_name} would be a stagflation signal, likely "
+            f"extending yesterday's losses. A strong {gdp_name} + tame {pce_name} keeps "
+            f"the soft-landing narrative intact"
+        )
+        if fut_lean:
+            para += f" — {fut_lean}"
+        para += ". Position before the print, not after."
+        return para
+
+    if has_gdp:
+        gdp_name = next((n for n in event_names if "gdp" in n.lower()), "GDP")
+        para = (
+            f"**Watch the {gdp_name} print{time_str}.** A weak number shifts sentiment "
+            f"toward defensives (XLU, XLP); a strong beat supports risk-on positioning "
+            f"in cyclicals (XLY, XLI)"
+        )
+        if fut_lean:
+            para += f" — {fut_lean}"
+        para += ". Position before the release."
+        return para
+
+    if has_cpi:
+        cpi_name = next((n for n in event_names if "cpi" in n.lower()), "CPI")
+        para = (
+            f"**{cpi_name} prints{time_str} — watch for a surprise in either direction.** "
+            f"A hot print pressures growth stocks and pushes yields higher (TIPS, defensives). "
+            f"A cool print revives rate-cut hopes and lifts long bonds and tech"
+        )
+        if fut_lean:
+            para += f" — {fut_lean}"
+        para += ". Position before the print."
+        return para
+
+    # Generic high-importance events
+    names_str = " and ".join(event_names[:2])
+    verb      = "print" if len(event_names) > 1 else "prints"
+    para = (
+        f"**{names_str} {verb}{time_str} today** — "
+        f"{'these' if len(event_names) > 1 else 'this'} can move markets, particularly "
+        f"bonds and rate-sensitive sectors. Be positioned before the release, not after."
+    )
+    return para
+
+
 def generate_daybreak_plain_summary(us_indices: list, intl_indices: list,
-                                     futures: list, today_events: list) -> str:
-    """Plain-English 'What This Means' section for the morning brief."""
+                                     futures: list, today_events: list,
+                                     news_items: list = None,
+                                     yesterday_events: list = None) -> str:
+    """Plain-English 'What This Means' section for the morning brief.
+
+    Produces 3–4 connected paragraphs:
+    1. Breadth analysis (broad vs. narrow, dollar impact)
+    2. Dominant theme + cross-indicator narrative (yields, gold, USD linked)
+    3. Binary outcome framing for today's key events
+    """
+    if news_items is None:
+        news_items = []
+    if yesterday_events is None:
+        yesterday_events = []
+
     lines = []
 
-    sp = next((i for i in us_indices if "S&P" in i["name"]), None)
-    gold = next((i for i in us_indices if i["name"] == "Gold"), None)
-    treasury = next((i for i in us_indices if "Treasury" in i["name"]), None)
+    sp      = next((i for i in us_indices if "S&P" in i["name"]), None)
+    nasdaq  = next((i for i in us_indices if "Nasdaq" in i["name"]), None)
+    dow     = next((i for i in us_indices if "Dow" in i["name"]), None)
+    russell = next((i for i in us_indices if "Russell" in i["name"]), None)
 
+    # ── Para 1: Breadth analysis ───────────────────────────────────────────────
     if sp and sp["daily_pct"] is not None:
-        pct = sp["daily_pct"]
-        if pct > 1.5:
+        pct         = sp["daily_pct"]
+        dollar_move = abs(pct) * 100  # per $10,000 portfolio
+
+        companions = [i for i in [nasdaq, dow, russell]
+                      if i and i.get("daily_pct") is not None]
+        all_down = pct < 0 and all(c["daily_pct"] < 0 for c in companions)
+        all_up   = pct > 0 and all(c["daily_pct"] > 0 for c in companions)
+
+        if pct < -1.0 and all_down and companions:
+            # Broad selloff — list each companion with its pct
+            comp_strs = []
+            for idx in [russell, nasdaq, dow]:
+                if idx and idx.get("daily_pct") is not None:
+                    label = {
+                        "Russell 2000": "small caps (Russell 2000",
+                        "Nasdaq":       "tech (Nasdaq",
+                        "Dow Jones":    "blue chips (Dow",
+                    }.get(idx["name"], idx["name"])
+                    comp_strs.append(f"{label} {idx['daily_pct']:+.2f}%)")
+            if comp_strs:
+                lines.append(
+                    f"**Yesterday's selloff was broad and deep.** The S&P 500 dropped "
+                    f"{abs(pct):.1f}%, but the story is in the width: "
+                    f"{', '.join(comp_strs)} all fell together — this wasn't sector "
+                    f"rotation, it was risk-off across the board. A $10,000 index "
+                    f"portfolio lost roughly ${dollar_move:,.0f}."
+                )
+            else:
+                lines.append(
+                    f"**Yesterday was a rough session.** The S&P 500 dropped {abs(pct):.1f}%, "
+                    f"meaning a $10,000 index portfolio lost about ${dollar_move:,.0f}."
+                )
+
+        elif pct < 0 and companions:
+            down_comps = [c for c in companions if c["daily_pct"] < 0]
+            up_comps   = [c for c in companions if c["daily_pct"] > 0]
+            if up_comps and down_comps:
+                lines.append(
+                    f"**Yesterday's decline was narrow, not broad.** The S&P 500 slipped "
+                    f"{abs(pct):.1f}%, but markets weren't in full retreat — some sectors "
+                    f"held up. This looks more like rotation than a broad risk-off move."
+                )
+            else:
+                lines.append(
+                    f"**Stocks pulled back modestly yesterday.** The S&P 500 lost {abs(pct):.1f}% "
+                    f"— a ${dollar_move:,.0f} hit on a $10,000 portfolio, nothing dramatic."
+                )
+
+        elif pct > 1.0 and all_up and companions:
+            comp_strs = []
+            for idx in [nasdaq, dow]:
+                if idx and idx.get("daily_pct") is not None:
+                    comp_strs.append(f"{idx['name']} {idx['daily_pct']:+.2f}%")
+            advance = f" with {' and '.join(comp_strs)} joining the advance" if comp_strs else ""
             lines.append(
-                f"**Yesterday was a strong session.** The S&P 500 gained {pct:+.1f}%, "
-                f"meaning a $10,000 index portfolio grew by about ${abs(pct) * 100:,.0f}."
+                f"**Yesterday's rally was broad-based.** The S&P 500 gained {pct:.1f}%"
+                f"{advance} — a clean risk-on session. A $10,000 portfolio added "
+                f"roughly ${dollar_move:,.0f}."
             )
+
         elif pct > 0:
             lines.append(
                 f"**Stocks edged higher yesterday.** The S&P 500 was up {pct:+.1f}% "
                 f"— a quiet positive session, nothing dramatic."
             )
-        elif pct > -1.5:
-            lines.append(
-                f"**Stocks pulled back modestly yesterday.** The S&P 500 lost {abs(pct):.1f}% "
-                f"— a routine dip, not a panic."
-            )
         else:
             lines.append(
-                f"**Yesterday was a rough session.** The S&P 500 dropped {abs(pct):.1f}%, "
-                f"meaning a $10,000 index portfolio lost about ${abs(pct) * 100:,.0f}."
+                f"**Stocks slipped modestly yesterday.** The S&P 500 lost {abs(pct):.1f}% "
+                f"— a routine dip, not a panic."
             )
 
-    if gold and gold["daily_pct"] is not None:
-        if abs(gold["daily_pct"]) >= 0.8:
-            direction = "surged" if gold["daily_pct"] > 0 else "fell"
-            lines.append(
-                f"**Gold {direction} {abs(gold['daily_pct']):.1f}% yesterday.** "
-                + ("Investors are moving into safe havens — a sign of caution."
-                   if gold["daily_pct"] > 0 else
-                   "Investors feel confident enough to step away from safety assets.")
-            )
+    # ── Para 2: Theme + cross-indicator (yields, gold, trade, geopolitics) ─────
+    cross_para = _build_cross_indicator_para(us_indices, news_items, yesterday_events)
+    if cross_para:
+        lines.append(cross_para)
 
-    if treasury and treasury.get("yield_change_bps") is not None:
-        bps = treasury["yield_change_bps"]
-        if abs(bps) >= 5:
-            if bps > 0:
-                lines.append(
-                    f"**Bond yields rose {bps:.0f} bps** (10-year now at "
-                    f"{treasury['close']:.2f}%). Higher yields weigh on growth stocks "
-                    f"and raise borrowing costs."
-                )
-            else:
-                lines.append(
-                    f"**Bond yields fell {abs(bps):.0f} bps** (10-year now at "
-                    f"{treasury['close']:.2f}%). Falling yields typically support "
-                    f"growth stocks and bond prices."
-                )
-
-    # Futures signal
+    # ── Para 3: Binary event framing ───────────────────────────────────────────
     fut_with_data = [f for f in futures if f["daily_pct"] is not None]
-    if fut_with_data:
-        all_green = all(f["daily_pct"] >= 0 for f in fut_with_data)
-        all_red   = all(f["daily_pct"] < 0  for f in fut_with_data)
+    high_today    = [e for e in today_events if e.get("importance", 0) >= 3]
+
+    if high_today:
+        binary = _build_binary_event_para(high_today, fut_with_data)
+        if binary:
+            lines.append(binary)
+    elif fut_with_data:
+        # Fallback futures signal when no high-importance events today
+        equity_futs = [f for f in fut_with_data if any(
+            kw in f.get("name", "") for kw in ["S&P", "Nasdaq", "Dow"]
+        )]
+        all_green = equity_futs and all(f["daily_pct"] >= 0 for f in equity_futs)
+        all_red   = equity_futs and all(f["daily_pct"] < 0  for f in equity_futs)
         if all_green:
             lines.append(
                 "**Pre-market futures are green** — the market is leaning toward a "
@@ -317,20 +593,8 @@ def generate_daybreak_plain_summary(us_indices: list, intl_indices: list,
         elif all_red:
             lines.append(
                 "**Pre-market futures are red** — the market is signalling caution. "
-                "It's worth watching whether sellers extend yesterday's weakness or "
-                "buyers step in at the open."
+                "Watch whether sellers extend yesterday's weakness or buyers step in."
             )
-
-    # Today's watch list preview
-    high_today = [e for e in today_events if e.get("importance", 0) >= 3]
-    if high_today:
-        names = [e["event"] for e in high_today[:2]]
-        verb = "are" if len(names) > 1 else "is"
-        lines.append(
-            f"**Today's key events:** {' and '.join(names)} {verb} on the calendar. "
-            "These can move markets — particularly bonds and rate-sensitive sectors — "
-            "so be positioned before the prints rather than reacting after."
-        )
 
     if not lines:
         return "No strong signals to call out this morning."
@@ -824,10 +1088,15 @@ def build_daybreak_context(raw: dict) -> dict:
     yesterday_events = raw.get("econ_calendar", {}).get("yesterday", [])
     today_events     = raw.get("econ_calendar", {}).get("today", [])
 
+    market_news_raw = raw.get("market_news", [])
+
     narrative    = generate_daybreak_narrative(us_indices, intl_indices,
                                                fx_rates, futures)
-    plain_summary = generate_daybreak_plain_summary(us_indices, intl_indices,
-                                                     futures, today_events)
+    plain_summary = generate_daybreak_plain_summary(
+        us_indices, intl_indices, futures, today_events,
+        news_items=market_news_raw,
+        yesterday_events=yesterday_events,
+    )
     tips         = generate_daybreak_positioning_tips(us_indices, futures,
                                                        yesterday_events, today_events)
 
@@ -853,7 +1122,7 @@ def build_daybreak_context(raw: dict) -> dict:
         "region_banner":  "Coverage: US Close \u00b7 Asia-Pacific \u00b7 Europe \u00b7 FX \u00b7 Macro",
         "narrative":      narrative,
         "plain_summary":  plain_summary,
-        "market_news":    process_market_news(raw.get("market_news", [])),
+        "market_news":    process_market_news(market_news_raw),
         "us_indices":     us_indices,
         "intl_indices":   intl_indices,
         "fx_rates":       fx_rates,
