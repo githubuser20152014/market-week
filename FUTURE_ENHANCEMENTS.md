@@ -135,11 +135,9 @@
   - Auto-generate `sitemap.xml` in `build_combined_site.py`
   - Add `<link rel="canonical">` to each edition page for SEO
 
-- [ ] **Visitor comments** `[IDEA]` `[MEDIUM]`
-  - Allow readers to leave comments on individual newsletter editions
-  - Options: embed [Giscus](https://giscus.app/) (GitHub Discussions-backed, no backend needed) or [Utterances](https://utteranc.es/) (GitHub Issues-backed)
-  - Inject comment widget `<script>` block at bottom of each edition page in `build_site.py` / `intl_build_site.py`
-  - Giscus preferred: supports reactions, threaded replies, and maps one discussion per page URL
+- [x] **Visitor comments** `[SHIPPED]` `[MEDIUM]`
+  - Implemented via Formspree comment form on main index and daily hub pages (2026-03-13)
+  - Future upgrade: embed [Giscus](https://giscus.app/) (GitHub Discussions-backed) for threaded replies and reactions on individual edition pages
 
 ---
 
