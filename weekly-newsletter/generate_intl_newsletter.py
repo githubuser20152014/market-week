@@ -3,7 +3,7 @@
 
 import argparse
 import json
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -16,6 +16,39 @@ from data.pdf_export import generate_pdf
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "output"
 TEMPLATES_DIR = BASE_DIR / "templates"
+
+
+def _load_week_daybreak_data(date_str):
+    """Load and aggregate daybreak fixture data for the newsletter week."""
+    target = date.fromisoformat(date_str)
+    monday = target - timedelta(days=target.weekday())
+
+    fixtures_dir = BASE_DIR / "fixtures"
+    news_items  = []
+    week_events = []
+
+    for offset in range(5):  # Mon–Fri
+        day = monday + timedelta(days=offset)
+        if day > target:
+            break
+        fixture_path = fixtures_dir / f"daybreak_{day.isoformat()}.json"
+        if not fixture_path.exists():
+            continue
+        try:
+            data = json.loads(fixture_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+
+        for item in data.get("market_news", []):
+            news_items.append({
+                "headline": item.get("headline", ""),
+                "summary":  item.get("summary", ""),
+            })
+
+        for ev in data.get("econ_calendar", {}).get("yesterday", []):
+            week_events.append(ev)
+
+    return {"news_items": news_items, "week_events": week_events}
 
 
 def render_newsletter(context):
@@ -71,10 +104,13 @@ def main():
         )
         print(f"Fixtures saved to {fixtures_dir}/intl_indices_{date_str}.json + intl_fx_{date_str}.json")
 
+    # Load aggregated daybreak fixture data for the week (read-only, never fails)
+    daybreak_context = _load_week_daybreak_data(date_str)
+
     # Process
     index_data = process_intl_index_data(raw_indices)
     fx_data = process_fx_data(raw_fx)
-    context = build_intl_template_context(index_data, fx_data, econ, date_str)
+    context = build_intl_template_context(index_data, fx_data, econ, date_str, daybreak_context=daybreak_context)
 
     # Generate chart (indices only — keeps the chart readable)
     OUTPUT_DIR.mkdir(exist_ok=True)

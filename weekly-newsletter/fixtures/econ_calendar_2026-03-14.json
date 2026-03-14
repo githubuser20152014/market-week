@@ -1,0 +1,96 @@
+{
+  "past_week": [
+    {
+      "date": "2026-03-11",
+      "event": "JOLTS Job Openings (January 2026)",
+      "importance": 2,
+      "actual": 6.946,
+      "expected": 6.8,
+      "previous": 6.55,
+      "unit": "M",
+      "surprise": "above",
+      "impact": "Job openings rose to 6.946M (approximately 7M) in January, beating the prior month's revised 6.55M and exceeding consensus. While openings remain well below the post-pandemic peak (~12M), the rebound from December's soft print suggests the labor market is holding up better than feared. A resilient job market reduces the Fed's urgency to cut rates."
+    },
+    {
+      "date": "2026-03-11",
+      "event": "CPI (February 2026, MoM / YoY)",
+      "importance": 3,
+      "actual": "0.3% / 2.4%",
+      "expected": "0.3% / 2.6%",
+      "previous": "0.3% / 2.6%",
+      "unit": "",
+      "surprise": "below",
+      "impact": "Headline CPI held at +0.3% MoM but the YoY rate cooled to 2.4% from 2.6%, coming in below consensus. 'Inflation held steady' was the headline read — markets took this as a mildly positive surprise, with YoY disinflation continuing. However, the Fed will want to see this confirmed in Core PCE before adjusting its stance."
+    },
+    {
+      "date": "2026-03-11",
+      "event": "Core CPI (February 2026, MoM / YoY)",
+      "importance": 3,
+      "actual": "0.2% / 2.5%",
+      "expected": "0.3% / 3.1%",
+      "previous": "0.3% / 3.0%",
+      "unit": "",
+      "surprise": "below",
+      "impact": "Core CPI (ex-food and energy) came in soft at +0.22% MoM — below the +0.3% consensus and the softest monthly reading in several months. The YoY rate eased to 2.47%, a mild disinflationary signal. This was the most encouraging data point of the week, suggesting underlying price pressures may be easing. Growth and rate-sensitive assets responded positively."
+    },
+    {
+      "date": "2026-03-13",
+      "event": "PCE Price Index (January 2026)",
+      "importance": 3,
+      "actual": "0.3% MoM / Core +0.4% MoM / Core +3.1% YoY",
+      "expected": "0.3% / Core 0.3%",
+      "previous": "0.3% / Core 0.4%",
+      "unit": "",
+      "surprise": "above",
+      "impact": "The Fed's preferred inflation gauge showed Core PCE at +3.05% YoY — well above the 2% target and the headline read was 'key inflation gauge worsened.' Core PCE MoM (+0.36%, rounds to 0.4%) came in above consensus. This offset the softer CPI print from Tuesday, reinforcing the higher-for-longer rate narrative heading into the FOMC meeting next week. Rate-sensitive assets sold off on the release."
+    },
+    {
+      "date": "2026-03-13",
+      "event": "Michigan Consumer Sentiment (March 2026, Preliminary)",
+      "importance": 2,
+      "actual": 55.5,
+      "expected": 63.0,
+      "previous": 64.7,
+      "unit": "",
+      "surprise": "below",
+      "impact": "Consumer sentiment dropped sharply to 55.5 in the March preliminary reading, well below the February final of 64.7 and consensus expectations. The 9.2-point drop signals a sudden deterioration in household confidence — likely reflecting oil price spikes, tariff uncertainty, and geopolitical anxiety. Weak sentiment is a leading indicator of softer consumer spending. Watch whether the final March reading confirms this drop."
+    }
+  ],
+  "upcoming_week": [
+    {
+      "date": "2026-03-16",
+      "event": "Retail Sales (February 2026)",
+      "importance": 3
+    },
+    {
+      "date": "2026-03-17",
+      "event": "Housing Starts & Building Permits (February 2026)",
+      "importance": 2
+    },
+    {
+      "date": "2026-03-18",
+      "event": "FOMC Rate Decision",
+      "importance": 3
+    },
+    {
+      "date": "2026-03-18",
+      "event": "PPI (February 2026)",
+      "importance": 3
+    },
+    {
+      "date": "2026-03-18",
+      "event": "FOMC Summary of Economic Projections (Dot Plot)",
+      "importance": 3
+    },
+    {
+      "date": "2026-03-19",
+      "event": "Initial Jobless Claims (week of Mar 15)",
+      "importance": 2
+    },
+    {
+      "date": "2026-03-19",
+      "event": "Philadelphia Fed Manufacturing Survey (March)",
+      "importance": 2
+    }
+  ]
+}

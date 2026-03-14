@@ -3,7 +3,7 @@
 
 import argparse
 import json
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -16,6 +16,48 @@ from data.pdf_export import generate_pdf
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "output"
 TEMPLATES_DIR = BASE_DIR / "templates"
+
+
+def _load_week_daybreak_data(date_str):
+    """Load and aggregate daybreak fixture data for the newsletter week.
+
+    Computes Mon–Fri dates for the week containing date_str, reads each
+    fixtures/daybreak_YYYY-MM-DD.json that exists, and aggregates market_news
+    items and econ_calendar.yesterday events across all found fixtures.
+
+    Returns:
+        dict with keys: news_items (list of {headline, summary}),
+                        week_events (list of econ calendar event dicts)
+    """
+    target = date.fromisoformat(date_str)
+    monday = target - timedelta(days=target.weekday())
+
+    fixtures_dir = BASE_DIR / "fixtures"
+    news_items  = []
+    week_events = []
+
+    for offset in range(5):  # Mon–Fri
+        day = monday + timedelta(days=offset)
+        if day > target:
+            break
+        fixture_path = fixtures_dir / f"daybreak_{day.isoformat()}.json"
+        if not fixture_path.exists():
+            continue
+        try:
+            data = json.loads(fixture_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+
+        for item in data.get("market_news", []):
+            news_items.append({
+                "headline": item.get("headline", ""),
+                "summary":  item.get("summary", ""),
+            })
+
+        for ev in data.get("econ_calendar", {}).get("yesterday", []):
+            week_events.append(ev)
+
+    return {"news_items": news_items, "week_events": week_events}
 
 
 def render_newsletter(context):
@@ -81,9 +123,12 @@ def main():
         from data.verify_prices import verify_prices
         verify_prices(raw_indices, date_str)
 
+    # Load aggregated daybreak fixture data for the week (read-only, never fails)
+    daybreak_context = _load_week_daybreak_data(date_str)
+
     # Process
     index_data = process_index_data(raw_indices)
-    context = build_template_context(index_data, econ, date_str)
+    context = build_template_context(index_data, econ, date_str, daybreak_context=daybreak_context)
 
     # Generate chart
     OUTPUT_DIR.mkdir(exist_ok=True)

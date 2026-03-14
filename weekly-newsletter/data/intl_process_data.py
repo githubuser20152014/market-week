@@ -357,155 +357,286 @@ def generate_intl_positioning_tips(econ, index_data=None, fx_data=None):
     return tips
 
 
-def generate_intl_plain_english_summary(index_data, fx_data, econ):
-    """Plain-English 'What This Means' summary for international active investors."""
+def _detect_intl_weekly_themes(past_events, news_items=None):
+    """Return {theme: score} by scanning event names and news headlines for intl themes."""
+    all_text = " ".join([
+        item.get("headline", "") + " " + item.get("summary", "")
+        for item in (news_items or [])
+    ] + [e.get("event", "") for e in (past_events or [])]).lower()
+
+    return {
+        "ecb": sum(1 for kw in [
+            "ecb", "european central bank", "eurozone rate", "euro rate",
+            "lagarde", "ecb rate", "ecb hold", "ecb cut",
+        ] if kw in all_text),
+        "boj": sum(1 for kw in [
+            "boj", "bank of japan", "boj rate", "boj hike",
+            "yen carry", "yield curve control", "ycc",
+        ] if kw in all_text),
+        "china": sum(1 for kw in [
+            "china", "caixin", "pboc", "yuan", "renminbi", "pmi china",
+            "chinese", "beijing", "shanghai",
+        ] if kw in all_text),
+        "trade": sum(1 for kw in [
+            "tariff", "trade war", "section 301", "import duty",
+            "trade probe", "sanction", "trade tension", "trade policy",
+        ] if kw in all_text),
+    }
+
+
+def _build_intl_next_week_binary_para(upcoming_events):
+    """Frame next week's high-importance international events as binary outcomes."""
+    high_next = [e for e in upcoming_events if e.get("importance", 0) >= 3]
+    if not high_next:
+        return ""
+
+    event_names       = [e.get("event", "") for e in high_next]
+    event_names_lower = [n.lower() for n in event_names]
+
+    has_ecb = any("ecb" in n for n in event_names_lower)
+    has_boj = any("boj" in n or "bank of japan" in n for n in event_names_lower)
+    has_boe = any("boe" in n or "bank of england" in n for n in event_names_lower)
+    has_cpi = any("cpi" in n for n in event_names_lower)
+    has_gdp = any("gdp" in n for n in event_names_lower)
+
+    if has_ecb:
+        ecb_name = next((n for n in event_names if "ecb" in n.lower()), "ECB Rate Decision")
+        return (
+            f"**{ecb_name} is the key event next week.** "
+            f"A cut signals the ECB is prioritising growth — positive for European equities (EFA, FEZ) but "
+            f"may weaken the Euro, creating a currency headwind for unhedged holders. "
+            f"A hold keeps EUR supported but delays the rate-cut tailwind for rate-sensitive sectors. "
+            f"Size positions before the announcement, not after."
+        )
+
+    if has_boj:
+        boj_name = next(
+            (n for n in event_names if "boj" in n.lower() or "bank of japan" in n.lower()),
+            "BOJ Meeting",
+        )
+        return (
+            f"**{boj_name} is the key risk event next week.** "
+            f"A hawkish signal or rate hike would likely strengthen the Yen sharply — "
+            f"good for dollar-based Japan ETF holders (EWJ) but a headwind for Japan exporters. "
+            f"A dovish hold keeps the Yen weak and supports Japanese equity returns in USD terms. "
+            f"Carry-trade unwind risk could ripple into EM assets either way."
+        )
+
+    if has_boe:
+        boe_name = next(
+            (n for n in event_names if "boe" in n.lower() or "bank of england" in n.lower()),
+            "BOE Rate Decision",
+        )
+        return (
+            f"**{boe_name} lands next week.** "
+            f"A hawkish hold or hike supports GBP (positive for FXB) but weighs on UK rate-sensitive sectors. "
+            f"A cut or dovish signal softens GBP and lifts UK equities — watch EWU for direction."
+        )
+
+    if has_cpi and has_gdp:
+        return (
+            f"**Next week brings both inflation and growth data for major economies.** "
+            f"Sticky CPI + weak GDP would be a stagflationary signal — defensives over growth regionally. "
+            f"Cool CPI + strong GDP keeps the soft-landing story alive across international markets. "
+            f"Position before the prints."
+        )
+
+    if has_cpi:
+        cpi_name = next((n for n in event_names if "cpi" in n.lower()), "CPI")
+        return (
+            f"**{cpi_name} is the key print next week.** "
+            f"A hot reading complicates the rate-cut timeline for the relevant central bank — "
+            f"a headwind for rate-sensitive sectors and local bond proxies. "
+            f"A cool reading opens the door for earlier cuts, supporting equities and bonds. "
+            f"Position before the release."
+        )
+
+    names_str = " and ".join(event_names[:2])
+    return (
+        f"**Key international events next week: {names_str}.** "
+        f"These can move both local markets and currencies sharply — "
+        f"worth being positioned before the releases rather than reacting after."
+    )
+
+
+def generate_intl_plain_english_summary(index_data, fx_data, econ, news_items=None):
+    """Plain-English 'What This Means' summary for international active investors.
+
+    4 paragraphs: regional breadth → dominant theme + FX → event explanations → next-week binary.
+    """
     if not index_data:
         return "Not enough data to summarize this week."
 
-    import re as _re
+    if news_items is None:
+        news_items = []
+
     lines = []
 
     best = index_data[0]
     worst = index_data[-1]
 
     europe = [i for i in index_data if i.get("region") == "Europe"]
-    apac = [i for i in index_data if i.get("region") == "Asia-Pacific"]
-    em = [i for i in index_data if i.get("region") == "Emerging Markets"]
+    apac   = [i for i in index_data if i.get("region") == "Asia-Pacific"]
+    em     = [i for i in index_data if i.get("region") == "Emerging Markets"]
 
     up_count = sum(1 for i in index_data if i["weekly_pct"] > 0)
 
-    # ── 1. Overall market tone ────────────────────────────────────────────────
+    # ── Para 1: Regional breadth ──────────────────────────────────────────────
     if up_count == len(index_data):
-        tone_line = "**Global markets had a good week across the board.**"
-    elif up_count > len(index_data) / 2:
-        tone_line = f"**International markets mostly rose this week.**"
+        breadth_lead = "**Global markets had a good week across the board.**"
     elif up_count == 0:
-        tone_line = "**It was a rough week for international markets.**"
+        breadth_lead = "**It was a rough week for international markets.**"
+    elif up_count > len(index_data) / 2:
+        breadth_lead = "**International markets mostly rose this week**"
+        # check if it was regionally split
+        if europe and apac:
+            avg_eu = sum(i["weekly_pct"] for i in europe) / len(europe)
+            avg_ap = sum(i["weekly_pct"] for i in apac) / len(apac)
+            if (avg_eu > 0) != (avg_ap > 0):
+                breadth_lead = "**International markets were regionally split this week.**"
     else:
-        tone_line = "**International markets were mixed this week.**"
+        breadth_lead = "**International markets were mixed this week.**"
 
-    tone_line += (
+    breadth_lead += (
         f" The best performer was {best['name']} ({best['region']}) at {best['weekly_pct']:+.1f}%, "
         f"while {worst['name']} ({worst['region']}) was the weakest at {worst['weekly_pct']:+.1f}%."
     )
-    lines.append(tone_line)
 
-    # ── 2. Regional breakdown in plain English ────────────────────────────────
+    region_notes = []
     if europe:
         avg_eu = sum(i["weekly_pct"] for i in europe) / len(europe)
         if avg_eu > 1:
-            lines.append(f"European stocks had a solid week (up {avg_eu:+.1f}% on average). "
-                         f"If you hold European ETFs, that worked in your favour.")
+            region_notes.append(f"European stocks had a solid week (up {avg_eu:+.1f}% on average) — a win if you hold European ETFs")
         elif avg_eu > 0:
-            lines.append(f"European stocks edged higher ({avg_eu:+.1f}% on average) — modest gains, nothing dramatic.")
+            region_notes.append(f"European stocks edged higher ({avg_eu:+.1f}% on average) — modest gains, nothing dramatic")
         else:
-            lines.append(f"European stocks slipped ({avg_eu:.1f}% on average). "
-                         f"Weakness in Europe's largest economy (Germany) remains a drag.")
+            region_notes.append(f"European stocks slipped ({avg_eu:.1f}% on average), dragged by ongoing weakness in the region's largest economies")
 
     if apac:
         avg_ap = sum(i["weekly_pct"] for i in apac) / len(apac)
         nikkei = next((i for i in apac if "Nikkei" in i["name"]), None)
         if avg_ap > 1:
-            note = f" Japan's Nikkei led the region at {nikkei['weekly_pct']:+.1f}%." if nikkei and nikkei["weekly_pct"] == max(i["weekly_pct"] for i in apac) else ""
-            lines.append(f"Asia-Pacific was the standout region this week ({avg_ap:+.1f}% average).{note}")
+            note = f", with Japan's Nikkei leading at {nikkei['weekly_pct']:+.1f}%" if nikkei and nikkei["weekly_pct"] == max(i["weekly_pct"] for i in apac) else ""
+            region_notes.append(f"Asia-Pacific was the standout region ({avg_ap:+.1f}% average{note})")
         elif avg_ap > 0:
-            lines.append(f"Asia-Pacific markets gained modestly ({avg_ap:+.1f}% average).")
+            region_notes.append(f"Asia-Pacific gained modestly ({avg_ap:+.1f}% average)")
         else:
-            lines.append(f"Asia-Pacific markets declined ({avg_ap:.1f}% average) — a soft week for the region.")
+            region_notes.append(f"Asia-Pacific declined ({avg_ap:.1f}% average) — a soft week for the region")
 
     if em:
         em_pct = em[0]["weekly_pct"]
         if abs(em_pct) < 0.5:
-            lines.append(f"Emerging markets (MSCI EM) were largely flat ({em_pct:+.1f}%) — no strong directional signal.")
+            region_notes.append(f"Emerging markets (MSCI EM) were largely flat ({em_pct:+.1f}%)")
         elif em_pct > 0:
-            lines.append(f"Emerging markets (MSCI EM) gained {em_pct:+.1f}% — a positive week for EM-tilted ETFs.")
+            region_notes.append(f"Emerging markets (MSCI EM) gained {em_pct:+.1f}% — a positive week for EM-tilted ETFs")
         else:
-            lines.append(f"Emerging markets (MSCI EM) fell {em_pct:.1f}% — a cautious week for EM exposure.")
+            region_notes.append(f"Emerging markets (MSCI EM) fell {em_pct:.1f}% — a cautious week for EM exposure")
 
-    # ── 3. FX in plain English ────────────────────────────────────────────────
-    fx_lines = []
-    for fx in fx_data:
-        if abs(fx["weekly_pct"]) >= 0.3:
-            friendly = FX_FRIENDLY.get(fx["name"], fx["name"])
-            if fx["name"] == "JPY/USD":
-                if fx["weekly_pct"] < 0:
-                    fx_lines.append(
-                        f"The Japanese Yen weakened {abs(fx['weekly_pct']):.1f}% against the dollar. "
-                        f"If you hold Japan ETFs without a currency hedge, some of those stock gains were eaten up by the weaker Yen."
-                    )
-                else:
-                    fx_lines.append(
-                        f"The Japanese Yen strengthened {fx['weekly_pct']:.1f}% — that's a bonus for dollar-based investors holding Japan ETFs, "
-                        f"but it can also signal risk-off sentiment in global markets."
-                    )
-            elif fx["name"] == "EUR/USD":
-                if fx["weekly_pct"] > 0:
-                    fx_lines.append(
-                        f"The Euro rose {fx['weekly_pct']:.1f}% vs. the dollar — a tailwind if you hold European ETFs unhedged."
-                    )
-                else:
-                    fx_lines.append(
-                        f"The Euro slipped {abs(fx['weekly_pct']):.1f}% vs. the dollar — a headwind for unhedged European ETF holders, "
-                        f"partially offsetting any stock gains."
-                    )
-            elif abs(fx["weekly_pct"]) >= 0.5:
-                direction = "gained" if fx["weekly_pct"] > 0 else "lost"
-                fx_lines.append(
-                    f"{friendly} {direction} {abs(fx['weekly_pct']):.1f}% vs. the dollar "
-                    f"({'a tailwind' if fx['weekly_pct'] > 0 else 'a headwind'} for unhedged holdings in that currency)."
-                )
+    if region_notes:
+        breadth_lead += " " + "; ".join(region_notes) + "."
 
-    if fx_lines:
-        lines.append("\n**On currencies:**")
-        lines.extend([f"- {fl}" for fl in fx_lines])
+    lines.append(breadth_lead)
 
-    # ── 4. Economic events in plain English ───────────────────────────────────
+    # ── Para 2: Dominant regional theme + biggest FX move ─────────────────────
     past = econ.get("past_week", [])
-    data_lines = []
+    themes = _detect_intl_weekly_themes(past, news_items)
+
+    dominant = max(themes, key=lambda k: themes[k]) if any(themes.values()) else None
+    theme_score = themes.get(dominant, 0) if dominant else 0
+
+    # Find the biggest FX mover
+    big_fx = max(fx_data, key=lambda f: abs(f["weekly_pct"])) if fx_data else None
+
+    theme_para_parts = []
+
+    if dominant and theme_score > 0:
+        if dominant == "ecb":
+            theme_para_parts.append(
+                "**The ECB was the dominant narrative this week.** "
+                "European rate policy drove sentiment across both equity and currency markets."
+            )
+        elif dominant == "boj":
+            theme_para_parts.append(
+                "**Bank of Japan policy was the central story.** "
+                "BOJ signals drove Yen moves, which ripple through Japan ETF returns for dollar-based investors."
+            )
+        elif dominant == "china":
+            theme_para_parts.append(
+                "**China dominated the international narrative this week.** "
+                "Activity data from China has an outsized effect on EM equities and commodity-linked assets."
+            )
+        elif dominant == "trade":
+            theme_para_parts.append(
+                "**Trade policy was the key cross-border risk this week.** "
+                "Tariff headlines create uncertainty for multinationals and export-driven economies alike."
+            )
+
+    if big_fx and abs(big_fx["weekly_pct"]) >= 0.5:
+        friendly = FX_FRIENDLY.get(big_fx["name"], big_fx["name"])
+        direction = "strengthened" if big_fx["weekly_pct"] > 0 else "weakened"
+        tailwind  = "a tailwind" if big_fx["weekly_pct"] > 0 else "a headwind"
+        fx_note = (
+            f"{friendly} {direction} {abs(big_fx['weekly_pct']):.1f}% against the dollar — "
+            f"{tailwind} for unhedged holdings in that currency. "
+        )
+        # Add specific context for major pairs
+        if big_fx["name"] == "JPY/USD" and big_fx["weekly_pct"] < 0:
+            fx_note += "If you hold Japan ETFs without a currency hedge, some of those stock gains were offset by the weaker Yen."
+        elif big_fx["name"] == "EUR/USD" and big_fx["weekly_pct"] < 0:
+            fx_note += "Unhedged European ETF holders saw part of their stock gains erased by the Euro's slide."
+        elif big_fx["name"] == "EUR/USD" and big_fx["weekly_pct"] > 0:
+            fx_note += "Euro strength added to returns for unhedged holders of European equities."
+        theme_para_parts.append(fx_note)
+
+    if theme_para_parts:
+        lines.append(" ".join(theme_para_parts))
+
+    # ── Para 3: Economic event explanations (flowing prose) ───────────────────
+    data_paras = []
 
     for ev in past:
-        name = ev.get("event", "")
-        surprise = ev.get("surprise", "neutral")
-        actual = ev.get("actual", "--")
-        unit = ev.get("unit", "")
+        name      = ev.get("event", "")
+        surprise  = ev.get("surprise", "neutral")
+        actual    = ev.get("actual", "--")
+        unit      = ev.get("unit", "")
         name_lower = name.lower()
 
         if "ifo" in name_lower or "business climate" in name_lower:
             if surprise == "above":
-                data_lines.append(
-                    f"Germany's Ifo Business Climate index ticked up to {actual} — "
-                    f"a tentative sign that Europe's largest economy may be stabilising. "
+                data_paras.append(
+                    f"Germany's Ifo Business Climate ticked up to {actual} — "
+                    f"a tentative sign Europe's largest economy may be stabilising. "
                     f"Not a recovery, but the direction is improving."
                 )
             elif surprise == "below":
-                data_lines.append(
+                data_paras.append(
                     f"Germany's Ifo Business Climate disappointed at {actual}. "
-                    f"Business sentiment is still weak in Europe's biggest economy — "
+                    f"Business sentiment remains weak in Europe's biggest economy — "
                     f"a headwind for European-tilted portfolios."
                 )
 
-        elif "boj" in name_lower or ("bank of japan" in name_lower):
-            data_lines.append(
-                f"The Bank of Japan released meeting minutes that showed growing debate internally about raising rates further. "
+        elif "boj" in name_lower or "bank of japan" in name_lower:
+            data_paras.append(
+                f"The Bank of Japan's minutes showed growing internal debate about raising rates further. "
                 f"If the BOJ does hike, the Yen typically strengthens — good for dollar-based Japan investors, "
-                f"but exporters (a big chunk of Japan's market) can suffer."
+                f"but exporters (a large chunk of Japan's market) can suffer."
             )
 
         elif "eurozone cpi" in name_lower or ("euro" in name_lower and "cpi" in name_lower):
             if surprise == "above":
-                data_lines.append(
+                data_paras.append(
                     f"Eurozone inflation came in hotter than expected at {actual}{unit}. "
                     f"The ECB will feel less urgency to cut rates — a headwind for European bonds "
                     f"and rate-sensitive sectors."
                 )
-            elif surprise == "inline" or surprise == "neutral":
-                data_lines.append(
+            elif surprise in ("inline", "neutral"):
+                data_paras.append(
                     f"Eurozone inflation came in as expected at {actual}{unit}. "
-                    f"Inflation is on a cooling trend, which gives the ECB room to cut rates later in the year — "
+                    f"Inflation is on a cooling trend, giving the ECB room to cut rates later in the year — "
                     f"a quiet positive for European bonds and dividend-paying sectors."
                 )
             elif surprise == "below":
-                data_lines.append(
+                data_paras.append(
                     f"Eurozone inflation came in below expectations at {actual}{unit}. "
                     f"Faster disinflation opens the door for ECB rate cuts sooner — "
                     f"positive for European rate-sensitive assets."
@@ -513,85 +644,63 @@ def generate_intl_plain_english_summary(index_data, fx_data, econ):
 
         elif "uk cpi" in name_lower:
             if surprise == "above":
-                data_lines.append(
+                data_paras.append(
                     f"UK inflation stayed sticky at {actual}{unit}, above what was expected. "
-                    f"The Bank of England is unlikely to cut rates soon — "
-                    f"that keeps pressure on UK consumers and mortgage holders, "
-                    f"but supports the pound."
+                    f"The Bank of England is unlikely to cut rates soon — keeping pressure on UK consumers "
+                    f"and mortgage holders, but supporting the pound."
                 )
 
         elif "australia" in name_lower and "gdp" in name_lower:
             if surprise == "above":
-                data_lines.append(
-                    f"Australia's economy grew better than expected in Q4. "
+                data_paras.append(
+                    f"Australia's economy grew better than expected. "
                     f"Strong Australian growth tends to support the AUD and Australian equities (EWA)."
                 )
             elif surprise == "below":
-                data_lines.append(
-                    f"Australia's Q4 GDP disappointed. Slower growth puts pressure on the RBA "
+                data_paras.append(
+                    f"Australia's GDP disappointed. Slower growth puts pressure on the RBA "
                     f"to consider rate cuts — watch AUD for direction."
                 )
 
         elif "ecb rate" in name_lower:
             if surprise == "neutral":
-                data_lines.append(
-                    f"The ECB held interest rates steady. That was widely expected — "
-                    f"the key was the tone: policymakers signaled they're watching data carefully "
-                    f"before making their next move. No immediate catalyst from this for markets."
+                data_paras.append(
+                    f"The ECB held interest rates steady — widely expected. "
+                    f"The key was tone: policymakers signalled they're watching data carefully "
+                    f"before their next move. No immediate catalyst for markets from this."
                 )
 
         elif "china" in name_lower and "pmi" in name_lower:
             if surprise == "above":
-                data_lines.append(
+                data_paras.append(
                     f"China's factory/services activity beat expectations — a positive signal "
                     f"for global growth and commodities. EM ETFs and commodity-linked holdings tend to benefit."
                 )
             elif surprise == "below":
-                data_lines.append(
+                data_paras.append(
                     f"China's activity data disappointed — a cautionary signal for EM exposure "
                     f"and commodity-linked ETFs."
                 )
 
-    if data_lines:
-        lines.append("\n**On the economic data front:**")
-        lines.extend([f"- {dl}" for dl in data_lines])
+    if data_paras:
+        lines.append(" ".join(data_paras))
 
-    # ── 5. Bottom line ────────────────────────────────────────────────────────
+    # ── Para 4: Next-week binary framing ──────────────────────────────────────
     upcoming = econ.get("upcoming_week", [])
-    high_next = [e for e in upcoming if e.get("importance", 0) >= 3]
-
-    if up_count > len(index_data) / 2 and not any(
-        e.get("surprise") == "below" for e in past
-    ):
-        bottom = ("**The bottom line:** A decent week for international holdings. "
-                  "If you're globally diversified, this week rewarded that. "
-                  "Keep an eye on currency moves — they can quietly add or subtract from your returns "
-                  "even when the underlying stocks look fine.")
-    elif up_count < len(index_data) / 2:
-        bottom = ("**The bottom line:** A soft week overseas. "
-                  "For investors with international exposure, it's worth checking whether "
-                  "the weakness is concentrated in one region (rotation opportunity) or broad-based (risk-off signal). "
-                  "Don't confuse currency noise with underlying equity weakness — check both.")
+    binary_para = _build_intl_next_week_binary_para(upcoming)
+    if binary_para:
+        lines.append(binary_para)
     else:
-        bottom = ("**The bottom line:** A mixed bag globally this week. "
-                  "Some regions did well, others didn't. "
-                  "That's a reminder of why regional diversification matters — "
-                  "the winners and losers rotate, and you want exposure to both.")
-
-    lines.append(bottom)
-
-    if high_next:
-        next_names = [e["event"] for e in high_next[:2]]
+        # Fallback: quiet week
         lines.append(
-            f"**Watch next week:** {' and '.join(next_names)}. "
-            f"These can move both local markets and currencies sharply — "
-            f"worth being positioned before the releases rather than reacting after."
+            "**Next week's international calendar is lighter** — a good time to review "
+            "regional allocations and currency hedging ratios rather than react to noise."
         )
 
     return "\n\n".join(lines)
 
 
-def build_intl_template_context(index_data, fx_data, econ, date_str):
+def build_intl_template_context(index_data, fx_data, econ, date_str, daybreak_context=None):
     """Assemble the full context dict for the international Jinja2 template.
 
     Args:
@@ -599,13 +708,16 @@ def build_intl_template_context(index_data, fx_data, econ, date_str):
         fx_data: List from process_fx_data.
         econ: Raw international econ calendar dict.
         date_str: The newsletter date (YYYY-MM-DD).
+        daybreak_context: Optional dict from _load_week_daybreak_data with
+            news_items and week_events aggregated from daily daybreak fixtures.
 
     Returns:
         Dict ready for Jinja2 rendering.
     """
     tips = generate_intl_positioning_tips(econ, index_data, fx_data)
     narrative = generate_intl_narrative(index_data, fx_data, econ)
-    plain_summary = generate_intl_plain_english_summary(index_data, fx_data, econ)
+    news_items = (daybreak_context or {}).get("news_items", [])
+    plain_summary = generate_intl_plain_english_summary(index_data, fx_data, econ, news_items=news_items)
 
     best = index_data[0] if index_data else None
     worst = index_data[-1] if index_data else None
