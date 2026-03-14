@@ -86,16 +86,21 @@ def _join_list(items):
     return ", ".join(items[:-1]) + f", and {items[-1]}"
 
 
-def generate_intl_narrative(index_data, fx_data, econ):
+def generate_intl_narrative(index_data, fx_data, econ, news_items=None):
     """Generate a top-of-newsletter narrative summarising the global week.
 
-    Three paragraphs:
-    1. Overall direction, best/worst performers, regional spread.
-    2. Central bank and economic drivers, FX context.
-    3. Look-ahead to high-importance upcoming events.
+    Five paragraphs:
+    1. All equity indices with closes + weekly % + regional breadth characterisation.
+    2. FX biggest mover with tailwind/headwind framing.
+    3. Dominant theme via _detect_intl_weekly_themes + news headline.
+    4. Economic data surprises with so-what commentary.
+    5. Look-ahead with ECB/BOJ/BOE marquee-event framing.
     """
     if not index_data:
         return "International markets were closed this week."
+
+    if news_items is None:
+        news_items = []
 
     best = index_data[0]
     worst = index_data[-1]
@@ -112,10 +117,20 @@ def generate_intl_narrative(index_data, fx_data, econ):
     else:
         tone = "International markets were mixed this week"
 
-    para1 = (
-        f"{tone}, with {best['name']} ({best['region']}) leading at {best['weekly_pct']:+.2f}% "
-        f"and {worst['name']} ({worst['region']}) lagging at {worst['weekly_pct']:+.2f}%."
-    )
+    # Build per-index detail with closing prices (mirrors US format)
+    index_details = []
+    for idx in index_data:
+        index_details.append(
+            f"{idx['name']} closing at {idx['close']:,.2f} ({idx['weekly_pct']:+.2f}%)"
+        )
+
+    if index_details:
+        para1 = f"{tone}: " + ", ".join(index_details) + "."
+    else:
+        para1 = (
+            f"{tone}, with {best['name']} ({best['region']}) leading at {best['weekly_pct']:+.2f}% "
+            f"and {worst['name']} ({worst['region']}) lagging at {worst['weekly_pct']:+.2f}%."
+        )
 
     # Add regional colour
     europe = [i for i in index_data if i.get("region") == "Europe"]
@@ -138,79 +153,338 @@ def generate_intl_narrative(index_data, fx_data, econ):
     if region_notes:
         para1 += " " + "; ".join(region_notes) + "."
 
-    # FX context: build a clean comma-separated sentence, "against the USD" once at the end
-    fx_notes = []
-    for fx in fx_data:
-        if abs(fx["weekly_pct"]) >= 0.3:
-            direction = "strengthened" if fx["weekly_pct"] > 0 else "weakened"
-            friendly = FX_FRIENDLY.get(fx["name"], fx["name"])
-            fx_notes.append(f"{friendly} {direction} {abs(fx['weekly_pct']):.2f}%")
-    if fx_notes:
-        para1 += " On the FX front, " + _join_list(fx_notes) + ", all against the USD."
+    paras = [para1]
 
-    # Para 2: Economic drivers
+    # ── Para 2: FX — biggest mover + per-pair context ────────────────────────
     past = econ.get("past_week", [])
+    if fx_data:
+        big_fx = max(fx_data, key=lambda f: abs(f["weekly_pct"]))
+        if abs(big_fx["weekly_pct"]) >= 0.3:
+            friendly = FX_FRIENDLY.get(big_fx["name"], big_fx["name"])
+            fx_lead = "The biggest gainer" if big_fx["weekly_pct"] > 0 else "The biggest loser"
+            fx_verb = "gaining" if big_fx["weekly_pct"] > 0 else "falling"
+            tailwind = "a tailwind" if big_fx["weekly_pct"] > 0 else "a headwind"
+            fx_para = (
+                f"{fx_lead} on the FX front was {friendly}, {fx_verb} "
+                f"{abs(big_fx['weekly_pct']):.2f}% against the dollar — "
+                f"{tailwind} for unhedged holdings in that currency."
+            )
+            # Pair-specific interpretation for the biggest mover
+            if big_fx["name"] == "CHF/USD" and big_fx["weekly_pct"] < 0:
+                fx_para += (
+                    " The Swiss Franc is typically a safe-haven currency; its weakness against the"
+                    " dollar this week suggests broad USD strength rather than a classic risk-off flight,"
+                    " since true safe-haven demand would normally lift the Franc."
+                )
+            elif big_fx["name"] == "CHF/USD" and big_fx["weekly_pct"] > 0:
+                fx_para += (
+                    " The Swiss Franc strengthening is a classic safe-haven signal — investors"
+                    " seeking shelter from global uncertainty tend to pile into CHF."
+                )
+            elif big_fx["name"] == "JPY/USD" and big_fx["weekly_pct"] < 0:
+                fx_para += (
+                    " A weaker Yen signals the BOJ's accommodative stance remains intact —"
+                    " the carry trade is still alive. For dollar-based Japan ETF holders (EWJ),"
+                    " this currency drag partially offsets any equity gains."
+                )
+            elif big_fx["name"] == "JPY/USD" and big_fx["weekly_pct"] > 0:
+                fx_para += (
+                    " Yen strength is typically a risk-off signal and can indicate"
+                    " carry-trade unwinding — when the Yen surges, EM assets often come under"
+                    " simultaneous pressure as leveraged positions are liquidated."
+                )
+            elif big_fx["name"] == "EUR/USD" and big_fx["weekly_pct"] < 0:
+                fx_para += (
+                    " Euro weakness compounds the pain for unhedged European ETF holders —"
+                    " stock losses in local currency terms get amplified when converted back to USD."
+                    " It also signals markets expect the ECB to diverge from the Fed on rate policy."
+                )
+            elif big_fx["name"] == "EUR/USD" and big_fx["weekly_pct"] > 0:
+                fx_para += (
+                    " Euro strength is a double tailwind for unhedged European ETF holders:"
+                    " equity gains in local terms get boosted further when converted to USD."
+                )
+            elif big_fx["name"] == "AUD/USD" and big_fx["weekly_pct"] < 0:
+                fx_para += (
+                    " AUD weakness is often a leading indicator of China demand concerns —"
+                    " Australia exports heavily to China, so a soft AUD frequently reflects"
+                    " pessimism about Chinese growth and commodity demand."
+                )
+            elif big_fx["name"] == "GBP/USD" and big_fx["weekly_pct"] < 0:
+                fx_para += (
+                    " Sterling weakness reflects market expectations that the BOE may need to"
+                    " cut rates sooner than previously thought, reducing the yield advantage"
+                    " that had been supporting the pound."
+                )
+
+            # Add context for other significant movers
+            other_fx = [
+                fx for fx in fx_data
+                if fx["name"] != big_fx["name"] and abs(fx["weekly_pct"]) >= 0.3
+            ]
+            if other_fx:
+                other_parts = []
+                for fx in other_fx:
+                    f_verb = "gained" if fx["weekly_pct"] > 0 else "lost"
+                    f_name = FX_FRIENDLY.get(fx["name"], fx["name"])
+                    note = f"{f_name} {f_verb} {abs(fx['weekly_pct']):.2f}%"
+                    # Brief per-pair so-what for secondary movers
+                    if fx["name"] == "JPY/USD" and fx["weekly_pct"] < 0:
+                        note += " (Yen weakness keeping carry trades in play)"
+                    elif fx["name"] == "AUD/USD" and fx["weekly_pct"] < 0:
+                        note += " (AUD softness echoing China demand caution)"
+                    elif fx["name"] == "EUR/USD" and fx["weekly_pct"] < 0:
+                        note += " (Euro slide a headwind for unhedged EFA/FEZ holders)"
+                    elif fx["name"] == "EUR/USD" and fx["weekly_pct"] > 0:
+                        note += " (Euro strength a tailwind for unhedged European ETFs)"
+                    other_parts.append(note)
+                fx_para += " Elsewhere: " + "; ".join(other_parts) + "."
+
+            paras.append(fx_para)
+
+    # ── Para 3: Dominant theme with developed analysis ───────────────────────
+    themes = _detect_intl_weekly_themes(past, news_items)
+    dominant = max(themes, key=lambda k: themes[k]) if any(themes.values()) else None
+    theme_score = themes.get(dominant, 0) if dominant else 0
+
+    if dominant and theme_score > 0:
+        if dominant == "ecb":
+            theme_para = (
+                "ECB policy was the dominant narrative this week. European rate expectations"
+                " drove sentiment across both equity and currency markets — when the ECB is"
+                " seen as moving toward cuts, European equities (EFA, FEZ, EWG) tend to rally"
+                " and the Euro softens; when the ECB holds firm, the reverse applies."
+                " The key question for investors: is the ECB cutting because inflation is beaten,"
+                " or because growth is weak? The former is equity-positive; the latter is not."
+            )
+        elif dominant == "boj":
+            theme_para = (
+                "Bank of Japan policy was the central story this week. The BOJ sits in a uniquely"
+                " difficult position — the last major central bank still running near-zero rates,"
+                " its every signal scrutinised for signs of normalisation."
+                " A hawkish lean strengthens the Yen and compresses returns for Japan exporters"
+                " (a large share of the Nikkei), but boosts dollar-based ETF returns on unhedged"
+                " Japan exposure. A dovish hold keeps the carry trade alive — cheap Yen borrowed"
+                " to fund higher-yielding assets elsewhere — but that trade unwinds fast when"
+                " BOJ surprises to the hawkish side, rippling into EM and risk assets globally."
+            )
+        elif dominant == "china":
+            theme_para = (
+                "China dominated the international narrative this week. China's economy has an"
+                " outsized reach across global markets — it's the top trading partner for most"
+                " of Asia-Pacific and a critical source of demand for commodity exporters like"
+                " Australia (AUD, EWA) and Brazil (EWZ)."
+                " Weak Chinese data drags EM equities broadly (EEM, FXI) and tends to put"
+                " downward pressure on industrial metals and energy, feeding back into"
+                " commodity-linked currencies. Strong Chinese data has the opposite effect:"
+                " a rising tide that lifts EM, APAC, and commodity-exposed portfolios."
+            )
+        elif dominant == "trade":
+            trade_hl = ""
+            for item in news_items:
+                hl = item.get("headline", "")
+                if any(kw in hl.lower() for kw in ["tariff", "trade war", "section 301", "import duty", "trade probe"]):
+                    trade_hl = hl
+                    break
+            if trade_hl:
+                theme_para = (
+                    f"Trade policy was the key cross-border risk this week — {trade_hl.rstrip('.')}."
+                    " Tariff escalation hits export-heavy economies hardest: Germany, Japan, South Korea,"
+                    " and Taiwan all run large trade surpluses with the US and are directly in the line"
+                    " of fire. European industrials and Japanese manufacturers tend to see the sharpest"
+                    " earnings pressure when tariff risk rises, while domestic-demand-driven markets"
+                    " (India, Brazil) are more insulated."
+                    " For ETF investors, currency-hedged exposure to tariff-exposed markets"
+                    " (HEWJ for Japan, HEDJ for Europe) reduces one layer of risk when trade"
+                    " headlines dominate."
+                )
+            else:
+                theme_para = (
+                    "Trade policy tensions were the key cross-border risk this week."
+                    " Tariff uncertainty creates a wide dispersion of outcomes across regions:"
+                    " export-heavy economies like Germany, Japan, and South Korea face direct"
+                    " earnings pressure on their industrial and manufacturing sectors, while"
+                    " more domestically-oriented markets are better insulated."
+                    " When trade risk dominates, consider tilting toward currency-hedged"
+                    " international ETFs (HEWJ, HEDJ) to isolate equity returns from FX noise."
+                )
+        else:
+            theme_para = ""
+
+        if theme_para:
+            paras.append(theme_para)
+
+    # ── Para 4: Economic data with per-event so-what ─────────────────────────
     surprises = [e for e in past if e.get("surprise") in ("above", "below")]
+    all_past = [e for e in past if e.get("surprise")]  # includes inline
 
     if surprises:
-        drivers = []
+        data_parts = []
         for e in surprises:
             name = e["event"]
             unit = e.get("unit", "")
-            if e["surprise"] == "above":
-                drivers.append(
-                    f"{name} came in above expectations ({e['actual']}{unit} vs. {e['expected']}{unit})"
+            actual = e["actual"]
+            expected = e["expected"]
+            surprise = e["surprise"]
+            name_lower = name.lower()
+
+            if surprise == "above":
+                direction_word = "beat"
+                so_what = ""
+                if "ifo" in name_lower or "business climate" in name_lower:
+                    so_what = (
+                        f" German business confidence ticking up is a tentative positive for"
+                        f" European equities — but the index needs to sustain a move higher"
+                        f" before it signals a genuine recovery in Europe's largest economy."
+                    )
+                elif "pmi" in name_lower and "china" in name_lower:
+                    so_what = (
+                        f" Chinese factory activity expanding above expectations is a"
+                        f" green light for EM bulls — it supports commodity demand and"
+                        f" lifts sentiment across Asia-Pacific and EM ETFs."
+                    )
+                elif "gdp" in name_lower:
+                    so_what = (
+                        f" Stronger-than-expected growth reduces the urgency for rate cuts"
+                        f" and supports corporate earnings — a modest positive for the region's equities."
+                    )
+                elif "cpi" in name_lower:
+                    so_what = (
+                        f" Hotter-than-expected inflation complicates the rate-cut timeline"
+                        f" — the relevant central bank has less room to ease, a headwind"
+                        f" for rate-sensitive sectors and local bond proxies."
+                    )
+                data_parts.append(
+                    f"{name} {direction_word} at {actual}{unit} vs. {expected}{unit} expected.{so_what}"
                 )
             else:
-                drivers.append(
-                    f"{name} came in below expectations ({e['actual']}{unit} vs. {e['expected']}{unit})"
+                direction_word = "missed"
+                so_what = ""
+                if "gdp" in name_lower:
+                    so_what = (
+                        f" Growth disappointing raises the probability of earlier rate cuts"
+                        f" — a potential tailwind for bond proxies and rate-sensitive sectors,"
+                        f" but a warning sign for cyclicals."
+                    )
+                elif "pmi" in name_lower and "china" in name_lower:
+                    so_what = (
+                        f" Softer Chinese activity is a warning for EM exposure and"
+                        f" commodity-linked ETFs — AUD and commodity exporters tend to"
+                        f" feel the pinch first."
+                    )
+                elif "ifo" in name_lower or "business climate" in name_lower:
+                    so_what = (
+                        f" Weak German business sentiment adds to the case for ECB easing"
+                        f" and signals continued headwinds for European industrial stocks."
+                    )
+                elif "cpi" in name_lower:
+                    so_what = (
+                        f" Softer-than-expected inflation opens the door for the relevant"
+                        f" central bank to cut rates — a positive for rate-sensitive assets"
+                        f" and local bond proxies."
+                    )
+                data_parts.append(
+                    f"{name} {direction_word} at {actual}{unit} vs. {expected}{unit} expected.{so_what}"
                 )
 
-        para2 = "The macro picture was eventful. " + ". ".join(drivers) + "."
+        para_data = "On the data front: " + " ".join(data_parts)
 
-        has_hot_cpi = any(
-            "cpi" in e["event"].lower() and e["surprise"] == "above" for e in surprises
-        )
-        has_weak_gdp = any(
-            "gdp" in e["event"].lower() and e["surprise"] == "below" for e in surprises
-        )
+        has_hot_cpi = any("cpi" in e["event"].lower() and e["surprise"] == "above" for e in surprises)
+        has_weak_gdp = any("gdp" in e["event"].lower() and e["surprise"] == "below" for e in surprises)
         if has_hot_cpi and has_weak_gdp:
-            para2 += (
-                " The combination of sticky inflation and weak growth (a stagflationary signal)"
-                " puts central banks in a difficult position and argues for a cautious stance"
-                " on duration and rate-sensitive sectors."
+            para_data += (
+                " The combination of sticky inflation and weak growth is a stagflationary signal —"
+                " it puts central banks in a bind (can't cut without risking inflation; can't hold"
+                " without deepening the slowdown) and argues for defensives over rate-sensitives."
             )
-        elif has_hot_cpi:
-            para2 += (
-                " Sticky inflation complicates the rate-cut timeline for the relevant central bank."
-                " Monitor upcoming policy meetings closely."
-            )
-        elif has_weak_gdp:
-            para2 += (
-                " Growth weakness raises the probability of earlier rate cuts,"
-                " which could be supportive for bond proxies and interest-rate-sensitive sectors."
-            )
+        paras.append(para_data)
     else:
-        para2 = "It was a quiet week on the international data front, with no major surprises."
+        paras.append(
+            "It was a quiet week on the international data front, with no major surprises to shift"
+            " the macro narrative. In the absence of new information, the prevailing trend — and"
+            " the positioning that has been working — tends to persist."
+        )
 
-    # Para 3: Look-ahead
+    # ── Para 5: Look-ahead with marquee event detection ──────────────────────
     upcoming = econ.get("upcoming_week", [])
     high_importance = [e for e in upcoming if e.get("importance", 0) >= 3]
+    med_next = [e for e in upcoming if e.get("importance", 0) == 2]
+
     if high_importance:
-        event_names = [e["event"] for e in high_importance]
-        para3 = (
-            "Looking ahead, key events to watch are: "
-            + ", ".join(event_names)
-            + ". Central bank decisions in particular can drive sharp FX and equity moves;"
-            " position sizing should reflect that risk."
-        )
+        high_names = [e["event"] for e in high_importance]
+        high_names_lower = [n.lower() for n in high_names]
+
+        watch_parts = []
+        has_ecb = any("ecb" in n for n in high_names_lower)
+        has_boj = any("boj" in n or "bank of japan" in n for n in high_names_lower)
+        has_boe = any("boe" in n or "bank of england" in n for n in high_names_lower)
+        has_cpi = any("cpi" in n for n in high_names_lower)
+        has_gdp = any("gdp" in n for n in high_names_lower)
+
+        if has_ecb:
+            watch_parts.append(
+                "the ECB rate decision is the marquee event — markets will parse every word"
+                " of the statement and press conference for signals on the pace of cuts."
+                " A cut flags the ECB is prioritising growth over inflation vigilance,"
+                " lifting European equities (EFA, FEZ) but likely weakening the Euro —"
+                " a headwind for unhedged holders. A hold keeps EUR supported but pushes"
+                " out the rate-cut tailwind for rate-sensitive sectors"
+            )
+        if has_boj:
+            watch_parts.append(
+                "the BOJ meeting is the key risk event — any hawkish signal or rate hike"
+                " would strengthen the Yen sharply, simultaneously lifting unhedged Japan"
+                " ETF returns while compressing Nikkei gains for domestic investors."
+                " A dovish hold keeps the carry trade on and Yen weak"
+            )
+        if has_boe:
+            watch_parts.append(
+                "the BOE rate decision lands — a hawkish hold or hike supports GBP (positive"
+                " for FXB) but weighs on UK rate-sensitive sectors; a cut or dovish shift"
+                " softens GBP and lifts UK equities. Watch EWU for the directional cue"
+            )
+        if has_cpi and not has_ecb and not has_boj and not has_boe:
+            watch_parts.append(
+                "CPI data across major economies will be the headline print —"
+                " a hot number extends the central bank hold and pressures rate-sensitive"
+                " sectors, while a cool read opens the door for earlier cuts"
+            )
+        if has_gdp and not has_ecb and not has_boj and not has_boe:
+            watch_parts.append(
+                "GDP data will test whether growth is holding up under the weight of"
+                " the current rate environment — weak prints shift the odds toward earlier easing"
+            )
+
+        if watch_parts:
+            joined = "; ".join(watch_parts)
+            para_ahead = (
+                "Next week's international calendar is active. "
+                + joined[0].upper() + joined[1:]
+                + ". Central bank decisions in particular can drive sharp simultaneous moves"
+                " in equities, bonds, and currencies — size positions before the announcement,"
+                " not after."
+            )
+        else:
+            para_ahead = (
+                "Looking ahead, key events to watch are: "
+                + ", ".join(high_names)
+                + ". These can move both local markets and currencies sharply —"
+                " worth being positioned before the releases rather than reacting after."
+            )
+
+        if med_next:
+            med_names = [e["event"] for e in med_next[:2]]
+            para_ahead += f" Secondary releases to monitor: {', '.join(med_names)}."
     else:
-        para3 = (
-            "Next week's international calendar is lighter, making it a good time to review"
-            " regional allocations and currency hedging ratios."
+        para_ahead = (
+            "Next week's international calendar is lighter — a good opportunity to review"
+            " regional allocations, check currency hedging ratios, and rebalance rather than"
+            " react to noise. Quieter calendars often see the prior week's trend extend."
         )
 
-    return f"{para1}\n\n{para2}\n\n{para3}"
+    paras.append(para_ahead)
+
+    return "\n\n".join(paras)
 
 
 def generate_intl_positioning_tips(econ, index_data=None, fx_data=None):
@@ -312,10 +586,12 @@ def generate_intl_positioning_tips(econ, index_data=None, fx_data=None):
             )
 
     # Upcoming event tips
+    ecb_tip_added = False
+    boj_tip_added = False
     for event in upcoming:
         name = event.get("event", "").lower()
 
-        if "ecb rate" in name or "ecb policy" in name:
+        if "ecb" in name and ("rate" in name or "policy" in name or "decision" in name) and not ecb_tip_added:
             tips.append(
                 "ECB Rate Decision on {date}: a key event for EUR and European equities."
                 " Reduce position size in EFA, FEZ, EWG ahead of the announcement;"
@@ -323,15 +599,18 @@ def generate_intl_positioning_tips(econ, index_data=None, fx_data=None):
                     **event
                 )
             )
+            ecb_tip_added = True
 
-        if "boj" in name:
+        if "boj" in name and not boj_tip_added:
+            label = "BOJ Rate Decision" if "rate decision" in name or "policy" in name else "BOJ Meeting"
             tips.append(
-                "BOJ Meeting Minutes on {date}: watch for any YCC or rate-hike signals."
+                f"{label} on {{date}}: watch for any YCC or rate-hike signals."
                 " A hawkish surprise would likely strengthen the Yen sharply and create volatility in"
                 " unhedged Japan exposure (EWJ). Carry-trade unwinding could ripple into EM assets.".format(
                     **event
                 )
             )
+            boj_tip_added = True
 
         if "eurozone cpi" in name or "euro cpi" in name:
             tips.append(
@@ -650,6 +929,32 @@ def generate_intl_plain_english_summary(index_data, fx_data, econ, news_items=No
                     f"and mortgage holders, but supporting the pound."
                 )
 
+        elif "core cpi" in name_lower:
+            if surprise == "above":
+                data_paras.append(
+                    f"Core CPI — inflation stripping out food and energy — came in hotter than expected at {actual}{unit}. "
+                    f"Sticky core inflation is the relevant central bank's primary concern; this makes near-term rate cuts less likely."
+                )
+            elif surprise == "below":
+                data_paras.append(
+                    f"Core CPI — the cleanest read on underlying inflation — came in softer than expected at {actual}{unit}. "
+                    f"Genuine easing of underlying price pressures gives the relevant central bank more room to eventually cut rates."
+                )
+
+        elif "cpi" in name_lower:
+            if surprise == "above":
+                data_paras.append(
+                    f"Headline CPI came in hotter than expected at {actual}{unit}. "
+                    f"Higher-than-expected inflation makes the relevant central bank less likely to cut rates soon — "
+                    f"a headwind for rate-sensitive sectors."
+                )
+            elif surprise == "below":
+                data_paras.append(
+                    f"Headline CPI came in cooler than expected at {actual}{unit}. "
+                    f"Progress on inflation gives the relevant central bank more room to cut rates — "
+                    f"a positive for rate-sensitive assets."
+                )
+
         elif "australia" in name_lower and "gdp" in name_lower:
             if surprise == "above":
                 data_paras.append(
@@ -715,8 +1020,8 @@ def build_intl_template_context(index_data, fx_data, econ, date_str, daybreak_co
         Dict ready for Jinja2 rendering.
     """
     tips = generate_intl_positioning_tips(econ, index_data, fx_data)
-    narrative = generate_intl_narrative(index_data, fx_data, econ)
     news_items = (daybreak_context or {}).get("news_items", [])
+    narrative = generate_intl_narrative(index_data, fx_data, econ, news_items=news_items)
     plain_summary = generate_intl_plain_english_summary(index_data, fx_data, econ, news_items=news_items)
 
     best = index_data[0] if index_data else None

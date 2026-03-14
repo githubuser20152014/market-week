@@ -1,0 +1,75 @@
+{
+  "past_week": [
+    {
+      "date": "2026-03-09",
+      "event": "Japan GDP Final (Q4 2025, QoQ)",
+      "importance": 2,
+      "actual": 0.6,
+      "expected": 0.7,
+      "previous": -0.4,
+      "unit": "%",
+      "surprise": "below",
+      "impact": "Japan's Q4 2025 GDP final reading was revised slightly down to +0.6% QoQ from the preliminary +0.7%, a small but directionally negative revision. The economy expanded in Q4 on stronger consumption and net exports, but the downward revision tempers optimism about the pace of recovery. The BOJ will take note — a weaker growth profile reduces urgency to hike rates further, which may keep the Yen under mild pressure and extend the carry trade."
+    },
+    {
+      "date": "2026-03-10",
+      "event": "UK Monthly GDP (January, MoM)",
+      "importance": 3,
+      "actual": 0.2,
+      "expected": 0.1,
+      "previous": -0.1,
+      "unit": "%",
+      "surprise": "above",
+      "impact": "UK GDP rose 0.2% MoM in January, beating the 0.1% consensus and reversing December's contraction. Services led the rebound, with retail and financial services both contributing. The upside surprise modestly reduces the case for an imminent BOE rate cut, lending short-term support to sterling. That said, one month does not establish a trend — the UK economy remains fragile, and the BOE will want confirmation across multiple prints before altering its rate path."
+    },
+    {
+      "date": "2026-03-11",
+      "event": "China CPI (February, YoY)",
+      "importance": 2,
+      "actual": -0.7,
+      "expected": -0.5,
+      "previous": 0.5,
+      "unit": "%",
+      "surprise": "below",
+      "impact": "China's CPI fell 0.7% YoY in February, worse than the -0.5% consensus and swinging sharply from January's +0.5% (which was elevated by Lunar New Year spending). The print underscores persistent deflationary pressure in the Chinese economy, driven by weak domestic demand and falling goods prices. For investors, sustained deflation in China is a headwind for EM equities (EEM, FXI) and commodity-linked assets — it signals the PBOC may need to ease further to stimulate demand."
+    },
+    {
+      "date": "2026-03-12",
+      "event": "Eurozone Industrial Production (January, MoM)",
+      "importance": 2,
+      "actual": -0.5,
+      "expected": 0.3,
+      "previous": -0.4,
+      "unit": "%",
+      "surprise": "below",
+      "impact": "Eurozone industrial output contracted 0.5% MoM in January, missing the +0.3% consensus and extending the prior month's decline. Germany and France were the primary drags, with weak orders in automotive and capital goods. The miss adds to the case for ECB rate cuts — sluggish industrial activity reinforces the growth-over-inflation calculus the ECB will face at its March 19 meeting. European industrials (EWG, EWQ) remain under pressure until demand signals turn."
+    }
+  ],
+  "upcoming_week": [
+    {
+      "date": "2026-03-18",
+      "event": "UK CPI (February, YoY)",
+      "importance": 3
+    },
+    {
+      "date": "2026-03-19",
+      "event": "ECB Interest Rate Decision",
+      "importance": 3
+    },
+    {
+      "date": "2026-03-19",
+      "event": "BOJ Rate Decision",
+      "importance": 3
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Japan CPI (February, YoY)",
+      "importance": 2
+    },
+    {
+      "date": "2026-03-20",
+      "event": "Eurozone CPI Final (February, YoY)",
+      "importance": 2
+    }
+  ]
+}
