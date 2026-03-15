@@ -601,6 +601,29 @@
       line-height: 1.6;
     }
 
+    /* ── FULLSCREEN ── */
+    :fullscreen body,
+    :-webkit-full-screen body { padding: 0; background: #1a2233; }
+
+    :fullscreen .page-wrapper,
+    :-webkit-full-screen .page-wrapper { max-width: 100%; box-shadow: none; }
+
+    :fullscreen .header,
+    :fullscreen .breadcrumb,
+    :fullscreen .subscribe-section,
+    :fullscreen .footer,
+    :-webkit-full-screen .header,
+    :-webkit-full-screen .breadcrumb,
+    :-webkit-full-screen .subscribe-section,
+    :-webkit-full-screen .footer { display: none; }
+
+    :fullscreen .book-section,
+    :-webkit-full-screen .book-section {
+      min-height: 100vh;
+      padding: 24px 16px 20px;
+      justify-content: center;
+    }
+
     @media (max-width: 600px) {
       body { padding: 12px 6px; }
       .header-inner { padding: 16px 20px; }
@@ -982,6 +1005,7 @@
       <button class="flip-btn flip-btn-toc" onclick="goToPage(1)" title="Table of Contents">&#9776; Contents</button>
       <span class="flip-counter" id="page-counter">1 / 15</span>
       <button class="flip-btn" id="btn-next">Next &#8594;</button>
+      <button class="flip-btn" id="btn-fullscreen" onclick="toggleFullscreen()">&#x26F6; Full Screen</button>
     </div>
     <div class="flip-hint">click pages to turn &nbsp;·&nbsp; drag to flip &nbsp;·&nbsp; swipe on mobile</div>
 
@@ -1018,6 +1042,43 @@ var pageFlip;
 function goToPage(idx) {
   if (pageFlip) pageFlip.flip(idx);
 }
+
+function toggleFullscreen() {
+  var el = document.documentElement;
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  } else {
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+  }
+}
+
+function onFullscreenChange() {
+  var inFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+  var btn  = document.getElementById('btn-fullscreen');
+  var bookEl = document.getElementById('book');
+
+  setTimeout(function () {
+    if (inFS) {
+      var availW = window.innerWidth  - 32;
+      var availH = window.innerHeight - 110;
+      var scale  = Math.min(availW / bookEl.offsetWidth, availH / bookEl.offsetHeight);
+      bookEl.style.transform       = 'scale(' + scale + ')';
+      bookEl.style.transformOrigin = 'center top';
+      bookEl.style.marginBottom    = ((bookEl.offsetHeight * scale) - bookEl.offsetHeight) + 'px';
+      if (btn) btn.textContent = '\u2716 Exit Full Screen';
+    } else {
+      bookEl.style.transform    = '';
+      bookEl.style.transformOrigin = '';
+      bookEl.style.marginBottom = '';
+      if (btn) btn.textContent = '\u26F6 Full Screen';
+    }
+  }, 80);
+}
+
+document.addEventListener('fullscreenchange',       onFullscreenChange);
+document.addEventListener('webkitfullscreenchange', onFullscreenChange);
 
 window.addEventListener('load', function () {
   var wrapper   = document.querySelector('.page-wrapper');
