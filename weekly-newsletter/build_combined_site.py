@@ -1481,6 +1481,34 @@ def _iq_qlabel(date_str):
         return date_str
 
 
+def _yf_monthly(ticker_sym, limit=5):
+    """Fetch last N monthly closes via yfinance. Returns [(date_str, float), ...] newest-first."""
+    try:
+        import yfinance as yf
+        from datetime import timedelta
+        end = datetime.today()
+        start = end - timedelta(days=limit * 40)
+        df = yf.download(ticker_sym, start=start.strftime("%Y-%m-%d"),
+                         end=end.strftime("%Y-%m-%d"), interval="1mo",
+                         progress=False, auto_adjust=True)
+        if df.empty:
+            return []
+        close_col = df["Close"]
+        # yfinance >=0.2 may return DataFrame with ticker as column
+        if hasattr(close_col, "squeeze"):
+            close_col = close_col.squeeze()
+        closes = close_col.dropna()
+        result = []
+        for idx, v in closes.items():
+            date_str = str(idx)[:10]
+            val = float(v) if not hasattr(v, '__len__') else float(v.iloc[0])
+            result.append((date_str[:7] + "-01", val))
+        return list(reversed(result[-limit:]))
+    except Exception as e:
+        print(f"  yfinance {ticker_sym}: {e}")
+        return []
+
+
 def fetch_live_iq_data():
     """Pull live FRED data for all Market IQ cards.
 
@@ -1620,6 +1648,378 @@ def fetch_live_iq_data():
             "trend": "up" if cur_v > 3.0 else ("down" if cur_v < 1.5 else "flat"),
             "trend_label": "\u2191 Strong" if cur_v > 3.0 else ("\u2193 Slowing" if cur_v < 2.0 else "\u2192 Steady"),
             "source": f"U.S. Bureau of Economic Analysis \u00b7 {_iq_qlabel(cur_d)}",
+        }
+
+    # PPI — PPIACO YoY
+    ppi = _fred_obs("PPIACO", units="pc1", limit=5)
+    if ppi:
+        cur_d, cur_v = ppi[0]
+        pts = list(reversed(ppi[:4]))
+        data["PPI"] = {
+            "current_value": f"{cur_v:.1f}%",
+            "current_value_period": f"YoY \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 3.0 else ("green" if cur_v < 1.5 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1)} for d, v in pts]),
+            "trend": "up" if cur_v > 3.0 else ("down" if cur_v < 1.5 else "flat"),
+            "trend_label": "\u2191 Elevated" if cur_v > 3.0 else ("\u2193 Cooling" if cur_v < 1.5 else "\u2192 Moderate"),
+            "source": f"U.S. Bureau of Labor Statistics \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # VIX — VIXCLS (daily → monthly avg)
+    vix = _fred_obs("VIXCLS", units="lin", limit=5, frequency="m", agg_method="avg")
+    if vix:
+        cur_d, cur_v = vix[0]
+        pts = list(reversed(vix[:4]))
+        data["VIX"] = {
+            "current_value": f"{cur_v:.1f}",
+            "current_value_period": f"Monthly Avg \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 25 else ("green" if cur_v < 15 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"{v:.1f}"} for d, v in pts]),
+            "trend": "up" if cur_v > 25 else ("down" if cur_v < 15 else "flat"),
+            "trend_label": "\u2191 Elevated" if cur_v > 25 else ("\u2193 Low" if cur_v < 15 else "\u2192 Moderate"),
+            "source": f"CBOE / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # DXY — DTWEXBGS (Broad USD Index, monthly avg)
+    dxy = _fred_obs("DTWEXBGS", units="lin", limit=5, frequency="m", agg_method="avg")
+    if dxy:
+        cur_d, cur_v = dxy[0]
+        pts = list(reversed(dxy[:4]))
+        data["DXY"] = {
+            "current_value": f"{cur_v:.1f}",
+            "current_value_period": f"Broad Index \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "green" if cur_v > 105 else ("red" if cur_v < 95 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"{v:.1f}"} for d, v in pts]),
+            "trend": "up" if cur_v > pts[-1][1] * 1.01 else ("down" if cur_v < pts[0][1] * 0.99 else "flat"),
+            "trend_label": "\u2191 Strengthening" if cur_v > 105 else ("\u2193 Weakening" if cur_v < 95 else "\u2192 Stable"),
+            "source": f"Federal Reserve / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # JOLTS — JTSJOL (job openings, thousands → display as millions)
+    jolts = _fred_obs("JTSJOL", units="lin", limit=5)
+    if jolts:
+        cur_d, cur_v = jolts[0]
+        cur_m = cur_v / 1000.0
+        pts = list(reversed(jolts[:4]))
+        data["JOLTS"] = {
+            "current_value": f"{cur_m:.1f}M",
+            "current_value_period": _iq_mlabel(cur_d),
+            "current_value_color": "green" if cur_m > 8.0 else ("red" if cur_m < 7.0 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v / 1000, 1), "displayValue": f"{v/1000:.1f}M"} for d, v in pts]),
+            "trend": "up" if cur_m > 8.5 else ("down" if cur_m < 7.5 else "flat"),
+            "trend_label": "\u2191 Hot" if cur_m > 8.5 else ("\u2193 Cooling" if cur_m < 7.5 else "\u2192 Steady"),
+            "source": f"U.S. Bureau of Labor Statistics \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Initial Claims — ICSA (weekly, in thousands)
+    claims = _fred_obs("ICSA", units="lin", limit=5)
+    if claims:
+        cur_d, cur_v = claims[0]
+        pts = list(reversed(claims[:4]))
+        data["Claims"] = {
+            "current_value": f"{int(cur_v):,}",
+            "current_value_period": f"Week of {cur_d[:10]}",
+            "current_value_color": "green" if cur_v < 225 else ("red" if cur_v > 275 else "gray"),
+            "chart_data": _json.dumps([{"label": d[:10][5:], "value": int(v), "displayValue": f"{int(v):,}"} for d, v in pts]),
+            "trend": "up" if cur_v > 275 else ("down" if cur_v < 200 else "flat"),
+            "trend_label": "\u2191 Rising" if cur_v > 275 else ("\u2193 Low" if cur_v < 200 else "\u2192 Stable"),
+            "source": f"U.S. Department of Labor \u00b7 {cur_d[:10]}",
+        }
+
+    # Retail Sales MoM — RSAFS (pch = month-over-month %)
+    retail = _fred_obs("RSAFS", units="pch", limit=5)
+    if retail:
+        cur_d, cur_v = retail[0]
+        pts = list(reversed(retail[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["Retail Sales"] = {
+            "current_value": f"{pfx}{cur_v:.1f}%",
+            "current_value_period": f"MoM \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "green" if cur_v > 0.5 else ("red" if cur_v < -0.5 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 0.5 else ("down" if cur_v < -0.3 else "flat"),
+            "trend_label": "\u2191 Solid" if cur_v > 0.5 else ("\u2193 Weak" if cur_v < -0.3 else "\u2192 Mixed"),
+            "source": f"U.S. Census Bureau \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Housing Starts — HOUST (thousands, annual rate)
+    houst = _fred_obs("HOUST", units="lin", limit=5)
+    if houst:
+        cur_d, cur_v = houst[0]
+        cur_m = cur_v / 1000.0
+        pts = list(reversed(houst[:4]))
+        data["Housing Starts"] = {
+            "current_value": f"{cur_m:.2f}M",
+            "current_value_period": f"Ann. Rate \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "green" if cur_m > 1.4 else ("red" if cur_m < 1.2 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v / 1000, 2), "displayValue": f"{v/1000:.2f}M"} for d, v in pts]),
+            "trend": "up" if cur_m > 1.4 else ("down" if cur_m < 1.2 else "flat"),
+            "trend_label": "\u2191 Recovering" if cur_m > 1.4 else ("\u2193 Subdued" if cur_m < 1.2 else "\u2192 Steady"),
+            "source": f"U.S. Census Bureau \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Credit Spreads — BAMLH0A0HYM2 (HY OAS, bps → already in bps, monthly avg)
+    hy_oas = _fred_obs("BAMLH0A0HYM2", units="lin", limit=5, frequency="m", agg_method="avg")
+    if hy_oas:
+        cur_d, cur_v = hy_oas[0]
+        pts = list(reversed(hy_oas[:4]))
+        data["Credit Spreads"] = {
+            "current_value": f"{int(cur_v)} bps",
+            "current_value_period": f"HY OAS \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 400 else ("green" if cur_v < 300 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": int(v), "displayValue": str(int(v))} for d, v in pts]),
+            "trend": "up" if cur_v > 400 else ("down" if cur_v < 300 else "flat"),
+            "trend_label": "\u2191 Stressed" if cur_v > 400 else ("\u2193 Tight" if cur_v < 300 else "\u2192 Normal"),
+            "source": f"ICE BofA / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Real Rate — DFII10 (10-Year TIPS yield, monthly avg)
+    dfii10 = _fred_obs("DFII10", units="lin", limit=5, frequency="m", agg_method="avg")
+    if dfii10:
+        cur_d, cur_v = dfii10[0]
+        data["Real Rate"] = {
+            "current_value": f"{cur_v:.2f}%",
+            "current_value_period": f"10Y TIPS \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 2.0 else ("green" if cur_v < 0.5 else "gray"),
+            "stat1_value": f"{cur_v:.2f}%",
+            "trend": "up" if cur_v > 2.0 else ("down" if cur_v < 0.5 else "flat"),
+            "trend_label": "\u2191 Restrictive" if cur_v > 2.0 else ("\u2193 Easing" if cur_v < 0.5 else "\u2192 Neutral"),
+            "source": f"U.S. Treasury / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Michigan Sentiment — UMCSENT (monthly)
+    umcs = _fred_obs("UMCSENT", units="lin", limit=5)
+    if umcs:
+        cur_d, cur_v = umcs[0]
+        pts = list(reversed(umcs[:4]))
+        data["Michigan Sentiment"] = {
+            "current_value": f"{cur_v:.1f}",
+            "current_value_period": _iq_mlabel(cur_d),
+            "current_value_color": "green" if cur_v > 75 else ("red" if cur_v < 65 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"{v:.1f}"} for d, v in pts]),
+            "trend": "up" if cur_v > 75 else ("down" if cur_v < 65 else "flat"),
+            "trend_label": "\u2191 Confident" if cur_v > 75 else ("\u2193 Pessimistic" if cur_v < 65 else "\u2192 Cautious"),
+            "source": f"University of Michigan \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Industrial Production MoM — INDPRO (pch)
+    indpro = _fred_obs("INDPRO", units="pch", limit=5)
+    if indpro:
+        cur_d, cur_v = indpro[0]
+        pts = list(reversed(indpro[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["Industrial Production"] = {
+            "current_value": f"{pfx}{cur_v:.1f}%",
+            "current_value_period": f"MoM \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "green" if cur_v > 0.3 else ("red" if cur_v < -0.3 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 0.3 else ("down" if cur_v < -0.3 else "flat"),
+            "trend_label": "\u2191 Expanding" if cur_v > 0.3 else ("\u2193 Contracting" if cur_v < -0.3 else "\u2192 Flat"),
+            "source": f"Federal Reserve \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Durable Goods Orders MoM — DGORDER (pch)
+    dgo = _fred_obs("DGORDER", units="pch", limit=5)
+    if dgo:
+        cur_d, cur_v = dgo[0]
+        pts = list(reversed(dgo[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["Durable Goods"] = {
+            "current_value": f"{pfx}{cur_v:.1f}%",
+            "current_value_period": f"MoM \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "green" if cur_v > 1.0 else ("red" if cur_v < -1.0 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 1.0 else ("down" if cur_v < -1.0 else "flat"),
+            "trend_label": "\u2191 Growing" if cur_v > 1.0 else ("\u2193 Declining" if cur_v < -1.0 else "\u2192 Mixed"),
+            "source": f"U.S. Census Bureau \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Breakeven Inflation — T10YIE (10-Year, daily → monthly avg)
+    t10yie = _fred_obs("T10YIE", units="lin", limit=5, frequency="m", agg_method="avg")
+    if t10yie:
+        cur_d, cur_v = t10yie[0]
+        pts = list(reversed(t10yie[:4]))
+        data["Breakeven Inflation"] = {
+            "current_value": f"{cur_v:.2f}%",
+            "current_value_period": f"10Y Breakeven \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 2.5 else ("green" if cur_v < 1.8 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 2)} for d, v in pts]),
+            "trend": "up" if cur_v > 2.5 else ("down" if cur_v < 1.8 else "flat"),
+            "trend_label": "\u2191 Elevated" if cur_v > 2.5 else ("\u2193 Anchored" if cur_v < 1.8 else "\u2192 Stable"),
+            "source": f"Federal Reserve / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Import Prices MoM — IR (pch)
+    imp = _fred_obs("IR", units="pch", limit=5)
+    if imp:
+        cur_d, cur_v = imp[0]
+        pts = list(reversed(imp[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["Import Prices"] = {
+            "current_value": f"{pfx}{cur_v:.1f}%",
+            "current_value_period": f"MoM \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 0.5 else ("green" if cur_v < -0.2 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 0.5 else ("down" if cur_v < -0.2 else "flat"),
+            "trend_label": "\u2191 Rising" if cur_v > 0.5 else ("\u2193 Falling" if cur_v < -0.2 else "\u2192 Stable"),
+            "source": f"U.S. Bureau of Labor Statistics \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Income & Spending — personal spending MoM (PCE level in pch)
+    pce_spend = _fred_obs("PCE", units="pch", limit=5)
+    if pce_spend:
+        cur_d, cur_v = pce_spend[0]
+        pts = list(reversed(pce_spend[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["Income & Spending"] = {
+            "current_value": f"{pfx}{cur_v:.1f}%",
+            "current_value_period": f"Spending MoM \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "green" if cur_v > 0.4 else ("red" if cur_v < 0 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 0.4 else ("down" if cur_v < 0 else "flat"),
+            "trend_label": "\u2191 Strong" if cur_v > 0.4 else ("\u2193 Weak" if cur_v < 0 else "\u2192 Moderate"),
+            "source": f"U.S. Bureau of Economic Analysis \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # U-6 Unemployment — U6RATE (monthly)
+    u6 = _fred_obs("U6RATE", units="lin", limit=5)
+    if u6:
+        cur_d, cur_v = u6[0]
+        pts = list(reversed(u6[:4]))
+        data["U-6"] = {
+            "current_value": f"{cur_v:.1f}%",
+            "current_value_period": _iq_mlabel(cur_d),
+            "current_value_color": "red" if cur_v > 8.5 else ("green" if cur_v < 7.5 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 8.5 else ("down" if cur_v < 7.0 else "flat"),
+            "trend_label": "\u2191 Rising" if cur_v > 8.5 else ("\u2193 Low" if cur_v < 7.0 else "\u2192 Stable"),
+            "source": f"U.S. Bureau of Labor Statistics \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Labor Force Participation Rate — CIVPART (monthly)
+    lfpr = _fred_obs("CIVPART", units="lin", limit=5)
+    if lfpr:
+        cur_d, cur_v = lfpr[0]
+        pts = list(reversed(lfpr[:4]))
+        data["LFPR"] = {
+            "current_value": f"{cur_v:.1f}%",
+            "current_value_period": _iq_mlabel(cur_d),
+            "current_value_color": "green" if cur_v > 63.0 else ("red" if cur_v < 62.0 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 63.3 else ("down" if cur_v < 62.3 else "flat"),
+            "trend_label": "\u2191 Rising" if cur_v > 63.3 else ("\u2193 Declining" if cur_v < 62.3 else "\u2192 Stable"),
+            "source": f"U.S. Bureau of Labor Statistics \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # QT (Fed Balance Sheet) — WALCL (weekly total assets, millions → trillions)
+    walcl = _fred_obs("WALCL", units="lin", limit=5, frequency="m", agg_method="eop")
+    if walcl:
+        cur_d, cur_v = walcl[0]
+        cur_t = cur_v / 1_000_000.0
+        pts = list(reversed(walcl[:4]))
+        data["QT"] = {
+            "current_value": f"${cur_t:.2f}T",
+            "current_value_period": f"Total Assets \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_t > 8.0 else ("green" if cur_t < 7.0 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v / 1_000_000, 2), "displayValue": f"${v/1_000_000:.2f}T"} for d, v in pts]),
+            "trend": "down" if cur_t < pts[0][1] / 1_000_000 else "flat",
+            "trend_label": "\u2193 Shrinking" if cur_t < 7.5 else "\u2192 Stable",
+            "source": f"Federal Reserve / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # M2 Money Supply YoY — M2SL (pc1)
+    m2 = _fred_obs("M2SL", units="pc1", limit=5)
+    if m2:
+        cur_d, cur_v = m2[0]
+        pts = list(reversed(m2[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["M2"] = {
+            "current_value": f"{pfx}{cur_v:.1f}%",
+            "current_value_period": f"YoY \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 5.0 else ("green" if cur_v < 2.0 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"+{v:.1f}%" if v >= 0 else f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 5.0 else ("down" if cur_v < 0 else "flat"),
+            "trend_label": "\u2191 Expanding" if cur_v > 5.0 else ("\u2193 Contracting" if cur_v < 0 else "\u2192 Moderate"),
+            "source": f"Federal Reserve / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # SLOOS — DRTSCILM (% banks tightening C&I standards, large firms, quarterly)
+    sloos = _fred_obs("DRTSCILM", units="lin", limit=5)
+    if sloos:
+        cur_d, cur_v = sloos[0]
+        pts = list(reversed(sloos[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["SLOOS"] = {
+            "current_value": f"{pfx}{cur_v:.1f}%",
+            "current_value_period": f"Net Tightening \u00b7 {_iq_qlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 20 else ("green" if cur_v < 0 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_qlabel(d), "value": round(v, 1), "displayValue": f"{v:.1f}%"} for d, v in pts]),
+            "trend": "up" if cur_v > 20 else ("down" if cur_v < 0 else "flat"),
+            "trend_label": "\u2191 Tightening" if cur_v > 20 else ("\u2193 Easing" if cur_v < 0 else "\u2192 Neutral"),
+            "source": f"Federal Reserve / FRED \u00b7 {_iq_qlabel(cur_d)}",
+        }
+
+    # Gold — GC=F via yfinance (monthly close)
+    gold = _yf_monthly("GC=F", limit=5)
+    if gold:
+        cur_d, cur_v = gold[0]
+        pts = list(reversed(gold[:4]))
+        data["Gold"] = {
+            "current_value": f"${cur_v:,.0f}",
+            "current_value_period": f"USD/oz \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "green" if cur_v > pts[0][1] else "red",
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": int(v), "displayValue": f"${v:,.0f}"} for d, v in pts]),
+            "trend": "up" if cur_v > 4000 else ("down" if cur_v < 2500 else "flat"),
+            "trend_label": "\u2191 Rising" if cur_v > 4000 else ("\u2193 Falling" if cur_v < 2500 else "\u2192 Stable"),
+            "source": f"COMEX / yfinance \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # WTI Crude Oil — DCOILWTICO (daily → monthly avg), fallback to yfinance CL=F
+    wti = _fred_obs("DCOILWTICO", units="lin", limit=5, frequency="m", agg_method="avg")
+    if not wti:
+        wti = _yf_monthly("CL=F", limit=5)
+    if wti:
+        cur_d, cur_v = wti[0]
+        pts = list(reversed(wti[:4]))
+        data["WTI"] = {
+            "current_value": f"${cur_v:.1f}",
+            "current_value_period": f"USD/bbl \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 85 else ("green" if cur_v < 65 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1), "displayValue": f"${v:.1f}"} for d, v in pts]),
+            "trend": "up" if cur_v > 85 else ("down" if cur_v < 65 else "flat"),
+            "trend_label": "\u2191 High" if cur_v > 85 else ("\u2193 Low" if cur_v < 65 else "\u2192 Moderate"),
+            "source": f"EIA / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Trade Balance — BOPGSTB (millions → billions)
+    trade = _fred_obs("BOPGSTB", units="lin", limit=5)
+    if trade:
+        cur_d, cur_v = trade[0]
+        cur_b = cur_v / 1000.0
+        pts = list(reversed(trade[:4]))
+        data["Trade Balance"] = {
+            "current_value": f"${cur_b:,.0f}B",
+            "current_value_period": _iq_mlabel(cur_d),
+            "current_value_color": "red" if cur_b < -100 else ("green" if cur_b > -50 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v / 1000, 1), "displayValue": f"${v/1000:,.0f}B"} for d, v in pts]),
+            "trend": "down" if cur_b < -100 else ("up" if cur_b > -50 else "flat"),
+            "trend_label": "\u2193 Widening" if cur_b < -100 else ("\u2191 Narrowing" if cur_b > -50 else "\u2192 Stable"),
+            "source": f"U.S. Bureau of Economic Analysis \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # USD/CNY — DEXCHUS (CNY per USD, daily → monthly avg)
+    usdcny = _fred_obs("DEXCHUS", units="lin", limit=5, frequency="m", agg_method="avg")
+    if usdcny:
+        cur_d, cur_v = usdcny[0]
+        pts = list(reversed(usdcny[:4]))
+        data["USD/CNY"] = {
+            "current_value": f"{cur_v:.2f}",
+            "current_value_period": f"CNY per USD \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 7.3 else ("green" if cur_v < 7.1 else "gray"),
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 2), "displayValue": f"{v:.2f}"} for d, v in pts]),
+            "trend": "up" if cur_v > 7.3 else ("down" if cur_v < 7.1 else "flat"),
+            "trend_label": "\u2191 Weakening CNY" if cur_v > 7.3 else ("\u2193 Strengthening CNY" if cur_v < 7.1 else "\u2192 Stable"),
+            "source": f"Federal Reserve / FRED \u00b7 {_iq_mlabel(cur_d)}",
         }
 
     # Cache to fixture
