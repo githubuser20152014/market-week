@@ -610,6 +610,14 @@
   .news-table a             { color: #1a5276; text-decoration: none; }
   .news-table a:hover       { text-decoration: underline; }
 
+      .breadcrumb {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px; padding-top: 4px;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { margin: 0 8px; color: var(--border); }
   </style>
 </head>
 <body>
@@ -653,6 +661,15 @@
   </div>
 
   <div class="content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#markets">Markets</a>
+      <span class="sep">/</span>
+      <a href="../../daily/index.html">Day Break</a>
+      <span class="sep">/</span>
+      <span>Mar 12, 2026</span>
+    </nav>
 
     <!-- MORNING BRIEF -->
     <div class="section-block">

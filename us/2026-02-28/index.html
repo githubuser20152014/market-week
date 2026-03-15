@@ -550,6 +550,14 @@
     .share-bar { padding: 16px 20px; }
   }
 
+      .breadcrumb {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px; padding-top: 4px;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { margin: 0 8px; color: var(--border); }
   </style>
 </head>
 <body>
@@ -593,6 +601,13 @@
   </div>
 
   <div class="content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#markets">Markets</a>
+      <span class="sep">/</span>
+      <span>Weekly — Feb 28, 2026</span>
+    </nav>
 
     <!-- THE WEEK IN BRIEF -->
     <div class="section-block">
