@@ -468,6 +468,128 @@ _CSS = """\
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
   }
 
+  /* IQ GRID FLIP CARDS */
+  .iq-card-fullname {
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px; font-weight: 300; font-style: italic;
+    color: var(--accent-lt); margin-top: 4px;
+  }
+
+  .iq-card-formula {
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px; margin-top: 10px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px; line-height: 1.6;
+    color: #3a3a4a; font-weight: 300; font-style: italic;
+  }
+
+  .iq-grid-flip {
+    perspective: 1400px; cursor: pointer;
+    border: 1px solid transparent; /* keeps grid cell size stable before JS sets height */
+  }
+
+  .iq-grid-flip-inner {
+    position: relative; width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .iq-grid-flip.flipped .iq-grid-flip-inner { transform: rotateY(180deg); }
+
+  .iq-grid-flip-front, .iq-grid-flip-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+  }
+
+  .iq-grid-flip-front { border-top: 4px solid var(--accent); }
+  .iq-grid-flip-back  { transform: rotateY(180deg); border-top: 4px solid var(--gold); }
+
+  .iq-grid-flip-front-body { padding: 12px 16px; flex: 1; }
+
+  .iq-grid-flip-front-footer {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .iq-grid-flip-back-body {
+    padding: 14px 16px; flex: 1;
+    display: flex; flex-direction: column; gap: 10px;
+    overflow: hidden;
+  }
+
+  /* Tighter overrides for back inside grid cells */
+  .iq-grid-back-header { padding: 12px 16px !important; }
+  .iq-grid-back-header .flip-back-title { font-size: 14px; }
+  .iq-grid-back-header .flip-back-value { font-size: 22px; }
+  .iq-grid-flip-back .stat-tile { padding: 10px 12px; }
+  .iq-stat-value { font-size: 20px !important; }
+  .iq-grid-flip-back .stat-tile-sub { margin-top: 4px; }
+  .iq-grid-flip-back .insight-callout { padding: 10px 12px; }
+  .iq-grid-flip-back .insight-callout-text { font-size: 11.5px; line-height: 1.6; }
+  .iq-grid-back-footer { padding: 10px 16px !important; }
+  .iq-grid-flip-back .mini-bar-chart { height: 52px; gap: 6px; }
+
+  /* Chart label + container inside grid back */
+  .iq-chart-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+
+  .iq-chart-container {
+    background: var(--navy);
+    padding: 10px 12px 8px; border-radius: 1px;
+  }
+
+  /* Rate timeline (FFR card) */
+  .rate-timeline {
+    display: flex; align-items: center; gap: 0;
+    height: 52px; padding: 0 4px;
+  }
+
+  .rate-node {
+    display: flex; flex-direction: column;
+    align-items: center; flex: 1; position: relative;
+  }
+
+  .rate-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent-lt); margin-bottom: 4px; position: relative; z-index: 1;
+  }
+
+  .rate-dot.current { background: var(--gold); width: 11px; height: 11px; }
+
+  .rate-connector {
+    position: absolute; top: 3px; left: 50%;
+    width: 100%; height: 2px;
+    background: rgba(255,255,255,0.2); z-index: 0;
+  }
+
+  .rate-node:last-child .rate-connector { display: none; }
+
+  .rate-value {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 700;
+    color: var(--accent-lt); text-align: center;
+  }
+
+  .rate-node.current-node .rate-value { color: var(--gold); }
+
+  .rate-period {
+    font-family: 'Raleway', sans-serif;
+    font-size: 7px; font-weight: 600;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); text-align: center; margin-top: 3px;
+  }
+
+  .rate-node.current-node .rate-period { color: rgba(255,255,255,0.65); }
+
   /* IQ SEARCH BAR */
   .iq-search-row { margin-bottom: 20px; }
   .iq-search-wrapper { position: relative; display: flex; align-items: center; }
@@ -1594,30 +1716,71 @@ def generate_fundaa_pages(articles, site_dir):
         print(f"  -> site/fundaa/{date_str}/index.html")
 
 
-def _render_mini_bar_chart(chart_data_json):
-    """Render HTML mini bar chart from JSON string."""
+def _slug(s):
+    """Slugify a string for use as a CSS data-category value."""
+    import re
+    return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', s.lower())).strip('-')
+
+
+def _render_mini_bar_chart(chart_data_json, color_mode="bar"):
+    """Render HTML mini bar chart from JSON string.
+    color_mode: 'bar' (default, last bar red), 'bar_sign' (green/red by sign), 'bar_inverted' (last bar green).
+    """
     try:
         data = _json.loads(chart_data_json)
     except (ValueError, TypeError):
         return ""
     if not data:
         return ""
-    max_val = max(d["value"] for d in data)
+    max_val = max(abs(d["value"]) for d in data)
     cols = ""
     for i, d in enumerate(data):
         is_last = (i == len(data) - 1)
-        pct = (d["value"] / max_val) * 100 if max_val else 0
-        bar_color = ("linear-gradient(180deg,#b91c1c,#7f1111)" if is_last
-                     else "linear-gradient(180deg,var(--accent-lt),var(--accent))")
-        val_color = "var(--red)" if is_last else "var(--accent-lt)"
+        pct = (abs(d["value"]) / max_val) * 100 if max_val else 0
+        display = d.get("displayValue", f'{d["value"]}%')
+        if color_mode == "bar_sign":
+            bar_color = ("linear-gradient(180deg,#4ade80,#2a7d4f)" if d["value"] >= 0
+                         else "linear-gradient(180deg,#fca5a5,#b91c1c)")
+            val_color = ("#4ade80" if d["value"] >= 0 else "#fca5a5") if is_last else "rgba(255,255,255,0.5)"
+        elif color_mode == "bar_inverted":
+            bar_color = ("linear-gradient(180deg,#4ade80,#2a7d4f)" if is_last
+                         else "linear-gradient(180deg,#7aabda,#4a7fb5)")
+            val_color = "#4ade80" if is_last else "#7aabda"
+        else:
+            bar_color = ("linear-gradient(180deg,#b91c1c,#7f1111)" if is_last
+                         else "linear-gradient(180deg,#7aabda,#4a7fb5)")
+            val_color = "var(--red)" if is_last else "var(--accent-lt)"
         lbl_color = "var(--gold)" if is_last else "rgba(255,255,255,0.45)"
         cols += f"""
       <div class="mini-bar-col">
-        <span class="mini-bar-value-label" style="color:{val_color};">{d['value']}%</span>
+        <span class="mini-bar-value-label" style="color:{val_color};">{display}</span>
         <div class="mini-bar" style="height:{pct}%;background:{bar_color};"></div>
         <span class="mini-bar-period-label" style="color:{lbl_color};">{d['label']}</span>
       </div>"""
     return f'<div class="mini-bar-chart">{cols}\n    </div>'
+
+
+def _render_rate_timeline(chart_data_json):
+    """Render HTML rate-path timeline from JSON string [{rate, label}, ...]."""
+    try:
+        data = _json.loads(chart_data_json)
+    except (ValueError, TypeError):
+        return ""
+    if not data:
+        return ""
+    nodes = ""
+    for i, d in enumerate(data):
+        is_last = (i == len(data) - 1)
+        current_cls = " current-node" if is_last else ""
+        dot_cls = " current" if is_last else ""
+        nodes += f"""
+      <div class="rate-node{current_cls}">
+        <div class="rate-connector"></div>
+        <div class="rate-dot{dot_cls}"></div>
+        <div class="rate-value">{d['rate']}</div>
+        <div class="rate-period">{d['label']}</div>
+      </div>"""
+    return f'<div class="rate-timeline">{nodes}\n    </div>'
 
 
 def render_featured_flip_card(card):
@@ -1720,6 +1883,125 @@ def render_featured_flip_card(card):
 </div>"""
 
 
+def render_grid_flip_card(card):
+    """Render a flip card for the IQ grid (compact, uses .iq-grid-flip structure)."""
+    _color_map = {
+        "red":   "#b91c1c",
+        "green": "#2a7d4f",
+        "blue":  "#4a7fb5",
+        "gray":  "#6b7280",
+    }
+
+    def _c(key):
+        return _color_map.get(card.get(key, ""), "var(--text)")
+
+    category     = card.get("category", "")
+    term         = card.get("term", "")
+    full_name    = card.get("full_name", "")
+    formula      = card.get("formula", "")
+    definition   = card.get("definition", "")
+    frequency    = card.get("frequency", "")
+    trend_class  = card.get("trend_class", "trend-flat")
+    trend_label  = card.get("trend_label", "")
+    cat_slug     = _slug(category)
+
+    cur_value    = card.get("current_value", "")
+    cur_period   = card.get("current_value_period", "")
+    chart_label  = card.get("chart_label", "")
+    chart_type   = card.get("chart_type", "bar")
+
+    if chart_type == "timeline":
+        chart_html = _render_rate_timeline(card.get("chart_data", ""))
+    else:
+        chart_html = _render_mini_bar_chart(card.get("chart_data", ""), chart_type)
+
+    stat1_label = card.get("stat1_label", "")
+    stat1_value = card.get("stat1_value", "")
+    stat1_sub   = card.get("stat1_sub", "")
+    stat2_label = card.get("stat2_label", "")
+    stat2_value = card.get("stat2_value", "")
+    stat2_sub   = card.get("stat2_sub", "")
+    insight     = card.get("insight", "")
+    source      = card.get("source", "")
+    back_src    = card.get("back_source_label", "Latest Data")
+    back_title  = card.get("back_title", f"{term} — Current")
+
+    fullname_html = f'<div class="iq-card-fullname">{full_name}</div>' if full_name else ""
+    formula_html  = f'<div class="iq-card-formula">{formula}</div>' if formula else ""
+
+    chart_section = ""
+    if chart_html:
+        chart_section = f"""
+              <div>
+                <div class="iq-chart-label">{chart_label}</div>
+                <div class="iq-chart-container">{chart_html}</div>
+              </div>"""
+
+    return f"""
+      <div class="iq-grid-flip" data-category="{cat_slug}" data-term="{term.lower()}" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">{category}</div>
+              <div class="iq-card-term">{term}</div>
+              {fullname_html}
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">{definition}</p>
+              {formula_html}
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">{frequency}</span>
+                <span class="iq-card-trend {trend_class}">{trend_label}</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">{back_src}</div>
+                  <div class="flip-back-title">{back_title}</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:{_c('current_value_color')};">{cur_value}</div>
+                  <div class="flip-back-value-period">{cur_period}</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              {chart_section}
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">{stat1_label}</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:{_c('stat1_color')};">{stat1_value}</div>
+                  <div class="stat-tile-sub">{stat1_sub}</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">{stat2_label}</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:{_c('stat2_color')};">{stat2_value}</div>
+                  <div class="stat-tile-sub">{stat2_sub}</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">{insight}</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">{source}</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>"""
+
+
 def render_market_iq_panel(cards, fundaa_articles=None):
     """Render the Market IQ panel HTML with Market IQ / Friday Fundaa sub-tabs."""
     if fundaa_articles is None:
@@ -1727,10 +2009,6 @@ def render_market_iq_panel(cards, fundaa_articles=None):
 
     featured = next((c for c in cards if c.get("featured") == "true"), None)
     grid_cards = [c for c in cards if c.get("featured") != "true"]
-
-    def _slug(s):
-        import re
-        return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', s.lower())).strip('-')
 
     # Extract unique categories from grid cards preserving order
     seen = set()
@@ -1748,14 +2026,17 @@ def render_market_iq_panel(cards, fundaa_articles=None):
 
     card_html = ""
     for c in grid_cards:
-        term = c.get("term", "")
-        category = c.get("category", "")
-        definition = c.get("definition", "")
-        frequency = c.get("frequency", "")
-        trend_label = c.get("trend_label", "")
-        trend_class = c.get("trend_class", "trend-flat")
-        cat_slug = _slug(category)
-        card_html += f"""
+        if c.get("current_value"):
+            card_html += render_grid_flip_card(c)
+        else:
+            term = c.get("term", "")
+            category = c.get("category", "")
+            definition = c.get("definition", "")
+            frequency = c.get("frequency", "")
+            trend_label = c.get("trend_label", "")
+            trend_class = c.get("trend_class", "trend-flat")
+            cat_slug = _slug(category)
+            card_html += f"""
       <div class="iq-card" data-category="{cat_slug}" data-term="{term.lower()}">
         <div class="iq-card-top">
           <div class="iq-card-category">{category}</div>
@@ -1958,14 +2239,14 @@ function filterIQCards(btn, category) {
   var container = btn.closest('.iq-categories');
   if (container) container.querySelectorAll('.iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
   });
 }
 
 function buildIQAlphaNav() {
   var hasCards = {};
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     var ch = (card.dataset.term || '')[0];
     if (ch) hasCards[ch.toUpperCase()] = true;
   });
@@ -1995,7 +2276,7 @@ function filterIQByLetter(btn, letter) {
   if (si) { si.value = ''; var sc = document.querySelector('.iq-search-clear'); if (sc) sc.classList.remove('visible'); }
   var nr = document.getElementById('iq-no-results'); if (nr) nr.classList.remove('visible');
   btn.classList.add('alpha-active');
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     var first = (card.dataset.term || '')[0];
     card.style.display = (first && first.toUpperCase() === letter) ? '' : 'none';
   });
@@ -2016,7 +2297,7 @@ function searchIQCards(query) {
   document.querySelectorAll('.iq-categories .iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
   document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
   var matchCount = 0;
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     var text = [
       card.dataset.category || '',
       card.dataset.term || '',
@@ -2037,7 +2318,34 @@ function clearIQSearch() {
   if (input) { input.value = ''; searchIQCards(''); input.focus(); }
 }
 
-document.addEventListener('DOMContentLoaded', function() { buildIQAlphaNav(); });
+function toggleIQFlip(el) {
+  el.classList.toggle('flipped');
+}
+
+function sizeIQGridFlips() {
+  document.querySelectorAll('.iq-grid-flip').forEach(function(wrapper) {
+    var inner = wrapper.querySelector('.iq-grid-flip-inner');
+    var front = wrapper.querySelector('.iq-grid-flip-front');
+    var back  = wrapper.querySelector('.iq-grid-flip-back');
+    if (!inner || !front || !back) return;
+    front.style.position = 'relative';
+    var frontH = front.scrollHeight;
+    front.style.position = '';
+    back.style.transform  = 'none';
+    back.style.position   = 'relative';
+    back.style.visibility = 'hidden';
+    var backH = back.scrollHeight;
+    back.style.transform  = 'rotateY(180deg)';
+    back.style.position   = '';
+    back.style.visibility = '';
+    inner.style.height = Math.max(frontH, backH) + 'px';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  buildIQAlphaNav();
+  sizeIQGridFlips();
+});
 </script>"""
 
 

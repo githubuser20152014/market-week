@@ -439,6 +439,128 @@
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
   }
 
+  /* IQ GRID FLIP CARDS */
+  .iq-card-fullname {
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px; font-weight: 300; font-style: italic;
+    color: var(--accent-lt); margin-top: 4px;
+  }
+
+  .iq-card-formula {
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px; margin-top: 10px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px; line-height: 1.6;
+    color: #3a3a4a; font-weight: 300; font-style: italic;
+  }
+
+  .iq-grid-flip {
+    perspective: 1400px; cursor: pointer;
+    border: 1px solid transparent; /* keeps grid cell size stable before JS sets height */
+  }
+
+  .iq-grid-flip-inner {
+    position: relative; width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .iq-grid-flip.flipped .iq-grid-flip-inner { transform: rotateY(180deg); }
+
+  .iq-grid-flip-front, .iq-grid-flip-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+  }
+
+  .iq-grid-flip-front { border-top: 4px solid var(--accent); }
+  .iq-grid-flip-back  { transform: rotateY(180deg); border-top: 4px solid var(--gold); }
+
+  .iq-grid-flip-front-body { padding: 12px 16px; flex: 1; }
+
+  .iq-grid-flip-front-footer {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .iq-grid-flip-back-body {
+    padding: 14px 16px; flex: 1;
+    display: flex; flex-direction: column; gap: 10px;
+    overflow: hidden;
+  }
+
+  /* Tighter overrides for back inside grid cells */
+  .iq-grid-back-header { padding: 12px 16px !important; }
+  .iq-grid-back-header .flip-back-title { font-size: 14px; }
+  .iq-grid-back-header .flip-back-value { font-size: 22px; }
+  .iq-grid-flip-back .stat-tile { padding: 10px 12px; }
+  .iq-stat-value { font-size: 20px !important; }
+  .iq-grid-flip-back .stat-tile-sub { margin-top: 4px; }
+  .iq-grid-flip-back .insight-callout { padding: 10px 12px; }
+  .iq-grid-flip-back .insight-callout-text { font-size: 11.5px; line-height: 1.6; }
+  .iq-grid-back-footer { padding: 10px 16px !important; }
+  .iq-grid-flip-back .mini-bar-chart { height: 52px; gap: 6px; }
+
+  /* Chart label + container inside grid back */
+  .iq-chart-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+
+  .iq-chart-container {
+    background: var(--navy);
+    padding: 10px 12px 8px; border-radius: 1px;
+  }
+
+  /* Rate timeline (FFR card) */
+  .rate-timeline {
+    display: flex; align-items: center; gap: 0;
+    height: 52px; padding: 0 4px;
+  }
+
+  .rate-node {
+    display: flex; flex-direction: column;
+    align-items: center; flex: 1; position: relative;
+  }
+
+  .rate-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent-lt); margin-bottom: 4px; position: relative; z-index: 1;
+  }
+
+  .rate-dot.current { background: var(--gold); width: 11px; height: 11px; }
+
+  .rate-connector {
+    position: absolute; top: 3px; left: 50%;
+    width: 100%; height: 2px;
+    background: rgba(255,255,255,0.2); z-index: 0;
+  }
+
+  .rate-node:last-child .rate-connector { display: none; }
+
+  .rate-value {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 700;
+    color: var(--accent-lt); text-align: center;
+  }
+
+  .rate-node.current-node .rate-value { color: var(--gold); }
+
+  .rate-period {
+    font-family: 'Raleway', sans-serif;
+    font-size: 7px; font-weight: 600;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); text-align: center; margin-top: 3px;
+  }
+
+  .rate-node.current-node .rate-period { color: rgba(255,255,255,0.65); }
+
   /* IQ SEARCH BAR */
   .iq-search-row { margin-bottom: 20px; }
   .iq-search-wrapper { position: relative; display: flex; align-items: center; }
@@ -1318,17 +1440,17 @@
           <div class="mini-bar-chart">
       <div class="mini-bar-col">
         <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.4%</span>
-        <div class="mini-bar" style="height:54.54545454545454%;background:linear-gradient(180deg,var(--accent-lt),var(--accent));"></div>
+        <div class="mini-bar" style="height:54.54545454545454%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
         <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q1 '25</span>
       </div>
       <div class="mini-bar-col">
         <span class="mini-bar-value-label" style="color:var(--accent-lt);">3.8%</span>
-        <div class="mini-bar" style="height:86.36363636363636%;background:linear-gradient(180deg,var(--accent-lt),var(--accent));"></div>
+        <div class="mini-bar" style="height:86.36363636363636%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
         <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q2 '25</span>
       </div>
       <div class="mini-bar-col">
         <span class="mini-bar-value-label" style="color:var(--accent-lt);">4.4%</span>
-        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,var(--accent-lt),var(--accent));"></div>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
         <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q3 '25</span>
       </div>
       <div class="mini-bar-col">
@@ -1385,69 +1507,443 @@
       <div class="iq-alpha-row" id="iq-alpha-row"></div>
       <div class="iq-grid">
         
-      <div class="iq-card" data-category="inflation" data-term="cpi">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Inflation</div>
-          <div class="iq-card-term">CPI</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">Prices go up over time — that's inflation. CPI measures exactly how much. It tracks a basket of everyday items — groceries, rent, gas, clothing — and shows how much more (or less) they cost compared to a year ago. When CPI climbs fast, your money buys less than it used to.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Monthly</span>
-            <span class="iq-card-trend trend-up">↑ Elevated</span>
+      <div class="iq-grid-flip" data-category="inflation" data-term="cpi" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Inflation</div>
+              <div class="iq-card-term">CPI</div>
+              <div class="iq-card-fullname">Consumer Price Index</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Prices go up over time — that's inflation. CPI measures exactly how much. It tracks a basket of everyday items — groceries, rent, gas, clothing — and shows how much more (or less) they cost compared to a year ago. When CPI climbs fast, your money buys less than it used to.</p>
+              <div class="iq-card-formula">Tracks price changes across 8 categories: Food & Beverage, Housing, Apparel, Transportation, Medical Care, Recreation, Education, and Other.</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Monthly</span>
+                <span class="iq-card-trend trend-up">↑ Elevated</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
           </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BLS</div>
+                  <div class="flip-back-title">CPI — Current Trend</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">3.1%</div>
+                  <div class="flip-back-value-period">YoY · Feb 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">CPI YoY — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.7%</span>
+        <div class="mini-bar" style="height:87.09677419354838%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.9%</span>
+        <div class="mini-bar" style="height:93.54838709677419%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">3.0%</span>
+        <div class="mini-bar" style="height:96.77419354838709%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">3.1%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Core CPI</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">3.4%</div>
+                  <div class="stat-tile-sub">Excl. food & energy</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Fed Target</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">2.0%</div>
+                  <div class="stat-tile-sub">Still above target</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Shelter costs keep headline CPI sticky above target — rent and equivalent homeowner costs make up ~35% of the index and are slow to fall. The Fed is watching core CPI closely; until it drops toward 2.5%, rate cuts remain on hold.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Labor Statistics · Feb 2026</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="iq-card" data-category="central-banks" data-term="fed funds rate">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Central Banks</div>
-          <div class="iq-card-term">Fed Funds Rate</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">The single most powerful interest rate in the world. It's what banks charge each other for overnight loans — and it ripples through everything else: your mortgage rate, your car loan, your credit card APR. When the Fed raises it, borrowing gets more expensive across the board.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: 8× per year</span>
-            <span class="iq-card-trend trend-flat">→ Hold</span>
+      <div class="iq-grid-flip" data-category="central-banks" data-term="fed funds rate" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Central Banks</div>
+              <div class="iq-card-term">Fed Funds Rate</div>
+              <div class="iq-card-fullname">Federal Funds Rate</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The single most powerful interest rate in the world. It's what banks charge each other for overnight loans — and it ripples through everything else: your mortgage rate, your car loan, your credit card APR. When the Fed raises it, borrowing gets more expensive across the board.</p>
+              <div class="iq-card-formula">When FFR rises → borrowing costs increase → spending slows → inflation cools. When FFR falls → cheaper credit → spending rises → economy stimulated.</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">8× per year</span>
+                <span class="iq-card-trend trend-flat">→ Hold</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
           </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Decision · FOMC</div>
+                  <div class="flip-back-title">Fed Funds Rate — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#6b7280;">4.25–4.50%</div>
+                  <div class="flip-back-value-period">Held · Dec 2025</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Rate Path — Last 4 FOMC Decisions</div>
+                <div class="iq-chart-container"><div class="rate-timeline">
+      <div class="rate-node">
+        <div class="rate-connector"></div>
+        <div class="rate-dot"></div>
+        <div class="rate-value">5.25–5.50%</div>
+        <div class="rate-period">Jul 2025</div>
+      </div>
+      <div class="rate-node">
+        <div class="rate-connector"></div>
+        <div class="rate-dot"></div>
+        <div class="rate-value">5.00–5.25%</div>
+        <div class="rate-period">Sep 2025</div>
+      </div>
+      <div class="rate-node">
+        <div class="rate-connector"></div>
+        <div class="rate-dot"></div>
+        <div class="rate-value">4.75–5.00%</div>
+        <div class="rate-period">Nov 2025</div>
+      </div>
+      <div class="rate-node current-node">
+        <div class="rate-connector"></div>
+        <div class="rate-dot current"></div>
+        <div class="rate-value">4.25–4.50%</div>
+        <div class="rate-period">Dec 2025</div>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Last Cut</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">Dec 18 · 2025</div>
+                  <div class="stat-tile-sub">−25 bps</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Next FOMC</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">Mar 19 · 2026</div>
+                  <div class="stat-tile-sub">Hold expected</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The Fed is in wait-and-see mode after three cuts in late 2025. Markets have 1–2 more cuts priced in for 2026, but only if inflation cooperates. Higher rates mean bond yields stay elevated — a challenge for growth stocks but an opportunity for fixed-income investors.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Federal Reserve · Dec 2025 FOMC</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="iq-card" data-category="employment" data-term="non-farm payrolls">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Employment</div>
-          <div class="iq-card-term">Non-Farm Payrolls</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">Every first Friday of the month, the government reveals how many jobs were added or lost — excluding farm workers. It's the most market-moving number of the month. A big miss can send stocks down hundreds of points within minutes of the release.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Monthly</span>
-            <span class="iq-card-trend trend-up">↑ Strong</span>
+      <div class="iq-grid-flip" data-category="employment" data-term="non-farm payrolls" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Employment</div>
+              <div class="iq-card-term">Non-Farm Payrolls</div>
+              <div class="iq-card-fullname">Non-Farm Payrolls</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Every first Friday of the month, the government reveals how many jobs were added or lost — excluding farm workers. It's the most market-moving number of the month. A big miss can send stocks down hundreds of points within minutes of the release.</p>
+              <div class="iq-card-formula">NFP > 150K/month → healthy labor market. NFP < 75K/month → potential slowdown. NFP negative → jobs being cut.</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Monthly</span>
+                <span class="iq-card-trend trend-up">↑ Strong</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
           </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BLS</div>
+                  <div class="flip-back-title">Non-Farm Payrolls — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">+150K</div>
+                  <div class="flip-back-value-period">Feb 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Monthly Job Additions (thousands)</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">227K</span>
+        <div class="mini-bar" style="height:88.671875%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">256K</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">143K</span>
+        <div class="mini-bar" style="height:55.859375%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">150K</span>
+        <div class="mini-bar" style="height:58.59375%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Unemployment Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">4.1%</div>
+                  <div class="stat-tile-sub">Historically low</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Avg Hourly Earnings</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">+4.0%</div>
+                  <div class="stat-tile-sub">YoY · above inflation</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Payrolls are cooling from 2025's strong pace but still positive — a soft landing signal. Wage growth above 4% keeps consumer spending firm, which supports corporate earnings but also keeps the Fed cautious about cutting rates too fast.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Labor Statistics · Feb 2026</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="iq-card" data-category="inflation" data-term="pce">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Inflation</div>
-          <div class="iq-card-term">PCE</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">Similar to CPI, but the Fed trusts it more. PCE measures what Americans actually spend on goods and services — and it adjusts when people swap expensive items for cheaper ones. That makes it a more honest picture of real-world inflation. When PCE runs hot, rate cuts get pushed back.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Monthly</span>
-            <span class="iq-card-trend trend-up">↑ Above Target</span>
+      <div class="iq-grid-flip" data-category="inflation" data-term="pce" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Inflation</div>
+              <div class="iq-card-term">PCE</div>
+              <div class="iq-card-fullname">Personal Consumption Expenditures</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Similar to CPI, but the Fed trusts it more. PCE measures what Americans actually spend on goods and services — and it adjusts when people swap expensive items for cheaper ones. That makes it a more honest picture of real-world inflation. When PCE runs hot, rate cuts get pushed back.</p>
+              <div class="iq-card-formula">PCE differs from CPI: it adjusts for substitution behavior — when prices rise, consumers switch to cheaper alternatives — making it a more realistic measure of actual purchasing patterns.</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Monthly</span>
+                <span class="iq-card-trend trend-up">↑ Above Target</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
           </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BEA</div>
+                  <div class="flip-back-title">Core PCE — Current Trend</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">2.8%</div>
+                  <div class="flip-back-value-period">Core YoY · Jan 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Core PCE YoY — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.4%</span>
+        <div class="mini-bar" style="height:85.71428571428572%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.6%</span>
+        <div class="mini-bar" style="height:92.85714285714288%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.7%</span>
+        <div class="mini-bar" style="height:96.42857142857144%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">2.8%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Headline PCE</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">2.5%</div>
+                  <div class="stat-tile-sub">Incl. food & energy</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Fed Target</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">2.0%</div>
+                  <div class="stat-tile-sub">Still above target</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Core PCE above target keeps the Fed cautious, but the pace of rise matters most — it's ticking up slowly, not surging. If it stalls or reverses in coming months, the door opens for mid-2026 rate cuts, which would benefit bond holders and rate-sensitive sectors like real estate.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Economic Analysis · Jan 2026</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="iq-card" data-category="markets" data-term="yield curve">
-        <div class="iq-card-top">
-          <div class="iq-card-category">Markets</div>
-          <div class="iq-card-term">Yield Curve</div>
-        </div>
-        <div class="iq-card-body">
-          <p class="iq-card-def">A snapshot of how much interest the government pays to borrow money at different time horizons — 2 years, 10 years, 30 years. Normally, longer loans pay higher rates. When that flips — short-term rates above long-term ones — it's called an inversion, and every U.S. recession in the past 50 years was preceded by one.</p>
-          <div class="iq-card-meta">
-            <span class="iq-card-freq">Published: Real-time</span>
-            <span class="iq-card-trend trend-flat">→ Normalizing</span>
+      <div class="iq-grid-flip" data-category="markets" data-term="yield curve" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Markets</div>
+              <div class="iq-card-term">Yield Curve</div>
+              <div class="iq-card-fullname">U.S. Treasury Yield Curve (10Y–2Y)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">A snapshot of how much interest the government pays to borrow money at different time horizons — 2 years, 10 years, 30 years. Normally, longer loans pay higher rates. When that flips — short-term rates above long-term ones — it's called an inversion, and every U.S. recession in the past 50 years was preceded by one.</p>
+              <div class="iq-card-formula">Normal: 10Y yield > 2Y yield → growth expected. Inverted: 10Y yield < 2Y yield → recession signal. Uninverting: spread returning to positive → mixed signal.</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Real-time</span>
+                <span class="iq-card-trend trend-flat">→ Normalizing</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
           </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · U.S. Treasury</div>
+                  <div class="flip-back-title">10Y–2Y Spread — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#2a7d4f;">+0.18%</div>
+                  <div class="flip-back-value-period">Mar 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">10Y–2Y Spread — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">-0.15%</span>
+        <div class="mini-bar" style="height:83.33333333333334%;background:linear-gradient(180deg,#fca5a5,#b91c1c);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">-0.05%</span>
+        <div class="mini-bar" style="height:27.77777777777778%;background:linear-gradient(180deg,#fca5a5,#b91c1c);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.10%</span>
+        <div class="mini-bar" style="height:55.55555555555556%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#4ade80;">+0.18%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">10Y Treasury</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">4.06%</div>
+                  <div class="stat-tile-sub">Benchmark yield</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">2Y Treasury</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">3.88%</div>
+                  <div class="stat-tile-sub">Policy-sensitive</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The curve is finally uninverting after a record inversion — historically a mixed signal. A sustained positive spread with improving growth data points to recovery; a quick re-inversion would be a warning sign.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Treasury / FRED · Mar 2026</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
         </div>
       </div>
       </div>
@@ -1672,14 +2168,14 @@ function filterIQCards(btn, category) {
   var container = btn.closest('.iq-categories');
   if (container) container.querySelectorAll('.iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
   });
 }
 
 function buildIQAlphaNav() {
   var hasCards = {};
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     var ch = (card.dataset.term || '')[0];
     if (ch) hasCards[ch.toUpperCase()] = true;
   });
@@ -1709,7 +2205,7 @@ function filterIQByLetter(btn, letter) {
   if (si) { si.value = ''; var sc = document.querySelector('.iq-search-clear'); if (sc) sc.classList.remove('visible'); }
   var nr = document.getElementById('iq-no-results'); if (nr) nr.classList.remove('visible');
   btn.classList.add('alpha-active');
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     var first = (card.dataset.term || '')[0];
     card.style.display = (first && first.toUpperCase() === letter) ? '' : 'none';
   });
@@ -1730,7 +2226,7 @@ function searchIQCards(query) {
   document.querySelectorAll('.iq-categories .iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
   document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
   var matchCount = 0;
-  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+  document.querySelectorAll('#iq-sub-flashcards .iq-card, #iq-sub-flashcards .iq-grid-flip').forEach(function(card) {
     var text = [
       card.dataset.category || '',
       card.dataset.term || '',
@@ -1751,7 +2247,34 @@ function clearIQSearch() {
   if (input) { input.value = ''; searchIQCards(''); input.focus(); }
 }
 
-document.addEventListener('DOMContentLoaded', function() { buildIQAlphaNav(); });
+function toggleIQFlip(el) {
+  el.classList.toggle('flipped');
+}
+
+function sizeIQGridFlips() {
+  document.querySelectorAll('.iq-grid-flip').forEach(function(wrapper) {
+    var inner = wrapper.querySelector('.iq-grid-flip-inner');
+    var front = wrapper.querySelector('.iq-grid-flip-front');
+    var back  = wrapper.querySelector('.iq-grid-flip-back');
+    if (!inner || !front || !back) return;
+    front.style.position = 'relative';
+    var frontH = front.scrollHeight;
+    front.style.position = '';
+    back.style.transform  = 'none';
+    back.style.position   = 'relative';
+    back.style.visibility = 'hidden';
+    var backH = back.scrollHeight;
+    back.style.transform  = 'rotateY(180deg)';
+    back.style.position   = '';
+    back.style.visibility = '';
+    inner.style.height = Math.max(frontH, backH) + 'px';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  buildIQAlphaNav();
+  sizeIQGridFlips();
+});
 </script>
 </body>
 </html>
