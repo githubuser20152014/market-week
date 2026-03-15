@@ -1059,12 +1059,18 @@
     .breadcrumb a { color: var(--accent); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
     .breadcrumb .sep { margin: 0 8px; color: var(--border); }
+    .header-home-link {
+      position: absolute; inset: 0; z-index: 1;
+      display: block; cursor: pointer;
+    }
+    .header-inner, .header-meta, .header-accent { position: relative; z-index: 2; }
   </style>
 </head>
 <body>
 <div class="page">
 
   <header class="header">
+    <a href="../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
     <div class="header-inner">
       <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
         <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
