@@ -51,6 +51,14 @@ are used. The intl generator used to rename outputs, deleting the US files.
 `fetch_data.py` prints a WARNING if the closest fixture is >2 days from the
 requested date. This means data is stale — use `--live` or create a new fixture.
 
+## System Overview Diagram
+
+- **File:** `weekly-newsletter/output/system-overview.html`
+- **Last updated:** 2026-03-13
+- Open in browser and Ctrl+P → Save as PDF to share
+- **Update this file when:** a new content type is added, a new distribution channel goes live, a major integration changes (e.g. Substack automated, LinkedIn API), or new data sources are added
+- When updating, also bump the "Generated" date in the footer
+
 ## Publishing Standards
 
 - Subscriber emails must include the **Framework Foundry banner**
