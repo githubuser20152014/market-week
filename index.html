@@ -1502,6 +1502,8 @@
       <button class="iq-cat-btn" onclick="filterIQCards(this,'central-banks')">Central Banks</button>
       <button class="iq-cat-btn" onclick="filterIQCards(this,'employment')">Employment</button>
       <button class="iq-cat-btn" onclick="filterIQCards(this,'markets')">Markets</button>
+      <button class="iq-cat-btn" onclick="filterIQCards(this,'macro-indicators')">Macro Indicators</button>
+      <button class="iq-cat-btn" onclick="filterIQCards(this,'trade-fx')">Trade & FX</button>
 
       </div>
       <div class="iq-alpha-row" id="iq-alpha-row"></div>
@@ -1940,6 +1942,2566 @@
             </div>
             <div class="flip-back-footer iq-grid-back-footer">
               <span class="flip-back-source">U.S. Treasury / FRED · Feb '26</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="macro-indicators" data-term="pmi" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Macro Indicators</div>
+              <div class="iq-card-term">PMI</div>
+              <div class="iq-card-fullname">Purchasing Managers' Index</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">PMI surveys purchasing managers at hundreds of companies, asking whether activity — new orders, production, employment, deliveries — is expanding, contracting, or unchanged versus the prior month.</p>
+              <div class="iq-card-formula">Above 50 → sector is expandingBelow 50 → sector is contractingTwo separate indexes: Manufacturing PMI and Services PMI</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (1st business day)</span>
+                <span class="iq-card-trend trend-down">↓ Contracting</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · ISM</div>
+                  <div class="flip-back-title">Manufacturing PMI — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">49.0</div>
+                  <div class="flip-back-value-period">Feb 2026 · Below 50</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">ISM Manufacturing PMI — Monthly (50 = breakeven)</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">48.4</span>
+        <div class="mini-bar" style="height:95.08840864440079%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">49.3</span>
+        <div class="mini-bar" style="height:96.8565815324165%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">50.9</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">49.0</span>
+        <div class="mini-bar" style="height:96.2671905697446%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Services PMI</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">53.5</div>
+                  <div class="stat-tile-sub">Expanding · Feb 2026</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Expansion Line</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">50.0</div>
+                  <div class="stat-tile-sub">Above = growth</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Manufacturing dipped back below 50 — a contraction signal — but services at 53.5 are keeping the broader economy afloat. Since services dominate the U.S. economy (~80% of GDP), a strong services PMI matters more for overall growth than a weak factory reading.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Institute for Supply Management</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="inflation" data-term="ppi" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Inflation</div>
+              <div class="iq-card-term">PPI</div>
+              <div class="iq-card-fullname">Producer Price Index</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">PPI measures the average change in prices that domestic producers receive for their output — raw materials, intermediate goods, and finished products. It's CPI's upstream cousin: what businesses pay before consumers do.</p>
+              <div class="iq-card-formula">PPI rising → production costs climbing → CPI likely to followPPI falling → deflationary pressure building upstream</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly</span>
+                <span class="iq-card-trend trend-up">↑ Rising</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BLS</div>
+                  <div class="flip-back-title">PPI — Current Trend</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">3.5%</div>
+                  <div class="flip-back-value-period">YoY · Jan 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">PPI Final Demand YoY — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.4%</span>
+        <div class="mini-bar" style="height:68.57142857142857%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.6%</span>
+        <div class="mini-bar" style="height:74.28571428571429%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">3.0%</span>
+        <div class="mini-bar" style="height:85.71428571428571%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">3.5%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Core PPI</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">3.6%</div>
+                  <div class="stat-tile-sub">Excl. food, energy & trade</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">vs CPI Gap</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">+0.4%</div>
+                  <div class="stat-tile-sub">PPI above CPI → pressure</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">PPI running above CPI signals that producers are absorbing some cost increases rather than fully passing them on — that margin compression often shows up in earnings misses. If producers start passing costs through, CPI could re-accelerate in coming months.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Labor Statistics</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="markets" data-term="vix" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Markets</div>
+              <div class="iq-card-term">VIX</div>
+              <div class="iq-card-fullname">CBOE Volatility Index</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The VIX measures the market's expectation of S&P 500 volatility over the next 30 days, derived from the prices of S&P 500 options. It is widely called the "fear gauge" of Wall Street.</p>
+              <div class="iq-card-formula">VIX < 15 → calm, complacent marketVIX 15–25 → moderate uncertaintyVIX > 30 → elevated fear / market stressVIX > 40 → crisis-level panic (seen in 2008, 2020)</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Continuously (market hours)</span>
+                <span class="iq-card-trend trend-up">↑ Elevated</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · CBOE</div>
+                  <div class="flip-back-title">VIX — Current Level</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">22.3</div>
+                  <div class="flip-back-value-period">Mar 2026 · Elevated</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">VIX Month-End Close — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">13.5</span>
+        <div class="mini-bar" style="height:60.53811659192825%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">15.2</span>
+        <div class="mini-bar" style="height:68.16143497757847%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">18.7</span>
+        <div class="mini-bar" style="height:83.85650224215246%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">22.3</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Historical Average</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">~19</div>
+                  <div class="stat-tile-sub">Long-run mean</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Fear Threshold</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">20+</div>
+                  <div class="stat-tile-sub">Currently above</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">VIX above 20 signals elevated market anxiety — not panic, but meaningful near-term uncertainty. For long-term ETF holders, elevated VIX can be an opportunity to add to positions at better prices, as vol spikes often overshoot and revert. Avoid reactionary selling.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">CBOE</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="trade-fx" data-term="dxy" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Trade & FX</div>
+              <div class="iq-card-term">DXY</div>
+              <div class="iq-card-fullname">U.S. Dollar Index</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">DXY measures the value of the U.S. dollar against a basket of six major currencies — primarily the Euro (57.6%), Japanese Yen (13.6%), British Pound (11.9%), and three others. A higher DXY means a stronger dollar.</p>
+              <div class="iq-card-formula">Strong dollar → U.S. imports cheaper · exports more expensive · foreign earnings worth less in USDWeak dollar → exports competitive · international ETFs get a currency boost</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Continuously (forex hours)</span>
+                <span class="iq-card-trend trend-down">↓ Weakening</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · ICE / FRED</div>
+                  <div class="flip-back-title">U.S. Dollar Index — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#2a7d4f;">98.8</div>
+                  <div class="flip-back-value-period">Mar 2026 · Multi-month low</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">DXY Month-End Close — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">104.2</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">102.1</span>
+        <div class="mini-bar" style="height:97.98464491362763%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">101.3</span>
+        <div class="mini-bar" style="height:97.21689059500959%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">98.8</span>
+        <div class="mini-bar" style="height:94.8176583493282%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">EUR/USD</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">1.073</div>
+                  <div class="stat-tile-sub">Euro strengthening</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">52-Week Range</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">98.5–108</div>
+                  <div class="stat-tile-sub">Near range low</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">A weakening dollar is a tailwind for international ETFs (EFA, VEA, EEM) — foreign gains translate into more USD when you convert back. It also boosts commodity prices and eases pressure on emerging-market dollar-denominated debt. Watch for dollar stabilization if the Fed pauses cuts.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">ICE / FRED</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="employment" data-term="jolts" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Employment</div>
+              <div class="iq-card-term">JOLTS</div>
+              <div class="iq-card-fullname">Job Openings & Labor Turnover Survey</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">JOLTS counts how many job openings exist across the U.S. economy at month-end, plus how many workers were hired, quit, or laid off. It paints a picture of labor market dynamics, not just the headline count.</p>
+              <div class="iq-card-formula">Key ratio: Job Openings ÷ Unemployed WorkersRatio > 1.0 → more jobs than people looking → tight marketThe "Quits Rate" — voluntary resignations — is the Fed's favorite confidence gauge</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (2-month lag)</span>
+                <span class="iq-card-trend trend-down">↓ Cooling</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BLS</div>
+                  <div class="flip-back-title">JOLTS Job Openings — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">7.7M</div>
+                  <div class="flip-back-value-period">Dec 2025</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Job Openings (millions) — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">8.1M</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Sep '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.9M</span>
+        <div class="mini-bar" style="height:97.53086419753087%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.8M</span>
+        <div class="mini-bar" style="height:96.2962962962963%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">7.7M</span>
+        <div class="mini-bar" style="height:95.06172839506173%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Dec '25</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Quits Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">2.0%</div>
+                  <div class="stat-tile-sub">↓ from 2.4% peak</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Openings per Unemployed</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">1.4×</div>
+                  <div class="stat-tile-sub">Still above 1:1</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The quits rate at 2.0% — down from a 2.4% peak — signals workers feel less confident about jumping to new jobs. This reduces wage growth pressure, which is exactly what the Fed wants to see before cutting rates. A soft landing means openings cool gradually, not collapse.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Labor Statistics</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="employment" data-term="claims" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Employment</div>
+              <div class="iq-card-term">Claims</div>
+              <div class="iq-card-fullname">Initial Jobless Claims (Weekly)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Initial jobless claims counts the number of Americans who filed for unemployment benefits for the first time in a given week. It's the most timely labor market indicator available — data is just one week old.</p>
+              <div class="iq-card-formula">< 250K/week → healthy labor market250–350K → softening, watch closely> 350K sustained → recession-level job losses</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Weekly (every Thursday)</span>
+                <span class="iq-card-trend trend-flat">→ Stable</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · DOL</div>
+                  <div class="flip-back-title">Initial Claims — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#2a7d4f;">220K</div>
+                  <div class="flip-back-value-period">Week of Mar 1, 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Weekly Initial Claims — Last 4 Weeks</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">215K</span>
+        <div class="mini-bar" style="height:97.28506787330316%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Feb 8</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">218K</span>
+        <div class="mini-bar" style="height:98.64253393665159%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Feb 15</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">221K</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Feb 22</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">220K</span>
+        <div class="mini-bar" style="height:99.5475113122172%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Mar 1</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">4-Week Average</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">219K</div>
+                  <div class="stat-tile-sub">Historically low</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Recession Threshold</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">350K+</div>
+                  <div class="stat-tile-sub">Far from danger zone</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Claims near 220K remain historically low — the labor market isn't cracking. As long as claims stay below 250K, the economy is generating more jobs than it's losing. Watch for sustained moves above 260–280K as an early warning signal worth acting on.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Dept. of Labor</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="macro-indicators" data-term="retail sales" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Macro Indicators</div>
+              <div class="iq-card-term">Retail Sales</div>
+              <div class="iq-card-fullname">U.S. Advance Retail Sales (MoM)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Retail Sales measures total receipts at stores that sell consumer goods — from auto dealers to online retailers to gas stations. It is the most direct monthly read on consumer spending, which drives ~70% of U.S. GDP.</p>
+              <div class="iq-card-formula">Reported month-over-month (MoM) — a positive print means consumers spent more"Control group" (ex-auto, gas, building materials) is what flows directly into GDP calculations</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (~mid-month)</span>
+                <span class="iq-card-trend trend-flat">→ Mixed</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · Census Bureau</div>
+                  <div class="flip-back-title">Retail Sales MoM — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#4a7fb5;">+0.2%</div>
+                  <div class="flip-back-value-period">Jan 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Retail Sales MoM % Change — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.4%</span>
+        <div class="mini-bar" style="height:44.44444444444445%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.8%</span>
+        <div class="mini-bar" style="height:88.8888888888889%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">-0.9%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#fca5a5,#b91c1c);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#4ade80;">+0.2%</span>
+        <div class="mini-bar" style="height:22.222222222222225%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Ex-Auto & Gas</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">+0.8%</div>
+                  <div class="stat-tile-sub">Core strength</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Consumer Share of GDP</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">~70%</div>
+                  <div class="stat-tile-sub">Economy's engine</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">December's −0.9% was weather and post-holiday payback; January's modest rebound signals consumers are still spending — just cautiously. The ex-auto control group at +0.8% is the cleanest signal of underlying demand. Consumer resilience supports earnings for discretionary and retail ETFs.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Census Bureau</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="macro-indicators" data-term="housing starts" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Macro Indicators</div>
+              <div class="iq-card-term">Housing Starts</div>
+              <div class="iq-card-fullname">New Residential Construction (Annualized)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Housing Starts counts the number of new residential construction projects begun in a given month, reported as an annualized rate. It measures the pulse of homebuilding activity across the U.S.</p>
+              <div class="iq-card-formula">Starts > 1.5M annualized → healthy construction paceBuilding Permits (released same day) lead Starts by 1–2 monthsHighly sensitive to mortgage rates — the rate-cut barometer</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (~3rd week)</span>
+                <span class="iq-card-trend trend-down">↓ Subdued</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · Census Bureau / HUD</div>
+                  <div class="flip-back-title">Housing Starts — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">1.37M</div>
+                  <div class="flip-back-value-period">Jan 2026 · Annualized</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Housing Starts (millions, annualized) — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">1.31M</span>
+        <div class="mini-bar" style="height:87.33333333333334%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">1.29M</span>
+        <div class="mini-bar" style="height:86.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">1.50M</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">1.37M</span>
+        <div class="mini-bar" style="height:91.33333333333334%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Building Permits</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">1.48M</div>
+                  <div class="stat-tile-sub">Leading indicator</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">30Y Mortgage Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">6.9%</div>
+                  <div class="stat-tile-sub">Constraining demand</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Housing is stuck — constrained by 6.9% mortgage rates that keep both builders and buyers cautious. A meaningful recovery needs the 10Y Treasury to fall toward 3.5–4.0%. When housing starts recover, it will confirm that Fed rate cuts are working — a bullish signal for homebuilder and REIT ETFs.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Census Bureau / HUD</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="markets" data-term="credit spreads" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Markets</div>
+              <div class="iq-card-term">Credit Spreads</div>
+              <div class="iq-card-fullname">High Yield & Investment Grade Bond Spreads</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">A credit spread is the extra yield investors demand on corporate bonds above equivalent U.S. Treasury yields. It represents the price of default risk — how much extra return the market requires to lend to companies instead of the government.</p>
+              <div class="iq-card-formula">Tight spreads (<300 bps HY) → market calm, credit conditions easyWide spreads (>500 bps HY) → stress, tightening financial conditionsIG spreads typically run 80–150 bps; HY spreads 250–600 bps in normal cycles</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Daily</span>
+                <span class="iq-card-trend trend-up">↑ Widening</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · ICE BofA / FRED</div>
+                  <div class="flip-back-title">HY Credit Spread — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">380 bps</div>
+                  <div class="flip-back-value-period">Mar 2026 · Widening</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">High Yield OAS — Monthly (basis points)</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">310</span>
+        <div class="mini-bar" style="height:81.57894736842105%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">330</span>
+        <div class="mini-bar" style="height:86.8421052631579%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">355</span>
+        <div class="mini-bar" style="height:93.42105263157895%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">380</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">IG Spread</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">105 bps</div>
+                  <div class="stat-tile-sub">Investment grade</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Historical HY Avg</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">~400 bps</div>
+                  <div class="stat-tile-sub">Near average now</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Spreads widening to 380 bps signals rising corporate stress — but still below the ~500 bps level that historically precedes recessions. For ETF investors, widening HY spreads are a reason to reduce exposure to junk bond funds (HYG, JNK) and favor investment-grade or Treasury ETFs until the trend reverses.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">ICE BofA / FRED</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="central-banks" data-term="real rate" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Central Banks</div>
+              <div class="iq-card-term">Real Rate</div>
+              <div class="iq-card-fullname">Real Interest Rate (FFR minus Core PCE)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The real interest rate strips out inflation from the nominal rate, showing what borrowers and savers actually earn or pay in purchasing-power terms. It tells you whether monetary policy is truly restrictive or just nominally high.</p>
+              <div class="iq-card-formula">Real Rate = Nominal Rate − Inflation (Core PCE)Positive real rate → policy is genuinely restrictiveNegative real rate → policy is stimulative (money is "cheap")</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Derived: Monthly (FFR − Core PCE)</span>
+                <span class="iq-card-trend trend-flat">→ Elevated</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Derived · Fed / BEA</div>
+                  <div class="flip-back-title">Real Interest Rate — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">+1.58%</div>
+                  <div class="flip-back-value-period">Jan 2026 · Restrictive</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Neutral Real Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">~0.5%</div>
+                  <div class="stat-tile-sub">Fed's r-star estimate</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Policy Stance</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">Restrictive</div>
+                  <div class="stat-tile-sub">+1.08% above neutral</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">A real rate of +1.58% — well above the neutral ~0.5% — means policy is genuinely restrictive: borrowing is expensive in real terms, suppressing investment and spending. As inflation falls or the Fed cuts, the real rate will ease — that's the moment to expect a broader risk-asset rally and recovery in rate-sensitive sectors.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Federal Reserve / BEA</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="macro-indicators" data-term="consumer confidence" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Macro Indicators</div>
+              <div class="iq-card-term">Consumer Confidence</div>
+              <div class="iq-card-fullname">Conference Board Consumer Confidence Index</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The Conference Board surveys ~3,000 households monthly, asking how they feel about current business conditions, the job market, and their expectations six months ahead. It produces an index benchmarked to 100 (1985 baseline).</p>
+              <div class="iq-card-formula">Two components:Present Situation Index — how things feel right nowExpectations Index — outlook for jobs and income in 6 monthsWhen Present > Expectations: consumers confident today but worried about tomorrow</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (last Tuesday)</span>
+                <span class="iq-card-trend trend-down">↓ Declining</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · Conference Board</div>
+                  <div class="flip-back-title">Consumer Confidence — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">98.3</div>
+                  <div class="flip-back-value-period">Feb 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Consumer Confidence Index — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">111.7</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">104.7</span>
+        <div class="mini-bar" style="height:93.7332139659803%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">105.3</span>
+        <div class="mini-bar" style="height:94.27036705461056%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">98.3</span>
+        <div class="mini-bar" style="height:88.00358102059086%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Present Situation</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">138.1</div>
+                  <div class="stat-tile-sub">Conditions feel good</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Expectations</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">72.9</div>
+                  <div class="stat-tile-sub">Worried about future</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The Present–Expectations gap is wide: consumers feel fine today but are anxious about the next 6 months. This divergence often precedes a pullback in discretionary spending. Watch consumer staples ETFs (XLP) as a defensive tilt when confidence drops sharply.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Conference Board</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="macro-indicators" data-term="michigan sentiment" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Macro Indicators</div>
+              <div class="iq-card-term">Michigan Sentiment</div>
+              <div class="iq-card-fullname">University of Michigan Consumer Sentiment Index</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The U of Michigan surveys ~500 households twice a month, measuring how Americans feel about their personal finances, buying conditions, and economic outlook. Released in preliminary and final form, it is the Fed's preferred sentiment gauge.</p>
+              <div class="iq-card-formula">Index range: 0–100 (1964 baseline = 100)Includes a crucial sub-measure: 1-year and 5-year inflation expectationsFed watches these expectations closely — if they become "unanchored," the Fed must act</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (preliminary & final)</span>
+                <span class="iq-card-trend trend-down">↓ Declining</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · U of Michigan</div>
+                  <div class="flip-back-title">Michigan Sentiment — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">71.8</div>
+                  <div class="flip-back-value-period">Feb 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Michigan Sentiment Index — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">71.8</span>
+        <div class="mini-bar" style="height:97.02702702702702%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">74.0</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">71.1</span>
+        <div class="mini-bar" style="height:96.08108108108108%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">64.7</span>
+        <div class="mini-bar" style="height:87.43243243243244%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">1-Year Inflation Expectation</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">2.8%</div>
+                  <div class="stat-tile-sub">Slightly above 2% target</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">5-Year Inflation Expectation</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">2.5%</div>
+                  <div class="stat-tile-sub">Anchored but rising</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Michigan sentiment has fallen sharply from above 80 a year ago — consumers are genuinely worried about future inflation and earnings resilience. The 1-year inflation expectation at 2.8% is inching up, which is why the Fed remains cautious about cutting rates aggressively. Watch for further deterioration in the "expectations" component as a recession warning.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">University of Michigan</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="macro-indicators" data-term="industrial production" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Macro Indicators</div>
+              <div class="iq-card-term">Industrial Production</div>
+              <div class="iq-card-fullname">Industrial Production & Capacity Utilization (Fed)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Industrial Production measures the real output of manufacturing, mining, and utilities sectors — the "physical economy" that makes goods. Released monthly by the Federal Reserve, it's one of the four indicators the NBER uses to date recessions.</p>
+              <div class="iq-card-formula">Paired with Capacity Utilization: how much of the economy's factory capacity is in useUtilization > 80% → inflationary pressure (economy running hot)Utilization < 77% → slack exists, no inflation pressure</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (~mid-month)</span>
+                <span class="iq-card-trend trend-flat">→ Mixed</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · Federal Reserve</div>
+                  <div class="flip-back-title">Industrial Production MoM — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">−0.1%</div>
+                  <div class="flip-back-value-period">Jan 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Industrial Production % Change MoM — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.3%</span>
+        <div class="mini-bar" style="height:33.33333333333333%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.2%</span>
+        <div class="mini-bar" style="height:22.222222222222225%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.9%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#fca5a5;">-0.1%</span>
+        <div class="mini-bar" style="height:11.111111111111112%;background:linear-gradient(180deg,#fca5a5,#b91c1c);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Capacity Utilization</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">77.1%</div>
+                  <div class="stat-tile-sub">Below 80% = no overheating</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Mfg Output</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">+0.1%</div>
+                  <div class="stat-tile-sub">Slight positive</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The January dip follows December's utilities surge — not a trend reversal. Capacity at 77.1% shows slack in the industrial economy, which is disinflationary — good for inflation expectations but suggests limited upside for industrial and materials ETFs (XLI, XLB) until demand accelerates.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Federal Reserve</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="macro-indicators" data-term="durable goods" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Macro Indicators</div>
+              <div class="iq-card-term">Durable Goods</div>
+              <div class="iq-card-fullname">Durable Goods Orders (Advance Estimate)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Durable Goods Orders measures new orders placed with U.S. manufacturers for items expected to last three or more years — aircraft, machinery, computers, autos, appliances. It's a forward-looking gauge of business investment intentions.</p>
+              <div class="iq-card-formula">Headline: total durable goods orders (volatile — dominated by aircraft)Core: ex-transportation = steadier readCore Capital Goods (ex-defense, ex-aircraft) = best proxy for business investment plans</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (~4th week)</span>
+                <span class="iq-card-trend trend-flat">→ Mixed</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · Census Bureau</div>
+                  <div class="flip-back-title">Durable Goods Orders MoM — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#2a7d4f;">+3.1%</div>
+                  <div class="flip-back-value-period">Jan 2026 · Headline</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Durable Goods Orders % Change MoM — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">-0.7%</span>
+        <div class="mini-bar" style="height:22.58064516129032%;background:linear-gradient(180deg,#fca5a5,#b91c1c);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.9%</span>
+        <div class="mini-bar" style="height:29.03225806451613%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.2%</span>
+        <div class="mini-bar" style="height:6.451612903225806%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#4ade80;">+3.1%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Ex-Transportation</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">−0.3%</div>
+                  <div class="stat-tile-sub">Underlying soft</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Core Capital Goods</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">+0.1%</div>
+                  <div class="stat-tile-sub">Business investment flat</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The +3.1% headline surge was almost entirely Boeing aircraft orders — highly volatile, not repeatable. Strip that out and the picture is flat. Businesses aren't ramping capital investment yet, which limits upside for industrials ETFs but also means the economy isn't overheating.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Census Bureau</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="inflation" data-term="breakeven inflation" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Inflation</div>
+              <div class="iq-card-term">Breakeven Inflation</div>
+              <div class="iq-card-fullname">10-Year TIPS Breakeven Inflation Rate</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The breakeven inflation rate is what the bond market expects average annual inflation to be over the next 10 years. It's derived from the yield difference between regular Treasury bonds and TIPS (Treasury Inflation-Protected Securities).</p>
+              <div class="iq-card-formula">Breakeven Rate = 10Y Nominal Treasury Yield − 10Y TIPS Real YieldIf breakeven > Fed's 2% target → market doubts the Fed can hit its targetIf breakeven < 2% → market expects below-target inflation</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Daily</span>
+                <span class="iq-card-trend trend-up">↑ Rising</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · FRED / U.S. Treasury</div>
+                  <div class="flip-back-title">10Y Breakeven — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">2.31%</div>
+                  <div class="flip-back-value-period">Mar 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">10-Year TIPS Breakeven — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.18%</span>
+        <div class="mini-bar" style="height:94.37229437229438%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.22%</span>
+        <div class="mini-bar" style="height:96.10389610389612%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.26%</span>
+        <div class="mini-bar" style="height:97.83549783549782%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">2.31%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">5-Year Breakeven</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">2.48%</div>
+                  <div class="stat-tile-sub">Near-term expectations higher</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Fed Target</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">2.0%</div>
+                  <div class="stat-tile-sub">Both above target</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">With breakevens rising above 2.3%, bond markets are signaling that inflation will stay above target for the next decade. This reduces the case for rate cuts and keeps pressure on long-duration bonds (TLT). TIPS themselves become attractive when breakevens are rising — they pay out more as inflation rises.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">FRED / U.S. Treasury</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="inflation" data-term="import prices" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Inflation</div>
+              <div class="iq-card-term">Import Prices</div>
+              <div class="iq-card-fullname">U.S. Import & Export Price Index (BLS)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Import prices track how much U.S. businesses pay for goods purchased from abroad — everything from foreign electronics and clothing to oil and pharmaceuticals. Rising import prices mean inflation is being "imported" into the domestic economy.</p>
+              <div class="iq-card-formula">Import Price Index → feeds into PPI within ~1 month → feeds into CPI within ~2–3 monthsKey driver: tariffs are import price increases by definition — a 10% tariff = 10% import price shock on affected goods</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly</span>
+                <span class="iq-card-trend trend-up">↑ Rising</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BLS</div>
+                  <div class="flip-back-title">Import Prices MoM — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">+0.4%</div>
+                  <div class="flip-back-value-period">Jan 2026 · MoM</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Import Prices % Change MoM — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.1%</span>
+        <div class="mini-bar" style="height:25.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">-0.1%</span>
+        <div class="mini-bar" style="height:25.0%;background:linear-gradient(180deg,#fca5a5,#b91c1c);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.2%</span>
+        <div class="mini-bar" style="height:50.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#4ade80;">+0.4%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">YoY Import Prices</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">+2.2%</div>
+                  <div class="stat-tile-sub">Accelerating</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Ex-Petroleum</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">+1.8%</div>
+                  <div class="stat-tile-sub">Tariff impact visible</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Rising import prices — partly tariff-driven — feed into producer and consumer prices within months. This is a second-wave inflation risk: even if demand is cooling, cost-push inflation from tariffs can keep CPI elevated regardless. Companies with heavy import exposure (retail, consumer goods) face margin pressure.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Labor Statistics</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="inflation" data-term="income & spending" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Inflation</div>
+              <div class="iq-card-term">Income & Spending</div>
+              <div class="iq-card-fullname">Personal Income & Personal Consumption Expenditures (BEA)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The BEA's monthly Personal Income and Outlays report tracks how much Americans earned and spent. It's released on the same day as PCE — in fact, PCE inflation is derived from this same data. Together they tell the full consumer story.</p>
+              <div class="iq-card-formula">Personal Income growth > Spending growth → savings rate rises → disinflationarySpending growth > Income growth → consumers drawing down savings → unsustainablePersonal Savings Rate = (Income − Spending) / Income</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (last Friday)</span>
+                <span class="iq-card-trend trend-flat">→ Mixed</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BEA</div>
+                  <div class="flip-back-title">Personal Spending MoM — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#4a7fb5;">+0.2%</div>
+                  <div class="flip-back-value-period">Jan 2026 · Spending MoM</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Personal Spending % Change MoM — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.5%</span>
+        <div class="mini-bar" style="height:71.42857142857143%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.6%</span>
+        <div class="mini-bar" style="height:85.71428571428572%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:rgba(255,255,255,0.5);">+0.7%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#4ade80;">+0.2%</span>
+        <div class="mini-bar" style="height:28.571428571428577%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Personal Income MoM</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">+0.9%</div>
+                  <div class="stat-tile-sub">Strong — income > spending</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Personal Savings Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">4.6%</div>
+                  <div class="stat-tile-sub">Rebuilding buffers</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Income growing faster than spending is a disinflationary signal — consumers are saving, not splurging. The savings rate tick-up to 4.6% shows resilience, not distress. This dynamic supports a soft landing and allows the Fed room to cut without reigniting demand-driven inflation.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Economic Analysis</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="employment" data-term="u-6" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Employment</div>
+              <div class="iq-card-term">U-6</div>
+              <div class="iq-card-fullname">Broad (Real) Unemployment Rate</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">U-6 is the broadest official measure of unemployment. It counts not just the jobless (U-3 headline rate), but also discouraged workers who've stopped looking and people working part-time who want full-time work. It reveals labor market slack hidden in the headline.</p>
+              <div class="iq-card-formula">U-3 (Headline): Unemployed ÷ Labor ForceU-6 (Broad): (Unemployed + Marginally Attached + Part-Time for Economic Reasons) ÷ Labor ForceGap between U-6 and U-3 = degree of underemployment in the economy</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (alongside NFP)</span>
+                <span class="iq-card-trend trend-up">↑ Rising</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BLS</div>
+                  <div class="flip-back-title">U-6 Unemployment — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">8.0%</div>
+                  <div class="flip-back-value-period">Feb 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">U-6 Broad Unemployment Rate — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.5%</span>
+        <div class="mini-bar" style="height:93.75%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.6%</span>
+        <div class="mini-bar" style="height:95.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.8%</span>
+        <div class="mini-bar" style="height:97.5%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">8.0%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">U-3 Headline</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">4.1%</div>
+                  <div class="stat-tile-sub">Looks healthy…</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">U-6 / U-3 Gap</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">3.9 pts</div>
+                  <div class="stat-tile-sub">Widening — more slack</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">U-6 rising to 8.0% while U-3 holds at 4.1% means the gap is widening — more workers are stuck in part-time or marginally attached situations. This signals more labor market slack than the headline implies, which is actually good for inflation control but bad for consumer spending power and wage growth momentum.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Labor Statistics</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="employment" data-term="lfpr" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Employment</div>
+              <div class="iq-card-term">LFPR</div>
+              <div class="iq-card-fullname">Labor Force Participation Rate</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">LFPR is the percentage of the civilian non-institutional population (age 16+) that is either employed or actively looking for work. It measures how much of America's potential workforce is actually in the labor market.</p>
+              <div class="iq-card-formula">LFPR = Labor Force ÷ Civilian Non-Institutional Population × 100Declining LFPR → workers leaving workforce → unemployment rate falls "artificially"Prime-Age LFPR (25–54 year olds) = cleanest signal, less affected by aging demographics</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (alongside NFP)</span>
+                <span class="iq-card-trend trend-down">↓ Declining</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest Data · BLS</div>
+                  <div class="flip-back-title">Labor Force Participation — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">62.6%</div>
+                  <div class="flip-back-value-period">Feb 2026</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Labor Force Participation Rate — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">62.9%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">62.8%</span>
+        <div class="mini-bar" style="height:99.84101748807632%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">62.7%</span>
+        <div class="mini-bar" style="height:99.68203497615264%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">62.6%</span>
+        <div class="mini-bar" style="height:99.52305246422894%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Pre-Pandemic Peak</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">63.4%</div>
+                  <div class="stat-tile-sub">Still below Feb 2020</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Prime-Age LFPR</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">83.7%</div>
+                  <div class="stat-tile-sub">Near pre-pandemic high</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The overall LFPR drag is mostly demographic — retiring boomers, not discouraged workers. Prime-age LFPR at 83.7% is nearly fully recovered. This distinction matters: if prime-age workers are participating, the labor supply is healthy; the headline decline isn't a crisis signal but a structural demographic reality.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Bureau of Labor Statistics</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="central-banks" data-term="dot plot" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Central Banks</div>
+              <div class="iq-card-term">Dot Plot</div>
+              <div class="iq-card-fullname">FOMC Summary of Economic Projections (SEP)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Four times a year, each of the 18 FOMC members submits their anonymous projection for where the Federal Funds Rate should be at year-end. Plotted as dots on a chart, this "dot plot" gives markets a direct window into Fed thinking on the rate path.</p>
+              <div class="iq-card-formula">Median dot = official Fed guidance on rate pathDispersion of dots = degree of disagreement within the FedWide dispersion → high uncertainty; tight cluster → strong consensus</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Quarterly (Mar, Jun, Sep, Dec)</span>
+                <span class="iq-card-trend trend-flat">→ 2 Cuts in 2026</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · Dec 2025 SEP</div>
+                  <div class="flip-back-title">2026 Rate Path — Member Projections</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#6b7280;">3.875%</div>
+                  <div class="flip-back-value-period">Median 2026 year-end</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">2026 Median Dot</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">3.875%</div>
+                  <div class="stat-tile-sub">2 × 25 bps cuts</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Long-Run Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">2.875%</div>
+                  <div class="stat-tile-sub">Neutral / r-star est.</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">10 of 18 members expect only 0–1 cuts in 2026 — more hawkish than markets hoped. The wide dispersion signals genuine uncertainty. Every new inflation or employment print reshuffles the dots. For investors, this means rate-sensitive positions (real estate, utilities, long bonds) face headwinds until the picture clarifies.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Federal Reserve SEP</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="central-banks" data-term="qt" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Central Banks</div>
+              <div class="iq-card-term">QT</div>
+              <div class="iq-card-fullname">Quantitative Tightening / Fed Balance Sheet Runoff</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Quantitative Tightening is the Fed's process of shrinking its balance sheet by allowing Treasury bonds and mortgage-backed securities (MBS) to mature without reinvesting the proceeds. It is the opposite of QE (Quantitative Easing), which expanded the balance sheet by purchasing these assets.</p>
+              <div class="iq-card-formula">QE: Fed buys bonds → adds money to system → lower yields, more creditQT: Fed lets bonds mature → removes money from system → upward pressure on yieldsBalance sheet peaked at $9.0T (Apr 2022); now ~$6.8T — reduced by ~$2.2T</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Ongoing · $25B/month runoff pace</span>
+                <span class="iq-card-trend trend-down">↓ Shrinking</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · Federal Reserve H.4.1</div>
+                  <div class="flip-back-title">Fed Balance Sheet — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#4a7fb5;">$6.80T</div>
+                  <div class="flip-back-value-period">Feb 2026 · Total Assets</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Fed Total Assets ($T) — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$6.95T</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$6.90T</span>
+        <div class="mini-bar" style="height:99.28057553956835%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$6.85T</span>
+        <div class="mini-bar" style="height:98.56115107913669%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">$6.80T</span>
+        <div class="mini-bar" style="height:97.84172661870502%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">QT Pace</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">$25B/mo</div>
+                  <div class="stat-tile-sub">Slowed from $60B/mo peak</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Peak Balance Sheet</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">$9.0T</div>
+                  <div class="stat-tile-sub">Apr 2022 · Down ~$2.2T</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">QT at $25B/month means less Fed buying of Treasuries — the government must find private buyers for more of its debt. This keeps long-term yields elevated independent of the FFR. When the Fed eventually pauses QT (expected when reserves approach a "comfortable" floor), long bonds could rally significantly.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Federal Reserve H.4.1 Release</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="central-banks" data-term="m2" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Central Banks</div>
+              <div class="iq-card-term">M2</div>
+              <div class="iq-card-fullname">M2 Money Supply</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">M2 measures the total supply of money in the U.S. economy — physical cash, checking accounts, savings accounts, money market funds, and small CDs. It is the broadest widely-used measure of "how much money is sloshing around."</p>
+              <div class="iq-card-formula">M1: Cash + checking accounts (most liquid)M2: M1 + savings + money market funds + small CDsMilton Friedman: "Inflation is always and everywhere a monetary phenomenon" — M2 growth predicts inflation with a 12–18 month lag</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (Federal Reserve H.6)</span>
+                <span class="iq-card-trend trend-up">↑ Re-accelerating</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · Federal Reserve H.6</div>
+                  <div class="flip-back-title">M2 Year-Over-Year Growth — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">+4.1%</div>
+                  <div class="flip-back-value-period">Feb 2026 · YoY</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">M2 Money Supply YoY Growth Rate — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">+3.5%</span>
+        <div class="mini-bar" style="height:85.3658536585366%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">+3.7%</span>
+        <div class="mini-bar" style="height:90.24390243902441%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">+3.9%</span>
+        <div class="mini-bar" style="height:95.1219512195122%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">+4.1%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">M2 Level</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">$21.4T</div>
+                  <div class="stat-tile-sub">Total money supply</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">COVID Peak Growth</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">+27%</div>
+                  <div class="stat-tile-sub">2021 · drove 2022 inflation</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">M2 growing at 4% after shrinking in 2023 means monetary conditions are easing again. Historically, sustained M2 growth above 5–6% precedes inflation with a 12–18 month lag. This is why monetarist economists are cautious about declaring victory on inflation — money supply says the fight isn't fully won.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Federal Reserve H.6 Release</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="central-banks" data-term="sloos" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Central Banks</div>
+              <div class="iq-card-term">SLOOS</div>
+              <div class="iq-card-fullname">Senior Loan Officer Opinion Survey on Bank Lending Practices</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Every quarter, the Fed surveys ~80 large U.S. banks and ~24 foreign banks on their lending standards. The key question: are you tightening or easing credit conditions for business loans, mortgages, and consumer credit? The net percentage is the signal.</p>
+              <div class="iq-card-formula">Net % Tightening = % of banks tightening − % of banks easingPositive number → more banks making credit harder to getNegative number → more banks loosening credit (stimulative)SLOOS leads economic activity by ~6–9 months</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Quarterly (Jan, Apr, Jul, Oct)</span>
+                <span class="iq-card-trend trend-flat">→ Easing Slowly</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · Federal Reserve SLOOS</div>
+                  <div class="flip-back-title">Net % Banks Tightening C&I Standards</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#4a7fb5;">14.6%</div>
+                  <div class="flip-back-value-period">Q4 2025 · Still net tight</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Net % of Banks Tightening C&I Loan Standards — Quarterly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">22.4%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q1 '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">18.3%</span>
+        <div class="mini-bar" style="height:81.69642857142858%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q2 '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">16.1%</span>
+        <div class="mini-bar" style="height:71.87500000000001%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q3 '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">14.6%</span>
+        <div class="mini-bar" style="height:65.17857142857143%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Q4 '25</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">C&I Loans Tight</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">14.6%</div>
+                  <div class="stat-tile-sub">Declining from 22.4% peak</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Consumer Loans Tight</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">18.2%</div>
+                  <div class="stat-tile-sub">Still restrictive</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Still net tightening, but the trend is clearly improving — a positive leading signal. When SLOOS returns to net neutral or easing, it typically precedes a credit expansion cycle 6–9 months later, which benefits small-cap stocks (more bank-dependent) and high-yield bonds. Watch for Q1 2026 survey results in April.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Federal Reserve SLOOS</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="markets" data-term="cape" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Markets</div>
+              <div class="iq-card-term">CAPE</div>
+              <div class="iq-card-fullname">Cyclically Adjusted Price-to-Earnings Ratio (Shiller PE10)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">CAPE divides the S&P 500 price by the average of the past 10 years of real (inflation-adjusted) earnings. Developed by Nobel laureate Robert Shiller, it smooths out business cycle volatility to give a cleaner picture of whether stocks are cheap or expensive historically.</p>
+              <div class="iq-card-formula">CAPE = S&P 500 Price ÷ 10-Year Average Real EarningsHistorical average CAPE: ~17CAPE > 30 → historically expensive; low expected 10-year forward returnsCAPE < 15 → historically cheap; high expected forward returns</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Monthly (Shiller's website)</span>
+                <span class="iq-card-trend trend-up">↑ Elevated</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · Shiller / Yale</div>
+                  <div class="flip-back-title">Shiller CAPE Ratio — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">34.8</div>
+                  <div class="flip-back-value-period">Mar 2026 · ~2× hist. avg</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Shiller CAPE — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">36.2</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">35.5</span>
+        <div class="mini-bar" style="height:98.06629834254143%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">35.0</span>
+        <div class="mini-bar" style="height:96.68508287292818%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">34.8</span>
+        <div class="mini-bar" style="height:96.13259668508286%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Historical Average</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">~17</div>
+                  <div class="stat-tile-sub">1871–present</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">2000 Peak (dot-com)</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">44.2</div>
+                  <div class="stat-tile-sub">All-time high</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">At 34.8 — roughly double the historical average — U.S. equities are priced for perfection. Historical data suggests below-average 10-year returns from this level. This doesn't mean sell everything, but it does argue for diversification: international ETFs (VEA, EEM) trade at far lower CAPE ratios and offer better long-term value.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">Robert Shiller / Yale</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="markets" data-term="gold" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Markets</div>
+              <div class="iq-card-term">Gold</div>
+              <div class="iq-card-fullname">Gold Spot Price (XAU/USD)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">Gold is the oldest financial asset and the world's ultimate store of value and safe-haven currency. Its price reflects a combination of inflation expectations, real interest rates, geopolitical stress, central bank demand, and the strength of the U.S. dollar.</p>
+              <div class="iq-card-formula">Gold rises when: real rates fall · dollar weakens · inflation fears rise · geopolitical risk spikes · central banks buyGold falls when: real rates rise · dollar strengthens · risk appetite returnsGold has no yield — its opportunity cost is the real interest rate</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Continuously (global markets)</span>
+                <span class="iq-card-trend trend-up">↑ New Highs</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · LBMA / Spot Market</div>
+                  <div class="flip-back-title">Gold — Current Price</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:var(--text);">$5,204</div>
+                  <div class="flip-back-value-period">Mar 2026 · All-Time High</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">Gold Price ($/oz) — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$3,800</span>
+        <div class="mini-bar" style="height:73.0207532667179%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$4,350</span>
+        <div class="mini-bar" style="height:83.58954650269024%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$4,850</span>
+        <div class="mini-bar" style="height:93.19754035357417%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Feb '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">$5,204</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Mar '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">YTD Performance</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">+19.6%</div>
+                  <div class="stat-tile-sub">From ~$4,350 Jan 1</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Central Bank Demand</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:var(--text);">Record</div>
+                  <div class="stat-tile-sub">Structural driver</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Gold at all-time highs alongside elevated real rates (which typically suppress gold) is unusual — driven by central bank de-dollarization buying and geopolitical hedging. A 5–10% gold allocation via GLD or IAU provides portfolio diversification; gold's correlation to equities has been near zero over the past decade.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">LBMA / Spot Market</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="markets" data-term="wti" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Markets</div>
+              <div class="iq-card-term">WTI</div>
+              <div class="iq-card-fullname">WTI Crude Oil Price (West Texas Intermediate)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">WTI is the benchmark price for U.S.-produced crude oil, set at trading hubs in Cushing, Oklahoma. It is one of the most widely traded commodities in the world — and because oil touches almost every sector of the economy, its price ripples through inflation, corporate margins, and consumer spending.</p>
+              <div class="iq-card-formula">Oil high → gasoline prices rise · transportation costs rise · CPI risesOil low → consumer "tax cut" effect · airline, shipping margins improve · but signals weak demandEvery $10/bbl rise in oil adds approximately 0.2–0.3% to U.S. CPI</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Continuously (NYMEX)</span>
+                <span class="iq-card-trend trend-flat">→ Stable</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · NYMEX / EIA</div>
+                  <div class="flip-back-title">WTI Crude Oil — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#4a7fb5;">$70.1</div>
+                  <div class="flip-back-value-period">Mar 2026 · per barrel</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">WTI Crude Oil Price ($/bbl) — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$69.2</span>
+        <div class="mini-bar" style="height:92.88590604026847%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$74.5</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">$72.0</span>
+        <div class="mini-bar" style="height:96.64429530201343%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Feb '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">$70.1</span>
+        <div class="mini-bar" style="height:94.09395973154362%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Mar '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Brent Crude</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">$74.2</div>
+                  <div class="stat-tile-sub">Global benchmark</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">OPEC+ Target</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#6b7280;">~$70</div>
+                  <div class="stat-tile-sub">Production cuts calibrated here</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Oil near $70 is a Goldilocks level — low enough not to spike CPI, high enough not to signal demand collapse. OPEC+ production cuts are preventing a price drop that would reflect weak global growth. Watch for moves above $85 (inflation risk) or below $60 (demand recession signal) as the levels that would change the macro story.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">NYMEX / EIA</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="markets" data-term="eps growth" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Markets</div>
+              <div class="iq-card-term">EPS Growth</div>
+              <div class="iq-card-fullname">S&P 500 Earnings Per Share Growth (YoY)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">EPS growth measures how much corporate earnings increased (or fell) compared to the same quarter a year ago. For the S&P 500, it represents the aggregate earnings power of America's 500 largest public companies — the foundation of stock market valuations.</p>
+              <div class="iq-card-formula">Stock prices = EPS × P/E multipleEarnings drive long-run returns; multiple expansion drives short-run movesEPS misses → stocks fall · EPS beats → stocks rally — especially during earnings season</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Quarterly (earnings seasons)</span>
+                <span class="iq-card-trend trend-flat">→ Steady</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · FactSet Earnings Insight</div>
+                  <div class="flip-back-title">S&P 500 EPS Growth — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#2a7d4f;">+8.2%</div>
+                  <div class="flip-back-value-period">Q4 2025 Blended YoY</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">S&P 500 EPS Growth YoY — Quarterly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">+5.8%</span>
+        <div class="mini-bar" style="height:61.702127659574465%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q1 '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">+9.4%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q2 '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">+8.7%</span>
+        <div class="mini-bar" style="height:92.55319148936168%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Q3 '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">+8.2%</span>
+        <div class="mini-bar" style="height:87.23404255319149%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Q4 '25</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">2026 Consensus Est.</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">+11.3%</div>
+                  <div class="stat-tile-sub">Full-year forecast</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Beats Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">74%</div>
+                  <div class="stat-tile-sub">Above historical avg (67%)</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Eight percent earnings growth despite macro headwinds is solid. Markets are pricing in +11.3% for 2026 — which requires continued economic resilience. If macro softens or tariff costs bite into margins, earnings estimate cuts would likely compress the S&P 500's rich valuation. Watch guidance language in Q1 2026 earnings reports.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">FactSet Earnings Insight</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="trade-fx" data-term="trade balance" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Trade & FX</div>
+              <div class="iq-card-term">Trade Balance</div>
+              <div class="iq-card-fullname">U.S. International Trade in Goods & Services</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The trade balance measures the difference between U.S. exports and imports. When imports exceed exports (the U.S. norm), the result is a trade deficit. The U.S. has run a persistent trade deficit for decades — it is the world's largest goods importer.</p>
+              <div class="iq-card-formula">Trade Balance = Exports − ImportsNegative = trade deficit (U.S. buys more from the world than it sells)Widening deficit → GDP math drag (net exports subtract from GDP)But reflects strong domestic demand — not necessarily a sign of weakness</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Published: Monthly (~5th week)</span>
+                <span class="iq-card-trend trend-up">↑ Widening</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · Census Bureau / BEA</div>
+                  <div class="flip-back-title">Trade Balance — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">−$131B</div>
+                  <div class="flip-back-value-period">Jan 2026 · Record monthly deficit</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">U.S. Monthly Trade Balance ($B) — Recent</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#7aabda;">-$84B</span>
+        <div class="mini-bar" style="height:64.23135464231355%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Oct '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#7aabda;">-$78B</span>
+        <div class="mini-bar" style="height:59.51293759512938%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#7aabda;">-$98B</span>
+        <div class="mini-bar" style="height:74.88584474885845%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:#4ade80;">-$131B</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#4ade80,#2a7d4f);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Jan '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Goods Deficit</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">−$164B</div>
+                  <div class="stat-tile-sub">Largest component</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Services Surplus</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#2a7d4f;">+$32B</div>
+                  <div class="stat-tile-sub">Tech, finance, travel</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">The record January deficit reflects companies front-loading imports ahead of tariffs — pulling demand forward. This will mechanically drag Q1 2026 GDP growth lower, but it's a distortion, not a signal of fundamental weakness. Expect the deficit to narrow once the pre-tariff rush subsides, which could provide a GDP bounce in Q2.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">U.S. Census Bureau / BEA</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="trade-fx" data-term="tariff rate" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Trade & FX</div>
+              <div class="iq-card-term">Tariff Rate</div>
+              <div class="iq-card-fullname">U.S. Effective Tariff Rate on Imports</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">The effective tariff rate is the average tax the U.S. government collects on all imported goods — calculated as total tariff revenue divided by total import value. It reflects the aggregate impact of all tariff schedules across all trading partners.</p>
+              <div class="iq-card-formula">Effective Tariff Rate = Tariff Revenue Collected ÷ Total Import ValueA 10% blanket tariff doesn't raise the effective rate by 10% immediately — some imports are exempt, others face retaliatory tariffs that reduce import volumePass-through to consumers: typically 80–100% within 6–12 months</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: As policy changes</span>
+                <span class="iq-card-trend trend-up">↑ Rising Fast</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Estimated · PIIE / Tax Foundation</div>
+                  <div class="flip-back-title">Effective Tariff Rate — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">~13.5%</div>
+                  <div class="flip-back-value-period">Mar 2026 · Estimate</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">U.S. Effective Tariff Rate — Policy Timeline</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">2.5%</span>
+        <div class="mini-bar" style="height:18.51851851851852%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Pre-2025</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">5.1%</span>
+        <div class="mini-bar" style="height:37.77777777777778%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan 2025</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">8.3%</span>
+        <div class="mini-bar" style="height:61.48148148148148%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Sep 2025</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">13.5%</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Mar 2026</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">China Tariff Rate</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">54%</div>
+                  <div class="stat-tile-sub">Highest bilateral rate</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">CPI Tariff Impact Est.</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">+0.5–1.5%</div>
+                  <div class="stat-tile-sub">Full pass-through</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Tariffs at these levels are effectively a consumption tax — paid by U.S. importers and passed to consumers. For ETF investors, this means pressure on import-heavy retail and consumer goods companies, and a potential boost for domestic manufacturers. Watch earnings guidance for explicit tariff cost commentary starting in Q1 2026 reports.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">PIIE / Tax Foundation / U.S. Customs</span>
+              <span class="flip-hint">&larr; Flip back</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="iq-grid-flip" data-category="trade-fx" data-term="usd/cny" onclick="toggleIQFlip(this)">
+        <div class="iq-grid-flip-inner">
+
+          <div class="iq-grid-flip-front">
+            <div class="iq-card-top">
+              <div class="iq-card-category">Trade & FX</div>
+              <div class="iq-card-term">USD/CNY</div>
+              <div class="iq-card-fullname">U.S. Dollar vs. Chinese Yuan (Renminbi)</div>
+            </div>
+            <div class="iq-grid-flip-front-body">
+              <p class="iq-card-def">USD/CNY measures how many Chinese yuan one U.S. dollar buys. A higher number means a weaker yuan (dollar stronger). China's central bank (PBOC) sets a daily "fixing" rate and allows the yuan to trade within a ±2% band around it — making this a managed, not freely floating, exchange rate.</p>
+              <div class="iq-card-formula">Stronger yuan (lower USD/CNY) → Chinese exports more expensive · easier to import · PBOC looseningWeaker yuan (higher USD/CNY) → Chinese exports cheaper · offsets some tariff impact · capital outflow riskOffshore CNH rate (freely traded in Hong Kong) often diverges from onshore CNY</div>
+            </div>
+            <div class="iq-grid-flip-front-footer">
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span class="iq-card-freq">Updated: Daily (managed float)</span>
+                <span class="iq-card-trend trend-flat">→ Watched Closely</span>
+              </div>
+              <span class="flip-hint">Flip &rarr;</span>
+            </div>
+          </div>
+
+          <div class="iq-grid-flip-back">
+            <div class="flip-back-header iq-grid-back-header">
+              <div class="flip-back-header-inner">
+                <div>
+                  <div class="flip-back-source-label">Latest · PBOC / Bloomberg</div>
+                  <div class="flip-back-title">USD/CNY Exchange Rate — Current</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="flip-back-value" style="color:#b91c1c;">7.25</div>
+                  <div class="flip-back-value-period">Mar 2026 · CNY per USD</div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-grid-flip-back-body">
+              
+              <div>
+                <div class="iq-chart-label">USD/CNY (higher = weaker yuan) — Monthly</div>
+                <div class="iq-chart-container"><div class="mini-bar-chart">
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.19</span>
+        <div class="mini-bar" style="height:98.89958734525447%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Nov '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.24</span>
+        <div class="mini-bar" style="height:99.58734525447043%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Dec '25</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--accent-lt);">7.27</span>
+        <div class="mini-bar" style="height:100.0%;background:linear-gradient(180deg,#7aabda,#4a7fb5);"></div>
+        <span class="mini-bar-period-label" style="color:rgba(255,255,255,0.45);">Jan '26</span>
+      </div>
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:var(--red);">7.25</span>
+        <div class="mini-bar" style="height:99.72489683631363%;background:linear-gradient(180deg,#b91c1c,#7f1111);"></div>
+        <span class="mini-bar-period-label" style="color:var(--gold);">Feb '26</span>
+      </div>
+    </div></div>
+              </div>
+              <div class="stat-tile-grid">
+                <div class="stat-tile">
+                  <div class="stat-tile-label">PBOC Daily Fix</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#4a7fb5;">7.22</div>
+                  <div class="stat-tile-sub">Slightly stronger than market</div>
+                </div>
+                <div class="stat-tile">
+                  <div class="stat-tile-label">Risk Threshold</div>
+                  <div class="stat-tile-value iq-stat-value" style="color:#b91c1c;">7.50</div>
+                  <div class="stat-tile-sub">Beyond here = EM contagion risk</div>
+                </div>
+              </div>
+              <div class="insight-callout">
+                <div class="insight-callout-label">What This Means For You</div>
+                <p class="insight-callout-text">Yuan at 7.25 is elevated but within managed territory — the PBOC fix at 7.22 signals they're not allowing rapid depreciation. A controlled yuan limits tariff offset for China but preserves financial stability. If USD/CNY breaks 7.50, watch for a broader EM currency sell-off affecting EM ETFs (EEM, VWO) globally.</p>
+              </div>
+            </div>
+            <div class="flip-back-footer iq-grid-back-footer">
+              <span class="flip-back-source">PBOC / Bloomberg</span>
               <span class="flip-hint">&larr; Flip back</span>
             </div>
           </div>
