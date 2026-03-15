@@ -2203,6 +2203,7 @@ function showSection(id) {
   var labels = { markets: 0, marketiq: 1, investing: 2, expat: 3 };
   var tabs = document.querySelectorAll('.section-tab');
   if (labels[id] !== undefined) tabs[labels[id]].classList.add('active');
+  if (id === 'marketiq') sizeIQGridFlips();
 }
 function showSubNav(el) {
   var nav = el.closest('.sub-nav');
@@ -2344,7 +2345,6 @@ function sizeIQGridFlips() {
 
 document.addEventListener('DOMContentLoaded', function() {
   buildIQAlphaNav();
-  sizeIQGridFlips();
 });
 </script>"""
 
