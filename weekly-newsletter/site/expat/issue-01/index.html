@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Issue 01: The Portugal Issue — The American Expat Investor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+  <style>
+    :root {
+      --navy:      #0f1f3d;
+      --navy-mid:  #1a3260;
+      --accent:    #4a7fb5;
+      --accent-lt: #7aabda;
+      --gold:      #c9a84c;
+      --gold-lt:   #e0c97a;
+      --white:     #ffffff;
+      --off-white: #f5f4f0;
+      --text:      #1a1a2e;
+      --border:    #ddd8cc;
+      --muted:     #6b7280;
+      --green:     #2a7d4f;
+      --red:       #b91c1c;
+      --bg:        #dde3ea;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--text);
+      padding: 32px 16px;
+      min-height: 100vh;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .header-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 40px 20px;
+      gap: 20px;
+    }
+    .header-left { display: flex; align-items: center; gap: 16px; }
+    .logo-icon { flex-shrink: 0; width: 56px; height: 56px; }
+    .logo-name-framework {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: var(--white);
+      display: block;
+      line-height: 1;
+    }
+    .logo-name-foundry {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 11px;
+      color: var(--accent);
+      display: block;
+      margin-top: 4px;
+    }
+    .logo-rule { height: 1px; background: rgba(255,255,255,0.15); margin: 6px 0 4px; }
+    .logo-tagline {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+    .header-accent {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 40px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+    /* ── BOOK SECTION ── */
+    .book-section {
+      padding: 32px 24px 28px;
+      background: #222d40;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .book-header-row {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .book-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .book-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 1px;
+    }
+
+    #book { touch-action: none; }
+
+    .flip-controls {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-top: 20px;
+    }
+    .flip-btn {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.65);
+      padding: 9px 22px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .flip-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .flip-counter {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.35);
+      min-width: 64px;
+      text-align: center;
+    }
+    .flip-hint {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    /* ── MAGAZINE PAGE BASE ── */
+    .page {
+      background: var(--white);
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+    }
+    .page.page-cover { background: var(--navy); }
+    .page.left-page  { border-right: 1px solid rgba(0,0,0,0.08); }
+    .page.right-page { border-left: 1px solid rgba(0,0,0,0.05); }
+
+    /* Inner page wrapper */
+    .pg {
+      padding: 26px 22px 16px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Typography */
+    .pg-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .pg-section {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    .pg-rule {
+      height: 1px;
+      background: var(--border);
+      margin: 7px 0 8px;
+    }
+    .pg-subsection {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 9px 0 4px;
+      padding-left: 8px;
+      border-left: 2px solid var(--gold);
+    }
+    .pg-text {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 11.5px;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+    .pg-text-sm {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .pg-bold  { font-weight: 600; color: var(--navy); }
+    .pg-num {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--border);
+      text-align: center;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    /* Callout boxes */
+    .pg-highlight {
+      background: #fff9ed;
+      border-left: 3px solid var(--gold);
+      padding: 8px 10px;
+      margin: 7px 0;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .pg-flag {
+      background: #fff5f5;
+      border-left: 3px solid var(--red);
+      padding: 8px 10px;
+      margin: 7px 0;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    /* Cost table */
+    .pg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Raleway', sans-serif;
+      font-size: 8.5px;
+      margin-top: 6px;
+    }
+    .pg-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 5px 7px;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .pg-table td {
+      padding: 4px 7px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      line-height: 1.35;
+    }
+    .pg-table tr:nth-child(even) td { background: var(--off-white); }
+    .pg-table tr.total td {
+      background: #eae6d8;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+    }
+
+    /* Checklist */
+    .pg-checklist {
+      list-style: none;
+      margin-top: 6px;
+    }
+    .pg-checklist li {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.5;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .pg-checklist li::before {
+      content: '□';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    /* ── COVER ── */
+    .cover-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .cover-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .cover-top {
+      padding: 22px 24px 0;
+      position: relative;
+    }
+    .cover-pub-line {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7px;
+      font-weight: 500;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .cover-ff-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--accent-lt);
+      text-transform: uppercase;
+    }
+    .cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      position: relative;
+      text-align: center;
+    }
+    .cover-issue-badge {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .cover-the {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 6px;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .cover-american {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 2px;
+      line-height: 1.05;
+    }
+    .cover-expat {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+    .cover-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 18px;
+    }
+    .cover-issue-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-lt);
+      margin-bottom: 5px;
+    }
+    .cover-country {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .cover-topics {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cover-topic {
+      font-family: 'Raleway', sans-serif;
+      font-size: 6.5px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.13);
+      padding: 3px 9px;
+    }
+    .cover-bottom {
+      padding: 10px 24px;
+      background: rgba(0,0,0,0.28);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .cover-date {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+    }
+    .cover-domain {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+    }
+
+    /* ── BACK COVER ── */
+    .back-inner {
+      height: 100%;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .back-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .back-ff   { font-family: 'Cormorant Garamond', serif; font-size: 10px; font-weight: 600; letter-spacing: 6px; color: rgba(255,255,255,0.25); text-transform: uppercase; margin-bottom: 28px; position: relative; }
+    .back-tagline { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.7); line-height: 1.55; max-width: 280px; margin-bottom: 24px; position: relative; }
+    .back-rule { width: 36px; height: 1px; background: var(--gold); margin: 0 auto 24px; position: relative; }
+    .back-sub-label { font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; position: relative; }
+    .back-sub-text  { font-family: 'Source Serif 4', Georgia, serif; font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.55; margin-bottom: 18px; position: relative; }
+    .back-domain    { font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; color: var(--white); position: relative; }
+    .back-issue     { font-family: 'Raleway', sans-serif; font-size: 7px; font-weight: 400; letter-spacing: 2.5px; color: rgba(255,255,255,0.2); text-transform: uppercase; margin-top: 28px; position: relative; }
+
+    /* ── SUBSCRIBE SECTION ── */
+    .subscribe-section {
+      background: var(--navy);
+      padding: 40px;
+      text-align: center;
+    }
+    .subscribe-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .subscribe-section p {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+    .subscribe-form {
+      display: flex;
+      justify-content: center;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .subscribe-form input {
+      flex: 1;
+      padding: 10px 16px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      outline: none;
+    }
+    .subscribe-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .subscribe-form button {
+      padding: 10px 24px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0a1528;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    .footer-nav { margin-bottom: 10px; }
+    .footer-nav a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    .footer-nav a:hover { color: var(--accent-lt); }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 8px;
+    }
+    .footer-logo span { color: var(--accent-lt); }
+    .footer-disclaimer {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.18);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 12px 6px; }
+      .header-inner { padding: 16px 20px; }
+      .breadcrumb { padding: 8px 20px; }
+      .book-section { padding: 20px 4px; }
+      .subscribe-section { padding: 28px 20px; }
+      .footer { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ══ HEADER ══ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <svg class="logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="29" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+          <line x1="32" y1="3"  x2="32" y2="61" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <line x1="3"  y1="32" x2="61" y2="32" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <line x1="10" y1="10" x2="54" y2="54" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <line x1="54" y1="10" x2="10" y2="54" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <rect x="24" y="24" width="16" height="16" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none"/>
+          <line x1="14" y1="50" x2="50" y2="14" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="50" cy="14" r="2.5" fill="#c9a84c"/>
+        </svg>
+        <div>
+          <span class="logo-name-framework">FRAMEWORK</span>
+          <span class="logo-name-foundry">FOUNDRY</span>
+          <div class="logo-rule"></div>
+          <span class="logo-tagline">Economic Intelligence &nbsp;·&nbsp; Research for the Serious Investor</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <!-- ══ BREADCRUMB ══ -->
+  <nav class="breadcrumb">
+    <a href="../../index.html">Framework Foundry</a>
+    <span>/</span>
+    <a href="../../index.html" onclick="setTimeout(()=>showSection&&showSection('expat'),100);return true;">Expat Investing</a>
+    <span>/</span>
+    Issue 01 &nbsp;·&nbsp; The Portugal Issue
+  </nav>
+
+  <!-- ══ BOOK SECTION ══ -->
+  <div class="book-section">
+    <div class="book-header-row">
+      <div class="book-eyebrow">The American Expat Investor</div>
+      <div class="book-title">Issue 01 &mdash; The Portugal Issue</div>
+    </div>
+
+    <!-- ── FLIP BOOK ── -->
+    <div id="book">
+
+      <!-- PAGE 1: FRONT COVER -->
+      <div class="page page-cover" data-density="hard">
+        <div class="cover-inner">
+          <div class="cover-grid"></div>
+          <div class="cover-top">
+            <div class="cover-pub-line">Framework Foundry &nbsp;·&nbsp; Expat Investing Series</div>
+            <div class="cover-ff-label">americanexpatinvestor.com</div>
+          </div>
+          <div class="cover-body">
+            <div class="cover-issue-badge">Issue 01</div>
+            <div class="cover-the">The American</div>
+            <div class="cover-american">Expat</div>
+            <div class="cover-expat">Investor</div>
+            <div class="cover-rule"></div>
+            <div class="cover-issue-title">The Portugal Issue</div>
+            <div class="cover-country">D7 Visa &nbsp;·&nbsp; FBAR &nbsp;·&nbsp; Banking &nbsp;·&nbsp; PRIIPs</div>
+            <div class="cover-topics">
+              <span class="cover-topic">Cost of Living</span>
+              <span class="cover-topic">Visa Pathway</span>
+              <span class="cover-topic">FBAR Filing</span>
+              <span class="cover-topic">Pre-Departure Checklist</span>
+            </div>
+          </div>
+          <div class="cover-bottom">
+            <span class="cover-date">March 2026</span>
+            <span class="cover-domain">americanexpatinvestor.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 2: INTRO (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">About This Issue</div>
+          <div class="pg-section">Built in Public</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text">I've been doing this research for myself.</p>
+          <p class="pg-text">Not theoretically. I'm planning the move — 401k, brokerage account, and all. What I discovered is that nobody is publishing a clean financial primer for this situation.</p>
+          <p class="pg-text">The resources that exist are for the ultra-wealthy, the digital nomad, or someone trying to escape the system entirely. I'm none of those things. I just want to live somewhere else without getting the finances wrong.</p>
+          <p class="pg-text"><em>The American Expat Investor</em> is what I needed when I started: one country, one financial mechanism, one pre-departure checklist. Built in public. Shared as I go.</p>
+          <p class="pg-text"><span class="pg-bold">This month: Portugal</span> — the D7 visa, the real cost of living, banking as an American, and what FBAR means for your first foreign account.</p>
+          <div class="pg-highlight">
+            <em>Orientation only. Verify specifics with a qualified expat CPA before making decisions.</em>
+          </div>
+          <div class="pg-num">2</div>
+        </div>
+      </div>
+
+      <!-- PAGE 3: WHY AMERICANS (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Portugal File</div>
+          <div class="pg-section">Why Americans Are Going There</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm"><span class="pg-bold">The weather.</span> Lisbon gets 300+ days of sun a year. Atlantic coast, mild winters. More like San Diego without the price tag. Porto is cooler, more northern European in feel, better food scene.</p>
+          <p class="pg-text-sm"><span class="pg-bold">The cultural fit.</span> English is widely spoken — not just in tourist corridors but in professional settings, grocery stores, among younger locals everywhere. The bureaucracy is genuinely maddening, but the day-to-day social experience isn't alienating the way it can be in other countries.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Safety.</span> Portugal consistently ranks in the top 5 safest countries globally. For Americans who've internalized a low-grade threat awareness in certain environments, that shift in baseline feels significant the first week — then just becomes normal.</p>
+          <p class="pg-text-sm"><span class="pg-bold">EU access — the strategic angle.</span> A D7 visa gets you to legal residency. Residency gets you to citizenship after five years. Portuguese citizenship means an EU passport — the right to live and work anywhere in the Schengen zone.</p>
+          <p class="pg-text-sm">That's not just a travel convenience. It's optionality — the ability to reconsider your next move from a position of strength.</p>
+          <div class="pg-num">3</div>
+        </div>
+      </div>
+
+      <!-- PAGE 4: COST OF LIVING TABLE (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · Cost of Living</div>
+          <div class="pg-section">What It Actually Costs in 2025–26</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">If you're coming from any US coastal metro where a 1-bedroom starts at $2,500, these numbers feel like a typo. They're not.</p>
+          <table class="pg-table">
+            <thead>
+              <tr>
+                <th style="width:46%">Category</th>
+                <th style="width:27%">EUR / mo</th>
+                <th style="width:27%">USD (~)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Rent — Lisbon, 1-bed</td><td>€800–1,000</td><td>$850–1,100</td></tr>
+              <tr><td>Rent — Porto, 1-bed</td><td>€600–800</td><td>$650–875</td></tr>
+              <tr><td>Rent — Interior cities</td><td>€400–600</td><td>$430–650</td></tr>
+              <tr><td>Groceries vs. US</td><td colspan="2" style="text-align:center">~30% less</td></tr>
+              <tr><td>Restaurant lunch</td><td>€10–15</td><td>$11–16</td></tr>
+              <tr><td>Dinner for two (wine)</td><td>€35–50</td><td>$38–55</td></tr>
+              <tr><td>Coffee at the counter</td><td>€0.70–1.20</td><td>$0.75–1.30</td></tr>
+              <tr><td>Monthly transit (Lisbon)</td><td>~€40</td><td>~$43</td></tr>
+              <tr class="total"><td>Single / comfortable / Lisbon</td><td>€2,000–2,500</td><td>$2,150–2,700</td></tr>
+            </tbody>
+          </table>
+          <p class="pg-text-sm" style="margin-top:8px">A couple in Portugal needs €3,500–4,000/month to match a standard of living that costs $7,000–8,000+ in a comparable US city.</p>
+          <div class="pg-num">4</div>
+        </div>
+      </div>
+
+      <!-- PAGE 5: VISA PATHWAY (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · Visa Pathway</div>
+          <div class="pg-section">The D7 Passive Income Visa</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">The D7 was designed for retirees but works equally well for anyone with investment income, rental income, dividends, or a pension — as long as you're not planning to take a Portuguese job.</p>
+          <p class="pg-text-sm">Income threshold (2025): <span class="pg-bold">€870/month</span> (~$950). Advisors recommend showing €1,200–1,500/month to clear the consulate's informal comfort zone. Social Security, brokerage dividends, or rental income may qualify you on paper. The question is documentation.</p>
+          <div class="pg-subsection">Application Steps</div>
+          <p class="pg-text-sm" style="margin-bottom:4px">① Gather documents — income proof, criminal background check, Portuguese address, health insurance valid in Portugal</p>
+          <p class="pg-text-sm" style="margin-bottom:4px">② Apply at Portuguese consulate in your US jurisdiction (Boston, NYC, DC, SF, or Miami)</p>
+          <p class="pg-text-sm" style="margin-bottom:4px">③ Enter Portugal on D7 entry visa → apply for residency permit at AIMA within four months</p>
+          <p class="pg-text-sm" style="margin-bottom:8px">④ First permit: two years, renewable. After five years: permanent residency or citizenship eligible.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Timeline:</span> 3–6 months minimum. Hire a local immigration lawyer (~€500–1,000). Worth every euro.</p>
+          <div class="pg-flag">
+            <span class="pg-bold">⚠ NHR is closed.</span> The Non-Habitual Resident tax regime ended for new applicants Dec 31, 2023. NHR 2.0 (IFICI) targets R&amp;D/startup workers only — D7 passive income residents do not qualify. Your income is taxed at Portugal's progressive rates: 14.5%–48%. Any article describing NHR as an active Portugal benefit is out of date.
+          </div>
+          <div class="pg-num">5</div>
+        </div>
+      </div>
+
+      <!-- PAGE 6: BANKING (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · Banking</div>
+          <div class="pg-section">Banking as an American Abroad</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">When you update your address with your US bank to a foreign address, many institutions will freeze your account, restrict online access, or close it entirely. This has happened to people mid-move, with rent due in Portugal and a frozen account back home.</p>
+          <p class="pg-text-sm"><span class="pg-bold">The fix: open expat-friendly accounts before you leave.</span></p>
+          <div class="pg-subsection">Charles Schwab International Account</div>
+          <p class="pg-text-sm">The default recommendation in every expat community for good reason. No foreign transaction fees. Unlimited ATM fee reimbursements globally. Functions as a checking account you can use anywhere in the world.</p>
+          <div class="pg-subsection">Interactive Brokers (IBKR)</div>
+          <p class="pg-text-sm">Primarily a brokerage, but offers a cash management account. Widely used by expats who need continued access to US markets. More flexibility than most on EU residency.</p>
+          <div class="pg-subsection">Local Portuguese Bank</div>
+          <p class="pg-text-sm">You'll need one for rent, utilities, and AIMA. NovoBanco, Millennium BCP, and Caixa Geral are common choices. Budget a few weeks and two or three in-person visits. Onboarding for foreigners is tedious — this is normal.</p>
+          <div class="pg-num">6</div>
+        </div>
+      </div>
+
+      <!-- PAGE 7: INVESTMENT ACCESS (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · Investing</div>
+          <div class="pg-section">Investment Access from the EU</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">This is the part that surprises most American investors.</p>
+          <p class="pg-text-sm">When you become an EU resident, the EU's <span class="pg-bold">PRIIPs regulation</span> bars you from purchasing most US-domiciled funds. VTI, VXUS, QQQ, SPY — you cannot buy new shares in them as an EU resident. The regulation requires funds sold to EU retail investors to provide a standardized Key Information Document. US-domiciled ETFs don't provide that document.</p>
+          <div class="pg-highlight">
+            <span class="pg-bold">The standard workaround:</span> keep your US brokerage accounts open from before you leave. Holdings you already own can generally be maintained and sold. The restriction is on <em>new purchases</em>.
+          </div>
+          <p class="pg-text-sm">IBKR is more flexible than most — depending on account structure, some users report continued trading access. Get clarity from IBKR directly, in writing, before you move.</p>
+          <div class="pg-subsection">What EU Residents Can Buy</div>
+          <p class="pg-text-sm">UCITS ETFs — EU-domiciled equivalents. Vanguard FTSE All-World (VWRA), iShares MSCI World (IWDA), and Invesco S&amp;P 500 (SPXS) are the common substitutes. They function similarly to US equivalents but aren't the same funds.</p>
+          <p class="pg-text-sm">Before you move: get your US accounts funded with the positions you want to hold long-term. Don't close anything.</p>
+          <div class="pg-num">7</div>
+        </div>
+      </div>
+
+      <!-- PAGE 8: FBAR — WHAT IT IS (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · FBAR</div>
+          <div class="pg-section">What Every American Abroad Must Understand</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Before you open your first foreign bank account, you need to know one acronym: <span class="pg-bold">FBAR</span>.</p>
+          <p class="pg-text-sm">FBAR stands for Foreign Bank Account Report. The official form is <span class="pg-bold">FinCEN Form 114</span>. The first thing to understand: this is <em>not</em> a tax form. It is not filed with the IRS. It does not trigger a payment. FBAR is a disclosure requirement administered by FinCEN — the Financial Crimes Enforcement Network — inside the US Treasury. The government wants to know the account exists. That's it.</p>
+          <div class="pg-highlight">
+            FBAR applies to anyone who opens a bank account in another country. The checking account you'll use to pay rent in Lisbon. The account to pay AIMA fees. The European brokerage account for UCITS ETFs. All of it counts.
+          </div>
+          <p class="pg-text-sm">The rule has existed since 1970. It was barely enforced for decades. Starting around 2010, the US government began enforcing it aggressively — and has collected billions in penalties since. FBAR is not a technicality.</p>
+          <div class="pg-num">8</div>
+        </div>
+      </div>
+
+      <!-- PAGE 9: FBAR — WHO IT APPLIES TO (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · FBAR</div>
+          <div class="pg-section">Who This Applies To</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Any US person with a financial interest in, or signature authority over, foreign financial accounts must file if the <span class="pg-bold">aggregate value exceeds $10,000</span> at any point during the calendar year.</p>
+          <div class="pg-subsection">US Person</div>
+          <p class="pg-text-sm">US citizens (regardless of where you live), green card holders, and anyone meeting the IRS's substantial presence test. If you hold a US passport, you are almost certainly a US person for FBAR purposes — even if you haven't lived in the US in years.</p>
+          <div class="pg-subsection">Financial Interest or Signature Authority</div>
+          <p class="pg-text-sm">Broader than ownership. You must file if you can <em>control</em> the account — even if the money isn't yours. Joint accounts count. If your name is on a business account in Portugal, report it. The question isn't ownership — it's control.</p>
+          <div class="pg-subsection">The Single-Day Rule</div>
+          <div class="pg-flag">
+            The $10,000 threshold applies to any single day, not year-end. If your accounts collectively held $12,000 on one day in July — then fell to $4,000 by December 31 — you still must file. This is where people get tripped up. They check their December 31 balance, see $4,000, and conclude they don't need to file. That's wrong.
+          </div>
+          <div class="pg-num">9</div>
+        </div>
+      </div>
+
+      <!-- PAGE 10: FBAR — DEADLINES (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · FBAR</div>
+          <div class="pg-section">Deadlines and Requirements</div>
+          <div class="pg-rule"></div>
+          <div class="pg-highlight">
+            Filing deadline: <span class="pg-bold">April 15</span>, with an automatic extension to <span class="pg-bold">October 15</span>. No action required to get the extension — it applies automatically. You still want to file by April 15 if possible, but October 15 is available without penalty.
+          </div>
+          <div class="pg-subsection">How You File</div>
+          <p class="pg-text-sm">Electronically, through the <span class="pg-bold">BSA E-Filing System</span> at the FinCEN website. Not mailed. Not attached to your tax return. It is a separate filing in a separate government system. Your tax preparer can file it alongside your return as part of their workflow — but it goes to a different place than Form 1040.</p>
+          <div class="pg-subsection">What You Report</div>
+          <p class="pg-text-sm">Every foreign financial account: bank accounts, savings accounts, brokerage accounts, pension accounts held in foreign institutions, and any account over which you have signature authority.</p>
+          <p class="pg-text-sm">For each account: account number, institution name, country, and the <span class="pg-bold">maximum value during the reporting year</span>.</p>
+          <div class="pg-num">10</div>
+        </div>
+      </div>
+
+      <!-- PAGE 11: FBAR — PENALTIES (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · FBAR</div>
+          <div class="pg-section">Penalties for Non-Compliance</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm" style="font-style:italic;color:var(--muted);margin-bottom:9px">Read this section twice.</p>
+          <div class="pg-subsection">Non-Willful Violations</div>
+          <p class="pg-text-sm">Cases where the government believes you simply didn't know: civil penalty up to <span class="pg-bold">$10,000 per violation per year</span>. "Per violation" generally means per account per year. Two foreign accounts for three years, unfiled: up to $60,000 in potential penalties before any negotiation.</p>
+          <div class="pg-subsection">Willful Violations</div>
+          <p class="pg-text-sm">Cases where you knew and ignored it: penalty up to the greater of <span class="pg-bold">$100,000 or 50% of the account balance per violation</span>. That is per account, per year. Criminal prosecution is also on the table.</p>
+          <div class="pg-subsection">The Enforcement Reality</div>
+          <p class="pg-text-sm">Foreign banks are reporting your accounts to the US government through FATCA agreements — whether you tell FinCEN or not. The IRS has run multiple amnesty programs (OVDP and Streamlined Filing Compliance Procedures) specifically because so many Americans abroad were non-compliant. The enforcement infrastructure is real.</p>
+          <div class="pg-num">11</div>
+        </div>
+      </div>
+
+      <!-- PAGE 12: FBAR — HOW TO STAY COMPLIANT (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · FBAR</div>
+          <div class="pg-section">How to Stay Compliant</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm"><span class="pg-bold">1. List every foreign account the moment you open it.</span> Account number, institution name, country, date opened. Keep this in a running document. You need the maximum annual balance at year-end. Track it throughout the year and the filing takes twenty minutes.</p>
+          <p class="pg-text-sm"><span class="pg-bold">2. Set a calendar reminder.</span> April 15 for FBAR. October 15 as the extended deadline. Set both, set them to repeat annually, treat them as non-negotiable.</p>
+          <p class="pg-text-sm"><span class="pg-bold">3. Work with a FBAR-aware expat CPA.</span> Ask specifically whether they handle FBAR and FinCEN Form 114 as part of their standard expat service. If they don't file it, find someone who does.</p>
+          <p class="pg-text-sm"><span class="pg-bold">4. If you're already behind, act now.</span> The IRS's Streamlined Filing Compliance Procedures allow non-compliant but non-willful filers to get caught up with reduced or waived penalties — but only before the IRS contacts you first.</p>
+          <div class="pg-flag" style="margin-top:9px">
+            <em>This section is orientation only, not tax or legal advice. Requirements vary. Verify your specific situation with a qualified expat CPA before filing.</em>
+          </div>
+          <div class="pg-num">12</div>
+        </div>
+      </div>
+
+      <!-- PAGE 13: PRE-DEPARTURE CHECKLIST (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 3</div>
+          <div class="pg-section">Before You Go: The Financial Checklist</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">These have a sequencing logic. Open Schwab before you update your address. Get D7 income documentation in order before booking a consulate appointment. Set the FBAR reminder before you open the first foreign account, not after.</p>
+          <ul class="pg-checklist">
+            <li>Notify your US bank and brokerage of your new international address</li>
+            <li>Open a Schwab International or IBKR account before you leave</li>
+            <li>Set recurring FBAR reminder: April 15 (auto-extended to Oct 15)</li>
+            <li>List every foreign account you'll open — track aggregate balance for FBAR</li>
+            <li>Confirm your 401k / IRA custodian allows an international address on file</li>
+            <li>Check your health insurance (ACA, employer plan, or international coverage)</li>
+            <li>Understand the D7 passive income requirement before applying</li>
+            <li>NHR is closed — original program ended 2023. NHR 2.0 (IFICI) applies to R&amp;D/startup workers only. Most D7 applicants do not qualify.</li>
+          </ul>
+          <div class="pg-num">13</div>
+        </div>
+      </div>
+
+      <!-- PAGE 14: BACK COVER -->
+      <div class="page page-cover" data-density="hard">
+        <div class="back-inner">
+          <div class="back-grid"></div>
+          <div class="back-ff">Framework Foundry</div>
+          <div class="back-tagline">"One country. One financial mechanism.<br/>One pre-departure checklist."</div>
+          <div class="back-rule"></div>
+          <div class="back-sub-label">Subscribe &mdash; It&rsquo;s Free</div>
+          <div class="back-sub-text">New country every month.<br/>Built in public. Shared as I go.</div>
+          <div class="back-domain">americanexpatinvestor.com</div>
+          <div class="back-issue">The American Expat Investor &nbsp;·&nbsp; Issue 01 &nbsp;·&nbsp; March 2026</div>
+        </div>
+      </div>
+
+    </div><!-- #book -->
+
+    <!-- ── CONTROLS ── -->
+    <div class="flip-controls">
+      <button class="flip-btn" id="btn-prev">&#8592; Prev</button>
+      <span class="flip-counter" id="page-counter">1 / 14</span>
+      <button class="flip-btn" id="btn-next">Next &#8594;</button>
+    </div>
+    <div class="flip-hint">click pages to turn &nbsp;·&nbsp; drag to flip &nbsp;·&nbsp; swipe on mobile</div>
+
+  </div><!-- .book-section -->
+
+  <!-- ══ SUBSCRIBE ══ -->
+  <div class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Free market intelligence &mdash; weekly editions, daily briefs, and the expat series.</p>
+    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required/>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-nav">
+      <a href="../../index.html">Framework Foundry</a>
+      <a href="../../index.html">Expat Investing</a>
+    </div>
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- .page-wrapper -->
+
+<script>
+window.addEventListener('load', function () {
+  var wrapper   = document.querySelector('.page-wrapper');
+  var section   = document.querySelector('.book-section');
+  var available = Math.min(wrapper.offsetWidth - 48, 900);
+  var portrait  = window.innerWidth < 680;
+  var pageW, pageH;
+
+  if (portrait) {
+    pageW = Math.min(wrapper.offsetWidth - 24, 420);
+  } else {
+    pageW = Math.floor(available / 2);
+  }
+  pageH = Math.round(pageW * 1.4);
+
+  var pageFlip = new St.PageFlip(document.getElementById('book'), {
+    width:               pageW,
+    height:              pageH,
+    size:                'fixed',
+    showCover:           true,
+    usePortrait:         portrait,
+    drawShadow:          true,
+    flippingTime:        700,
+    useMouseEvents:      true,
+    swipeDistance:       30,
+    mobileScrollSupport: false,
+    autoSize:            false
+  });
+
+  pageFlip.loadFromHTML(document.querySelectorAll('#book .page'));
+
+  var counter = document.getElementById('page-counter');
+  var total   = pageFlip.getPageCount();
+  counter.textContent = '1 / ' + total;
+
+  pageFlip.on('flip', function (e) {
+    counter.textContent = (e.data + 1) + ' / ' + total;
+  });
+
+  document.getElementById('btn-prev').addEventListener('click', function () {
+    pageFlip.flipPrev('bottom');
+  });
+  document.getElementById('btn-next').addEventListener('click', function () {
+    pageFlip.flipNext('bottom');
+  });
+});
+</script>
+
+</body>
+</html>
