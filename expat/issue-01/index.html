@@ -1080,6 +1080,12 @@ function onFullscreenChange() {
 document.addEventListener('fullscreenchange',       onFullscreenChange);
 document.addEventListener('webkitfullscreenchange', onFullscreenChange);
 
+document.addEventListener('keydown', function (e) {
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) return;
+  if (e.key === 'ArrowRight') pageFlip.flipNext('bottom');
+  if (e.key === 'ArrowLeft')  pageFlip.flipPrev('bottom');
+});
+
 window.addEventListener('load', function () {
   var wrapper   = document.querySelector('.page-wrapper');
   var available = Math.min(wrapper.offsetWidth - 48, 900);
