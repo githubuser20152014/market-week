@@ -105,7 +105,7 @@
 
 - [ ] **Site-wide navigation** `[IDEA]` `[HIGH]`
   - Persistent nav bar on every page: Home | US Edition | International | Daily Brief | Market IQ | Archive
-  - "Back to Home" / breadcrumb link at the top and bottom of each newsletter edition page
+  - ~~"Back to Home" / breadcrumb link at the top and bottom of each newsletter edition page~~ ✅ shipped 2026-03-15
   - "Next edition →" / "← Previous edition" links at the bottom of each page for sequential reading
   - Active page highlighted in nav bar
   - Inject nav HTML in `build_site.py`, `intl_build_site.py`, and `build_combined_site.py` so all editions share the same header/footer
