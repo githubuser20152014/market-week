@@ -1363,6 +1363,14 @@ def parse_fundaa_articles(articles_dir=None):
     return articles
 
 
+_HEADER_LINK_CSS = """\
+    .header-home-link {
+      position: absolute; inset: 0; z-index: 1;
+      display: block; cursor: pointer;
+    }
+    .header-inner, .header-meta, .header-accent { position: relative; z-index: 2; }
+"""
+
 _BREADCRUMB_CSS = """\
     .breadcrumb {
       font-family: 'Raleway', sans-serif;
@@ -1401,6 +1409,21 @@ def inject_breadcrumb(html, crumbs):
     nav = _make_breadcrumb_nav(crumbs)
     html = html.replace("</style>", _BREADCRUMB_CSS + "  </style>", 1)
     html = html.replace('<div class="content">', '<div class="content">\n' + nav, 1)
+    return html
+
+
+def inject_header_link(html, home_url):
+    """Post-process rendered HTML: make the header banner link to home.
+
+    Injects an invisible full-bleed anchor overlay inside <header class="header">
+    so clicking anywhere on the banner navigates to home_url.
+    """
+    html = html.replace("</style>", _HEADER_LINK_CSS + "  </style>", 1)
+    html = html.replace(
+        '<header class="header">',
+        f'<header class="header"><a href="{home_url}" class="header-home-link" aria-label="Go to Framework Foundry home"></a>',
+        1,
+    )
     return html
 
 
@@ -1451,12 +1474,18 @@ def render_fundaa_article_page(article):
     .breadcrumb a {{ color: var(--accent); text-decoration: none; }}
     .breadcrumb a:hover {{ text-decoration: underline; }}
     .breadcrumb .sep {{ margin: 0 8px; color: var(--border); }}
+    .header-home-link {{
+      position: absolute; inset: 0; z-index: 1;
+      display: block; cursor: pointer;
+    }}
+    .header-inner, .header-meta, .header-accent {{ position: relative; z-index: 2; }}
   </style>
 </head>
 <body>
 <div class="page">
 
   <header class="header">
+    <a href="../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
     <div class="header-inner">
 {_LOGO_SVG}
       <div class="logo-text">
@@ -2281,6 +2310,7 @@ def build(use_mock=True):
         issue_dir = SITE_DIR / "us" / date_str
         issue_dir.mkdir(parents=True, exist_ok=True)
         html = render_us_html(ctx)
+        html = inject_header_link(html, "../../index.html")
         html = inject_breadcrumb(html, [
             ("Framework Foundry", "../../index.html"),
             ("Markets", "../../index.html#markets"),
@@ -2304,6 +2334,7 @@ def build(use_mock=True):
         issue_dir = SITE_DIR / "intl" / date_str
         issue_dir.mkdir(parents=True, exist_ok=True)
         html = render_intl_html(ctx)
+        html = inject_header_link(html, "../../index.html")
         html = inject_breadcrumb(html, [
             ("Framework Foundry", "../../index.html"),
             ("Markets", "../../index.html#markets"),
@@ -2328,6 +2359,7 @@ def build(use_mock=True):
         issue_dir = SITE_DIR / "daily" / date_str
         issue_dir.mkdir(parents=True, exist_ok=True)
         html = render_daybreak_html(ctx)
+        html = inject_header_link(html, "../../index.html")
         html = inject_breadcrumb(html, [
             ("Framework Foundry", "../../index.html"),
             ("Markets", "../../index.html#markets"),
