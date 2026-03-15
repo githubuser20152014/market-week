@@ -58,6 +58,11 @@ def main():
         action="store_true",
         help="Also generate a PDF version.",
     )
+    parser.add_argument(
+        "--verify",
+        action="store_true",
+        help="Cross-check prices against FRED + Stooq before generating.",
+    )
     args = parser.parse_args()
 
     use_mock = not args.live
@@ -65,6 +70,11 @@ def main():
 
     # ── Fetch ─────────────────────────────────────────────────────────────────
     raw = fetch_daybreak_data(date_str, use_mock=use_mock)
+
+    # ── Price verification ─────────────────────────────────────────────────────
+    if args.verify or (args.live and not getattr(args, "no_verify", False)):
+        from data.verify_prices import verify_prices_daybreak
+        verify_prices_daybreak(raw, date_str)
 
     # ── Persist live data as fixture ──────────────────────────────────────────
     if args.live:
