@@ -1363,6 +1363,47 @@ def parse_fundaa_articles(articles_dir=None):
     return articles
 
 
+_BREADCRUMB_CSS = """\
+    .breadcrumb {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px; padding-top: 4px;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { margin: 0 8px; color: var(--border); }
+"""
+
+
+def _make_breadcrumb_nav(crumbs):
+    """Build a <nav class="breadcrumb"> element.
+
+    crumbs: list of (label, url_or_None) — last item is always plain text.
+    """
+    parts = []
+    for i, (label, url) in enumerate(crumbs):
+        if url:
+            parts.append(f'<a href="{url}">{label}</a>')
+        else:
+            parts.append(f'<span>{label}</span>')
+        if i < len(crumbs) - 1:
+            parts.append('<span class="sep">/</span>')
+    inner = "\n      ".join(parts)
+    return f'    <nav class="breadcrumb">\n      {inner}\n    </nav>'
+
+
+def inject_breadcrumb(html, crumbs):
+    """Post-process rendered HTML: inject breadcrumb CSS + nav into a page.
+
+    Inserts CSS before </style> (first occurrence) and nav as the first
+    child of <div class="content">.
+    """
+    nav = _make_breadcrumb_nav(crumbs)
+    html = html.replace("</style>", _BREADCRUMB_CSS + "  </style>", 1)
+    html = html.replace('<div class="content">', '<div class="content">\n' + nav, 1)
+    return html
+
+
 def render_fundaa_article_page(article):
     """Render a standalone HTML page for a Friday Fundaa article."""
     title = article["title"]
@@ -2240,6 +2281,11 @@ def build(use_mock=True):
         issue_dir = SITE_DIR / "us" / date_str
         issue_dir.mkdir(parents=True, exist_ok=True)
         html = render_us_html(ctx)
+        html = inject_breadcrumb(html, [
+            ("Framework Foundry", "../../index.html"),
+            ("Markets", "../../index.html#markets"),
+            (f"Weekly — {fmt_date(date_str)}", None),
+        ])
         (issue_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  -> site/us/{date_str}/index.html")
 
@@ -2258,6 +2304,11 @@ def build(use_mock=True):
         issue_dir = SITE_DIR / "intl" / date_str
         issue_dir.mkdir(parents=True, exist_ok=True)
         html = render_intl_html(ctx)
+        html = inject_breadcrumb(html, [
+            ("Framework Foundry", "../../index.html"),
+            ("Markets", "../../index.html#markets"),
+            (f"International — {fmt_date(date_str)}", None),
+        ])
         (issue_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  -> site/intl/{date_str}/index.html")
 
@@ -2277,6 +2328,12 @@ def build(use_mock=True):
         issue_dir = SITE_DIR / "daily" / date_str
         issue_dir.mkdir(parents=True, exist_ok=True)
         html = render_daybreak_html(ctx)
+        html = inject_breadcrumb(html, [
+            ("Framework Foundry", "../../index.html"),
+            ("Markets", "../../index.html#markets"),
+            ("Day Break", "../../daily/index.html"),
+            (fmt_date(date_str), None),
+        ])
         (issue_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  -> site/daily/{date_str}/index.html")
 
