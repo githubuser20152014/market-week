@@ -468,6 +468,58 @@ _CSS = """\
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
   }
 
+  /* IQ SEARCH BAR */
+  .iq-search-row { margin-bottom: 20px; }
+  .iq-search-wrapper { position: relative; display: flex; align-items: center; }
+  .iq-search-icon {
+    position: absolute; left: 13px;
+    width: 15px; height: 15px;
+    color: var(--muted); pointer-events: none; flex-shrink: 0;
+  }
+  .iq-search-input {
+    width: 100%; box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px; font-weight: 400; letter-spacing: 0.5px;
+    padding: 11px 40px 11px 38px;
+    border: 1px solid var(--border);
+    background: var(--white); color: var(--text);
+    outline: none; transition: border-color 0.2s;
+  }
+  .iq-search-input:focus { border-color: var(--accent); }
+  .iq-search-input::placeholder { color: var(--muted); font-weight: 300; }
+  .iq-search-clear {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--muted);
+    font-size: 20px; cursor: pointer; line-height: 1; padding: 0 2px; display: none;
+  }
+  .iq-search-clear.visible { display: block; }
+  .iq-no-results {
+    display: none;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; font-weight: 300; font-style: italic;
+    color: var(--muted); padding: 32px 0; text-align: center;
+  }
+  .iq-no-results.visible { display: block; }
+
+  /* IQ ALPHA NAV */
+  .iq-alpha-row {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-bottom: 28px; padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .iq-alpha-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 8px; border: 1px solid var(--border);
+    background: var(--white); color: var(--muted); cursor: default;
+  }
+  .iq-alpha-btn.has-cards { color: var(--text); cursor: pointer; }
+  .iq-alpha-btn.has-cards:hover,
+  .iq-alpha-btn.alpha-active {
+    background: var(--navy); color: var(--white); border-color: var(--navy);
+  }
+
   /* FEATURED FLIP CARD */
   .featured-card-label {
     font-family: 'Raleway', sans-serif;
@@ -1676,6 +1728,10 @@ def render_market_iq_panel(cards, fundaa_articles=None):
     featured = next((c for c in cards if c.get("featured") == "true"), None)
     grid_cards = [c for c in cards if c.get("featured") != "true"]
 
+    def _slug(s):
+        import re
+        return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', s.lower())).strip('-')
+
     # Extract unique categories from grid cards preserving order
     seen = set()
     categories = []
@@ -1685,9 +1741,10 @@ def render_market_iq_panel(cards, fundaa_articles=None):
             seen.add(cat)
             categories.append(cat)
 
-    cat_buttons = '<button class="iq-cat-btn active">All</button>\n'
+    cat_buttons = f'<button class="iq-cat-btn active" onclick="filterIQCards(this,\'all\')">All</button>\n'
     for cat in categories:
-        cat_buttons += f'      <button class="iq-cat-btn">{cat}</button>\n'
+        slug = _slug(cat)
+        cat_buttons += f'      <button class="iq-cat-btn" onclick="filterIQCards(this,\'{slug}\')">{cat}</button>\n'
 
     card_html = ""
     for c in grid_cards:
@@ -1697,8 +1754,9 @@ def render_market_iq_panel(cards, fundaa_articles=None):
         frequency = c.get("frequency", "")
         trend_label = c.get("trend_label", "")
         trend_class = c.get("trend_class", "trend-flat")
+        cat_slug = _slug(category)
         card_html += f"""
-      <div class="iq-card">
+      <div class="iq-card" data-category="{cat_slug}" data-term="{term.lower()}">
         <div class="iq-card-top">
           <div class="iq-card-category">{category}</div>
           <div class="iq-card-term">{term}</div>
@@ -1749,9 +1807,21 @@ def render_market_iq_panel(cards, fundaa_articles=None):
         how often it&rsquo;s published, and what the recent trend means for your money.
       </p>
       {featured_html}
+      <div class="iq-search-row">
+        <div class="iq-search-wrapper">
+          <svg class="iq-search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="8.5" cy="8.5" r="5.5"/>
+            <line x1="13" y1="13" x2="18" y2="18"/>
+          </svg>
+          <input type="text" class="iq-search-input" placeholder="Search concepts &mdash; e.g. CPI, yield curve, employment&hellip;" oninput="searchIQCards(this.value)" autocomplete="off" spellcheck="false" />
+          <button class="iq-search-clear" onclick="clearIQSearch()" aria-label="Clear search">&times;</button>
+        </div>
+      </div>
+      <div class="iq-no-results" id="iq-no-results">No cards match &ldquo;<span id="iq-no-results-term"></span>&rdquo; &mdash; try a shorter term or browse by category.</div>
       <div class="iq-categories">
         {cat_buttons}
       </div>
+      <div class="iq-alpha-row" id="iq-alpha-row"></div>
       <div class="iq-grid">
         {card_html}
       </div>
@@ -1864,10 +1934,10 @@ function showSubNav(el) {
     document.getElementById(target).classList.add('active');
   }
 }
-document.querySelectorAll('.iq-categories .iq-cat-btn, .article-filters .iq-cat-btn')
+document.querySelectorAll('.article-filters .iq-cat-btn')
   .forEach(function(btn) {
     btn.addEventListener('click', function() {
-      this.closest('.iq-categories, .article-filters')
+      this.closest('.article-filters')
           .querySelectorAll('.iq-cat-btn')
           .forEach(function(b) { b.classList.remove('active'); });
       this.classList.add('active');
@@ -1878,6 +1948,96 @@ document.querySelectorAll('.flip-card').forEach(function(card) {
     this.classList.toggle('flipped');
   });
 });
+
+/* ── MARKET IQ: SEARCH, FILTER, ALPHA NAV ── */
+function filterIQCards(btn, category) {
+  document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
+  var si = document.querySelector('.iq-search-input');
+  if (si && si.value) { si.value = ''; var sc = document.querySelector('.iq-search-clear'); if (sc) sc.classList.remove('visible'); }
+  var nr = document.getElementById('iq-no-results'); if (nr) nr.classList.remove('visible');
+  var container = btn.closest('.iq-categories');
+  if (container) container.querySelectorAll('.iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+  });
+}
+
+function buildIQAlphaNav() {
+  var hasCards = {};
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    var ch = (card.dataset.term || '')[0];
+    if (ch) hasCards[ch.toUpperCase()] = true;
+  });
+  var row = document.getElementById('iq-alpha-row');
+  if (!row) return;
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(function(letter) {
+    var btn = document.createElement('button');
+    btn.className = 'iq-alpha-btn' + (hasCards[letter] ? ' has-cards' : '');
+    btn.textContent = letter;
+    if (hasCards[letter]) {
+      btn.addEventListener('click', function() { filterIQByLetter(btn, letter); });
+    }
+    row.appendChild(btn);
+  });
+}
+
+function filterIQByLetter(btn, letter) {
+  if (btn.classList.contains('alpha-active')) {
+    btn.classList.remove('alpha-active');
+    var allBtn = document.querySelector('.iq-categories .iq-cat-btn');
+    if (allBtn) filterIQCards(allBtn, 'all');
+    return;
+  }
+  document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
+  document.querySelectorAll('.iq-categories .iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+  var si = document.querySelector('.iq-search-input');
+  if (si) { si.value = ''; var sc = document.querySelector('.iq-search-clear'); if (sc) sc.classList.remove('visible'); }
+  var nr = document.getElementById('iq-no-results'); if (nr) nr.classList.remove('visible');
+  btn.classList.add('alpha-active');
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    var first = (card.dataset.term || '')[0];
+    card.style.display = (first && first.toUpperCase() === letter) ? '' : 'none';
+  });
+}
+
+function searchIQCards(query) {
+  var q = query.trim().toLowerCase();
+  var sc = document.querySelector('.iq-search-clear');
+  var nr = document.getElementById('iq-no-results');
+  var nrt = document.getElementById('iq-no-results-term');
+  if (sc) sc.classList.toggle('visible', q.length > 0);
+  if (!q) {
+    if (nr) nr.classList.remove('visible');
+    var allBtn = document.querySelector('.iq-categories .iq-cat-btn');
+    if (allBtn) filterIQCards(allBtn, 'all');
+    return;
+  }
+  document.querySelectorAll('.iq-categories .iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
+  var matchCount = 0;
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    var text = [
+      card.dataset.category || '',
+      card.dataset.term || '',
+      (card.querySelector('.iq-card-term') || {textContent:''}).textContent,
+      (card.querySelector('.iq-card-def')  || {textContent:''}).textContent,
+      (card.querySelector('.iq-card-category') || {textContent:''}).textContent
+    ].join(' ').toLowerCase();
+    var match = text.indexOf(q) !== -1;
+    card.style.display = match ? '' : 'none';
+    if (match) matchCount++;
+  });
+  if (nrt) nrt.textContent = query.trim();
+  if (nr) nr.classList.toggle('visible', matchCount === 0);
+}
+
+function clearIQSearch() {
+  var input = document.querySelector('.iq-search-input');
+  if (input) { input.value = ''; searchIQCards(''); input.focus(); }
+}
+
+document.addEventListener('DOMContentLoaded', function() { buildIQAlphaNav(); });
 </script>"""
 
 

@@ -439,6 +439,58 @@
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
   }
 
+  /* IQ SEARCH BAR */
+  .iq-search-row { margin-bottom: 20px; }
+  .iq-search-wrapper { position: relative; display: flex; align-items: center; }
+  .iq-search-icon {
+    position: absolute; left: 13px;
+    width: 15px; height: 15px;
+    color: var(--muted); pointer-events: none; flex-shrink: 0;
+  }
+  .iq-search-input {
+    width: 100%; box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px; font-weight: 400; letter-spacing: 0.5px;
+    padding: 11px 40px 11px 38px;
+    border: 1px solid var(--border);
+    background: var(--white); color: var(--text);
+    outline: none; transition: border-color 0.2s;
+  }
+  .iq-search-input:focus { border-color: var(--accent); }
+  .iq-search-input::placeholder { color: var(--muted); font-weight: 300; }
+  .iq-search-clear {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--muted);
+    font-size: 20px; cursor: pointer; line-height: 1; padding: 0 2px; display: none;
+  }
+  .iq-search-clear.visible { display: block; }
+  .iq-no-results {
+    display: none;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; font-weight: 300; font-style: italic;
+    color: var(--muted); padding: 32px 0; text-align: center;
+  }
+  .iq-no-results.visible { display: block; }
+
+  /* IQ ALPHA NAV */
+  .iq-alpha-row {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-bottom: 28px; padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .iq-alpha-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 8px; border: 1px solid var(--border);
+    background: var(--white); color: var(--muted); cursor: default;
+  }
+  .iq-alpha-btn.has-cards { color: var(--text); cursor: pointer; }
+  .iq-alpha-btn.has-cards:hover,
+  .iq-alpha-btn.alpha-active {
+    background: var(--navy); color: var(--white); border-color: var(--navy);
+  }
+
   /* FEATURED FLIP CARD */
   .featured-card-label {
     font-family: 'Raleway', sans-serif;

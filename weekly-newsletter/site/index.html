@@ -439,6 +439,58 @@
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
   }
 
+  /* IQ SEARCH BAR */
+  .iq-search-row { margin-bottom: 20px; }
+  .iq-search-wrapper { position: relative; display: flex; align-items: center; }
+  .iq-search-icon {
+    position: absolute; left: 13px;
+    width: 15px; height: 15px;
+    color: var(--muted); pointer-events: none; flex-shrink: 0;
+  }
+  .iq-search-input {
+    width: 100%; box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px; font-weight: 400; letter-spacing: 0.5px;
+    padding: 11px 40px 11px 38px;
+    border: 1px solid var(--border);
+    background: var(--white); color: var(--text);
+    outline: none; transition: border-color 0.2s;
+  }
+  .iq-search-input:focus { border-color: var(--accent); }
+  .iq-search-input::placeholder { color: var(--muted); font-weight: 300; }
+  .iq-search-clear {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--muted);
+    font-size: 20px; cursor: pointer; line-height: 1; padding: 0 2px; display: none;
+  }
+  .iq-search-clear.visible { display: block; }
+  .iq-no-results {
+    display: none;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; font-weight: 300; font-style: italic;
+    color: var(--muted); padding: 32px 0; text-align: center;
+  }
+  .iq-no-results.visible { display: block; }
+
+  /* IQ ALPHA NAV */
+  .iq-alpha-row {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-bottom: 28px; padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .iq-alpha-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 8px; border: 1px solid var(--border);
+    background: var(--white); color: var(--muted); cursor: default;
+  }
+  .iq-alpha-btn.has-cards { color: var(--text); cursor: pointer; }
+  .iq-alpha-btn.has-cards:hover,
+  .iq-alpha-btn.alpha-active {
+    background: var(--navy); color: var(--white); border-color: var(--navy);
+  }
+
   /* FEATURED FLIP CARD */
   .featured-card-label {
     font-family: 'Raleway', sans-serif;
@@ -1059,7 +1111,7 @@
     <a class="section-tab active" onclick="showSection('markets')">Markets</a>
     <a class="section-tab" onclick="showSection('marketiq')">Market IQ</a>
     <a class="section-tab" onclick="showSection('investing')">Investing</a>
-    <a class="section-tab" onclick="showSection('expat')">Expat Investing &#8599;</a>
+    <a class="section-tab future" onclick="showSection('expat')">Expat Investing &#8599;</a>
   </nav>
 
   <!-- ══ PANEL: MARKETS ══ -->
@@ -1311,17 +1363,29 @@
 
   </div>
 </div>
+      <div class="iq-search-row">
+        <div class="iq-search-wrapper">
+          <svg class="iq-search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="8.5" cy="8.5" r="5.5"/>
+            <line x1="13" y1="13" x2="18" y2="18"/>
+          </svg>
+          <input type="text" class="iq-search-input" placeholder="Search concepts &mdash; e.g. CPI, yield curve, employment&hellip;" oninput="searchIQCards(this.value)" autocomplete="off" spellcheck="false" />
+          <button class="iq-search-clear" onclick="clearIQSearch()" aria-label="Clear search">&times;</button>
+        </div>
+      </div>
+      <div class="iq-no-results" id="iq-no-results">No cards match &ldquo;<span id="iq-no-results-term"></span>&rdquo; &mdash; try a shorter term or browse by category.</div>
       <div class="iq-categories">
-        <button class="iq-cat-btn active">All</button>
-      <button class="iq-cat-btn">Inflation</button>
-      <button class="iq-cat-btn">Central Banks</button>
-      <button class="iq-cat-btn">Employment</button>
-      <button class="iq-cat-btn">Markets</button>
+        <button class="iq-cat-btn active" onclick="filterIQCards(this,'all')">All</button>
+      <button class="iq-cat-btn" onclick="filterIQCards(this,'inflation')">Inflation</button>
+      <button class="iq-cat-btn" onclick="filterIQCards(this,'central-banks')">Central Banks</button>
+      <button class="iq-cat-btn" onclick="filterIQCards(this,'employment')">Employment</button>
+      <button class="iq-cat-btn" onclick="filterIQCards(this,'markets')">Markets</button>
 
       </div>
+      <div class="iq-alpha-row" id="iq-alpha-row"></div>
       <div class="iq-grid">
         
-      <div class="iq-card">
+      <div class="iq-card" data-category="inflation" data-term="cpi">
         <div class="iq-card-top">
           <div class="iq-card-category">Inflation</div>
           <div class="iq-card-term">CPI</div>
@@ -1334,7 +1398,7 @@
           </div>
         </div>
       </div>
-      <div class="iq-card">
+      <div class="iq-card" data-category="central-banks" data-term="fed funds rate">
         <div class="iq-card-top">
           <div class="iq-card-category">Central Banks</div>
           <div class="iq-card-term">Fed Funds Rate</div>
@@ -1347,7 +1411,7 @@
           </div>
         </div>
       </div>
-      <div class="iq-card">
+      <div class="iq-card" data-category="employment" data-term="non-farm payrolls">
         <div class="iq-card-top">
           <div class="iq-card-category">Employment</div>
           <div class="iq-card-term">Non-Farm Payrolls</div>
@@ -1360,7 +1424,7 @@
           </div>
         </div>
       </div>
-      <div class="iq-card">
+      <div class="iq-card" data-category="inflation" data-term="pce">
         <div class="iq-card-top">
           <div class="iq-card-category">Inflation</div>
           <div class="iq-card-term">PCE</div>
@@ -1373,7 +1437,7 @@
           </div>
         </div>
       </div>
-      <div class="iq-card">
+      <div class="iq-card" data-category="markets" data-term="yield curve">
         <div class="iq-card-top">
           <div class="iq-card-category">Markets</div>
           <div class="iq-card-term">Yield Curve</div>
@@ -1491,48 +1555,17 @@
 
   <!-- ══ PANEL: EXPAT ══ -->
   <div id="panel-expat" class="section-panel">
-  <div class="content">
-    <div class="section-label">Expat Investing</div>
-    <div style="margin-bottom:28px">
-      <p style="font-family:'Source Serif 4',Georgia,serif;font-size:14px;line-height:1.7;color:var(--muted);max-width:600px">
-        One country per month. One financial mechanism. One pre-departure checklist.
-        A practical series for Americans planning a move — built in public, shared as it happens.
-      </p>
-    </div>
-
-    <div style="margin-bottom:12px">
-      <span style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted)">Issues</span>
-    </div>
-
-    <table class="archive-table" style="width:100%">
-      <thead>
-        <tr>
-          <th>Issue</th>
-          <th>Country</th>
-          <th>Theme</th>
-          <th>Published</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold)">01</span></td>
-          <td><strong>Portugal</strong></td>
-          <td style="color:var(--muted);font-size:12px">D7 Visa &middot; FBAR &middot; Banking &middot; PRIIPs</td>
-          <td style="white-space:nowrap">Mar 29, 2026</td>
-          <td style="text-align:right">
-            <a href="expat/issue-01/index.html"
-               style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:5px 14px;white-space:nowrap">
-              Read &#8599;
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div style="margin-top:32px;padding:20px 24px;background:var(--off-white);border-left:3px solid var(--gold)">
-      <div style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Next Issue</div>
-      <p style="font-family:'Source Serif 4',Georgia,serif;font-size:13px;color:var(--muted)">Issue 02 country TBD &mdash; subscribe below to be notified on release.</p>
+  <div class="coming-soon-panel">
+    <div class="coming-soon-eyebrow">Coming Soon</div>
+    <div class="coming-soon-title">Expat Investing</div>
+    <p class="coming-soon-body">
+      A dedicated resource for Americans living abroad &mdash; navigating PFIC rules, FBAR reporting,
+      tax-efficient investing from outside the US, and building wealth across borders.
+      Leave your email to be notified when we launch.
+    </p>
+    <div class="notify-form">
+      <input type="email" placeholder="your@email.com"/>
+      <button>Notify Me</button>
     </div>
   </div>
 </div>
@@ -1615,10 +1648,10 @@ function showSubNav(el) {
     document.getElementById(target).classList.add('active');
   }
 }
-document.querySelectorAll('.iq-categories .iq-cat-btn, .article-filters .iq-cat-btn')
+document.querySelectorAll('.article-filters .iq-cat-btn')
   .forEach(function(btn) {
     btn.addEventListener('click', function() {
-      this.closest('.iq-categories, .article-filters')
+      this.closest('.article-filters')
           .querySelectorAll('.iq-cat-btn')
           .forEach(function(b) { b.classList.remove('active'); });
       this.classList.add('active');
@@ -1629,6 +1662,96 @@ document.querySelectorAll('.flip-card').forEach(function(card) {
     this.classList.toggle('flipped');
   });
 });
+
+/* ── MARKET IQ: SEARCH, FILTER, ALPHA NAV ── */
+function filterIQCards(btn, category) {
+  document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
+  var si = document.querySelector('.iq-search-input');
+  if (si && si.value) { si.value = ''; var sc = document.querySelector('.iq-search-clear'); if (sc) sc.classList.remove('visible'); }
+  var nr = document.getElementById('iq-no-results'); if (nr) nr.classList.remove('visible');
+  var container = btn.closest('.iq-categories');
+  if (container) container.querySelectorAll('.iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+  });
+}
+
+function buildIQAlphaNav() {
+  var hasCards = {};
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    var ch = (card.dataset.term || '')[0];
+    if (ch) hasCards[ch.toUpperCase()] = true;
+  });
+  var row = document.getElementById('iq-alpha-row');
+  if (!row) return;
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(function(letter) {
+    var btn = document.createElement('button');
+    btn.className = 'iq-alpha-btn' + (hasCards[letter] ? ' has-cards' : '');
+    btn.textContent = letter;
+    if (hasCards[letter]) {
+      btn.addEventListener('click', function() { filterIQByLetter(btn, letter); });
+    }
+    row.appendChild(btn);
+  });
+}
+
+function filterIQByLetter(btn, letter) {
+  if (btn.classList.contains('alpha-active')) {
+    btn.classList.remove('alpha-active');
+    var allBtn = document.querySelector('.iq-categories .iq-cat-btn');
+    if (allBtn) filterIQCards(allBtn, 'all');
+    return;
+  }
+  document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
+  document.querySelectorAll('.iq-categories .iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+  var si = document.querySelector('.iq-search-input');
+  if (si) { si.value = ''; var sc = document.querySelector('.iq-search-clear'); if (sc) sc.classList.remove('visible'); }
+  var nr = document.getElementById('iq-no-results'); if (nr) nr.classList.remove('visible');
+  btn.classList.add('alpha-active');
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    var first = (card.dataset.term || '')[0];
+    card.style.display = (first && first.toUpperCase() === letter) ? '' : 'none';
+  });
+}
+
+function searchIQCards(query) {
+  var q = query.trim().toLowerCase();
+  var sc = document.querySelector('.iq-search-clear');
+  var nr = document.getElementById('iq-no-results');
+  var nrt = document.getElementById('iq-no-results-term');
+  if (sc) sc.classList.toggle('visible', q.length > 0);
+  if (!q) {
+    if (nr) nr.classList.remove('visible');
+    var allBtn = document.querySelector('.iq-categories .iq-cat-btn');
+    if (allBtn) filterIQCards(allBtn, 'all');
+    return;
+  }
+  document.querySelectorAll('.iq-categories .iq-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.iq-alpha-btn').forEach(function(b) { b.classList.remove('alpha-active'); });
+  var matchCount = 0;
+  document.querySelectorAll('#iq-sub-flashcards .iq-card').forEach(function(card) {
+    var text = [
+      card.dataset.category || '',
+      card.dataset.term || '',
+      (card.querySelector('.iq-card-term') || {textContent:''}).textContent,
+      (card.querySelector('.iq-card-def')  || {textContent:''}).textContent,
+      (card.querySelector('.iq-card-category') || {textContent:''}).textContent
+    ].join(' ').toLowerCase();
+    var match = text.indexOf(q) !== -1;
+    card.style.display = match ? '' : 'none';
+    if (match) matchCount++;
+  });
+  if (nrt) nrt.textContent = query.trim();
+  if (nr) nr.classList.toggle('visible', matchCount === 0);
+}
+
+function clearIQSearch() {
+  var input = document.querySelector('.iq-search-input');
+  if (input) { input.value = ''; searchIQCards(''); input.focus(); }
+}
+
+document.addEventListener('DOMContentLoaded', function() { buildIQAlphaNav(); });
 </script>
 </body>
 </html>
