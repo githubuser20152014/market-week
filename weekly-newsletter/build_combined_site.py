@@ -7,6 +7,9 @@ Run from weekly-newsletter/:
 """
 
 import argparse
+import csv
+import json as _json
+import markdown
 import re
 import shutil
 import sys
@@ -34,8 +37,11 @@ SITE_DIR = BASE_DIR / "site"
 _CSS = """\
   :root {
     --navy:      #0f1f3d;
+    --navy-mid:  #1a3260;
     --accent:    #4a7fb5;
     --accent-lt: #7aabda;
+    --gold:      #c9a84c;
+    --gold-lt:   #e0c97a;
     --white:     #ffffff;
     --off-white: #f5f4f0;
     --text:      #1a1a2e;
@@ -43,12 +49,13 @@ _CSS = """\
     --muted:     #6b7280;
     --green:     #2a7d4f;
     --red:       #b91c1c;
+    --bg:        #dde3ea;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: #dde3ea;
+    background: var(--bg);
     font-family: 'Source Serif 4', Georgia, serif;
     color: var(--text);
     padding: 32px 16px;
@@ -56,7 +63,7 @@ _CSS = """\
   }
 
   .page {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
     background: var(--white);
     box-shadow: 0 8px 48px rgba(0,0,0,0.18);
@@ -132,33 +139,95 @@ _CSS = """\
     background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
   }
 
-  /* NAV TABS */
-  .nav-tabs {
+  /* SECTION NAV (top-level tabs) */
+  .section-nav {
     background: var(--navy);
     padding: 0 40px;
     display: flex;
     border-bottom: 2px solid rgba(255,255,255,0.08);
+    gap: 0;
   }
 
-  .nav-tab {
+  .section-tab {
     font-family: 'Raleway', sans-serif;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
     color: rgba(255,255,255,0.45);
     text-decoration: none;
-    padding: 12px 20px;
+    padding: 13px 22px;
     border-bottom: 2px solid transparent;
     margin-bottom: -2px;
+    transition: color 0.15s;
+    white-space: nowrap;
+    cursor: pointer;
   }
 
-  .nav-tab:hover { color: rgba(255,255,255,0.75); }
-  .nav-tab.active--weekly { color: #fff; border-bottom-color: var(--accent); }
-  .nav-tab.active--daily  { color: #c9a84c; border-bottom-color: #c9a84c; }
+  .section-tab:hover { color: rgba(255,255,255,0.8); }
+  .section-tab.active { color: var(--white); border-bottom-color: var(--gold); }
+  .section-tab.future { color: rgba(255,255,255,0.2); font-style: italic; }
+  .section-tab.future:hover { color: rgba(255,255,255,0.4); }
+
+  /* SUB-NAV (within Markets section) */
+  .sub-nav {
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+  }
+
+  .sub-tab {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .sub-tab:hover { color: var(--navy); }
+  .sub-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* SECTION PANELS */
+  .section-panel { display: none; }
+  .section-panel.active { display: block; }
+
+  /* SUB-PANELS (within Markets / Market IQ) */
+  .sub-panel { display: none; }
+  .sub-panel.active { display: block; }
+
+  /* IQ SUB-NAV (inside Market IQ panel) */
+  .iq-sub-nav {
+    background: var(--off-white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    margin: 0 -40px 28px;
+  }
+
+  .iq-sub-tab {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+
+  .iq-sub-tab:hover { color: var(--navy); }
+  .iq-sub-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* CONTENT */
-  .content { padding: 40px; }
+  .content { padding: 36px 40px; }
 
   .section-label {
     font-family: 'Raleway', sans-serif;
@@ -286,6 +355,503 @@ _CSS = """\
   .archive-link.pdf { color: var(--muted); border-color: var(--muted); }
   .archive-link.pdf:hover { background: var(--muted); color: var(--white); }
 
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 600;
+    color: var(--navy); letter-spacing: 0.5px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 18px; display: inline-block;
+  }
+
+  /* MARKET IQ */
+  .iq-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px; line-height: 1.7;
+    color: #2c2c3e; font-weight: 300;
+    margin-bottom: 32px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--border);
+  }
+
+  .iq-categories {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
+  }
+
+  .iq-cat-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 14px; border: 1px solid var(--border);
+    background: var(--white); color: var(--muted);
+    cursor: pointer; transition: all 0.15s;
+  }
+
+  .iq-cat-btn:hover, .iq-cat-btn.active {
+    background: var(--navy); color: var(--white); border-color: var(--navy);
+  }
+
+  .iq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px; margin-bottom: 16px;
+  }
+
+  .iq-card {
+    border: 1px solid var(--border);
+    background: var(--off-white);
+    padding: 0; cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.15s;
+    position: relative; overflow: hidden;
+  }
+
+  .iq-card:hover {
+    box-shadow: 0 4px 20px rgba(15,31,61,0.12);
+    transform: translateY(-2px);
+  }
+
+  .iq-card-top { background: var(--navy); padding: 14px 16px 12px; }
+
+  .iq-card-category {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+
+  .iq-card-term {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--white); line-height: 1.1;
+  }
+
+  .iq-card-body { padding: 14px 16px; }
+
+  .iq-card-def {
+    font-family: 'Source Serif 4', serif;
+    font-size: 12.5px; line-height: 1.6;
+    color: #3a3a4a; font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  .iq-card-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--border); padding-top: 10px;
+  }
+
+  .iq-card-freq {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .iq-card-trend {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 8px; border-radius: 2px;
+  }
+
+  .trend-up   { background: #d4edda; color: #155724; }
+  .trend-down { background: #f8d7da; color: #721c24; }
+  .trend-flat { background: #e8e8e8; color: #555; }
+
+  .iq-see-all {
+    text-align: center; padding: 20px 0 4px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+
+  .iq-see-all a {
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+  }
+
+  /* FEATURED FLIP CARD */
+  .featured-card-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+  }
+
+  .flip-card {
+    perspective: 1400px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 620px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+  }
+
+  .flip-card-front {
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    background: var(--off-white);
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    background: var(--off-white);
+  }
+
+  .flip-front-header {
+    background: var(--navy); padding: 32px 36px 28px;
+    position: relative; overflow: hidden;
+  }
+
+  .flip-front-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .flip-front-header-inner { position: relative; }
+
+  .flip-front-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+
+  .flip-front-term {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 600;
+    color: var(--white); line-height: 1; letter-spacing: 1px;
+  }
+
+  .flip-front-fullname {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; font-weight: 300; font-style: italic;
+    color: var(--accent-lt); margin-top: 10px;
+  }
+
+  .flip-front-body {
+    padding: 0 36px; flex: 1; overflow: visible;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .flip-front-what-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 16px;
+  }
+
+  .flip-front-def {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; line-height: 1.8;
+    color: var(--text); font-weight: 300; margin-bottom: 32px;
+  }
+
+  .flip-front-formula {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px; margin-bottom: 24px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.7;
+    color: #3a3a4a; font-weight: 300; font-style: italic;
+  }
+
+  .flip-front-context {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.7;
+    color: #3a3a4a; font-weight: 300; margin: 0;
+  }
+
+  .flip-front-footer {
+    padding: 20px 36px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-hint {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* BACK */
+  .flip-back-header {
+    background: var(--navy-mid); padding: 22px 36px;
+    position: relative; overflow: hidden;
+  }
+
+  .flip-back-header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .flip-back-header-inner {
+    position: relative;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-back-source-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+  }
+
+  .flip-back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; color: var(--white);
+  }
+
+  .flip-back-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300; line-height: 1;
+  }
+
+  .flip-back-value-period {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-top: 2px;
+    text-align: right;
+  }
+
+  .flip-back-body {
+    padding: 24px 36px; flex: 1;
+    display: flex; flex-direction: column; gap: 20px;
+    overflow: visible;
+  }
+
+  /* Mini bar chart */
+  .mini-bar-chart-wrap {
+    background: var(--navy);
+    padding: 20px 24px 16px; border-radius: 1px;
+  }
+
+  .mini-bar-chart {
+    display: flex; align-items: flex-end;
+    gap: 10px; height: 88px;
+  }
+
+  .mini-bar-col {
+    display: flex; flex-direction: column;
+    align-items: center; flex: 1;
+  }
+
+  .mini-bar-value-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.5px; margin-bottom: 3px;
+  }
+
+  .mini-bar {
+    width: 100%; min-height: 4px;
+    border-radius: 1px 1px 0 0;
+  }
+
+  .mini-bar-period-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  /* Stat tiles */
+  .stat-tile-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+
+  .stat-tile {
+    border: 1px solid var(--border);
+    background: var(--white); padding: 18px 20px;
+  }
+
+  .stat-tile-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+
+  .stat-tile-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 600; line-height: 1;
+  }
+
+  .stat-tile-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 500;
+    color: var(--muted); margin-top: 8px;
+  }
+
+  /* Insight callout */
+  .insight-callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    background: var(--white);
+    padding: 18px 20px;
+  }
+
+  .insight-callout-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+
+  .insight-callout-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px; line-height: 1.75;
+    color: #3a3a4a; font-weight: 300; margin: 0;
+  }
+
+  .flip-back-footer {
+    padding: 18px 36px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .flip-back-source {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* PERSONAL INVESTING */
+  .investing-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px; line-height: 1.7;
+    color: #2c2c3e; font-weight: 300;
+    margin-bottom: 32px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--border);
+  }
+
+  .article-filters {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
+  }
+
+  .article-list { display: flex; flex-direction: column; gap: 0; }
+
+  .article-row {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 20px; align-items: start;
+    padding: 22px 0; border-bottom: 1px solid var(--border);
+    text-decoration: none; color: inherit;
+    transition: background 0.15s;
+  }
+
+  .article-row:hover { background: var(--off-white); margin: 0 -40px; padding: 22px 40px; }
+  .article-row:first-child { border-top: 1px solid var(--border); }
+
+  .article-tag-col { padding-top: 3px; }
+
+  .article-tag {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 8px; background: var(--navy); color: var(--white);
+  }
+
+  .article-tag.etf  { background: var(--accent); }
+  .article-tag.guide { background: var(--navy-mid); }
+  .article-tag.intl { background: #1a5c3a; }
+
+  .article-content { min-width: 0; }
+
+  .article-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600;
+    color: var(--navy); line-height: 1.2; margin-bottom: 6px;
+  }
+
+  .article-excerpt {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px; line-height: 1.65;
+    color: #5a5a6a; font-weight: 300;
+  }
+
+  .article-meta-col { text-align: right; white-space: nowrap; padding-top: 4px; }
+
+  .article-date {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 500;
+    letter-spacing: 1px; color: var(--muted); display: block;
+  }
+
+  .article-read-time {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; color: var(--muted); margin-top: 4px; display: block;
+  }
+
+  /* EXPAT / COMING SOON */
+  .coming-soon-panel {
+    padding: 60px 40px; text-align: center;
+    background: var(--off-white); border-top: 4px solid var(--gold);
+  }
+
+  .coming-soon-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+
+  .coming-soon-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 600;
+    color: var(--navy); margin-bottom: 14px;
+  }
+
+  .coming-soon-body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px; line-height: 1.7; font-weight: 300;
+    color: #4a4a5a; max-width: 460px; margin: 0 auto 28px;
+  }
+
+  .notify-form {
+    display: flex; justify-content: center; gap: 0;
+    max-width: 400px; margin: 0 auto;
+  }
+
+  .notify-form input {
+    flex: 1; padding: 10px 16px;
+    font-family: 'Raleway', sans-serif; font-size: 12px;
+    border: 1px solid var(--border); border-right: none;
+    background: var(--white); color: var(--text); outline: none;
+  }
+
+  .notify-form button {
+    padding: 10px 18px;
+    font-family: 'Raleway', sans-serif; font-size: 9px;
+    font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--gold); color: var(--navy);
+    border: none; cursor: pointer; transition: background 0.2s;
+  }
+
+  .notify-form button:hover { background: var(--gold-lt); }
+
   /* FOOTER */
   .footer {
     background: var(--navy);
@@ -382,6 +948,42 @@ _CSS = """\
 
   .subscribe-form button:hover { background: var(--accent-lt); }
 
+  /* FEEDBACK */
+  .feedback-section {
+    background: var(--navy); padding: 48px 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .feedback-inner {
+    max-width: 560px; margin: 0 auto;
+  }
+  .feedback-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 18px; font-weight: 600; color: var(--white);
+    letter-spacing: 0.5px; margin-bottom: 20px;
+  }
+  .feedback-form { display: flex; flex-direction: column; gap: 12px; }
+  .feedback-row  { display: flex; gap: 12px; }
+  .feedback-row input { flex: 1; }
+  .feedback-form input,
+  .feedback-form textarea {
+    width: 100%; padding: 10px 14px; border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08); color: var(--white);
+    font-family: 'Raleway', sans-serif; font-size: 13px;
+    box-sizing: border-box;
+  }
+  .feedback-form input::placeholder,
+  .feedback-form textarea::placeholder { color: rgba(255,255,255,0.4); }
+  .feedback-form textarea { resize: vertical; min-height: 90px; }
+  .feedback-form button {
+    align-self: flex-start; padding: 10px 28px;
+    background: var(--accent); color: var(--white);
+    border: none; border-radius: 4px; cursor: pointer;
+    font-family: 'Raleway', sans-serif; font-size: 12px;
+    font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .feedback-form button:hover { background: var(--accent-lt); }
+
   @media (max-width: 600px) {
     .subscribe-section { padding: 28px 20px; }
     .subscribe-form { flex-direction: column; }
@@ -430,12 +1032,28 @@ _CSS = """\
   .share-btn:hover { background: var(--accent); }
   .share-btn svg { width: 16px; height: 16px; fill: white; }
 
-  @media (max-width: 600px) {
+  @media (max-width: 680px) {
     .header-inner { padding: 20px 20px 16px; flex-wrap: wrap; }
-    .content { padding: 24px 20px; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .footer { padding: 14px 20px; flex-direction: column; gap: 10px; }
-    .share-bar { padding: 16px 20px; }
+    .section-nav  { padding: 0 16px; overflow-x: auto; }
+    .sub-nav      { padding: 0 16px; overflow-x: auto; }
+    .content      { padding: 24px 20px; }
+    .hero-grid    { grid-template-columns: 1fr; }
+    .iq-grid      { grid-template-columns: 1fr 1fr; }
+    .footer       { padding: 14px 20px; flex-direction: column; gap: 10px; }
+    .share-bar    { padding: 14px 20px; }
+    .subscribe-section { padding: 28px 20px; }
+    .article-row  { grid-template-columns: 70px 1fr; }
+    .article-meta-col { display: none; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-form input[type="email"] {
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: none;
+      border-radius: 2px 2px 0 0;
+    }
+    .subscribe-form button { border-radius: 0 0 2px 2px; }
+  }
+  @media (max-width: 460px) {
+    .iq-grid { grid-template-columns: 1fr; }
   }
 """
 
@@ -452,16 +1070,21 @@ _LOGO_SVG = """\
         <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
       </svg>"""
 
-_NAV_TABS_WEEKLY = """\
-  <div class="nav-tabs">
-    <a class="nav-tab active--weekly" href="index.html">Weekly Editions</a>
-    <a class="nav-tab" href="daily/index.html">Market Day Break</a>
-  </div>"""
+_SECTION_NAV = """\
+  <nav class="section-nav">
+    <a class="section-tab active" onclick="showSection('markets')">Markets</a>
+    <a class="section-tab" onclick="showSection('marketiq')">Market IQ</a>
+    <a class="section-tab" onclick="showSection('investing')">Investing</a>
+    <a class="section-tab future" onclick="showSection('expat')">Expat Investing &#8599;</a>
+  </nav>"""
 
 _NAV_TABS_DAILY = """\
-  <div class="nav-tabs">
-    <a class="nav-tab" href="../index.html">Weekly Editions</a>
-    <a class="nav-tab active--daily" href="index.html">Market Day Break</a>
+  <div class="section-nav" style="display:flex;">
+    <a class="section-tab" href="../index.html">Markets</a>
+    <a class="section-tab" href="../index.html">Market IQ</a>
+    <a class="section-tab" href="../index.html">Investing</a>
+    <a class="section-tab future" style="cursor:default;">Expat Investing &#8599;</a>
+    <a class="section-tab active" style="border-bottom-color:#c9a84c;color:#c9a84c;" href="index.html">Market Day Break</a>
   </div>"""
 
 
@@ -611,10 +1234,598 @@ def _render_daybreak_hero(date_str, ctx):
     </div>"""
 
 
+# ── Content loaders ───────────────────────────────────────────────────────────
+
+_TREND_CLASS = {"up": "trend-up", "down": "trend-down", "flat": "trend-flat"}
+
+
+def load_market_iq_cards(csv_path=None):
+    """Load Market IQ flashcard data from CSV. Returns list of dicts."""
+    if csv_path is None:
+        csv_path = BASE_DIR / "content" / "market_iq.csv"
+    cards = []
+    try:
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                row["trend_class"] = _TREND_CLASS.get(row.get("trend", "flat"), "trend-flat")
+                cards.append(row)
+    except FileNotFoundError:
+        pass
+    return cards
+
+
+def load_articles(articles_dir=None):
+    """Load article metadata from Markdown frontmatter. Returns list sorted newest first."""
+    if articles_dir is None:
+        articles_dir = BASE_DIR / "content" / "articles"
+    articles = []
+    try:
+        for md_file in sorted(Path(articles_dir).glob("*.md")):
+            text = md_file.read_text(encoding="utf-8")
+            # Split on YAML frontmatter fences
+            parts = text.split("---", 2)
+            if len(parts) < 3:
+                continue
+            fm_text = parts[1]
+            article = {}
+            for line in fm_text.splitlines():
+                m = re.match(r'^(\w[\w_-]*):\s*(.+)$', line.strip())
+                if m:
+                    article[m.group(1)] = m.group(2).strip().strip('"')
+            if article.get("title"):
+                articles.append(article)
+    except (FileNotFoundError, OSError):
+        pass
+    # Sort by date descending
+    articles.sort(key=lambda a: a.get("date", ""), reverse=True)
+    return articles
+
+
+def parse_fundaa_articles(articles_dir=None):
+    """Parse Friday Fundaa articles from content/articles/friday-fundaa-*.md.
+
+    Returns a list of dicts (newest first):
+      {title, slug, date, display_date, body_html, excerpt}
+    """
+    if articles_dir is None:
+        articles_dir = BASE_DIR / "content" / "articles"
+    articles = []
+    try:
+        for md_file in sorted(Path(articles_dir).glob("friday-fundaa-*.md")):
+            text = md_file.read_text(encoding="utf-8")
+            lines = text.splitlines()
+
+            # Title: first non-empty line matching "# Friday Fundaa — …"
+            title = ""
+            for line in lines:
+                m = re.match(r'^#\s+Friday Fundaa\s+[—–-]+\s*(.+)', line)
+                if m:
+                    title = m.group(1).strip()
+                    break
+
+            # Date + slug: italic line "*Topic: Slug | Date: YYYY-MM-DD …*"
+            slug = ""
+            date_str = ""
+            for line in lines:
+                m = re.match(r'^\*Topic:\s*([^|]+)\|\s*Date:\s*(\d{4}-\d{2}-\d{2})', line)
+                if m:
+                    slug = m.group(1).strip().lower().replace(" ", "-")
+                    date_str = m.group(2).strip()
+                    break
+
+            if not title or not date_str:
+                continue
+
+            # Substack body: between "## Substack" and next "## " or EOF
+            body_lines = []
+            in_substack = False
+            for line in lines:
+                if re.match(r'^##\s+Substack', line):
+                    in_substack = True
+                    continue
+                if in_substack:
+                    if re.match(r'^##\s+', line):
+                        break
+                    body_lines.append(line)
+            body_md = "\n".join(body_lines).strip()
+            body_html = markdown.markdown(body_md)
+
+            # Excerpt: first non-empty non-heading paragraph
+            excerpt = ""
+            for line in body_lines:
+                stripped = line.strip()
+                if stripped and not stripped.startswith("#") and not stripped.startswith("**Friday Fundaa"):
+                    excerpt = stripped[:160]
+                    if len(stripped) > 160:
+                        excerpt += "…"
+                    break
+
+            try:
+                d = datetime.strptime(date_str, "%Y-%m-%d")
+                display_date = f"{d.strftime('%b')} {d.day}, {d.year}"
+            except ValueError:
+                display_date = date_str
+
+            articles.append({
+                "title": title,
+                "slug": slug,
+                "date": date_str,
+                "display_date": display_date,
+                "body_html": body_html,
+                "excerpt": excerpt,
+            })
+    except (FileNotFoundError, OSError):
+        pass
+
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    articles = [a for a in articles if a["date"] <= today]
+    articles.sort(key=lambda a: a["date"], reverse=True)
+    return articles
+
+
+def render_fundaa_article_page(article):
+    """Render a standalone HTML page for a Friday Fundaa article."""
+    title = article["title"]
+    display_date = article["display_date"]
+    body_html = article["body_html"]
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Friday Fundaa — {title} | Framework Foundry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
+  <style>
+{_CSS}
+    /* Article page extras */
+    .fundaa-eyebrow {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 8px;
+    }}
+    .fundaa-title {{
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 600;
+      color: var(--navy); line-height: 1.2;
+      margin-bottom: 6px;
+    }}
+    .fundaa-date {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; color: var(--muted);
+      margin-bottom: 28px;
+    }}
+    .fundaa-body p {{ font-size: 16px; line-height: 1.8; margin-bottom: 18px; font-weight: 300; }}
+    .fundaa-body strong {{ font-weight: 600; }}
+    .fundaa-body em {{ font-style: italic; }}
+    .fundaa-body hr {{ border: none; border-top: 1px solid var(--border); margin: 28px 0; }}
+    .fundaa-body ul, .fundaa-body ol {{ padding-left: 24px; margin-bottom: 18px; }}
+    .fundaa-body li {{ font-size: 15px; line-height: 1.7; margin-bottom: 6px; }}
+    .breadcrumb {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px;
+    }}
+    .breadcrumb a {{ color: var(--accent); text-decoration: none; }}
+    .breadcrumb a:hover {{ text-decoration: underline; }}
+    .breadcrumb .sep {{ margin: 0 8px; color: var(--border); }}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="header-inner">
+{_LOGO_SVG}
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Economic Intelligence &nbsp;&middot;&nbsp; Research for the Serious Investor</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <div class="content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <span>Market IQ</span>
+      <span class="sep">/</span>
+      <span>Friday Fundaa</span>
+      <span class="sep">/</span>
+      <span>{title}</span>
+    </nav>
+    <div class="fundaa-eyebrow">Friday Fundaa</div>
+    <div class="fundaa-title">{title}</div>
+    <div class="fundaa-date">{display_date}</div>
+    <div class="fundaa-body">
+      {body_html}
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>"""
+
+
+def generate_fundaa_pages(articles, site_dir):
+    """Write site/fundaa/{date}/index.html for each Friday Fundaa article."""
+    fundaa_dir = Path(site_dir) / "fundaa"
+    fundaa_dir.mkdir(exist_ok=True)
+    for article in articles:
+        date_str = article["date"]
+        article_dir = fundaa_dir / date_str
+        article_dir.mkdir(parents=True, exist_ok=True)
+        html = render_fundaa_article_page(article)
+        (article_dir / "index.html").write_text(html, encoding="utf-8")
+        print(f"  -> site/fundaa/{date_str}/index.html")
+
+
+def _render_mini_bar_chart(chart_data_json):
+    """Render HTML mini bar chart from JSON string."""
+    try:
+        data = _json.loads(chart_data_json)
+    except (ValueError, TypeError):
+        return ""
+    if not data:
+        return ""
+    max_val = max(d["value"] for d in data)
+    cols = ""
+    for i, d in enumerate(data):
+        is_last = (i == len(data) - 1)
+        pct = (d["value"] / max_val) * 100 if max_val else 0
+        bar_color = ("linear-gradient(180deg,#b91c1c,#7f1111)" if is_last
+                     else "linear-gradient(180deg,var(--accent-lt),var(--accent))")
+        val_color = "var(--red)" if is_last else "var(--accent-lt)"
+        lbl_color = "var(--gold)" if is_last else "rgba(255,255,255,0.45)"
+        cols += f"""
+      <div class="mini-bar-col">
+        <span class="mini-bar-value-label" style="color:{val_color};">{d['value']}%</span>
+        <div class="mini-bar" style="height:{pct}%;background:{bar_color};"></div>
+        <span class="mini-bar-period-label" style="color:{lbl_color};">{d['label']}</span>
+      </div>"""
+    return f'<div class="mini-bar-chart">{cols}\n    </div>'
+
+
+def render_featured_flip_card(card):
+    """Render front+back HTML for the featured flip card."""
+    _color_map = {"red": "var(--red)", "green": "var(--green)"}
+
+    def _color(key):
+        return _color_map.get(card.get(key, ""), "var(--text)")
+
+    category    = card.get("category", "")
+    term        = card.get("term", "")
+    full_name   = card.get("full_name", "")
+    formula     = card.get("formula", "")
+    definition  = card.get("definition", "")
+    context     = card.get("context", "")
+    frequency   = card.get("frequency", "")
+    trend_class = card.get("trend_class", "trend-flat")
+    trend_label = card.get("trend_label", "")
+
+    cur_value  = card.get("current_value", "")
+    cur_period = card.get("current_value_period", "")
+    chart_html = _render_mini_bar_chart(card.get("chart_data", ""))
+
+    stat1_label = card.get("stat1_label", "")
+    stat1_value = card.get("stat1_value", "")
+    stat1_sub   = card.get("stat1_sub", "")
+    stat2_label = card.get("stat2_label", "")
+    stat2_value = card.get("stat2_value", "")
+    stat2_sub   = card.get("stat2_sub", "")
+    insight     = card.get("insight", "")
+    source      = card.get("source", "")
+
+    return f"""<div class="featured-card-label">&#9733; Featured Concept</div>
+<div class="flip-card" id="featured-flip">
+  <div class="flip-card-inner">
+
+    <!-- FRONT -->
+    <div class="flip-card-front">
+      <div class="flip-front-header">
+        <div class="flip-front-header-inner">
+          <div class="flip-front-eyebrow">{category}</div>
+          <div class="flip-front-term">{term}</div>
+          <div class="flip-front-fullname">{full_name}</div>
+        </div>
+      </div>
+      <div class="flip-front-body">
+        <div class="flip-front-what-label">What it is</div>
+        <p class="flip-front-def">{definition}</p>
+        <div class="flip-front-formula">{formula}</div>
+        {f'<p class="flip-front-context">{context}</p>' if context else ""}
+      </div>
+      <div class="flip-front-footer">
+        <span class="iq-card-trend {trend_class}">{trend_label}</span>
+        <span class="flip-hint">Flip for latest data &rarr;</span>
+      </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="flip-card-back">
+      <div class="flip-back-header">
+        <div class="flip-back-header-inner">
+          <div>
+            <div class="flip-back-source-label">Latest Reading</div>
+            <div class="flip-back-title">{term} &mdash; {full_name}</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="flip-back-value" style="color:{_color('current_value_color')};">{cur_value}</div>
+            <div class="flip-back-value-period">{cur_period}</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-back-body">
+        <div class="mini-bar-chart-wrap">
+          {chart_html}
+        </div>
+        <div class="stat-tile-grid">
+          <div class="stat-tile">
+            <div class="stat-tile-label">{stat1_label}</div>
+            <div class="stat-tile-value" style="color:{_color('stat1_color')};">{stat1_value}</div>
+            <div class="stat-tile-sub">{stat1_sub}</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-tile-label">{stat2_label}</div>
+            <div class="stat-tile-value" style="color:{_color('stat2_color')};">{stat2_value}</div>
+            <div class="stat-tile-sub">{stat2_sub}</div>
+          </div>
+        </div>
+        <div class="insight-callout">
+          <div class="insight-callout-label">Analyst Insight</div>
+          <p class="insight-callout-text">{insight}</p>
+        </div>
+      </div>
+      <div class="flip-back-footer">
+        <span class="flip-back-source">{source}</span>
+        <span class="flip-hint">&larr; Flip back</span>
+      </div>
+    </div>
+
+  </div>
+</div>"""
+
+
+def render_market_iq_panel(cards, fundaa_articles=None):
+    """Render the Market IQ panel HTML with Market IQ / Friday Fundaa sub-tabs."""
+    if fundaa_articles is None:
+        fundaa_articles = []
+
+    featured = next((c for c in cards if c.get("featured") == "true"), None)
+    grid_cards = [c for c in cards if c.get("featured") != "true"]
+
+    # Extract unique categories from grid cards preserving order
+    seen = set()
+    categories = []
+    for c in grid_cards:
+        cat = c.get("category", "")
+        if cat and cat not in seen:
+            seen.add(cat)
+            categories.append(cat)
+
+    cat_buttons = '<button class="iq-cat-btn active">All</button>\n'
+    for cat in categories:
+        cat_buttons += f'      <button class="iq-cat-btn">{cat}</button>\n'
+
+    card_html = ""
+    for c in grid_cards:
+        term = c.get("term", "")
+        category = c.get("category", "")
+        definition = c.get("definition", "")
+        frequency = c.get("frequency", "")
+        trend_label = c.get("trend_label", "")
+        trend_class = c.get("trend_class", "trend-flat")
+        card_html += f"""
+      <div class="iq-card">
+        <div class="iq-card-top">
+          <div class="iq-card-category">{category}</div>
+          <div class="iq-card-term">{term}</div>
+        </div>
+        <div class="iq-card-body">
+          <p class="iq-card-def">{definition}</p>
+          <div class="iq-card-meta">
+            <span class="iq-card-freq">Published: {frequency}</span>
+            <span class="iq-card-trend {trend_class}">{trend_label}</span>
+          </div>
+        </div>
+      </div>"""
+
+    featured_html = render_featured_flip_card(featured) if featured else ""
+
+    # Friday Fundaa article list
+    fundaa_rows = ""
+    for a in fundaa_articles:
+        fundaa_rows += f"""
+      <a class="article-row" href="fundaa/{a['date']}/index.html">
+        <div class="article-tag-col">
+          <span class="article-tag guide">Fundaa</span>
+        </div>
+        <div class="article-content">
+          <div class="article-title">{a['title']}</div>
+          <div class="article-excerpt">{a['excerpt']}</div>
+        </div>
+        <div class="article-meta-col">
+          <span class="article-date">{a['display_date']}</span>
+        </div>
+      </a>"""
+
+    if not fundaa_rows:
+        fundaa_rows = '<p style="color:var(--muted);font-family:\'Raleway\',sans-serif;font-size:12px;padding:24px 0;">No Friday Fundaa articles yet.</p>'
+
+    return f"""<div id="panel-marketiq" class="section-panel">
+  <div class="content">
+    <div class="section-label">Market IQ &mdash; Economic Concepts, Plain &amp; Simple</div>
+
+    <div class="iq-sub-nav sub-nav">
+      <a class="iq-sub-tab sub-tab active" data-target="iq-sub-flashcards" onclick="showSubNav(this)">Market IQ</a>
+      <a class="iq-sub-tab sub-tab" data-target="iq-sub-fundaa" onclick="showSubNav(this)">Friday Fundaa</a>
+    </div>
+
+    <div id="iq-sub-flashcards" class="sub-panel active">
+      <p class="iq-intro">
+        No economics degree required. Each card explains one concept &mdash; what it is, why it matters,
+        how often it&rsquo;s published, and what the recent trend means for your money.
+      </p>
+      {featured_html}
+      <div class="iq-categories">
+        {cat_buttons}
+      </div>
+      <div class="iq-grid">
+        {card_html}
+      </div>
+      <div class="iq-see-all"><a href="#">View all concepts &rarr;</a></div>
+    </div>
+
+    <div id="iq-sub-fundaa" class="sub-panel">
+      <p class="iq-intro">
+        A short weekly moment of &ldquo;huh, didn&rsquo;t know that&rdquo; from the world of markets and money.
+        Plain English. No jargon. Just one idea you can actually use.
+      </p>
+      <div class="article-list">
+        {fundaa_rows}
+      </div>
+    </div>
+
+  </div>
+</div>"""
+
+
+def render_investing_panel(articles):
+    """Render the Personal Investing panel HTML."""
+    article_html = ""
+    for a in articles:
+        title = a.get("title", "")
+        excerpt = a.get("excerpt", "")
+        tag = a.get("tag", "")
+        tag_class = a.get("tag_class", "")
+        date_str = a.get("date", "")
+        read_time = a.get("read_time", "")
+        # Format date YYYY-MM-DD → "Mar 1, 2026"
+        try:
+            d = datetime.strptime(str(date_str), "%Y-%m-%d")
+            display_date = f"{d.strftime('%b')} {d.day}, {d.year}"
+        except ValueError:
+            display_date = date_str
+
+        article_html += f"""
+      <a class="article-row" href="#">
+        <div class="article-tag-col">
+          <span class="article-tag {tag_class}">{tag}</span>
+        </div>
+        <div class="article-content">
+          <div class="article-title">{title}</div>
+          <div class="article-excerpt">{excerpt}</div>
+        </div>
+        <div class="article-meta-col">
+          <span class="article-date">{display_date}</span>
+          <span class="article-read-time">{read_time}</span>
+        </div>
+      </a>"""
+
+    return f"""<div id="panel-investing" class="section-panel">
+  <div class="content">
+    <div class="section-label">Personal Investing &mdash; Practical Guides for Long-Term Investors</div>
+    <p class="investing-intro">
+      Research-backed guides on building a diversified portfolio with low-cost index ETFs.
+      No jargon, no stock tips &mdash; just clear frameworks for the patient investor.
+    </p>
+    <div class="article-filters">
+      <button class="iq-cat-btn active">All</button>
+      <button class="iq-cat-btn">ETF Basics</button>
+      <button class="iq-cat-btn">US Portfolios</button>
+      <button class="iq-cat-btn">International</button>
+      <button class="iq-cat-btn">Sector ETFs</button>
+      <button class="iq-cat-btn">Strategy</button>
+    </div>
+    <div class="article-list">
+      {article_html}
+    </div>
+  </div>
+</div>"""
+
+
+_EXPAT_PANEL = """\
+<div id="panel-expat" class="section-panel">
+  <div class="coming-soon-panel">
+    <div class="coming-soon-eyebrow">Coming Soon</div>
+    <div class="coming-soon-title">Expat Investing</div>
+    <p class="coming-soon-body">
+      A dedicated resource for Americans living abroad &mdash; navigating PFIC rules, FBAR reporting,
+      tax-efficient investing from outside the US, and building wealth across borders.
+      Leave your email to be notified when we launch.
+    </p>
+    <div class="notify-form">
+      <input type="email" placeholder="your@email.com"/>
+      <button>Notify Me</button>
+    </div>
+  </div>
+</div>"""
+
+_JS = """\
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  var labels = { markets: 0, marketiq: 1, investing: 2, expat: 3 };
+  var tabs = document.querySelectorAll('.section-tab');
+  if (labels[id] !== undefined) tabs[labels[id]].classList.add('active');
+}
+function showSubNav(el) {
+  var nav = el.closest('.sub-nav');
+  nav.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  var target = el.getAttribute('data-target');
+  if (target) {
+    el.closest('.section-panel').querySelectorAll('.sub-panel')
+      .forEach(p => p.classList.remove('active'));
+    document.getElementById(target).classList.add('active');
+  }
+}
+document.querySelectorAll('.iq-categories .iq-cat-btn, .article-filters .iq-cat-btn')
+  .forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      this.closest('.iq-categories, .article-filters')
+          .querySelectorAll('.iq-cat-btn')
+          .forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+document.querySelectorAll('.flip-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    this.classList.toggle('flipped');
+  });
+});
+</script>"""
+
+
 # ── Landing page ──────────────────────────────────────────────────────────────
 
-def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
-    """Render site/index.html — Weekly Editions hub."""
+def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
+                   daybreak_dates=None, daybreak_ctxs=None,
+                   market_iq_cards=None, articles=None, fundaa_articles=None):
+    """Render site/index.html — 4-tab hub (Markets / Market IQ / Investing / Expat)."""
+    if daybreak_dates is None:
+        daybreak_dates = []
+    if market_iq_cards is None:
+        market_iq_cards = []
+    if articles is None:
+        articles = []
+    if fundaa_articles is None:
+        fundaa_articles = []
+
     # Hero cards (latest of each weekly edition)
     latest_us   = us_dates[0]   if us_dates   else None
     latest_intl = intl_dates[0] if intl_dates else None
@@ -624,7 +1835,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
     intl_hero = _render_intl_hero(latest_intl, intl_ctxs[latest_intl]) if latest_intl else \
         '<div class="hero-card no-issue">No International issue yet</div>'
 
-    # Archive: weekly dates only (US + Intl), 3 columns
+    # Archive: weekly dates only (US + Intl)
     all_dates = sorted(set(us_dates) | set(intl_dates), reverse=True)
     archive_rows = ""
     for d in all_dates:
@@ -653,13 +1864,51 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
             <td>{intl_html_link}{intl_pdf_link}</td>
           </tr>"""
 
+    # Daybreak sub-panel content
+    if daybreak_dates and daybreak_ctxs:
+        latest_db = daybreak_dates[0]
+        db_hero = _render_daybreak_hero(latest_db, daybreak_ctxs[latest_db])
+        # Fix link: from landing, brief is at daily/{date}/index.html
+        db_archive_rows = ""
+        for d in daybreak_dates:
+            display = fmt_date(d)
+            html_link = f'<a class="archive-link" href="daily/{d}/index.html">Read</a>'
+            pdf_name  = pdf_map.get(("daily", d))
+            pdf_link  = f'<a class="archive-link pdf" href="downloads/{pdf_name}">PDF</a>' \
+                if pdf_name else ""
+            db_archive_rows += f"""
+              <tr>
+                <td>{display}</td>
+                <td>{html_link}{pdf_link}</td>
+              </tr>"""
+        daybreak_sub = f"""
+    <div id="sub-daybreak" class="sub-panel">
+      <div class="content">
+        <div class="section-label">Latest Brief</div>
+        <div class="hero-grid" style="grid-template-columns:1fr;">
+          {db_hero}
+        </div>
+        <div class="section-label">Archive</div>
+        <table class="archive-table">
+          <thead><tr><th>Date</th><th>Daily Brief</th></tr></thead>
+          <tbody>{db_archive_rows}</tbody>
+        </table>
+      </div>
+    </div>"""
+    else:
+        daybreak_sub = '<div id="sub-daybreak" class="sub-panel"><div class="content"><p style="color:var(--muted);font-family:\'Raleway\',sans-serif;font-size:12px;">No daily briefs yet.</p></div></div>'
+
+    # Market IQ and Investing panels
+    marketiq_panel = render_market_iq_panel(market_iq_cards, fundaa_articles)
+    investing_panel = render_investing_panel(articles)
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Framework Foundry &mdash; Weekly Economic Intelligence</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
   <style>
 {_CSS}
   </style>
@@ -674,42 +1923,65 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
         <span class="logo-name-framework">FRAMEWORK</span>
         <span class="logo-name-foundry">FOUNDRY</span>
         <div class="logo-rule"></div>
-        <span class="logo-tagline">US &amp; International Editions &nbsp;&middot;&nbsp; Research for the serious investor</span>
+        <span class="logo-tagline">Economic Intelligence &nbsp;&middot;&nbsp; Research for the Serious Investor</span>
       </div>
     </div>
     <div class="header-accent"></div>
   </header>
 
-{_NAV_TABS_WEEKLY}
+{_SECTION_NAV}
 
-  <div class="content">
+  <!-- ══ PANEL: MARKETS ══ -->
+  <div id="panel-markets" class="section-panel active">
 
-    <div class="section-label">Current Issues</div>
-    <div class="hero-grid">
-      {us_hero}
-      {intl_hero}
+    <div class="sub-nav">
+      <a class="sub-tab active" data-target="sub-weekly" onclick="showSubNav(this)">Weekly Editions</a>
+      <a class="sub-tab" data-target="sub-daybreak" onclick="showSubNav(this)">Market Day Break</a>
     </div>
 
-    <div class="section-label">Archive</div>
-    <table class="archive-table">
-      <thead>
-        <tr>
-          <th>Week Ending</th>
-          <th>US Edition</th>
-          <th>International Edition</th>
-        </tr>
-      </thead>
-      <tbody>
-        {archive_rows}
-      </tbody>
-    </table>
+    <!-- Sub-panel: Weekly Editions -->
+    <div id="sub-weekly" class="sub-panel active">
+      <div class="content">
+        <div class="section-label">Current Issues</div>
+        <div class="hero-grid">
+          {us_hero}
+          {intl_hero}
+        </div>
 
-  </div><!-- /content -->
+        <div class="section-label">Archive</div>
+        <table class="archive-table">
+          <thead>
+            <tr>
+              <th>Week Ending</th>
+              <th>US Edition</th>
+              <th>International Edition</th>
+            </tr>
+          </thead>
+          <tbody>
+            {archive_rows}
+          </tbody>
+        </table>
+      </div><!-- /content -->
+    </div><!-- /sub-weekly -->
+
+    <!-- Sub-panel: Market Day Break -->
+    {daybreak_sub}
+
+  </div><!-- /panel-markets -->
+
+  <!-- ══ PANEL: MARKET IQ ══ -->
+  {marketiq_panel}
+
+  <!-- ══ PANEL: INVESTING ══ -->
+  {investing_panel}
+
+  <!-- ══ PANEL: EXPAT ══ -->
+  {_EXPAT_PANEL}
 
   <!-- SUBSCRIBE -->
   <div class="subscribe-section">
     <h2>Stay in the loop</h2>
-    <p>Free weekly market intelligence, every weekend.</p>
+    <p>Free market intelligence &mdash; weekly editions &amp; daily briefs.</p>
     <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
       <input type="email" name="email" placeholder="your@email.com" required />
       <button type="submit">Subscribe</button>
@@ -738,6 +2010,23 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
     </div>
   </div>
 
+  <!-- FEEDBACK -->
+  <section class="feedback-section">
+    <div class="feedback-inner">
+      <div class="feedback-title">Leave a comment</div>
+      <form class="feedback-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+        <input type="hidden" name="_subject" value="Framework Foundry - You have a new comment" />
+        <input type="hidden" name="_replyto" value="" />
+        <div class="feedback-row">
+          <input type="text"  name="name"    placeholder="Your name (optional)" />
+          <input type="email" name="email"   placeholder="Your email (optional)" />
+        </div>
+        <textarea name="message" rows="4" placeholder="Your comment or feedback..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
     <div class="footer-disclaimer">
@@ -747,6 +2036,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map):
   </footer>
 
 </div><!-- /page -->
+{_JS}
 </body>
 </html>"""
 
@@ -863,6 +2153,23 @@ def render_daily_hub(daybreak_dates, daybreak_ctxs, pdf_map):
     </div>
   </div>
 
+  <!-- FEEDBACK -->
+  <section class="feedback-section">
+    <div class="feedback-inner">
+      <div class="feedback-title">Leave a comment</div>
+      <form class="feedback-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+        <input type="hidden" name="_subject" value="Framework Foundry - You have a new comment" />
+        <input type="hidden" name="_replyto" value="" />
+        <div class="feedback-row">
+          <input type="text"  name="name"    placeholder="Your name (optional)" />
+          <input type="email" name="email"   placeholder="Your email (optional)" />
+        </div>
+        <textarea name="message" rows="4" placeholder="Your comment or feedback..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
     <div class="footer-disclaimer">
@@ -973,8 +2280,17 @@ def build(use_mock=True):
         (issue_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  -> site/daily/{date_str}/index.html")
 
-    # Build landing page (weekly editions hub)
-    landing_html = render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map)
+    # Build landing page (4-tab hub)
+    market_iq_cards = load_market_iq_cards()
+    articles = load_articles()
+    fundaa_articles = parse_fundaa_articles()
+    generate_fundaa_pages(fundaa_articles, SITE_DIR)
+    landing_html = render_landing(
+        us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
+        daybreak_dates=daybreak_dates, daybreak_ctxs=daybreak_ctxs,
+        market_iq_cards=market_iq_cards, articles=articles,
+        fundaa_articles=fundaa_articles,
+    )
     (SITE_DIR / "index.html").write_text(landing_html, encoding="utf-8")
     print(f"  -> site/index.html")
 
