@@ -329,6 +329,9 @@
       border-bottom: 1px solid var(--border);
       color: var(--text);
     }
+    .toc-row:hover td { background: #f0f4f8; color: var(--accent); }
+    .toc-row:hover td { transition: background 0.12s; }
+
     .pg-checklist li::before {
       content: '□';
       position: absolute;
@@ -696,29 +699,29 @@
           <div style="margin-bottom:14px">
             <div style="font-family:'Raleway',sans-serif;font-size:7.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Section 1 &mdash; The Portugal File</div>
             <table style="width:100%;border-collapse:collapse">
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Why Americans Are Going There</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">4</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Cost of Living Snapshot</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">5</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">The D7 Passive Income Visa</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">6</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Banking as an American Abroad</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">7</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Investment Access from the EU</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">8</td></tr>
+              <tr class="toc-row" onclick="goToPage(3)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Why Americans Are Going There</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">4</td></tr>
+              <tr class="toc-row" onclick="goToPage(4)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Cost of Living Snapshot</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">5</td></tr>
+              <tr class="toc-row" onclick="goToPage(5)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">The D7 Passive Income Visa</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">6</td></tr>
+              <tr class="toc-row" onclick="goToPage(6)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Banking as an American Abroad</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">7</td></tr>
+              <tr class="toc-row" onclick="goToPage(7)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Investment Access from the EU</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">8</td></tr>
             </table>
           </div>
 
           <div style="margin-bottom:14px">
             <div style="font-family:'Raleway',sans-serif;font-size:7.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Section 2 &mdash; FBAR</div>
             <table style="width:100%;border-collapse:collapse">
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">What It Is</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">9</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Who This Applies To</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">10</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Deadlines &amp; Requirements</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">11</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Penalties for Non-Compliance</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">12</td></tr>
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">How to Stay Compliant</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">13</td></tr>
+              <tr class="toc-row" onclick="goToPage(8)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">What It Is</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">9</td></tr>
+              <tr class="toc-row" onclick="goToPage(9)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Who This Applies To</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">10</td></tr>
+              <tr class="toc-row" onclick="goToPage(10)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Deadlines &amp; Requirements</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">11</td></tr>
+              <tr class="toc-row" onclick="goToPage(11)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Penalties for Non-Compliance</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">12</td></tr>
+              <tr class="toc-row" onclick="goToPage(12)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">How to Stay Compliant</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">13</td></tr>
             </table>
           </div>
 
           <div>
             <div style="font-family:'Raleway',sans-serif;font-size:7.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Section 3</div>
             <table style="width:100%;border-collapse:collapse">
-              <tr><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Before You Go: The Financial Checklist</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--muted);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">14</td></tr>
+              <tr class="toc-row" onclick="goToPage(13)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:11px;color:var(--text);padding:4px 0;border-bottom:1px dotted var(--border)">Before You Go: The Financial Checklist</td><td style="font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;color:var(--accent);text-align:right;padding:4px 0;border-bottom:1px dotted var(--border);width:28px">14</td></tr>
             </table>
           </div>
 
@@ -1009,9 +1012,14 @@
 </div><!-- .page-wrapper -->
 
 <script>
+var pageFlip;
+
+function goToPage(idx) {
+  if (pageFlip) pageFlip.flip(idx);
+}
+
 window.addEventListener('load', function () {
   var wrapper   = document.querySelector('.page-wrapper');
-  var section   = document.querySelector('.book-section');
   var available = Math.min(wrapper.offsetWidth - 48, 900);
   var portrait  = window.innerWidth < 680;
   var pageW, pageH;
@@ -1023,7 +1031,7 @@ window.addEventListener('load', function () {
   }
   pageH = Math.round(pageW * 1.4);
 
-  var pageFlip = new St.PageFlip(document.getElementById('book'), {
+  pageFlip = new St.PageFlip(document.getElementById('book'), {
     width:               pageW,
     height:              pageH,
     size:                'fixed',
