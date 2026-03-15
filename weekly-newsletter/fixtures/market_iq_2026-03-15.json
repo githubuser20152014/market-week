@@ -1,0 +1,63 @@
+{
+  "CPI": {
+    "current_value": "2.4%",
+    "current_value_period": "YoY \u00b7 Feb '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Nov '25\", \"value\": 2.7}, {\"label\": \"Dec '25\", \"value\": 2.7}, {\"label\": \"Jan '26\", \"value\": 2.4}, {\"label\": \"Feb '26\", \"value\": 2.4}]",
+    "stat1_value": "2.5%",
+    "trend": "flat",
+    "trend_label": "\u2192 Moderating",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Feb '26"
+  },
+  "Fed Funds Rate": {
+    "current_value": "3.50\u20133.75%",
+    "current_value_period": "Target \u00b7 Feb '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"rate\": \"3.75\\u20134.00%\", \"label\": \"Nov '25\"}, {\"rate\": \"3.50\\u20133.75%\", \"label\": \"Dec '25\"}, {\"rate\": \"3.50\\u20133.75%\", \"label\": \"Jan '26\"}, {\"rate\": \"3.50\\u20133.75%\", \"label\": \"Feb '26\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Hold",
+    "source": "Federal Reserve \u00b7 Feb '26 FOMC"
+  },
+  "Non-Farm Payrolls": {
+    "current_value": "-92K",
+    "current_value_period": "Feb '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"Nov '25\", \"value\": 41, \"displayValue\": \"41K\"}, {\"label\": \"Dec '25\", \"value\": -17, \"displayValue\": \"-17K\"}, {\"label\": \"Jan '26\", \"value\": 126, \"displayValue\": \"126K\"}, {\"label\": \"Feb '26\", \"value\": -92, \"displayValue\": \"-92K\"}]",
+    "stat1_value": "4.4%",
+    "stat2_value": "+3.8%",
+    "trend": "down",
+    "trend_label": "\u2193 Softening",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Feb '26"
+  },
+  "PCE": {
+    "current_value": "3.1%",
+    "current_value_period": "Core YoY \u00b7 Jan '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"Oct '25\", \"value\": 2.8}, {\"label\": \"Nov '25\", \"value\": 2.8}, {\"label\": \"Dec '25\", \"value\": 3.0}, {\"label\": \"Jan '26\", \"value\": 3.1}]",
+    "stat1_value": "2.8%",
+    "trend": "up",
+    "trend_label": "\u2191 Above Target",
+    "source": "U.S. Bureau of Economic Analysis \u00b7 Jan '26"
+  },
+  "Yield Curve": {
+    "current_value": "+0.66%",
+    "current_value_period": "Feb '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Nov '25\", \"value\": 0.54, \"displayValue\": \"+0.54%\"}, {\"label\": \"Dec '25\", \"value\": 0.64, \"displayValue\": \"+0.64%\"}, {\"label\": \"Jan '26\", \"value\": 0.67, \"displayValue\": \"+0.67%\"}, {\"label\": \"Feb '26\", \"value\": 0.66, \"displayValue\": \"+0.66%\"}]",
+    "stat1_value": "4.13%",
+    "stat2_value": "3.47%",
+    "trend": "up",
+    "trend_label": "\u2192 Normalizing",
+    "source": "U.S. Treasury / FRED \u00b7 Feb '26"
+  },
+  "GDP": {
+    "current_value": "0.7%",
+    "current_value_period": "Q4 '25 (Annualized)",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"Q1 '25\", \"value\": -0.6}, {\"label\": \"Q2 '25\", \"value\": 3.8}, {\"label\": \"Q3 '25\", \"value\": 4.4}, {\"label\": \"Q4 '25\", \"value\": 0.7}]",
+    "stat1_value": "2.1%",
+    "trend": "down",
+    "trend_label": "\u2193 Slowing",
+    "source": "U.S. Bureau of Economic Analysis \u00b7 Q4 '25"
+  }
+}

@@ -1413,8 +1413,229 @@ def _render_daybreak_hero(date_str, ctx):
 _TREND_CLASS = {"up": "trend-up", "down": "trend-down", "flat": "trend-flat"}
 
 
+# ── Market IQ live data (FRED) ────────────────────────────────────────────────
+
+def _iq_fred_key():
+    """Load FRED API key from env or config file."""
+    key = __import__("os").environ.get("FRED_API_KEY", "")
+    if not key:
+        env_path = BASE_DIR / "config" / "api_keys.env"
+        try:
+            for line in env_path.read_text().splitlines():
+                if line.strip().startswith("FRED_API_KEY="):
+                    key = line.strip().split("=", 1)[1].strip()
+                    break
+        except Exception:
+            pass
+    return key
+
+
+def _fred_obs(series_id, units="lin", limit=6, frequency=None, agg_method=None):
+    """Fetch FRED observations. Returns list of (date_str, float) newest-first."""
+    try:
+        import requests
+    except ImportError:
+        return []
+    key = _iq_fred_key()
+    if not key:
+        return []
+    params = {"series_id": series_id, "api_key": key, "file_type": "json",
+              "sort_order": "desc", "limit": limit, "units": units}
+    if frequency:
+        params["frequency"] = frequency
+    if agg_method:
+        params["aggregation_method"] = agg_method
+    try:
+        r = requests.get("https://api.stlouisfed.org/fred/series/observations",
+                         params=params, timeout=10)
+        r.raise_for_status()
+        out = []
+        for o in r.json().get("observations", []):
+            if o["value"] not in (".", ""):
+                try:
+                    out.append((o["date"], float(o["value"])))
+                except ValueError:
+                    pass
+        return out
+    except Exception as e:
+        print(f"  FRED {series_id}: {e}")
+        return []
+
+
+def _iq_mlabel(date_str):
+    """'2026-01-01' → \"Jan '26\"."""
+    try:
+        dt = datetime.strptime(date_str[:10], "%Y-%m-%d")
+        return dt.strftime("%b '%y")
+    except ValueError:
+        return date_str
+
+
+def _iq_qlabel(date_str):
+    """'2025-10-01' → \"Q4 '25\"."""
+    try:
+        dt = datetime.strptime(date_str[:10], "%Y-%m-%d")
+        q = (dt.month - 1) // 3 + 1
+        return f"Q{q} '{dt.strftime('%y')}"
+    except ValueError:
+        return date_str
+
+
+def fetch_live_iq_data():
+    """Pull live FRED data for all Market IQ cards.
+
+    Returns a dict keyed by card term with field overrides.
+    Results are cached in fixtures/market_iq_YYYY-MM-DD.json so subsequent
+    builds on the same day skip the API calls.
+    """
+    today = datetime.today().strftime("%Y-%m-%d")
+    fixture_path = BASE_DIR / "fixtures" / f"market_iq_{today}.json"
+    if fixture_path.exists():
+        try:
+            return _json.loads(fixture_path.read_text())
+        except Exception:
+            pass
+
+    data = {}
+    print("Fetching live Market IQ data from FRED...")
+
+    # CPI — CPIAUCNS YoY (NSA), CPILFESL core YoY
+    cpi = _fred_obs("CPIAUCNS", units="pc1", limit=5)
+    core_cpi = _fred_obs("CPILFESL", units="pc1", limit=2)
+    if cpi:
+        cur_d, cur_v = cpi[0]
+        core_v = core_cpi[0][1] if core_cpi else None
+        pts = list(reversed(cpi[:4]))
+        data["CPI"] = {
+            "current_value": f"{cur_v:.1f}%",
+            "current_value_period": f"YoY \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 2.5 else "green",
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1)} for d, v in pts]),
+            "stat1_value": f"{core_v:.1f}%" if core_v is not None else "\u2014",
+            "trend": "up" if cur_v > 3.0 else ("flat" if cur_v >= 2.0 else "down"),
+            "trend_label": "\u2191 Elevated" if cur_v > 3.0 else ("\u2192 Moderating" if cur_v >= 2.0 else "\u2193 Near Target"),
+            "source": f"U.S. Bureau of Labor Statistics \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Fed Funds Rate — DFEDTARU/DFEDTARL (monthly end-of-period)
+    ffr_u = _fred_obs("DFEDTARU", units="lin", limit=5, frequency="m", agg_method="eop")
+    ffr_l = _fred_obs("DFEDTARL", units="lin", limit=5, frequency="m", agg_method="eop")
+    if ffr_u and ffr_l:
+        cur_d, upper_v = ffr_u[0]
+        lower_v = ffr_l[0][1]
+        u_map = {d: v for d, v in ffr_u[:4]}
+        l_map = {d: v for d, v in ffr_l[:4]}
+        common = sorted(set(u_map) & set(l_map))  # oldest → newest
+        timeline = [{"rate": f"{l_map[d]:.2f}\u2013{u_map[d]:.2f}%", "label": _iq_mlabel(d)}
+                    for d in common]
+        data["Fed Funds Rate"] = {
+            "current_value": f"{lower_v:.2f}\u2013{upper_v:.2f}%",
+            "current_value_period": f"Target \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "gray",
+            "chart_data": _json.dumps(timeline),
+            "trend": "flat",
+            "trend_label": "\u2192 Hold",
+            "source": f"Federal Reserve \u00b7 {_iq_mlabel(cur_d)} FOMC",
+        }
+
+    # NFP — PAYEMS level → MoM diff; UNRATE; avg hourly earnings YoY
+    payems = _fred_obs("PAYEMS", units="lin", limit=6)
+    unrate = _fred_obs("UNRATE", units="lin", limit=2)
+    ahe = _fred_obs("CES0500000003", units="pc1", limit=2)
+    if payems and len(payems) >= 2:
+        diffs = [(payems[i][0], payems[i][1] - payems[i + 1][1]) for i in range(len(payems) - 1)]
+        cur_d, cur_v = diffs[0]
+        pts = list(reversed(diffs[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["Non-Farm Payrolls"] = {
+            "current_value": f"{pfx}{int(cur_v)}K",
+            "current_value_period": _iq_mlabel(cur_d),
+            "current_value_color": "green" if cur_v > 200 else ("red" if cur_v < 75 else "gray"),
+            "chart_data": _json.dumps([
+                {"label": _iq_mlabel(d), "value": round(v), "displayValue": f"{int(v)}K"} for d, v in pts
+            ]),
+            "stat1_value": f"{unrate[0][1]:.1f}%" if unrate else "\u2014",
+            "stat2_value": f"+{ahe[0][1]:.1f}%" if ahe else "\u2014",
+            "trend": "up" if cur_v > 200 else ("down" if cur_v < 100 else "flat"),
+            "trend_label": "\u2191 Strong" if cur_v > 200 else ("\u2193 Softening" if cur_v < 100 else "\u2192 Steady"),
+            "source": f"U.S. Bureau of Labor Statistics \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # PCE — PCEPILFE core YoY, PCEPI headline YoY
+    core_pce = _fred_obs("PCEPILFE", units="pc1", limit=5)
+    hdl_pce = _fred_obs("PCEPI", units="pc1", limit=2)
+    if core_pce:
+        cur_d, cur_v = core_pce[0]
+        pts = list(reversed(core_pce[:4]))
+        hdl_v = hdl_pce[0][1] if hdl_pce else None
+        data["PCE"] = {
+            "current_value": f"{cur_v:.1f}%",
+            "current_value_period": f"Core YoY \u00b7 {_iq_mlabel(cur_d)}",
+            "current_value_color": "red" if cur_v > 2.5 else "green",
+            "chart_data": _json.dumps([{"label": _iq_mlabel(d), "value": round(v, 1)} for d, v in pts]),
+            "stat1_value": f"{hdl_v:.1f}%" if hdl_v is not None else "\u2014",
+            "trend": "up" if cur_v > 3.0 else ("flat" if cur_v >= 2.0 else "down"),
+            "trend_label": "\u2191 Above Target" if cur_v > 2.5 else ("\u2192 Moderating" if cur_v >= 2.0 else "\u2193 Near Target"),
+            "source": f"U.S. Bureau of Economic Analysis \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # Yield Curve — GS10 minus GS2 (monthly)
+    gs10 = _fred_obs("GS10", units="lin", limit=5)
+    gs2 = _fred_obs("GS2", units="lin", limit=5)
+    if gs10 and gs2:
+        g10 = {d: v for d, v in gs10}
+        g2 = {d: v for d, v in gs2}
+        common = sorted(set(g10) & set(g2), reverse=True)
+        spreads = [(d, round(g10[d] - g2[d], 2)) for d in common[:5]]
+        cur_d, cur_v = spreads[0]
+        pts = list(reversed(spreads[:4]))
+        pfx = "+" if cur_v >= 0 else ""
+        data["Yield Curve"] = {
+            "current_value": f"{pfx}{cur_v:.2f}%",
+            "current_value_period": _iq_mlabel(cur_d),
+            "current_value_color": "green" if cur_v >= 0 else "red",
+            "chart_data": _json.dumps([
+                {"label": _iq_mlabel(d), "value": v,
+                 "displayValue": f"+{v:.2f}%" if v >= 0 else f"{v:.2f}%"} for d, v in pts
+            ]),
+            "stat1_value": f"{g10[common[0]]:.2f}%",
+            "stat2_value": f"{g2[common[0]]:.2f}%",
+            "trend": "flat" if -0.1 <= cur_v <= 0.3 else ("up" if cur_v > 0.3 else "down"),
+            "trend_label": "\u2192 Normalizing" if cur_v >= 0 else "\u2193 Inverted",
+            "source": f"U.S. Treasury / FRED \u00b7 {_iq_mlabel(cur_d)}",
+        }
+
+    # GDP — A191RL1Q225SBEA (quarterly real growth, annualized)
+    gdp = _fred_obs("A191RL1Q225SBEA", units="lin", limit=5)
+    if gdp:
+        cur_d, cur_v = gdp[0]
+        pts = list(reversed(gdp[:4]))
+        annual_avg = round(sum(v for _, v in gdp[:4]) / min(4, len(gdp)), 1)
+        data["GDP"] = {
+            "current_value": f"{cur_v:.1f}%",
+            "current_value_period": f"{_iq_qlabel(cur_d)} (Annualized)",
+            "current_value_color": "red" if cur_v < 2.0 else "green",
+            "chart_data": _json.dumps([{"label": _iq_qlabel(d), "value": round(v, 1)} for d, v in pts]),
+            "stat1_value": f"{annual_avg:.1f}%",
+            "trend": "up" if cur_v > 3.0 else ("down" if cur_v < 1.5 else "flat"),
+            "trend_label": "\u2191 Strong" if cur_v > 3.0 else ("\u2193 Slowing" if cur_v < 2.0 else "\u2192 Steady"),
+            "source": f"U.S. Bureau of Economic Analysis \u00b7 {_iq_qlabel(cur_d)}",
+        }
+
+    # Cache to fixture
+    if data:
+        try:
+            (BASE_DIR / "fixtures").mkdir(exist_ok=True)
+            fixture_path.write_text(_json.dumps(data, indent=2))
+            print(f"  Saved Market IQ fixture: {fixture_path.name}")
+        except Exception as e:
+            print(f"  Warning: could not save fixture: {e}")
+
+    return data
+
+
 def load_market_iq_cards(csv_path=None):
-    """Load Market IQ flashcard data from CSV. Returns list of dicts."""
+    """Load Market IQ flashcard data from CSV, enriched with live FRED data."""
     if csv_path is None:
         csv_path = BASE_DIR / "content" / "market_iq.csv"
     cards = []
@@ -1425,6 +1646,18 @@ def load_market_iq_cards(csv_path=None):
                 cards.append(row)
     except FileNotFoundError:
         pass
+
+    # Merge live FRED data (graceful fallback to CSV values if unavailable)
+    try:
+        live = fetch_live_iq_data()
+        for card in cards:
+            overrides = live.get(card.get("term", ""), {})
+            if overrides:
+                card.update(overrides)
+                card["trend_class"] = _TREND_CLASS.get(card.get("trend", "flat"), "trend-flat")
+    except Exception as e:
+        print(f"Warning: live Market IQ data unavailable — {e}")
+
     return cards
 
 
