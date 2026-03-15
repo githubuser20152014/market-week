@@ -102,3 +102,55 @@ Subscribers get first access when both launch.
 If you've been meaning to get more serious about your financial life — whether that's understanding markets, starting to invest, or figuring out what life abroad actually costs — this is a good place to start.
 
 → frameworkfoundry.info
+
+---
+
+## X / Twitter version
+
+**Tweet 1 (hook):**
+Most financial coverage assumes you already know what CPI, NFP, and the yield curve mean.
+
+We built something for people who are done nodding along and ready to actually understand.
+
+🧵
+
+---
+
+**Tweet 2:**
+Market IQ — 36 plain-English explainers on the indicators that move markets.
+
+Search, filter, bookmark. Current readings included. No jargon.
+
+frameworkfoundry.info/market-iq
+
+---
+
+**Tweet 3:**
+Friday Fundaa — one economic concept, properly explained, every Friday.
+
+First one: shrinkflation. Why your groceries feel more expensive even when the price tag hasn't moved.
+
+→ frameworkfoundry.info
+
+---
+
+**Tweet 4:**
+Two free publications:
+
+🌅 Market Day Break — weekday mornings, before 8am. What moved, what to watch, what it means.
+
+📊 Framework Foundry Weekly — every Saturday. Full week in markets with positioning notes.
+
+Both free. No noise.
+
+---
+
+**Tweet 5 (tease + CTA):**
+Also building:
+
+📘 Investing guide — building a real portfolio from scratch. No jargon, no assumptions.
+
+✈️ Expat Investing — the financial side of life abroad, for Americans keeping a US financial life.
+
+Subscribers get first access.
+→ frameworkfoundry.info

@@ -76,13 +76,21 @@ def main():
     parser = argparse.ArgumentParser(description="Send the site relaunch announcement email")
     parser.add_argument("--to", nargs="+", metavar="EMAIL", help="Specific recipient(s)")
     parser.add_argument("--dry-run", action="store_true", help="Print email body; do not send")
+    parser.add_argument("--output", metavar="PATH", help="Save rendered HTML to file instead of sending")
     args = parser.parse_args()
-
-    recipients = args.to if args.to else load_subscribers()
 
     md_body = extract_email_body(ANNOUNCEMENT_MD)
     html_body = build_email_html(md_body, SUBJECT, edition_label="Site Update")
     plain_body = html_to_plain(html_body)
+
+    if args.output:
+        out_path = Path(args.output)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(html_body, encoding="utf-8")
+        print(f"HTML saved to {out_path}")
+        return
+
+    recipients = args.to if args.to else load_subscribers()
 
     if args.dry_run:
         print(f"Subject : {SUBJECT}")

@@ -66,14 +66,16 @@ requested date. This means data is stale — use `--live` or create a new fixtur
 
 ## Market IQ Flashcards
 
-### Go-live: link newsletter indicator mentions to flashcards
-When the Market IQ flashcards are integrated into the live site, every mention
-of a tracked indicator in the newsletter HTML should be hyperlinked to its
-flashcard. Examples:
-- "CPI" → `/market-iq#cpi`
+### ACTIVE: Link economic indicator mentions to flashcards in every edition
+Every mention of a tracked economic indicator in the newsletter HTML **must** be
+hyperlinked to its flashcard entry. This applies to all future editions now.
+
+Term → anchor mapping:
+- "CPI" / "consumer price index" → `/market-iq#cpi`
 - "NFP" / "non-farm payrolls" → `/market-iq#nfp`
 - "yield curve" → `/market-iq#yield-curve`
-- "Fed funds rate" / "FFR" → `/market-iq#ffr`
+- "Fed funds rate" / "FFR" / "federal funds rate" → `/market-iq#ffr`
+- "PCE" / "personal consumption expenditures" → `/market-iq#pce`
 
 Implementation notes:
 - Add `id` anchors to each flashcard block when building the live page
