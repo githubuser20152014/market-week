@@ -439,6 +439,128 @@
     border-bottom: 1px solid var(--accent); padding-bottom: 2px;
   }
 
+  /* IQ GRID FLIP CARDS */
+  .iq-card-fullname {
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px; font-weight: 300; font-style: italic;
+    color: var(--accent-lt); margin-top: 4px;
+  }
+
+  .iq-card-formula {
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px; margin-top: 10px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px; line-height: 1.6;
+    color: #3a3a4a; font-weight: 300; font-style: italic;
+  }
+
+  .iq-grid-flip {
+    perspective: 1400px; cursor: pointer;
+    border: 1px solid transparent; /* keeps grid cell size stable before JS sets height */
+  }
+
+  .iq-grid-flip-inner {
+    position: relative; width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .iq-grid-flip.flipped .iq-grid-flip-inner { transform: rotateY(180deg); }
+
+  .iq-grid-flip-front, .iq-grid-flip-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex; flex-direction: column;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+  }
+
+  .iq-grid-flip-front { border-top: 4px solid var(--accent); }
+  .iq-grid-flip-back  { transform: rotateY(180deg); border-top: 4px solid var(--gold); }
+
+  .iq-grid-flip-front-body { padding: 12px 16px; flex: 1; }
+
+  .iq-grid-flip-front-footer {
+    padding: 10px 16px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .iq-grid-flip-back-body {
+    padding: 14px 16px; flex: 1;
+    display: flex; flex-direction: column; gap: 10px;
+    overflow: hidden;
+  }
+
+  /* Tighter overrides for back inside grid cells */
+  .iq-grid-back-header { padding: 12px 16px !important; }
+  .iq-grid-back-header .flip-back-title { font-size: 14px; }
+  .iq-grid-back-header .flip-back-value { font-size: 22px; }
+  .iq-grid-flip-back .stat-tile { padding: 10px 12px; }
+  .iq-stat-value { font-size: 20px !important; }
+  .iq-grid-flip-back .stat-tile-sub { margin-top: 4px; }
+  .iq-grid-flip-back .insight-callout { padding: 10px 12px; }
+  .iq-grid-flip-back .insight-callout-text { font-size: 11.5px; line-height: 1.6; }
+  .iq-grid-back-footer { padding: 10px 16px !important; }
+  .iq-grid-flip-back .mini-bar-chart { height: 52px; gap: 6px; }
+
+  /* Chart label + container inside grid back */
+  .iq-chart-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+
+  .iq-chart-container {
+    background: var(--navy);
+    padding: 10px 12px 8px; border-radius: 1px;
+  }
+
+  /* Rate timeline (FFR card) */
+  .rate-timeline {
+    display: flex; align-items: center; gap: 0;
+    height: 52px; padding: 0 4px;
+  }
+
+  .rate-node {
+    display: flex; flex-direction: column;
+    align-items: center; flex: 1; position: relative;
+  }
+
+  .rate-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent-lt); margin-bottom: 4px; position: relative; z-index: 1;
+  }
+
+  .rate-dot.current { background: var(--gold); width: 11px; height: 11px; }
+
+  .rate-connector {
+    position: absolute; top: 3px; left: 50%;
+    width: 100%; height: 2px;
+    background: rgba(255,255,255,0.2); z-index: 0;
+  }
+
+  .rate-node:last-child .rate-connector { display: none; }
+
+  .rate-value {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8px; font-weight: 700;
+    color: var(--accent-lt); text-align: center;
+  }
+
+  .rate-node.current-node .rate-value { color: var(--gold); }
+
+  .rate-period {
+    font-family: 'Raleway', sans-serif;
+    font-size: 7px; font-weight: 600;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); text-align: center; margin-top: 3px;
+  }
+
+  .rate-node.current-node .rate-period { color: rgba(255,255,255,0.65); }
+
   /* IQ SEARCH BAR */
   .iq-search-row { margin-bottom: 20px; }
   .iq-search-wrapper { position: relative; display: flex; align-items: center; }
