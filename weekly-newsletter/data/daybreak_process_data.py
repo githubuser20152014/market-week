@@ -1116,63 +1116,128 @@ def generate_linkedin_post(context: dict) -> str:
 
 
 def generate_x_post(context: dict) -> str:
-    """Generate a 3-tweet thread for X (Twitter) from the daybreak context.
+    """Generate a 4-tweet thread for X (Twitter) from the daybreak context.
 
-    Returns three blocks separated by '\\n---\\n', each ≤280 chars.
+    Tweet 1: Hook + key index numbers + cross-asset snapshot
+    Tweet 2: Why it happened — dominant theme + key signal
+    Tweet 3: Positioning — pre-market + specific ETF tips
+    Tweet 4: Link + hashtags
+
+    Returns four blocks separated by '\\n---\\n', each ≤280 chars.
     Warns via UserWarning if any block exceeds the limit.
     """
     import warnings
 
+    us_indices = context.get("us_indices") or []
+    futures    = context.get("futures")    or []
+    tips       = context.get("tips") or context.get("positioning_tips") or []
+    news_items = context.get("news_items") or []
     plain_summary = context.get("plain_summary", "")
-    paragraphs = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
-    first_sentence = ""
-    if paragraphs:
-        raw = _strip_markdown(paragraphs[0])
-        # Take just the first sentence
-        end = raw.find(". ")
-        first_sentence = raw[: end + 1].strip() if end != -1 else raw.strip()
+
+    sp      = next((i for i in us_indices if "S&P"     in i.get("name", "")), None)
+    nasdaq  = next((i for i in us_indices if "Nasdaq"  in i.get("name", "")), None)
+    dow     = next((i for i in us_indices if "Dow"     in i.get("name", "")), None)
+    russell = next((i for i in us_indices if "Russell" in i.get("name", "")), None)
+    gold    = next((i for i in us_indices if i.get("name") == "Gold"), None)
+    oil     = next((i for i in us_indices if "WTI"     in i.get("name", "") or "Crude" in i.get("name", "")), None)
+    treasury = next((i for i in us_indices if "Treasury" in i.get("name", "")), None)
+
+    # ── Tweet 1: Hook + numbers ────────────────────────────────────────────────
+    title = _generate_post_title(context)
+
+    index_lines = []
+    for idx in [sp, nasdaq, dow, russell]:
+        if idx and idx.get("daily_pct") is not None and idx.get("close") is not None:
+            short = {"S&P 500": "S&P", "Nasdaq": "Nasdaq", "Dow Jones": "Dow", "Russell 2000": "Russell"}.get(idx["name"], idx["name"])
+            index_lines.append(f"{short} {idx['close']:,.0f} ({idx['daily_pct']:+.2f}%)")
+
+    cross = []
+    if gold and gold.get("daily_pct") is not None:
+        cross.append(f"Gold {gold['daily_pct']:+.2f}%")
+    if oil and oil.get("daily_pct") is not None and oil.get("close") is not None:
+        cross.append(f"Oil ${oil['close']:.0f} ({oil['daily_pct']:+.2f}%)")
+    if treasury and treasury.get("yield_change_bps") is not None and treasury.get("close") is not None:
+        bps = round(treasury["yield_change_bps"])
+        sign = "+" if bps >= 0 else ""
+        cross.append(f"10Y {treasury['close']:.2f}% ({sign}{bps}bps)")
 
     us_best  = context.get("us_best")
     us_worst = context.get("us_worst")
+    best_worst = ""
     if us_best and us_worst:
-        best_line = (
-            f"Best: {us_best['name']} {us_best['daily_pct']:+.2f}%"
-            f" | Worst: {us_worst['name']} {us_worst['daily_pct']:+.2f}%"
-        )
-    else:
-        best_line = ""
+        best_worst = f"Best: {us_best['name']} ({us_best['daily_pct']:+.2f}%) | Worst: {us_worst['name']} ({us_worst['daily_pct']:+.2f}%)"
 
-    today_events = context.get("today_events") or []
-    if today_events:
-        event_names = ", ".join(e.get("event", e.get("name", "")) for e in today_events)
-        calendar_line = f"Today's calendar: {event_names}"
-    else:
-        calendar_line = "Quiet day — no major releases"
+    t1_parts = []
+    if title:
+        t1_parts.append(title)
+    if index_lines:
+        t1_parts.append(" | ".join(index_lines))
+    if cross:
+        t1_parts.append("  ".join(cross))
+    if best_worst:
+        t1_parts.append(best_worst)
+    t1_parts.append("🧵 1/4")
+    tweet1 = "\n".join(t1_parts)
 
-    tips = context.get("tips") or context.get("positioning_tips") or []
-    first_tip = _strip_markdown(tips[0]) if tips else ""
+    # ── Tweet 2: Why it happened + going into today ────────────────────────────
+    # Combine the "why" paragraph (para 2) with the pre-market signal from para 4
+    paras = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
+    why_para    = paras[1] if len(paras) > 1 else (paras[0] if paras else "")
+    going_para  = paras[4] if len(paras) > 4 else (paras[3] if len(paras) > 3 else "")
 
-    title = _generate_post_title(context)
-    tweet1_parts = [p for p in [title or first_sentence, best_line, "🧵 1/3"] if p]
-    tweet1 = "\n\n".join(tweet1_parts)
+    why_text = _strip_markdown(why_para)
+    # Trim why to ~180 chars; pad with first sentence of "going into today" if room
+    why_text = _trim_to_sentences(why_text, 180)
+    going_text = ""
+    if going_para:
+        going_text = _trim_to_sentences(_strip_markdown(going_para), 120)
+    combined = f"{why_text}\n\n{going_text}".strip() if going_text else why_text
+    # Final trim to 240 chars total
+    combined = _trim_to_sentences(combined, 240)
+    tweet2 = f"{combined}\n\n🧵 2/4"
 
-    tweet2_parts = [p for p in [calendar_line, first_tip, "🧵 2/3"] if p]
-    tweet2 = "\n\n".join(tweet2_parts)
+    # ── Tweet 3: Top positioning tip (full) ───────────────────────────────────
+    # Include the first tip in full (Signal -- Action format, no truncation).
+    # If the first tip alone exceeds 274 chars, trim to the nearest sentence.
+    TWEET_BODY_LIMIT = 274  # 280 minus "🧵 3/4" + "\n\n"
+    top_tip = _strip_markdown(tips[0]) if tips else ""
+    if len(top_tip) > TWEET_BODY_LIMIT:
+        top_tip = _trim_to_sentences(top_tip, TWEET_BODY_LIMIT)
+    tweet3 = f"{top_tip}\n\n🧵 3/4" if top_tip else "See full positioning notes at frameworkfoundry.info/daily/\n\n🧵 3/4"
 
-    tweet3 = "Full daily brief → frameworkfoundry.info\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 3/3"
+    # ── Tweet 4: Link ──────────────────────────────────────────────────────────
+    tweet4 = "Full breakdown + positioning notes:\nframeworkfoundry.info/daily/\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 4/4"
 
     TWEET_LIMIT = 280
-    for i, tweet in enumerate([tweet1, tweet2, tweet3], start=1):
+    tweets = [tweet1, tweet2, tweet3, tweet4]
+    for i, tweet in enumerate(tweets, start=1):
         if len(tweet) > TWEET_LIMIT:
             overage = len(tweet) - TWEET_LIMIT
             warnings.warn(
-                f"X thread tweet {i}/3 is {len(tweet)} chars — {overage} over the 280-char limit. "
+                f"X thread tweet {i}/4 is {len(tweet)} chars — {overage} over the 280-char limit. "
                 "Trim before posting.",
                 UserWarning,
                 stacklevel=2,
             )
 
-    return f"{tweet1}\n---\n{tweet2}\n---\n{tweet3}"
+    return "\n---\n".join(tweets)
+
+
+def _trim_to_sentences(text: str, max_chars: int) -> str:
+    """Trim text to at most max_chars, breaking at the last complete sentence or clause."""
+    if len(text) <= max_chars:
+        return text
+    truncated = text[:max_chars]
+    # Find the last clean break: sentence end or clause separator
+    last_end = max(
+        truncated.rfind(". "),
+        truncated.rfind("! "),
+        truncated.rfind("? "),
+        truncated.rfind("; "),
+    )
+    if last_end > max_chars // 2:
+        return truncated[:last_end + 1].strip()
+    return truncated.rstrip(" ,;") + "…"
 
 
 def _generate_post_title(context: dict) -> str:

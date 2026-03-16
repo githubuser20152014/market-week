@@ -52,6 +52,13 @@ echo ""
 echo "Newsletter ready for review:"
 echo "  $MD_PATH"
 
+if [[ "$SEND_EMAIL" == "--send-email" && "$PUBLISH" != "--publish" ]]; then
+  echo ""
+  echo "==> Sending email to subscribers ..."
+  python "$SCRIPT_DIR/send_email.py" --edition daybreak --date "$DATE_STR"
+  exit 0
+fi
+
 if [[ "$PUBLISH" != "--publish" ]]; then
   echo ""
   echo "Review the Markdown above, then run with --publish to generate PDF/social posts and deploy:"
