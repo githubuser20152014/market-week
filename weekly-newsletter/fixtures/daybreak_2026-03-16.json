@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-03-16",
+    "generated_at": "2026-03-16T11:05:54.430737Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6672.6201,
+      "close": 6632.1899,
+      "daily_pct": -0.6059,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46677.8516,
+      "close": 46558.4688,
+      "daily_pct": -0.2558,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22311.9805,
+      "close": 22105.3594,
+      "daily_pct": -0.9261,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2488.99,
+      "close": 2480.0508,
+      "daily_pct": -0.3592,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5052.5,
+      "close": 5001.1001,
+      "daily_pct": -1.0173,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.273,
+      "close": 4.285,
+      "daily_pct": 0.2808,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 98.71,
+      "close": 96.91,
+      "daily_pct": -1.8235,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53751.15,
+      "prev_close": 53819.61,
+      "daily_pct": -0.1272,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25834.02,
+      "prev_close": 25465.6,
+      "daily_pct": 1.4467,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5549.85,
+      "prev_close": 5487.24,
+      "daily_pct": 1.141,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23408.8,
+      "prev_close": 23151.1,
+      "daily_pct": 1.1131,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8583.4,
+      "prev_close": 8617.1,
+      "daily_pct": -0.3911,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23478.63,
+      "prev_close": 23447.29,
+      "daily_pct": 0.1337,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10293.46,
+      "prev_close": 10261.2,
+      "daily_pct": 0.3144,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7899.42,
+      "prev_close": 7911.53,
+      "daily_pct": -0.1531,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5716.54,
+      "prev_close": 5716.61,
+      "daily_pct": -0.0012,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14771,
+      "prev_close": 1.15217,
+      "daily_pct": -0.3868
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32704,
+      "prev_close": 1.33525,
+      "daily_pct": -0.6152
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.231,
+      "prev_close": 159.20599,
+      "daily_pct": 0.0157
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70491,
+      "prev_close": 0.70753,
+      "daily_pct": -0.3709
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.89396,
+      "prev_close": 6.90045,
+      "daily_pct": -0.0941
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26879,
+      "prev_close": 1.27333,
+      "daily_pct": -0.3565
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6686.25,
+      "prev_close": 6636.0,
+      "daily_pct": 0.7572
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24609.25,
+      "prev_close": 24394.25,
+      "daily_pct": 0.8814
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47136.0,
+      "prev_close": 46592.0,
+      "daily_pct": 1.1676
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5001.5,
+      "prev_close": 5052.5,
+      "daily_pct": -1.0094
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.62,
+      "prev_close": 111.56,
+      "daily_pct": 0.056
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 96.87,
+      "prev_close": 98.71,
+      "daily_pct": -1.864
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Brent crude holds above $100 as Trump says U.S. may hit Iran's oil hub again 'just for fun'",
+      "source": "CNBC",
+      "published": "Mon, 16 Mar 2026 10:07:54 GMT",
+      "url": "https://www.cnbc.com/2026/03/15/oil-prices-today-iran-war.html",
+      "summary": "The U.S. strikes on Kharg Island and Trump's threat to hit Iran's oil infrastructure mark a major escalation in the war, according to JPMorgan."
+    },
+    {
+      "headline": "'We will remember': Trump warns countries to help secure Strait of Hormuz as shipping stalls",
+      "source": "CNBC",
+      "published": "Mon, 16 Mar 2026 09:50:20 GMT",
+      "url": "https://www.cnbc.com/2026/03/16/trump-demands-allies-secure-strait-of-hormuz-oil-iran.html",
+      "summary": "Trump's comments come after he called on several countries to send warships so as to secure the critical waterway"
+    },
+    {
+      "headline": "Why the United Arab Emirates is a target for Iran's aggression",
+      "source": "CNBC",
+      "published": "Sun, 15 Mar 2026 19:17:46 GMT",
+      "url": "https://www.cnbc.com/2026/03/15/iran-us-war-uae-target-aggression.html",
+      "summary": "Iran is looking to test a state that has positioned itself as the Gulf's safest bridge between East and West \u2014 and the future of the region."
+    },
+    {
+      "headline": "China talks up oil sufficiency as Trump seeks Beijing's help on securing Hormuz energy route",
+      "source": "CNBC",
+      "published": "Mon, 16 Mar 2026 06:02:59 GMT",
+      "url": "https://www.cnbc.com/2026/03/16/china-oil-reserves-trump-iran-war-hormuz.html",
+      "summary": "The statistics bureau said that China's energy supply is \"relatively strong,\" while announcing an uptick in domestic production."
+    },
+    {
+      "headline": "These women pursued a skilled trade \u2014 here's what they told us about their experience in a male-dominated world",
+      "source": "CNBC",
+      "published": "Sun, 15 Mar 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/15/more-women-are-pursuing-the-skilled-trades-here-are-their-stories.html",
+      "summary": "The skilled trades can offer opportunities for employment growth and higher salaries, potentially narrowing the gender wage gap."
+    },
+    {
+      "headline": "Democrats blast FCC Chair Carr's broadcast license threats as anti-First Amendment, 'totalitarian'",
+      "source": "CNBC",
+      "published": "Sun, 15 Mar 2026 21:09:45 GMT",
+      "url": "https://www.cnbc.com/2026/03/15/trump-iran-war-fcc-carr-broadcast-license.html",
+      "summary": "Carr on Saturday\u00a0blasted broadcasters\u00a0shortly after President\u00a0Donald Trump\u00a0called reports that Iran struck five U.S. tanker planes \"fake news.\""
+    },
+    {
+      "headline": "Trump signals possible delay to Beijing summit as U.S. pressures China to help reopen Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Mon, 16 Mar 2026 04:16:51 GMT",
+      "url": "https://www.cnbc.com/2026/03/16/trump-possible-delay-beijing-summit-china-iran-strait-of-hormuz-.html",
+      "summary": "The remarks came as Treasury Secretary Scott Bessent met his Chinese counterpart He Lifeng in Paris, paving the way for the summit scheduled for late March."
+    },
+    {
+      "headline": "A Paramount-Warner Bros. movie slate could rule the 2027 box office, but is it sustainable?",
+      "source": "CNBC",
+      "published": "Sat, 14 Mar 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/14/paramount-wbd-2027-movie-slate.html",
+      "summary": "Paramount CEO David Ellison has said he wants to make 30 movies a year and has franchises like Godzilla-Kong, Superman and Sonic the Hedgehog to lean on."
+    }
+  ]
+}
