@@ -137,8 +137,8 @@ APAC was mixed overnight (3 up, 2 down) — Hang Seng led (+1.45%), while ASX 20
 ## Positioning Notes
 
 - Equity futures are green (S&P +0.76%, Nasdaq +0.88%) -- market is treating yesterday's pullback as a dip. Consider holding or adding to broad exposure (SPY, QQQ); watch for follow-through conviction in the first 30 minutes.
-- Geopolitical risk remains elevated with oil at $96.91/bbl. Energy ETFs (XLE) benefit from sustained high oil, but are also first to reverse on de-escalation headlines. Consider sizing energy exposure with a tight stop rather than adding outright.
-- Gold fell 1.02% alongside stocks — the safe-haven bid went to the dollar instead. If you hold GLD as a portfolio hedge, it didn't perform its hedging role yesterday; consider whether short-term USD exposure (UUP) better reflects current market stress.
+- Geopolitical risk remains elevated with oil at $96.91/bbl -- Energy ETFs (XLE) benefit from sustained high oil, but are also first to reverse on de-escalation headlines. Consider sizing energy exposure with a tight stop rather than adding outright.
+- Gold fell 1.02% alongside stocks — safe-haven bid went to the dollar -- if you hold GLD as a hedge, it didn't play its role yesterday. Consider whether short-term USD exposure (UUP) better reflects current market stress.
 
 
 ---
