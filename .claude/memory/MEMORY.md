@@ -102,7 +102,7 @@ Update cadences per card:
 ### End-of-session GitHub commit
 When a session's work looks complete and content looks good, always ask:
 "Ready to commit the code changes to GitHub?"
-before committing source code. The `publish_daybreak.sh` script auto-commits
+before committing source code. The `publish.py --daybreak` orchestrator auto-commits
 generated content (fixtures, site), but source code changes should be committed
 separately with explicit user sign-off.
 
