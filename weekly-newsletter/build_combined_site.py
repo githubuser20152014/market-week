@@ -21,7 +21,7 @@ sys.path.insert(0, str(BASE_DIR))
 
 from build_site import render_html as render_us_html
 from intl_build_site import render_html as render_intl_html
-from daybreak_build_site import render_html as render_daybreak_html
+from daybreak_build_site import render_html as render_daybreak_html, render_data_html as render_daybreak_data_html
 from data.fetch_data import fetch_index_data, fetch_econ_calendar
 from data.process_data import process_index_data, build_template_context
 from data.fetch_intl_data import fetch_intl_index_data, fetch_intl_fx_data, fetch_intl_econ_calendar
@@ -3482,6 +3482,13 @@ def build(use_mock=True):
         ])
         (issue_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  -> site/daily/{date_str}/index.html")
+
+        data_dir = issue_dir / "data"
+        data_dir.mkdir(exist_ok=True)
+        data_html = render_daybreak_data_html(ctx)
+        data_html = inject_header_link(data_html, "../../../index.html")
+        (data_dir / "index.html").write_text(data_html, encoding="utf-8")
+        print(f"  -> site/daily/{date_str}/data/index.html")
 
     # Build landing page (4-tab hub)
     market_iq_cards = load_market_iq_cards()

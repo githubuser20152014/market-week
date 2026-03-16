@@ -364,117 +364,14 @@ def render_html(ctx: dict) -> str:
 
   <div class="content">
 
-    <!-- MORNING BRIEF -->
+    <!-- THE BRIEF -->
     <div class="section-block">
-      <div class="section-title">Morning Brief</div>
+      <div class="section-title">The Brief</div>
       {narrative_html}
-    </div>
-
-    <!-- WHAT THIS MEANS -->
-    <div class="section-block">
-      <div class="section-title">What This Means</div>
       {plain_html}
     </div>
 
     {news_html}
-
-    <!-- US MARKET CLOSE -->
-    <div class="section-block">
-      <div class="section-title">US Market Close</div>
-      <table class="snapshot-table">
-        <thead>
-          <tr>
-            <th>Index</th>
-            <th>Close</th>
-            <th>Daily %</th>
-          </tr>
-        </thead>
-        <tbody>
-          {us_rows}
-        </tbody>
-      </table>
-      <div class="snapshot-footer">
-        <span class="best">\u25b2 Best: {best_str}</span>
-        <span class="worst">\u25bc Worst: {worst_str}</span>
-      </div>
-    </div>
-
-    <!-- OVERNIGHT MARKETS -->
-    <div class="section-block">
-      <div class="section-title">Overnight Markets</div>
-      {intl_rows_html if intl_rows_html else '<p class="brief-text" style="color:var(--muted);">No overnight data available.</p>'}
-    </div>
-
-    <!-- CURRENCIES & SAFE HAVENS -->
-    <div class="section-block">
-      <div class="section-title">Currencies &amp; Safe Havens</div>
-      <table class="snapshot-table">
-        <thead>
-          <tr>
-            <th>Pair</th>
-            <th>Rate</th>
-            <th>Daily %</th>
-          </tr>
-        </thead>
-        <tbody>
-          {fx_rows if fx_rows else '<tr><td colspan="3" style="color:var(--muted);font-style:italic;">No FX data available.</td></tr>'}
-        </tbody>
-      </table>
-    </div>
-
-    <!-- PRE-MARKET FUTURES -->
-    <div class="section-block">
-      <div class="section-title">Pre-Market Futures</div>
-      <table class="snapshot-table">
-        <thead>
-          <tr>
-            <th>Contract</th>
-            <th>Price</th>
-            <th>Daily %</th>
-          </tr>
-        </thead>
-        <tbody>
-          {futures_rows if futures_rows else '<tr><td colspan="3" style="color:var(--muted);font-style:italic;">No futures data available.</td></tr>'}
-        </tbody>
-      </table>
-    </div>
-
-    <!-- WHAT MOVED MARKETS YESTERDAY -->
-    <div class="section-block">
-      <div class="section-title">What Moved Markets Yesterday</div>
-      <table class="events-table">
-        <thead>
-          <tr>
-            <th>Event</th>
-            <th>Actual</th>
-            <th>Expected</th>
-            <th>Previous</th>
-            <th>Surprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          {yesterday_rows}
-        </tbody>
-      </table>
-    </div>
-
-    <!-- TODAY'S WATCH LIST -->
-    <div class="section-block">
-      <div class="section-title">Today\u2019s Watch List</div>
-      <table class="upcoming-table">
-        <thead>
-          <tr>
-            <th>Time (EST)</th>
-            <th>Event</th>
-            <th>Importance</th>
-            <th>Expected</th>
-          </tr>
-        </thead>
-        <tbody>
-          {today_rows}
-        </tbody>
-      </table>
-    </div>
 
     <!-- POSITIONING NOTES -->
     <div class="section-block">
@@ -491,6 +388,12 @@ def render_html(ctx: dict) -> str:
         </tbody>
       </table>
     </div>
+
+  <!-- RAW DATA LINK -->
+  <div style="text-align:center;padding:12px 40px 0;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:1px;color:var(--muted);">
+    Want the raw numbers?
+    <a href="data/index.html" style="color:var(--accent);text-decoration:none;margin-left:4px;">View full market data &rarr;</a>
+  </div>
 
   </div><!-- /content -->
 
@@ -532,6 +435,245 @@ def render_html(ctx: dict) -> str:
     <div class="footer-disclaimer">
       Disclaimer: For informational purposes only. Not investment advice.<br/>
       Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>"""
+
+
+def render_data_html(ctx: dict) -> str:
+    """Render the raw market data page for a daybreak edition.
+
+    Lives at site/daily/{date}/data/index.html.
+    Contains all six data tables removed from the main brief.
+    """
+    def _pct_str(pct, is_yield=False, bps=None):
+        if is_yield:
+            return "--" if bps is None else f"{bps:+.0f} bps"
+        return "--" if pct is None else f"{pct:+.2f}%"
+
+    def _pct_class(val):
+        if val is None:
+            return "pct"
+        return "pct positive" if val >= 0 else "pct negative"
+
+    date_str = ctx["date"]
+    try:
+        from datetime import datetime
+        d = datetime.strptime(date_str, "%Y-%m-%d")
+        display_date = f"{d.strftime('%b')} {d.day}, {d.year}"
+    except ValueError:
+        display_date = date_str
+
+    # ── US Market Close ───────────────────────────────────────────────────────
+    us_rows = ""
+    for idx in ctx["us_indices"]:
+        if not idx.get("table", True):
+            continue
+        if idx.get("is_yield"):
+            close_str = f"{idx['close']:.2f}%" if idx["close"] is not None else "--"
+            perf_str  = _pct_str(None, is_yield=True, bps=idx.get("yield_change_bps"))
+            pct_cls   = _pct_class(idx.get("yield_change_bps"))
+        else:
+            close_str = f"{idx['close']:,.2f}" if idx["close"] is not None else "--"
+            perf_str  = _pct_str(idx["daily_pct"])
+            pct_cls   = _pct_class(idx["daily_pct"])
+        us_rows += f"<tr><td>{idx['name']}</td><td>{close_str}</td><td class='{pct_cls}'>{perf_str}</td></tr>"
+
+    us_best  = ctx.get("us_best")
+    us_worst = ctx.get("us_worst")
+    best_str  = f"{us_best['name']} ({_pct_str(us_best['daily_pct'])})"  if us_best  else ""
+    worst_str = f"{us_worst['name']} ({_pct_str(us_worst['daily_pct'])})" if us_worst else ""
+
+    # ── Overnight Markets ─────────────────────────────────────────────────────
+    apac_rows = europe_rows = ""
+    for idx in ctx["intl_indices"]:
+        close_str = f"{idx['close']:,.2f}" if idx["close"] is not None else "--"
+        perf_str  = _pct_str(idx["daily_pct"])
+        pct_cls   = _pct_class(idx["daily_pct"])
+        status    = idx.get("status", "closed")
+        badge = '<span class="session-partial">Early Session</span>' if status == "partial" \
+                else '<span class="session-closed">Closed</span>'
+        row = f"<tr><td>{idx['name']}</td><td>{close_str}</td><td class='{pct_cls}'>{perf_str}</td><td>{badge}</td></tr>"
+        if idx["region"] == "Asia-Pacific":
+            apac_rows += row
+        else:
+            europe_rows += row
+
+    intl_html = ""
+    if apac_rows:
+        intl_html += f"""<div class="sub-section-label">Asia-Pacific (Closed)</div>
+        <table class="snapshot-table" style="margin-bottom:16px;">
+          <thead><tr><th>Index</th><th>Close</th><th>Daily %</th><th>Session</th></tr></thead>
+          <tbody>{apac_rows}</tbody></table>"""
+    if europe_rows:
+        intl_html += f"""<div class="sub-section-label">Europe</div>
+        <table class="snapshot-table">
+          <thead><tr><th>Index</th><th>Close/Price</th><th>Daily %</th><th>Session</th></tr></thead>
+          <tbody>{europe_rows}</tbody></table>"""
+
+    # ── FX & Safe Havens ──────────────────────────────────────────────────────
+    fx_rows = ""
+    for fx in ctx["fx_rates"]:
+        rate_str = f"{fx['rate']:.4f}" if fx["rate"] is not None else "--"
+        perf_str = _pct_str(fx["daily_pct"])
+        pct_cls  = _pct_class(fx["daily_pct"])
+        fx_rows += f"<tr><td>{fx['name']}</td><td>{rate_str}</td><td class='{pct_cls}'>{perf_str}</td></tr>"
+
+    # ── Pre-Market Futures ─────────────────────────────────────────────────────
+    futures_rows = ""
+    for fut in ctx["futures"]:
+        price_str = f"{fut['price']:,.2f}" if fut["price"] is not None else "--"
+        perf_str  = _pct_str(fut["daily_pct"])
+        pct_cls   = _pct_class(fut["daily_pct"])
+        pct_val   = fut["daily_pct"]
+        row_cls   = "futures-row-pos" if (pct_val is not None and pct_val >= 0) \
+                    else ("futures-row-neg" if pct_val is not None else "")
+        futures_rows += f"<tr class='{row_cls}'><td>{fut['name']}</td><td>{price_str}</td><td class='{pct_cls}'>{perf_str}</td></tr>"
+
+    # ── Yesterday's Events ────────────────────────────────────────────────────
+    yesterday_rows = ""
+    for ev in ctx.get("yesterday_events", []):
+        surprise = ev.get("surprise", "neutral")
+        tag = {'above': '<span class="tag above">Above</span>',
+               'below': '<span class="tag below">Below</span>'}.get(
+               surprise, '<span class="tag inline">Inline</span>')
+        actual   = f"{ev.get('actual', '--')}{ev.get('unit', '')}"
+        expected = f"{ev.get('expected', '--')}{ev.get('unit', '')}"
+        yesterday_rows += (f"<tr><td>{ev.get('event', '')}</td><td>{actual}</td>"
+                           f"<td>{expected}</td><td>{ev.get('previous', '--')}</td>"
+                           f"<td>{tag}</td></tr>")
+    if not yesterday_rows:
+        yesterday_rows = '<tr><td colspan="5" style="color:var(--muted);font-style:italic;">No major events recorded.</td></tr>'
+
+    # ── Today's Watch List ────────────────────────────────────────────────────
+    today_rows = ""
+    for ev in ctx.get("today_events", []):
+        imp = ev.get("importance", 1)
+        if imp >= 3:
+            imp_class, imp_label = "imp-high", "High"
+        elif imp == 2:
+            imp_class, imp_label = "imp-medium", "Medium"
+        else:
+            imp_class, imp_label = "imp-low", "Low"
+        time_est = ev.get("time_est", "--") or "--"
+        expected = f"{ev.get('expected', '--')}{ev.get('unit', '')}"
+        today_rows += (f"<tr><td class='time-col'>{time_est}</td><td>{ev.get('event', '')}</td>"
+                       f"<td><span class='{imp_class}'>{imp_label}</span></td>"
+                       f"<td>{expected}</td></tr>")
+    if not today_rows:
+        today_rows = '<tr><td colspan="4" style="color:var(--muted);font-style:italic;">No high-importance events scheduled today.</td></tr>'
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Framework Foundry \u2014 Market Data \u00b7 {date_str}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+{_DAYBREAK_CSS}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="header-inner">
+      <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+        <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Raw Market Data \u00b7 {display_date}</span>
+      </div>
+      <div class="header-meta">
+        <span class="issue-label">Market Day Break</span>
+        <span class="issue-date">{display_date}</span>
+        <span class="issue-week">Data Edition</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <div class="region-banner">
+    <span>US Close \u00b7 Asia-Pacific \u00b7 Europe \u00b7 FX \u00b7 Futures \u00b7 Economic Calendar</span>
+    <div class="region-dots"><span class="region-dot">\U0001f4ca</span></div>
+  </div>
+
+  <div class="content">
+
+    <div style="padding:12px 0 20px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:1px;color:var(--muted);">
+      <a href="../index.html" style="color:var(--accent);text-decoration:none;">&larr; Back to The Brief</a>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">US Market Close</div>
+      <table class="snapshot-table">
+        <thead><tr><th>Index</th><th>Close</th><th>Daily %</th></tr></thead>
+        <tbody>{us_rows}</tbody>
+      </table>
+      <div class="snapshot-footer">
+        <span class="best">\u25b2 Best: {best_str}</span>
+        <span class="worst">\u25bc Worst: {worst_str}</span>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">Overnight Markets</div>
+      {intl_html if intl_html else '<p class="brief-text" style="color:var(--muted);">No overnight data available.</p>'}
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">Currencies &amp; Safe Havens</div>
+      <table class="snapshot-table">
+        <thead><tr><th>Pair</th><th>Rate</th><th>Daily %</th></tr></thead>
+        <tbody>{fx_rows if fx_rows else '<tr><td colspan="3" style="color:var(--muted);font-style:italic;">No FX data.</td></tr>'}</tbody>
+      </table>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">Pre-Market Futures</div>
+      <table class="snapshot-table">
+        <thead><tr><th>Contract</th><th>Price</th><th>Daily %</th></tr></thead>
+        <tbody>{futures_rows if futures_rows else '<tr><td colspan="3" style="color:var(--muted);font-style:italic;">No futures data.</td></tr>'}</tbody>
+      </table>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">What Moved Markets Yesterday</div>
+      <table class="events-table">
+        <thead><tr><th>Event</th><th>Actual</th><th>Expected</th><th>Previous</th><th>Surprise</th></tr></thead>
+        <tbody>{yesterday_rows}</tbody>
+      </table>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">Today\u2019s Watch List</div>
+      <table class="upcoming-table">
+        <thead><tr><th>Time (EST)</th><th>Event</th><th>Importance</th><th>Expected</th></tr></thead>
+        <tbody>{today_rows}</tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;\u00b7&nbsp; <span style="color:rgba(255,255,255,0.35);font-size:10px;letter-spacing:1px;">RAW DATA</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.
     </div>
   </footer>
 

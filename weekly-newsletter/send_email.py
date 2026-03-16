@@ -55,6 +55,12 @@ def main():
                         help="Print subscriber list and subject without sending.")
     parser.add_argument("--save-preview", action="store_true",
                         help="Build and save the email HTML to output/email_preview_DATE.html without sending.")
+    parser.add_argument("--md", dest="md_override",
+                        help="Override the Markdown file path (default: resolved from edition + date).")
+    parser.add_argument("--subject", dest="subject_override",
+                        help="Override the email subject line.")
+    parser.add_argument("--to", dest="to_override",
+                        help="Send to a single address only (for test sends).")
     args = parser.parse_args()
 
     # Load env
@@ -67,7 +73,9 @@ def main():
     gmail_pass    = os.environ.get("GMAIL_APP_PASSWORD", "")
 
     # For daybreak, use the newsworthy title saved during generation if available
-    if args.edition == "daybreak":
+    if args.subject_override:
+        subject = args.subject_override
+    elif args.edition == "daybreak":
         title_path = OUTPUT_DIR / f"title_{args.date}.txt"
         if title_path.exists():
             subject = f"Market Day Break — {title_path.read_text(encoding='utf-8').strip()}"
@@ -75,7 +83,7 @@ def main():
             subject = SUBJECTS[args.edition].format(date=args.date)
     else:
         subject = SUBJECTS[args.edition].format(date=args.date)
-    md_path = resolve_md_path(args.edition, args.date)
+    md_path = Path(args.md_override) if args.md_override else resolve_md_path(args.edition, args.date)
 
     if not md_path.exists():
         print(f"ERROR: Newsletter file not found: {md_path}", file=sys.stderr)
@@ -97,12 +105,16 @@ def main():
         print(f"ERROR: Subscriber file not found: {subscribers_file}", file=sys.stderr)
         sys.exit(1)
 
-    subscribers = [
-        line.strip()
-        for line in subscribers_file.read_text(encoding="utf-8").splitlines()
-        if line.strip() and not line.startswith("#")
-    ]
-    print(f"==> Loaded {len(subscribers)} subscriber(s) from {subscribers_file.name}.")
+    if args.to_override:
+        subscribers = [args.to_override]
+        print(f"==> Test send — single recipient: {args.to_override}")
+    else:
+        subscribers = [
+            line.strip()
+            for line in subscribers_file.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.startswith("#")
+        ]
+        print(f"==> Loaded {len(subscribers)} subscriber(s) from {subscribers_file.name}.")
 
     if args.dry_run:
         print("\n-- DRY RUN --")
