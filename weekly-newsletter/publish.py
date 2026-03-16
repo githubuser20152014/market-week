@@ -100,12 +100,12 @@ def _parse_resolution_log(date_str: str) -> tuple[list[str], list[str]]:
 def run_daybreak(date_str: str, dry_run: bool) -> None:
     _step(f"Daybreak publish — {date_str}")
 
-    # Step 1: Fetch + verify live data
-    _step("1/5  Fetch + verify daybreak data")
+    # Step 1: Fetch + verify live data, Markdown only (PDF/social generated after review)
+    _step("1/5  Fetch + verify daybreak data (Markdown only)")
     if not dry_run:
         _run(
             [sys.executable, "generate_market_day_break.py",
-             "--date", date_str, "--live", "--verify"],
+             "--date", date_str, "--live", "--verify", "--md-only"],
             "fetch-verify-daybreak",
         )
     else:

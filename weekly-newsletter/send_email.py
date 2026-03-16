@@ -53,6 +53,8 @@ def main():
     parser.add_argument("--date", required=True, help="YYYY-MM-DD")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print subscriber list and subject without sending.")
+    parser.add_argument("--save-preview", action="store_true",
+                        help="Build and save the email HTML to output/email_preview_DATE.html without sending.")
     args = parser.parse_args()
 
     # Load env
@@ -111,7 +113,18 @@ def main():
             print(f"  {addr}")
         return
 
-    # Build email content
+    # Build email HTML
+    html_body = build_email_html(md_content, subject, SUBSCRIPTION_NAMES[args.edition])
+
+    if args.save_preview:
+        preview_path = OUTPUT_DIR / f"email_preview_{args.date}.html"
+        preview_path.write_text(html_body, encoding="utf-8")
+        print(f"Email preview saved -> {preview_path}")
+        print(f"Subject : {subject}")
+        print(f"To      : {len(subscribers)} subscriber(s)")
+        print("Open the preview file in a browser to review before sending.")
+        return
+
     if not gmail_addr or gmail_addr.startswith("your_"):
         print("ERROR: GMAIL_ADDRESS is not set in config/api_keys.env", file=sys.stderr)
         sys.exit(1)
@@ -119,7 +132,6 @@ def main():
         print("ERROR: GMAIL_APP_PASSWORD is not set in config/api_keys.env", file=sys.stderr)
         sys.exit(1)
 
-    html_body  = build_email_html(md_content, subject, SUBSCRIPTION_NAMES[args.edition])
     plain_body = md_content  # plain-text fallback: raw Markdown is readable
 
     print(f"==> Sending '{subject}' to {len(subscribers)} subscriber(s) ...")

@@ -14,9 +14,11 @@ DATE_STR="${1:-$(date +%Y-%m-%d)}"
 
 # Parse flags
 PUBLISH=""
+SEND_EMAIL=""
 for arg in "${@:2}"; do
   case "$arg" in
-    --publish) PUBLISH="--publish" ;;
+    --publish)    PUBLISH="--publish" ;;
+    --send-email) SEND_EMAIL="--send-email" ;;
   esac
 done
 
@@ -38,10 +40,10 @@ cd "$SCRIPT_DIR"
 MD_PATH="$SCRIPT_DIR/output/market_day_break_${DATE_STR}.md"
 PDF_PATH="$SCRIPT_DIR/output/market_day_break_${DATE_STR}.pdf"
 
-# Only generate if not already present (preserves manual edits on --publish)
+# Phase 1: Generate Markdown only (no PDF or social posts yet)
 if [[ ! -f "$MD_PATH" ]]; then
-  echo "==> Generating Market Day Break for $DATE_STR ..."
-  python generate_market_day_break.py --date "$DATE_STR" --live --pdf
+  echo "==> Generating Market Day Break for $DATE_STR (Markdown only) ..."
+  python generate_market_day_break.py --date "$DATE_STR" --live --md-only
 else
   echo "==> Using existing newsletter for $DATE_STR (skipping regeneration)"
 fi
@@ -52,10 +54,15 @@ echo "  $MD_PATH"
 
 if [[ "$PUBLISH" != "--publish" ]]; then
   echo ""
-  echo "Review the newsletter above, then run with --publish to deploy:"
+  echo "Review the Markdown above, then run with --publish to generate PDF/social posts and deploy:"
   echo "  bash weekly-newsletter/publish_daybreak.sh $DATE_STR --publish"
   exit 0
 fi
+
+# Phase 2 (on --publish): Generate social posts + PDF from the approved MD
+echo ""
+echo "==> Generating social posts and PDF from approved content ..."
+python generate_market_day_break.py --date "$DATE_STR" --pdf
 
 echo ""
 echo "==> Rebuilding site ..."
@@ -96,6 +103,18 @@ git push origin master
 
 echo ""
 echo "Done. Live at https://frameworkfoundry.info/daily/"
+
+echo ""
+echo "==> Generating email preview (review before sending) ..."
+python "$SCRIPT_DIR/send_email.py" --edition daybreak --date "$DATE_STR" --save-preview
+
+if [[ "$SEND_EMAIL" != "--send-email" ]]; then
+  echo ""
+  echo "Open output/email_preview_${DATE_STR}.html in a browser to review the email."
+  echo "When ready to send, run:"
+  echo "  bash weekly-newsletter/publish_daybreak.sh $DATE_STR --send-email"
+  exit 0
+fi
 
 echo ""
 echo "==> Sending email to subscribers ..."

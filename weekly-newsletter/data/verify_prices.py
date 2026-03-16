@@ -271,7 +271,7 @@ def _write_audit_log(date_str: str, entries: list[dict]) -> None:
                      f"status={status:<20} note={note}")
     lines.append("")
     path.write_text("\n".join(lines))
-    print(f"  Resolution log → {path.name}")
+    print(f"  Resolution log -> {path.name}")
 
 
 # ---------------------------------------------------------------------------

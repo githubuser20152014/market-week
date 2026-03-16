@@ -59,6 +59,11 @@ def main():
         help="Also generate a PDF version.",
     )
     parser.add_argument(
+        "--md-only",
+        action="store_true",
+        help="Save the Markdown only — skip LinkedIn, X, Substack, and PDF.",
+    )
+    parser.add_argument(
         "--verify",
         action="store_true",
         help="Cross-check prices against FRED + Stooq before generating.",
@@ -114,6 +119,10 @@ def main():
             encoding="utf-8"
         )
         print(f"Newsletter saved (minimal) -> {md_path}")
+
+    if args.md_only:
+        print("MD-only mode — skipping social posts and PDF.")
+        return
 
     # ── Email subject (sidecar file read by send_email.py) ────────────────────
     title_path = OUTPUT_DIR / f"title_{date_str}.txt"

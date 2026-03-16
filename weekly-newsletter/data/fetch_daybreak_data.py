@@ -664,10 +664,21 @@ _RSS_FEEDS = [
 ]
 
 _MARKET_KEYWORDS = {
-    "war", "iran", "sanction", "tariff", "trade", "oil", "opec", "fed", "rate",
-    "inflation", "election", "crisis", "ceasefire", "attack", "china", "taiwan",
-    "russia", "ukraine", "nato", "g7", "g20", "budget", "debt", "default", "strike",
-    "embargo", "nuclear", "missile", "troops", "geopolit", "conflict", "accord",
+    "war", "iran", "sanction", "tariff", "trade war", "trade tension", "trade dispute",
+    "trade deficit", "trade deal", "oil", "opec", "fed ", "federal reserve", "rate cut",
+    "rate hike", "interest rate", "inflation", "recession", "gdp", "cpi", "pce",
+    "payroll", "jobs report", "unemployment", "earnings", "revenue", "guidance",
+    "crisis", "ceasefire", "attack", "china", "taiwan", "russia", "ukraine", "nato",
+    "g7", "g20", "budget", "debt ceiling", "default", "embargo", "nuclear", "missile",
+    "troops", "geopolit", "conflict", "accord", "stock market", "equity", "bond yield",
+    "treasury", "dollar", "currency", "etf", "s&p", "nasdaq", "dow jones",
+}
+
+# Headlines matching any of these are excluded even if they pass the keyword filter
+_MARKET_EXCLUDE_KEYWORDS = {
+    "skilled trade", "box office", "movie slate", "film slate", "broadcast license",
+    " fcc ", "first amendment", "oscars", "grammy", "emmys", "nfl", "nba", "mlb",
+    "recipe", "fashion", "beauty", "wellness", "dating", "parenting",
 }
 
 
@@ -693,6 +704,8 @@ def _fetch_market_news(date_str: str, max_items: int = 8) -> list:
 
                 combined = (title + " " + summary).lower()
                 if not any(kw in combined for kw in _MARKET_KEYWORDS):
+                    continue
+                if any(kw in combined for kw in _MARKET_EXCLUDE_KEYWORDS):
                     continue
                 if title in seen_titles:
                     continue
