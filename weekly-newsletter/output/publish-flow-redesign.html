@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Foundry — Agentic Publish Flow</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1a1a2e;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 40px 48px 60px;
+    background: #fff;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .doc-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 3px solid #0f1f3d;
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  .logo-mark { width: 52px; height: 52px; flex-shrink: 0; }
+  .doc-header h1 { font-size: 22px; font-weight: 700; color: #0f1f3d; letter-spacing: -0.3px; }
+  .doc-header p  { font-size: 12px; color: #6b7280; margin-top: 3px; }
+  .badge {
+    margin-left: auto;
+    background: #0f1f3d; color: #c9a84c;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 3px; white-space: nowrap;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: #9ca3af; margin-bottom: 16px;
+  }
+
+  /* ── ENTRY POINT ── */
+  .entry-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .entry-node {
+    background: #0f1f3d;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(15,31,61,0.18);
+  }
+  .entry-node .sub {
+    font-size: 10.5px;
+    font-weight: 400;
+    color: #94a3b8;
+    margin-top: 3px;
+  }
+  .entry-flags {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+  .flag-pill {
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .flag-pill.day  { background: #dbeafe; color: #1e40af; border: 1.5px solid #93c5fd; }
+  .flag-pill.week { background: #fef3c7; color: #92400e; border: 1.5px solid #fcd34d; }
+  .flag-pill.dry  { background: #f3f4f6; color: #374151; border: 1.5px dashed #9ca3af; }
+
+  /* ── FORK ARROW ── */
+  .fork-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .fork-svg { width: 420px; height: 46px; overflow: visible; }
+
+  /* ── SWIM LANES ── */
+  .lanes {
+    display: grid;
+    grid-template-columns: 1fr 28px 1fr;
+    gap: 0;
+    margin-bottom: 32px;
+    align-items: start;
+  }
+
+  .lane {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #e5e7eb;
+  }
+  .lane.daybreak { border-color: #93c5fd; }
+  .lane.weekly   { border-color: #fcd34d; }
+
+  .lane-header {
+    padding: 8px 16px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lane.daybreak .lane-header { background: #1d4ed8; }
+  .lane.weekly   .lane-header { background: #b45309; }
+
+  .lane-sub {
+    font-size: 9.5px;
+    font-weight: 400;
+    opacity: 0.8;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-left: auto;
+  }
+
+  .lane-body { padding: 14px 14px 16px; background: #fafafa; }
+
+  /* ── STEP NODES ── */
+  .step {
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 7px;
+    padding: 9px 12px 9px 12px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .step:last-child { margin-bottom: 0; }
+  .step-num {
+    width: 20px; height: 20px; border-radius: 50%;
+    font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .lane.daybreak .step-num { background: #dbeafe; color: #1e40af; }
+  .lane.weekly   .step-num { background: #fef3c7; color: #92400e; }
+
+  .step-text { flex: 1; }
+  .step-title {
+    font-size: 12px; font-weight: 600; color: #1a1a2e; line-height: 1.3;
+  }
+  .step-detail {
+    font-size: 10.5px; color: #6b7280; margin-top: 2px; line-height: 1.4;
+  }
+  .step.new   { border-color: #c9a84c; background: #fffbf0; }
+  .step.shared { border-color: #a78bfa; background: #faf5ff; }
+  .step.shell { border-color: #6ee7b7; background: #f0fdf9; }
+
+  .step-badge {
+    font-size: 9px; font-weight: 700; padding: 1px 5px;
+    border-radius: 3px; margin-left: 4px; vertical-align: middle;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .step-badge.new    { background: #fef3c7; color: #92400e; }
+  .step-badge.shared { background: #ede9fe; color: #5b21b6; }
+  .step-badge.shell  { background: #d1fae5; color: #065f46; }
+
+  /* step-connector arrow inside lane */
+  .step-connector {
+    display: flex; justify-content: center;
+    margin: 2px 0;
+  }
+  .step-connector svg { width: 12px; height: 12px; }
+
+  /* ── DIVIDER (between lanes) ── */
+  .lane-divider {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 42px;
+  }
+  .lane-divider svg { width: 28px; }
+
+  /* ── SHARED COMPONENTS STRIP ── */
+  .shared-strip {
+    border: 2px solid #a78bfa;
+    border-radius: 10px;
+    background: #faf5ff;
+    padding: 16px 18px;
+    margin-bottom: 32px;
+  }
+  .shared-strip-title {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 1.8px; text-transform: uppercase;
+    color: #7c3aed; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .shared-strip-title::after {
+    content: ''; flex: 1;
+    height: 1px; background: #ddd6fe;
+  }
+  .shared-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .shared-card {
+    background: #fff;
+    border: 1.5px solid #ddd6fe;
+    border-radius: 7px;
+    padding: 11px 14px;
+  }
+  .shared-card-title {
+    font-size: 12px; font-weight: 700; color: #4c1d95; margin-bottom: 5px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .shared-card-title .chip {
+    font-size: 9px; font-weight: 600;
+    background: #ede9fe; color: #5b21b6;
+    padding: 1px 6px; border-radius: 3px; text-transform: uppercase;
+  }
+  .shared-card ul {
+    list-style: none; padding: 0;
+  }
+  .shared-card ul li {
+    font-size: 11px; color: #374151;
+    padding: 2px 0 2px 12px;
+    position: relative;
+    line-height: 1.45;
+  }
+  .shared-card ul li::before {
+    content: '›'; position: absolute; left: 0;
+    color: #7c3aed; font-weight: 700;
+  }
+
+  /* ── OUTPUT ROW ── */
+  .output-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .output-card {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 13px 12px;
+    background: #fafafa;
+    text-align: center;
+  }
+  .output-card .out-icon { font-size: 20px; margin-bottom: 6px; }
+  .output-card .out-name { font-size: 11.5px; font-weight: 700; color: #1a1a2e; margin-bottom: 3px; }
+  .output-card .out-detail { font-size: 10px; color: #6b7280; line-height: 1.4; }
+  .output-card.new  { border-color: #c9a84c; background: #fffbf0; }
+
+  /* ── WHAT'S NEW CALLOUT ── */
+  .callout {
+    background: #f0fdf9;
+    border: 1.5px solid #6ee7b7;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 16px;
+  }
+  .callout-icon { font-size: 22px; flex-shrink: 0; }
+  .callout-body {}
+  .callout-title { font-size: 12px; font-weight: 700; color: #065f46; margin-bottom: 6px; }
+  .callout-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+  }
+  .callout-item { font-size: 11px; color: #1a1a2e; }
+  .callout-item strong { color: #065f46; display: block; font-size: 11.5px; margin-bottom: 1px; }
+
+  /* ── REFERENCE TABLE ── */
+  table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  thead tr { background: #0f1f3d; color: #fff; }
+  thead th { padding: 7px 10px; text-align: left; font-weight: 600; font-size: 10.5px; }
+  tbody tr:nth-child(even) { background: #f8f9fb; }
+  tbody tr:nth-child(odd)  { background: #fff; }
+  tbody td { padding: 6px 10px; border-bottom: 1px solid #f0f0f0; color: #374151; vertical-align: top; }
+  tbody td:first-child { font-weight: 500; color: #1a1a2e; }
+  .ref-wrap h3 {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #9ca3af; margin-bottom: 10px;
+  }
+  .tag {
+    display: inline-block; font-size: 9.5px; font-weight: 600;
+    padding: 1px 6px; border-radius: 3px; white-space: nowrap;
+  }
+  .tag.green  { background: #d1fae5; color: #065f46; }
+  .tag.blue   { background: #dbeafe; color: #1e40af; }
+  .tag.amber  { background: #fef3c7; color: #92400e; }
+  .tag.purple { background: #ede9fe; color: #5b21b6; }
+  .tag.gray   { background: #f3f4f6; color: #374151; }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    border-top: 1px solid #e5e7eb; padding-top: 16px; margin-top: 8px;
+    display: flex; justify-content: space-between;
+    font-size: 10px; color: #9ca3af;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 11px; }
+    .page { padding: 24px 32px 40px; max-width: 100%; }
+    .lanes { page-break-inside: avoid; }
+    .shared-strip { page-break-inside: avoid; }
+    .callout { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <svg class="logo-mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="34" fill="none" stroke="#0f1f3d" stroke-width="1.8"/>
+      <line x1="10" y1="30" x2="70" y2="30" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="8"  y1="40" x2="72" y2="40" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="10" y1="50" x2="70" y2="50" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="30" y1="8"  x2="30" y2="72" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="40" y1="6"  x2="40" y2="74" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="50" y1="8"  x2="50" y2="72" stroke="#0f1f3d" stroke-width="0.6" opacity="0.35"/>
+      <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="40" cy="40" r="3.5" fill="#c9a84c"/>
+    </svg>
+    <div>
+      <h1>Framework Foundry — Agentic Publish Flow</h1>
+      <p>One command per publish day · Smart price resolution · Live econ calendar · Unified orchestrator</p>
+    </div>
+    <div class="badge">Redesign Branch</div>
+  </div>
+
+
+  <!-- WHAT'S NEW -->
+  <div class="callout">
+    <div class="callout-icon">✦</div>
+    <div class="callout-body">
+      <div class="callout-title">What changed in this redesign</div>
+      <div class="callout-grid">
+        <div class="callout-item">
+          <strong>publish.py</strong>
+          Single entry point for both modes. Replaces the multi-command manual sequence.
+        </div>
+        <div class="callout-item">
+          <strong>fetch_econ_calendar.py</strong>
+          Weekly newsletter now fetches the econ calendar live from FRED — no more manual fixtures.
+        </div>
+        <div class="callout-item">
+          <strong>Smart price resolver</strong>
+          Auto-resolves date-offset and majority-vote cases before halting. Writes an audit log on every run.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ENTRY POINT -->
+  <div class="section-label">Entry Point — publish.py</div>
+  <div class="entry-box">
+    <div class="entry-node">
+      publish.py
+      <div class="sub">weekly-newsletter/publish.py &nbsp;·&nbsp; run from repo root</div>
+    </div>
+    <div class="entry-flags">
+      <span class="flag-pill day">--daybreak --date YYYY-MM-DD</span>
+      <span class="flag-pill week">--weekly --date YYYY-MM-DD</span>
+      <span class="flag-pill dry">--dry-run</span>
+    </div>
+  </div>
+
+  <!-- FORK -->
+  <div class="fork-row">
+    <svg class="fork-svg" viewBox="0 0 420 46" xmlns="http://www.w3.org/2000/svg">
+      <!-- center vertical down -->
+      <line x1="210" y1="0" x2="210" y2="18" stroke="#9ca3af" stroke-width="1.8"/>
+      <!-- horizontal bar -->
+      <line x1="88" y1="18" x2="332" y2="18" stroke="#9ca3af" stroke-width="1.8"/>
+      <!-- left branch down -->
+      <line x1="88"  y1="18" x2="88"  y2="40" stroke="#93c5fd" stroke-width="1.8"/>
+      <polygon points="83,38 88,46 93,38" fill="#93c5fd"/>
+      <!-- right branch down -->
+      <line x1="332" y1="18" x2="332" y2="40" stroke="#fcd34d" stroke-width="1.8"/>
+      <polygon points="327,38 332,46 337,38" fill="#fcd34d"/>
+    </svg>
+  </div>
+
+
+  <!-- SWIM LANES -->
+  <div class="lanes" style="margin-bottom: 28px;">
+
+    <!-- LEFT: DAYBREAK -->
+    <div class="lane daybreak">
+      <div class="lane-header">
+        ☀ Market Day Break
+        <span class="lane-sub">Mon – Fri</span>
+      </div>
+      <div class="lane-body">
+
+        <div class="step shared">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <div class="step-title">Fetch live daybreak data <span class="step-badge shared">shared</span></div>
+            <div class="step-detail">fetch_daybreak_data.py · yfinance + FRED econ calendar + RSS news feeds</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step new">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <div class="step-title">Smart price resolver <span class="step-badge new">new</span></div>
+            <div class="step-detail">verify_prices_daybreak() · US indices · Gold / 10Y (FRED) · Intl indices · FX · Futures flagged</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <div class="step-title">Generate &amp; export</div>
+            <div class="step-detail">generate_market_day_break.py --live --pdf · saves fixture + PDF + social drafts</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <div class="step-title">Build combined site</div>
+            <div class="step-detail">build_combined_site.py · renders daily/YYYY-MM-DD/index.html + updates landing page</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step shell">
+          <div class="step-num">5</div>
+          <div class="step-text">
+            <div class="step-title">Commit, push &amp; email <span class="step-badge shell">shell</span></div>
+            <div class="step-detail">publish_daybreak.sh --publish · git commit → push master → send_email.py</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="lane-divider">
+      <svg viewBox="0 0 28 40" xmlns="http://www.w3.org/2000/svg">
+        <line x1="14" y1="0" x2="14" y2="40" stroke="#e5e7eb" stroke-width="1.5" stroke-dasharray="4 3"/>
+      </svg>
+    </div>
+
+    <!-- RIGHT: WEEKLY -->
+    <div class="lane weekly">
+      <div class="lane-header">
+        📰 Weekly Newsletter
+        <span class="lane-sub">Saturday</span>
+      </div>
+      <div class="lane-body">
+
+        <div class="step new">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <div class="step-title">Fetch live econ calendar <span class="step-badge new">new</span></div>
+            <div class="step-detail">fetch_econ_calendar.py · FRED releases/dates API · past-week Mon–Fri + upcoming Mon–Fri</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step new">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <div class="step-title">Fetch prices + smart verify <span class="step-badge new">new</span></div>
+            <div class="step-detail">generate_newsletter.py --live --pdf · auto-enables verify_prices() · writes audit log</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <div class="step-title">Generate intl newsletter</div>
+            <div class="step-detail">generate_intl_newsletter.py --live --pdf · Nikkei · Hang Seng · DAX · FTSE · EUR/USD etc.</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-text">
+            <div class="step-title">Build combined site</div>
+            <div class="step-detail">build_combined_site.py · us/ · intl/ · daily/ · Market IQ · landing page</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-text">
+            <div class="step-title">Review summary + confirm</div>
+            <div class="step-detail">Prints auto-resolutions, flagged items, output paths · "Ready to commit? (y/n)"</div>
+          </div>
+        </div>
+        <div class="step-connector"><svg viewBox="0 0 12 12"><path d="M6 0 V8 M3 5 L6 9 L9 5" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="step shell">
+          <div class="step-num">6</div>
+          <div class="step-text">
+            <div class="step-title">Commit &amp; push <span class="step-badge shell">git</span></div>
+            <div class="step-detail">Stages fixtures/ · output/ · site/ · git commit -m "Publish weekly — YYYY-MM-DD" · push master</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /lanes -->
+
+
+  <!-- SHARED COMPONENTS -->
+  <div class="section-label">Shared Components (used by both flows)</div>
+  <div class="shared-strip">
+    <div class="shared-strip-title">New in this redesign</div>
+    <div class="shared-grid">
+
+      <div class="shared-card">
+        <div class="shared-card-title">
+          Smart Price Resolver
+          <span class="chip">verify_prices.py</span>
+        </div>
+        <ul>
+          <li><strong>Step 1 — Date offset:</strong> tries ±1 trading day on secondaries before flagging</li>
+          <li><strong>Step 2 — Majority vote:</strong> if 2 of 3 sources agree within tolerance → auto-resolve, mark outlier</li>
+          <li><strong>Step 3 — Hard halt:</strong> only if all 3 sources disagree · prints diagnostic table, not stack trace</li>
+          <li>Writes <code>output/price_resolution_YYYY-MM-DD.txt</code> on every run</li>
+        </ul>
+      </div>
+
+      <div class="shared-card">
+        <div class="shared-card-title">
+          Live Econ Calendar Fetch
+          <span class="chip">fetch_econ_calendar.py</span>
+        </div>
+        <ul>
+          <li>Primary: <strong>FRED releases/dates API</strong> (free, allowlist of 14 releases)</li>
+          <li>Fallback: <strong>Finnhub /calendar/economic</strong> (if FRED key absent)</li>
+          <li>Past week: fetches actuals from FRED series observations</li>
+          <li>Upcoming week: date + label + importance only (no actuals yet)</li>
+          <li>Writes fixture · falls back to nearest existing fixture with warning</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- OUTPUT ARTIFACTS -->
+  <div class="section-label">Output Artifacts per Run</div>
+  <div class="output-row">
+    <div class="output-card">
+      <div class="out-icon">📄</div>
+      <div class="out-name">Newsletter files</div>
+      <div class="out-detail">newsletter_DATE.md · .pdf<br>intl_newsletter_DATE.pdf<br>market_day_break_DATE.md</div>
+    </div>
+    <div class="output-card">
+      <div class="out-icon">📊</div>
+      <div class="out-name">JSON Fixtures</div>
+      <div class="out-detail">indices_DATE.json<br>econ_calendar_DATE.json<br>daybreak_DATE.json</div>
+    </div>
+    <div class="output-card new">
+      <div class="out-icon">🔍</div>
+      <div class="out-name">Price Audit Log</div>
+      <div class="out-detail">price_resolution_DATE.txt<br>Auto-resolved · flagged · unverified items · diff %</div>
+    </div>
+    <div class="output-card">
+      <div class="out-icon">🌐</div>
+      <div class="out-name">Static Site</div>
+      <div class="out-detail">site/index.html<br>us/ · intl/ · daily/ · fundaa/<br>→ GitHub Pages on push</div>
+    </div>
+  </div>
+
+
+  <!-- REFERENCE TABLE -->
+  <div class="ref-wrap" style="margin-bottom: 36px;">
+    <h3>File Reference</h3>
+    <table>
+      <thead>
+        <tr><th>File</th><th>Role</th><th>Mode</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>publish.py</td>
+          <td>Unified entry point. Orchestrates all steps for both modes.</td>
+          <td>Both</td>
+          <td><span class="tag amber">New</span></td>
+        </tr>
+        <tr>
+          <td>data/fetch_econ_calendar.py</td>
+          <td>Live weekly econ calendar from FRED/Finnhub. Writes fixture.</td>
+          <td>Weekly</td>
+          <td><span class="tag amber">New</span></td>
+        </tr>
+        <tr>
+          <td>data/verify_prices.py</td>
+          <td>Smart price resolver with auto-resolution + audit log. Adds verify_prices_daybreak().</td>
+          <td>Both</td>
+          <td><span class="tag blue">Updated</span></td>
+        </tr>
+        <tr>
+          <td>data/fetch_data.py</td>
+          <td>fetch_econ_calendar() now calls live fetch when use_mock=False (--live).</td>
+          <td>Weekly</td>
+          <td><span class="tag blue">Updated</span></td>
+        </tr>
+        <tr>
+          <td>generate_market_day_break.py</td>
+          <td>Added --verify flag; auto-runs verify_prices_daybreak() when --live.</td>
+          <td>Daybreak</td>
+          <td><span class="tag blue">Updated</span></td>
+        </tr>
+        <tr>
+          <td>generate_newsletter.py</td>
+          <td>Unchanged. --live already auto-enables verify_prices().</td>
+          <td>Weekly</td>
+          <td><span class="tag gray">Unchanged</span></td>
+        </tr>
+        <tr>
+          <td>publish_daybreak.sh</td>
+          <td>Unchanged. Called by publish.py for git commit + email steps.</td>
+          <td>Daybreak</td>
+          <td><span class="tag gray">Unchanged</span></td>
+        </tr>
+        <tr>
+          <td>build_combined_site.py</td>
+          <td>Unchanged. Called by publish.py after generation.</td>
+          <td>Both</td>
+          <td><span class="tag gray">Unchanged</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <span>Framework Foundry — Internal Reference</span>
+    <span>Branch: newsletter-publishing-redesign</span>
+    <span>Generated 2026-03-15</span>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>

@@ -102,11 +102,25 @@ def _fetch_live_indices(end_date):
 def fetch_econ_calendar(end_date, use_mock=True):
     """Fetch economic calendar events.
 
+    When use_mock=False, fetches live from FRED/Finnhub and writes a fixture.
+    Falls back to nearest fixture if live fetch fails or use_mock=True.
+
     Returns:
         Dict with 'past_week' and 'upcoming_week' lists.
     """
+    if not use_mock:
+        from data.fetch_econ_calendar import fetch_econ_calendar_with_fallback
+        return fetch_econ_calendar_with_fallback(end_date)
+
     fixture_path = _find_closest_fixture("econ_calendar", end_date)
     if fixture_path is None:
         raise FileNotFoundError(f"No econ calendar fixture found near {end_date}")
+    days_off = abs((datetime.strptime(end_date, "%Y-%m-%d") -
+                    datetime.strptime(fixture_path.stem.replace("econ_calendar_", ""),
+                                      "%Y-%m-%d")).days)
+    if days_off > 2:
+        print(f"WARNING: No econ calendar fixture for {end_date}. "
+              f"Using {fixture_path.name} ({days_off} days off). "
+              "Consider running with --live.")
     with open(fixture_path) as f:
         return json.load(f)
