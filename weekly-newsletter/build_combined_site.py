@@ -2838,7 +2838,7 @@ _EXPAT_PANEL = """\
 
 _JS = """\
 <script>
-function showSection(id) {
+function showSection(id, skipHash) {
   document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('panel-' + id).classList.add('active');
@@ -2846,6 +2846,7 @@ function showSection(id) {
   var tabs = document.querySelectorAll('.section-tab');
   if (labels[id] !== undefined) tabs[labels[id]].classList.add('active');
   if (id === 'marketiq') sizeIQGridFlips();
+  if (!skipHash) history.replaceState(null, '', '#' + id);
 }
 function showSubNav(el) {
   var nav = el.closest('.sub-nav');
@@ -2987,6 +2988,9 @@ function sizeIQGridFlips() {
 
 document.addEventListener('DOMContentLoaded', function() {
   buildIQAlphaNav();
+  var valid = { markets: 1, marketiq: 1, investing: 1, expat: 1 };
+  var hash = (location.hash || '').replace('#', '');
+  showSection(valid[hash] ? hash : 'markets', true);
 });
 </script>"""
 
