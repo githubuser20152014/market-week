@@ -38,7 +38,7 @@ APAC was mixed overnight (4 up, 1 down) — KOSPI led (+1.63%), while Nikkei 225
 
 ## Positioning Notes
 
-- Equity futures are red (S&P −0.3%, Nasdaq −0.4%) — yesterday's rally is fading as oil climbs again. Yesterday's close in broad market (SPY, QQQ) was strong, but follow-through is in question today; wait for confirmation at the open before adding.
+- Equity futures are red (S&P −0.3%, Nasdaq −0.4%) -- yesterday's rally is fading as oil climbs again. Yesterday's close in broad market (SPY, QQQ) was strong, but follow-through is in question today; wait for confirmation at the open before adding.
 - Geopolitical risk remains elevated with oil at $93.50/bbl -- Energy ETFs (XLE) benefit from sustained high oil, but are also first to reverse on de-escalation headlines. Consider sizing energy exposure with a tight stop rather than adding outright.
 - 10-year yield fell 6 bps to 4.22% -- falling yields support long-duration assets: growth stocks (QQQ), REITs (VNQ), and long bonds (TLT) all benefit. Consider adding duration if the yield trend holds.
 
