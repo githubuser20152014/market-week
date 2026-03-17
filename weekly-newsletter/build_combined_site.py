@@ -2397,6 +2397,204 @@ def render_fundaa_article_page(article):
 </html>"""
 
 
+def parse_investing101_articles(articles_dir=None):
+    """Parse Investing 101 articles from content/articles/investing-101-*.md.
+
+    Returns a list of dicts (newest first):
+      {title, slug, date, display_date, body_html, excerpt, series, issue}
+    """
+    if articles_dir is None:
+        articles_dir = BASE_DIR / "content" / "articles"
+    articles = []
+    try:
+        for md_file in sorted(Path(articles_dir).glob("investing-101-*.md")):
+            text = md_file.read_text(encoding="utf-8")
+            parts = text.split("---", 2)
+            if len(parts) < 3:
+                continue
+            fm_text = parts[1]
+            article = {}
+            for line in fm_text.splitlines():
+                m = re.match(r'^(\w[\w_-]*):\s*(.+)$', line.strip())
+                if m:
+                    article[m.group(1)] = m.group(2).strip().strip('"')
+            if not article.get("title"):
+                continue
+
+            body_md = parts[2].strip()
+
+            # Replace [CHART] placeholder with img tag (path relative to article page depth)
+            chart_img = (
+                '<figure class="i101-chart">'
+                '<img src="../../../assets/asset-allocation-growth.png" '
+                'alt="Two portfolio growth curves diverging over 17 years" '
+                'style="width:100%;max-width:720px;border-radius:4px;"/>'
+                '<figcaption>Illustrative only. Based on historical average annualised returns.</figcaption>'
+                '</figure>'
+            )
+            body_md = body_md.replace("[CHART]", chart_img)
+
+            body_html = markdown.markdown(body_md, extensions=["extra"])
+
+            date_str = article.get("date", "")
+            try:
+                d = datetime.strptime(str(date_str), "%Y-%m-%d")
+                display_date = f"{d.strftime('%b')} {d.day}, {d.year}"
+            except ValueError:
+                display_date = date_str
+
+            articles.append({
+                "title": article.get("title", ""),
+                "slug": article.get("slug", md_file.stem),
+                "date": date_str,
+                "display_date": display_date,
+                "body_html": body_html,
+                "excerpt": article.get("excerpt", ""),
+                "series": article.get("series", "Investing 101"),
+                "issue": article.get("issue", ""),
+                "read_time": article.get("read_time", ""),
+                "url": article.get("url", f"/investing-101/{article.get('slug', md_file.stem)}/index.html"),
+            })
+    except (FileNotFoundError, OSError):
+        pass
+
+    articles.sort(key=lambda a: a.get("date", ""), reverse=True)
+    return articles
+
+
+def render_investing101_article_page(article):
+    """Render a standalone HTML page for an Investing 101 article."""
+    title       = article["title"]
+    display_date = article["display_date"]
+    series      = article["series"]
+    issue       = article.get("issue", "")
+    read_time   = article.get("read_time", "")
+    body_html   = article["body_html"]
+
+    eyebrow = f"{series} &middot; Issue #{issue}" if issue else series
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{title} | Framework Foundry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
+  <style>
+{_CSS}
+    .i101-eyebrow {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 8px;
+    }}
+    .i101-title {{
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 600;
+      color: var(--navy); line-height: 1.2;
+      margin-bottom: 6px;
+    }}
+    .i101-meta {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; color: var(--muted);
+      margin-bottom: 32px;
+    }}
+    .i101-body p  {{ font-size: 16px; line-height: 1.85; margin-bottom: 20px; font-weight: 300; }}
+    .i101-body h2 {{ font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
+                    color: var(--navy); margin: 36px 0 12px; }}
+    .i101-body strong {{ font-weight: 600; }}
+    .i101-body em     {{ font-style: italic; }}
+    .i101-body hr     {{ border: none; border-top: 1px solid var(--border); margin: 32px 0; }}
+    .i101-body ul, .i101-body ol {{ padding-left: 24px; margin-bottom: 18px; }}
+    .i101-body li {{ font-size: 15px; line-height: 1.75; margin-bottom: 6px; font-weight: 300; }}
+    .i101-chart {{ margin: 28px 0; text-align: center; }}
+    .i101-chart figcaption {{ font-size: 11px; color: var(--muted); margin-top: 8px;
+                              font-family: 'Raleway', sans-serif; }}
+    .breadcrumb {{
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px;
+    }}
+    .breadcrumb a {{ color: var(--accent); text-decoration: none; }}
+    .breadcrumb a:hover {{ text-decoration: underline; }}
+    .breadcrumb .sep {{ margin: 0 8px; color: var(--border); }}
+    .header-home-link {{
+      position: absolute; inset: 0; z-index: 1;
+      display: block; cursor: pointer;
+    }}
+    .header-inner, .header-meta, .header-accent {{ position: relative; z-index: 2; }}
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <a href="../../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
+    <div class="header-inner">
+{_LOGO_SVG}
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">The Blueprint &nbsp;&middot;&nbsp; Practical Investing Guides</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <div class="content">
+    <nav class="breadcrumb">
+      <a href="../../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <a href="../../../index.html#investing">Investing</a>
+      <span class="sep">/</span>
+      <span>{series}</span>
+      <span class="sep">/</span>
+      <span>{title}</span>
+    </nav>
+    <div class="i101-eyebrow">{eyebrow}</div>
+    <div class="i101-title">{title}</div>
+    <div class="i101-meta">{display_date}{(" &nbsp;&middot;&nbsp; " + read_time) if read_time else ""}</div>
+    <div class="i101-body">
+      {body_html}
+    </div>
+  </div>
+
+  <div class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Weekly macro intelligence and practical investing guides — free, every week.</p>
+    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe free</button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>"""
+
+
+def generate_investing101_pages(articles, site_dir):
+    """Write site/investing-101/{slug}/index.html for each Investing 101 article."""
+    i101_dir = Path(site_dir) / "investing-101"
+    i101_dir.mkdir(exist_ok=True)
+    for article in articles:
+        slug = article["slug"]
+        article_dir = i101_dir / slug
+        article_dir.mkdir(parents=True, exist_ok=True)
+        html = render_investing101_article_page(article)
+        (article_dir / "index.html").write_text(html, encoding="utf-8")
+        print(f"  -> site/investing-101/{slug}/index.html")
+
+
 def generate_fundaa_pages(articles, site_dir):
     """Write site/fundaa/{date}/index.html for each Friday Fundaa article."""
     fundaa_dir = Path(site_dir) / "fundaa"
@@ -2834,8 +3032,9 @@ def render_investing_panel(articles):
         except ValueError:
             display_date = date_str
 
+        article_url = a.get("url", "#")
         article_html += f"""
-      <a class="article-row" href="#">
+      <a class="article-row" href="{article_url}">
         <div class="article-tag-col">
           <span class="article-tag {tag_class}">{tag}</span>
         </div>
@@ -3557,6 +3756,8 @@ def build(use_mock=True):
     articles = load_articles()
     fundaa_articles = parse_fundaa_articles()
     generate_fundaa_pages(fundaa_articles, SITE_DIR)
+    investing101_articles = parse_investing101_articles()
+    generate_investing101_pages(investing101_articles, SITE_DIR)
     landing_html = render_landing(
         us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
         daybreak_dates=daybreak_dates, daybreak_ctxs=daybreak_ctxs,
