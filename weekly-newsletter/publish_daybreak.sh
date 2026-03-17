@@ -15,10 +15,12 @@ DATE_STR="${1:-$(date +%Y-%m-%d)}"
 # Parse flags
 PUBLISH=""
 SEND_EMAIL=""
+POLISH=""
 for arg in "${@:2}"; do
   case "$arg" in
     --publish)    PUBLISH="--publish" ;;
     --send-email) SEND_EMAIL="--send-email" ;;
+    --polish)     POLISH="--polish" ;;
   esac
 done
 
@@ -51,6 +53,25 @@ fi
 echo ""
 echo "Newsletter ready for review:"
 echo "  $MD_PATH"
+
+# Phase 1b: Optional headless polish pass
+if [[ "$POLISH" == "--polish" ]]; then
+  echo ""
+  echo "==> Running headless polish pass ..."
+  PROMPT_FILE="$REPO_ROOT/.claude/commands/headless-daybreak-polish.md"
+  if [[ ! -f "$PROMPT_FILE" ]]; then
+    echo "  [WARN] Polish prompt not found at $PROMPT_FILE — skipping polish step."
+  elif ! command -v claude &>/dev/null; then
+    echo "  [WARN] 'claude' CLI not found in PATH — skipping polish step."
+  else
+    PROMPT=$(sed "s|\\\$DAYBREAK_FILE|${MD_PATH}|g" "$PROMPT_FILE")
+    claude -p "$PROMPT" \
+      --allowedTools Read,Edit \
+      --dangerously-skip-permissions \
+      --model claude-sonnet-4-6
+    echo "  Polish pass complete."
+  fi
+fi
 
 if [[ "$SEND_EMAIL" == "--send-email" && "$PUBLISH" != "--publish" ]]; then
   echo ""
