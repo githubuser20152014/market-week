@@ -50,9 +50,16 @@ def build_email_html(
     subject: str,
     subscription_name: str = "Framework Foundry Weekly",
     edition_label: str = "",
+    date_str: str = "",
 ) -> str:
     """Convert Markdown content to an inline-styled HTML email with branded header."""
     body_html = md.markdown(md_content, extensions=["tables"])
+    data_page_line = (
+        f'<p style="margin:0 0 6px;">Full data tables &amp; overnight markets: '
+        f'<a href="https://frameworkfoundry.info/daily/{date_str}/data" style="color:#555;">'
+        f'frameworkfoundry.info/daily/{date_str}/data</a></p>'
+        if date_str else ""
+    )
 
     edition_line = (
         f'<div style="font-size:12px;color:#c9a84c;letter-spacing:0.12em;'
@@ -130,6 +137,7 @@ def build_email_html(
         Read the latest edition online at
         <a href="https://frameworkfoundry.info" style="color:#555;">frameworkfoundry.info</a>
       </p>
+      {data_page_line}
       <p style="margin:0;">
         You received this because you subscribed to {subscription_name}.
         To unsubscribe, reply with "unsubscribe" in the subject line.

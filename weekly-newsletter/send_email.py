@@ -126,7 +126,7 @@ def main():
         return
 
     # Build email HTML
-    html_body = build_email_html(md_content, subject, SUBSCRIPTION_NAMES[args.edition])
+    html_body = build_email_html(md_content, subject, SUBSCRIPTION_NAMES[args.edition], date_str=args.date)
 
     if args.save_preview:
         preview_path = OUTPUT_DIR / f"email_preview_{args.date}.html"

@@ -6,9 +6,9 @@
 
 ## The Brief
 
-Stocks had a solid session. Risk appetite improved. But futures are giving back gains this morning — oil is rising again and the Hormuz situation is still live. Watch the open closely.
+Stocks had a solid session. Risk appetite improved. Futures aren't giving a clear read. We'll find out at the open.
 
-**Stocks had a solid session.** The S&P 500 closed 6,699.38 (+1.01%), the Nasdaq 22,374.18 (+1.22%), the Dow 46,946.41 (+0.83%), the Russell 2000 2,503.29 (+0.94%). Broad-based. All four major indices closed green. Elsewhere: Gold slid 1.2% to ~$5,007, the 10-year Treasury yield fell 6 bps to 4.22%, and WTI crude rose to $93.50/bbl.
+**Stocks had a solid session.** The S&P 500 closed 6,699.38 (+1.01%), the Nasdaq 22,374.18 (+1.22%), the Dow 46,946.41 (+0.83%), the Russell 2000 2,503.29 (+0.94%). Broad-based. All four major indices closed green. Elsewhere: Gold fell 1.20% to $5,007.00, the 10-year Treasury yield fell 6 bps to 4.22%, and WTI crude fell 0.00% to $93.50/bbl.
 
 **Geopolitics ran the session yesterday.** Iran targets UAE energy infrastructure as gas field set ablaze, tanker struck near Strait of Hormuz. The Strait of Hormuz is the world's most important oil chokepoint — roughly 20% of global oil supply passes through it daily. Any credible threat moves energy markets. That ripples into inflation expectations, transportation costs, and EM currencies.
 
@@ -16,7 +16,7 @@ Stocks had a solid session. Risk appetite improved. But futures are giving back 
 
 **Watch:** geopolitical headlines — escalation or de-escalation will move oil, FX, and risk sentiment quickly.
 
-**Pre-market is pointing to a negative open** (S&P −0.3% | Nasdaq −0.4%). Yesterday's rally is fading — oil is rising again on fresh Iran/Hormuz escalation, and risk appetite is pulling back. Watch whether Brent holds above $100 as the session opens.
+**Pre-market is cautious** (S&P -0.30% | Nasdaq -0.40% | Dow -0.30%). Despite a solid session yesterday, sellers are pushing back in pre-market. Early weakness that holds is a sign the rally needs to consolidate.
 
 APAC was mixed overnight (4 up, 1 down) — KOSPI led (+1.63%), while Nikkei 225 lagged (-0.09%).
 
@@ -38,8 +38,8 @@ APAC was mixed overnight (4 up, 1 down) — KOSPI led (+1.63%), while Nikkei 225
 
 ## Positioning Notes
 
-- Equity futures are red (S&P −0.3%, Nasdaq −0.4%) -- yesterday's rally is fading as oil climbs again. Yesterday's close in broad market (SPY, QQQ) was strong, but follow-through is in question today; wait for confirmation at the open before adding.
-- Geopolitical risk remains elevated with oil at $93.50/bbl -- Energy ETFs (XLE) benefit from sustained high oil, but are also first to reverse on de-escalation headlines. Consider sizing energy exposure with a tight stop rather than adding outright.
+- Equity futures are red (S&P -0.30%) -- sellers extending yesterday's weakness. Consider waiting for price to stabilise before adding long exposure; defensives (XLU, XLP) and short-duration bonds offer relative shelter.
+- Geopolitical headlines remain the dominant risk factor today -- keep exposure to energy (XLE), defence (ITA), and safe-haven assets (GLD, TLT) in focus. These are the fastest-moving sectors when escalation/de-escalation news breaks.
 - 10-year yield fell 6 bps to 4.22% -- falling yields support long-duration assets: growth stocks (QQQ), REITs (VNQ), and long bonds (TLT) all benefit. Consider adding duration if the yield trend holds.
 
 

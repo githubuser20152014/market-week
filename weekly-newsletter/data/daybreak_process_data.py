@@ -1377,7 +1377,7 @@ def generate_substack_post(context: dict) -> str:
         "---",
         f"## Positioning Notes\n\n{tips_lines}",
         "---",
-        "*Full edition online: [frameworkfoundry.info](https://frameworkfoundry.info)*\n\n*Framework Foundry · Unsubscribe*",
+        f"*Full edition + raw data: [frameworkfoundry.info/daily/{context['date']}/data](https://frameworkfoundry.info/daily/{context['date']}/data)*\n\n*Framework Foundry · Unsubscribe*",
     ])
 
     return (
