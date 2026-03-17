@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-17",
+    "generated_at": "2026-03-17T10:46:30.971865Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6632.1899,
+      "close": 6699.3799,
+      "daily_pct": 1.0131,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46558.4688,
+      "close": 46946.4102,
+      "daily_pct": 0.8332,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22105.3594,
+      "close": 22374.1777,
+      "daily_pct": 1.2161,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2480.05,
+      "close": 2503.292,
+      "daily_pct": 0.9372,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5068.0,
+      "close": 5007.0,
+      "daily_pct": -1.2,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.285,
+      "close": 4.22,
+      "daily_pct": -1.5169,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -6.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 93.5,
+      "close": 93.50,
+      "daily_pct": 0.0,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53700.39,
+      "prev_close": 53751.15,
+      "daily_pct": -0.0944,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25868.54,
+      "prev_close": 25834.02,
+      "daily_pct": 0.1336,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5640.48,
+      "prev_close": 5549.85,
+      "daily_pct": 1.633,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23581.15,
+      "prev_close": 23408.8,
+      "daily_pct": 0.7363,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8614.3,
+      "prev_close": 8583.4,
+      "daily_pct": 0.36,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23560.68,
+      "prev_close": 23564.01,
+      "daily_pct": -0.0141,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10369.4,
+      "prev_close": 10317.7,
+      "daily_pct": 0.5011,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7974.83,
+      "prev_close": 7935.97,
+      "daily_pct": 0.4897,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5747.16,
+      "prev_close": 5739.01,
+      "daily_pct": 0.142,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15141,
+      "prev_close": 1.14351,
+      "daily_pct": 0.6908
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33292,
+      "prev_close": 1.32477,
+      "daily_pct": 0.6158
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.078,
+      "prev_close": 159.56799,
+      "daily_pct": -0.3071
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70849,
+      "prev_close": 0.70057,
+      "daily_pct": 1.13
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.88935,
+      "prev_close": 6.89389,
+      "daily_pct": -0.0659
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27138,
+      "prev_close": 1.26595,
+      "daily_pct": 0.4285
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6679.25,
+      "prev_close": 6699.38,
+      "daily_pct": -0.30
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 22284.0,
+      "prev_close": 22374.18,
+      "daily_pct": -0.40
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46806.0,
+      "prev_close": 46946.41,
+      "daily_pct": -0.30
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 5008.7,
+      "prev_close": 4994.0,
+      "daily_pct": 0.2944
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.88,
+      "prev_close": 112.03,
+      "daily_pct": -0.1395
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 95.64,
+      "prev_close": 93.5,
+      "daily_pct": 2.2888
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.2%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Iran targets UAE energy infrastructure as gas field set ablaze, tanker struck near Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 10:28:10 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/iran-war-uae-energy-gas-field-oil-fujairah-strait-of-hormuz.html",
+      "summary": "Oil prices advanced on Tuesday as energy market participants monitored Middle East supply disruptions."
+    },
+    {
+      "headline": "Israel says Iran\u2019s security chief, Ali Larijani, has been killed in a strike",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 10:44:07 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/iran-war-ali-larijani-israel-united-states-middle-east-crisis.html",
+      "summary": "Iran has not yet confirmed the report."
+    },
+    {
+      "headline": "Oil jumps 4% as doubts linger over U.S.-backed plan to protect Strait of Hormuz shipping",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 08:44:48 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/oil-prices-wti-brent-hormuz-coalition-shipping-trump.html",
+      "summary": "Oil prices jumped 4% on Tuesday as uncertainty lingered over a U.S.-led coalition to protect shipping through the Strait of Hormuz."
+    },
+    {
+      "headline": "Senators tell ByteDance to 'immediately shut down' Seedance AI video app",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 09:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/bytedance-seedance-shut-down-tiktok-marsha-blackburn-peter-welch.html",
+      "summary": "Lawmakers say the new version of the Seedance AI video-generation app violates copyright and intellectual property laws."
+    },
+    {
+      "headline": "Trump says he thinks he will have the 'honor' of 'taking Cuba'",
+      "source": "CNBC",
+      "published": "Mon, 16 Mar 2026 22:12:52 GMT",
+      "url": "https://www.cnbc.com/2026/03/16/cuba-trump-taking.html",
+      "summary": "The president recently launched a war in Iran after topping Venezuelan leader Nicolas Maduro by force."
+    },
+    {
+      "headline": "Apollo's John Zito questions private equity's software valuations: 'All the marks are wrong'",
+      "source": "CNBC",
+      "published": "Mon, 16 Mar 2026 17:17:36 GMT",
+      "url": "https://www.cnbc.com/2026/03/16/apollo-john-zito-private-equity-software-valuations.html",
+      "summary": "While Wall Street figures have flagged risks in private credit, Apollo's Zito is among the first within private credit to candidly acknowledge weakness."
+    },
+    {
+      "headline": "Oil relief sparks a stock rally, but Cramer says Nvidia\u2019s AI boom is the real story",
+      "source": "CNBC",
+      "published": "Mon, 16 Mar 2026 23:09:57 GMT",
+      "url": "https://www.cnbc.com/2026/03/16/oil-relief-sparks-a-stock-rally-but-cramer-says-nvidias-ai-boom-is-the-real-story.html",
+      "summary": "A decline in oil on Monday triggered stock buying, particularly in AI stocks like Nvidia, which wowed investors at its developers conference."
+    },
+    {
+      "headline": "2 of our biggest takeaways from Nvidia CEO Jensen Huang's GTC keynote speech",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 00:20:03 GMT",
+      "url": "https://www.cnbc.com/2026/03/16/2-of-our-biggest-takeaways-from-nvidia-ceo-jensen-huangs-gtc-keynote-speech.html",
+      "summary": "The CEO's address included new product announcements and insight into where its revenue is headed."
+    }
+  ]
+}
