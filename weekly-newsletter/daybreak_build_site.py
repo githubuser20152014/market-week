@@ -104,6 +104,8 @@ def render_html(ctx: dict) -> str:
     for para in ctx["narrative"].split("\n\n"):
         para = para.strip()
         if para:
+            para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", para)
+            para = _re.sub(r"\*(.+?)\*",     r"<em>\1</em>",         para)
             narrative_html += f'<p class="brief-text">{para}</p>\n'
 
     # ── Plain-English Summary ─────────────────────────────────────────────────
@@ -122,7 +124,7 @@ def render_html(ctx: dict) -> str:
             plain_html += f'<ul class="plain-list">{items_html}</ul>\n'
         else:
             para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", block)
-            plain_html += f'<p class="brief-text">{para}</p>\n'
+            plain_html += f'<p class="plain-text">{para}</p>\n'
 
     # ── Market-Moving Headlines ───────────────────────────────────────────────
     news_html = ""
@@ -300,8 +302,10 @@ def render_html(ctx: dict) -> str:
     # ── Positioning Tips ──────────────────────────────────────────────────────
     tips_rows = ""
     for tip in ctx["tips"]:
-        if " -- " in tip:
-            signal, action = tip.split(" -- ", 1)
+        # Split on " -- " or " — " (em dash) so either separator works
+        sep = " -- " if " -- " in tip else (" \u2014 " if " \u2014 " in tip else None)
+        if sep:
+            signal, action = tip.split(sep, 1)
         else:
             signal, action = tip, ""
         tips_rows += f"""

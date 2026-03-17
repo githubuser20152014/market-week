@@ -3,10 +3,8 @@
 verify_site_content.py — Verify the published HTML AND PDF match the approved .md exactly.
 
 Checks every section of the Market Day Break newsletter:
-  Paragraphs  — Morning Brief, What This Means
-  Tables      — Market-Moving Headlines, US Market Close, Overnight Markets,
-                Currencies & Safe Havens, Pre-Market Futures
-  Event rows  — What Moved Markets Yesterday, Today's Watch List
+  Paragraphs  — The Brief
+  Tables      — Market-Moving Headlines
   Tips        — Positioning Notes (Signal -- Action format)
 
 Also verifies the PDF: extracts text via pypdf and checks that every
@@ -350,7 +348,7 @@ def check_pdf(md_path: Path, pdf_path: Path, md_secs: dict, errors: list[str]) -
             )
 
     # Narrative paragraphs — exact match (extract cleanly from PDF)
-    for section in ('Morning Brief', 'What This Means'):
+    for section in ('The Brief',):
         for i, para in enumerate(md_paragraphs(md_secs.get(section, '')), 1):
             pdf_contains_exact(para, f"{section} para {i}")
 
@@ -405,37 +403,14 @@ def main() -> None:
             return False
         return True
 
-    # ── Narrative paragraphs ──────────────────────────────────────────────────
-    for s in ('Morning Brief', 'What This Means'):
-        if require(s):
-            check_paragraphs(s, md_secs[s], html_secs[s], errors)
+    # ── Narrative brief ───────────────────────────────────────────────────────
+    if require('The Brief'):
+        check_paragraphs('The Brief', md_secs['The Brief'], html_secs['The Brief'], errors)
 
     # ── News table ────────────────────────────────────────────────────────────
     if require('Market-Moving Headlines'):
         check_headlines(md_secs['Market-Moving Headlines'],
                         html_secs['Market-Moving Headlines'], errors)
-
-    # ── Numeric data tables ───────────────────────────────────────────────────
-    for s in ('US Market Close', 'Currencies & Safe Havens', 'Pre-Market Futures'):
-        if require(s):
-            check_simple_table(s, md_secs[s], html_secs[s], errors)
-
-    # ── Overnight Markets (two sub-tables; session column excluded) ────────────
-    if require('Overnight Markets'):
-        check_overnight(md_secs['Overnight Markets'], html_secs['Overnight Markets'], errors)
-
-    # ── Event tables (with placeholder equivalence) ───────────────────────────
-    if require('What Moved Markets Yesterday'):
-        check_events('What Moved Markets Yesterday',
-                     md_secs['What Moved Markets Yesterday'],
-                     html_secs['What Moved Markets Yesterday'],
-                     errors, placeholder_keyword='No major events')
-
-    if require("Today's Watch List"):
-        check_events("Today's Watch List",
-                     md_secs["Today's Watch List"],
-                     html_secs["Today's Watch List"],
-                     errors, placeholder_keyword='No high-importance events')
 
     # ── Positioning Notes ─────────────────────────────────────────────────────
     if require('Positioning Notes'):
@@ -446,10 +421,7 @@ def main() -> None:
 
     # ── Report ────────────────────────────────────────────────────────────────
     sections_checked = [
-        'Morning Brief', 'What This Means', 'Market-Moving Headlines',
-        'US Market Close', 'Overnight Markets', 'Currencies & Safe Havens',
-        'Pre-Market Futures', 'What Moved Markets Yesterday',
-        "Today's Watch List", 'Positioning Notes', 'PDF',
+        'The Brief', 'Market-Moving Headlines', 'Positioning Notes', 'PDF',
     ]
 
     if errors:

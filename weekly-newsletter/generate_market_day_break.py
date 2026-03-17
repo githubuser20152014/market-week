@@ -64,6 +64,11 @@ def main():
         help="Save the Markdown only — skip LinkedIn, X, Substack, and PDF.",
     )
     parser.add_argument(
+        "--no-rewrite-md",
+        action="store_true",
+        help="Skip writing the .md file (use existing approved MD) — generate social posts and PDF only.",
+    )
+    parser.add_argument(
         "--verify",
         action="store_true",
         help="Cross-check prices against FRED + Stooq before generating.",
@@ -107,18 +112,21 @@ def main():
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     # Use daybreak template if it exists, otherwise render HTML only
     md_path = OUTPUT_DIR / f"market_day_break_{date_str}.md"
-    try:
-        template = env.get_template("daybreak_template.md")
-        md = template.render(context)
-        md_path.write_text(md, encoding="utf-8")
-        print(f"Newsletter saved -> {md_path}")
-    except Exception:
-        # Fallback: save minimal Markdown
-        md_path.write_text(
-            f"# Market Day Break - {date_str}\n\n{context['narrative']}\n",
-            encoding="utf-8"
-        )
-        print(f"Newsletter saved (minimal) -> {md_path}")
+    if args.no_rewrite_md:
+        print(f"Skipping MD write — using existing approved {md_path.name}")
+    else:
+        try:
+            template = env.get_template("daybreak_template.md")
+            md = template.render(context)
+            md_path.write_text(md, encoding="utf-8")
+            print(f"Newsletter saved -> {md_path}")
+        except Exception:
+            # Fallback: save minimal Markdown
+            md_path.write_text(
+                f"# Market Day Break - {date_str}\n\n{context['narrative']}\n",
+                encoding="utf-8"
+            )
+            print(f"Newsletter saved (minimal) -> {md_path}")
 
     if args.md_only:
         print("MD-only mode — skipping social posts and PDF.")

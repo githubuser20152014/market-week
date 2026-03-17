@@ -69,7 +69,7 @@ fi
 # Phase 2 (on --publish): Generate social posts + PDF from the approved MD
 echo ""
 echo "==> Generating social posts and PDF from approved content ..."
-python generate_market_day_break.py --date "$DATE_STR" --pdf
+python generate_market_day_break.py --date "$DATE_STR" --pdf --no-rewrite-md
 
 echo ""
 echo "==> Rebuilding site ..."

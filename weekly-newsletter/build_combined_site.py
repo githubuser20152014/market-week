@@ -1303,6 +1303,67 @@ def find_daybreak_dates():
     return sorted(dates, reverse=True)
 
 
+def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
+    """
+    Override ctx['narrative'] and ctx['tips'] from the approved .md file
+    so the site HTML always reflects the human-reviewed content, not the
+    auto-generated text from the fixture.
+    """
+    md_path = OUTPUT_DIR / f"market_day_break_{date_str}.md"
+    if not md_path.exists():
+        return ctx
+
+    md = md_path.read_text(encoding="utf-8")
+
+    # Split into ## sections
+    sections: dict[str, str] = {}
+    current, buf = None, []
+    for line in md.splitlines():
+        if line.startswith("## "):
+            if current is not None:
+                sections[current] = "\n".join(buf)
+            current, buf = line[3:].strip(), []
+        elif current is not None:
+            buf.append(line)
+    if current is not None:
+        sections[current] = "\n".join(buf)
+
+    # Override narrative from "The Brief"
+    if "The Brief" in sections:
+        brief_text = sections["The Brief"]
+        # Collect non-empty, non-separator paragraph lines as \n\n-separated blocks
+        paras = []
+        current_block: list[str] = []
+        for line in brief_text.splitlines():
+            stripped = line.strip()
+            if not stripped or stripped == "---":
+                if current_block:
+                    paras.append(" ".join(current_block))
+                    current_block = []
+            else:
+                current_block.append(stripped)
+        if current_block:
+            paras.append(" ".join(current_block))
+        if paras:
+            ctx["narrative"] = "\n\n".join(paras)
+
+    # Override tips from "Positioning Notes"
+    if "Positioning Notes" in sections:
+        tips = []
+        for line in sections["Positioning Notes"].splitlines():
+            s = line.strip()
+            if re.match(r"^[-*]\s", s):
+                tips.append(re.sub(r"^[-*]\s+", "", s))
+        if tips:
+            ctx["tips"] = tips
+
+    # Clear plain_summary so the auto-generated duplicate narrative doesn't
+    # render after our approved content in "The Brief" section.
+    ctx["plain_summary"] = ""
+
+    return ctx
+
+
 def find_pdf_src(date_str, edition="us"):
     """Return Path to the PDF in output/ for this date/edition, or None."""
     if edition == "us":
@@ -3465,6 +3526,7 @@ def build(use_mock=True):
         try:
             raw = fetch_daybreak_data(date_str, use_mock=use_mock)
             ctx = build_daybreak_context(raw)
+            ctx = _override_ctx_from_approved_md(ctx, date_str)
         except Exception as e:
             print(f"  WARNING: could not build daybreak context for {date_str}: {e}")
             continue
