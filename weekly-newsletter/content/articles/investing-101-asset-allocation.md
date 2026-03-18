@@ -2,7 +2,7 @@
 title: "The one decision that controls 90% of your returns"
 series: The Blueprint
 issue: 1
-date: 2026-03-17
+date: 2026-03-18
 slug: asset-allocation
 url: /investing-101/asset-allocation/index.html
 tag: Investing 101
