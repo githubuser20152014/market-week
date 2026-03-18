@@ -21,7 +21,7 @@ A 1986 study tracked 91 large pension funds for a decade and found that 91.5% of
 
 Issue #1 covers what that means in practice: why it matters more at 48 than it did at 28, what the gap between a 70/30 and a 40/60 portfolio actually looks like in dollar terms over 17 years, and one action to take this week.
 
-→ **Read Issue #1: frameworkfoundry.info/investing-101/asset-allocation/**
+**Read Issue #1: [frameworkfoundry.info/investing-101/asset-allocation/](https://frameworkfoundry.info/investing-101/asset-allocation/)**
 
 The Blueprint runs every Wednesday evening. If you know someone who's been meaning to get their investing in order — forward this along. It's free, and Issue #1 is the right place to start.
 
@@ -45,7 +45,7 @@ You've been getting the Morning Brief each day. Starting tonight, there's someth
 
 Issue #1: the one decision that drives 90% of your long-term returns. Hint — it's not which stocks you pick.
 
-→ frameworkfoundry.info/investing-101/asset-allocation/
+https://frameworkfoundry.info/investing-101/asset-allocation/
 
 Forward it to anyone who's been meaning to get their retirement account in order. Good place to start.
 
