@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-18",
+    "generated_at": "2026-03-18T11:10:56.712563Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6699.3799,
+      "close": 6716.0898,
+      "daily_pct": 0.2494,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46946.4102,
+      "close": 46993.2617,
+      "daily_pct": 0.0998,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22374.1797,
+      "close": 22479.5273,
+      "daily_pct": 0.4708,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2503.29,
+      "close": 2519.9944,
+      "daily_pct": 0.6673,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 5001.0,
+      "close": 4971.0,
+      "daily_pct": -0.5999,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.22,
+      "close": 4.202,
+      "daily_pct": -0.4265,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.21,
+      "close": 94.28,
+      "daily_pct": -2.006,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 55239.4,
+      "prev_close": 53700.39,
+      "daily_pct": 2.8659,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26025.42,
+      "prev_close": 25868.54,
+      "daily_pct": 0.6065,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5925.03,
+      "prev_close": 5640.48,
+      "daily_pct": 5.0448,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23777.8,
+      "prev_close": 23581.15,
+      "daily_pct": 0.8339,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8640.6,
+      "prev_close": 8614.3,
+      "daily_pct": 0.3053,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23901.44,
+      "prev_close": 23730.92,
+      "daily_pct": 0.7186,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10429.63,
+      "prev_close": 10403.6,
+      "daily_pct": 0.2502,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8050.28,
+      "prev_close": 7974.49,
+      "daily_pct": 0.9504,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5817.02,
+      "prev_close": 5769.25,
+      "daily_pct": 0.828,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.155,
+      "prev_close": 1.14995,
+      "daily_pct": 0.4389
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33668,
+      "prev_close": 1.33143,
+      "daily_pct": 0.3938
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.92799,
+      "prev_close": 159.105,
+      "daily_pct": -0.1112
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71046,
+      "prev_close": 0.70685,
+      "daily_pct": 0.5115
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.87399,
+      "prev_close": 6.88334,
+      "daily_pct": -0.1358
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27262,
+      "prev_close": 1.26895,
+      "daily_pct": 0.2889
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6801.5,
+      "prev_close": 6721.75,
+      "daily_pct": 1.1864
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 25151.25,
+      "prev_close": 24795.5,
+      "daily_pct": 1.4347
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47543.0,
+      "prev_close": 47039.0,
+      "daily_pct": 1.0715
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4971.6,
+      "prev_close": 5001.0,
+      "daily_pct": -0.5879
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 112.14,
+      "prev_close": 112.14,
+      "daily_pct": 0.0
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 94.23,
+      "prev_close": 96.21,
+      "daily_pct": -2.058
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Iran launches retaliatory strikes on Israel and U.S. assets after security chief Larijani is killed",
+      "source": "CNBC",
+      "published": "Wed, 18 Mar 2026 07:56:09 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/iran-strikes-us-israeli-targets-gulf-larijani-death.html",
+      "summary": "Iran has intensified attacks targeting U.S. assets in the Middle East and Israel in apparent retaliation against the killing of Iran's security chief Ali Larijani."
+    },
+    {
+      "headline": "Nvidia CEO Jensen Huang says OpenClaw is 'definitely the next ChatGPT'",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 22:55:14 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/nvidia-ceo-jensen-huang-says-openclaw-is-definitely-the-next-chatgpt.html",
+      "summary": "Nvidia CEO Jensen Huang pointed to a fast-rising project called OpenClaw as a major step forward in how people interact with AI."
+    },
+    {
+      "headline": "Cuba partially restores power as President D\u00edaz-Canel vows \u2018unyielding resistance\u2019 to U.S. oil blockade",
+      "source": "CNBC",
+      "published": "Wed, 18 Mar 2026 10:09:03 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/cuba-crisis-trump-energy-power-blackout-fuel-havana.html",
+      "summary": "The communist-run island nation is thought to be facing its biggest test since the collapse of the Soviet Union amid a U.S. oil blockade."
+    },
+    {
+      "headline": "The Fed issues its latest interest rate decision Wednesday. Here's what to expect",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 20:29:55 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/the-fed-issues-its-latest-interest-rate-decision-wednesday-heres-what-to-expect.html",
+      "summary": "The Federal Reserve has little choice but to stay on the sidelines this week."
+    },
+    {
+      "headline": "Global hedge funds suffer worst losses since 'liberation day' on Iran war turmoil",
+      "source": "CNBC",
+      "published": "Wed, 18 Mar 2026 05:59:27 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/hedge-funds-suffer-worst-losses-since-liberation-day-on-iran-war-turmoil.html",
+      "summary": "Hedge funds are getting battered by a sharp spike in oil prices and a broad market selloff unraveling crowded trades as the Iran war continues."
+    },
+    {
+      "headline": "Orlando Bravo says some software names hit by AI deserve a valuation cut",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 19:36:48 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/orlando-bravo-software-ai-valuation-cut.html",
+      "summary": "The Thoma Bravo co-founder said that some of the software stocks getting hit by the AI wave deserve a lower valuation."
+    },
+    {
+      "headline": "Lululemon reports weak guidance as proxy battle, tariffs weigh on bottom line",
+      "source": "CNBC",
+      "published": "Tue, 17 Mar 2026 22:38:12 GMT",
+      "url": "https://www.cnbc.com/2026/03/17/lululemon-lulu-earnings-q4-2025.html",
+      "summary": "Lululemon topped fourth-quarter estimates but gave weaker-than-expected sales and earnings forecasts for 2026."
+    },
+    {
+      "headline": "China\u2019s \u2018AI tigers\u2019 see shares surge after Nvidia CEO touts OpenClaw as \u2018next ChatGPT\u2019",
+      "source": "CNBC",
+      "published": "Wed, 18 Mar 2026 07:47:41 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/china-ai-zhipu-minimax-after-nvidia-jensen-huang-openclaw-comments.html",
+      "summary": "Chinese AI stocks surged on Wednesday following upbeat remarks from Nvidia's chief executive Jensen Huang on the promise of AI agents and OpenClaw."
+    }
+  ]
+}
