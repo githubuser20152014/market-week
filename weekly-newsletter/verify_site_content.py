@@ -256,7 +256,7 @@ def check_positioning(md_text: str, html: str, errors: list[str]) -> None:
         if not re.match(r'^[-*]\s', s):   # actual bullet only (not --- separator)
             continue
         text = re.sub(r'^[-*]\s+', '', s)           # strip bullet
-        text = re.sub(r'\s+--\s+', ' ', text)       # -- → space
+        text = re.sub(r'\s+(?:--|[\u2013\u2014])\s+', ' ', text)  # -- / – / — → space
         md_tips.append(norm(text, lower=True))
 
     html_rows = html_first_tbody_rows(html)
@@ -366,7 +366,7 @@ def check_pdf(md_path: Path, pdf_path: Path, md_secs: dict, errors: list[str]) -
         if not re.match(r'^[-*]\s', s):
             continue
         text = re.sub(r'^[-*]\s+', '', s)
-        text = re.sub(r'\s+--\s+', ' ', text)
+        text = re.sub(r'\s+(?:--|[\u2013\u2014])\s+', ' ', text)
         pdf_contains_fuzzy(text, f"Positioning note '{text[:50]}'")
 
 
