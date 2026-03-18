@@ -10,13 +10,21 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-DATE_STR="${1:-$(date +%Y-%m-%d)}"
+
+# If $1 looks like a flag (starts with --), treat as no date provided
+if [[ "${1:-}" == --* ]]; then
+  DATE_STR="$(date +%Y-%m-%d)"
+  FLAG_ARGS=("$@")
+else
+  DATE_STR="${1:-$(date +%Y-%m-%d)}"
+  FLAG_ARGS=("${@:2}")
+fi
 
 # Parse flags
 PUBLISH=""
 SEND_EMAIL=""
 POLISH=""
-for arg in "${@:2}"; do
+for arg in "${FLAG_ARGS[@]+"${FLAG_ARGS[@]}"}"; do
   case "$arg" in
     --publish)    PUBLISH="--publish" ;;
     --send-email) SEND_EMAIL="--send-email" ;;
