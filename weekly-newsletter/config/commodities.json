@@ -1,0 +1,7 @@
+{
+  "WTI Crude Oil": { "symbol": "CL=F", "etf_proxy": "USO" },
+  "Natural Gas":   { "symbol": "NG=F", "etf_proxy": "UNG" },
+  "Gold":          { "symbol": "GC=F", "etf_proxy": "GLD" },
+  "Silver":        { "symbol": "SI=F", "etf_proxy": "SLV" },
+  "US 30Y":        { "symbol": "^TYX", "etf_proxy": "TLT" }
+}

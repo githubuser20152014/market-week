@@ -22,12 +22,20 @@ sys.path.insert(0, str(BASE_DIR))
 from build_site import render_html as render_us_html
 from intl_build_site import render_html as render_intl_html
 from daybreak_build_site import render_html as render_daybreak_html, render_data_html as render_daybreak_data_html
+from global_build_site import render_html as render_global_html
 from data.fetch_data import fetch_index_data, fetch_econ_calendar
 from data.process_data import process_index_data, build_template_context
 from data.fetch_intl_data import fetch_intl_index_data, fetch_intl_fx_data, fetch_intl_econ_calendar
 from data.intl_process_data import process_intl_index_data, process_fx_data, build_intl_template_context
 from data.fetch_daybreak_data import fetch_daybreak_data
 from data.daybreak_process_data import build_daybreak_context
+from data.fetch_global_data import (
+    fetch_global_equity_data, fetch_global_fx_data, fetch_global_commodity_data,
+)
+from data.process_global_data import (
+    process_global_equity_data, process_global_fx_data, process_global_commodity_data,
+    build_global_template_context,
+)
 
 OUTPUT_DIR = BASE_DIR / "output"
 SITE_DIR = BASE_DIR / "site"
@@ -1303,6 +1311,17 @@ def find_daybreak_dates():
     return sorted(dates, reverse=True)
 
 
+def find_global_dates():
+    """Sorted (newest first) list of Global Investor Edition dates in fixtures/."""
+    dates = []
+    fixtures_dir = BASE_DIR / "fixtures"
+    for f in fixtures_dir.glob("global_equity_*.json"):
+        m = re.match(r"global_equity_(\d{4}-\d{2}-\d{2})\.json$", f.name)
+        if m:
+            dates.append(m.group(1))
+    return sorted(dates, reverse=True)
+
+
 def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
     """
     Override ctx['narrative'] and ctx['tips'] from the approved .md file
@@ -1376,6 +1395,10 @@ def find_pdf_src(date_str, edition="us"):
             OUTPUT_DIR / f"intl_newsletter_{date_str}.pdf",
             OUTPUT_DIR / f"intl_newsletter_us_{date_str}.pdf",
         ]
+    elif edition == "global":
+        candidates = [
+            OUTPUT_DIR / f"global_newsletter_{date_str}.pdf",
+        ]
     else:  # daily
         candidates = [
             OUTPUT_DIR / f"market_day_break_{date_str}.pdf",
@@ -1441,6 +1464,40 @@ def _render_intl_hero(date_str, ctx):
       <div class="hero-card-date">{display}</div>
       <div class="hero-indices">{rows}</div>
       <a class="hero-cta" href="intl/{date_str}/index.html">Read Issue &rarr;</a>
+    </div>"""
+
+
+_GLOBAL_PREVIEW_INDICES = ["S&P 500", "DAX", "Nikkei 225"]
+
+
+def _render_global_hero(date_str, ctx):
+    display = fmt_date(date_str)
+    # ctx uses us_indices / eu_indices / apac_indices lists
+    all_idx = (
+        ctx.get("us_indices", [])
+        + ctx.get("eu_indices", [])
+        + ctx.get("apac_indices", [])
+    )
+    index_lookup = {idx["name"]: idx for idx in all_idx}
+    rows = ""
+    for name in _GLOBAL_PREVIEW_INDICES:
+        idx = index_lookup.get(name)
+        if not idx:
+            continue
+        pct = idx.get("weekly_pct", 0) or 0
+        cls = "pct-pos" if pct >= 0 else "pct-neg"
+        rows += f'<div class="hero-idx-row"><span>{name}</span><span class="{cls}">{pct:+.2f}%</span></div>\n'
+    if not rows:
+        for idx in all_idx[:3]:
+            pct = idx.get("weekly_pct", 0) or 0
+            cls = "pct-pos" if pct >= 0 else "pct-neg"
+            rows += f'<div class="hero-idx-row"><span>{idx["name"]}</span><span class="{cls}">{pct:+.2f}%</span></div>\n'
+    return f"""
+    <div class="hero-card" style="border-top-color:#c9a84c;">
+      <div class="hero-card-edition" style="color:#c9a84c;">&#127758; Global Edition</div>
+      <div class="hero-card-date">{display}</div>
+      <div class="hero-indices">{rows}</div>
+      <a class="hero-cta" href="global/{date_str}/index.html">Read Issue &rarr;</a>
     </div>"""
 
 
@@ -3259,7 +3316,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
                    daybreak_dates=None, daybreak_ctxs=None,
-                   market_iq_cards=None, articles=None, fundaa_articles=None):
+                   market_iq_cards=None, articles=None, fundaa_articles=None,
+                   global_dates=None, global_ctxs=None):
     """Render site/index.html — 4-tab hub (Markets / Market IQ / Investing / Expat)."""
     if daybreak_dates is None:
         daybreak_dates = []
@@ -3269,18 +3327,25 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
         articles = []
     if fundaa_articles is None:
         fundaa_articles = []
+    if global_dates is None:
+        global_dates = []
+    if global_ctxs is None:
+        global_ctxs = {}
 
     # Hero cards (latest of each weekly edition)
-    latest_us   = us_dates[0]   if us_dates   else None
-    latest_intl = intl_dates[0] if intl_dates else None
+    latest_us     = us_dates[0]     if us_dates     else None
+    latest_intl   = intl_dates[0]   if intl_dates   else None
+    latest_global = global_dates[0] if global_dates else None
 
     us_hero = _render_us_hero(latest_us, us_ctxs[latest_us]) if latest_us else \
         '<div class="hero-card no-issue">No US issue yet</div>'
     intl_hero = _render_intl_hero(latest_intl, intl_ctxs[latest_intl]) if latest_intl else \
         '<div class="hero-card no-issue">No International issue yet</div>'
+    global_hero = _render_global_hero(latest_global, global_ctxs[latest_global]) if latest_global else \
+        '<div class="hero-card no-issue">No Global issue yet</div>'
 
-    # Archive: weekly dates only (US + Intl)
-    all_dates = sorted(set(us_dates) | set(intl_dates), reverse=True)
+    # Archive: all weekly dates (US + Intl + Global)
+    all_dates = sorted(set(us_dates) | set(intl_dates) | set(global_dates), reverse=True)
     archive_rows = ""
     for d in all_dates:
         display = fmt_date(d)
@@ -3300,10 +3365,19 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
         else:
             intl_html_link = "&mdash;"
             intl_pdf_link  = ""
+        if d in global_dates:
+            global_html_link = f'<a class="archive-link" href="global/{d}/index.html">Read</a>'
+            global_pdf_name  = pdf_map.get(("global", d))
+            global_pdf_link  = f'<a class="archive-link pdf" href="downloads/{global_pdf_name}">PDF</a>' \
+                if global_pdf_name else ""
+        else:
+            global_html_link = "&mdash;"
+            global_pdf_link  = ""
 
         archive_rows += f"""
           <tr>
             <td>{display}</td>
+            <td>{global_html_link}{global_pdf_link}</td>
             <td>{us_html_link}{us_pdf_link}</td>
             <td>{intl_html_link}{intl_pdf_link}</td>
           </tr>"""
@@ -3387,7 +3461,8 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
     <div id="sub-weekly" class="sub-panel active">
       <div class="content">
         <div class="section-label">Current Issues</div>
-        <div class="hero-grid">
+        <div class="hero-grid" style="grid-template-columns:1fr 1fr 1fr;">
+          {global_hero}
           {us_hero}
           {intl_hero}
         </div>
@@ -3397,6 +3472,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
           <thead>
             <tr>
               <th>Week Ending</th>
+              <th>Global Edition</th>
               <th>US Edition</th>
               <th>International Edition</th>
             </tr>
@@ -3634,6 +3710,7 @@ def build(use_mock=True):
     SITE_DIR.mkdir(exist_ok=True)
     (SITE_DIR / "us").mkdir(exist_ok=True)
     (SITE_DIR / "intl").mkdir(exist_ok=True)
+    (SITE_DIR / "global").mkdir(exist_ok=True)
     assets_dir = SITE_DIR / "assets"
     assets_dir.mkdir(exist_ok=True)
     downloads_dir = SITE_DIR / "downloads"
@@ -3645,10 +3722,11 @@ def build(use_mock=True):
         print(f"  chart  -> assets/{chart.name}")
 
     # Copy PDFs → site/downloads/ and build map
-    pdf_map = {}  # ("us"|"intl"|"daily", date_str) → filename
+    pdf_map = {}  # ("us"|"intl"|"daily"|"global", date_str) → filename
     us_dates       = find_us_dates()
     intl_dates     = find_intl_dates()
     daybreak_dates = find_daybreak_dates()
+    global_dates   = find_global_dates()
 
     for date_str in us_dates:
         src = find_pdf_src(date_str, "us")
@@ -3669,6 +3747,13 @@ def build(use_mock=True):
         if src:
             shutil.copy2(src, downloads_dir / src.name)
             pdf_map[("daily", date_str)] = src.name
+            print(f"  pdf    -> downloads/{src.name}")
+
+    for date_str in global_dates:
+        src = find_pdf_src(date_str, "global")
+        if src:
+            shutil.copy2(src, downloads_dir / src.name)
+            pdf_map[("global", date_str)] = src.name
             print(f"  pdf    -> downloads/{src.name}")
 
     # Build US issue pages
@@ -3751,6 +3836,36 @@ def build(use_mock=True):
         (data_dir / "index.html").write_text(data_html, encoding="utf-8")
         print(f"  -> site/daily/{date_str}/data/index.html")
 
+    # Build Global issue pages
+    global_ctxs = {}
+    for date_str in global_dates:
+        print(f"Building Global {date_str} …")
+        try:
+            raw_equity    = fetch_global_equity_data(date_str, use_mock=use_mock)
+            raw_fx        = fetch_global_fx_data(date_str, use_mock=use_mock)
+            raw_commodity = fetch_global_commodity_data(date_str, use_mock=use_mock)
+            econ          = fetch_econ_calendar(date_str, use_mock=use_mock)
+            eq_data       = process_global_equity_data(raw_equity)
+            fx_data       = process_global_fx_data(raw_fx)
+            com_data      = process_global_commodity_data(raw_commodity)
+            ctx           = build_global_template_context(eq_data, fx_data, com_data, econ, date_str)
+        except Exception as e:
+            print(f"  WARNING: could not build global context for {date_str}: {e}")
+            continue
+        global_ctxs[date_str] = ctx
+
+        issue_dir = SITE_DIR / "global" / date_str
+        issue_dir.mkdir(parents=True, exist_ok=True)
+        html = render_global_html(ctx)
+        html = inject_header_link(html, "../../index.html")
+        html = inject_breadcrumb(html, [
+            ("Framework Foundry", "../../index.html"),
+            ("Markets", "../../index.html#markets"),
+            (f"Global — {fmt_date(date_str)}", None),
+        ])
+        (issue_dir / "index.html").write_text(html, encoding="utf-8")
+        print(f"  -> site/global/{date_str}/index.html")
+
     # Build landing page (4-tab hub)
     market_iq_cards = load_market_iq_cards()
     articles = load_articles()
@@ -3763,6 +3878,7 @@ def build(use_mock=True):
         daybreak_dates=daybreak_dates, daybreak_ctxs=daybreak_ctxs,
         market_iq_cards=market_iq_cards, articles=articles,
         fundaa_articles=fundaa_articles,
+        global_dates=global_dates, global_ctxs=global_ctxs,
     )
     (SITE_DIR / "index.html").write_text(landing_html, encoding="utf-8")
     print(f"  -> site/index.html")

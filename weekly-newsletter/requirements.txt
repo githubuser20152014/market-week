@@ -9,3 +9,4 @@ pandas_datareader
 feedparser>=6.0
 markdown
 pypdf
+anthropic
