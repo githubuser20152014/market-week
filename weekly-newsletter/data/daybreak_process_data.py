@@ -1286,7 +1286,7 @@ def _generate_post_title(context: dict) -> str:
         "dip":          "Stocks Slipped — Dip or Warning Sign?",
         "selloff":      "After the Selloff: Where to Position Now",
         "mixed session": "Mixed Signals — How to Read Today's Open",
-    }.get(d, "Market Day Break — Daily Brief")
+    }.get(d, "The Morning Brief — Daily Brief")
 
 
 def _md_to_html(text: str) -> str:

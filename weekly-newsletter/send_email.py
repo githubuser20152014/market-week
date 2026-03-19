@@ -27,13 +27,13 @@ FORM_ID = "mwpvyoal"
 # Subject templates
 # ---------------------------------------------------------------------------
 SUBJECTS = {
-    "daybreak": "Market Day Break — {date}",
+    "daybreak": "The Morning Brief — {date}",
     "weekly":   "Framework Foundry Weekly (US Edition) — {date}",
     "intl":     "Framework Foundry Weekly (Intl Edition) — {date}",
 }
 
 SUBSCRIPTION_NAMES = {
-    "daybreak": "Framework Foundry Daily (Market Day Break)",
+    "daybreak": "Framework Foundry Daily (The Morning Brief)",
     "weekly":   "Framework Foundry Weekly",
     "intl":     "Framework Foundry Weekly",
 }
@@ -78,7 +78,7 @@ def main():
     elif args.edition == "daybreak":
         title_path = OUTPUT_DIR / f"title_{args.date}.txt"
         if title_path.exists():
-            subject = f"Market Day Break — {title_path.read_text(encoding='utf-8').strip()}"
+            subject = f"The Morning Brief — {title_path.read_text(encoding='utf-8').strip()}"
         else:
             subject = SUBJECTS[args.edition].format(date=args.date)
     else:

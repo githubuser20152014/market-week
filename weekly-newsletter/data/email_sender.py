@@ -202,7 +202,7 @@ def build_welcome_html(to_addr: str) -> str:
       <ul style="margin:0 0 16px;padding-left:24px;font-size:16px;line-height:1.9;color:#333;">
         <li><strong>Weekly US Edition</strong> — indices, macro recap, and positioning tips, every weekend</li>
         <li><strong>Weekly International Edition</strong> — Nikkei, FTSE, ECB, and global macro in focus</li>
-        <li><strong>Market Day Break</strong> — sharp pre-market briefs on the days that matter most</li>
+        <li><strong>The Morning Brief</strong> — sharp pre-market briefs on the days that matter most</li>
       </ul>
       <p style="margin:0 0 28px;font-size:16px;line-height:1.7;color:#333;">
         The latest edition is live right now — dive in!
@@ -246,7 +246,7 @@ def send_welcome_email(to_addr: str, gmail_address: str, app_password: str) -> N
         "Here's what's coming your way:\n"
         "- Weekly US Edition: indices, macro recap, and positioning tips, every weekend\n"
         "- Weekly International Edition: Nikkei, FTSE, ECB, and global macro in focus\n"
-        "- Market Day Break: sharp pre-market briefs on the days that matter most\n\n"
+        "- The Morning Brief: sharp pre-market briefs on the days that matter most\n\n"
         "The latest edition is live right now — dive in: https://frameworkfoundry.info\n\n"
         "To unsubscribe, reply with \"unsubscribe\" in the subject line."
     )

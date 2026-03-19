@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a static HTML page for the Market Day Break daily edition."""
+"""Build a static HTML page for the The Morning Brief daily edition."""
 
 import re as _re
 from datetime import datetime
@@ -74,7 +74,7 @@ _DAYBREAK_CSS = _BASE_CSS + """
 
 
 def render_html(ctx: dict) -> str:
-    """Render the Market Day Break daily edition as a standalone HTML page."""
+    """Render the The Morning Brief daily edition as a standalone HTML page."""
 
     # ── Helpers ───────────────────────────────────────────────────────────────
     def _pct_str(pct, is_yield=False, bps=None):
@@ -320,7 +320,7 @@ def render_html(ctx: dict) -> str:
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Framework Foundry \u2014 Market Day Break \u00b7 {date_str}</title>
+  <title>Framework Foundry \u2014 The Morning Brief \u00b7 {date_str}</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
   <style>
 {_DAYBREAK_CSS}
@@ -350,7 +350,7 @@ def render_html(ctx: dict) -> str:
         <span class="logo-tagline">{ctx['tagline']}</span>
       </div>
       <div class="header-meta">
-        <span class="issue-label">Market Day Break</span>
+        <span class="issue-label">The Morning Brief</span>
         <span class="issue-date">{display_date}</span>
         <span class="issue-week">Daily Edition</span>
       </div>
@@ -416,7 +416,7 @@ def render_html(ctx: dict) -> str:
     <span class="share-label">Share this edition</span>
     <div class="share-buttons">
       <a class="share-btn twitter" href="#" target="_blank" rel="noopener"
-         onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('Market Day Break via Framework Foundry \u2014  '+window.location.href);return true;"
+         onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('The Morning Brief via Framework Foundry \u2014  '+window.location.href);return true;"
          title="Share on X / Twitter">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
@@ -604,7 +604,7 @@ def render_data_html(ctx: dict) -> str:
         <span class="logo-tagline">Raw Market Data \u00b7 {display_date}</span>
       </div>
       <div class="header-meta">
-        <span class="issue-label">Market Day Break</span>
+        <span class="issue-label">The Morning Brief</span>
         <span class="issue-date">{display_date}</span>
         <span class="issue-week">Data Edition</span>
       </div>

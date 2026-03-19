@@ -1266,7 +1266,7 @@ _NAV_TABS_DAILY = """\
     <a class="section-tab" href="../index.html">Market IQ</a>
     <a class="section-tab" href="../index.html">Investing</a>
     <a class="section-tab future" style="cursor:default;">Expat Investing &#8599;</a>
-    <a class="section-tab active" style="border-bottom-color:#c9a84c;color:#c9a84c;" href="index.html">Market Day Break</a>
+    <a class="section-tab active" style="border-bottom-color:#c9a84c;color:#c9a84c;" href="index.html">The Morning Brief</a>
   </div>"""
 
 
@@ -1302,7 +1302,7 @@ def find_intl_dates():
 
 
 def find_daybreak_dates():
-    """Sorted (newest first) list of Market Day Break dates in output/."""
+    """Sorted (newest first) list of The Morning Brief dates in output/."""
     dates = []
     for f in OUTPUT_DIR.glob("market_day_break_*.md"):
         m = re.match(r"market_day_break_(\d{4}-\d{2}-\d{2})\.md$", f.name)
@@ -3459,7 +3459,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
 
     <div class="sub-nav">
       <a class="sub-tab active" data-target="sub-weekly" onclick="showSubNav(this)">Weekly Editions</a>
-      <a class="sub-tab" data-target="sub-daybreak" onclick="showSubNav(this)">Market Day Break</a>
+      <a class="sub-tab" data-target="sub-daybreak" onclick="showSubNav(this)">The Morning Brief</a>
     </div>
 
     <!-- Sub-panel: Weekly Editions -->
@@ -3489,7 +3489,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
       </div><!-- /content -->
     </div><!-- /sub-weekly -->
 
-    <!-- Sub-panel: Market Day Break -->
+    <!-- Sub-panel: The Morning Brief -->
     {daybreak_sub}
 
   </div><!-- /panel-markets -->
@@ -3569,7 +3569,7 @@ def render_landing(us_dates, intl_dates, us_ctxs, intl_ctxs, pdf_map,
 # ── Daily hub page ────────────────────────────────────────────────────────────
 
 def render_daily_hub(daybreak_dates, daybreak_ctxs, pdf_map):
-    """Render site/daily/index.html — Market Day Break hub."""
+    """Render site/daily/index.html — The Morning Brief hub."""
     latest = daybreak_dates[0] if daybreak_dates else None
 
     if latest:
@@ -3600,7 +3600,7 @@ def render_daily_hub(daybreak_dates, daybreak_ctxs, pdf_map):
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Framework Foundry &mdash; Market Day Break</title>
+  <title>Framework Foundry &mdash; The Morning Brief</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
   <style>
 {_CSS}
@@ -3616,7 +3616,7 @@ def render_daily_hub(daybreak_dates, daybreak_ctxs, pdf_map):
         <span class="logo-name-framework">FRAMEWORK</span>
         <span class="logo-name-foundry">FOUNDRY</span>
         <div class="logo-rule"></div>
-        <span class="logo-tagline">Market Day Break &nbsp;&middot;&nbsp; Daily intelligence at the open</span>
+        <span class="logo-tagline">The Morning Brief &nbsp;&middot;&nbsp; Daily intelligence at the open</span>
       </div>
     </div>
     <div class="header-accent"></div>
@@ -3807,7 +3807,7 @@ def build(use_mock=True):
         (issue_dir / "index.html").write_text(html, encoding="utf-8")
         print(f"  -> site/intl/{date_str}/index.html")
 
-    # Build Daily (Market Day Break) issue pages
+    # Build Daily (The Morning Brief) issue pages
     (SITE_DIR / "daily").mkdir(exist_ok=True)
     daybreak_ctxs = {}
     for date_str in daybreak_dates:

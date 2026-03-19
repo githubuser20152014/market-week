@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the Framework Foundry Market Day Break daily edition.
+"""Generate the Framework Foundry The Morning Brief daily edition.
 
 Typical 6 AM EST run:
     python generate_market_day_break.py --live --pdf
@@ -36,7 +36,7 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate the Framework Foundry Market Day Break daily edition."
+        description="Generate the Framework Foundry The Morning Brief daily edition."
     )
     parser.add_argument(
         "--date",
@@ -123,7 +123,7 @@ def main():
         except Exception:
             # Fallback: save minimal Markdown
             md_path.write_text(
-                f"# Market Day Break - {date_str}\n\n{context['narrative']}\n",
+                f"# The Morning Brief - {date_str}\n\n{context['narrative']}\n",
                 encoding="utf-8"
             )
             print(f"Newsletter saved (minimal) -> {md_path}")
@@ -171,7 +171,7 @@ def main():
             chart_path=None,
             output_dir=OUTPUT_DIR,
             date_str=date_str,
-            title="Framework Foundry - Market Day Break",
+            title="Framework Foundry - The Morning Brief",
             filename=pdf_filename,
         )
         print(f"PDF saved -> {pdf_path}")

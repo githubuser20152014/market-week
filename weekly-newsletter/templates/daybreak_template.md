@@ -1,4 +1,4 @@
-# Market Day Break — {{ date }}
+# The Morning Brief — {{ date }}
 
 *Daily Edition · Market intelligence at the open*
 
