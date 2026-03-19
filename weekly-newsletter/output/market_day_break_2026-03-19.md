@@ -1,4 +1,4 @@
-# Market Day Break — 2026-03-19
+# The Morning Brief — 2026-03-19
 
 *Daily Edition · Market intelligence at the open*
 
