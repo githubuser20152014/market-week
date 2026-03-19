@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "date": "2026-03-19",
+    "generated_at": "2026-03-19T10:48:23.075430Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6716.0898,
+      "close": 6624.7002,
+      "daily_pct": -1.3608,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46993.2617,
+      "close": 46225.1484,
+      "daily_pct": -1.6345,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22479.5293,
+      "close": 22152.4199,
+      "daily_pct": -1.4551,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2519.99,
+      "close": 2478.6421,
+      "daily_pct": -1.6408,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4889.8999,
+      "close": 4692.3999,
+      "daily_pct": -4.0389,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.202,
+      "close": 4.259,
+      "daily_pct": 1.3565,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.09,
+      "close": 100.142,
+      "daily_pct": 0.052,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.32,
+      "close": 95.79,
+      "daily_pct": -0.5502,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53372.53,
+      "prev_close": 55239.4,
+      "daily_pct": -3.3796,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25500.58,
+      "prev_close": 26025.42,
+      "daily_pct": -2.0166,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5763.22,
+      "prev_close": 5925.03,
+      "daily_pct": -2.7309,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23002.15,
+      "prev_close": 23777.8,
+      "daily_pct": -3.2621,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8497.8,
+      "prev_close": 8640.6,
+      "daily_pct": -1.6527,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22974.16,
+      "prev_close": 23502.25,
+      "daily_pct": -2.247,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10115.79,
+      "prev_close": 10305.3,
+      "daily_pct": -1.839,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7841.03,
+      "prev_close": 7969.88,
+      "daily_pct": -1.6167,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5626.56,
+      "prev_close": 5736.85,
+      "daily_pct": -1.9225,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14784,
+      "prev_close": 1.15395,
+      "daily_pct": -0.5292
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32768,
+      "prev_close": 1.33595,
+      "daily_pct": -0.6192
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.179,
+      "prev_close": 158.88901,
+      "daily_pct": 0.1825
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.7053,
+      "prev_close": 0.71091,
+      "daily_pct": -0.7894
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.89898,
+      "prev_close": 6.87474,
+      "daily_pct": 0.3526
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25794,
+      "prev_close": 1.27426,
+      "daily_pct": -1.2806
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6666.25,
+      "prev_close": 6626.0,
+      "daily_pct": 0.6075
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24585.0,
+      "prev_close": 24434.5,
+      "daily_pct": 0.6159
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46466.0,
+      "prev_close": 46234.0,
+      "daily_pct": 0.5017
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4692.8,
+      "prev_close": 4889.9,
+      "daily_pct": -4.0308
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.38,
+      "prev_close": 111.69,
+      "daily_pct": -0.2798
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 95.78,
+      "prev_close": 96.32,
+      "daily_pct": -0.5606
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "FOMC Rate Decision",
+        "actual": "3.50%\u20133.75% (hold)",
+        "expected": "3.50%\u20133.75% (hold)",
+        "previous": "3.50%\u20133.75%",
+        "unit": "",
+        "importance": 3,
+        "time_est": "2:00 PM ET",
+        "source": "Federal Reserve",
+        "surprise": "inline",
+        "notes": "11-1 vote to hold. Dot plot: 1 cut in 2026, 1 in 2027. GDP outlook upgraded to 2.4%; PCE inflation projected 2.7% (headline and core). Pause driven by hot inflation, softening labor, Iran geopolitical uncertainty."
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Oil briefly hits $119 and Europe gas prices surge after attacks on energy facilities in Qatar, Iran",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 10:46:50 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/oil-jumps-iran-strikes-qatar-lng-facility-supply-worries.html",
+      "summary": "Oil prices jumped as markets react to escalating tensions after Qatar said Iranian missile strikes damaged a key liquefied natural gas export facility."
+    },
+    {
+      "headline": "Alibaba revenue misses estimates in December quarter as net income drops 66%",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 10:31:18 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/alibaba-december-quarter-earnings-ai-investment.html",
+      "summary": "The tech giant is one of several Chinese AI firms that have been rushing to catch up to U.S. companies in the AI race."
+    },
+    {
+      "headline": "Amazon says U.S. Postal Service 'walked away at the eleventh hour' in negotiations",
+      "source": "CNBC",
+      "published": "Wed, 18 Mar 2026 20:40:08 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/amazon-usps-shipping-negotiations.html",
+      "summary": "Amazon said it was working toward a new agreement with the U.S. Postal Service  to increase volumes before talks fell apart."
+    },
+    {
+      "headline": "Gulf states have tolerated Iranian strikes so far \u2014 but their 'defensive' stance won't last forever",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 10:47:05 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/gulf-states-iran-attacks-retaliation-strikes-energy-oil-gas-water-strait-of-hormuz.html",
+      "summary": "The Gulf states have said Iran's attacks on energy infrastructure won't \"go unanswered\" but, so far, they have not hit back. That stance could change soon."
+    },
+    {
+      "headline": "Japan rejects U.S. intel assessment that Takaichi's Taiwan remarks represent 'significant shift'",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 05:58:59 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/japan-rejects-us-intelligence-taiwan-policy-shift-takaichi-energy-hormuz.html",
+      "summary": "Chief Cabinet Secretary Minoru Kihara told reporters \"A significant policy shift is not something that is happening right now.\""
+    },
+    {
+      "headline": "Here are the five key takeaways from this week's Fed meeting",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 03:01:27 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/here-are-the-five-key-takeaways-from-this-weeks-fed-meeting.html",
+      "summary": "While no one expected the Fed to cut \u2014 much less hike \u2014 at this meeting, the market always looks for clues about what's next."
+    },
+    {
+      "headline": "Micron revenue almost triples, tops estimates as demand for memory soars",
+      "source": "CNBC",
+      "published": "Wed, 18 Mar 2026 22:31:17 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/micron-mu-q2-earnings-report-2026.html",
+      "summary": "Micron's stock has soared this year while its tech peers have struggled, as the impact of rising memory costs ripples across the industry."
+    },
+    {
+      "headline": "How China is getting everyone on OpenClaw, from gearheads to grandmas",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 01:34:39 GMT",
+      "url": "https://www.cnbc.com/2026/03/18/china-openclaw-baidu-tencent-ai.html",
+      "summary": "China's OpenClaw use is soaring as tech giants hold meet-ups to help everyone add the artificial intelligence digital assistant to their devices."
+    }
+  ]
+}

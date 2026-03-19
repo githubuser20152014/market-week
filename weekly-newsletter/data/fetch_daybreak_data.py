@@ -356,9 +356,13 @@ def _fetch_futures(date_str: str, futures_cfg: dict) -> dict:
                                 "prev_close": None, "daily_pct": None}
                 continue
 
-            prev_close = float(df["Close"].iloc[-2])
-            price      = live_price if live_price else float(df["Close"].iloc[-1])
-            daily_pct  = (price / prev_close - 1) * 100
+            if live_price:
+                prev_close = float(df["Close"].iloc[-1])   # prior session settlement
+                price      = live_price
+            else:
+                prev_close = float(df["Close"].iloc[-2])   # fallback: day-over-day from df
+                price      = float(df["Close"].iloc[-1])
+            daily_pct = (price / prev_close - 1) * 100
 
             result[name] = {
                 "symbol":     symbol,
