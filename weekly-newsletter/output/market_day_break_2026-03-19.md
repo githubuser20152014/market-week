@@ -40,7 +40,7 @@ APAC closed broadly lower overnight — ASX 200 led (-1.65%), while Nikkei 225 l
 
 - Equity futures are green (S&P +0.61%, Nasdaq +0.62%) — market is treating yesterday's pullback as a dip. If the open fades within the first 15 minutes and price falls back below yesterday's close, treat it as a failed bounce and reduce exposure rather than adding.
 - Geopolitical risk remains elevated with oil at $95.79/bbl — XLE benefits from sustained high oil but is also first to reverse on any de-escalation headline. Size energy exposure with a defined stop; chasing the move outright leaves you exposed to a sharp reversal.
-- Gold fell 4.04% alongside stocks — safe-haven bid went to the dollar, not bullion. [Editor flag: Gold -4.04% is an anomalous same-day selloff alongside equities — signals dollar/cash was the primary flight-to-safety trade.] If you hold GLD as a hedge, it didn't work yesterday; consider whether short-term USD exposure (UUP) better matches current market stress until the gold/dollar relationship normalises.
+- Gold fell 4.04% alongside stocks — safe-haven bid went to the dollar, not bullion. If you hold GLD as a hedge, it didn't work yesterday; consider whether short-term USD exposure (UUP) better matches current market stress until the gold/dollar relationship normalises.
 - 10-year yield rose 6 bps to 4.26% — the Fed's dot plot now signals just 1 cut in 2026, a hawkish reset that anchors yields higher. At 4.26%, fixed income is real competition for equity risk premiums. Rotate toward VTV and dividend payers (SCHD, DVY) and trim long-duration tech (QQQ) until the rate path becomes more dovish.
 
 
