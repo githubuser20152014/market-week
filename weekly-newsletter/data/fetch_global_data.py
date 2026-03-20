@@ -8,6 +8,202 @@ FIXTURES_DIR = Path(__file__).resolve().parent.parent / "fixtures"
 CONFIG_DIR = Path(__file__).resolve().parent.parent / "config"
 
 
+# ── Perplexity price-key → fixture-name mappings ──────────────────────────────
+
+# Each entry: perplexity_key -> (fixture_name, symbol, region, etf_proxy, is_yield)
+# Pass weekly_pct as "{key}_weekly_pct".
+# For yields (is_yield=True), pass week-start level as "{key}_week_start" instead.
+_GLOBAL_EQUITY_KEY_MAP = {
+    "sp500":          ("S&P 500",       "^GSPC",     "US",               "SPY",  False),
+    "dow":            ("Dow Jones",     "^DJI",      "US",               "DIA",  False),
+    "nasdaq":         ("Nasdaq",        "^IXIC",     "US",               "QQQ",  False),
+    "russell2000":    ("Russell 2000",  "^RUT",      "US",               "IWM",  False),
+    "ten_year_yield": ("10Y Treasury",  "^TNX",      "US",               "TLT",  True),
+    "usd_index":      ("USD Index",     "DX=F",      "US",               "UUP",  False),
+    "vix":            ("VIX",           "^VIX",      "US",               "VIXY", False),
+    # International
+    "dax":            ("DAX",           "^GDAXI",    "Europe",           "EWG",  False),
+    "ftse100":        ("FTSE 100",      "^FTSE",     "Europe",           "EWU",  False),
+    "cac40":          ("CAC 40",        "^FCHI",     "Europe",           "EWQ",  False),
+    "eurostoxx50":    ("Euro Stoxx 50", "^STOXX50E", "Europe",           "FEZ",  False),
+    "nikkei":         ("Nikkei 225",    "^N225",     "Asia-Pacific",     "EWJ",  False),
+    "hang_seng":      ("Hang Seng",     "^HSI",      "Asia-Pacific",     "EWH",  False),
+    "asx200":         ("ASX 200",       "^AXJO",     "Asia-Pacific",     "EWA",  False),
+    "msci_em":        ("MSCI EM",       "EEM",       "Emerging Markets", "EEM",  False),
+}
+
+# Each entry: perplexity_key -> (fixture_name, symbol, etf_proxy)
+# Note: intl_fx.json uses JPY/USD (not USD/JPY) — ask Perplexity for JPY/USD directly.
+_GLOBAL_FX_KEY_MAP = {
+    "eurusd": ("EUR/USD", "EURUSD=X", "FXE"),
+    "gbpusd": ("GBP/USD", "GBPUSD=X", "FXB"),
+    "jpyusd": ("JPY/USD", "JPYUSD=X", "FXY"),
+    "audusd": ("AUD/USD", "AUDUSD=X", "FXA"),
+    "chfusd": ("CHF/USD", "CHFUSD=X", "FXF"),
+}
+
+# Each entry: perplexity_key -> (fixture_name, symbol, etf_proxy, is_yield)
+_GLOBAL_COMMODITY_KEY_MAP = {
+    "wti_crude":    ("WTI Crude Oil", "CL=F", "USO", False),
+    "nat_gas":      ("Natural Gas",   "NG=F", "UNG", False),
+    "gold":         ("Gold",          "GC=F", "GLD", False),
+    "silver":       ("Silver",        "SI=F", "SLV", False),
+    "us_30y_yield": ("US 30Y",        "^TYX", "TLT", True),
+}
+
+
+# ── Synthetic OHLCV helper ─────────────────────────────────────────────────────
+
+def _synthetic_ohlcv(close, weekly_pct, week_start_str, week_end_str, decimals=2):
+    """Build a 2-entry OHLCV list compatible with _weekly_pct() and _week_range().
+
+    data[0]["open"]  = implied Monday open  (close / (1 + weekly_pct/100))
+    data[-1]["close"] = Friday close
+
+    If weekly_pct is None, open == close (0 % weekly change).
+    """
+    if close is None:
+        return []
+    if weekly_pct is not None:
+        open_implied = round(close / (1 + weekly_pct / 100), decimals)
+    else:
+        open_implied = round(close, decimals)
+    close_r = round(close, decimals)
+    return [
+        {"date": week_start_str, "open": open_implied, "high": open_implied,
+         "low": open_implied, "close": open_implied, "volume": 0},
+        {"date": week_end_str,   "open": close_r,      "high": close_r,
+         "low": close_r,         "close": close_r,     "volume": 0},
+    ]
+
+
+def _week_bounds(date_str):
+    """Return (monday_str, friday_str) for the week containing date_str."""
+    d = datetime.strptime(date_str, "%Y-%m-%d")
+    monday  = d - timedelta(days=d.weekday())
+    friday  = monday + timedelta(days=4)
+    return monday.strftime("%Y-%m-%d"), friday.strftime("%Y-%m-%d")
+
+
+# ── Perplexity-sourced fixture builders ───────────────────────────────────────
+
+def fetch_from_perplexity_global(date_str, perplexity_data):
+    """Build all three global fixture payloads from Perplexity-sourced price data.
+
+    perplexity_data must contain keys:
+      "equity"     — dict with keys matching _GLOBAL_EQUITY_KEY_MAP.
+                     For each asset: "{key}" = Friday close,
+                                     "{key}_weekly_pct" = weekly % change.
+                     For yield assets (ten_year_yield): use "{key}_week_start"
+                     instead of "{key}_weekly_pct".
+      "fx"         — dict with keys matching _GLOBAL_FX_KEY_MAP.
+                     Same "{key}" + "{key}_weekly_pct" pattern.
+      "commodities"— dict with keys matching _GLOBAL_COMMODITY_KEY_MAP.
+                     For us_30y_yield use "{key}_week_start".
+
+    Returns:
+        (equity_fixture, fx_fixture, commodity_fixture) — three dicts ready to save.
+    """
+    monday_str, friday_str = _week_bounds(date_str)
+
+    equity_data     = perplexity_data.get("equity",      {})
+    fx_data         = perplexity_data.get("fx",          {})
+    commodity_data  = perplexity_data.get("commodities", {})
+
+    equity_fixture    = _build_global_equity(equity_data,    monday_str, friday_str)
+    fx_fixture        = _build_global_fx(fx_data,            monday_str, friday_str)
+    commodity_fixture = _build_global_commodity(commodity_data, monday_str, friday_str)
+
+    return equity_fixture, fx_fixture, commodity_fixture
+
+
+def _build_global_equity(equity, monday_str, friday_str):
+    result = {}
+    for pkey, (name, symbol, region, etf_proxy, is_yield) in _GLOBAL_EQUITY_KEY_MAP.items():
+        close = equity.get(pkey)
+        if close is None:
+            continue
+
+        if is_yield:
+            # For yields, use explicit week_start instead of deriving from pct
+            week_start = equity.get(pkey + "_week_start")
+            if week_start is not None:
+                weekly_pct = round((close - week_start) / week_start * 100, 4) \
+                             if week_start else None
+                # Build synthetic data with exact week_start as open
+                data = [
+                    {"date": monday_str, "open": round(week_start, 4),
+                     "high": round(week_start, 4), "low": round(week_start, 4),
+                     "close": round(week_start, 4), "volume": 0},
+                    {"date": friday_str, "open": round(close, 4),
+                     "high": round(close, 4), "low": round(close, 4),
+                     "close": round(close, 4), "volume": 0},
+                ]
+            else:
+                weekly_pct = equity.get(pkey + "_weekly_pct")
+                data = _synthetic_ohlcv(close, weekly_pct, monday_str, friday_str, decimals=4)
+        else:
+            weekly_pct = equity.get(pkey + "_weekly_pct")
+            data = _synthetic_ohlcv(close, weekly_pct, monday_str, friday_str)
+
+        result[name] = {
+            "symbol":    symbol,
+            "region":    region,
+            "etf_proxy": etf_proxy,
+            "data":      data,
+        }
+    return result
+
+
+def _build_global_fx(fx, monday_str, friday_str):
+    result = {}
+    for pkey, (name, symbol, etf_proxy) in _GLOBAL_FX_KEY_MAP.items():
+        rate = fx.get(pkey)
+        if rate is None:
+            continue
+        weekly_pct = fx.get(pkey + "_weekly_pct")
+        data = _synthetic_ohlcv(rate, weekly_pct, monday_str, friday_str, decimals=6)
+        result[name] = {
+            "symbol":    symbol,
+            "etf_proxy": etf_proxy,
+            "data":      data,
+        }
+    return result
+
+
+def _build_global_commodity(commodities, monday_str, friday_str):
+    result = {}
+    for pkey, (name, symbol, etf_proxy, is_yield) in _GLOBAL_COMMODITY_KEY_MAP.items():
+        close = commodities.get(pkey)
+        if close is None:
+            continue
+
+        if is_yield:
+            week_start = commodities.get(pkey + "_week_start")
+            if week_start is not None:
+                data = [
+                    {"date": monday_str, "open": round(week_start, 4),
+                     "high": round(week_start, 4), "low": round(week_start, 4),
+                     "close": round(week_start, 4), "volume": 0},
+                    {"date": friday_str, "open": round(close, 4),
+                     "high": round(close, 4), "low": round(close, 4),
+                     "close": round(close, 4), "volume": 0},
+                ]
+            else:
+                weekly_pct = commodities.get(pkey + "_weekly_pct")
+                data = _synthetic_ohlcv(close, weekly_pct, monday_str, friday_str, decimals=4)
+        else:
+            weekly_pct = commodities.get(pkey + "_weekly_pct")
+            data = _synthetic_ohlcv(close, weekly_pct, monday_str, friday_str)
+
+        result[name] = {
+            "symbol":    symbol,
+            "etf_proxy": etf_proxy,
+            "data":      data,
+        }
+    return result
+
+
 def _find_closest_fixture(prefix, target_date):
     """Find the fixture file closest to target_date."""
     target = datetime.strptime(target_date, "%Y-%m-%d")

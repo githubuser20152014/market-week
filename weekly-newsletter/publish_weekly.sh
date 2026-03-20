@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-# publish_weekly.sh — Generate and publish the Framework Foundry Weekly (US + intl editions).
+# publish_weekly.sh — Generate and publish the Framework Foundry Weekly (US + intl + global editions).
 #
 # Usage:
-#   bash publish_weekly.sh                         # generate both editions for today
-#   bash publish_weekly.sh 2026-02-28              # generate for specific date
-#   bash publish_weekly.sh 2026-02-28 --publish    # build site + commit + push + email
+#   bash publish_weekly.sh                              # generate all editions for today
+#   bash publish_weekly.sh 2026-02-28                   # generate for specific date
+#   bash publish_weekly.sh 2026-02-28 --publish         # build site + commit + push + email
+#   bash publish_weekly.sh 2026-02-28 --global-only     # generate global edition only
+#   bash publish_weekly.sh 2026-02-28 --global-only --publish
 
 set -euo pipefail
 
@@ -14,11 +16,23 @@ DATE_STR="${1:-$(date +%Y-%m-%d)}"
 
 # Parse flags
 PUBLISH=""
+GLOBAL_ONLY=""
 for arg in "${@:2}"; do
   case "$arg" in
-    --publish) PUBLISH="--publish" ;;
+    --publish)     PUBLISH="--publish" ;;
+    --global-only) GLOBAL_ONLY="--global-only" ;;
   esac
 done
+
+# Helper: use fixture-aware generation (skip --live if fixture exists for this date)
+_live_flag() {
+  local fixture_path="$1"
+  if [[ -f "$fixture_path" ]]; then
+    echo ""          # fixture found — no --live needed
+  else
+    echo "--live"    # no fixture — fetch from yfinance
+  fi
+}
 
 # Ensure we are on master before publishing
 CURRENT_BRANCH="$(git -C "$REPO_ROOT" rev-parse --abbrev-ref HEAD)"
@@ -34,18 +48,31 @@ if [[ -f "$ENV_FILE" ]]; then
   set -a; source "$ENV_FILE"; set +a
 fi
 
-echo "==> Generating US edition for $DATE_STR ..."
 cd "$SCRIPT_DIR"
-python generate_newsletter.py --date "$DATE_STR" --pdf --live
 
-echo ""
-echo "==> Generating intl edition for $DATE_STR ..."
-python generate_intl_newsletter.py --date "$DATE_STR" --pdf --live
+if [[ "$GLOBAL_ONLY" != "--global-only" ]]; then
+  US_LIVE=$(_live_flag "$SCRIPT_DIR/fixtures/indices_${DATE_STR}.json")
+  echo "==> Generating US edition for $DATE_STR ${US_LIVE:+(live)}..."
+  python generate_newsletter.py --date "$DATE_STR" $US_LIVE
+
+  echo ""
+  INTL_LIVE=$(_live_flag "$SCRIPT_DIR/fixtures/intl_indices_${DATE_STR}.json")
+  echo "==> Generating intl edition for $DATE_STR ${INTL_LIVE:+(live)}..."
+  python generate_intl_newsletter.py --date "$DATE_STR" $INTL_LIVE
+  echo ""
+fi
+
+GLOBAL_EQ_LIVE=$(_live_flag "$SCRIPT_DIR/fixtures/global_equity_${DATE_STR}.json")
+echo "==> Generating global edition for $DATE_STR ${GLOBAL_EQ_LIVE:+(live)}..."
+python generate_global_newsletter.py --date "$DATE_STR" $GLOBAL_EQ_LIVE
 
 echo ""
 echo "Newsletters ready for review:"
-echo "  $SCRIPT_DIR/output/newsletter_${DATE_STR}.md"
-echo "  $SCRIPT_DIR/output/intl_newsletter_${DATE_STR}.md"
+if [[ "$GLOBAL_ONLY" != "--global-only" ]]; then
+  echo "  $SCRIPT_DIR/output/newsletter_${DATE_STR}.md"
+  echo "  $SCRIPT_DIR/output/intl_newsletter_${DATE_STR}.md"
+fi
+echo "  $SCRIPT_DIR/output/global_newsletter_${DATE_STR}.md"
 
 if [[ "$PUBLISH" != "--publish" ]]; then
   echo ""
@@ -62,14 +89,19 @@ echo ""
 echo "==> Staging changes ..."
 cd "$REPO_ROOT"
 
-# Stage each output — suppress errors for files that may not exist (e.g. PDF)
 _add() { git add "$@" 2>/dev/null || true; }
-_add "weekly-newsletter/fixtures/indices_${DATE_STR}.json"
-_add "weekly-newsletter/fixtures/intl_indices_${DATE_STR}.json"
-_add "weekly-newsletter/output/newsletter_${DATE_STR}.md"
-_add "weekly-newsletter/output/newsletter_${DATE_STR}.pdf"
-_add "weekly-newsletter/output/intl_newsletter_${DATE_STR}.md"
-_add "weekly-newsletter/output/intl_newsletter_${DATE_STR}.pdf"
+
+if [[ "$GLOBAL_ONLY" != "--global-only" ]]; then
+  _add "weekly-newsletter/fixtures/indices_${DATE_STR}.json"
+  _add "weekly-newsletter/fixtures/intl_indices_${DATE_STR}.json"
+  _add "weekly-newsletter/output/newsletter_${DATE_STR}.md"
+  _add "weekly-newsletter/output/intl_newsletter_${DATE_STR}.md"
+fi
+
+_add "weekly-newsletter/fixtures/global_equity_${DATE_STR}.json"
+_add "weekly-newsletter/fixtures/global_fx_${DATE_STR}.json"
+_add "weekly-newsletter/fixtures/global_commodity_${DATE_STR}.json"
+_add "weekly-newsletter/output/global_newsletter_${DATE_STR}.md"
 _add "weekly-newsletter/site/"
 _add "weekly-newsletter/site/index.html"
 _add "weekly-newsletter/site/downloads/"
@@ -88,5 +120,8 @@ echo "Done. Live at https://frameworkfoundry.info/"
 echo ""
 echo "==> Sending email to subscribers ..."
 cd "$SCRIPT_DIR"
-python send_email.py --edition weekly --date "$DATE_STR"
-python send_email.py --edition intl   --date "$DATE_STR"
+if [[ "$GLOBAL_ONLY" != "--global-only" ]]; then
+  python send_email.py --edition weekly --date "$DATE_STR"
+  python send_email.py --edition intl   --date "$DATE_STR"
+fi
+python send_email.py --edition global  --date "$DATE_STR"
