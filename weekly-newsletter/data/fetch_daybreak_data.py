@@ -75,6 +75,190 @@ def fetch_daybreak_data(date_str: str, use_mock: bool = True) -> dict:
         return json.load(f)
 
 
+# ── Perplexity price-key → fixture-name mappings ──────────────────────────────
+
+# Each entry: perplexity_key -> (fixture_name, yfinance_symbol, is_yield)
+_US_KEY_MAP = {
+    "sp500":          ("S&P 500",       "^GSPC",     False),
+    "dow":            ("Dow Jones",     "^DJI",      False),
+    "nasdaq":         ("Nasdaq",        "^IXIC",     False),
+    "russell2000":    ("Russell 2000",  "^RUT",      False),
+    "gold_spot":      ("Gold",          "GC=F",      False),
+    "ten_year_yield": ("10Y Treasury",  "^TNX",      True),
+    "usd_index":      ("USD Index",     "DX-Y.NYB",  False),
+    "wti_crude":      ("WTI Crude Oil", "CL=F",      False),
+}
+
+# Each entry: perplexity_key -> (fixture_name, yfinance_symbol)
+_FUTURES_KEY_MAP = {
+    "sp_futures":     ("S&P Futures",    "ES=F"),
+    "nasdaq_futures": ("Nasdaq Futures", "NQ=F"),
+    "dow_futures":    ("Dow Futures",    "YM=F"),
+    "gold_futures":   ("Gold Futures",   "GC=F"),
+    "wti_futures":    ("WTI Crude Oil",  "CL=F"),
+}
+
+# Each entry: perplexity_key -> (fixture_name, yfinance_symbol, region)
+_INTL_KEY_MAP = {
+    "nikkei":      ("Nikkei 225",    "^N225",     "Asia-Pacific"),
+    "hang_seng":   ("Hang Seng",     "^HSI",      "Asia-Pacific"),
+    "kospi":       ("KOSPI",         "^KS11",     "Asia-Pacific"),
+    "nifty50":     ("Nifty 50",      "^NSEI",     "Asia-Pacific"),
+    "asx200":      ("ASX 200",       "^AXJO",     "Asia-Pacific"),
+    "dax":         ("DAX",           "^GDAXI",    "Europe"),
+    "ftse100":     ("FTSE 100",      "^FTSE",     "Europe"),
+    "cac40":       ("CAC 40",        "^FCHI",     "Europe"),
+    "eurostoxx50": ("Euro Stoxx 50", "^STOXX50E", "Europe"),
+}
+
+# Each entry: perplexity_key -> (fixture_name, yfinance_symbol)
+_FX_KEY_MAP = {
+    "eurusd": ("EUR/USD", "EURUSD=X"),
+    "gbpusd": ("GBP/USD", "GBPUSD=X"),
+    "usdjpy": ("USD/JPY", "JPY=X"),
+    "audusd": ("AUD/USD", "AUDUSD=X"),
+    "usdcnh": ("USD/CNH", "USDCNH=X"),
+    "chfusd": ("CHF/USD", "CHFUSD=X"),
+}
+
+
+# ── Perplexity-sourced fixture builder ────────────────────────────────────────
+
+def fetch_from_perplexity(date_str: str, perplexity_data: dict) -> dict:
+    """Build a full daybreak fixture from Perplexity-sourced price data.
+
+    perplexity_data must contain keys:
+      "us"   — dict with keys matching _US_KEY_MAP + _FUTURES_KEY_MAP
+      "intl" — dict with keys matching _INTL_KEY_MAP
+                (pass null for holiday/unavailable markets; optionally pass
+                 "{key}_note" for a human-readable status, e.g. "nikkei_note")
+      "fx"   — dict with keys matching _FX_KEY_MAP
+
+    prev_close values are loaded from yesterday's fixture automatically.
+    econ_calendar and market_news are fetched via existing live functions.
+
+    Returns a complete fixture payload ready to save.
+    """
+    target    = datetime.strptime(date_str, "%Y-%m-%d")
+    yesterday = (target - timedelta(days=1)).strftime("%Y-%m-%d")
+
+    # Load yesterday's fixture for prev_close lookups
+    prev_fixture = None
+    _, prev_path = _find_closest_fixture(yesterday)
+    if prev_path:
+        with open(prev_path) as f:
+            prev_fixture = json.load(f)
+        print(f"  prev_close source: {prev_path.name}")
+    else:
+        print("  No yesterday fixture found — daily_pct will be omitted.")
+
+    us_data   = perplexity_data.get("us",   {})
+    intl_data = perplexity_data.get("intl", {})
+    fx_data   = perplexity_data.get("fx",   {})
+
+    return {
+        "meta": {
+            "date":              date_str,
+            "generated_at":      datetime.utcnow().isoformat() + "Z",
+            "generation_source": "perplexity",
+        },
+        "us_close":       _build_us_close(us_data,   prev_fixture),
+        "intl_overnight": _build_intl(intl_data,     prev_fixture),
+        "fx":             _build_fx(fx_data,          prev_fixture),
+        "futures":        _build_futures(us_data,     prev_fixture),
+        "econ_calendar":  _fetch_econ_calendar(date_str),
+        "market_news":    _fetch_market_news(date_str),
+    }
+
+
+def _build_us_close(us: dict, prev_fixture) -> dict:
+    result = {}
+    for pkey, (name, symbol, is_yield) in _US_KEY_MAP.items():
+        close      = us.get(pkey)
+        prev_close = (prev_fixture or {}).get("us_close", {}).get(name, {}).get("close")
+
+        entry = {
+            "symbol":     symbol,
+            "prev_close": round(prev_close, 4) if prev_close is not None else None,
+            "close":      round(close, 4)      if close      is not None else None,
+            "daily_pct":  round((close / prev_close - 1) * 100, 4)
+                          if close and prev_close else None,
+            "table":      True,
+        }
+        if is_yield:
+            entry["is_yield"]         = True
+            entry["yield_change_bps"] = round((close - prev_close) * 100, 2) \
+                                        if close is not None and prev_close is not None else None
+        result[name] = entry
+    return result
+
+
+def _build_intl(intl: dict, prev_fixture) -> dict:
+    result = {}
+    for pkey, (name, symbol, region) in _INTL_KEY_MAP.items():
+        close      = intl.get(pkey)
+        prev_close = (prev_fixture or {}).get("intl_overnight", {}).get(name, {}).get("close")
+        note       = intl.get(pkey + "_note", "")
+
+        if close is None:
+            status = "holiday" if "holiday" in note.lower() else "no_data"
+            result[name] = {
+                "symbol":       symbol,
+                "region":       region,
+                "status":       status,
+                "close":        None,
+                "prev_close":   round(prev_close, 2) if prev_close is not None else None,
+                "daily_pct":    None,
+                "session_note": note or "No data / holiday",
+            }
+        else:
+            daily_pct  = round((close / prev_close - 1) * 100, 4) if prev_close else None
+            status     = "partial" if region == "Europe" else "closed"
+            session_note = note or ("Early session" if region == "Europe" else "Previous close")
+            result[name] = {
+                "symbol":       symbol,
+                "region":       region,
+                "status":       status,
+                "close":        round(close, 2),
+                "prev_close":   round(prev_close, 2) if prev_close is not None else None,
+                "daily_pct":    daily_pct,
+                "session_note": session_note,
+            }
+    return result
+
+
+def _build_fx(fx: dict, prev_fixture) -> dict:
+    result = {}
+    for pkey, (name, symbol) in _FX_KEY_MAP.items():
+        rate       = fx.get(pkey)
+        prev_close = (prev_fixture or {}).get("fx", {}).get(name, {}).get("rate")
+
+        result[name] = {
+            "symbol":     symbol,
+            "rate":       round(rate, 5)       if rate       is not None else None,
+            "prev_close": round(prev_close, 5) if prev_close is not None else None,
+            "daily_pct":  round((rate / prev_close - 1) * 100, 4)
+                          if rate and prev_close else None,
+        }
+    return result
+
+
+def _build_futures(us: dict, prev_fixture) -> dict:
+    result = {}
+    for pkey, (name, symbol) in _FUTURES_KEY_MAP.items():
+        price      = us.get(pkey)
+        prev_close = (prev_fixture or {}).get("futures", {}).get(name, {}).get("price")
+
+        result[name] = {
+            "symbol":     symbol,
+            "price":      round(price, 2)      if price      is not None else None,
+            "prev_close": round(prev_close, 2) if prev_close is not None else None,
+            "daily_pct":  round((price / prev_close - 1) * 100, 4)
+                          if price and prev_close else None,
+        }
+    return result
+
+
 # ── Live fetchers ─────────────────────────────────────────────────────────────
 
 def _fetch_live(date_str: str) -> dict:

@@ -48,12 +48,18 @@ fi
 
 cd "$SCRIPT_DIR"
 MD_PATH="$SCRIPT_DIR/output/market_day_break_${DATE_STR}.md"
-PDF_PATH="$SCRIPT_DIR/output/market_day_break_${DATE_STR}.pdf"
 
 # Phase 1: Generate Markdown only (no PDF or social posts yet)
+FIXTURE_PATH="$SCRIPT_DIR/fixtures/daybreak_${DATE_STR}.json"
+
 if [[ ! -f "$MD_PATH" ]]; then
-  echo "==> Generating Market Day Break for $DATE_STR (Markdown only) ..."
-  python generate_market_day_break.py --date "$DATE_STR" --live --md-only
+  if [[ -f "$FIXTURE_PATH" ]]; then
+    echo "==> Fixture found — generating from verified Perplexity fixture ..."
+    python generate_market_day_break.py --date "$DATE_STR" --md-only
+  else
+    echo "==> No fixture found — fetching live data ..."
+    python generate_market_day_break.py --date "$DATE_STR" --live --md-only
+  fi
 else
   echo "==> Using existing newsletter for $DATE_STR (skipping regeneration)"
 fi
@@ -90,38 +96,33 @@ fi
 
 if [[ "$PUBLISH" != "--publish" ]]; then
   echo ""
-  echo "Review the Markdown above, then run with --publish to generate PDF/social posts and deploy:"
+  echo "Review the Markdown above, then run with --publish to generate social posts and deploy:"
   echo "  bash weekly-newsletter/publish_daybreak.sh $DATE_STR --publish"
   exit 0
 fi
 
-# Phase 2 (on --publish): Generate social posts + PDF from the approved MD
+# Phase 2 (on --publish): Generate social posts from the approved MD
 echo ""
-echo "==> Generating social posts and PDF from approved content ..."
-python generate_market_day_break.py --date "$DATE_STR" --pdf --no-rewrite-md
+echo "==> Generating social posts from approved content ..."
+python generate_market_day_break.py --date "$DATE_STR" --no-rewrite-md
 
 echo ""
 echo "==> Rebuilding site ..."
 python build_combined_site.py
 
 echo ""
-echo "==> Regenerating PDF from verified site HTML ..."
-python regen_daybreak_pdf.py "$DATE_STR"
-
-echo ""
-echo "==> Verifying HTML and PDF match approved MD ..."
+echo "==> Verifying site HTML matches approved MD ..."
 python verify_site_content.py "$DATE_STR"
 
 echo ""
 echo "==> Staging changes ..."
 cd "$REPO_ROOT"
 
-# Stage each output — suppress errors for files that may not exist (e.g. PDF)
+# Stage each output — suppress errors for files that may not exist
 _add() { git add "$@" 2>/dev/null || true; }
 _add "weekly-newsletter/fixtures/daybreak_${DATE_STR}.json"
 _add "weekly-newsletter/output/market_day_break_${DATE_STR}.md"
 _add "weekly-newsletter/output/title_${DATE_STR}.txt"
-_add "weekly-newsletter/output/market_day_break_${DATE_STR}.pdf"
 _add "weekly-newsletter/output/linkedin_${DATE_STR}.txt"
 _add "weekly-newsletter/output/x_${DATE_STR}.txt"
 _add "weekly-newsletter/output/substack_${DATE_STR}.html"
