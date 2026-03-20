@@ -2429,9 +2429,9 @@ def render_fundaa_article_page(article):
     <nav class="breadcrumb">
       <a href="../../index.html">Framework Foundry</a>
       <span class="sep">/</span>
-      <span>Market IQ</span>
+      <a href="../../index.html">Market IQ</a>
       <span class="sep">/</span>
-      <span>Friday Fundaa</span>
+      <a href="../../index.html">Friday Fundaa</a>
       <span class="sep">/</span>
       <span>{title}</span>
     </nav>
