@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-20",
+    "generated_at": "2026-03-20T08:43:37.529572Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6624.7002,
+      "close": 6606.4902,
+      "daily_pct": -0.2749,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46225.1484,
+      "close": 46021.4297,
+      "daily_pct": -0.4407,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22152.4199,
+      "close": 22105.36,
+      "daily_pct": -0.2124,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2478.6399,
+      "close": 2470.89,
+      "daily_pct": -0.3127,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4861.00,
+      "close": 4830.00,
+      "daily_pct": -0.638,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.28,
+      "close": 4.32,
+      "daily_pct": 0.935,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.12,
+      "close": 99.45,
+      "daily_pct": 0.333,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 98.65,
+      "close": 100.22,
+      "daily_pct": 1.591,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53372.53,
+      "prev_close": 55239.4,
+      "daily_pct": -3.3796,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25500.0,
+      "prev_close": 26025.42,
+      "daily_pct": -2.019,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5763.22,
+      "prev_close": 5925.03,
+      "daily_pct": -2.731,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23002.15,
+      "prev_close": 23777.8,
+      "daily_pct": -3.262,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8497.8,
+      "prev_close": 8640.6,
+      "daily_pct": -1.653,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23107.93,
+      "prev_close": 23502.25,
+      "daily_pct": -1.6778,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10107.47,
+      "prev_close": 10305.3,
+      "daily_pct": -1.9197,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7870.99,
+      "prev_close": 7969.88,
+      "daily_pct": -1.2408,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5676.8,
+      "prev_close": 5736.85,
+      "daily_pct": -1.0467,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15794,
+      "prev_close": 1.14645,
+      "daily_pct": 1.0028
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3429,
+      "prev_close": 1.32651,
+      "daily_pct": 1.2356
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.394,
+      "prev_close": 159.795,
+      "daily_pct": -0.8767
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70941,
+      "prev_close": 0.70295,
+      "daily_pct": 0.9191
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.88421,
+      "prev_close": 6.90555,
+      "daily_pct": -0.309
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26862,
+      "prev_close": 1.26162,
+      "daily_pct": 0.5544
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6648.0,
+      "prev_close": 6660.0,
+      "daily_pct": -0.18
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24315.0,
+      "prev_close": 24364.0,
+      "daily_pct": -0.20
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 45857.0,
+      "prev_close": 46041.0,
+      "daily_pct": -0.40
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4708.4,
+      "prev_close": 4830.00,
+      "daily_pct": -2.52
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.27,
+      "prev_close": 111.36,
+      "daily_pct": -0.0842
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 94.32,
+      "prev_close": 100.22,
+      "daily_pct": -5.89
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Trump invokes Pearl Harbor in front of Japanese prime minister to defend Iran attack secrecy",
+      "source": "CNBC",
+      "published": "Fri, 20 Mar 2026 08:13:33 GMT",
+      "url": "https://www.cnbc.com/2026/03/20/trump-pearl-harbor-japan-takaichi-iran-war.html",
+      "summary": "During the meeting, Trump praised Japan for \"stepping up\" to assist in efforts to secure the Strait of Hormuz, \"unlike NATO.\""
+    },
+    {
+      "headline": "Trump invokes emergency powers with $23 billion in Gulf arms sales as Iran war wages on: WSJ report",
+      "source": "CNBC",
+      "published": "Fri, 20 Mar 2026 07:35:51 GMT",
+      "url": "https://www.cnbc.com/2026/03/20/us-arms-weapon-sales-middle-east-iran-israel-war.html",
+      "summary": "The U.S. approved roughly $23 billion in weapons sales to three Gulf nations, moving to bolster their defenses as the Middle East war continued to escalate."
+    },
+    {
+      "headline": "Oil falls as U.S. weighs releasing sanctioned Iranian crude to cool prices",
+      "source": "CNBC",
+      "published": "Fri, 20 Mar 2026 05:50:22 GMT",
+      "url": "https://www.cnbc.com/2026/03/20/oil-wti-brent-us-weighs-releasing-sanctioned-iranian-crude.html",
+      "summary": "U.S. oil prices extended their decline after Treasury Secretary Scott Bessent said Washington may soon lift sanctions on Iranian crude stored aboard tankers."
+    },
+    {
+      "headline": "$166 a barrel? Middle East oil gives clue to where all prices could be headed if Iran war drags on",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 20:22:16 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/166-a-barrel-middle-east-oil-gives-clue-to-where-all-prices-could-be-headed-if-iran-war-drags-on.html",
+      "summary": "A breakout of oil prices in Asia has left analysts debating whether U.S. crude could see further upside."
+    },
+    {
+      "headline": "Trump signals DOJ should continue Powell probe, complicating Warsh Fed nomination",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 19:52:34 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/trump-powell-warsh-fed-doj-pirro.html",
+      "summary": "Powell has accused the DOJ of investigating him in retaliation for his refusal to lower interest rates as much or as quickly as Trump has demanded."
+    },
+    {
+      "headline": "The Iran war is sending shockwaves through the world's busiest IPO market",
+      "source": "CNBC",
+      "published": "Fri, 20 Mar 2026 06:44:20 GMT",
+      "url": "https://www.cnbc.com/2026/03/20/iran-war-dampen-most-active-ipo-market.html",
+      "summary": "Market volatility and geopolitical tensions have choked liquidity in India\u2019s IPO market, forcing high\u2011profile companies to hit pause."
+    },
+    {
+      "headline": "U.S. prosecutors charge Super Micro Computer employees with smuggling Nvidia chips to China",
+      "source": "CNBC",
+      "published": "Fri, 20 Mar 2026 01:13:33 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/us-tech-execs-smuggled-nvidia-chips-to-china-prosecutors-say.html",
+      "summary": "The U.S. government has been trying to crack down on illegal shipments of top-tier Nvidia artificial intelligence chips to China."
+    },
+    {
+      "headline": "Apple bears are proven wrong yet again as iPhone defies the China slump narrative",
+      "source": "CNBC",
+      "published": "Thu, 19 Mar 2026 20:26:30 GMT",
+      "url": "https://www.cnbc.com/2026/03/19/apple-bears-proven-wrong-yet-again-as-iphone-defies-china-slump-narrative.html",
+      "summary": "Memory shortages. Way behind on AI. Tariff troubles. None of that seems to matter to Apple."
+    }
+  ]
+}
