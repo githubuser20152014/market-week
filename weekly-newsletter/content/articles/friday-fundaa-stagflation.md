@@ -84,12 +84,6 @@ If you like these Friday nuggets, we publish two ways to stay sharp:
 
 ## Substack
 
-**Friday Fundaa | The economy's worst-case scenario has a name**
-
-*A short weekly moment of "huh, didn't know that" from the world of markets and money.*
-
----
-
 Most people know about inflation. Most people know about recessions. What most people don't know is that you can get both at the same time — and that when you do, the normal tools for fixing one make the other worse.
 
 That's stagflation.
@@ -140,4 +134,4 @@ For more of this kind of thing, we publish:
 📅 *Market Day Break* — daily market briefing
 📊 *Framework Foundry Weekly* — weekly macro deep-dive
 
-👉 frameworkfoundry.info
+👉 frameworkfoundry.info/fundaa/2026-03-20/
