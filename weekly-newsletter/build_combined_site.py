@@ -2282,8 +2282,10 @@ def parse_fundaa_articles(articles_dir=None):
     except (FileNotFoundError, OSError):
         pass
 
+    from datetime import timedelta
     today = datetime.utcnow().strftime("%Y-%m-%d")
-    articles = [a for a in articles if a["date"] <= today]
+    tomorrow = (datetime.utcnow() + timedelta(days=1)).strftime("%Y-%m-%d")
+    articles = [a for a in articles if a["date"] <= tomorrow]
     articles.sort(key=lambda a: a["date"], reverse=True)
     return articles
 
