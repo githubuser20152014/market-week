@@ -286,12 +286,20 @@ def _signal_dot(signal):
     return labels.get((signal or "").lower(), signal or "—")
 
 
+def _md_inline(text):
+    """Convert **bold** and *italic* markdown to HTML inline elements."""
+    import re
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    text = re.sub(r'\*(.+?)\*',     r'<em>\1</em>',         text)
+    return text
+
+
 def _paras(text):
     html = ""
     for para in (text or "").split("\n\n"):
         para = para.strip()
         if para:
-            html += f'<p class="brief-text">{para}</p>\n'
+            html += f'<p class="brief-text">{_md_inline(para)}</p>\n'
     return html
 
 
@@ -300,7 +308,7 @@ def _positioning_html(text):
     for line in (text or "").splitlines():
         line = line.strip()
         if line.startswith("- ") or line.startswith("* "):
-            items += f"<li>{line[2:].strip()}</li>\n"
+            items += f"<li>{_md_inline(line[2:].strip())}</li>\n"
         elif line:
             items += f"<li>{line}</li>\n"
     return f'<ul class="positioning-list">\n{items}</ul>' if items else "<p>—</p>"
