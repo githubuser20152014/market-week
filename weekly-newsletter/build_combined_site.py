@@ -2557,16 +2557,32 @@ def parse_investing101_articles(articles_dir=None):
 
             body_md = parts[2].strip()
 
-            # Replace [CHART] placeholder with img tag (path relative to article page depth)
-            chart_img = (
-                '<figure class="i101-chart">'
-                '<img src="../../../assets/asset-allocation-growth.png" '
-                'alt="Two portfolio growth curves diverging over 17 years" '
-                'style="width:100%;max-width:720px;border-radius:4px;"/>'
-                '<figcaption>Illustrative only. Based on historical average annualised returns.</figcaption>'
-                '</figure>'
-            )
-            body_md = body_md.replace("[CHART]", chart_img)
+            # Replace [CHART] placeholder with the article-specific chart image.
+            # Path is relative to the article page at investing-101/{slug}/index.html
+            # (3 levels deep from site root → ../../../assets/).
+            slug = article.get("slug", md_file.stem)
+            chart_configs = {
+                "asset-allocation": (
+                    "../../../assets/asset-allocation-growth.png",
+                    "Two portfolio growth curves diverging over 17 years",
+                    "Illustrative only. Based on historical average annualised returns.",
+                ),
+                "two-fund-portfolio": (
+                    "../../../assets/fund-overlap.png",
+                    "Top-5 holdings across three large-cap growth funds showing near-identical overlap",
+                    "Illustrative only. Fund names and weights are representative examples, not actual fund data.",
+                ),
+            }
+            if slug in chart_configs:
+                src, alt, caption = chart_configs[slug]
+                chart_img = (
+                    f'<figure class="i101-chart">'
+                    f'<img src="{src}" alt="{alt}" '
+                    f'style="width:100%;max-width:720px;border-radius:4px;"/>'
+                    f'<figcaption>{caption}</figcaption>'
+                    f'</figure>'
+                )
+                body_md = body_md.replace("[CHART]", chart_img)
 
             body_html = markdown.markdown(body_md, extensions=["extra"])
 
