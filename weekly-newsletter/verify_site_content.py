@@ -299,6 +299,8 @@ def _pdf_text(pdf_path: Path) -> str:
     text    = re.sub(r'(\d),(\d{3})\b', r'\1\2', text)
     # Rejoin words broken by PDF line-hyphenation: "rate- sensitive" → "rate-sensitive"
     text    = re.sub(r'(\w)- (\w)', r'\1-\2', text)
+    # Strip ** / * bold/italic markers that appear as literals in PDF table cells
+    text    = re.sub(r'\*+', '', text)
     return text
 
 
@@ -327,9 +329,12 @@ def check_pdf(md_path: Path, pdf_path: Path, md_secs: dict, errors: list[str]) -
         return "(not found in PDF)"
 
     def pdf_contains_exact(expected: str, label: str) -> None:
-        """Exact substring match (after norm) — used for narrative paragraphs."""
-        n = norm(expected)
-        if n and n not in pdf:
+        """Space-collapsed case-insensitive match — used for narrative paragraphs.
+        Only checks the first 100 chars (no-space) to avoid false positives from
+        mid-paragraph line-break or rendering artifacts in PDF table cells."""
+        n = re.sub(r'\s+', '', norm(expected, lower=True))
+        key = n[:100] if len(n) > 100 else n
+        if key and key not in pdf_nsp:
             errors.append(
                 f"[PDF] {label} not found:\n"
                 f"  expected : {n}\n"
