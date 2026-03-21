@@ -1383,6 +1383,81 @@ def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
     return ctx
 
 
+def _override_global_ctx_from_md(ctx: dict, date_str: str) -> dict:
+    """
+    Override global edition narrative fields from the approved
+    output/global_newsletter_{date_str}.md so the site HTML always
+    reflects human-reviewed content, not the auto-generated text.
+    """
+    md_path = OUTPUT_DIR / f"global_newsletter_{date_str}.md"
+    if not md_path.exists():
+        return ctx
+
+    md = md_path.read_text(encoding="utf-8")
+
+    # Parse into ### sections
+    sections: dict[str, str] = {}
+    current, buf = None, []
+    for line in md.splitlines():
+        if line.startswith("### "):
+            if current is not None:
+                sections[current] = "\n".join(buf).strip()
+            current, buf = line[4:].strip(), []
+        elif current is not None:
+            buf.append(line)
+    if current is not None:
+        sections[current] = "\n".join(buf).strip()
+
+    def _clean(text):
+        """Strip markdown table blocks and separator lines, return prose only."""
+        out = []
+        in_table = False
+        for line in text.splitlines():
+            stripped = line.strip()
+            if stripped.startswith("|"):
+                in_table = True
+                continue
+            if in_table and not stripped.startswith("|"):
+                in_table = False
+            if stripped == "---":
+                continue
+            out.append(line)
+        return "\n".join(out).strip()
+
+    # big_theme: first ### heading that isn't a known subsection
+    known = {"Macro Regime Snapshot", "Equity Markets", "Currency Markets",
+             "Commodities & Metals", "This Week's Economic Events",
+             "Next Week: What to Watch", "Global Investor Positioning"}
+    for heading, body in sections.items():
+        if heading not in known:
+            ctx["big_theme_title"] = heading
+            ctx["big_theme_body"]  = _clean(body)
+            break
+
+    mapping = {
+        "Equity Markets":               "equity_narrative",
+        "Currency Markets":             "fx_narrative",
+        "Commodities & Metals":         "commodities_narrative",
+        "This Week's Economic Events":  "events_commentary",
+        "Next Week: What to Watch":     "next_week_commentary",
+    }
+    for md_heading, ctx_key in mapping.items():
+        if md_heading in sections:
+            ctx[ctx_key] = _clean(sections[md_heading])
+
+    # Positioning: extract bullet lines
+    if "Global Investor Positioning" in sections:
+        bullets = []
+        for line in sections["Global Investor Positioning"].splitlines():
+            s = line.strip()
+            if re.match(r"^[-*]\s", s):
+                bullets.append(re.sub(r"^[-*]\s+", "", s))
+        if bullets:
+            ctx["positioning"] = "\n".join(f"- {b}" for b in bullets)
+
+    return ctx
+
+
 def find_pdf_src(date_str, edition="us"):
     """Return Path to the PDF in output/ for this date/edition, or None."""
     if edition == "us":
@@ -3859,6 +3934,7 @@ def build(use_mock=True):
         except Exception as e:
             print(f"  WARNING: could not build global context for {date_str}: {e}")
             continue
+        ctx = _override_global_ctx_from_md(ctx, date_str)
         global_ctxs[date_str] = ctx
 
         issue_dir = SITE_DIR / "global" / date_str

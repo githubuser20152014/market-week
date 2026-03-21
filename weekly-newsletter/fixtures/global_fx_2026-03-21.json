@@ -1,0 +1,112 @@
+{
+  "EUR/USD": {
+    "symbol": "EURUSD=X",
+    "etf_proxy": "FXE",
+    "data": [
+      {
+        "date": "2026-03-16",
+        "open": 1.145455,
+        "high": 1.145455,
+        "low": 1.145455,
+        "close": 1.145455,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-20",
+        "open": 1.1592,
+        "high": 1.1592,
+        "low": 1.1592,
+        "close": 1.1592,
+        "volume": 0
+      }
+    ]
+  },
+  "GBP/USD": {
+    "symbol": "GBPUSD=X",
+    "etf_proxy": "FXB",
+    "data": [
+      {
+        "date": "2026-03-16",
+        "open": 1.361782,
+        "high": 1.361782,
+        "low": 1.361782,
+        "close": 1.361782,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-20",
+        "open": 1.33441,
+        "high": 1.33441,
+        "low": 1.33441,
+        "close": 1.33441,
+        "volume": 0
+      }
+    ]
+  },
+  "JPY/USD": {
+    "symbol": "JPYUSD=X",
+    "etf_proxy": "FXY",
+    "data": [
+      {
+        "date": "2026-03-16",
+        "open": 0.006248,
+        "high": 0.006248,
+        "low": 0.006248,
+        "close": 0.006248,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-20",
+        "open": 0.006335,
+        "high": 0.006335,
+        "low": 0.006335,
+        "close": 0.006335,
+        "volume": 0
+      }
+    ]
+  },
+  "AUD/USD": {
+    "symbol": "AUDUSD=X",
+    "etf_proxy": "FXA",
+    "data": [
+      {
+        "date": "2026-03-16",
+        "open": 0.699516,
+        "high": 0.699516,
+        "low": 0.699516,
+        "close": 0.699516,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-20",
+        "open": 0.702174,
+        "high": 0.702174,
+        "low": 0.702174,
+        "close": 0.702174,
+        "volume": 0
+      }
+    ]
+  },
+  "CHF/USD": {
+    "symbol": "CHFUSD=X",
+    "etf_proxy": "FXF",
+    "data": [
+      {
+        "date": "2026-03-16",
+        "open": 1.239032,
+        "high": 1.239032,
+        "low": 1.239032,
+        "close": 1.239032,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-20",
+        "open": 1.239032,
+        "high": 1.239032,
+        "low": 1.239032,
+        "close": 1.239032,
+        "volume": 0
+      }
+    ]
+  }
+}
