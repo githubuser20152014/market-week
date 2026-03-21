@@ -3,7 +3,7 @@
 
 ---
 
-## Page 1 — What Happened & Why
+## What Happened & Why
 
 ### Stagflation Warning Flashes — But Volatility Is Creating the Entry Points Patient Investors Wait For
 
@@ -84,7 +84,7 @@ The clearest line in the sand for bond markets right now is whether the **30-yea
 
 ---
 
-## Page 3 — Data Appendix
+## Data Appendix
 
 ### US Equities
 
