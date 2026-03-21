@@ -58,8 +58,6 @@ Oil told a different story. **WTI crude rose 1.4% to $98 a barrel**, even as sto
 
 ---
 
-## Page 2 — Events & Positioning
-
 ### This Week's Economic Events
 
 **There were no major economic data releases this week** — no inflation numbers, no jobs reports, no central bank decisions. And yet markets moved sharply. That's itself an important observation: **when prices move this much without a specific trigger, it tells you the shift is driven by a change in mood** rather than a single piece of news. It's like a crowd that starts moving toward the exits before anyone shouts "fire" — something has changed in the atmosphere.
