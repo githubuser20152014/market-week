@@ -103,6 +103,183 @@ def process_futures(raw: dict) -> list:
     return results
 
 
+# ── Claude-powered narrative ──────────────────────────────────────────────────
+
+_DAYBREAK_SYSTEM_PROMPT = """\
+You are the editor of Framework Foundry — Daily Edition (The Morning Brief), \
+a daily market intelligence brief for serious ETF investors. Your voice is \
+sharp, direct, and investor-focused — like a trusted portfolio manager giving \
+you the pre-open rundown. Not a reporter, not a cheerleader. Someone who tells \
+you what actually matters and what to do about it.
+
+You will receive structured JSON with yesterday's US close, overnight/APAC \
+markets, pre-market futures, FX, news headlines, and today's economic calendar. \
+Return a JSON object with exactly these 3 keys:
+
+- narrative: 2–3 sentences. Sharp scene-setter. What is the dominant mood? \
+  What cross-asset signal stands out (gold/dollar/yields diverging from equities, \
+  sector rotation, safe-haven bid or risk-on)? What does the overnight/futures \
+  signal suggest about the open?
+
+- plain_summary: 4 paragraphs separated by blank lines. \
+  [1] What happened — all major US indices + key cross-assets (gold, oil, 10Y, \
+  USD index) with exact figures. \
+  [2] Why it happened — causal narrative linking the dominant news/data story to \
+  price action. Use concrete analogies to explain macro concepts. \
+  [3] What it means for you — investor implications with ETF tickers in \
+  parentheses (e.g., XLU, GLD, TLT). Explain the reasoning, not just the action. \
+  [4] Going into today — pre-market futures direction, key APAC signal if notable, \
+  today's swing factor (news, calendar event, or technical level to watch).
+
+- positioning: 3–5 bullet points, one per line, each starting with "- ". \
+  Specific, conditional ETF-level positioning for today. Each tip must explain \
+  the reasoning. Where relevant, give the conditional: what happens if X vs. if Y.
+
+Return ONLY valid JSON — no markdown fences, no extra keys, no commentary outside the JSON.\
+"""
+
+
+def generate_daybreak_claude_narrative(
+    us_indices, intl_indices, fx, futures,
+    yesterday_events, today_events, news_items
+):
+    """Call Claude API to generate narrative, plain_summary, and positioning.
+
+    Returns dict with keys {narrative, plain_summary, positioning} on success.
+    Returns None if ANTHROPIC_API_KEY is not set or the call fails —
+    caller falls back to template-based generation.
+    """
+    import os
+    import json as _json
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not api_key:
+        return None
+
+    payload = {
+        "us_close":         us_indices,
+        "intl_overnight":   intl_indices,
+        "fx":               fx,
+        "futures":          futures,
+        "yesterday_events": yesterday_events,
+        "today_events":     today_events,
+        "news_headlines": [
+            {"headline": n.get("headline", ""), "source": n.get("source", "")}
+            for n in (news_items or [])
+        ],
+    }
+
+    try:
+        import anthropic
+        client = anthropic.Anthropic(api_key=api_key)
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=1500,
+            system=_DAYBREAK_SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": _json.dumps(payload, default=str)}],
+        )
+        raw = response.content[0].text.strip()
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        result = _json.loads(raw)
+        for key in ("narrative", "plain_summary", "positioning"):
+            if key not in result:
+                print(f"WARNING: Claude response missing key '{key}' — falling back to template narrative.")
+                return None
+        return result
+    except Exception as e:
+        print(f"WARNING: Daybreak Claude API call failed ({e}) — using template narrative.")
+        return None
+
+
+_TICKER_BLOCKLIST = frozenset({
+    # Common words / directional
+    'AT', 'BE', 'BY', 'DO', 'GO', 'HE', 'IF', 'IN', 'IS', 'IT',
+    'ME', 'MY', 'NO', 'OF', 'OK', 'ON', 'OR', 'SO', 'TO', 'UP', 'US', 'WE',
+    # Time
+    'AM', 'ET', 'PM',
+    # Geography / organisations
+    'APAC', 'DC', 'EU', 'UK', 'NY', 'NATO', 'OPEC',
+    # Economic terms / agencies (not Yahoo-quote-able)
+    'BPS', 'CPI', 'ECB', 'FED', 'FOMC', 'GDP', 'IPO', 'MOM',
+    'NFP', 'PCE', 'QOQ', 'YOY', 'BOJ', 'RBA', 'IMF',
+    # Market shorthand / indices not directly quotable on Yahoo Finance
+    'DXY', 'VIX', 'WTI', 'OTC', 'FX', 'KOSPI', 'NIFTY',
+    # Legal / government agencies
+    'DOJ', 'SEC', 'CFTC', 'FBI', 'CIA', 'FTC', 'DOD',
+    # Currencies
+    'AUD', 'CHF', 'CNH', 'EUR', 'GBP', 'JPY', 'USD',
+    # Media / common acronyms
+    'CNBC', 'CNN', 'WSJ', 'CEO', 'CFO', 'COO', 'ETF', 'TV', 'ID',
+})
+
+_YF_BASE = "https://finance.yahoo.com/quote"
+
+
+def _hyperlink_tickers(text: str) -> str:
+    """Replace bare ETF/index ticker symbols with Yahoo Finance markdown links.
+
+    Matches 2–5 uppercase-letter words that are not already inside a markdown
+    link and not in the blocklist of common abbreviations.
+    """
+    import re
+
+    def _replace(m):
+        ticker = m.group(1)
+        if ticker in _TICKER_BLOCKLIST:
+            return ticker
+        return f"[{ticker}]({_YF_BASE}/{ticker})"
+
+    # (?<!\[) — skip tickers already wrapped in a markdown link
+    return re.sub(r'(?<!\[)\b([A-Z]{2,5})\b', _replace, text)
+
+
+def build_daybreak_narrative_sections(
+    us_indices, intl_indices, fx, futures,
+    yesterday_events, today_events, news_items
+):
+    """Return (narrative, plain_summary, tips) using Claude if available.
+
+    Falls back to template-based generation if the API key is absent or call fails.
+    """
+    claude = generate_daybreak_claude_narrative(
+        us_indices, intl_indices, fx, futures,
+        yesterday_events, today_events, news_items
+    )
+
+    if claude:
+        narrative     = claude["narrative"]
+        plain_summary = claude["plain_summary"]
+        raw_pos = claude["positioning"]
+        if isinstance(raw_pos, list):
+            tips = [str(item).lstrip("- ").strip() for item in raw_pos if item]
+        else:
+            tips = [
+                line.lstrip("- ").strip()
+                for line in str(raw_pos).splitlines()
+                if line.strip().startswith("-")
+            ]
+        print("Narrative generated via Claude API.")
+    else:
+        # Fallback: existing template-based functions (unchanged)
+        print("Narrative generated via template (Claude API not used).")
+        narrative     = generate_daybreak_narrative(us_indices, intl_indices, fx, futures)
+        plain_summary = generate_daybreak_plain_summary(
+            us_indices, intl_indices, futures, today_events, news_items, yesterday_events, fx
+        )
+        tips = generate_daybreak_positioning_tips(
+            us_indices, futures, yesterday_events, today_events, news_items=news_items
+        )
+
+    # Hyperlink all ETF/index tickers in the narrative output
+    narrative     = _hyperlink_tickers(narrative)
+    plain_summary = _hyperlink_tickers(plain_summary)
+    tips          = [_hyperlink_tickers(tip) for tip in tips]
+
+    return narrative, plain_summary, tips
+
+
 # ── Narrative ─────────────────────────────────────────────────────────────────
 
 def generate_daybreak_narrative(us_indices: list, intl_indices: list,
@@ -1411,17 +1588,10 @@ def build_daybreak_context(raw: dict) -> dict:
 
     market_news_raw = raw.get("market_news", [])
 
-    narrative    = generate_daybreak_narrative(us_indices, intl_indices,
-                                               fx_rates, futures)
-    plain_summary = generate_daybreak_plain_summary(
-        us_indices, intl_indices, futures, today_events,
-        news_items=market_news_raw,
-        yesterday_events=yesterday_events,
-        fx=fx_rates,
+    narrative, plain_summary, tips = build_daybreak_narrative_sections(
+        us_indices, intl_indices, fx_rates, futures,
+        yesterday_events, today_events, market_news_raw,
     )
-    tips         = generate_daybreak_positioning_tips(us_indices, futures,
-                                                       yesterday_events, today_events,
-                                                       news_items=market_news_raw)
 
     # ── Editorial overrides (stored in fixture under "editorial" key) ──────────
     editorial = raw.get("editorial", {})
