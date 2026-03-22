@@ -11,6 +11,7 @@ Usage:
 
 import argparse
 import os
+import re
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
@@ -88,6 +89,9 @@ def main():
     subject = f"The Signal: News that matters — {readable_date}"
     md_content = md_path.read_text(encoding="utf-8")
 
+    # Strip internal curation tags before building the email — they're for the .md only
+    md_email = re.sub(r'\s*#newsletter|\s*#portfolio', '', md_content)
+
     # Import email utilities
     try:
         from data.email_sender import build_email_html, send_to_all
@@ -123,9 +127,9 @@ def main():
             print(f"  {addr}")
         return
 
-    # Build HTML
+    # Build HTML (tags already stripped from md_email)
     html_body = build_email_html(
-        md_content,
+        md_email,
         subject,
         subscription_name=SUBSCRIPTION_NAME,
         edition_label=EDITION_LABEL,
@@ -147,7 +151,7 @@ def main():
         print("ERROR: GMAIL_APP_PASSWORD is not set in config/api_keys.env", file=sys.stderr)
         sys.exit(1)
 
-    plain_body = md_content  # raw Markdown is a readable plain-text fallback
+    plain_body = md_email  # raw Markdown (tags stripped) as plain-text fallback
 
     print(f"==> Sending '{subject}' to {len(subscribers)} subscriber(s) ...")
     sent, failed = send_to_all(gmail_addr, gmail_pass, subscribers, subject, html_body, plain_body)
