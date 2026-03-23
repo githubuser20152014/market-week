@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "date": "2026-03-23",
+    "generated_at": "2026-03-23T10:45:00.000000Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6606.4902,
+      "close": 6506.48,
+      "daily_pct": -1.5138,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46021.4297,
+      "close": 45577.47,
+      "daily_pct": -0.9647,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22105.36,
+      "close": 21647.61,
+      "daily_pct": -2.0708,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2470.89,
+      "close": 2438.45,
+      "daily_pct": -1.3129,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4830.0,
+      "close": 4319.0,
+      "daily_pct": -10.5797,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.32,
+      "close": 4.423,
+      "daily_pct": 2.3843,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 10.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.45,
+      "close": 100.0,
+      "daily_pct": 0.553,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 100.22,
+      "close": 99.88,
+      "daily_pct": -0.3393,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 51511.75,
+      "prev_close": 53372.53,
+      "daily_pct": -3.4864,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24279.23,
+      "prev_close": 25500.0,
+      "daily_pct": -4.7873,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5404.77,
+      "prev_close": 5763.22,
+      "daily_pct": -6.2196,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 23002.15,
+      "daily_pct": null,
+      "session_note": "Session in progress at time of generation"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8365.9,
+      "prev_close": 8497.8,
+      "daily_pct": -1.5522,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 21932.0,
+      "prev_close": 23107.93,
+      "daily_pct": -5.0889,
+      "session_note": "Early session \u2014 ~2h in"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 9769.0,
+      "prev_close": 10107.47,
+      "daily_pct": -3.3487,
+      "session_note": "Early session \u2014 ~2h in"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7550.0,
+      "prev_close": 7870.99,
+      "daily_pct": -4.0781,
+      "session_note": "Early session \u2014 ~2h in"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5351.0,
+      "prev_close": 5676.8,
+      "daily_pct": -5.7391,
+      "session_note": "Early session \u2014 futures based"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1526,
+      "prev_close": 1.15794,
+      "daily_pct": -0.4612
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3326,
+      "prev_close": 1.3429,
+      "daily_pct": -0.767
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.38,
+      "prev_close": 158.394,
+      "daily_pct": 0.6225
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": null,
+      "prev_close": 0.70941,
+      "daily_pct": null
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.9107,
+      "prev_close": 6.88421,
+      "daily_pct": 0.3848
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": null,
+      "prev_close": 1.26862,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6510.0,
+      "prev_close": 6648.0,
+      "daily_pct": -2.076
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 23890.0,
+      "prev_close": 24315.0,
+      "daily_pct": -1.748
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 45600.0,
+      "prev_close": 45857.0,
+      "daily_pct": -0.560
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4325.0,
+      "prev_close": 4708.4,
+      "daily_pct": -8.1429
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 100.1,
+      "prev_close": 94.32,
+      "daily_pct": 6.1281
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices rise as Trump\u2019s Hormuz ultimatum and Iran threats keep markets on edge",
+      "source": "CNBC",
+      "published": "Mon, 23 Mar 2026 09:49:59 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/oil-prices-trump-iran-strait-of-hormuz-wti-crude-middle-east-lng-gas.html",
+      "summary": "Fears over a prolonged disruption in the Strait of Hormuz have kept investors on edge as oil prices swung in volatile trading Monday."
+    },
+    {
+      "headline": "Iran threatens U.S. Treasury buyers as Trump\u2019s 48-hour ultimatum looms",
+      "source": "CNBC",
+      "published": "Mon, 23 Mar 2026 09:59:58 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/iran-war-tensions-build-as-conflict-enters-its-fourth-week.html",
+      "summary": "Iran widened its warnings to target buyers of U.S. Treasury bonds, the latest salvo in an intensifying exchange of threats as the war entered its fourth week."
+    },
+    {
+      "headline": "\u2018Tax resistance\u2019 gains attention amid ICE protests, Iran war \u2014 and IRS penalties could follow",
+      "source": "CNBC",
+      "published": "Sat, 21 Mar 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/21/tax-protesters-iran-war-ice.html",
+      "summary": "Tax protesters often withhold taxes due to moral objections to certain government programs, such as the Iran war. But there can be IRS penalties, experts say."
+    },
+    {
+      "headline": "The economy has a Strait of Hormuz deadline for Trump: Two weeks",
+      "source": "CNBC",
+      "published": "Sun, 22 Mar 2026 18:44:05 GMT",
+      "url": "https://www.cnbc.com/2026/03/22/iran-war-strait-of-hormuz-trump-oil-prices-economy.html",
+      "summary": "Corporate executives are not panicking over a short-term increase in oil prices and Strait of Hormuz closure, but patience may wear thin in a matter of weeks."
+    },
+    {
+      "headline": "India is launching cheap, weight-loss drugs and Novo Nordisk is betting on its brands to stay on top",
+      "source": "CNBC",
+      "published": "Mon, 23 Mar 2026 10:10:25 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/novo-nordisk-cheap-weight-loss-drugs-india-generic-ozempic-wegovy-semaglutide.html",
+      "summary": "Indian generic drugmakers launch a price war against Novo Nordisk\u2019s GLP-1 brands, Ozempic and WeGovy."
+    },
+    {
+      "headline": "Wealthy consumers are turning to jewelry as an investment, especially colored gemstones",
+      "source": "CNBC",
+      "published": "Sun, 22 Mar 2026 11:34:51 GMT",
+      "url": "https://www.cnbc.com/2026/03/22/wealthy-consumers-invest-in-jewelry-amid-rising-uncertainty-market-volatility.html",
+      "summary": "Lofty gold prices and market volatility are pushing wealthy consumers toward jewelry, especially rare colored gemstones, as handbags lose appeal."
+    },
+    {
+      "headline": "Here are 4 big things we\u2019re watching in the stock market this week",
+      "source": "CNBC",
+      "published": "Sun, 22 Mar 2026 22:29:26 GMT",
+      "url": "https://www.cnbc.com/2026/03/22/here-are-4-big-things-were-watching-in-the-stock-market-this-week.html",
+      "summary": "The Iran war and rising oil prices will remain front and center."
+    }
+  ]
+}

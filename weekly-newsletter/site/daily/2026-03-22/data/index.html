@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Framework Foundry — The Morning Brief · 2026-03-03</title>
+  <title>Framework Foundry — Market Data · 2026-03-23</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
   <style>
   :root {
@@ -615,21 +615,12 @@
       display: block; cursor: pointer;
     }
     .header-inner, .header-meta, .header-accent { position: relative; z-index: 2; }
-      .breadcrumb {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px; font-weight: 500; letter-spacing: 1px;
-      color: var(--muted); margin-bottom: 28px; padding-top: 4px;
-    }
-    .breadcrumb a { color: var(--accent); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb .sep { margin: 0 8px; color: var(--border); }
   </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HEADER -->
-  <header class="header"><a href="../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
+  <header class="header"><a href="../../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
     <div class="header-inner">
       <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
         <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
@@ -646,116 +637,89 @@
         <span class="logo-name-framework">FRAMEWORK</span>
         <span class="logo-name-foundry">FOUNDRY</span>
         <div class="logo-rule"></div>
-        <span class="logo-tagline">Daily Edition · Market intelligence at the open</span>
+        <span class="logo-tagline">Raw Market Data · Mar 23, 2026</span>
       </div>
       <div class="header-meta">
         <span class="issue-label">The Morning Brief</span>
-        <span class="issue-date">Mar 3, 2026</span>
-        <span class="issue-week">Daily Edition</span>
+        <span class="issue-date">Mar 23, 2026</span>
+        <span class="issue-week">Data Edition</span>
       </div>
     </div>
     <div class="header-accent"></div>
   </header>
 
-  <!-- REGION BANNER -->
   <div class="region-banner">
-    <span>Coverage: US Close · Asia-Pacific · Europe · FX · Macro</span>
-    <div class="region-dots">
-      <span class="region-dot">🌐</span>
-    </div>
+    <span>US Close · Asia-Pacific · Europe · FX · Futures · Economic Calendar</span>
+    <div class="region-dots"><span class="region-dot">📊</span></div>
   </div>
 
   <div class="content">
-    <nav class="breadcrumb">
-      <a href="../../index.html">Framework Foundry</a>
-      <span class="sep">/</span>
-      <a href="../../index.html#markets">Markets</a>
-      <span class="sep">/</span>
-      <a href="../../daily/index.html">Day Break</a>
-      <span class="sep">/</span>
-      <span>Mar 3, 2026</span>
-    </nav>
 
-    <!-- THE BRIEF -->
-    <div class="section-block">
-      <div class="section-title">The Brief</div>
-      <p class="brief-text">The dominant mood is dollar weakness driving a broad rotation — the USD Index shed 1.29% yesterday, its sharpest single-day drop in weeks, simultaneously lifting gold to $2,902, compressing the 10Y yield to 4.21%, and masking a notable divergence where small-caps (Russell -1.41%) badly lagged mega-cap tech. Gold and bonds rallying together while the dollar breaks down is a classic late-cycle hedge signal, not a clean risk-on tape. Pre-market futures are modestly red (-0.20% on [SPX](https://finance.yahoo.com/quote/SPX)), but the real swing factor today is Powell's congressional testimony at 10AM — his tone on inflation and rate cuts will either validate the dollar selloff or snap it back hard.</p>
-
-      
+    <div style="padding:12px 0 20px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:1px;color:var(--muted);">
+      <a href="../index.html" style="color:var(--accent);text-decoration:none;">&larr; Back to The Brief</a>
     </div>
 
-    
-
-    <!-- POSITIONING NOTES -->
     <div class="section-block">
-      <div class="section-title">Positioning Notes</div>
-      <table class="tips-table">
-        <thead>
-          <tr>
-            <th>Signal</th>
-            <th>Suggested Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-            <tr>
-              <td class="signal-col">All three futures contracts are red (S&P Futures -0.20%)</td>
-              <td class="action-col">Cautious open expected. Consider reducing intraday risk or waiting for price to stabilise before adding long exposure.</td>
-            </tr>
-            <tr>
-              <td class="signal-col">USD Index weakened -1.29% yesterday</td>
-              <td class="action-col">A softer dollar is a tailwind for emerging markets (EEM, VWO) and commodities (GLD, DJP). Consider tilting toward international and commodity exposure.</td>
-            </tr>
-        </tbody>
+      <div class="section-title">US Market Close</div>
+      <table class="snapshot-table">
+        <thead><tr><th>Index</th><th>Close</th><th>Daily %</th></tr></thead>
+        <tbody><tr><td>10Y Treasury</td><td>4.42%</td><td class='pct positive'>+10 bps</td></tr><tr><td>USD Index</td><td>100.00</td><td class='pct positive'>+0.55%</td></tr><tr><td>WTI Crude Oil</td><td>99.88</td><td class='pct negative'>-0.34%</td></tr><tr><td>Dow Jones</td><td>45,577.47</td><td class='pct negative'>-0.96%</td></tr><tr><td>Russell 2000</td><td>2,438.45</td><td class='pct negative'>-1.31%</td></tr><tr><td>S&P 500</td><td>6,506.48</td><td class='pct negative'>-1.51%</td></tr><tr><td>Nasdaq</td><td>21,647.61</td><td class='pct negative'>-2.07%</td></tr><tr><td>Gold</td><td>4,319.00</td><td class='pct negative'>-10.58%</td></tr></tbody>
+      </table>
+      <div class="snapshot-footer">
+        <span class="best">▲ Best: USD Index (+0.55%)</span>
+        <span class="worst">▼ Worst: Gold (-10.58%)</span>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">Overnight Markets</div>
+      <div class="sub-section-label">Asia-Pacific (Closed)</div>
+        <table class="snapshot-table" style="margin-bottom:16px;">
+          <thead><tr><th>Index</th><th>Close</th><th>Daily %</th><th>Session</th></tr></thead>
+          <tbody><tr><td>Nikkei 225</td><td>51,511.75</td><td class='pct negative'>-3.49%</td><td><span class="session-closed">Closed</span></td></tr><tr><td>Hang Seng</td><td>24,279.23</td><td class='pct negative'>-4.79%</td><td><span class="session-closed">Closed</span></td></tr><tr><td>KOSPI</td><td>5,404.77</td><td class='pct negative'>-6.22%</td><td><span class="session-closed">Closed</span></td></tr><tr><td>Nifty 50</td><td>--</td><td class='pct'>--</td><td><span class="session-closed">Closed</span></td></tr><tr><td>ASX 200</td><td>8,365.90</td><td class='pct negative'>-1.55%</td><td><span class="session-closed">Closed</span></td></tr></tbody></table><div class="sub-section-label">Europe</div>
+        <table class="snapshot-table">
+          <thead><tr><th>Index</th><th>Close/Price</th><th>Daily %</th><th>Session</th></tr></thead>
+          <tbody><tr><td>DAX</td><td>21,932.00</td><td class='pct negative'>-5.09%</td><td><span class="session-partial">Early Session</span></td></tr><tr><td>FTSE 100</td><td>9,769.00</td><td class='pct negative'>-3.35%</td><td><span class="session-partial">Early Session</span></td></tr><tr><td>CAC 40</td><td>7,550.00</td><td class='pct negative'>-4.08%</td><td><span class="session-partial">Early Session</span></td></tr><tr><td>Euro Stoxx 50</td><td>5,351.00</td><td class='pct negative'>-5.74%</td><td><span class="session-partial">Early Session</span></td></tr></tbody></table>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">Currencies &amp; Safe Havens</div>
+      <table class="snapshot-table">
+        <thead><tr><th>Pair</th><th>Rate</th><th>Daily %</th></tr></thead>
+        <tbody><tr><td>EUR/USD</td><td>1.1526</td><td class='pct negative'>-0.46%</td></tr><tr><td>GBP/USD</td><td>1.3326</td><td class='pct negative'>-0.77%</td></tr><tr><td>USD/JPY</td><td>159.3800</td><td class='pct positive'>+0.62%</td></tr><tr><td>AUD/USD</td><td>--</td><td class='pct'>--</td></tr><tr><td>USD/CNH</td><td>6.9107</td><td class='pct positive'>+0.38%</td></tr><tr><td>CHF/USD</td><td>--</td><td class='pct'>--</td></tr></tbody>
       </table>
     </div>
 
-  <!-- RAW DATA LINK -->
-  <div style="text-align:center;padding:12px 40px 0;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:1px;color:var(--muted);">
-    Want the raw numbers?
-    <a href="data/index.html" style="color:var(--accent);text-decoration:none;margin-left:4px;">View full market data &rarr;</a>
-  </div>
+    <div class="section-block">
+      <div class="section-title">Pre-Market Futures</div>
+      <table class="snapshot-table">
+        <thead><tr><th>Contract</th><th>Price</th><th>Daily %</th></tr></thead>
+        <tbody><tr class='futures-row-neg'><td>S&P Futures</td><td>6,510.00</td><td class='pct negative'>-2.08%</td></tr><tr class='futures-row-neg'><td>Nasdaq Futures</td><td>23,890.00</td><td class='pct negative'>-1.75%</td></tr><tr class='futures-row-neg'><td>Dow Futures</td><td>45,600.00</td><td class='pct negative'>-0.56%</td></tr><tr class='futures-row-neg'><td>Gold Futures</td><td>4,325.00</td><td class='pct negative'>-8.14%</td></tr><tr class='futures-row-pos'><td>WTI Crude Oil</td><td>100.10</td><td class='pct positive'>+6.13%</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">What Moved Markets Yesterday</div>
+      <table class="events-table">
+        <thead><tr><th>Event</th><th>Actual</th><th>Expected</th><th>Previous</th><th>Surprise</th></tr></thead>
+        <tbody><tr><td colspan="5" style="color:var(--muted);font-style:italic;">No major events recorded.</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="section-block">
+      <div class="section-title">Today’s Watch List</div>
+      <table class="upcoming-table">
+        <thead><tr><th>Time (EST)</th><th>Event</th><th>Importance</th><th>Expected</th></tr></thead>
+        <tbody><tr><td colspan="4" style="color:var(--muted);font-style:italic;">No high-importance events scheduled today.</td></tr></tbody>
+      </table>
+    </div>
 
   </div><!-- /content -->
 
-  <!-- SUBSCRIBE -->
-  <div class="subscribe-section">
-    <h2>Stay in the loop</h2>
-    <p>Free daily market intelligence, every morning.</p>
-    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
-      <input type="email" name="email" placeholder="your@email.com" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-
-  <!-- SHARE BAR -->
-  <div class="share-bar">
-    <span class="share-label">Share this edition</span>
-    <div class="share-buttons">
-      <a class="share-btn twitter" href="#" target="_blank" rel="noopener"
-         onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('The Morning Brief via Framework Foundry —  '+window.location.href);return true;"
-         title="Share on X / Twitter">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a class="share-btn linkedin" href="#" target="_blank" rel="noopener"
-         onclick="this.href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href);return true;"
-         title="Share on LinkedIn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a class="share-btn facebook" href="#" target="_blank" rel="noopener"
-         onclick="this.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href);return true;"
-         title="Share on Facebook">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.35); font-size:10px; letter-spacing:1px;">DAILY EDITION</span></div>
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.35);font-size:10px;letter-spacing:1px;">RAW DATA</span></div>
     <div class="footer-disclaimer">
-      Disclaimer: For informational purposes only. Not investment advice.<br/>
-      Past performance is not indicative of future results.
+      For informational purposes only. Not investment advice.
     </div>
   </footer>
 
