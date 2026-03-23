@@ -1218,6 +1218,7 @@ def generate_linkedin_post(context: dict) -> str:
     if positioning:
         parts.append(f"Positioning: {positioning}")
     parts.append("Full breakdown → frameworkfoundry.info")
+    parts.append("Not investment advice. For informational purposes only.")
     parts.append("#MacroInvesting #ETFs #MarketOpen")
 
     post = "\n\n".join(parts)
@@ -1328,7 +1329,7 @@ def generate_x_post(context: dict) -> str:
     tweet3 = f"{top_tip}\n\n🧵 3/4" if top_tip else "See full positioning notes at frameworkfoundry.info/daily/\n\n🧵 3/4"
 
     # ── Tweet 4: Link ──────────────────────────────────────────────────────────
-    tweet4 = "Full breakdown + positioning notes:\nframeworkfoundry.info/daily/\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 4/4"
+    tweet4 = "Full breakdown + positioning notes:\nframeworkfoundry.info/daily/\n\nNot investment advice. For informational purposes only.\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 4/4"
 
     TWEET_LIMIT = 280
     tweets = [tweet1, tweet2, tweet3, tweet4]
@@ -1554,7 +1555,7 @@ def generate_substack_post(context: dict) -> str:
         "---",
         f"## Positioning Notes\n\n{tips_lines}",
         "---",
-        f"*Full edition + raw data: [frameworkfoundry.info/daily/{context['date']}/data](https://frameworkfoundry.info/daily/{context['date']}/data)*\n\n*Framework Foundry · Unsubscribe*",
+        f"*Full edition + raw data: [frameworkfoundry.info/daily/{context['date']}/data](https://frameworkfoundry.info/daily/{context['date']}/data)*\n\n*Not investment advice. For informational purposes only.*\n\n*Framework Foundry · Unsubscribe*",
     ])
 
     return (
