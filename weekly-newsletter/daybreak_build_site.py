@@ -106,6 +106,7 @@ def render_html(ctx: dict) -> str:
         if para:
             para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", para)
             para = _re.sub(r"\*(.+?)\*",     r"<em>\1</em>",         para)
+            para = _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', para)
             narrative_html += f'<p class="brief-text">{para}</p>\n'
 
     # ── Plain-English Summary ─────────────────────────────────────────────────
@@ -117,10 +118,11 @@ def render_html(ctx: dict) -> str:
             continue
         if block.startswith("- "):
             items = [line[2:].strip() for line in block.splitlines() if line.startswith("- ")]
-            items_html = "".join(
-                f'<li>{_re.sub(r"\\*\\*(.+?)\\*\\*", r"<strong>\\1</strong>", item)}</li>'
-                for item in items
-            )
+            def _fmt(item):
+                item = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", item)
+                item = _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', item)
+                return item
+            items_html = "".join(f'<li>{_fmt(item)}</li>' for item in items)
             plain_html += f'<ul class="plain-list">{items_html}</ul>\n'
         else:
             para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", block)
