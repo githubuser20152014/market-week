@@ -310,6 +310,10 @@ def render_html(ctx: dict) -> str:
             signal, action = tip.split(sep, 1)
         else:
             signal, action = tip, ""
+        def _md_links(text):
+            return _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', text)
+        signal = _md_links(signal)
+        action = _md_links(action)
         tips_rows += f"""
             <tr>
               <td class="signal-col">{signal}</td>
