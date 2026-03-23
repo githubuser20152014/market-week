@@ -1156,6 +1156,7 @@ def generate_daybreak_positioning_tips(us_indices: list, futures: list,
 def _strip_markdown(text: str) -> str:
     """Remove Markdown formatting for plain-text platforms like LinkedIn."""
     import re
+    text = re.sub(r'\[([^\]]+)\]\(https?://[^\)]+\)', r'\1', text)  # [text](url) → text
     text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)   # **bold** → bold
     text = re.sub(r'\*(.+?)\*', r'\1', text)         # *italic* → italic
     text = re.sub(r'^- ', '', text, flags=re.MULTILINE)  # list items
