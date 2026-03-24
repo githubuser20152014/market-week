@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "date": "2026-03-24",
+    "generated_at": "2026-03-24T11:28:41.516465Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6506.48,
+      "close": 6581.0,
+      "daily_pct": 1.1453,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 45577.4688,
+      "close": 46208.4688,
+      "daily_pct": 1.3845,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21647.6094,
+      "close": 21946.7598,
+      "daily_pct": 1.3819,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2438.45,
+      "close": 2494.2273,
+      "daily_pct": 2.2874,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4404.1001,
+      "close": 4406.2002,
+      "daily_pct": 0.0477,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.391,
+      "close": 4.334,
+      "daily_pct": -1.2981,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -5.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.95,
+      "close": 99.286,
+      "daily_pct": 0.3396,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 88.13,
+      "close": 90.44,
+      "daily_pct": 2.6211,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 52252.28,
+      "prev_close": 51515.49,
+      "daily_pct": 1.4302,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25063.71,
+      "prev_close": 24382.47,
+      "daily_pct": 2.794,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5553.92,
+      "prev_close": 5405.75,
+      "daily_pct": 2.741,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22912.4,
+      "prev_close": 22512.65,
+      "daily_pct": 1.7757,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8379.4,
+      "prev_close": 8365.9,
+      "daily_pct": 0.1614,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22619.54,
+      "prev_close": 22653.86,
+      "daily_pct": -0.1515,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 9918.65,
+      "prev_close": 9894.2,
+      "daily_pct": 0.2471,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7740.42,
+      "prev_close": 7726.2,
+      "daily_pct": 0.184,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5575.37,
+      "prev_close": 5574.32,
+      "daily_pct": 0.0188,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15969,
+      "prev_close": 1.15602,
+      "daily_pct": 0.3178
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3407,
+      "prev_close": 1.33316,
+      "daily_pct": 0.566
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.68401,
+      "prev_close": 159.23399,
+      "daily_pct": -0.3454
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69712,
+      "prev_close": 0.70078,
+      "daily_pct": -0.5221
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.89559,
+      "prev_close": 6.89991,
+      "daily_pct": -0.0626
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27055,
+      "prev_close": 1.26933,
+      "daily_pct": 0.0966
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6623.5,
+      "prev_close": 6634.75,
+      "daily_pct": -0.1696
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24381.5,
+      "prev_close": 24408.25,
+      "daily_pct": -0.1096
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46427.0,
+      "prev_close": 46522.0,
+      "daily_pct": -0.2042
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4406.4,
+      "prev_close": 4404.1,
+      "daily_pct": 0.0522
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.66,
+      "prev_close": 110.92,
+      "daily_pct": -0.2395
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 90.46,
+      "prev_close": 88.13,
+      "daily_pct": 2.6438
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.2%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil rises with Brent climbing back above $100 as optimism fades over Iran war de-escalation",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 11:00:58 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/oil-prices-today-wti-brent-middle-east-iran-war.html",
+      "summary": "Oil prices traded higher on Tuesday, with international benchmark Brent crude climbing back above $100 per barrel."
+    },
+    {
+      "headline": "Apollo gives investors only 45% of requested withdrawals from $15 billion private credit fund",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 00:48:12 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/apollo-private-credit-fund-gives-investors-only-45percent-of-requested-withdrawals.html",
+      "summary": "The withdrawals show that Apollo didn't avoid the rush of investor redemptions plaguing rivals, driven by concern over private credit loans to software firms."
+    },
+    {
+      "headline": "White House to pay TotalEnergies $1 billion to kill off East Coast wind farm projects",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 07:26:02 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/us-to-pay-totalenergies-1-billion-to-kill-east-coast-wind-projects.html",
+      "summary": "The announcement comes as the Iran war disrupts global oil and gas supplies, making the U.S.' development of its LNG resources more urgent."
+    },
+    {
+      "headline": "Iran Supreme Leader Mojtaba Khamenei gets another blue check on X, despite sanctions policy",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 09:05:15 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/iran-supreme-leader-gets-new-x-premium-account-despite-sanctions.html",
+      "summary": "Iran's new Supreme Leader, Mojtaba Khamenei, appears to have subscribed to a new X Premium English-language account."
+    },
+    {
+      "headline": "Chevron CEO says Iran war impact isn't fully priced into oil market, traders have \u2018scant information\u2019",
+      "source": "CNBC",
+      "published": "Mon, 23 Mar 2026 20:47:50 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/chevron-ceo-oil-price-iran-war-strait-hormuz.html",
+      "summary": "Chevron CEO Mike Wirth said the physical supply of oil is much tighter than the oil futures market suggests."
+    },
+    {
+      "headline": "Jim Cramer says Monday\u2019s market rally may be short-lived",
+      "source": "CNBC",
+      "published": "Mon, 23 Mar 2026 22:25:56 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/jim-cramer-mondays-market-rally-may-be-short-lived.html",
+      "summary": "CNBC's Jim Cramer cautioned investors that Monday's stock market rebound, sparked by optimism over a potential end to the U.S.-Iran war, might be temporary."
+    },
+    {
+      "headline": "Here are the things we want to see to trust this stock market rally",
+      "source": "CNBC",
+      "published": "Mon, 23 Mar 2026 18:03:33 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/here-are-the-things-we-want-to-see-to-trust-this-stock-market-rally.html",
+      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+    },
+    {
+      "headline": "Iran attacks in Strait of Hormuz are \u2018economic terrorism against every nation,\u2019 UAE oil CEO says",
+      "source": "CNBC",
+      "published": "Mon, 23 Mar 2026 22:59:45 GMT",
+      "url": "https://www.cnbc.com/2026/03/23/iran-war-strait-hormuz-uae-adnoc.html",
+      "summary": "Sultan Ahmed Al Jaber, CEO of the UAE's state-owned oil company, said the Strait of Hormuz must re-open to resolve the supply shock."
+    }
+  ]
+}
