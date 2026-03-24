@@ -59,6 +59,9 @@ requested date. This means data is stale — use `--live` or create a new fixtur
 - **Update this file when:** a new content type is added, a new distribution channel goes live, a major integration changes (e.g. Substack automated, LinkedIn API), or new data sources are added
 - When updating, also bump the "Generated" date in the footer
 
+## Daybreak Publish — No PDF Needed
+- [feedback_no_pdf.md](feedback_no_pdf.md) — skip PDF generation for daily edition; ignore verify_site_content.py failures about missing PDF
+
 ## Publishing Standards
 
 - Subscriber emails must include the **Framework Foundry banner**
