@@ -1324,9 +1324,10 @@ def find_global_dates():
 
 def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
     """
-    Override ctx['narrative'] and ctx['tips'] from the approved .md file
-    so the site HTML always reflects the human-reviewed content, not the
-    auto-generated text from the fixture.
+    Override narrative fields from the approved .md file so the site HTML
+    always reflects human-reviewed content, not auto-generated fixture text.
+    Handles both the old single-section format and the new two-section format
+    (The Brief / What it means for you / The One Trade).
     """
     md_path = OUTPUT_DIR / f"market_day_break_{date_str}.md"
     if not md_path.exists():
@@ -1347,13 +1348,11 @@ def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
     if current is not None:
         sections[current] = "\n".join(buf)
 
-    # Override narrative from "The Brief"
-    if "The Brief" in sections:
-        brief_text = sections["The Brief"]
-        # Collect non-empty, non-separator paragraph lines as \n\n-separated blocks
+    def _extract_paras(section_text: str) -> str:
+        """Return \n\n-joined paragraphs from a section, stripping separators."""
         paras = []
         current_block: list[str] = []
-        for line in brief_text.splitlines():
+        for line in section_text.splitlines():
             stripped = line.strip()
             if not stripped or stripped == "---":
                 if current_block:
@@ -1363,8 +1362,58 @@ def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
                 current_block.append(stripped)
         if current_block:
             paras.append(" ".join(current_block))
-        if paras:
-            ctx["narrative"] = "\n\n".join(paras)
+        return "\n\n".join(paras)
+
+    # "The Brief" → brief_body (new format) + narrative (legacy key)
+    if "The Brief" in sections:
+        text = _extract_paras(sections["The Brief"])
+        if text:
+            ctx["brief_body"] = text
+            ctx["narrative"] = text  # keep legacy key in sync
+
+    # "What it means for you" → investor_section
+    if "What it means for you" in sections:
+        text = _extract_paras(sections["What it means for you"])
+        if text:
+            ctx["investor_section"] = text
+
+    # "The One Trade" → one_trade dict parsed from MD
+    if "The One Trade" in sections:
+        ot_text = sections["The One Trade"]
+        ticker, direction, thesis, confirm, risk = None, None, None, None, None
+        # First line: **[TICKER](url) — Direction**
+        for line in ot_text.splitlines():
+            s = line.strip()
+            if not s:
+                continue
+            # Ticker + direction: **[GLD](...) — Long**
+            m = re.match(r"\*?\*?\[([A-Z0-9]+)\]\([^)]+\)\s*[—–-]+\s*(.+?)\*?\*?$", s)
+            if m and ticker is None:
+                ticker = m.group(1).strip()
+                direction = m.group(2).strip().rstrip("*")
+                continue
+            # Thesis: italic line *...*
+            if s.startswith("*") and s.endswith("*") and thesis is None:
+                thesis = s.strip("*").strip()
+                continue
+            # Confirms:
+            m2 = re.match(r"\*?\*?Confirms:\*?\*?\s*(.*)", s)
+            if m2 and confirm is None:
+                confirm = m2.group(1).strip()
+                continue
+            # Risk:
+            m3 = re.match(r"\*?\*?Risk:\*?\*?\s*(.*)", s)
+            if m3 and risk is None:
+                risk = m3.group(1).strip()
+                continue
+        if ticker and direction:
+            ctx["one_trade"] = {
+                "ticker":    ticker,
+                "direction": direction,
+                "thesis":    thesis or "",
+                "confirm":   confirm or "",
+                "risk":      risk or "",
+            }
 
     # Override tips from "Positioning Notes"
     if "Positioning Notes" in sections:
@@ -1376,8 +1425,7 @@ def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
         if tips:
             ctx["tips"] = tips
 
-    # Clear plain_summary so the auto-generated duplicate narrative doesn't
-    # render after our approved content in "The Brief" section.
+    # Clear plain_summary so the auto-generated duplicate doesn't render.
     ctx["plain_summary"] = ""
 
     return ctx
