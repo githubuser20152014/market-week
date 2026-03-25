@@ -52,6 +52,40 @@ _DAYBREAK_CSS = _BASE_CSS + """
   .futures-row-pos { background: rgba(42,125,79,0.07) !important; }
   .futures-row-neg { background: rgba(185,28,28,0.07) !important; }
 
+  /* The One Trade card */
+  .one-trade-card {
+    border-left: 3px solid var(--accent);
+    background: #f7f4ef;
+    padding: 16px 20px;
+    margin: 0;
+  }
+  .one-trade-ticker {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .one-trade-ticker a { color: var(--accent); text-decoration: none; }
+  .one-trade-ticker a:hover { text-decoration: underline; }
+  .one-trade-thesis {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    margin: 8px 0 12px;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .one-trade-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  .one-trade-meta strong { color: var(--text); font-weight: 600; }
+
   /* Sub-section labels within a section */
   .sub-section-label {
     font-family: 'Raleway', sans-serif;
@@ -109,24 +143,55 @@ def render_html(ctx: dict) -> str:
             para = _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', para)
             narrative_html += f'<p class="brief-text">{para}</p>\n'
 
-    # ── Plain-English Summary ─────────────────────────────────────────────────
-    plain_html = ""
-    raw_plain = ctx.get("plain_summary", "")
-    for block in raw_plain.split("\n\n"):
-        block = block.strip()
-        if not block:
-            continue
-        if block.startswith("- "):
-            items = [line[2:].strip() for line in block.splitlines() if line.startswith("- ")]
-            def _fmt(item):
-                item = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", item)
-                item = _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', item)
-                return item
-            items_html = "".join(f'<li>{_fmt(item)}</li>' for item in items)
-            plain_html += f'<ul class="plain-list">{items_html}</ul>\n'
-        else:
-            para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", block)
-            plain_html += f'<p class="plain-text">{para}</p>\n'
+    # ── Brief Body + Investor Section ─────────────────────────────────────────
+    def _render_plain_blocks(raw_text):
+        html = ""
+        for block in raw_text.split("\n\n"):
+            block = block.strip()
+            if not block:
+                continue
+            if block.startswith("- "):
+                items = [line[2:].strip() for line in block.splitlines() if line.startswith("- ")]
+                def _fmt(item):
+                    item = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", item)
+                    item = _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', item)
+                    return item
+                items_html = "".join(f'<li>{_fmt(item)}</li>' for item in items)
+                html += f'<ul class="plain-list">{items_html}</ul>\n'
+            else:
+                para = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", block)
+                para = _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', para)
+                html += f'<p class="plain-text">{para}</p>\n'
+        return html
+
+    brief_body_html       = _render_plain_blocks(ctx.get("brief_body", ctx.get("plain_summary", "")))
+    investor_section_html = _render_plain_blocks(ctx.get("investor_section", ""))
+
+    # ── The One Trade card ────────────────────────────────────────────────────
+    one_trade_html = ""
+    ot = ctx.get("one_trade")
+    if ot and isinstance(ot, dict):
+        ticker    = ot.get("ticker", "")
+        direction = ot.get("direction", "")
+        thesis    = ot.get("thesis", "")
+        confirm   = ot.get("confirm", "")
+        risk      = ot.get("risk", "")
+        ticker_url = f"https://finance.yahoo.com/quote/{ticker}"
+        def _ot_fmt(text):
+            text = _re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
+            text = _re.sub(r"\[([^\]]+)\]\((https?://[^\)]+)\)", r'<a href="\2" target="_blank">\1</a>', text)
+            return text
+        one_trade_html = (
+            '<div class="section-block">\n'
+            '  <div class="section-title">The One Trade</div>\n'
+            '  <div class="one-trade-card">\n'
+            f'    <div class="one-trade-ticker"><a href="{ticker_url}" target="_blank">{ticker}</a> &mdash; {direction}</div>\n'
+            f'    <div class="one-trade-thesis">{_ot_fmt(thesis)}</div>\n'
+            f'    <div class="one-trade-meta"><strong>Confirms:</strong> {_ot_fmt(confirm)}</div>\n'
+            f'    <div class="one-trade-meta"><strong>Risk:</strong> {_ot_fmt(risk)}</div>\n'
+            '  </div>\n'
+            '</div>\n'
+        )
 
     # ── Market-Moving Headlines ───────────────────────────────────────────────
     news_html = ""
@@ -321,12 +386,13 @@ def render_html(ctx: dict) -> str:
             </tr>"""
 
     # ── Full HTML ─────────────────────────────────────────────────────────────
+    page_title = ctx.get("email_subject") or f"The Morning Brief \u00b7 {date_str}"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Framework Foundry \u2014 The Morning Brief \u00b7 {date_str}</title>
+  <title>Framework Foundry \u2014 {page_title}</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
   <style>
 {_DAYBREAK_CSS}
@@ -378,8 +444,16 @@ def render_html(ctx: dict) -> str:
     <div class="section-block">
       <div class="section-title">The Brief</div>
       {narrative_html}
-      {plain_html}
+      {brief_body_html}
     </div>
+
+    <!-- WHAT IT MEANS FOR YOU -->
+    <div class="section-block">
+      <div class="section-title">What it means for you</div>
+      {investor_section_html}
+    </div>
+
+    {one_trade_html}
 
     {news_html}
 

@@ -128,13 +128,15 @@ def main():
             )
             print(f"Newsletter saved (minimal) -> {md_path}")
 
+    # ── Email subject (sidecar file read by send_email.py) ────────────────────
+    title_path = OUTPUT_DIR / f"title_{date_str}.txt"
+    subject_text = context.get("email_subject") or _generate_post_title(context)
+    title_path.write_text(subject_text, encoding="utf-8")
+    print(f"Email subject saved -> {title_path}")
+
     if args.md_only:
         print("MD-only mode — skipping social posts and PDF.")
         return
-
-    # ── Email subject (sidecar file read by send_email.py) ────────────────────
-    title_path = OUTPUT_DIR / f"title_{date_str}.txt"
-    title_path.write_text(_generate_post_title(context), encoding="utf-8")
 
     # ── LinkedIn post ─────────────────────────────────────────────────────────
     import warnings

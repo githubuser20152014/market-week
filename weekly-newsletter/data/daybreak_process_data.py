@@ -114,7 +114,7 @@ you what actually matters and what to do about it.
 
 You will receive structured JSON with yesterday's US close, overnight/APAC \
 markets, pre-market futures, FX, news headlines, and today's economic calendar. \
-Return a JSON object with exactly these 3 keys:
+Return a JSON object with exactly these 4 keys:
 
 - narrative: 2–3 sentences. Sharp scene-setter. What is the dominant mood? \
   What cross-asset signal stands out (gold/dollar/yields diverging from equities, \
@@ -134,6 +134,33 @@ Return a JSON object with exactly these 3 keys:
 - positioning: 3–5 bullet points, one per line, each starting with "- ". \
   Specific, conditional ETF-level positioning for today. Each tip must explain \
   the reasoning. Where relevant, give the conditional: what happens if X vs. if Y.
+
+- one_trade: object with exactly these 5 fields: \
+    ticker    — ETF or index symbol only (e.g. "GLD", "XLE", "TLT"). \
+    direction — exactly one of: "Long", "Short", or "Hold". \
+    thesis    — 1 punchy sentence. Start with the signal, not the action. No hedging. \
+                Why this trade, why today specifically — the asymmetry in plain English. \
+    confirm   — The specific condition that confirms the trade is working: \
+                a price level, a time-of-day check, or a sector behavior. Be concrete. \
+    risk      — The exact failure condition that invalidates the trade. \
+                Name the trigger, not a vague "if conditions change". \
+  Pick the single highest-conviction idea from your analysis — the one where \
+  the signal is clearest and the risk/reward is most asymmetric today. \
+  This is the one trade a reader who only has 60 seconds should know about.
+
+In plain_summary, use **bold** to highlight key callouts a reader can scan at a glance: \
+price figures at inflection points (e.g., **gold at $4,562**), \
+cross-asset tension phrases (e.g., **bonds never bought the rally**), \
+named risks or catalysts (e.g., **Strait of Hormuz**), \
+and sector/theme conclusions (e.g., **energy trade is back on the table**). \
+Aim for 6–10 bold phrases across the 4 paragraphs — enough to reward scanning, not so many that nothing stands out.
+
+- email_subject: one email subject line, 55–70 characters. \
+    Lead with "The One Trade: {ticker} {direction} — " then one specific reason \
+    why this is today's key signal. Make the reader curious and excited to open. \
+    No fluff, no "markets", no generic phrases. The reason must be concrete — \
+    name the signal, the asset, or the anomaly. No trailing punctuation. \
+    Example: "The One Trade: GLD Long — gold refuses to sell into a risk-on open"
 
 Return ONLY valid JSON — no markdown fences, no extra keys, no commentary outside the JSON.\
 """
@@ -173,7 +200,7 @@ def generate_daybreak_claude_narrative(
         client = anthropic.Anthropic(api_key=api_key)
         response = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=1500,
+            max_tokens=1800,
             system=_DAYBREAK_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": _json.dumps(payload, default=str)}],
         )
@@ -183,7 +210,7 @@ def generate_daybreak_claude_narrative(
             if raw.startswith("json"):
                 raw = raw[4:]
         result = _json.loads(raw)
-        for key in ("narrative", "plain_summary", "positioning"):
+        for key in ("narrative", "plain_summary", "positioning", "one_trade", "email_subject"):
             if key not in result:
                 print(f"WARNING: Claude response missing key '{key}' — falling back to template narrative.")
                 return None
@@ -239,7 +266,10 @@ def build_daybreak_narrative_sections(
     us_indices, intl_indices, fx, futures,
     yesterday_events, today_events, news_items
 ):
-    """Return (narrative, plain_summary, tips) using Claude if available.
+    """Return (narrative, brief_body, investor_section, tips) using Claude if available.
+
+    brief_body       — paragraphs [1-2]: what happened + why it happened
+    investor_section — paragraphs [3-4]: what it means for you + going into today
 
     Falls back to template-based generation if the API key is absent or call fails.
     """
@@ -249,8 +279,10 @@ def build_daybreak_narrative_sections(
     )
 
     if claude:
-        narrative     = claude["narrative"]
-        plain_summary = claude["plain_summary"]
+        narrative      = claude["narrative"]
+        plain_summary  = claude["plain_summary"]
+        one_trade      = claude["one_trade"]
+        email_subject  = claude["email_subject"]
         raw_pos = claude["positioning"]
         if isinstance(raw_pos, list):
             tips = [str(item).lstrip("- ").strip() for item in raw_pos if item]
@@ -271,13 +303,20 @@ def build_daybreak_narrative_sections(
         tips = generate_daybreak_positioning_tips(
             us_indices, futures, yesterday_events, today_events, news_items=news_items
         )
+        one_trade     = None
+        email_subject = None
 
     # Hyperlink all ETF/index tickers in the narrative output
     narrative     = _hyperlink_tickers(narrative)
     plain_summary = _hyperlink_tickers(plain_summary)
     tips          = [_hyperlink_tickers(tip) for tip in tips]
 
-    return narrative, plain_summary, tips
+    # Split plain_summary into two sections by paragraph index
+    paras = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
+    brief_body       = "\n\n".join(paras[:2])
+    investor_section = "\n\n".join(paras[2:])
+
+    return narrative, brief_body, investor_section, one_trade, email_subject, tips
 
 
 # ── Narrative ─────────────────────────────────────────────────────────────────
@@ -1179,7 +1218,9 @@ def generate_linkedin_post(context: dict) -> str:
 
         #MacroInvesting #ETFs #MarketOpen
     """
-    plain_summary = context.get("plain_summary", "")
+    plain_summary = context.get("plain_summary") or "\n\n".join(filter(None, [
+        context.get("brief_body", ""), context.get("investor_section", "")
+    ]))
     paragraphs = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
 
     if paragraphs:
@@ -1201,23 +1242,34 @@ def generate_linkedin_post(context: dict) -> str:
     else:
         best_line = ""
 
-    # First positioning tip
-    tips = context.get("tips") or context.get("positioning_tips") or []
-    positioning = _strip_markdown(tips[0]) if tips else ""
-
-    # Assemble post
-    title = _generate_post_title(context)
+    # Assemble post — lead with The One Trade if available, else data-driven title
+    ot = context.get("one_trade")
     parts = []
-    if title:
-        parts.append(title)
-    if hook:
-        parts.append(hook)
-    if body:
-        parts.append(body)
-    if best_line:
-        parts.append(best_line)
-    if positioning:
-        parts.append(f"Positioning: {positioning}")
+    if ot and isinstance(ot, dict):
+        ticker    = ot.get("ticker", "")
+        direction = ot.get("direction", "")
+        thesis    = _strip_markdown(ot.get("thesis", ""))
+        confirm   = _strip_markdown(ot.get("confirm", ""))
+        risk      = _strip_markdown(ot.get("risk", ""))
+        ot_block = f"The One Trade: {ticker} {direction}\n\n{thesis}"
+        if confirm:
+            ot_block += f"\n\nConfirms: {confirm}"
+        if risk:
+            ot_block += f"\nRisk: {risk}"
+        parts.append(ot_block)
+        # When One Trade leads, skip the full body — keep it punchy for LinkedIn
+        if best_line:
+            parts.append(best_line)
+    else:
+        title = _generate_post_title(context)
+        if title:
+            parts.append(title)
+        if hook:
+            parts.append(hook)
+        if body:
+            parts.append(body)
+        if best_line:
+            parts.append(best_line)
     parts.append("Full breakdown → frameworkfoundry.info")
     parts.append("Not investment advice. For informational purposes only.")
     parts.append("#MacroInvesting #ETFs #MarketOpen")
@@ -1256,7 +1308,10 @@ def generate_x_post(context: dict) -> str:
     futures    = context.get("futures")    or []
     tips       = context.get("tips") or context.get("positioning_tips") or []
     news_items = context.get("news_items") or []
-    plain_summary = context.get("plain_summary", "")
+    # Reconstruct plain_summary from brief_body + investor_section if needed
+    plain_summary = context.get("plain_summary") or "\n\n".join(filter(None, [
+        context.get("brief_body", ""), context.get("investor_section", "")
+    ]))
 
     sp      = next((i for i in us_indices if "S&P"     in i.get("name", "")), None)
     nasdaq  = next((i for i in us_indices if "Nasdaq"  in i.get("name", "")), None)
@@ -1320,14 +1375,31 @@ def generate_x_post(context: dict) -> str:
     combined = _trim_to_sentences(combined, 240)
     tweet2 = f"{combined}\n\n🧵 2/4"
 
-    # ── Tweet 3: Top positioning tip (full) ───────────────────────────────────
-    # Include the first tip in full (Signal -- Action format, no truncation).
-    # If the first tip alone exceeds 274 chars, trim to the nearest sentence.
-    TWEET_BODY_LIMIT = 274  # 280 minus "🧵 3/4" + "\n\n"
-    top_tip = _strip_markdown(tips[0]) if tips else ""
-    if len(top_tip) > TWEET_BODY_LIMIT:
-        top_tip = _trim_to_sentences(top_tip, TWEET_BODY_LIMIT)
-    tweet3 = f"{top_tip}\n\n🧵 3/4" if top_tip else "See full positioning notes at frameworkfoundry.info/daily/\n\n🧵 3/4"
+    # ── Tweet 3: The One Trade (or first positioning tip as fallback) ────────────
+    TWEET_BODY_LIMIT = 268  # 280 minus "🧵 3/4" (6) + "\n\n" (2) + emoji buffer (4)
+    ot = context.get("one_trade")
+    if ot and isinstance(ot, dict):
+        ot_ticker    = ot.get("ticker", "")
+        ot_direction = ot.get("direction", "")
+        ot_thesis    = _strip_markdown(ot.get("thesis", ""))
+        ot_confirm   = _strip_markdown(ot.get("confirm", ""))
+        ot_risk      = _strip_markdown(ot.get("risk", ""))
+        ot_thesis_trimmed   = _trim_to_sentences(ot_thesis, 140)
+        ot_confirm_trimmed  = _trim_to_sentences(ot_confirm, 80)
+        ot_risk_trimmed     = _trim_to_sentences(ot_risk, 80)
+        t3_body = f"The One Trade: {ot_ticker} {ot_direction}\n\n{ot_thesis_trimmed}"
+        if ot_confirm_trimmed:
+            t3_body += f"\n\n✓ {ot_confirm_trimmed}"
+        if ot_risk_trimmed:
+            t3_body += f"\n✗ {ot_risk_trimmed}"
+        if len(t3_body) > TWEET_BODY_LIMIT:
+            t3_body = _trim_to_sentences(t3_body, TWEET_BODY_LIMIT)
+        tweet3 = f"{t3_body}\n\n🧵 3/4"
+    else:
+        top_tip = _strip_markdown(tips[0]) if tips else ""
+        if len(top_tip) > TWEET_BODY_LIMIT:
+            top_tip = _trim_to_sentences(top_tip, TWEET_BODY_LIMIT)
+        tweet3 = f"{top_tip}\n\n🧵 3/4" if top_tip else "See full positioning notes at frameworkfoundry.info/daily/\n\n🧵 3/4"
 
     # ── Tweet 4: Link ──────────────────────────────────────────────────────────
     tweet4 = "Full breakdown + positioning notes:\nframeworkfoundry.info/daily/\n\nNot investment advice. For informational purposes only.\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 4/4"
@@ -1590,7 +1662,7 @@ def build_daybreak_context(raw: dict) -> dict:
 
     market_news_raw = raw.get("market_news", [])
 
-    narrative, plain_summary, tips = build_daybreak_narrative_sections(
+    narrative, brief_body, investor_section, one_trade, email_subject, tips = build_daybreak_narrative_sections(
         us_indices, intl_indices, fx_rates, futures,
         yesterday_events, today_events, market_news_raw,
     )
@@ -1600,7 +1672,12 @@ def build_daybreak_context(raw: dict) -> dict:
     if editorial.get("narrative_suffix"):
         narrative = narrative.rstrip() + " " + editorial["narrative_suffix"]
     if editorial.get("plain_summary"):
-        plain_summary = editorial["plain_summary"]
+        # Legacy override: split into brief_body + investor_section by paragraph index
+        paras = [p.strip() for p in editorial["plain_summary"].split("\n\n") if p.strip()]
+        brief_body       = "\n\n".join(paras[:2])
+        investor_section = "\n\n".join(paras[2:])
+    if editorial.get("one_trade"):
+        one_trade = editorial["one_trade"]
     for extra_tip in editorial.get("extra_tips", []):
         tips.append(extra_tip)
 
@@ -1616,8 +1693,11 @@ def build_daybreak_context(raw: dict) -> dict:
         "edition":        "Daily Edition",
         "tagline":        "Daily Edition \u00b7 Market intelligence at the open",
         "region_banner":  "Coverage: US Close \u00b7 Asia-Pacific \u00b7 Europe \u00b7 FX \u00b7 Macro",
-        "narrative":      narrative,
-        "plain_summary":  plain_summary,
+        "narrative":         narrative,
+        "brief_body":        brief_body,
+        "investor_section":  investor_section,
+        "one_trade":         one_trade,
+        "email_subject":     email_subject,
         "market_news":    process_market_news(market_news_raw)[:5],
         "us_indices":     us_indices,
         "intl_indices":   intl_indices,
