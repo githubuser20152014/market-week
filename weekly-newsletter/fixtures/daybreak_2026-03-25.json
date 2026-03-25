@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-25",
+    "generated_at": "2026-03-25T10:00:23.460231Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6581.0,
+      "close": 6556.3701,
+      "daily_pct": -0.3743,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46208.4688,
+      "close": 46124.0586,
+      "daily_pct": -0.1827,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21946.7598,
+      "close": 21761.8945,
+      "daily_pct": -0.8423,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2494.23,
+      "close": 2505.4426,
+      "daily_pct": 0.4495,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4399.2998,
+      "close": 4536.6001,
+      "daily_pct": 3.121,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.334,
+      "close": 4.392,
+      "daily_pct": 1.3382,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.43,
+      "close": 99.371,
+      "daily_pct": -0.0593,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 92.35,
+      "close": 88.63,
+      "daily_pct": -4.0282,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53749.62,
+      "prev_close": 52252.28,
+      "daily_pct": 2.8656,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25335.95,
+      "prev_close": 25063.71,
+      "daily_pct": 1.0862,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5642.21,
+      "prev_close": 5553.92,
+      "daily_pct": 1.5897,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23305.1,
+      "prev_close": 22912.4,
+      "daily_pct": 1.7139,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8534.3,
+      "prev_close": 8379.4,
+      "daily_pct": 1.8486,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22949.83,
+      "prev_close": 22636.91,
+      "daily_pct": 1.3823,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10049.24,
+      "prev_close": 9965.2,
+      "daily_pct": 0.8433,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7845.39,
+      "prev_close": 7743.92,
+      "daily_pct": 1.3103,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5658.49,
+      "prev_close": 5581.29,
+      "daily_pct": 1.3832,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16036,
+      "prev_close": 1.16071,
+      "daily_pct": -0.0302
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3397,
+      "prev_close": 1.34243,
+      "daily_pct": -0.2028
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.886,
+      "prev_close": 158.479,
+      "daily_pct": 0.2568
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69696,
+      "prev_close": 0.70061,
+      "daily_pct": -0.5208
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.90246,
+      "prev_close": 6.89297,
+      "daily_pct": 0.1377
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26592,
+      "prev_close": 1.27162,
+      "daily_pct": -0.4481
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6651.25,
+      "prev_close": 6606.0,
+      "daily_pct": 0.685
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24422.5,
+      "prev_close": 24213.75,
+      "daily_pct": 0.8621
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46727.0,
+      "prev_close": 46415.0,
+      "daily_pct": 0.6722
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4536.3,
+      "prev_close": 4399.3,
+      "daily_pct": 3.1141
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.83,
+      "prev_close": 110.42,
+      "daily_pct": 0.3679
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 88.65,
+      "prev_close": 92.35,
+      "daily_pct": -4.0065
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "U.S. sent Iran 15-point plan to end war, report says; Trump says 'in negotiations right now'",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 22:54:07 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/trump-iran-war-negotiations.html",
+      "summary": "\"Operation Epic Fury continues unabated\" to achieve President Donald Trump's military objectives, White House press secretary Karoline Leavitt said."
+    },
+    {
+      "headline": "Private credit\u2019s \u2018zero-loss fantasy\u2019 is coming to an end as defaults and fund exits rise",
+      "source": "CNBC",
+      "published": "Wed, 25 Mar 2026 09:51:07 GMT",
+      "url": "https://www.cnbc.com/2026/03/25/private-credit-defaults-loan-quality-debt-risk-systemic-ai-disruption.html",
+      "summary": "Private credit is expected to see a surge in defaults as investors continue to pull money from the sector."
+    },
+    {
+      "headline": "Arm stock pops 6% as CEO Haas issues $15 billion revenue expectation for new chip",
+      "source": "CNBC",
+      "published": "Wed, 25 Mar 2026 09:54:47 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/arm-stock-pops-haas-chip-cpu.html",
+      "summary": "Arm unveiled its first in-house chip on Tuesday at an event in San Francisco, with Meta as the initial customer."
+    },
+    {
+      "headline": "It\u2019s not just oil and gas. The Strait of Hormuz blockage is rattling another vital commodity",
+      "source": "CNBC",
+      "published": "Wed, 25 Mar 2026 08:54:38 GMT",
+      "url": "https://www.cnbc.com/2026/03/25/fertilizer-price-iran-war-food-security-inflation-urea-potash-nitrogen-farmers.html",
+      "summary": "\u201cI'm a lot more concerned about the current crisis than I was when Russia-Ukraine happened four years ago,\u201d one fund manager told CNBC."
+    },
+    {
+      "headline": "Pop Mart shares plunge over 22% as concerns over sustainability of Labubu sales dwarf stellar results",
+      "source": "CNBC",
+      "published": "Wed, 25 Mar 2026 08:58:30 GMT",
+      "url": "https://www.cnbc.com/2026/03/25/pop-mart-labubu-sluggish-crybaby-monster-family-sales-.html",
+      "summary": "the Beijing-based toy maker posted annual revenue of 37.1 billion yuan ($5.4 billion) for 2025, up 185% from a year earlier, just shy of LSEG estimates of 38 billion yuan."
+    },
+    {
+      "headline": "Venezuela opposition leader Mar\u00eda Corina Machado calls for full privatization of oil industry",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 23:34:47 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/venezuela-oil-machado-maduro-trump.html",
+      "summary": "Machado's remarks come as the oil industry remains hesitant to invest in Venezuela after the U.S. ousted former President Nicolas Maduro."
+    },
+    {
+      "headline": "World has 'never experienced' soaring refining margins like this, TotalEnergies CEO tells CNBC",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 19:28:56 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/totalenergies-ceo-world-has-never-experienced-refining-margins-like-this-.html",
+      "summary": "TotalEnergies CEO Patrick Pouyann\u00e9 on the Iran war, the $1 billion deal with the White House, investment in the U.S., and more."
+    },
+    {
+      "headline": "Pakistan offers to facilitate U.S.-Iran war talks as Trump and Tehran give mixed signals",
+      "source": "CNBC",
+      "published": "Tue, 24 Mar 2026 18:26:00 GMT",
+      "url": "https://www.cnbc.com/2026/03/24/trump-iran-war-pakistan-talks.html",
+      "summary": "Trump said top U.S. negotiators and their Iranian counterparts have been engaged in \"very, very strong talks,\" but Tehran has denied that claim."
+    }
+  ]
+}

@@ -4,15 +4,9 @@
 
 ---
 
-## Morning Brief
+## The Brief
 
-At market close, US stocks slipped modestly — the S&P 500 ended 6,632.19 (-0.61%), while the Nasdaq finished 22,105.36 (-0.93%). On the safe-haven front, Gold fell 1.02% to $5,001.10, the 10-year Treasury yield rose 1 bps to 4.29%, and the dollar strengthened (EUR/USD 1.1477). WTI crude fell 1.82% to $96.91/bbl.
-
-APAC markets were mixed overnight, with Hang Seng leading at +1.45% and ASX 200 lagging at -0.39%. European markets are trading mixed. US futures are sending a mixed signal ahead of the open.
-
----
-
-## What This Means
+Geopolitics drove yesterday's selloff, but the cross-asset read is the real tell: gold dropped *alongside* stocks while the dollar caught every safe-haven bid — a dollar-only flight that rarely stays quiet. Futures are green across the board this morning; the market's calling it a dip, but with no data on the calendar and Hormuz headlines still running hot, that thesis gets tested at the open.
 
 **Stocks pulled back modestly yesterday.** The S&P 500 closed 6,632.19 (-0.61%), the Nasdaq 22,105.36 (-0.93%), the Dow 46,558.47 (-0.26%), the Russell 2000 2,480.05 (-0.36%). Selling was broad — all four major indices closed in the red. On the cross-asset front: Gold fell 1.02% to $5,001.10, the 10-year Treasury yield rose 1 bps to 4.29%, and WTI crude fell 1.82% to $96.91/bbl.
 
@@ -39,106 +33,14 @@ APAC was mixed overnight (3 up, 2 down) — Hang Seng led (+1.45%), while ASX 20
 | 3 | [Why the United Arab Emirates is a target for Iran's aggression](https://www.cnbc.com/2026/03/15/iran-us-war-uae-target-aggression.html) | CNBC |
 | 4 | [China talks up oil sufficiency as Trump seeks Beijing's help on securing Hormuz energy route](https://www.cnbc.com/2026/03/16/china-oil-reserves-trump-iran-war-hormuz.html) | CNBC |
 | 5 | [These women pursued a skilled trade — here's what they told us about their experience in a male-dominated world](https://www.cnbc.com/2026/03/15/more-women-are-pursuing-the-skilled-trades-here-are-their-stories.html) | CNBC |
-| 6 | [Democrats blast FCC Chair Carr's broadcast license threats as anti-First Amendment, 'totalitarian'](https://www.cnbc.com/2026/03/15/trump-iran-war-fcc-carr-broadcast-license.html) | CNBC |
-| 7 | [Trump signals possible delay to Beijing summit as U.S. pressures China to help reopen Strait of Hormuz](https://www.cnbc.com/2026/03/16/trump-possible-delay-beijing-summit-china-iran-strait-of-hormuz-.html) | CNBC |
-| 8 | [A Paramount-Warner Bros. movie slate could rule the 2027 box office, but is it sustainable?](https://www.cnbc.com/2026/03/14/paramount-wbd-2027-movie-slate.html) | CNBC |
-
----
-
-## US Market Close
-
-| Index | Close | Daily % |
-|-------|-------|---------|
-| 10Y Treasury | 4.29% | +1 bps |
-| Dow Jones | 46558.47 | -0.26% |
-| Russell 2000 | 2480.05 | -0.36% |
-| S&P 500 | 6632.19 | -0.61% |
-| Nasdaq | 22105.36 | -0.93% |
-| Gold | 5001.10 | -1.02% |
-| WTI Crude Oil | 96.91 | -1.82% |
-| USD Index | -- | -- |
-
-
-**Best:** Dow Jones (-0.26%) | **Worst:** WTI Crude Oil (-1.82%)
-
----
-
-## Overnight Markets
-
-### Asia-Pacific (Closed)
-
-| Index | Close | Daily % |
-|-------|-------|---------|
-| Nikkei 225 | 53751.15 | -0.13% |
-| Hang Seng | 25834.02 | +1.45% |
-| KOSPI | 5549.85 | +1.14% |
-| Nifty 50 | 23408.80 | +1.11% |
-| ASX 200 | 8583.40 | -0.39% |
-
-
-### Europe
-
-| Index | Price | Daily % | Session |
-|-------|-------|---------|---------|
-| DAX | 23478.63 | +0.13% | Early session (~3h in) |
-| FTSE 100 | 10293.46 | +0.31% | Early session (~3h in) |
-| CAC 40 | 7899.42 | -0.15% | Early session (~3h in) |
-| Euro Stoxx 50 | 5716.54 | -0.00% | Early session (~3h in) |
-
-
----
-
-## Currencies & Safe Havens
-
-| Pair | Rate | Daily % |
-|------|------|---------|
-| EUR/USD | 1.1477 | -0.39% |
-| GBP/USD | 1.3270 | -0.62% |
-| USD/JPY | 159.2310 | +0.02% |
-| AUD/USD | 0.7049 | -0.37% |
-| USD/CNH | 6.8940 | -0.09% |
-| CHF/USD | 1.2688 | -0.36% |
-
-
----
-
-## Pre-Market Futures
-
-| Contract | Price | Daily % |
-|----------|-------|---------|
-| S&P Futures | 6686.25 | +0.76% |
-| Nasdaq Futures | 24609.25 | +0.88% |
-| Dow Futures | 47136.00 | +1.17% |
-| Gold Futures | 5001.50 | -1.01% |
-| 10Y T-Note | 111.62 | +0.06% |
-| WTI Crude Oil | 96.87 | -1.86% |
-
-
----
-
-## What Moved Markets Yesterday
-
-| Event | Actual | Expected | Previous | Surprise |
-|-------|--------|----------|----------|---------|
-| *No major events* | | | | |
-
-
----
-
-## Today's Watch List
-
-| Time (EST) | Event | Importance | Expected |
-|-----------|-------|------------|---------|
-| | *No high-importance events today* | | |
-
 
 ---
 
 ## Positioning Notes
 
-- Equity futures are green (S&P +0.76%, Nasdaq +0.88%) -- market is treating yesterday's pullback as a dip. Consider holding or adding to broad exposure (SPY, QQQ); watch for follow-through conviction in the first 30 minutes.
-- Geopolitical risk remains elevated with oil at $96.91/bbl -- Energy ETFs (XLE) benefit from sustained high oil, but are also first to reverse on de-escalation headlines. Consider sizing energy exposure with a tight stop rather than adding outright.
-- Gold fell 1.02% alongside stocks — safe-haven bid went to the dollar -- if you hold GLD as a hedge, it didn't play its role yesterday. Consider whether short-term USD exposure (UUP) better reflects current market stress.
+- Equity futures are green (S&P +0.76%, Nasdaq +0.88%) -- market is treating yesterday's pullback as a dip. Hold or add to broad exposure (SPY, QQQ), but watch the first 30 minutes: if cash markets open strong and then sellers take control, that's a failed bounce — reduce rather than add into weakness.
+- Geopolitical risk remains elevated with oil at $96.91/bbl -- Energy ETFs (XLE) benefit from sustained high oil, but are also first to reverse on de-escalation headlines. Size energy exposure with a defined exit: any Trump statement signaling a deal or ceasefire will take XLE down faster than the spike took it up.
+- Gold fell 1.02% alongside stocks — safe-haven bid went to the dollar -- if you hold GLD as a hedge, it didn't play its role yesterday. Consider whether short-term USD exposure (UUP) better reflects current market stress while the dollar-safe-haven regime persists.
 
 
 ---

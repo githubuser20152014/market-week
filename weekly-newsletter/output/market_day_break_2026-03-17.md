@@ -6,7 +6,7 @@
 
 ## The Brief
 
-Stocks had a solid session. Risk appetite improved. Futures aren't giving a clear read. We'll find out at the open.
+Iran struck UAE energy infrastructure and a tanker near the Strait of Hormuz — equities shrugged it off yesterday (+1.01% S&P), but oil is already up 4% pre-market and futures are red. Today's question: does the risk premium stick this time, or does the tape dismiss it again?
 
 **Stocks had a solid session.** The S&P 500 closed 6,699.38 (+1.01%), the Nasdaq 22,374.18 (+1.22%), the Dow 46,946.41 (+0.83%), the Russell 2000 2,503.29 (+0.94%). Broad-based. All four major indices closed green. Elsewhere: Gold fell 1.20% to $5,007.00, the 10-year Treasury yield fell 6 bps to 4.22%, and WTI crude fell 0.00% to $93.50/bbl.
 
@@ -38,9 +38,9 @@ APAC was mixed overnight (4 up, 1 down) — KOSPI led (+1.63%), while Nikkei 225
 
 ## Positioning Notes
 
-- Equity futures are red (S&P -0.30%) -- sellers extending yesterday's weakness. Consider waiting for price to stabilise before adding long exposure; defensives (XLU, XLP) and short-duration bonds offer relative shelter.
-- Geopolitical headlines remain the dominant risk factor today -- keep exposure to energy (XLE), defence (ITA), and safe-haven assets (GLD, TLT) in focus. These are the fastest-moving sectors when escalation/de-escalation news breaks.
-- 10-year yield fell 6 bps to 4.22% -- falling yields support long-duration assets: growth stocks (QQQ), REITs (VNQ), and long bonds (TLT) all benefit. Consider adding duration if the yield trend holds.
+- Equity futures are red (S&P -0.30%) — pre-market weakness after a broad green session often signals profit-taking, but watch the open. If S&P 500 opens and can't reclaim 6,700 within the first hour, treat it as distribution, not consolidation; defensives (XLU, XLP) and short-duration bonds are your shelter until the tape proves otherwise.
+- With oil already +4% pre-market and Hormuz disruption live, XLE is the clearest asymmetric play today — upside if escalation holds, and the risk is priced in either way. GLD and ITA are your hedges if risk-off accelerates. Trim or exit if a U.S. Hormuz coalition framework is confirmed — that's the de-escalation catalyst that flips the trade.
+- 10-year yield fell 6 bps to 4.22% — a sustained break below 4.20% would confirm a trend shift and strengthen the case for QQQ, VNQ, and TLT. Add duration only if yields continue to fall; a reversal back above 4.30% invalidates the thesis entirely.
 
 
 ---
