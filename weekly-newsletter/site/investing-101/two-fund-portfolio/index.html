@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You probably have 12 funds. You need 2. | Framework Foundry</title>
+  <meta property="og:title" content="You probably have 12 funds. You need 2."/>
+  <meta property="og:description" content="Most people's 401(k)s hold far more funds than they need — and several of them own the same stocks. Here's why a two-fund portfolio covers more ground than it sounds like it should."/>
+  <meta property="og:url" content="https://frameworkfoundry.info/investing-101/two-fund-portfolio/index.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Framework Foundry"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --navy:      #0f1f3d;
+    --navy-mid:  #1a3260;
+    --accent:    #4a7fb5;
+    --accent-lt: #7aabda;
+    --gold:      #c9a84c;
+    --gold-lt:   #e0c97a;
+    --white:     #ffffff;
+    --off-white: #f5f4f0;
+    --text:      #1a1a2e;
+    --border:    #ddd8cc;
+    --muted:     #6b7280;
+    --green:     #2a7d4f;
+    --red:       #b91c1c;
+    --bg:        #dde3ea;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    padding: 32px 16px;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px 24px;
+    gap: 24px;
+  }
+
+  .logo-icon { flex-shrink: 0; width: 64px; height: 64px; }
+  .logo-text { flex: 1; }
+
+  .logo-name-framework {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; font-weight: 600; letter-spacing: 4px;
+    color: var(--white); display: block; line-height: 1;
+  }
+
+  .logo-name-foundry {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px; font-weight: 300; letter-spacing: 12px;
+    color: var(--accent); display: block; margin-top: 5px; line-height: 1;
+  }
+
+  .logo-rule {
+    height: 1px; background: rgba(255,255,255,0.15); margin: 8px 0 6px;
+  }
+
+  .logo-tagline {
+    font-family: 'Raleway', sans-serif; font-size: 8.5px; font-weight: 300;
+    letter-spacing: 3.5px; color: rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+
+  .header-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
+  }
+
+  .header-home-link {
+    position: absolute; inset: 0; z-index: 1;
+    display: block; cursor: pointer;
+  }
+
+  .header-inner, .header-accent { position: relative; z-index: 2; }
+
+  /* CONTENT */
+  .content { padding: 36px 40px; }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px; font-weight: 500; letter-spacing: 1px;
+    color: var(--muted); margin-bottom: 28px;
+  }
+
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 8px; color: var(--border); }
+
+  /* ARTICLE */
+  .i101-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+  }
+
+  .i101-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 600;
+    color: var(--navy); line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .i101-meta {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px; color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  .i101-body p  { font-size: 16px; line-height: 1.85; margin-bottom: 20px; font-weight: 300; }
+  .i101-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
+                  color: var(--navy); margin: 36px 0 12px; }
+  .i101-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600;
+                  color: var(--navy); margin: 28px 0 10px; }
+  .i101-body strong { font-weight: 600; }
+  .i101-body em     { font-style: italic; }
+  .i101-body hr     { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  .i101-body ul, .i101-body ol { padding-left: 24px; margin-bottom: 18px; }
+  .i101-body li { font-size: 15px; line-height: 1.75; margin-bottom: 6px; font-weight: 300; }
+  .i101-body a  { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(74,127,181,0.3); }
+  .i101-body a:hover { border-bottom-color: var(--accent); }
+  .i101-body table {
+    width: 100%; border-collapse: collapse; margin-bottom: 24px;
+    font-family: 'Raleway', sans-serif; font-size: 13px;
+  }
+  .i101-body th {
+    background: var(--navy); color: var(--white);
+    padding: 8px 12px; font-weight: 500; font-size: 11px;
+    letter-spacing: 1px; text-align: left;
+  }
+  .i101-body td {
+    padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: middle;
+  }
+  .i101-body tbody tr:nth-child(even) { background: var(--off-white); }
+
+  /* SUBSCRIBE */
+  .subscribe-section {
+    background: var(--navy); padding: 36px 40px; text-align: center;
+  }
+
+  .subscribe-section h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
+    color: var(--white); margin: 0 0 6px; letter-spacing: 0.5px;
+  }
+
+  .subscribe-section p {
+    font-family: 'Raleway', sans-serif; font-size: 11px;
+    color: rgba(255,255,255,0.55); letter-spacing: 1px;
+    text-transform: uppercase; margin: 0 0 20px;
+  }
+
+  .subscribe-form {
+    display: flex; justify-content: center; gap: 0;
+    max-width: 440px; margin: 0 auto;
+  }
+
+  .subscribe-form input[type="email"] {
+    flex: 1; padding: 10px 16px;
+    font-family: 'Raleway', sans-serif; font-size: 12px;
+    border: 1px solid rgba(255,255,255,0.2); border-right: none;
+    border-radius: 2px 0 0 2px; background: rgba(255,255,255,0.08);
+    color: var(--white); outline: none;
+  }
+
+  .subscribe-form input[type="email"]::placeholder { color: rgba(255,255,255,0.35); }
+
+  .subscribe-form button {
+    padding: 10px 20px; font-family: 'Raleway', sans-serif;
+    font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--accent); color: var(--white); border: none;
+    border-radius: 0 2px 2px 0; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+  }
+
+  .subscribe-form button:hover { background: var(--accent-lt); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy); padding: 16px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif; font-size: 13px;
+    font-weight: 400; letter-spacing: 2px; color: rgba(255,255,255,0.5);
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-disclaimer {
+    font-family: 'Raleway', sans-serif; font-size: 8.5px;
+    color: rgba(255,255,255,0.3); letter-spacing: 0.5px;
+    text-align: right; max-width: 380px; line-height: 1.6;
+  }
+
+  @media (max-width: 680px) {
+    .header-inner { padding: 20px 20px 16px; flex-wrap: wrap; }
+    .content      { padding: 24px 20px; }
+    .footer       { padding: 14px 20px; flex-direction: column; gap: 10px; }
+    .subscribe-section { padding: 28px 20px; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-form input[type="email"] {
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: none; border-radius: 2px 2px 0 0;
+    }
+    .subscribe-form button { border-radius: 0 0 2px 2px; }
+  }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <a href="../../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
+    <div class="header-inner">
+      <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+        <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">The Blueprint &nbsp;&middot;&nbsp; Practical Investing Guides</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <div class="content">
+    <nav class="breadcrumb">
+      <a href="../../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <a href="../../../index.html#investing">Investing</a>
+      <span class="sep">/</span>
+      <span>The Blueprint</span>
+      <span class="sep">/</span>
+      <span>You probably have 12 funds. You need 2.</span>
+    </nav>
+    <div class="i101-eyebrow">The Blueprint &middot; Issue #2</div>
+    <div class="i101-title">You probably have 12 funds. You need 2.</div>
+    <div class="i101-meta">Mar 26, 2026 &nbsp;&middot;&nbsp; 10 min read</div>
+    <div class="i101-body">
+      <p>Last Wednesday you did something most people with a 401(k) have never actually done: you looked at your allocation. You found the number. Maybe it was 68% stocks and 32% bonds. Maybe you discovered you were sitting at 90% stocks without realizing it. Either way, you wrote it down.</p>
+<p>Now you're back in the portal, and underneath that allocation summary is the actual fund list. Eleven line items. Large Cap Growth Fund. Blue Chip Equity Fund. Diversified Growth Fund. Small Cap Index. Mid Cap Blend. International Growth Fund. Stable Value. S&amp;P 500 Index. Bond Market Fund. Emerging Markets. Technology Sector Fund.</p>
+<p>You did the hard part in Issue #1. Now here's the question that follows naturally: which of these eleven funds do I actually need?</p>
+<p>The answer is going to feel too simple. It isn't.</p>
+<hr />
+<h2>Why more funds feels safer than it is</h2>
+<p>There's a reason your 401(k) offers eleven options instead of two. More choices suggests expertise. It implies that a thoughtful professional has curated a diverse menu covering every corner of the market, and that picking wisely from this menu is how you invest well.</p>
+<p>That framing has a problem: <strong>complexity in a portfolio is not the same thing as diversification.</strong></p>
+<p>True diversification means owning assets that behave differently from each other under the same conditions — that zig when others zag. A bond fund that holds up when stocks fall is diversification. An S&amp;P 500 index fund and a "Large Cap Growth" fund that both crater 28% in the same bear market are not two diversified positions. They're the same position, held twice.</p>
+<p>There's also a psychological pull toward complexity that's worth naming. Owning eleven funds feels more sophisticated than owning two. It feels like you're doing more, thinking harder, making real choices. But in investing, activity isn't the same as performance. The research consistently shows that simpler portfolios — fewer holdings, lower costs, less tinkering — tend to outperform their more complicated counterparts over time. Not because simplicity is a virtue in itself, but because complexity usually brings higher costs, more behavioral mistakes, and positions that accidentally overlap in ways you can't easily see.</p>
+<hr />
+<h2>What an index fund actually is</h2>
+<p>In 1976, a man named Jack Bogle launched the First Index Investment Trust at Vanguard — the first index fund available to ordinary investors. The financial industry called it "Bogle's Folly." The idea was too simple to be serious: instead of hiring managers to pick stocks, the fund would just buy everything in the S&amp;P 500, in proportion to each company's size, and hold it. No stock picking. No market timing. Just the market.</p>
+<p>Fifty years later, index funds manage more money than actively managed funds. The idea wasn't too simple. It was correct.</p>
+<p>An <strong>index fund</strong> doesn't try to beat the market. It tracks a specific index — a defined list of securities — by owning everything on that list in the same proportions. When the index changes (a company is added or removed), the fund adjusts automatically. No manager needed. No research budget. No trading desk. That's why the costs are so low.</p>
+<p>An <strong>actively managed fund</strong> works the opposite way. A portfolio manager — or a team of them — picks specific securities, makes ongoing judgment calls about what to buy and sell, and tries to outperform the index. They charge for this service. The annual fee, called an <strong>expense ratio</strong>, typically runs between 0.65% and 1.00% of your assets per year for an actively managed US equity fund. Vanguard's <a href="https://finance.yahoo.com/quote/VTI">VTI</a>, a total stock market index fund, charges 0.03%.</p>
+<p>That difference compounds. A 1% annual fee on a $200,000 portfolio quietly costs you roughly $2,000 this year, more next year, and so on — before any market return is applied. Issue #4 will show exactly what that compounds to over a 20-year period. For now, just note that active managers charge more and are expected to earn back that premium through superior returns.</p>
+<p>The uncomfortable finding is that most of them don't. Every year, S&amp;P Global publishes the SPIVA report — a comparison of actively managed funds against their benchmark indices. The numbers are consistent: over a 15-year period, roughly 90% of actively managed US large-cap funds underperform a simple index. Not because the managers are bad at their jobs. Because markets are hard to consistently beat, and fees are a guaranteed headwind every single year whether you beat the market or not.</p>
+<hr />
+<h2>What a total market fund actually holds</h2>
+<p>A <strong>total market index fund</strong> takes the index fund concept as far as it goes. Rather than tracking just the S&amp;P 500's 500 largest companies, it tracks the entire investable US stock market.</p>
+<p><a href="https://finance.yahoo.com/quote/VTI">VTI</a> (Vanguard Total Stock Market ETF) or its mutual fund equivalent <a href="https://finance.yahoo.com/quote/VTSAX">VTSAX</a> holds roughly 3,500 US companies at any given time: large, mid-sized, and small. The breakdown by market cap is roughly 72% large-cap (with heavy concentration in mega-cap tech names at the top), 19% mid-cap, and 6% small-cap. By sector: technology, healthcare, financials, consumer discretionary, industrials, energy, real estate, utilities — everything is represented.</p>
+<p>When you own <a href="https://finance.yahoo.com/quote/VTI">VTI</a>, you own Apple and Microsoft at the top. You also own a regional bank in Ohio, a mid-size industrial manufacturer in Tennessee, and a small biotech in Texas you've never heard of. Thousands of companies across every industry in the US economy, in one holding that you can buy or sell in seconds.</p>
+<p>This is real diversification. Not eleven different flavors of large-cap stocks. The whole market.</p>
+<hr />
+<h2>The two-fund portfolio</h2>
+<p>Here's the complete implementation of what you decided in Issue #1.</p>
+<p>You have a target allocation — say, 70% stocks and 30% bonds. To build it, you need one fund for each side of that ratio.</p>
+<p><strong>The stock side: <a href="https://finance.yahoo.com/quote/VTI">VTI</a> (or <a href="https://finance.yahoo.com/quote/VTSAX">VTSAX</a>)</strong></p>
+<p><a href="https://finance.yahoo.com/quote/VTI">VTI</a> is the ETF version; <a href="https://finance.yahoo.com/quote/VTSAX">VTSAX</a> is the mutual fund equivalent. They hold the same underlying stocks and produce nearly identical returns. The practical difference: ETFs trade throughout the day like stocks; mutual funds are priced once daily at market close. In a 401(k), you'll usually see the mutual fund version. In an IRA or brokerage account, you can use either.</p>
+<p>If your 401(k) doesn't offer <a href="https://finance.yahoo.com/quote/VTI">VTI</a> or <a href="https://finance.yahoo.com/quote/VTSAX">VTSAX</a> specifically, look for their equivalents: Fidelity's <a href="https://finance.yahoo.com/quote/FZROX">FZROX</a> or <a href="https://finance.yahoo.com/quote/FSKAX">FSKAX</a>, Schwab's <a href="https://finance.yahoo.com/quote/SWTSX">SWTSX</a>, or any fund described as a "total stock market index" with an expense ratio under 0.10%. The name and ticker matter less than what it tracks.</p>
+<p><strong>The bond side: <a href="https://finance.yahoo.com/quote/BND">BND</a> (or <a href="https://finance.yahoo.com/quote/VBTLX">VBTLX</a>)</strong></p>
+<p><a href="https://finance.yahoo.com/quote/BND">BND</a> (Vanguard Total Bond Market ETF) or its mutual fund equivalent <a href="https://finance.yahoo.com/quote/VBTLX">VBTLX</a> holds US government bonds and investment-grade corporate bonds across short, intermediate, and long maturities. It's the ballast in the portfolio — not there to generate high returns, but to behave differently from stocks when the market falls. In 2022, when the S&amp;P 500 dropped 18.1%, <a href="https://finance.yahoo.com/quote/BND">BND</a> dropped 13.1% — its worst year in decades, as the fastest rate-hiking cycle in 40 years hit bonds hard alongside stocks. It didn't protect the way bonds typically do. But even in that unusual environment, a 70/30 portfolio lost less than an all-stock portfolio. In most recessions and bear markets — 2008, 2001, 2020 — bonds behaved as expected, holding value or rising while stocks fell. 2022 was the anomaly, not the norm.</p>
+<p>Again, if your 401(k) doesn't offer <a href="https://finance.yahoo.com/quote/BND">BND</a> specifically, look for any total bond market index fund with a low expense ratio. That's the function you need.</p>
+<p><strong>Putting it together</strong></p>
+<p>A 70/30 allocation becomes 70% <a href="https://finance.yahoo.com/quote/VTI">VTI</a> + 30% <a href="https://finance.yahoo.com/quote/BND">BND</a>. A 60/40 allocation becomes 60% <a href="https://finance.yahoo.com/quote/VTI">VTI</a> + 40% <a href="https://finance.yahoo.com/quote/BND">BND</a>. The allocation you chose in Issue #1 maps directly onto two fund tickers.</p>
+<p>You could add more funds. A separate small-cap allocation. An international fund. Sector tilts. None of that is wrong — but none of it changes your expected outcome meaningfully, and all of it adds holdings you'll need to track, rebalance, and make decisions about over time. The two-fund version already owns ~3,500 US companies across every sector and every size category. It's structurally harder to be under-diversified in it than it sounds.</p>
+<p><strong>A note on international</strong></p>
+<p>The most common objection to the two-fund portfolio is: what about international stocks? The US represents roughly 60% of global market cap. Leaving out the other 40% — Europe, Japan, emerging markets — means you're not owning the whole world.</p>
+<p>Adding <a href="https://finance.yahoo.com/quote/VXUS">VXUS</a> (Vanguard Total International Stock ETF) turns the two-fund portfolio into a three-fund portfolio and gives you meaningful geographic diversification. Many serious investors hold it; many others don't, on the argument that US multinationals already do substantial business internationally. There's no consensus right answer. For a first portfolio, two funds is enough. Adding <a href="https://finance.yahoo.com/quote/VXUS">VXUS</a> later, once you're comfortable with the basic structure, is a reasonable next step.</p>
+<p><strong>What if your 401(k) doesn't offer good index funds?</strong></p>
+<p>Some plans — particularly at smaller employers — have poor fund menus. Every option is actively managed, every expense ratio is high, and there's nothing resembling a total market index fund. If that's your situation, the strategy is straightforward: contribute enough to capture your full employer match (that's an immediate 50–100% return on those dollars, which beats any expense ratio), then direct additional retirement savings to a Roth IRA or traditional IRA, where you can buy <a href="https://finance.yahoo.com/quote/VTI">VTI</a> and <a href="https://finance.yahoo.com/quote/BND">BND</a> directly and have access to the full universe of low-cost index funds.</p>
+<p>Inside the poor 401(k), pick the lowest-cost fund available that most closely resembles a broad equity index — usually an S&amp;P 500 fund if one exists. It's not perfect, but it's considerably better than a 1.0% actively managed fund.</p>
+<hr />
+<h2>The overlap problem</h2>
+<p>Back to those eleven funds in Marcus's 401(k).</p>
+<p>Three of them — the Large Cap Growth Fund, the Blue Chip Equity Fund, and the Diversified Growth Fund — have different names, different fact sheets, different fund companies. Look at their actual top five holdings <em>(illustrative — representative of typical large-cap growth fund holdings)</em>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Large Cap Growth</th>
+<th>Blue Chip Equity</th>
+<th>Diversified Growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Apple (AAPL) 7.2%</td>
+<td>Apple (AAPL) 6.8%</td>
+<td>Apple (AAPL) 7.5%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Microsoft (MSFT) 6.9%</td>
+<td>Microsoft (MSFT) 6.4%</td>
+<td>Microsoft (MSFT) 7.1%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Nvidia (NVDA) 5.8%</td>
+<td>Nvidia (NVDA) 5.3%</td>
+<td>Nvidia (NVDA) 6.2%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Amazon (AMZN) 3.7%</td>
+<td>Amazon (AMZN) 3.5%</td>
+<td>Amazon (AMZN) 3.9%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Alphabet (GOOGL) 3.4%</td>
+<td>Alphabet (GOOGL) 3.2%</td>
+<td>Alphabet (GOOGL) 3.6%</td>
+</tr>
+</tbody>
+</table>
+<p>Three funds. The same five companies at the top. Apple, Microsoft, Nvidia, Amazon, Alphabet. In roughly the same order, with slightly different weights.</p>
+<p>Marcus doesn't have three diversified growth positions. He has one position — US large-cap technology stocks — held three times, with three separate expense ratios. If the tech sector has a bad year, all three of those funds move together. The apparent diversification is an illusion.</p>
+<p>This isn't unusual. It's how many 401(k) menus are built. Fund companies offer a range of options that sound distinct — "large-cap growth," "blue chip," "diversified equity" — but when markets are dominated by a handful of mega-cap technology companies (as they have been for the past decade), these categories converge on the same underlying stocks. The names are different. The portfolios aren't.</p>
+<p>When Marcus simplifies to <a href="https://finance.yahoo.com/quote/VTI">VTI</a>, he doesn't lose the Apple and Microsoft exposure he already has — they're in <a href="https://finance.yahoo.com/quote/VTI">VTI</a> too, at their actual market weight. What he loses is the duplication, the hidden overlap, and the extra fees. What he gains is a cleaner, more transparent picture of what he actually owns.</p>
+<p>The point isn't that the fund menu was designed to deceive him. It's that 11 items on a list feels more thorough than 2. And in most of life, it is. Investing is one of the few domains where that instinct works against you.</p>
+<hr />
+<h2>"But that fund has done really well"</h2>
+<p>Here's the objection that comes up every time: one of those eleven funds has a strong recent track record. The Technology Sector Fund, say, is up 180% over the past decade. The Large Cap Growth Fund returned 22% last year. Why would you sell something that's been working?</p>
+<p>This is the most natural question in investing, and it's also one of the most reliably wrong instincts to act on. <strong>Past performance in a specific fund tells you what happened, not what will happen.</strong> A technology fund that returned 22% last year did so because technology stocks had a good year — not because the fund manager made particularly good decisions. If you own <a href="https://finance.yahoo.com/quote/VTI">VTI</a>, you already own those same technology stocks at their full market weight. You're not missing the upside by simplifying. You're just not overweighting one sector relative to everything else.</p>
+<p>The decade that made large-cap tech funds look brilliant was driven by a specific set of conditions: historically low interest rates that inflated the valuations of long-duration growth assets, a wave of digital adoption accelerated by the pandemic, and a handful of companies that genuinely dominated their markets. Those conditions aren't permanent, and they're already substantially different than they were in 2020.</p>
+<p>More importantly: chasing recent performance is the behavior that most reliably destroys returns for individual investors. Morningstar tracks the gap between what funds return and what investors in those funds actually earn — and the gap exists precisely because people buy after strong runs and sell after bad ones. The technology fund that looks great right now attracted the most new money at its peak. The investors who piled in at the top didn't earn 22%. They bought high and often sold into the next dip.</p>
+<p>The two-fund portfolio doesn't promise the best performance in any single year. It promises reasonable performance across all years — which, compounded over 15, is almost always better than chasing last year's winner.</p>
+<hr />
+<h2>How to actually make the change</h2>
+<p>If you've read this far and are thinking about simplifying your holdings, here's the practical process. It's shorter than you'd expect.</p>
+<p>In a 401(k) or IRA, selling one fund and buying another is not a taxable event. You're moving money between investments inside a tax-sheltered account, so there's no capital gains tax, no paperwork to file, nothing to report. This surprises a lot of people who assume any financial transaction has tax consequences. Inside retirement accounts, it doesn't.</p>
+<p>The mechanics vary slightly by platform, but the general flow is the same: log in, navigate to your fund list, and look for an option labeled "exchange," "transfer between funds," or "change investments." You'll sell out of the funds you're leaving and immediately buy into the two (or three) you're moving to. The transaction usually settles within one business day.</p>
+<p>Before you make changes, map it out on paper first:</p>
+<ol>
+<li>Write down your target allocation from Issue #1 — for example, 70% stocks, 30% bonds.</li>
+<li>Identify your total stock market index fund and your bond index fund in the plan's fund menu.</li>
+<li>Sell everything else and buy the two funds in the target ratio.</li>
+</ol>
+<p>You don't have to do it all at once if that feels like too much. Some people move half their holdings to the new structure and leave the rest temporarily, then complete the shift a few weeks later. Either approach is fine. What matters is having a clear target and moving toward it deliberately, rather than leaving the old structure in place indefinitely because changing it felt complicated.</p>
+<hr />
+<h2>What about target-date funds?</h2>
+<p>Issue #1 mentioned target-date funds as a hands-off alternative. Here's how they relate to what we've covered.</p>
+<p>A target-date fund is essentially a two- or three-fund portfolio on autopilot. It holds a mix of stocks and bonds (and often international stocks) and gradually shifts toward more bonds as the target date approaches. A 2040 fund bought today might be 80% stocks and 20% bonds; by 2035, it might be 60/40; by 2040, it might be 50/50 or more conservative.</p>
+<p>The appeal is real: one fund, no decisions, automatic rebalancing, the allocation shift handled for you. If you genuinely want to set it and forget it, a target-date fund does that better than a two-fund portfolio, because a two-fund portfolio still requires you to rebalance annually (more on that in Issue #3) and to periodically revisit whether your allocation still matches your timeline.</p>
+<p>The trade-offs are minor but worth knowing. Target-date funds typically charge slightly more — often 0.08% to 0.15% rather than 0.03% to 0.05% for straight index funds. You also give up control over your exact allocation: the fund decides what your stock/bond ratio is at any given point, and you can't adjust it without switching funds entirely.</p>
+<p>Neither approach is wrong. The target-date fund is a better choice if you want genuine simplicity and won't stick to an annual rebalancing habit. The two-fund portfolio is a better choice if you want precise control over your allocation and are willing to do one hour of maintenance per year. Issue #3 covers what that maintenance actually looks like.</p>
+<hr />
+<p><strong>One action this week:</strong></p>
+<p>Log in to your 401(k) and write down every fund you hold. For each one, find the expense ratio — it's usually listed in the fund details or on the fund's fact sheet. Write the numbers down next to each fund name.</p>
+<p>If you see several funds with expense ratios above 0.50%, you now know they're almost certainly actively managed. If you see funds with expense ratios below 0.10%, those are your index funds.</p>
+<p>You don't need to make any changes yet. The goal this week is just to know what you're holding and what you're paying for it. You'll use that list in Issue #4. First, Issue #3 shows you the one annual maintenance task that keeps this portfolio working the way you set it up.</p>
+<p><em>Next Wednesday: You've set your allocation, you know what you're holding. Here's the one maintenance task that keeps your risk level where you chose it — and what happens to people who skip it for a few years.</em></p>
+    </div>
+  </div>
+
+  <div class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Weekly macro intelligence and practical investing guides &mdash; free, every week.</p>
+    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe free</button>
+    </form>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>

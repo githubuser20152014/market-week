@@ -51,6 +51,7 @@ def build_email_html(
     subscription_name: str = "Framework Foundry Weekly",
     edition_label: str = "",
     date_str: str = "",
+    cta_text: str = "",
 ) -> str:
     """Convert Markdown content to an inline-styled HTML email with branded header."""
     body_html = md.markdown(md_content, extensions=["tables"])
@@ -65,6 +66,12 @@ def build_email_html(
         f'<div style="font-size:12px;color:#c9a84c;letter-spacing:0.12em;'
         f'text-transform:uppercase;margin-top:6px;">{edition_label}</div>'
         if edition_label else ""
+    )
+
+    cta_block = (
+        cta_text if cta_text else
+        'Enjoying the brief? Share it with someone who\'d appreciate a clear-eyed look at what\'s moving markets. '
+        'They can subscribe at <a href="https://frameworkfoundry.info" style="color:#4a7fb5;">frameworkfoundry.info</a>.'
     )
 
     return f"""<!DOCTYPE html>
@@ -132,8 +139,7 @@ def build_email_html(
     </div>
 
     <div style="margin:0 40px 24px;padding:20px 24px;background:#f0f4fa;border-left:3px solid #4a7fb5;border-radius:4px;font-family:Arial,sans-serif;font-size:14px;color:#444;">
-      Enjoying the brief? Share it with someone who'd appreciate a clear-eyed look at what's moving markets.
-      They can subscribe at <a href="https://frameworkfoundry.info" style="color:#4a7fb5;">frameworkfoundry.info</a>.
+      {cta_block}
     </div>
 
     <div style="padding:20px 40px;background:#f9f9f9;border-top:1px solid #e8e8e8;
