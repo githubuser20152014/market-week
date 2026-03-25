@@ -48,6 +48,59 @@ fi
 
 cd "$SCRIPT_DIR"
 
+CONTENT_REPO="C:/Users/Akhil/Documents/ContentRepo"
+ISSUES_DIR="$CONTENT_REPO/wednesday-series/Issues"
+
+# Resolve slug + issue number from ContentRepo article for this date
+SLUG=$(python -c "
+import sys
+from pathlib import Path
+issues = Path('$ISSUES_DIR')
+for f in issues.glob('*.md'):
+    text = f.read_text(encoding='utf-8')
+    if not text.startswith('---'): continue
+    end = text.find('\n---', 3)
+    if end == -1: continue
+    for line in text[3:end].splitlines():
+        if ':' in line:
+            k, _, v = line.partition(':')
+            if k.strip() == 'date' and v.strip().strip('\"') == '$DATE_STR':
+                for l2 in text[3:end].splitlines():
+                    if ':' in l2:
+                        k2, _, v2 = l2.partition(':')
+                        if k2.strip() == 'slug':
+                            print(v2.strip().strip('\"'))
+                            sys.exit(0)
+print(''); sys.exit(1)
+")
+
+if [[ -z "$SLUG" ]]; then
+  echo "ERROR: No Blueprint article found for date $DATE_STR in $ISSUES_DIR" >&2
+  exit 1
+fi
+
+ISSUE_NUM=$(python -c "
+import sys
+from pathlib import Path
+issues = Path('$ISSUES_DIR')
+for f in issues.glob('*.md'):
+    text = f.read_text(encoding='utf-8')
+    if not text.startswith('---'): continue
+    end = text.find('\n---', 3)
+    if end == -1: continue
+    for line in text[3:end].splitlines():
+        if ':' in line:
+            k, _, v = line.partition(':')
+            if k.strip() == 'date' and v.strip().strip('\"') == '$DATE_STR':
+                for l2 in text[3:end].splitlines():
+                    if ':' in l2:
+                        k2, _, v2 = l2.partition(':')
+                        if k2.strip() == 'issue':
+                            print(v2.strip().strip('\"'))
+                            sys.exit(0)
+print(''); sys.exit(0)
+")
+
 # Handle --send-email only (no publish)
 if [[ "$SEND_EMAIL" == "--send-email" && "$PUBLISH" != "--publish" ]]; then
   echo "==> Sending Blueprint email for $DATE_STR ..."
@@ -55,53 +108,41 @@ if [[ "$SEND_EMAIL" == "--send-email" && "$PUBLISH" != "--publish" ]]; then
   exit 0
 fi
 
-# Phase 1: Build web page
-echo "==> Building Blueprint web page for $DATE_STR ..."
-python build_blueprint_site.py --date "$DATE_STR"
+# Phase 1: Sync article from ContentRepo → content/articles/
+echo "==> Syncing article from ContentRepo ..."
+ARTICLE_SRC=$(find "$ISSUES_DIR" -name "*.md" -exec grep -l "date: $DATE_STR" {} \; | head -1)
+if [[ -z "$ARTICLE_SRC" ]]; then
+  echo "ERROR: No article file found for date $DATE_STR" >&2
+  exit 1
+fi
+cp "$ARTICLE_SRC" "$SCRIPT_DIR/content/articles/investing-101-${SLUG}.md"
+echo "  $ARTICLE_SRC -> content/articles/investing-101-${SLUG}.md"
 
-# Phase 2: Generate email markdown (for preview / future send)
+# Phase 2: Generate email markdown
 echo ""
 echo "==> Generating email markdown ..."
 python generate_blueprint.py --date "$DATE_STR"
 
 echo ""
-echo "Article page ready for review."
-echo "  Open site/investing-101/ to preview locally."
+echo "Article ready for review. Run with --publish to deploy:"
+echo "  bash weekly-newsletter/publish_blueprint.sh $DATE_STR --publish"
 
 if [[ "$PUBLISH" != "--publish" ]]; then
-  echo ""
-  echo "Review, then run with --publish to deploy:"
-  echo "  bash weekly-newsletter/publish_blueprint.sh $DATE_STR --publish"
   exit 0
 fi
 
-# Phase 3: Rebuild combined site (updates main index)
+# Phase 3: Rebuild combined site (generates article page + updates main index)
 echo ""
 echo "==> Rebuilding combined site ..."
 python build_combined_site.py
 
-# Phase 4: Resolve slug from the article for targeted staging
-SLUG=$(python -c "
-import sys; sys.path.insert(0, '.')
-from build_blueprint_site import parse_frontmatter, find_article_by_date
-from pathlib import Path
-p = find_article_by_date('$DATE_STR')
-if p is None: sys.exit(1)
-meta, _ = parse_frontmatter(p.read_text(encoding='utf-8'))
-print(meta.get('slug', ''))
-")
-
-if [[ -z "$SLUG" ]]; then
-  echo "ERROR: Could not resolve slug for date $DATE_STR" >&2
-  exit 1
-fi
-
-# Phase 5: Stage and commit
+# Phase 4: Stage and commit
 echo ""
 echo "==> Staging changes ..."
 cd "$REPO_ROOT"
 
 _add() { git add "$@" 2>/dev/null || true; }
+_add "weekly-newsletter/content/articles/investing-101-${SLUG}.md"
 _add "weekly-newsletter/site/investing-101/${SLUG}/"
 _add "weekly-newsletter/site/index.html"
 
@@ -109,16 +150,6 @@ if git diff --cached --quiet; then
   echo "Nothing new to publish — site is already up to date."
   exit 0
 fi
-
-ISSUE_NUM=$(python -c "
-import sys; sys.path.insert(0, 'weekly-newsletter')
-from build_blueprint_site import parse_frontmatter, find_article_by_date
-from pathlib import Path
-p = find_article_by_date('$DATE_STR')
-if p is None: sys.exit(1)
-meta, _ = parse_frontmatter(p.read_text(encoding='utf-8'))
-print(meta.get('issue', ''))
-")
 
 COMMIT_MSG="Publish The Blueprint"
 [[ -n "$ISSUE_NUM" ]] && COMMIT_MSG="$COMMIT_MSG — Issue #${ISSUE_NUM}"
