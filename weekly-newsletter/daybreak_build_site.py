@@ -52,6 +52,9 @@ _DAYBREAK_CSS = _BASE_CSS + """
   .futures-row-pos { background: rgba(42,125,79,0.07) !important; }
   .futures-row-neg { background: rgba(185,28,28,0.07) !important; }
 
+  /* Paragraph spacing inside section blocks */
+  .plain-text + .plain-text { margin-top: 16px; }
+
   /* The One Trade card */
   .one-trade-card {
     border-left: 3px solid var(--accent);
