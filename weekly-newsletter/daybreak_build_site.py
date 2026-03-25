@@ -443,7 +443,6 @@ def render_html(ctx: dict) -> str:
     <!-- THE BRIEF -->
     <div class="section-block">
       <div class="section-title">The Brief</div>
-      {narrative_html}
       {brief_body_html}
     </div>
 
