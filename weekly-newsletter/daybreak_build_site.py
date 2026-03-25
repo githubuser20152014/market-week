@@ -13,6 +13,11 @@ from build_site import _CSS as _BASE_CSS
 _DAYBREAK_CSS = _BASE_CSS + """
   /* DAYBREAK-SPECIFIC STYLES */
 
+  /* Body font override: Lora (softer, editorial) instead of Source Serif 4 */
+  body { font-family: 'Lora', Georgia, serif; }
+  .plain-text, .brief-text { font-weight: 400; line-height: 1.85; font-size: 15px; color: #2a2a3a; }
+
+
   /* Session badge for partial (early) European markets */
   .session-partial {
     display: inline-block;
@@ -396,7 +401,7 @@ def render_html(ctx: dict) -> str:
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Framework Foundry \u2014 {page_title}</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
 {_DAYBREAK_CSS}
   </style>
@@ -658,7 +663,7 @@ def render_data_html(ctx: dict) -> str:
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Framework Foundry \u2014 Market Data \u00b7 {date_str}</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
 {_DAYBREAK_CSS}
   </style>
