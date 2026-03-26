@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-03-26",
+    "generated_at": "2026-03-26T10:36:12.232548Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6556.3701,
+      "close": 6591.9,
+      "daily_pct": 0.5419,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46124.0586,
+      "close": 46429.49,
+      "daily_pct": 0.6622,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21761.8945,
+      "close": 21929.83,
+      "daily_pct": 0.7717,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2505.4426,
+      "close": 2536.38,
+      "daily_pct": 1.2348,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4536.6001,
+      "close": 4547,
+      "daily_pct": 0.2292,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.392,
+      "close": 4.328,
+      "daily_pct": -1.4572,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -6.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.371,
+      "close": 99.643,
+      "daily_pct": 0.2737,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 88.63,
+      "close": 88.48,
+      "daily_pct": -0.1692,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53603.65,
+      "prev_close": 53749.62,
+      "daily_pct": -0.2716,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24856.43,
+      "prev_close": 25335.95,
+      "daily_pct": -1.8926,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5460.46,
+      "prev_close": 5642.21,
+      "daily_pct": -3.2213,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 23305.1,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8547.6,
+      "prev_close": 8534.3,
+      "daily_pct": 0.1558,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22957.08,
+      "prev_close": 22949.83,
+      "daily_pct": 0.0316,
+      "session_note": "Early session"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10106.84,
+      "prev_close": 10049.24,
+      "daily_pct": 0.5732,
+      "session_note": "Early session"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7846.55,
+      "prev_close": 7845.39,
+      "daily_pct": 0.0148,
+      "session_note": "Early session"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5627,
+      "prev_close": 5658.49,
+      "daily_pct": -0.5565,
+      "session_note": "Early session"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15626,
+      "prev_close": 1.16036,
+      "daily_pct": -0.3533
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33598,
+      "prev_close": 1.3397,
+      "daily_pct": -0.2777
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.474,
+      "prev_close": 158.886,
+      "daily_pct": 0.3701
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69401,
+      "prev_close": 0.69696,
+      "daily_pct": -0.4233
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.9076,
+      "prev_close": 6.90246,
+      "daily_pct": 0.0745
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.2629,
+      "prev_close": 1.26592,
+      "daily_pct": -0.2386
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6597.0,
+      "prev_close": 6651.25,
+      "daily_pct": -0.8156
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24186.25,
+      "prev_close": 24422.5,
+      "daily_pct": -0.9673
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46426.0,
+      "prev_close": 46727.0,
+      "daily_pct": -0.6442
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4439.0,
+      "prev_close": 4536.3,
+      "daily_pct": -2.1449
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 92.78,
+      "prev_close": 88.65,
+      "daily_pct": 4.6588
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Gulf states say they're ready for 'self defense' as stance shifts on Iran war",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 09:49:14 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/gulf-states-ready-for-self-defense-against-iran-as-war-stance-shifts.html",
+      "summary": "Gulf states have issued a joint statement on Thursday condemning Iran's \"blatant\" and \"criminal\" attacks against them."
+    },
+    {
+      "headline": "What comes next? Three attack scenarios as U.S. sends thousands more troops to Middle East",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 10:29:49 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/iran-war-trump-us-troops-kharg-island-qeshm-island-nuclear-middle-east.html",
+      "summary": "One of Iran's top lawmakers has said that they were anticipating a potential ground invasion of one its islands."
+    },
+    {
+      "headline": "Iran plans to charge ships for safe passage through Strait of Hormuz, report says",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 09:49:59 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/iran-plans-tolls-on-ships-passing-through-strait-of-hormuz.html",
+      "summary": "Officials in Tehran have drafted legislation to create a toll system where ships pay for safe passage through the waterway, Iranian media reported."
+    },
+    {
+      "headline": "Trump says Justices Barrett, Gorsuch \u2018sicken me\u2019 after Supreme Court tariff ruling",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 02:25:15 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/trump-supreme-court-tariffs-barrett-gorsuch-trade-ieepa-ruling.html",
+      "summary": "The Supreme Court, in a 6-3 ruling, said President Trump did not have authority under the International Emergency Economic Powers Act to impose tariffs."
+    },
+    {
+      "headline": "The oil market is in 'backwardation' \u2014 Here\u2019s what that means for energy prices",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 08:22:15 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/market-trends-oil-futures-backwardation.html",
+      "summary": "Oil prices have been rocked by volatility since the U.S.-Iran war began."
+    },
+    {
+      "headline": "Prediction market bets on sports, election, war would be verboten under new legislation",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 10:00:02 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/prediction-markets-sports-election-war-legislation-kalshi-polymarket.html",
+      "summary": "Lawmakers have introduced a flurry of measures to rein-in prediction markets in recent weeks, as the platforms have come under increased scrutiny."
+    },
+    {
+      "headline": "How the Iran war could crush the U.S. housing recovery, and it's not just about mortgage rates",
+      "source": "CNBC",
+      "published": "Wed, 25 Mar 2026 19:34:25 GMT",
+      "url": "https://www.cnbc.com/2026/03/25/heres-how-the-iran-war-is-already-hitting-the-us-housing-market.html",
+      "summary": "A combination of higher mortgage rates and economic uncertainty are reversing what was expected to be a recovery year in the housing market."
+    },
+    {
+      "headline": "Single women see homeownership as 'a wealth-building tool,' economist says, but buying remains a challenge",
+      "source": "CNBC",
+      "published": "Wed, 25 Mar 2026 18:53:28 GMT",
+      "url": "https://www.cnbc.com/2026/03/25/single-women-first-time-homebuyers-income-beats-solo-men.html",
+      "summary": "For years, single men who were first-time homebuyers had higher annual income than their female counterparts, according to the National Association of Realtors."
+    }
+  ]
+}
