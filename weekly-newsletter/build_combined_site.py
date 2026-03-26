@@ -3952,6 +3952,14 @@ def build(use_mock=True):
     (SITE_DIR / "daily").mkdir(exist_ok=True)
     daybreak_ctxs = {}
     for date_str in daybreak_dates:
+        issue_dir = SITE_DIR / "daily" / date_str
+        html_file = issue_dir / "index.html"
+        # Skip historical editions that already have published HTML — the
+        # approved .md is the source of truth and the HTML is already correct.
+        from datetime import date as _date
+        if html_file.exists() and date_str != _date.today().isoformat():
+            print(f"Skipping Daily {date_str} (HTML already published)")
+            continue
         print(f"Building Daily {date_str} …")
         try:
             raw = fetch_daybreak_data(date_str, use_mock=use_mock)

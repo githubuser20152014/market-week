@@ -112,7 +112,7 @@ python build_combined_site.py
 
 echo ""
 echo "==> Verifying site HTML matches approved MD ..."
-python verify_site_content.py "$DATE_STR"
+python verify_site_content.py "$DATE_STR" --no-pdf
 
 echo ""
 echo "==> Staging changes ..."

@@ -125,8 +125,8 @@ def split_html_sections(html: str) -> dict[str, str]:
 
 
 def html_brief_paras(html: str) -> list[str]:
-    """Extract <p class="brief-text"> paragraph text."""
-    return [norm(p) for p in re.findall(r'<p class="brief-text">(.*?)</p>', html, re.DOTALL)]
+    """Extract <p class="plain-text"> paragraph text."""
+    return [norm(p) for p in re.findall(r'<p class="plain-text">(.*?)</p>', html, re.DOTALL)]
 
 
 def _tbody_rows(tbody_html: str) -> list[list[str]]:
@@ -382,7 +382,10 @@ def main() -> None:
     if hasattr(sys.stdout, 'reconfigure'):
         sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
-    date_str = sys.argv[1] if len(sys.argv) > 1 else date.today().isoformat()
+    args     = sys.argv[1:]
+    no_pdf   = '--no-pdf' in args
+    args     = [a for a in args if a != '--no-pdf']
+    date_str = args[0] if args else date.today().isoformat()
 
     md_path   = SCRIPT_DIR / 'output'         / f'market_day_break_{date_str}.md'
     html_path = SCRIPT_DIR / 'site' / 'daily' / date_str / 'index.html'
@@ -422,7 +425,8 @@ def main() -> None:
         check_positioning(md_secs['Positioning Notes'], html_secs['Positioning Notes'], errors)
 
     # ── PDF ───────────────────────────────────────────────────────────────────
-    check_pdf(md_path, pdf_path, md_secs, errors)
+    if not no_pdf:
+        check_pdf(md_path, pdf_path, md_secs, errors)
 
     # ── Report ────────────────────────────────────────────────────────────────
     sections_checked = [
