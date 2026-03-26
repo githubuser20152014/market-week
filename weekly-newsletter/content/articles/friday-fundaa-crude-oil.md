@@ -50,3 +50,104 @@ Now you know.
 - ***Framework Foundry Weekly*** *— macro trends, index moves, and what it means for your money*
 
 *Read this issue on the web: [frameworkfoundry.info/fundaa/2026-03-27/index.html](https://frameworkfoundry.info/fundaa/2026-03-27/index.html)*
+
+---
+
+## LinkedIn
+
+**"Oil prices" isn't actually a thing. There are two — and right now they're telling completely different stories.**
+
+Here's what the headlines don't tell you.
+
+When you see "oil surges on Middle East fears" or "crude crashes on peace talk hopes," the price they're talking about is almost always Brent Crude. Not WTI. Not "oil." Brent.
+
+There are two global oil benchmarks:
+
+**WTI (West Texas Intermediate):** American oil, priced at a pipeline hub in Cushing, Oklahoma. Landlocked. Doesn't travel through the Middle East. Moves on US shale production news.
+
+**Brent Crude:** Global oil, North Sea origin, shipped by tanker. Benchmark for 70-80% of the world's oil contracts. Exposed to everything happening out in the world, especially maritime chokepoints.
+
+Normally Brent trades $2-5 above WTI. Fine. Makes sense.
+
+Then the Strait of Hormuz effectively closed.
+
+That narrow waterway off Iran moves 20 million barrels a day. One in five barrels consumed globally. When US and Israeli airstrikes on Iran began in late February, that chokepoint became uncertain. Brent spiked from the mid-$60s to above $100. WTI followed, but more slowly. Oklahoma doesn't care about Hormuz.
+
+Here's the part that actually matters: that spike is sitting on top of fundamentals that point the other way. Goldman, JPMorgan, and the EIA all forecast Brent around $60 for 2026. The market is oversupplied. The spike is a $10-15/barrel fear premium, nothing more.
+
+So next time you wince at the pump, you're partly paying for geopolitical anxiety over a waterway most people couldn't find on a map.
+
+Now you know.
+
+---
+
+📊 Full breakdown on Substack (link in comments)
+
+Every week we break down the macro moves that actually affect your money.
+- **Market Day Break** — daily market briefing
+- **Framework Foundry Weekly** — weekly macro deep-dive
+
+👉 frameworkfoundry.info
+
+*For educational purposes only. Not financial advice.*
+
+#OilMarkets #CrudeOil #PersonalFinance #Economics #FridayFundaa
+
+---
+
+## X (Thread)
+
+**🧵 "Oil prices" isn't actually a thing. There are two oil prices. The media picks one without telling you which one. A quick thread on what's actually happening in oil markets right now. 1/**
+
+---
+
+When headlines say "oil surged today" — they mean Brent Crude. Almost always. Not WTI. Not just "oil."
+
+There are two benchmarks and they behave very differently. **2/**
+
+---
+
+**WTI (West Texas Intermediate):** American oil. Priced in Cushing, Oklahoma. Landlocked. Doesn't cross oceans or travel through the Middle East. Moves on US shale news.
+
+**Brent Crude:** Global oil. North Sea origin, tanker-shipped. Benchmark for ~75% of world oil contracts. Very exposed to global events. **3/**
+
+---
+
+Normally Brent costs $2-5 more than WTI. Shipping premium. Whatever.
+
+But when something threatens the global supply chain, that gap blows out — and Brent moves hard while WTI barely flinches. **4/**
+
+---
+
+Enter the Strait of Hormuz.
+
+Narrow waterway off Iran. 20 million barrels/day. One in five barrels consumed globally passes through it.
+
+US/Israeli strikes on Iran began in late February. The chokepoint became uncertain. Brent went from the mid-$60s to above $100.
+
+WTI watched from Oklahoma like 😐 **5/**
+
+---
+
+Here's the key: that spike is a fear premium sitting on top of weak fundamentals.
+
+Goldman, JPMorgan, and the EIA all forecast Brent averaging around $60 this year. The market is oversupplied. OPEC+ was already easing cuts.
+
+The extra $10-15/barrel is pure "what if Hormuz stays closed" anxiety. **6/**
+
+---
+
+So when oil "crashes on peace talk hopes" — the fear premium is coming out.
+
+When it "spikes on escalation fears" — the fear premium is going back in.
+
+The actual supply/demand story underneath is still one of surplus. **7/**
+
+---
+
+Two prices. Two stories. One waterway most people couldn't find on a map — moving what you pay at the pump.
+
+Full breakdown on Substack 👇
+https://open.substack.com/pub/frameworkfoundrymarket/p/friday-fundaa-oil-prices-isnt-actually?r=lvsyk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true
+
+*For educational purposes only. Not financial advice.* **8/8**
