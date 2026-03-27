@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perplexity MCP Integration — Framework Foundry Newsletter Pipeline</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0f1117;
+    color: #e2e8f0;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 32px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #2d3748;
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  .page-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f7fafc;
+    letter-spacing: -0.3px;
+  }
+  .page-header .sub {
+    font-size: 12px;
+    color: #718096;
+    margin-top: 4px;
+  }
+  .badge {
+    background: #1a365d;
+    border: 1px solid #2b6cb0;
+    color: #90cdf4;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #4a5568;
+    margin-bottom: 12px;
+  }
+
+  /* ── Before / After ── */
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    margin-bottom: 28px;
+    align-items: stretch;
+  }
+  .ba-panel {
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .ba-panel.before {
+    background: #1a1a2e;
+    border: 1px solid #2d3748;
+  }
+  .ba-panel.after {
+    background: #0d2137;
+    border: 1px solid #2b6cb0;
+  }
+  .ba-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #4a5568;
+  }
+  .ba-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .ba-panel.before .ba-label { color: #718096; }
+  .ba-panel.after  .ba-label { color: #63b3ed; }
+  .ba-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #a0aec0;
+  }
+  .ba-item .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .before .dot { background: #4a5568; }
+  .after  .dot { background: #3182ce; }
+  .ba-item strong { color: #e2e8f0; }
+  .strike { text-decoration: line-through; opacity: 0.5; }
+
+  /* ── Main architecture diagram ── */
+  .arch {
+    background: #141820;
+    border: 1px solid #2d3748;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+
+  /* Row layout */
+  .row {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .row.center { justify-content: center; }
+  .row.spread { justify-content: space-between; }
+
+  /* Arrow connectors */
+  .arrow-down {
+    display: flex;
+    justify-content: center;
+    color: #4a5568;
+    font-size: 18px;
+    margin: 2px 0;
+  }
+  .arrow-down.wide {
+    justify-content: space-around;
+    padding: 0 60px;
+  }
+
+  /* Boxes */
+  .box {
+    border-radius: 7px;
+    padding: 10px 14px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    flex: 1;
+  }
+  .box .box-title {
+    font-weight: 700;
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+  .box .box-sub {
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  .box .box-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin-bottom: 5px;
+  }
+
+  /* Box colour variants */
+  .box.skill      { background: #1c2a3a; border: 1px solid #2b6cb0; color: #90cdf4; }
+  .box.perplexity { background: #1a1a3e; border: 1px solid #553c9a; color: #d6bcfa; }
+  .box.python     { background: #1a2f1f; border: 1px solid #276749; color: #9ae6b4; }
+  .box.data       { background: #2d2a1a; border: 1px solid #744210; color: #fbd38d; }
+  .box.output     { background: #1a2535; border: 1px solid #2c5282; color: #bee3f8; }
+  .box.fallback   { background: #1c1c1c; border: 1px dashed #4a5568; color: #718096; }
+  .box.neutral    { background: #1e2532; border: 1px solid #2d3748; color: #a0aec0; }
+  .box.gate       { background: #2d1f1a; border: 1px solid #744210; color: #fbd38d; text-align: center; }
+  .box.email      { background: #1a2535; border: 1px solid #285e61; color: #81e6d9; }
+
+  .box.skill   .box-tag  { background: #2b6cb0; color: #ebf8ff; }
+  .box.perplexity .box-tag { background: #553c9a; color: #faf5ff; }
+  .box.python  .box-tag  { background: #276749; color: #f0fff4; }
+  .box.data    .box-tag  { background: #744210; color: #fffbeb; }
+  .box.fallback .box-tag { background: #4a5568; color: #edf2f7; }
+
+  .connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a5568;
+    font-size: 16px;
+    flex: 0 0 24px;
+  }
+  .connector.vertical { flex-direction: column; }
+
+  .label-arrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #4a5568;
+    font-size: 10px;
+    margin: 4px 0;
+  }
+  .label-arrow::before { content: '▼'; font-size: 12px; }
+
+  /* Parallel queries block */
+  .queries-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* ── Process steps ── */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .step {
+    background: #141820;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 12px 10px;
+    position: relative;
+  }
+  .step-num {
+    font-size: 10px;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 6px;
+  }
+  .step-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .step-detail {
+    font-size: 10px;
+    color: #718096;
+    line-height: 1.4;
+  }
+  .step.highlight { border-color: #2b6cb0; background: #0d1f33; }
+  .step.highlight .step-num { color: #63b3ed; }
+  .step-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2d3748;
+    font-size: 14px;
+    padding-top: 28px;
+  }
+
+  /* ── Data table ── */
+  .data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .data-card {
+    background: #141820;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .data-card-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #2d3748;
+  }
+  .data-card.q1 .data-card-title { color: #9ae6b4; border-color: #276749; }
+  .data-card.q2 .data-card-title { color: #d6bcfa; border-color: #553c9a; }
+  .data-card.q3 .data-card-title { color: #fbd38d; border-color: #744210; }
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0;
+    font-size: 11px;
+    border-bottom: 1px solid #1e2532;
+  }
+  .data-row:last-child { border-bottom: none; }
+  .data-key { color: #718096; }
+  .data-val { color: #e2e8f0; font-family: monospace; font-size: 10px; }
+
+  /* ── File map ── */
+  .file-map {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .file-card {
+    background: #141820;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .file-path {
+    font-family: monospace;
+    font-size: 11px;
+    color: #63b3ed;
+    margin-bottom: 6px;
+    word-break: break-all;
+  }
+  .file-role {
+    font-size: 11px;
+    color: #a0aec0;
+    margin-bottom: 8px;
+  }
+  .file-change {
+    font-size: 10px;
+    color: #68d391;
+  }
+  .file-change.new::before { content: '+ NEW  '; color: #68d391; font-weight: 700; }
+  .file-change.mod::before { content: '~ MOD  '; color: #f6ad55; font-weight: 700; }
+
+  /* ── Footer ── */
+  .page-footer {
+    border-top: 1px solid #2d3748;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #4a5568;
+  }
+
+  /* Utility */
+  .mt8  { margin-top: 8px; }
+  .mt16 { margin-top: 16px; }
+  .chip {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin-right: 3px;
+  }
+  .chip.new  { background: #1c4532; color: #68d391; }
+  .chip.mod  { background: #3d2c00; color: #f6ad55; }
+  .chip.del  { background: #3d1515; color: #fc8181; }
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<div class="page-header">
+  <div>
+    <h1>Perplexity MCP — Newsletter Pipeline Integration</h1>
+    <div class="sub">Framework Foundry · Market Day Break · Architecture &amp; Process Reference</div>
+  </div>
+  <div style="text-align:right;">
+    <div class="badge">Commit 7b63aac · 2026-03-20</div>
+    <div style="font-size:10px;color:#4a5568;margin-top:6px;">generation_source: "perplexity"</div>
+  </div>
+</div>
+
+<!-- ── Before / After ── -->
+<div class="section-title">What Changed</div>
+<div class="before-after">
+  <div class="ba-panel before">
+    <div class="ba-label">Before</div>
+    <div class="ba-item"><span class="dot"></span> <strong>yfinance</strong> fetched US equity prices</div>
+    <div class="ba-item"><span class="dot"></span> <strong>Finnhub</strong> fetched intl indices &amp; FX</div>
+    <div class="ba-item"><span class="dot"></span> API rate limits &amp; stale data common</div>
+    <div class="ba-item"><span class="dot"></span> Holiday detection unreliable</div>
+    <div class="ba-item"><span class="dot"></span> Claude manually wrote fixture JSON</div>
+    <div class="ba-item"><span class="dot"></span><span class="strike">PDF generated on every publish</span></div>
+  </div>
+  <div class="ba-arrow">→</div>
+  <div class="ba-panel after">
+    <div class="ba-label">After</div>
+    <div class="ba-item"><span class="dot"></span> <strong>Perplexity MCP</strong> is primary source for all prices</div>
+    <div class="ba-item"><span class="dot"></span> 3 parallel queries: US · Intl · FX</div>
+    <div class="ba-item"><span class="dot"></span> Sanity bounds check before fixture write</div>
+    <div class="ba-item"><span class="dot"></span> Holiday notes captured (e.g. Nikkei closed)</div>
+    <div class="ba-item"><span class="dot"></span> <strong>build_perplexity_fixture.py</strong> handles all computation</div>
+    <div class="ba-item"><span class="dot"></span> yfinance retained as per-asset fallback only</div>
+  </div>
+</div>
+
+<!-- ── Architecture Diagram ── -->
+<div class="section-title">System Architecture</div>
+<div class="arch">
+
+  <!-- Trigger -->
+  <div class="row center">
+    <div class="box skill" style="flex:0 0 260px; text-align:center;">
+      <div class="box-tag">Claude Code Skill</div>
+      <div class="box-title">/daybreak [DATE]</div>
+      <div class="box-sub">Orchestrates the full daily publish workflow</div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ Step 0 — if no fixture exists</div>
+
+  <!-- 3 parallel Perplexity queries -->
+  <div class="queries-block">
+    <div class="box perplexity">
+      <div class="box-tag">Perplexity MCP · Query 1</div>
+      <div class="box-title">US Equities + Commodities + Bonds</div>
+      <div class="box-sub mt8">S&amp;P 500 · Dow · Nasdaq · Russell 2000<br>Gold · WTI Crude · 10Y Yield · DXY<br>+ all futures settlements</div>
+    </div>
+    <div class="box perplexity">
+      <div class="box-tag">Perplexity MCP · Query 2</div>
+      <div class="box-title">International Overnight Indices</div>
+      <div class="box-sub mt8">Nikkei · Hang Seng · KOSPI · Nifty 50<br>ASX 200 · DAX · FTSE 100<br>CAC 40 · Euro Stoxx 50</div>
+    </div>
+    <div class="box perplexity">
+      <div class="box-tag">Perplexity MCP · Query 3</div>
+      <div class="box-title">FX Rates at 5 PM ET</div>
+      <div class="box-sub mt8">EUR/USD · GBP/USD · USD/JPY<br>AUD/USD · USD/CNH · CHF/USD</div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ sanity bounds check · flag out-of-range values · confirm with user</div>
+
+  <!-- Build fixture -->
+  <div class="row center">
+    <div class="box python" style="flex:0 0 400px; text-align:center;">
+      <div class="box-tag">New · CLI Script</div>
+      <div class="box-title">build_perplexity_fixture.py  --date DATE --prices '{...}'</div>
+      <div class="box-sub mt8">
+        Calls <strong>fetch_from_perplexity()</strong> →
+        loads yesterday's fixture for prev_close →
+        computes daily_pct + yield_change_bps →
+        delegates econ_calendar (FRED) + market_news (RSS) to existing fetchers
+      </div>
+    </div>
+  </div>
+
+  <!-- Parallel side fetch -->
+  <div class="row" style="margin-top:8px; align-items:flex-start;">
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+      <div class="arrow-down">▼</div>
+      <div class="box data" style="width:100%; text-align:center;">
+        <div class="box-tag">Unchanged · FRED API</div>
+        <div class="box-title">Economic Calendar</div>
+        <div class="box-sub mt8">Release dates · actuals · CPI / NFP / PCE / GDP</div>
+      </div>
+    </div>
+    <div style="flex:0 0 32px; display:flex; align-items:center; justify-content:center; padding-top:28px; color:#4a5568; font-size:14px;">+</div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+      <div class="arrow-down">▼</div>
+      <div class="box data" style="width:100%; text-align:center;">
+        <div class="box-tag">Unchanged · RSS Feeds</div>
+        <div class="box-title">Market News</div>
+        <div class="box-sub mt8">Reuters · AP News · CNBC · keyword filtered</div>
+      </div>
+    </div>
+    <div style="flex:0 0 32px; display:flex; align-items:center; justify-content:center; padding-top:28px; color:#4a5568; font-size:14px;">+</div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+      <div class="arrow-down">▼</div>
+      <div class="box fallback" style="width:100%; text-align:center;">
+        <div class="box-tag">Fallback Only</div>
+        <div class="box-title">yfinance / Finnhub</div>
+        <div class="box-sub mt8">Per-asset fallback if Perplexity unavailable or out-of-bounds</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ saved as</div>
+
+  <!-- Fixture -->
+  <div class="row center">
+    <div class="box neutral" style="flex:0 0 380px; text-align:center;">
+      <div class="box-title" style="font-family:monospace; font-size:12px;">fixtures/daybreak_YYYY-MM-DD.json</div>
+      <div class="box-sub mt8">meta · us_close · intl_overnight · fx · futures · econ_calendar · market_news<br>
+        <span style="color:#68d391; font-size:10px;">generation_source: "perplexity"</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ Step 1 — publish_daybreak.sh detects fixture → no --live needed</div>
+
+  <!-- Generator -->
+  <div class="row center">
+    <div class="box python" style="flex:0 0 360px; text-align:center;">
+      <div class="box-tag">Unchanged · Python</div>
+      <div class="box-title">generate_market_day_break.py --md-only</div>
+      <div class="box-sub mt8">fetch_daybreak_data(use_mock=True) → build_daybreak_context() → Jinja2 render</div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼ review checkpoint</div>
+
+  <!-- Step 3 outputs -->
+  <div class="row">
+    <div class="box output" style="text-align:center;">
+      <div class="box-title">market_day_break_DATE.md</div>
+      <div class="box-sub">The Brief · Headlines · Positioning</div>
+    </div>
+    <div class="connector">→</div>
+    <div class="box output" style="text-align:center;">
+      <div class="box-tag">--publish</div>
+      <div class="box-title">Social Posts</div>
+      <div class="box-sub">LinkedIn · X thread · Substack HTML</div>
+    </div>
+    <div class="connector">→</div>
+    <div class="box output" style="text-align:center;">
+      <div class="box-title">Site Rebuild</div>
+      <div class="box-sub">build_combined_site.py → GitHub Pages</div>
+    </div>
+    <div class="connector">→</div>
+    <div class="box email" style="text-align:center;">
+      <div class="box-title">Subscriber Email</div>
+      <div class="box-sub">preview → confirm → send_email.py</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Process Flow ── -->
+<div class="section-title">Step-by-Step Process</div>
+<div class="steps">
+
+  <div class="step highlight">
+    <div class="step-num">STEP 0 · NEW</div>
+    <div class="step-title">Perplexity Price Fetch</div>
+    <div class="step-detail">3 queries run in parallel via mcp__perplexity__perplexity_ask with search_recency_filter: "day"</div>
+  </div>
+
+  <div class="step highlight">
+    <div class="step-num">STEP 0 · NEW</div>
+    <div class="step-title">Bounds Check &amp; Fixture Build</div>
+    <div class="step-detail">Sanity check each price. Call build_perplexity_fixture.py to save fixture with prev_close + daily_pct computed automatically.</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">STEP 1</div>
+    <div class="step-title">Generate Markdown</div>
+    <div class="step-detail">publish_daybreak.sh detects fixture → runs generator without --live. Displays .md for review.</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">STEP 2</div>
+    <div class="step-title">Content Review</div>
+    <div class="step-detail">User reviews full newsletter. Edits applied directly to .md if needed before publishing.</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">STEP 3</div>
+    <div class="step-title">Publish</div>
+    <div class="step-detail">--publish: social posts, site rebuild, git commit + push → GitHub Pages live.</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">STEPS 4–5</div>
+    <div class="step-title">Email Review &amp; Send</div>
+    <div class="step-detail">Preview HTML generated. User confirms → send_email.py dispatches to subscribers.</div>
+  </div>
+
+</div>
+
+<!-- ── Query Payload Reference ── -->
+<div class="section-title">Perplexity Query Key Reference</div>
+<div class="data-grid">
+
+  <div class="data-card q1">
+    <div class="data-card-title">Query 1 — US Prices (us: {...})</div>
+    <div class="data-row"><span class="data-key">sp500</span><span class="data-val">→ "S&amp;P 500"</span></div>
+    <div class="data-row"><span class="data-key">dow</span><span class="data-val">→ "Dow Jones"</span></div>
+    <div class="data-row"><span class="data-key">nasdaq</span><span class="data-val">→ "Nasdaq"</span></div>
+    <div class="data-row"><span class="data-key">russell2000</span><span class="data-val">→ "Russell 2000"</span></div>
+    <div class="data-row"><span class="data-key">gold_spot</span><span class="data-val">→ "Gold"</span></div>
+    <div class="data-row"><span class="data-key">ten_year_yield</span><span class="data-val">→ "10Y Treasury"</span></div>
+    <div class="data-row"><span class="data-key">usd_index</span><span class="data-val">→ "USD Index"</span></div>
+    <div class="data-row"><span class="data-key">wti_crude</span><span class="data-val">→ "WTI Crude Oil"</span></div>
+    <div class="data-row"><span class="data-key">sp/nasdaq/dow/gold/wti_futures</span><span class="data-val">→ futures{}</span></div>
+  </div>
+
+  <div class="data-card q2">
+    <div class="data-card-title">Query 2 — Intl Indices (intl: {...})</div>
+    <div class="data-row"><span class="data-key">nikkei</span><span class="data-val">→ "Nikkei 225" · APAC</span></div>
+    <div class="data-row"><span class="data-key">hang_seng</span><span class="data-val">→ "Hang Seng" · APAC</span></div>
+    <div class="data-row"><span class="data-key">kospi</span><span class="data-val">→ "KOSPI" · APAC</span></div>
+    <div class="data-row"><span class="data-key">nifty50</span><span class="data-val">→ "Nifty 50" · APAC</span></div>
+    <div class="data-row"><span class="data-key">asx200</span><span class="data-val">→ "ASX 200" · APAC</span></div>
+    <div class="data-row"><span class="data-key">dax</span><span class="data-val">→ "DAX" · Europe</span></div>
+    <div class="data-row"><span class="data-key">ftse100</span><span class="data-val">→ "FTSE 100" · Europe</span></div>
+    <div class="data-row"><span class="data-key">cac40</span><span class="data-val">→ "CAC 40" · Europe</span></div>
+    <div class="data-row"><span class="data-key">eurostoxx50</span><span class="data-val">→ "Euro Stoxx 50" · Europe</span></div>
+    <div class="data-row" style="font-size:10px; color:#553c9a; margin-top:4px;"><span>Append _note for holiday/status, e.g. nikkei_note: "Holiday"</span></div>
+  </div>
+
+  <div class="data-card q3">
+    <div class="data-card-title">Query 3 — FX Rates (fx: {...})</div>
+    <div class="data-row"><span class="data-key">eurusd</span><span class="data-val">→ "EUR/USD"</span></div>
+    <div class="data-row"><span class="data-key">gbpusd</span><span class="data-val">→ "GBP/USD"</span></div>
+    <div class="data-row"><span class="data-key">usdjpy</span><span class="data-val">→ "USD/JPY"</span></div>
+    <div class="data-row"><span class="data-key">audusd</span><span class="data-val">→ "AUD/USD"</span></div>
+    <div class="data-row"><span class="data-key">usdcnh</span><span class="data-val">→ "USD/CNH"</span></div>
+    <div class="data-row"><span class="data-key">chfusd</span><span class="data-val">→ "CHF/USD"</span></div>
+    <div class="data-row" style="margin-top:8px;"><span class="data-key">prev_close source</span><span class="data-val">yesterday's fixture</span></div>
+    <div class="data-row"><span class="data-key">daily_pct computed by</span><span class="data-val">_build_fx()</span></div>
+    <div class="data-row"><span class="data-key">null value</span><span class="data-val">→ rate: null in fixture</span></div>
+  </div>
+
+</div>
+
+<!-- ── Files Changed ── -->
+<div class="section-title">Files Changed</div>
+<div class="file-map">
+
+  <div class="file-card">
+    <div class="file-path">weekly-newsletter/data/build_perplexity_fixture.py</div>
+    <div class="file-role">CLI entry point. Accepts --date and --prices JSON. Calls fetch_from_perplexity(), saves fixture, prints summary + null-price warnings.</div>
+    <div class="file-change new">Created in commit 7b63aac</div>
+  </div>
+
+  <div class="file-card">
+    <div class="file-path">weekly-newsletter/data/fetch_daybreak_data.py</div>
+    <div class="file-role">Added fetch_from_perplexity() + four sub-builders (_build_us_close, _build_intl, _build_fx, _build_futures) + four key-map constants. Existing _fetch_live() (yfinance) untouched.</div>
+    <div class="file-change mod">+185 lines · existing code unchanged</div>
+  </div>
+
+  <div class="file-card">
+    <div class="file-path">.claude/commands/daybreak.md</div>
+    <div class="file-role">Step 7 updated: Claude now calls build_perplexity_fixture.py instead of writing the fixture JSON manually. Example JSON shape documented inline.</div>
+    <div class="file-change mod">Step 7 rewritten</div>
+  </div>
+
+  <div class="file-card">
+    <div class="file-path">weekly-newsletter/publish_daybreak.sh</div>
+    <div class="file-role">PDF generation removed: --pdf flag dropped, regen_daybreak_pdf.py step removed, PDF staging line removed, PDF_PATH variable removed. Social post generation unchanged.</div>
+    <div class="file-change mod">PDF pipeline removed · 4 lines deleted</div>
+  </div>
+
+</div>
+
+<!-- ── Footer ── -->
+<div class="page-footer">
+  <span>Framework Foundry · Market Day Break Pipeline · Perplexity MCP Integration</span>
+  <span>Commit 7b63aac · 2026-03-20 · generation_source: "perplexity"</span>
+</div>
+
+</body>
+</html>

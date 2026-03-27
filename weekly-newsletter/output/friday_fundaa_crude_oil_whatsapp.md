@@ -1,7 +1,7 @@
 *Friday Fundaa 🎓*
 _A short weekly moment of "huh, didn't know that" from the world of markets and money._
 
-Hot take: "oil prices" isn't a thing.
+Hot take: "oil prices" isn't a thing. What the Brent is going on here? 🤬
 
 There are *two* oil prices. The media picks one without telling you which one. You've been nodding along to headlines for years not knowing this 🙃
 
