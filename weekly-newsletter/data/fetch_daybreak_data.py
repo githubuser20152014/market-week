@@ -15,11 +15,18 @@ Fixture schema  fixtures/daybreak_YYYY-MM-DD.json:
 """
 
 import json
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
+from dotenv import load_dotenv
 
 FIXTURES_DIR = Path(__file__).resolve().parent.parent / "fixtures"
 CONFIG_DIR   = Path(__file__).resolve().parent.parent / "config"
+
+# Load API keys from config/api_keys.env if present
+_env_file = CONFIG_DIR / "api_keys.env"
+if _env_file.exists():
+    load_dotenv(_env_file)
 
 # Stale-data threshold: 1 day (tighter than weekly's 2 days)
 _STALE_DAYS = 1
@@ -568,7 +575,6 @@ def _fetch_econ_calendar(date_str: str) -> dict:
     Fallback: Finnhub /calendar/economic (paid — 403 on free tier).
     Returns empty calendar if both fail.
     """
-    import os
     target    = datetime.strptime(date_str, "%Y-%m-%d")
     yesterday = (target - timedelta(days=1)).strftime("%Y-%m-%d")
     result    = {"yesterday": [], "today": []}
