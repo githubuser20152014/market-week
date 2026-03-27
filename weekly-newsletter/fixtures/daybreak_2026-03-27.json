@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-03-27",
+    "generated_at": "2026-03-27T10:45:01.821402Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6591.9,
+      "close": 6477.16,
+      "daily_pct": -1.7406,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46429.49,
+      "close": 45960.11,
+      "daily_pct": -1.011,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21929.83,
+      "close": 21408.08,
+      "daily_pct": -2.3792,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2536.38,
+      "close": 2493.32,
+      "daily_pct": -1.6977,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4547,
+      "close": 4433.57,
+      "daily_pct": -2.4946,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.328,
+      "close": 4.45,
+      "daily_pct": 2.8189,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 12.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.643,
+      "close": 100.007,
+      "daily_pct": 0.3653,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 88.48,
+      "close": 96.17,
+      "daily_pct": 8.6912,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53373,
+      "prev_close": 53603.65,
+      "daily_pct": -0.4303,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24951,
+      "prev_close": 24856.43,
+      "daily_pct": 0.3805,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5438,
+      "prev_close": 5460.46,
+      "daily_pct": -0.4113,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22986,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 8547.6,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 22957.08,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 10106.84,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 7846.55,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 5627,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1521,
+      "prev_close": 1.15626,
+      "daily_pct": -0.3598
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3311,
+      "prev_close": 1.33598,
+      "daily_pct": -0.3653
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.4,
+      "prev_close": 159.474,
+      "daily_pct": -0.0464
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.689,
+      "prev_close": 0.69401,
+      "daily_pct": -0.7219
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": null,
+      "prev_close": 6.9076,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": null,
+      "prev_close": 1.2629,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": null,
+      "prev_close": 6597.0,
+      "daily_pct": null
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": null,
+      "prev_close": 24186.25,
+      "daily_pct": null
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": null,
+      "prev_close": 46426.0,
+      "daily_pct": null
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": null,
+      "prev_close": 4439.0,
+      "daily_pct": null
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 94.48,
+      "prev_close": 92.78,
+      "daily_pct": 1.8323
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices climb to $110 as Trump's Iran deadline extension fails to allay supply fears",
+      "source": "CNBC",
+      "published": "Fri, 27 Mar 2026 10:13:09 GMT",
+      "url": "https://www.cnbc.com/2026/03/27/oil-price-wti-brent-crude-trump-strait-hormuz-tensions-iran-ships.html",
+      "summary": "Oil prices traded higher after U.S. President Donald Trump said Iran had allowed 10 oil tankers to pass through the Strait of Hormuz."
+    },
+    {
+      "headline": "David Sacks says his time as Trump's crypto and AI czar has ended",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 22:01:53 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/david-sacks-trump-crypto-ai-czar.html",
+      "summary": "The venture capitalist said he will still be a part of the White House's Technology committee and will help push Trump's AI plan forward."
+    },
+    {
+      "headline": "Sen. Warren rips Federal Reserve chair pick Kevin Warsh: 'You have learned nothing from your failures'",
+      "source": "CNBC",
+      "published": "Fri, 27 Mar 2026 02:05:55 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/federal-reserve-kevin-walsh-elizabeth-warren-trump.html",
+      "summary": "Kevin Warsh's nomination as chair of the Federal Reserve has been in limbo because of a criminal investigation of Chair Jerome Powell."
+    },
+    {
+      "headline": "Netflix raises prices across all streaming plans",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 21:44:47 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/netflix-raises-prices-across-all-streaming-plans.html",
+      "summary": "The price hike comes as Netflix has been investing heavily in its content, including new ventures into the live events space and launching video podcasts."
+    },
+    {
+      "headline": "Is now the time to buy Nvidia? Cramer says ask these questions to arrive at an answer",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 22:26:37 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/cramer-when-to-buy-nvidia.html",
+      "summary": "The war in Iran has forced investors to act more like military strategists instead of stock-pickers, CNBC's Jim Cramer said Thursday."
+    },
+    {
+      "headline": "Family caregivers now provide $1 trillion worth of care annually, AARP finds",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 20:17:13 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/family-caregivers.html",
+      "summary": "About 59 million caregivers provide care for loved ones, representing $1.01 trillion in total economic value annually, according to a new AARP report."
+    },
+    {
+      "headline": "OpenAI ads pilot tops $100 million in annualized revenue in under 2 months",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 22:28:32 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/openai-ads-pilot-tops-100-million-in-arr-in-under-2-months.html",
+      "summary": "OpenAI's nascent ads business has surpassed $100 million in annual recurring revenue less than two months after launching its pilot in the U.S."
+    },
+    {
+      "headline": "Federal Reserve urges judge to deny bid to revive Jerome Powell probe subpoenas",
+      "source": "CNBC",
+      "published": "Thu, 26 Mar 2026 21:17:48 GMT",
+      "url": "https://www.cnbc.com/2026/03/26/fed-trump-jerome-powell-subpoenas-doj.html",
+      "summary": "President Donald Trump, in his latest jibe at Federal Reserve Chair Jerome Powell, called him a \"moron,' and blasted him over keeping interest rates too high."
+    }
+  ]
+}
