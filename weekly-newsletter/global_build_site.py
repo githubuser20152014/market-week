@@ -287,10 +287,11 @@ def _signal_dot(signal):
 
 
 def _md_inline(text):
-    """Convert **bold** and *italic* markdown to HTML inline elements."""
+    """Convert **bold**, *italic*, and [link](url) markdown to HTML inline elements."""
     import re
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
     text = re.sub(r'\*(.+?)\*',     r'<em>\1</em>',         text)
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
     return text
 
 
