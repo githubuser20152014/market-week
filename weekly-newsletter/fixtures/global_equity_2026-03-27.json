@@ -1,0 +1,324 @@
+{
+  "S&P 500": {
+    "symbol": "^GSPC",
+    "region": "US",
+    "etf_proxy": "SPY",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 6602.61,
+        "high": 6602.61,
+        "low": 6602.61,
+        "close": 6602.61,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 6477.16,
+        "high": 6477.16,
+        "low": 6477.16,
+        "close": 6477.16,
+        "volume": 0
+      }
+    ]
+  },
+  "Dow Jones": {
+    "symbol": "^DJI",
+    "region": "US",
+    "etf_proxy": "DIA",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 46945.98,
+        "high": 46945.98,
+        "low": 46945.98,
+        "close": 46945.98,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 45960.11,
+        "high": 45960.11,
+        "low": 45960.11,
+        "close": 45960.11,
+        "volume": 0
+      }
+    ]
+  },
+  "Nasdaq": {
+    "symbol": "^IXIC",
+    "region": "US",
+    "etf_proxy": "QQQ",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 21397.71,
+        "high": 21397.71,
+        "low": 21397.71,
+        "close": 21397.71,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 20948.36,
+        "high": 20948.36,
+        "low": 20948.36,
+        "close": 20948.36,
+        "volume": 0
+      }
+    ]
+  },
+  "Russell 2000": {
+    "symbol": "^RUT",
+    "region": "US",
+    "etf_proxy": "IWM",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 2543.88,
+        "high": 2543.88,
+        "low": 2543.88,
+        "close": 2543.88,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 2493.0,
+        "high": 2493.0,
+        "low": 2493.0,
+        "close": 2493.0,
+        "volume": 0
+      }
+    ]
+  },
+  "10Y Treasury": {
+    "symbol": "^TNX",
+    "region": "US",
+    "etf_proxy": "TLT",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 4.34,
+        "high": 4.34,
+        "low": 4.34,
+        "close": 4.34,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 4.42,
+        "high": 4.42,
+        "low": 4.42,
+        "close": 4.42,
+        "volume": 0
+      }
+    ]
+  },
+  "USD Index": {
+    "symbol": "DX=F",
+    "region": "US",
+    "etf_proxy": "UUP",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 98.43,
+        "high": 98.43,
+        "low": 98.43,
+        "close": 98.43,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 99.71,
+        "high": 99.71,
+        "low": 99.71,
+        "close": 99.71,
+        "volume": 0
+      }
+    ]
+  },
+  "VIX": {
+    "symbol": "^VIX",
+    "region": "US",
+    "etf_proxy": "VIXY",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 24.95,
+        "high": 24.95,
+        "low": 24.95,
+        "close": 24.95,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 27.44,
+        "high": 27.44,
+        "low": 27.44,
+        "close": 27.44,
+        "volume": 0
+      }
+    ]
+  },
+  "DAX": {
+    "symbol": "^GDAXI",
+    "region": "Europe",
+    "etf_proxy": "EWG",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 23160.0,
+        "high": 23160.0,
+        "low": 23160.0,
+        "close": 23160.0,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 22581.0,
+        "high": 22581.0,
+        "low": 22581.0,
+        "close": 22581.0,
+        "volume": 0
+      }
+    ]
+  },
+  "FTSE 100": {
+    "symbol": "^FTSE",
+    "region": "Europe",
+    "etf_proxy": "EWU",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 10154.79,
+        "high": 10154.79,
+        "low": 10154.79,
+        "close": 10154.79,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 9972.0,
+        "high": 9972.0,
+        "low": 9972.0,
+        "close": 9972.0,
+        "volume": 0
+      }
+    ]
+  },
+  "CAC 40": {
+    "symbol": "^FCHI",
+    "region": "Europe",
+    "etf_proxy": "EWQ",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 7927.55,
+        "high": 7927.55,
+        "low": 7927.55,
+        "close": 7927.55,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 7769.0,
+        "high": 7769.0,
+        "low": 7769.0,
+        "close": 7769.0,
+        "volume": 0
+      }
+    ]
+  },
+  "Euro Stoxx 50": {
+    "symbol": "^STOXX50E",
+    "region": "Europe",
+    "etf_proxy": "FEZ",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 5501.4,
+        "high": 5501.4,
+        "low": 5501.4,
+        "close": 5501.4,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 5505.8,
+        "high": 5505.8,
+        "low": 5505.8,
+        "close": 5505.8,
+        "volume": 0
+      }
+    ]
+  },
+  "Nikkei 225": {
+    "symbol": "^N225",
+    "region": "Asia-Pacific",
+    "etf_proxy": "EWJ",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 52326.54,
+        "high": 52326.54,
+        "low": 52326.54,
+        "close": 52326.54,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 53373.07,
+        "high": 53373.07,
+        "low": 53373.07,
+        "close": 53373.07,
+        "volume": 0
+      }
+    ]
+  },
+  "Hang Seng": {
+    "symbol": "^HSI",
+    "region": "Asia-Pacific",
+    "etf_proxy": "EWH",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 24109.16,
+        "high": 24109.16,
+        "low": 24109.16,
+        "close": 24109.16,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 24952.98,
+        "high": 24952.98,
+        "low": 24952.98,
+        "close": 24952.98,
+        "volume": 0
+      }
+    ]
+  },
+  "ASX 200": {
+    "symbol": "^AXJO",
+    "region": "Asia-Pacific",
+    "etf_proxy": "EWA",
+    "data": [
+      {
+        "date": "2026-03-23",
+        "open": 8427.48,
+        "high": 8427.48,
+        "low": 8427.48,
+        "close": 8427.48,
+        "volume": 0
+      },
+      {
+        "date": "2026-03-27",
+        "open": 8494.9,
+        "high": 8494.9,
+        "low": 8494.9,
+        "close": 8494.9,
+        "volume": 0
+      }
+    ]
+  }
+}
