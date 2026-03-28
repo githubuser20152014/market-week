@@ -1,6 +1,6 @@
 # Framework Foundry Weekly — Global Investor Edition
 ## The Week Stagflation Came Back: Oil Near $100, S&P Down 2%, and the One Market That Shrugged It Off
-## March 27, 2026
+## March 28, 2026
 
 ---
 
