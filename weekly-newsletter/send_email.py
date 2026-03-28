@@ -6,6 +6,7 @@ Usage:
     python send_email.py --edition daybreak --date 2026-03-06 [--dry-run]
     python send_email.py --edition weekly   --date 2026-03-06 [--dry-run]
     python send_email.py --edition intl     --date 2026-03-06 [--dry-run]
+    python send_email.py --edition global   --date 2026-03-27 [--dry-run]
 """
 
 import argparse
@@ -31,6 +32,7 @@ SUBJECTS = {
     "weekly":    "Framework Foundry Weekly (US Edition) — {date}",
     "intl":      "Framework Foundry Weekly (Intl Edition) — {date}",
     "blueprint": "The Blueprint — {title} — {date}",
+    "global":    "Global Investor Edition — {title}",
 }
 
 SUBSCRIPTION_NAMES = {
@@ -38,6 +40,7 @@ SUBSCRIPTION_NAMES = {
     "weekly":    "Framework Foundry Weekly",
     "intl":      "Framework Foundry Weekly",
     "blueprint": "Framework Foundry (The Blueprint)",
+    "global":    "Framework Foundry — Global Investor Edition",
 }
 
 BLUEPRINT_CTA = (
@@ -53,12 +56,14 @@ def resolve_md_path(edition: str, date_str: str) -> Path:
         return OUTPUT_DIR / f"intl_newsletter_{date_str}.md"
     if edition == "blueprint":
         return OUTPUT_DIR / f"blueprint_{date_str}.md"
+    if edition == "global":
+        return OUTPUT_DIR / f"global_newsletter_{date_str}.md"
     return OUTPUT_DIR / f"newsletter_{date_str}.md"
 
 
 def main():
     parser = argparse.ArgumentParser(description="Send newsletter to subscribers.")
-    parser.add_argument("--edition", choices=["daybreak", "weekly", "intl", "blueprint"], required=True)
+    parser.add_argument("--edition", choices=["daybreak", "weekly", "intl", "blueprint", "global"], required=True)
     parser.add_argument("--date", required=True, help="YYYY-MM-DD")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print subscriber list and subject without sending.")
@@ -94,6 +99,10 @@ def main():
         title_path = OUTPUT_DIR / f"title_blueprint_{args.date}.txt"
         title = title_path.read_text(encoding="utf-8").strip() if title_path.exists() else args.date
         subject = SUBJECTS["blueprint"].format(title=title, date=args.date)
+    elif args.edition == "global":
+        title_path = OUTPUT_DIR / f"title_global_{args.date}.txt"
+        title = title_path.read_text(encoding="utf-8").strip() if title_path.exists() else args.date
+        subject = SUBJECTS["global"].format(title=title)
     else:
         subject = SUBJECTS[args.edition].format(date=args.date)
     md_path = Path(args.md_override) if args.md_override else resolve_md_path(args.edition, args.date)
@@ -139,11 +148,20 @@ def main():
         return
 
     # Build email HTML
+    if args.edition == "blueprint":
+        edition_label = "The Blueprint · Wednesday"
+        cta_text = BLUEPRINT_CTA
+    elif args.edition == "global":
+        edition_label = "Global Investor Edition · Saturday"
+        cta_text = ""
+    else:
+        edition_label = ""
+        cta_text = ""
     html_body = build_email_html(
         md_content, subject, SUBSCRIPTION_NAMES[args.edition],
         date_str=args.date if args.edition == "daybreak" else "",
-        edition_label="The Blueprint · Wednesday" if args.edition == "blueprint" else "",
-        cta_text=BLUEPRINT_CTA if args.edition == "blueprint" else "",
+        edition_label=edition_label,
+        cta_text=cta_text,
     )
 
     if args.save_preview:
