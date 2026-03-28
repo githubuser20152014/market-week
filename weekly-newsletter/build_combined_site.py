@@ -3954,13 +3954,12 @@ def build(use_mock=True):
     for date_str in daybreak_dates:
         issue_dir = SITE_DIR / "daily" / date_str
         html_file = issue_dir / "index.html"
-        # Skip historical editions that already have published HTML — the
-        # approved .md is the source of truth and the HTML is already correct.
+        # Skip re-rendering historical editions that already have published HTML
+        # — but still build the context so hub pages can reference it.
         from datetime import date as _date
-        if html_file.exists() and date_str != _date.today().isoformat():
-            print(f"Skipping Daily {date_str} (HTML already published)")
-            continue
-        print(f"Building Daily {date_str} …")
+        skip_render = html_file.exists() and date_str != _date.today().isoformat()
+        if not skip_render:
+            print(f"Building Daily {date_str} …")
         try:
             raw = fetch_daybreak_data(date_str, use_mock=use_mock)
             ctx = build_daybreak_context(raw)
@@ -3969,6 +3968,9 @@ def build(use_mock=True):
             print(f"  WARNING: could not build daybreak context for {date_str}: {e}")
             continue
         daybreak_ctxs[date_str] = ctx
+        if skip_render:
+            print(f"Skipping Daily {date_str} (HTML already published)")
+            continue
 
         issue_dir = SITE_DIR / "daily" / date_str
         issue_dir.mkdir(parents=True, exist_ok=True)
