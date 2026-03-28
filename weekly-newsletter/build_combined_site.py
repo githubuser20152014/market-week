@@ -1475,7 +1475,8 @@ def _override_global_ctx_from_md(ctx: dict, date_str: str) -> dict:
     # big_theme: first ### heading that isn't a known subsection
     known = {"Macro Regime Snapshot", "Equity Markets", "Currency Markets",
              "Commodities & Metals", "This Week's Economic Events",
-             "Next Week: What to Watch", "Global Investor Positioning"}
+             "Next Week: What to Watch", "Global Investor Positioning",
+             "What This Means For You", "The One Trade"}
     for heading, body in sections.items():
         if heading not in known:
             ctx["big_theme_title"] = heading
@@ -1488,6 +1489,8 @@ def _override_global_ctx_from_md(ctx: dict, date_str: str) -> dict:
         "Commodities & Metals":         "commodities_narrative",
         "This Week's Economic Events":  "events_commentary",
         "Next Week: What to Watch":     "next_week_commentary",
+        "What This Means For You":      "what_this_means",
+        "The One Trade":                "the_one_trade",
     }
     for md_heading, ctx_key in mapping.items():
         if md_heading in sections:

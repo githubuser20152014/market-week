@@ -453,6 +453,29 @@ def render_html(ctx):
         <tbody>{upcoming_rows}</tbody>
       </table>""" if upcoming_rows else ""
 
+    # ── Optional narrative sections from approved markdown ────────────────────
+    wtm = ctx.get("what_this_means", "")
+    ot  = ctx.get("the_one_trade", "")
+    what_this_means_html = ""
+    if wtm or ot:
+        what_this_means_html = ""
+        if wtm:
+            what_this_means_html += (
+                '    <!-- WHAT THIS MEANS FOR YOU -->\n'
+                '    <div class="section-block">\n'
+                '      <div class="section-title">What This Means For You</div>\n'
+                + _paras(wtm) +
+                '    </div>\n\n    <hr class="section-rule"/>\n\n'
+            )
+        if ot:
+            what_this_means_html += (
+                '    <!-- THE ONE TRADE -->\n'
+                '    <div class="section-block">\n'
+                '      <div class="section-title">The One Trade</div>\n'
+                + _paras(ot) +
+                '    </div>\n\n    <hr class="section-rule"/>\n\n'
+            )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -506,6 +529,7 @@ def render_html(ctx):
 
     <hr class="section-rule"/>
 
+    {what_this_means_html}
     <!-- MACRO REGIME -->
     <div class="section-block">
       <div class="section-title">Macro Regime Snapshot</div>
