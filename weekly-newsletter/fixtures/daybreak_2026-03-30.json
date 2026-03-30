@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-03-30",
+    "generated_at": "2026-03-30T09:51:26.977187Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6477.1602,
+      "close": 6368.8501,
+      "daily_pct": -1.6722,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 45960.1094,
+      "close": 45166.6406,
+      "daily_pct": -1.7264,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21408.0801,
+      "close": 20948.3594,
+      "daily_pct": -2.1474,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2493.3201,
+      "close": 2449.7,
+      "daily_pct": -1.7495,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4492.0,
+      "close": 4561.5,
+      "daily_pct": 1.5472,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.416,
+      "close": 4.44,
+      "daily_pct": 0.5435,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.15,
+      "close": 100.285,
+      "daily_pct": 0.1348,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 99.64,
+      "close": 101.24,
+      "daily_pct": 1.6058,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 51885.85,
+      "prev_close": 53373.07,
+      "daily_pct": -2.7865,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24750.79,
+      "prev_close": 24951.88,
+      "daily_pct": -0.8059,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5277.3,
+      "prev_close": 5438.87,
+      "daily_pct": -2.9707,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22348.4,
+      "prev_close": 22819.6,
+      "daily_pct": -2.0649,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8461.0,
+      "prev_close": 8516.3,
+      "daily_pct": -0.6493,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22271.16,
+      "prev_close": 22300.75,
+      "daily_pct": -0.1327,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10018.81,
+      "prev_close": 9967.4,
+      "daily_pct": 0.5158,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7700.07,
+      "prev_close": 7701.95,
+      "daily_pct": -0.0244,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5502.79,
+      "prev_close": 5505.8,
+      "daily_pct": -0.0547,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14982,
+      "prev_close": 1.15351,
+      "daily_pct": -0.3197
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32373,
+      "prev_close": 1.33356,
+      "daily_pct": -0.7372
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.59801,
+      "prev_close": 159.70399,
+      "daily_pct": -0.0664
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.68553,
+      "prev_close": 0.68874,
+      "daily_pct": -0.4657
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.91577,
+      "prev_close": 6.91704,
+      "daily_pct": -0.0184
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25084,
+      "prev_close": 1.25837,
+      "daily_pct": -0.5979
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6437.0,
+      "prev_close": 6412.25,
+      "daily_pct": 0.386
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 23403.25,
+      "prev_close": 23328.5,
+      "daily_pct": 0.3204
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 45576.0,
+      "prev_close": 45424.0,
+      "daily_pct": 0.3346
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4562.6,
+      "prev_close": 4492.0,
+      "daily_pct": 1.5717
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.41,
+      "prev_close": 110.16,
+      "daily_pct": 0.227
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 101.24,
+      "prev_close": 99.64,
+      "daily_pct": 1.6058
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Russia welcomes arrival of oil tanker in Cuba after Trump softens approach to U.S. blockade",
+      "source": "CNBC",
+      "published": "Mon, 30 Mar 2026 09:47:38 GMT",
+      "url": "https://www.cnbc.com/2026/03/30/cuba-crisis-trump-fuel-oil-bloackade-energy-russia-tanker-tariffs.html",
+      "summary": "A Russian oil tanker carrying a humanitarian shipment of 100,000 tons of crude oil reportedly arrived in Cuba on Monday."
+    },
+    {
+      "headline": "Pakistan prepared to host U.S.-Iran talks in 'coming days' as Trump weighs deploying ground troops",
+      "source": "CNBC",
+      "published": "Sun, 29 Mar 2026 21:59:35 GMT",
+      "url": "https://www.cnbc.com/2026/03/29/bahrain-aluminum-giant-says-iranian-attack-targeted-its-facilit.html",
+      "summary": "Foreign ministers of Pakistan, Saudi Arabia, Turkey and Egypt all arrived in Islamabad to discuss the evolving regional situation in the Middle East."
+    },
+    {
+      "headline": "How the big oil and gas CEOs think the Iran war supply disruption will play out",
+      "source": "CNBC",
+      "published": "Sat, 28 Mar 2026 19:35:46 GMT",
+      "url": "https://www.cnbc.com/2026/03/28/iran-war-oil-companies-price-gas-diesel-strait-hormuz.html",
+      "summary": "The oil industry's grim outlook for global oil and gas supplies stands in contrast to the Trump administration's promise that the disruption is short term."
+    },
+    {
+      "headline": "New fees, fewer flights: Higher fuel prices pinch consumer budgets beyond the gas pump",
+      "source": "CNBC",
+      "published": "Sat, 28 Mar 2026 15:48:34 GMT",
+      "url": "https://www.cnbc.com/2026/03/28/oil-doordash-lyft-usps-united.html",
+      "summary": "As corporate policies change, Americans will feel higher oil prices in their wallets beyond the gas pump."
+    },
+    {
+      "headline": "Budget airlines built on cheap fares now face a painful reality: Fuel is getting expensive",
+      "source": "CNBC",
+      "published": "Mon, 30 Mar 2026 06:29:00 GMT",
+      "url": "https://www.cnbc.com/2026/03/30/asia-budget-airlines-fuel-costs-middle-east-routes-demand.html",
+      "summary": "Budget airlines try to maintain low costs while fuel costs continue to rise"
+    },
+    {
+      "headline": "European markets rise as Iran war intensifies and economic sentiment sours",
+      "source": "CNBC",
+      "published": "Mon, 30 Mar 2026 09:18:14 GMT",
+      "url": "https://www.cnbc.com/2026/03/30/european-markets-stoxx-600-ftse-dax-cac-iran-news-oil-prices.html",
+      "summary": "European stocks started the new trading week in positive territory though the war in Iran showed no signs of ending soon, entering its fifth week."
+    },
+    {
+      "headline": "The problem for investors: We don't know how Trump wants the Iran war to end",
+      "source": "CNBC",
+      "published": "Sun, 29 Mar 2026 21:03:29 GMT",
+      "url": "https://www.cnbc.com/2026/03/29/the-problem-for-investors-we-dont-know-how-trump-wants-the-iran-war-to-end.html",
+      "summary": "In his Sunday column for Investing Club subscribers, Jim Cramer argues that the S&amp;P 500 is likely to see further declines during the Iran war."
+    },
+    {
+      "headline": "The Iran war is defense tech's chance to shine, but few systems and weapons are ready",
+      "source": "CNBC",
+      "published": "Sat, 28 Mar 2026 12:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/03/28/iran-war-defense-tech-drones-trump-hegseth.html",
+      "summary": "Palmer Luckey's Anduril, software AI company Palantir and Elon Musk's SpaceX are getting the lion's share of defense tech dollars from the Pentagon."
+    }
+  ]
+}
