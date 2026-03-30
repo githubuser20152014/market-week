@@ -232,7 +232,7 @@
       font-size: 12.5px;
       font-weight: 600;
       color: var(--navy);
-      margin: 9px 0 4px;
+      margin: 7px 0 3px;
       padding-left: 8px;
       border-left: 2px solid var(--gold);
     }
@@ -248,7 +248,7 @@
       font-size: 10.5px;
       line-height: 1.6;
       color: var(--text);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .pg-bold  { font-weight: 600; color: var(--navy); }
     .pg-num {
@@ -261,13 +261,33 @@
       margin-top: auto;
       padding-top: 6px;
     }
+    .pg-photo {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+      display: block;
+    }
+    .pg-photo-caption {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      text-align: right;
+      margin-top: -7px;
+      margin-bottom: 8px;
+    }
 
     /* Callout boxes */
     .pg-highlight {
       background: #fff9ed;
       border-left: 3px solid var(--gold);
-      padding: 8px 10px;
-      margin: 7px 0;
+      padding: 6px 10px;
+      margin: 5px 0;
       font-family: 'Source Serif 4', Georgia, serif;
       font-size: 10.5px;
       line-height: 1.55;
@@ -276,8 +296,8 @@
     .pg-flag {
       background: #fff5f5;
       border-left: 3px solid var(--red);
-      padding: 8px 10px;
-      margin: 7px 0;
+      padding: 6px 10px;
+      margin: 5px 0;
       font-family: 'Source Serif 4', Georgia, serif;
       font-size: 10.5px;
       line-height: 1.55;
@@ -347,6 +367,12 @@
       display: flex;
       flex-direction: column;
       position: relative;
+    }
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 22, 50, 0.68);
+      pointer-events: none;
     }
     .cover-grid {
       position: absolute;
@@ -683,8 +709,9 @@
     <div id="book">
 
       <!-- PAGE 1: FRONT COVER -->
-      <div class="page page-cover" data-density="hard">
+      <div class="page page-cover" data-density="hard" style="background-image: url('https://images.unsplash.com/photo-1513735492246-483525079686?w=960&q=82&fit=crop'); background-size: cover; background-position: center;">
         <div class="cover-inner">
+          <div class="cover-overlay"></div>
           <div class="cover-grid"></div>
           <div class="cover-top">
             <div class="cover-pub-line">Framework Foundry &nbsp;·&nbsp; Expat Investing Series</div>
@@ -714,7 +741,7 @@
         </div>
       </div>
 
-      <!-- PAGE 2: TABLE OF CONTENTS (left) -->
+      <!-- PAGE 2: TABLE OF CONTENTS PART 1 (left) -->
       <div class="page left-page">
         <div class="pg">
           <div class="pg-eyebrow">Issue 01 &nbsp;·&nbsp; March 2026</div>
@@ -724,47 +751,30 @@
           <div style="margin-bottom:10px">
             <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 1 &mdash; The Portugal File</div>
             <table style="width:100%;border-collapse:collapse">
-              <tr class="toc-row" onclick="goToPage(3)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Why Americans Are Going There</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">4</td></tr>
-              <tr class="toc-row" onclick="goToPage(4)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">History &amp; Cultural Identity</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">5</td></tr>
-              <tr class="toc-row" onclick="goToPage(5)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Social Etiquette</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">6</td></tr>
-              <tr class="toc-row" onclick="goToPage(6)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">What Americans Specifically Need to Know</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">7</td></tr>
-              <tr class="toc-row" onclick="goToPage(7)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Cost of Living Snapshot</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">8</td></tr>
-              <tr class="toc-row" onclick="goToPage(8)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">The D7 Passive Income Visa &amp; NIF</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">9</td></tr>
-              <tr class="toc-row" onclick="goToPage(9)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Application Steps &amp; NHR Warning</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">10</td></tr>
-              <tr class="toc-row" onclick="goToPage(10)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">US &amp; Portuguese Taxes: FEIE &amp; FTC</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">11</td></tr>
-              <tr class="toc-row" onclick="goToPage(11)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Portugal Tax Brackets &amp; Treaty</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">12</td></tr>
-              <tr class="toc-row" onclick="goToPage(12)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Banking as an American Abroad</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">13</td></tr>
-              <tr class="toc-row" onclick="goToPage(13)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Investment Access: The PRIIPs Problem</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">14</td></tr>
-              <tr class="toc-row" onclick="goToPage(14)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">UCITS ETFs &amp; Where to Buy</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">15</td></tr>
+              <tr class="toc-row" onclick="goToPage(4)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Why Americans Are Going There</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">5</td></tr>
+              <tr class="toc-row" onclick="goToPage(7)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">History &amp; Cultural Identity</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">8</td></tr>
+              <tr class="toc-row" onclick="goToPage(8)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Social Etiquette</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">9</td></tr>
+              <tr class="toc-row" onclick="goToPage(9)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">What Americans Specifically Need to Know</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">10</td></tr>
+              <tr class="toc-row" onclick="goToPage(10)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Cost of Living Snapshot</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">11</td></tr>
+              <tr class="toc-row" onclick="goToPage(11)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">The D7 Passive Income Visa &amp; NIF</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">12</td></tr>
+              <tr class="toc-row" onclick="goToPage(12)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Application Steps &amp; NHR Warning</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">13</td></tr>
+              <tr class="toc-row" onclick="goToPage(13)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">US &amp; Portuguese Taxes: FEIE &amp; FTC</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">14</td></tr>
+              <tr class="toc-row" onclick="goToPage(14)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Portugal Tax Brackets &amp; Treaty</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">15</td></tr>
+              <tr class="toc-row" onclick="goToPage(15)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Banking as an American Abroad</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">16</td></tr>
+              <tr class="toc-row" onclick="goToPage(16)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Investment Access: The PRIIPs Problem</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">17</td></tr>
+              <tr class="toc-row" onclick="goToPage(17)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">UCITS ETFs &amp; Where to Buy</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">18</td></tr>
             </table>
           </div>
 
           <div style="margin-bottom:10px">
             <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 2 &mdash; FBAR &amp; FATCA</div>
             <table style="width:100%;border-collapse:collapse">
-              <tr class="toc-row" onclick="goToPage(15)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">FBAR: What It Is</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">16</td></tr>
-              <tr class="toc-row" onclick="goToPage(16)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Who Must File</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">17</td></tr>
-              <tr class="toc-row" onclick="goToPage(17)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Deadlines &amp; Requirements</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">18</td></tr>
-              <tr class="toc-row" onclick="goToPage(18)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Penalties for Non-Compliance</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">19</td></tr>
-              <tr class="toc-row" onclick="goToPage(19)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">FATCA: Form 8938</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">20</td></tr>
-              <tr class="toc-row" onclick="goToPage(20)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">How to Stay Compliant</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">21</td></tr>
-            </table>
-          </div>
-
-          <div style="margin-bottom:10px">
-            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 3 &mdash; The Financial Checklist</div>
-            <table style="width:100%;border-collapse:collapse">
-              <tr class="toc-row" onclick="goToPage(21)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">12 Months + 6 Months Out</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">22</td></tr>
-              <tr class="toc-row" onclick="goToPage(22)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">3 Months + 1 Month Out</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">23</td></tr>
-              <tr class="toc-row" onclick="goToPage(23)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">On Arrival + Annual Recurring</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">24</td></tr>
-            </table>
-          </div>
-
-          <div>
-            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 4 &mdash; Language</div>
-            <table style="width:100%;border-collapse:collapse">
-              <tr class="toc-row" onclick="goToPage(24)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Portuguese for Daily Life</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">25</td></tr>
-              <tr class="toc-row" onclick="goToPage(25)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">How to Actually Learn It</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">26</td></tr>
+              <tr class="toc-row" onclick="goToPage(18)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">FBAR: What It Is</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">19</td></tr>
+              <tr class="toc-row" onclick="goToPage(19)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Who Must File</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">20</td></tr>
+              <tr class="toc-row" onclick="goToPage(20)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Deadlines &amp; Requirements</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">21</td></tr>
+              <tr class="toc-row" onclick="goToPage(21)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Penalties for Non-Compliance</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">22</td></tr>
+              <tr class="toc-row" onclick="goToPage(22)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">FATCA: Form 8938</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">23</td></tr>
+              <tr class="toc-row" onclick="goToPage(23)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">How to Stay Compliant</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">24</td></tr>
             </table>
           </div>
 
@@ -772,12 +782,50 @@
         </div>
       </div>
 
-      <!-- PAGE 3: INTRO (right) -->
+      <!-- PAGE 3: TABLE OF CONTENTS PART 2 (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Contents</div>
+          <div class="pg-section">Contents (continued)</div>
+          <div class="pg-rule"></div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 3 &mdash; The Financial Checklist</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(24)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">12 Months + 6 Months Out</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">25</td></tr>
+              <tr class="toc-row" onclick="goToPage(25)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">3 Months + 1 Month Out</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">26</td></tr>
+              <tr class="toc-row" onclick="goToPage(26)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">On Arrival + Annual Recurring</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">27</td></tr>
+            </table>
+          </div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 4 &mdash; Language</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(27)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Portuguese for Daily Life</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">28</td></tr>
+              <tr class="toc-row" onclick="goToPage(28)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">How to Actually Learn It</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">29</td></tr>
+            </table>
+          </div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 5 &mdash; Closing</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(29)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">The Case for Going</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">30</td></tr>
+              <tr class="toc-row" onclick="goToPage(30)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Next Issue: Spain</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">31</td></tr>
+            </table>
+          </div>
+
+          <div class="pg-num">3</div>
+        </div>
+      </div>
+
+      <!-- PAGE 4: INTRO (right) -->
       <div class="page right-page">
         <div class="pg">
           <div class="pg-eyebrow">About This Issue</div>
           <div class="pg-section">Built in Public</div>
           <div class="pg-rule"></div>
+          <img class="pg-photo" src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=600&q=80&fit=crop&crop=center" alt="Lisbon tram">
+          <p class="pg-photo-caption">Lisbon &nbsp;·&nbsp; Unsplash</p>
           <p class="pg-text">I've been doing this research for myself.</p>
           <p class="pg-text">Not theoretically. I'm planning the move — 401k, brokerage account, and all. What I discovered is that nobody is publishing a clean financial primer for this situation.</p>
           <p class="pg-text">The resources that exist are for the ultra-wealthy, the digital nomad, or someone trying to escape the system entirely. I'm none of those things. I just want to live somewhere else without getting the finances wrong.</p>
@@ -786,7 +834,7 @@
           <div class="pg-highlight">
             <em>Orientation only. Verify specifics with a qualified expat CPA before making decisions.</em>
           </div>
-          <div class="pg-num">3</div>
+          <div class="pg-num">4</div>
         </div>
       </div>
 
@@ -796,12 +844,14 @@
           <div class="pg-eyebrow">Section 1 · The Portugal File</div>
           <div class="pg-section">Why Americans Are Going There</div>
           <div class="pg-rule"></div>
+          <img class="pg-photo" src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=80&fit=crop&crop=center" alt="Porto waterfront">
+          <p class="pg-photo-caption">Porto, Ribeira &nbsp;·&nbsp; Unsplash</p>
           <p class="pg-text-sm"><span class="pg-bold">The weather.</span> Lisbon gets 300+ days of sun a year. Atlantic coast, mild winters. More like San Diego without the price tag. Porto is cooler, more northern European in feel, better food scene. The Algarve is where you go if you want beach and retiree infrastructure.</p>
           <p class="pg-text-sm"><span class="pg-bold">The cultural fit.</span> English is widely spoken — not just in tourist corridors but in professional settings, grocery stores, among younger locals everywhere. The bureaucracy is genuinely maddening, but the day-to-day social experience isn't alienating the way it can be in other countries.</p>
           <p class="pg-text-sm"><span class="pg-bold">Safety.</span> Portugal consistently ranks in the top 5 safest countries globally. For Americans who've internalized a low-grade threat awareness in certain environments, that shift in baseline feels significant the first week — then just becomes normal.</p>
           <p class="pg-text-sm"><span class="pg-bold">EU access — the strategic angle.</span> A D7 visa gets you to legal residency. Residency gets you to citizenship after five years. Portuguese citizenship means an EU passport — the right to live and work anywhere in the Schengen zone. That's optionality: the ability to reconsider your next move from a position of strength.</p>
           <p class="pg-text-sm"><span class="pg-bold">Expat community.</span> Facebook groups like "Americans &amp; Expats in Lisbon" have tens of thousands of members. Active daily threads on housing, banking, visa processing times, CPA recommendations. You won't figure this out alone.</p>
-          <div class="pg-num">4</div>
+          <div class="pg-num">5</div>
         </div>
       </div>
 
@@ -813,21 +863,31 @@
           <div class="pg-rule"></div>
           <p class="pg-text-sm">Portugal isn’t one destination — it’s a decision about what kind of life you’re building. Five cities absorb most of the American expat flow, and they are not interchangeable. Each has a distinct character, a different cost profile, and a different answer to the question of what you’re actually optimizing for.</p>
           <div class="pg-subsection">Lisbon</div>
-          <p class="pg-text-sm">Where most Americans land. Capital-city infrastructure — international flights, metro, hospitals with English-speaking staff, a large expat community, and a professional services ecosystem built around people exactly like you. Neighborhoods matter: Alfama is historic and heavily touristed; Chiado and Príncipe Real are the upscale core; Mouraria is grittier and increasingly popular with earlier-arriving expats. Expect €800–1,100/month for a 1-bedroom inside the city. Still well below comparable US metros — but priced up sharply since 2018 and the trend hasn’t reversed.</p>
+          <p class="pg-text-sm">Where most Americans land. Capital-city infrastructure — international flights, metro, hospitals with English-speaking staff, a large expat community, and a professional services ecosystem built around people exactly like you. Expect €800–1,100/month for a 1-bedroom inside the city. Well below comparable US metros — but priced up sharply since 2018 and the trend hasn’t reversed.</p>
           <div class="pg-subsection">Porto</div>
           <p class="pg-text-sm">The city people choose when they want Portugal on more Portuguese terms. Smaller, cooler, more serious in character — a working city built around a port, a river, and a wine trade. Rent runs 20–30% cheaper than Lisbon for comparable space. The expat community is smaller but growing fast. Many Americans who’ve been in Portugal a while say Porto is where they wish they’d started.</p>
           <div class="pg-subsection">The Algarve</div>
           <p class="pg-text-sm">The retirement coast. Lagos, Albufeira, Tavira — warm, reliably sunny, beach-fronted, with a mature expat infrastructure built over decades. Seasonal trade-off: quieter and more isolated in winter, heavily tourist-influenced in summer. Lagos has a parallel identity as a remote-work base for younger expats who want surf proximity and low rent.</p>
-          <div class="pg-subsection">Cascais &amp; Madeira</div>
-          <p class="pg-text-sm"><span class="pg-bold">Cascais</span> is where expat families land when they want Lisbon’s accessibility without Lisbon’s pace — coastal, 40 minutes west by train, international schools, room to breathe. <span class="pg-bold">Madeira</span> operates under its own logic: perpetual spring climate (20–25°C year-round), fast fiber, growing international community, same D7 pathway. Trade-off: island geography means a flight to reach the rest of Europe.</p>
-          <div class="pg-highlight">
-            <span class="pg-bold">The frame that matters:</span> your city is a strategic decision about infrastructure, community, and what you need to be functional. Two weeks visiting your top two options before committing is the most consistent advice from Americans who’ve made the move — and weight expat network and professional services availability heavily. Those matter more in year one than most people expect.
-          </div>
-          <div class="pg-num">5</div>
+          <div class="pg-num">6</div>
         </div>
       </div>
 
-      <!-- PAGE 6: HISTORY + CULTURAL IDENTITY (left) -->
+      <!-- PAGE 6: WHERE AMERICANS ARE LANDING cont. (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Portugal File</div>
+          <div class="pg-section">Where Americans Are Landing</div>
+          <div class="pg-rule"></div>
+          <div class="pg-subsection">Cascais &amp; Madeira</div>
+          <p class="pg-text-sm"><span class="pg-bold">Cascais</span> is where expat families land when they want Lisbon's accessibility without Lisbon's pace — coastal, 40 minutes west by train, international schools, room to breathe. <span class="pg-bold">Madeira</span> operates under its own logic: perpetual spring climate (20–25°C year-round), fast fiber, growing international community, same D7 pathway. Trade-off: island geography means a flight to reach the rest of Europe.</p>
+          <div class="pg-highlight">
+            <span class="pg-bold">The frame that matters:</span> your city is a strategic decision about infrastructure, community, and what you need to function. Two weeks visiting your top two options before committing is the most consistent advice — expat network and professional services availability matter more in year one than most expect.
+          </div>
+          <div class="pg-num">7</div>
+        </div>
+      </div>
+
+      <!-- PAGE 7: HISTORY + CULTURAL IDENTITY (left) -->
       <div class="page left-page">
         <div class="pg">
           <div class="pg-eyebrow">Section 1 · The Portugal File</div>
@@ -840,7 +900,7 @@
           <p class="pg-text-sm">Portugal lived under António de Oliveira Salazar's authoritarian Estado Novo regime from 1932 to 1974 — longer than Franco's Spain. On April 25, 1974, a near-bloodless military coup ended it. Soldiers put carnations in their rifle barrels. The Revolução dos Cravos is the most significant date in modern Portuguese history — <span class="pg-bold">a national holiday, still celebrated emotionally.</span> You will see carnations and red-and-green flags on April 25th. Know what they mean.</p>
           <div class="pg-subsection">Saudade</div>
           <p class="pg-text-sm">The single most important Portuguese cultural concept has no direct English translation. <em>Saudade</em> is a melancholic longing — for something lost, distant, or that may never have existed. It lives in Fado music (UNESCO intangible heritage), in literature, and in everyday speech. It isn't depression — it's a way of holding love and loss simultaneously. Acknowledging it rather than trying to fix it is the right response.</p>
-          <div class="pg-num">6</div>
+          <div class="pg-num">8</div>
         </div>
       </div>
 
@@ -860,7 +920,7 @@
           <p class="pg-text-sm">Portuguese public culture is notably quieter than American public culture. Conversations are measured; loud enthusiasm in restaurants, shops, or transit reads as disruptive. This is not coldness — it's a different baseline. Private settings and late evenings are warmer and louder.</p>
           <div class="pg-subsection">Time</div>
           <p class="pg-text-sm">Social punctuality is relaxed — arriving 15–20 minutes late to a dinner invitation is unremarkable. For bureaucratic appointments (AIMA, bank, consulate), arrive early. The two norms coexist without contradiction.</p>
-          <div class="pg-num">7</div>
+          <div class="pg-num">9</div>
         </div>
       </div>
 
@@ -874,14 +934,14 @@
           <div class="pg-subsection">Don't Compare Everything to the US</div>
           <p class="pg-text-sm">"In America we do it like this" is one of the fastest ways to alienate locals. Portuguese people are quietly proud of their country and its history. Constant American comparisons — especially unfavorable ones about Portuguese bureaucracy or service — land as arrogance. Observe first. Comment later, if at all.</p>
           <div class="pg-subsection">Service Culture Is Different — On Purpose</div>
-          <p class="pg-text-sm">Portuguese waiters and service staff are professionals, not performing friendliness for a tip. They won't check in repeatedly. They won't rush you. They won't smile on cue. This is not rudeness — it is respect for your privacy and autonomy. Interpreting it as bad service and acting on that interpretation visibly will create actual friction.</p>
+          <p class="pg-text-sm">Portuguese waiters are professionals, not performing friendliness for a tip. They won't check in, rush you, or smile on cue. This is not rudeness — it is respect for your privacy and autonomy. Interpreting it as bad service and acting on it visibly will create actual friction.</p>
           <div class="pg-subsection">"How Are You?" Is a Real Question</div>
           <p class="pg-text-sm">Americans deploy "how are you?" as a greeting reflex that requires no honest answer. In Portugal, <em>Como está?</em> is an actual inquiry. If you ask it, be prepared for a real response. Asking it as a pleasantry and immediately moving on reads as strange.</p>
           <div class="pg-subsection">Portugal Is Not Brazil</div>
-          <p class="pg-text-sm">They share a language and a colonial history — and that's where the overlap ends. Portuguese people are sensitive about conflation with Brazilian culture, accents, or stereotypes. Don't assume Brazilian Portuguese phrases or references translate directly. They don't always, and the distinction matters to the people you're talking to.</p>
+          <p class="pg-text-sm">They share a language and a colonial history — and that's where the overlap ends. Portuguese people are sensitive about conflation with Brazilian culture, accents, or stereotypes. Brazilian phrases don't always translate, and the distinction matters to the people you're talking to.</p>
           <div class="pg-subsection">Bureaucracy Patience Is Non-Negotiable</div>
           <p class="pg-text-sm">The Portuguese administrative system moves slowly and on its own terms. Frustration expressed openly — at the AIMA queue, at the bank, at the Finanças counter — does not speed things up. It signals that you don't yet understand where you are. Bring something to read. Be polite. Be patient. It's the only approach that works.</p>
-          <div class="pg-num">8</div>
+          <div class="pg-num">10</div>
         </div>
       </div>
 
@@ -914,7 +974,7 @@
             </tbody>
           </table>
           <p class="pg-text-sm" style="margin-top:7px">A couple in Portugal needs €3,500–4,000/month to match a standard of living that costs $7,000–8,000+ in a comparable US city. The gap is real and persistent.</p>
-          <div class="pg-num">9</div>
+          <div class="pg-num">11</div>
         </div>
       </div>
 
@@ -931,7 +991,7 @@
           <div class="pg-flag" style="margin-top:8px">
             <span class="pg-bold">Required documents for D7:</span> bank/brokerage statements (3–6 months), FBI background check (apostilled — allow 8–12 weeks), Portuguese address, health insurance valid in Portugal with minimum €30,000 coverage.
           </div>
-          <div class="pg-num">10</div>
+          <div class="pg-num">12</div>
         </div>
       </div>
 
@@ -950,7 +1010,7 @@
           <div class="pg-flag">
             <span class="pg-bold">⚠ NHR is closed.</span> The Non-Habitual Resident tax regime — once a major Portugal selling point — ended for new applicants Dec 31, 2023. The replacement (IFICI / NHR 2.0) targets R&amp;D, startup, and innovation workers only. D7 passive income residents do <em>not</em> qualify. Your income is taxed at Portugal's standard progressive rates: 14.5%–48%. Any article still describing NHR as an active benefit is out of date.
           </div>
-          <div class="pg-num">11</div>
+          <div class="pg-num">13</div>
         </div>
       </div>
 
@@ -966,7 +1026,7 @@
           <p class="pg-text-sm">Excludes up to ~$130,000 (2025, indexed) of <em>earned</em> income from US taxation. Requires Bona Fide Residence or 330-day Physical Presence test. <span class="pg-bold">Does not apply to passive income</span> — dividends, capital gains, interest, and rental income are not excludable under FEIE and remain fully taxable by the US.</p>
           <div class="pg-subsection">Foreign Tax Credit (Form 1116)</div>
           <p class="pg-text-sm">The primary tool for investors with passive income. You paid 28% capital gains tax to Portugal; you get a credit against your US tax liability on the same income. Limits and carryover rules apply. This is where the expat CPA earns their fee.</p>
-          <div class="pg-num">12</div>
+          <div class="pg-num">14</div>
         </div>
       </div>
 
@@ -992,7 +1052,7 @@
           <div class="pg-subsection">State Taxes</div>
           <p class="pg-text-sm">A frequently missed issue: California and New York continue to assert tax jurisdiction over former residents even after they've moved abroad. If you lived in CA or NY before moving, get clarity on state filing obligations before you leave.</p>
           <div class="pg-flag" style="margin-top:6px"><span class="pg-bold">CPA cost:</span> €1,500–3,000/year for US + Portuguese returns. Budget for it.</div>
-          <div class="pg-num">13</div>
+          <div class="pg-num">15</div>
         </div>
       </div>
 
@@ -1010,7 +1070,7 @@
           <div class="pg-subsection">Local Portuguese Bank</div>
           <p class="pg-text-sm">Required for rent, utilities, and AIMA. NovoBanco, Millennium BCP, Caixa Geral. <span class="pg-bold">NIF required</span> — without it, no Portuguese bank will open an account. Expect 2–4 weeks and multiple in-person visits.</p>
           <div class="pg-flag" style="margin-top:7px"><span class="pg-bold">US credit history doesn't travel.</span> Your FICO score and credit cards stay in the US system. In Portugal, you're a credit blank. Maintain your US cards — build Portuguese credit gradually.</div>
-          <div class="pg-num">14</div>
+          <div class="pg-num">16</div>
         </div>
       </div>
 
@@ -1028,7 +1088,7 @@
           <p class="pg-text-sm">IBKR is more flexible than most brokerages — depending on account structure and residency declaration, some users report continued trading access. Get clarity from IBKR directly, in writing, before you move.</p>
           <div class="pg-subsection">The Practical Sequence</div>
           <p class="pg-text-sm">Before you move: decide which positions you want to hold long-term and ensure they're fully funded. After arriving in Portugal: open a DeGiro account for all new EU-side purchases in UCITS-compliant form.</p>
-          <div class="pg-num">15</div>
+          <div class="pg-num">17</div>
         </div>
       </div>
 
@@ -1060,7 +1120,7 @@
           <p class="pg-text-sm"><span class="pg-bold">DeGiro</span> is the most popular brokerage among expats in Portugal — low fees, straightforward interface, available to EU residents. IBKR also offers UCITS ETFs and may allow you to keep everything in one place.</p>
           <div class="pg-subsection">401k and IRA</div>
           <p class="pg-text-sm">Leave these in place. Portugal recognizes US retirement accounts under the tax treaty. Do not close or roll over without consulting both a US and Portuguese tax advisor.</p>
-          <div class="pg-num">16</div>
+          <div class="pg-num">18</div>
         </div>
       </div>
 
@@ -1076,7 +1136,7 @@
             FBAR applies to anyone who opens a bank account in another country. The checking account you'll use to pay rent in Lisbon. The account to pay AIMA fees. The DeGiro brokerage account for UCITS ETFs. All of it counts.
           </div>
           <p class="pg-text-sm">The rule has existed since 1970. It was barely enforced for decades. Starting around 2010, the US government began enforcing it aggressively — and has collected billions in penalties since. FBAR is not a technicality. It is an active compliance requirement with real enforcement behind it.</p>
-          <div class="pg-num">17</div>
+          <div class="pg-num">19</div>
         </div>
       </div>
 
@@ -1095,7 +1155,7 @@
           <div class="pg-flag">
             The $10,000 threshold applies to any single day, not year-end. If your accounts held $12,000 on one day in July — then fell to $4,000 by December 31 — you still must file. Checking your December 31 balance and seeing $4,000 does not mean you're clear. That's the trap.
           </div>
-          <div class="pg-num">18</div>
+          <div class="pg-num">20</div>
         </div>
       </div>
 
@@ -1113,7 +1173,7 @@
           <div class="pg-subsection">What You Report</div>
           <p class="pg-text-sm">Every foreign financial account: bank accounts, savings accounts, brokerage accounts, pension accounts held in foreign institutions, and any account over which you have signature authority.</p>
           <p class="pg-text-sm">For each account: account number, institution name, country, and the <span class="pg-bold">maximum value during the reporting year</span>. Not year-end balance — the peak balance at any point in the year.</p>
-          <div class="pg-num">19</div>
+          <div class="pg-num">21</div>
         </div>
       </div>
 
@@ -1130,7 +1190,7 @@
           <p class="pg-text-sm">Cases where you knew and ignored it: penalty up to the greater of <span class="pg-bold">$100,000 or 50% of the account balance per violation</span>. That is per account, per year. Criminal prosecution is also on the table.</p>
           <div class="pg-subsection">The Enforcement Reality</div>
           <p class="pg-text-sm">Foreign banks are reporting your accounts to the US government through FATCA agreements — whether you tell FinCEN or not. The IRS has run multiple amnesty programs (OVDP and Streamlined Filing Compliance Procedures) specifically because so many Americans abroad were non-compliant. Those programs generated billions. The enforcement infrastructure is real.</p>
-          <div class="pg-num">20</div>
+          <div class="pg-num">22</div>
         </div>
       </div>
 
@@ -1146,7 +1206,7 @@
           <div class="pg-subsection">The Intergovernmental Agreement</div>
           <p class="pg-text-sm">Portugal has signed a FATCA agreement with the US. Portuguese financial institutions are required to report US account holders to the IRS automatically. The government has two separate data streams on your foreign accounts — your own disclosures (FBAR, Form 8938) and the bank's disclosures (FATCA). Inconsistency between what you report and what the banks report is precisely what triggers audit flags.</p>
           <div class="pg-flag" style="margin-top:7px">Form 8938 covers more than FBAR: foreign financial accounts plus interests in foreign entities, foreign pension plans, and certain foreign life insurance contracts.</div>
-          <div class="pg-num">21</div>
+          <div class="pg-num">23</div>
         </div>
       </div>
 
@@ -1163,7 +1223,7 @@
           <div class="pg-flag" style="margin-top:8px">
             <em>This section is orientation only, not tax or legal advice. Requirements vary. Verify your specific situation with a qualified expat CPA before filing.</em>
           </div>
-          <div class="pg-num">22</div>
+          <div class="pg-num">24</div>
         </div>
       </div>
 
@@ -1191,7 +1251,7 @@
             <li>Secure a Portuguese rental agreement or letter of accommodation</li>
             <li>Review US brokerage holdings: fund long-term positions before you lose the ability to buy US ETFs as an EU resident</li>
           </ul>
-          <div class="pg-num">23</div>
+          <div class="pg-num">25</div>
         </div>
       </div>
 
@@ -1216,7 +1276,7 @@
             <li>Fund Schwab International with enough for 1–2 months of expenses — you'll use ATMs on arrival before your Portuguese account opens</li>
             <li>Establish Wise account if you want a Portuguese IBAN immediately for incoming transfers</li>
           </ul>
-          <div class="pg-num">24</div>
+          <div class="pg-num">26</div>
         </div>
       </div>
 
@@ -1245,7 +1305,7 @@
             <li>Verify maximum foreign account balances for FBAR reporting accuracy</li>
           </ul>
           <div class="pg-flag" style="margin-top:7px"><em>Orientation only. Not tax or legal advice. Verify specifics with a qualified expat CPA.</em></div>
-          <div class="pg-num">25</div>
+          <div class="pg-num">27</div>
         </div>
       </div>
 
@@ -1278,7 +1338,7 @@
               <tr><td>Qual é o documento necessário?</td><td>What document is needed?</td></tr>
             </tbody>
           </table>
-          <div class="pg-num">26</div>
+          <div class="pg-num">28</div>
         </div>
       </div>
 
@@ -1301,13 +1361,47 @@
           <div class="pg-highlight" style="margin-top:8px">
             <span class="pg-bold">Realistic expectation:</span> For AIMA and Finanças dealings, bring an English-speaking helper or hire an interpreter — bureaucratic Portuguese is its own dialect. For restaurants, shops, and transit: two to four weeks of Pimsleur gets you there.
           </div>
-          <div class="pg-num">27</div>
+          <div class="pg-num">29</div>
         </div>
       </div>
 
-      <!-- PAGE 28: BACK COVER -->
+      <!-- PAGE 28: CLOSING — THE CASE FOR GOING (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Closing</div>
+          <div class="pg-section">The Case for Going</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text">Portugal's advantages are real. The cost gap relative to any US coastal city is not marginal — it's transformative. The safety, the climate, the English-language access, the path to an EU passport: these aren't hypotheticals. They are the daily experience of tens of thousands of Americans already living there.</p>
+          <p class="pg-text">What separates the moves that work from the ones that don't isn't location choice or timing. It's preparation. The Americans who arrive financially intact — accounts in order, FBAR tracking started, CPA booked for year one, brokerage funded before the PRIIPs restriction applies — are the ones who get to enjoy Portugal the way it was meant to be experienced. The ones who skip the preparation spend their first year in a paperwork spiral.</p>
+          <p class="pg-text">Nothing in this magazine is a reason to rush. The D7 pathway isn't going away. Portugal will still be Portugal in six months, a year, two years. What changes is you: how prepared you are, how much financial runway you've built, how clearly you understand the mechanics before you act.</p>
+          <div class="pg-highlight">
+            <em>Take the time to do it right. The move rewards patience and preparation far more than speed. You're not behind — you're early enough to get this right.</em>
+          </div>
+          <div class="pg-num">30</div>
+        </div>
+      </div>
+
+      <!-- PAGE 29: NEXT ISSUE + SUBSCRIBE (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Coming Next &nbsp;·&nbsp; Issue 02 &nbsp;·&nbsp; April 2026</div>
+          <div class="pg-section">Spain</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Where Portugal's D7 is built around passive income, Spain's path is different. The financial mechanism at the center of it is the <span class="pg-bold">Foreign Earned Income Exclusion (FEIE)</span> — and if you earn active income and want to keep it sheltered from double taxation, Spain is where that conversation gets serious.</p>
+          <p class="pg-text-sm">Issue 02 covers: the Spain country file, the Non-Lucrative Visa vs. Digital Nomad Visa, FEIE in practice for Americans abroad, cost of living across Madrid, Valencia, and the Basque Country, and the pre-departure checklist for Spain specifically.</p>
+          <div class="pg-subsection" style="margin-top:10px">Stay with the Series</div>
+          <p class="pg-text-sm">Each issue follows the same structure: one country, one financial mechanism, one checklist. Free through Issue 03. The series builds — Portugal before Spain before Italy gives you a layered picture of what international financial life actually looks like across different legal and tax systems.</p>
+          <div class="pg-flag" style="margin-top:10px">
+            <span class="pg-bold">Subscribe free at americanexpatinvestor.com</span><br/>New country every month. Built in public. Shared as I go.
+          </div>
+          <div class="pg-num">31</div>
+        </div>
+      </div>
+
+      <!-- PAGE 30: BACK COVER -->
       <div class="page page-cover" data-density="hard">
-        <div class="back-inner">
+        <div class="back-inner" style="background-image: url('https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=960&q=82&fit=crop'); background-size: cover; background-position: center;">
+          <div class="cover-overlay"></div>
           <div class="back-grid"></div>
           <div class="back-ff">Framework Foundry</div>
           <div class="back-tagline">"One country. One financial mechanism.<br/>One pre-departure checklist."</div>
@@ -1325,7 +1419,7 @@
     <div class="flip-controls">
       <button class="flip-btn" id="btn-prev">&#8592; Prev</button>
       <button class="flip-btn flip-btn-toc" onclick="goToPage(1)" title="Table of Contents">&#9776; Contents</button>
-      <span class="flip-counter" id="page-counter">1 / 28</span>
+      <span class="flip-counter" id="page-counter">1 / 32</span>
       <button class="flip-btn" id="btn-next">Next &#8594;</button>
       <button class="flip-btn" id="btn-fullscreen" onclick="toggleFullscreen()">&#x26F6; Full Screen</button>
     </div>
