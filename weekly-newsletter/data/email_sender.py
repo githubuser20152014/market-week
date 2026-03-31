@@ -71,7 +71,7 @@ def build_email_html(
     cta_block = (
         cta_text if cta_text else
         'Enjoying the brief? Share it with someone who\'d appreciate a clear-eyed look at what\'s moving markets. '
-        'They can subscribe at <a href="https://frameworkfoundry.info" style="color:#4a7fb5;">frameworkfoundry.info</a>.'
+        'They can subscribe at <a href="https://frameworkfoundrymarket.substack.com/" style="color:#4a7fb5;">frameworkfoundrymarket.substack.com</a>.'
     )
 
     return f"""<!DOCTYPE html>
@@ -146,7 +146,7 @@ def build_email_html(
                 font-size:13px;color:#888;font-family:Arial,sans-serif;text-align:center;">
       <p style="margin:0 0 6px;">
         Read the latest edition online at
-        <a href="https://frameworkfoundry.info" style="color:#555;">frameworkfoundry.info</a>
+        <a href="https://frameworkfoundrymarket.substack.com/" style="color:#555;">frameworkfoundrymarket.substack.com</a>
       </p>
       {data_page_line}
       <p style="margin:0;">
@@ -219,7 +219,7 @@ def build_welcome_html(to_addr: str) -> str:
         The latest edition is live right now — dive in!
       </p>
       <p style="margin:0 0 0;">
-        <a href="https://frameworkfoundry.info"
+        <a href="https://frameworkfoundrymarket.substack.com/"
            style="display:inline-block;padding:12px 24px;background:#1a1a1a;color:#ffffff;
                   text-decoration:none;border-radius:4px;font-family:Arial,sans-serif;
                   font-size:15px;font-weight:bold;">
@@ -232,7 +232,7 @@ def build_welcome_html(to_addr: str) -> str:
                 font-size:13px;color:#888;font-family:Arial,sans-serif;text-align:center;">
       <p style="margin:0 0 6px;">
         Read the latest edition online at
-        <a href="https://frameworkfoundry.info" style="color:#555;">frameworkfoundry.info</a>
+        <a href="https://frameworkfoundrymarket.substack.com/" style="color:#555;">frameworkfoundrymarket.substack.com</a>
       </p>
       <p style="margin:0;">
         You received this because you subscribed to Framework Foundry Weekly.
@@ -258,7 +258,7 @@ def send_welcome_email(to_addr: str, gmail_address: str, app_password: str) -> N
         "- Weekly US Edition: indices, macro recap, and positioning tips, every weekend\n"
         "- Weekly International Edition: Nikkei, FTSE, ECB, and global macro in focus\n"
         "- The Morning Brief: sharp pre-market briefs on the days that matter most\n\n"
-        "The latest edition is live right now — dive in: https://frameworkfoundry.info\n\n"
+        "The latest edition is live right now — dive in: https://frameworkfoundrymarket.substack.com/\n\n"
         "To unsubscribe, reply with \"unsubscribe\" in the subject line."
     )
     send_email(gmail_address, app_password, to_addr, subject, html_body, plain_body)

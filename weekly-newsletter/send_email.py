@@ -45,7 +45,7 @@ SUBSCRIPTION_NAMES = {
 
 BLUEPRINT_CTA = (
     "Found this useful? Forward it to someone who's been meaning to get their 401(k) sorted. "
-    'They can subscribe at <a href="https://frameworkfoundry.info" style="color:#4a7fb5;">frameworkfoundry.info</a>.'
+    'They can subscribe at <a href="https://frameworkfoundrymarket.substack.com/" style="color:#4a7fb5;">frameworkfoundrymarket.substack.com</a>.'
 )
 
 
