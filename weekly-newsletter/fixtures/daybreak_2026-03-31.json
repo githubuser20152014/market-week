@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-03-31",
+    "generated_at": "2026-03-31T08:55:48.185513Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6368.8501,
+      "close": 6343.72,
+      "daily_pct": -0.3946,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 45166.6406,
+      "close": 45166.64,
+      "daily_pct": -0.0,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 20948.3594,
+      "close": 20794.64,
+      "daily_pct": -0.7338,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2449.7,
+      "close": 2414.01,
+      "daily_pct": -1.4569,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4561.5,
+      "close": 4561.5,
+      "daily_pct": 0.0,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.44,
+      "close": 4.356,
+      "daily_pct": -1.8919,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -8.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.285,
+      "close": 100.5,
+      "daily_pct": 0.2144,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.24,
+      "close": 102.88,
+      "daily_pct": 1.6199,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 51245.5,
+      "prev_close": 51885.85,
+      "daily_pct": -1.2342,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24624.55,
+      "prev_close": 24750.79,
+      "daily_pct": -0.51,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5097.11,
+      "prev_close": 5277.3,
+      "daily_pct": -3.4144,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 22348.4,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8481.8,
+      "prev_close": 8461.0,
+      "daily_pct": 0.2458,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22562.88,
+      "prev_close": 22271.16,
+      "daily_pct": 1.3099,
+      "session_note": "Early session"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10127.96,
+      "prev_close": 10018.81,
+      "daily_pct": 1.0895,
+      "session_note": "Early session"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7772.45,
+      "prev_close": 7700.07,
+      "daily_pct": 0.94,
+      "session_note": "Early session"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5541.79,
+      "prev_close": 5502.79,
+      "daily_pct": 0.7087,
+      "session_note": "Early session"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1495,
+      "prev_close": 1.14982,
+      "daily_pct": -0.0278
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3237,
+      "prev_close": 1.32373,
+      "daily_pct": -0.0023
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.737,
+      "prev_close": 159.59801,
+      "daily_pct": 0.0871
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6849,
+      "prev_close": 0.68553,
+      "daily_pct": -0.0919
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": null,
+      "prev_close": 6.91577,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": null,
+      "prev_close": 1.25084,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": null,
+      "prev_close": 6437.0,
+      "daily_pct": null
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": null,
+      "prev_close": 23403.25,
+      "daily_pct": null
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 45283.06,
+      "prev_close": 45576.0,
+      "daily_pct": -0.6428
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": null,
+      "prev_close": 4562.6,
+      "daily_pct": null
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": null,
+      "prev_close": 101.24,
+      "daily_pct": null
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "U.S. gasoline hits $4 per gallon, highest since 2022, as Iran war drives up fuel prices",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 07:23:40 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/gas-oil-diesel-price-iran-war.html",
+      "summary": "Families are feeling the financial impact from the U.S. war with Iran as gasoline prices surge."
+    },
+    {
+      "headline": "Pete Hegseth's broker attempted to make defense investments before Iran war: Financial Times",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 03:53:20 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/pete-hegseth-defence-investments-iran-war-pentagon.html",
+      "summary": "Pentagon chief spokesperson Sean Parnell dismissed the report in a post on X, calling it \"entirely false and fabricated.\""
+    },
+    {
+      "headline": "Oil sees choppy trading as traders parse Trump comments on Iran war",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 08:29:03 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/oil-price-today-wti-brent-trump-energy-sites-water-war-escalation-deal.html",
+      "summary": "Oil prices fell on Tuesday as U.S. President\u00a0Donald Trump\u00a0reportedly expressed willingness to end the military hostilities against Iran even if the Strait of Hormuz remains largely shut."
+    },
+    {
+      "headline": "Gold on track for worst month since 2008 as Iran war enters its fifth week",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 08:37:51 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/gold-on-track-for-worst-month-since-2008-as-iran-war-drags-on.html",
+      "summary": "Gold edged higher on Tuesday morning, but the metal remained on course to notch its biggest monthly decline in almost 17 years."
+    },
+    {
+      "headline": "Iran's attacks on aluminum producers are sending 'shockwaves' through the metals market",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 06:51:14 GMT",
+      "url": "https://www.cnbc.com/2026/03/30/iran-attacks-aluminum-producers-shockwaves-market-metals.html",
+      "summary": "Aluminum hit prices not seen since 2022 after Iranian attacks on two Middle Eastern producers over the weekend, amid fears of a supply crisis."
+    },
+    {
+      "headline": "Three niche commodity prices are surging. What they show about China's grip on supply chains",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 05:29:11 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/commodities-price-of-tungsten-sulfur-and-helium.html",
+      "summary": "In the wake of the Iran war, prices are surging for critical elements used in defense and the semiconductors that power artificial intelligence advances."
+    },
+    {
+      "headline": "Indian mobile giant Airtel raises $1 billion for data centers from Carlyle, other PE firms",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 03:51:30 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/pe-alpha-wave-carlyle-1-billion-airtel-data-center.html",
+      "summary": "Signaling rising global interest in India\u2019s data\u2011center sector, Bharti Airtel has attracted private\u2011equity interest as it seeks to raise $1 billion."
+    },
+    {
+      "headline": "China's factory activity returns to growth, expanding at its sharpest pace in a year",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 03:52:00 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/china-pmi-data-march-factory-activity-.html",
+      "summary": "China's official gauge for manufacturing activity pointed to a\u00a0better-than-expected\u00a0expansion\u00a0in March, snapping two months of declines."
+    }
+  ]
+}
