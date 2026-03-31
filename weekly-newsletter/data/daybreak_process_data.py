@@ -113,7 +113,7 @@ you the pre-open rundown. Not a reporter, not a cheerleader. Someone who tells \
 you what actually matters and what to do about it.
 
 You will receive structured JSON with yesterday's US close, overnight/APAC \
-markets, pre-market futures, FX, news headlines, and today's economic calendar. \
+markets, pre-market futures, FX, and news headlines. \
 Return a JSON object with exactly these 4 keys:
 
 - narrative: 2–3 sentences. Sharp scene-setter. What is the dominant mood? \
@@ -1205,31 +1205,36 @@ def _strip_markdown(text: str) -> str:
 def generate_linkedin_post(context: dict) -> str:
     """Generate a LinkedIn-ready plain-text post from the daybreak context.
 
-    Format:
-        Hook sentence (first paragraph of plain_summary, bold stripped)
+    Format (when One Trade is available):
+        The One Trade: TICKER DIRECTION
 
-        Body (remaining plain_summary paragraphs, markdown stripped)
+        Thesis (why this trade exists — the opinion)
+
+        Here's why: [reasoning from brief_body — the anomaly / macro driver]
+
+        [investor_section paragraph — what it means for ETF holders]
+
+        Confirms: ...  /  Risk: ...
 
         Best: {label} ({pct}%) | Worst: {label} ({pct}%)
 
-        Positioning: {first tip, markdown stripped}
-
-        Full breakdown → frameworkfoundry.info
+        Full breakdown → frameworkfoundry.info/daily/DATE/
 
         #MacroInvesting #ETFs #MarketOpen
+
+    Format (no One Trade):
+        Hook (first paragraph of plain_summary)
+
+        Body (remaining paragraphs)
+
+        Best / Worst line
+
+        Full breakdown → link
     """
     plain_summary = context.get("plain_summary") or "\n\n".join(filter(None, [
         context.get("brief_body", ""), context.get("investor_section", "")
     ]))
     paragraphs = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
-
-    if paragraphs:
-        hook = _strip_markdown(paragraphs[0])
-        body_parts = [_strip_markdown(p) for p in paragraphs[1:]]
-        body = "\n\n".join(body_parts)
-    else:
-        hook = ""
-        body = ""
 
     # Best / worst line
     us_best  = context.get("us_best")
@@ -1242,7 +1247,9 @@ def generate_linkedin_post(context: dict) -> str:
     else:
         best_line = ""
 
-    # Assemble post — lead with The One Trade if available, else data-driven title
+    date_str = context.get("date", "")
+    url = f"frameworkfoundry.info/daily/{date_str}/" if date_str else "frameworkfoundry.info/daily/"
+
     ot = context.get("one_trade")
     parts = []
     if ot and isinstance(ot, dict):
@@ -1251,26 +1258,51 @@ def generate_linkedin_post(context: dict) -> str:
         thesis    = _strip_markdown(ot.get("thesis", ""))
         confirm   = _strip_markdown(ot.get("confirm", ""))
         risk      = _strip_markdown(ot.get("risk", ""))
-        ot_block = f"The One Trade: {ticker} {direction}\n\n{thesis}"
+
+        # Lead with the trade
+        parts.append(f"The One Trade: {ticker} {direction}\n\n{thesis}")
+
+        # "Here's why" — para 0 = hook, para 1 = data recap, para 2 = macro driver.
+        # Use para 2 (the cause/driver) as the "why"; fall back to para 1.
+        if len(paragraphs) >= 3:
+            why_text = _strip_markdown(paragraphs[2])
+        elif len(paragraphs) >= 2:
+            why_text = _strip_markdown(paragraphs[1])
+        else:
+            why_text = ""
+        if why_text:
+            parts.append(f"Here's why:\n\n{why_text}")
+
+        # Investor implication — para 3 (ETF playbook) or last paragraph
+        if len(paragraphs) >= 4:
+            implication = _strip_markdown(paragraphs[3])
+            parts.append(implication)
+        elif len(paragraphs) >= 3:
+            implication = _strip_markdown(paragraphs[-1])
+            if implication != why_text:
+                parts.append(implication)
+
+        # Confirm / risk
+        entry_risk = []
         if confirm:
-            ot_block += f"\n\nConfirms: {confirm}"
+            entry_risk.append(f"Confirms: {confirm}")
         if risk:
-            ot_block += f"\nRisk: {risk}"
-        parts.append(ot_block)
-        # When One Trade leads, skip the full body — keep it punchy for LinkedIn
+            entry_risk.append(f"Risk: {risk}")
+        if entry_risk:
+            parts.append("\n".join(entry_risk))
+
         if best_line:
             parts.append(best_line)
     else:
         title = _generate_post_title(context)
         if title:
             parts.append(title)
-        if hook:
-            parts.append(hook)
-        if body:
-            parts.append(body)
+        for p in paragraphs:
+            parts.append(_strip_markdown(p))
         if best_line:
             parts.append(best_line)
-    parts.append("Full breakdown → frameworkfoundry.info")
+
+    parts.append(f"Read on Substack → {url}")
     parts.append("Not investment advice. For informational purposes only.")
     parts.append("#MacroInvesting #ETFs #MarketOpen")
 
@@ -1292,12 +1324,13 @@ def generate_linkedin_post(context: dict) -> str:
 
 
 def generate_x_post(context: dict) -> str:
-    """Generate a 4-tweet thread for X (Twitter) from the daybreak context.
+    """Generate a 4-tweet opinionated thread for X (Twitter) from the daybreak context.
 
-    Tweet 1: Hook + key index numbers + cross-asset snapshot
-    Tweet 2: Why it happened — dominant theme + key signal
-    Tweet 3: Positioning — pre-market + specific ETF tips
-    Tweet 4: Link + hashtags
+    Tweet 1: The anomaly / hook — the ONE most striking cross-asset observation.
+             No data table. Written as a provocative statement.
+    Tweet 2: "Here's my read:" — the thesis/opinion explaining why this is happening.
+    Tweet 3: The One Trade with ticker ($TICKER cashtag), entry confirm, and risk.
+    Tweet 4: Link (date-specific URL) + hashtags.
 
     Returns four blocks separated by '\\n---\\n', each ≤280 chars.
     Warns via UserWarning if any block exceeds the limit.
@@ -1305,93 +1338,49 @@ def generate_x_post(context: dict) -> str:
     import warnings
 
     us_indices = context.get("us_indices") or []
-    futures    = context.get("futures")    or []
     tips       = context.get("tips") or context.get("positioning_tips") or []
-    news_items = context.get("news_items") or []
     # Reconstruct plain_summary from brief_body + investor_section if needed
     plain_summary = context.get("plain_summary") or "\n\n".join(filter(None, [
         context.get("brief_body", ""), context.get("investor_section", "")
     ]))
-
-    sp      = next((i for i in us_indices if "S&P"     in i.get("name", "")), None)
-    nasdaq  = next((i for i in us_indices if "Nasdaq"  in i.get("name", "")), None)
-    dow     = next((i for i in us_indices if "Dow"     in i.get("name", "")), None)
-    russell = next((i for i in us_indices if "Russell" in i.get("name", "")), None)
-    gold    = next((i for i in us_indices if i.get("name") == "Gold"), None)
-    oil     = next((i for i in us_indices if "WTI"     in i.get("name", "") or "Crude" in i.get("name", "")), None)
-    treasury = next((i for i in us_indices if "Treasury" in i.get("name", "")), None)
-
-    # ── Tweet 1: Hook + numbers ────────────────────────────────────────────────
-    title = _generate_post_title(context)
-
-    index_lines = []
-    for idx in [sp, nasdaq, dow, russell]:
-        if idx and idx.get("daily_pct") is not None and idx.get("close") is not None:
-            short = {"S&P 500": "S&P", "Nasdaq": "Nasdaq", "Dow Jones": "Dow", "Russell 2000": "Russell"}.get(idx["name"], idx["name"])
-            index_lines.append(f"{short} {idx['close']:,.0f} ({idx['daily_pct']:+.2f}%)")
-
-    cross = []
-    if gold and gold.get("daily_pct") is not None:
-        cross.append(f"Gold {gold['daily_pct']:+.2f}%")
-    if oil and oil.get("daily_pct") is not None and oil.get("close") is not None:
-        cross.append(f"Oil ${oil['close']:.0f} ({oil['daily_pct']:+.2f}%)")
-    if treasury and treasury.get("yield_change_bps") is not None and treasury.get("close") is not None:
-        bps = round(treasury["yield_change_bps"])
-        sign = "+" if bps >= 0 else ""
-        cross.append(f"10Y {treasury['close']:.2f}% ({sign}{bps}bps)")
-
-    us_best  = context.get("us_best")
-    us_worst = context.get("us_worst")
-    best_worst = ""
-    if us_best and us_worst:
-        best_worst = f"Best: {us_best['name']} ({us_best['daily_pct']:+.2f}%) | Worst: {us_worst['name']} ({us_worst['daily_pct']:+.2f}%)"
-
-    t1_parts = []
-    if title:
-        t1_parts.append(title)
-    if index_lines:
-        t1_parts.append(" | ".join(index_lines))
-    if cross:
-        t1_parts.append("  ".join(cross))
-    if best_worst:
-        t1_parts.append(best_worst)
-    t1_parts.append("🧵 1/4")
-    tweet1 = "\n".join(t1_parts)
-
-    # ── Tweet 2: Why it happened + going into today ────────────────────────────
-    # Combine the "why" paragraph (para 2) with the pre-market signal from para 4
     paras = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
-    why_para    = paras[1] if len(paras) > 1 else (paras[0] if paras else "")
-    going_para  = paras[4] if len(paras) > 4 else (paras[3] if len(paras) > 3 else "")
 
-    why_text = _strip_markdown(why_para)
-    # Trim why to ~180 chars; pad with first sentence of "going into today" if room
-    why_text = _trim_to_sentences(why_text, 180)
-    going_text = ""
-    if going_para:
-        going_text = _trim_to_sentences(_strip_markdown(going_para), 120)
-    combined = f"{why_text}\n\n{going_text}".strip() if going_text else why_text
-    # Final trim to 240 chars total
-    combined = _trim_to_sentences(combined, 240)
-    tweet2 = f"{combined}\n\n🧵 2/4"
+    date_str = context.get("date", "")
+    url = f"frameworkfoundry.info/daily/{date_str}/" if date_str else "frameworkfoundry.info/daily/"
 
-    # ── Tweet 3: The One Trade (or first positioning tip as fallback) ────────────
-    TWEET_BODY_LIMIT = 268  # 280 minus "🧵 3/4" (6) + "\n\n" (2) + emoji buffer (4)
+    # ── Tweet 1: The anomaly/hook — ONE striking observation, no data table ────
+    # Use the first sentence(s) of the brief — already written as a hook.
+    hook_para = paras[0] if paras else ""
+    hook_text = _trim_to_sentences(_strip_markdown(hook_para), 250)
+    tweet1 = f"{hook_text}\n\n🧵 1/4"
+
+    # ── Tweet 2: "Here's my read:" + the macro cause paragraph ──────────────────
+    # Para 0 = hook, para 1 = data recap, para 2 = macro driver/cause (the "why").
+    # Use para 2 when available; fall back to para 1.
+    # Allow up to 253 chars for the body (280 - "Here's my read:\n\n" 17 - "\n\n🧵 2/4" 8 - buffer 2).
+    why_para = paras[2] if len(paras) > 2 else (paras[1] if len(paras) > 1 else hook_para)
+    why_text = _trim_to_sentences(_strip_markdown(why_para), 253)
+    tweet2 = f"Here's my read:\n\n{why_text}\n\n🧵 2/4"
+
+    # ── Tweet 3: The One Trade with $TICKER cashtag ────────────────────────────
+    TWEET_BODY_LIMIT = 268  # 280 minus "🧵 3/4" (6) + "\n\n" (2) + buffer (4)
     ot = context.get("one_trade")
     if ot and isinstance(ot, dict):
-        ot_ticker    = ot.get("ticker", "")
+        raw_ticker   = ot.get("ticker", "")
         ot_direction = ot.get("direction", "")
         ot_thesis    = _strip_markdown(ot.get("thesis", ""))
         ot_confirm   = _strip_markdown(ot.get("confirm", ""))
         ot_risk      = _strip_markdown(ot.get("risk", ""))
-        ot_thesis_trimmed   = _trim_to_sentences(ot_thesis, 140)
-        ot_confirm_trimmed  = _trim_to_sentences(ot_confirm, 80)
-        ot_risk_trimmed     = _trim_to_sentences(ot_risk, 80)
-        t3_body = f"The One Trade: {ot_ticker} {ot_direction}\n\n{ot_thesis_trimmed}"
+        # Format ticker as $TICKER cashtag if not already
+        cashtag = f"${raw_ticker.lstrip('$')}" if raw_ticker else ""
+        ot_thesis_trimmed  = _trim_to_sentences(ot_thesis, 130)
+        ot_confirm_trimmed = _trim_to_sentences(ot_confirm, 75)
+        ot_risk_trimmed    = _trim_to_sentences(ot_risk, 75)
+        t3_body = f"The One Trade: {cashtag} {ot_direction}\n\n{ot_thesis_trimmed}"
         if ot_confirm_trimmed:
-            t3_body += f"\n\n✓ {ot_confirm_trimmed}"
+            t3_body += f"\n\nEntry: {ot_confirm_trimmed}"
         if ot_risk_trimmed:
-            t3_body += f"\n✗ {ot_risk_trimmed}"
+            t3_body += f"\nRisk: {ot_risk_trimmed}"
         if len(t3_body) > TWEET_BODY_LIMIT:
             t3_body = _trim_to_sentences(t3_body, TWEET_BODY_LIMIT)
         tweet3 = f"{t3_body}\n\n🧵 3/4"
@@ -1399,10 +1388,10 @@ def generate_x_post(context: dict) -> str:
         top_tip = _strip_markdown(tips[0]) if tips else ""
         if len(top_tip) > TWEET_BODY_LIMIT:
             top_tip = _trim_to_sentences(top_tip, TWEET_BODY_LIMIT)
-        tweet3 = f"{top_tip}\n\n🧵 3/4" if top_tip else "See full positioning notes at frameworkfoundry.info/daily/\n\n🧵 3/4"
+        tweet3 = f"{top_tip}\n\n🧵 3/4" if top_tip else f"See full positioning notes at {url}\n\n🧵 3/4"
 
-    # ── Tweet 4: Link ──────────────────────────────────────────────────────────
-    tweet4 = "Full breakdown + positioning notes:\nframeworkfoundry.info/daily/\n\nNot investment advice. For informational purposes only.\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 4/4"
+    # ── Tweet 4: Date-specific link + hashtags ─────────────────────────────────
+    tweet4 = f"Read on Substack:\n{url}\n\nNot investment advice. For informational purposes only.\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 4/4"
 
     TWEET_LIMIT = 280
     tweets = [tweet1, tweet2, tweet3, tweet4]
@@ -1591,7 +1580,23 @@ def _md_to_html(text: str) -> str:
 
 
 def generate_substack_post(context: dict) -> str:
-    """Generate an HTML draft for pasting into Substack's editor."""
+    """Generate a punchy, opinionated HTML Substack note from the daybreak context.
+
+    Structure:
+        Title: "The One Trade: DIRECTION $TICKER — [hook tagline]"
+        Subtitle: "The Morning Brief · DATE"
+
+        Hook: first paragraph of brief_body split into short punchy sentences.
+        Opinion line: "That's not X. That's Y." — the anomaly framed as a call.
+
+        "Here's my read:" + macro driver paragraph (para 2 of plain_summary).
+
+        One Trade block: ticker, thesis, entry confirm, risk.
+
+        "What else I'm watching" — positioning tips as bullets.
+
+        CTA → full edition link.
+    """
     from datetime import datetime
 
     date_str = context.get("date", "")
@@ -1600,52 +1605,116 @@ def generate_substack_post(context: dict) -> str:
     except (ValueError, TypeError):
         date_display = date_str
 
-    title = _generate_post_title(context)
-    narrative = context.get("narrative", "")
-    plain_summary = context.get("plain_summary", "")
+    plain_summary = context.get("plain_summary") or "\n\n".join(filter(None, [
+        context.get("brief_body", ""), context.get("investor_section", "")
+    ]))
+    paras = [p.strip() for p in plain_summary.split("\n\n") if p.strip()]
 
-    today_events = context.get("today_events") or []
-    if today_events:
-        events_lines = "\n".join(
-            f"- **{e.get('event', e.get('name', ''))}**"
-            + (f" — {e.get('time', '')}" if e.get("time") else "")
-            for e in today_events
-        )
-    else:
-        events_lines = "_No major economic releases scheduled today._"
-
+    ot = context.get("one_trade")
     tips = context.get("tips") or context.get("positioning_tips") or []
-    tips_lines = "\n".join(f"{n}. {tip}" for n, tip in enumerate(tips, start=1)) if tips else "_No positioning notes for today._"
+    url = f"https://frameworkfoundry.info/daily/{date_str}/"
 
-    subtitle = f"Daily macro intelligence for ETF investors · {date_display}"
+    # ── Title ─────────────────────────────────────────────────────────────────
+    if ot and isinstance(ot, dict):
+        raw_ticker   = ot.get("ticker", "")
+        ot_direction = ot.get("direction", "")
+        cashtag = f"${raw_ticker.lstrip('$')}" if raw_ticker else raw_ticker
+        # Use first clause of hook as the tagline — cut at em-dash or first sentence end
+        hook_para_plain = _strip_markdown(paras[0]) if paras else ""
+        # Prefer the text before the first em-dash (clean clause boundary)
+        if " — " in hook_para_plain:
+            tagline = hook_para_plain.split(" — ")[0].strip()
+        else:
+            tagline = hook_para_plain.split(". ")[0].rstrip(".")
+        if len(tagline) > 65:
+            tagline = tagline[:65].rsplit(" ", 1)[0] + "…"
+        title = f"The One Trade: {ot_direction} {cashtag} — {tagline}"
+    else:
+        title = context.get("email_subject") or _generate_post_title(context)
 
-    body_md = "\n\n".join([
-        narrative,
-        "---",
-        f"## What This Means for Your Portfolio\n\n{plain_summary}",
-        "---",
-        f"## Today's Watch List\n\n{events_lines}",
-        "---",
-        f"## Positioning Notes\n\n{tips_lines}",
-        "---",
-        f"*Full edition + raw data: [frameworkfoundry.info/daily/{context['date']}/data](https://frameworkfoundry.info/daily/{context['date']}/data)*\n\n*Not investment advice. For informational purposes only.*\n\n*Framework Foundry · Unsubscribe*",
-    ])
+    subtitle = f"The Morning Brief · {date_display}"
+
+    # ── Hook: split first para into punchy short paragraphs ───────────────────
+    # Break at sentence boundaries to create short, staccato impact.
+    hook_para = _strip_markdown(paras[0]) if paras else ""
+    sentences = [s.strip() for s in hook_para.replace("! ", ". ").split(". ") if s.strip()]
+    # Group into short paragraphs: 1 sentence each if ≤80 chars, else 2 sentences
+    hook_html_parts = []
+    i = 0
+    while i < len(sentences):
+        s = sentences[i]
+        if not s.endswith("."):
+            s += "."
+        if len(s) <= 90 and i + 1 < len(sentences):
+            # Short sentence — keep solo for punch
+            hook_html_parts.append(f"<p>{s}</p>")
+            i += 1
+        else:
+            hook_html_parts.append(f"<p>{s}</p>")
+            i += 1
+    hook_html = "\n".join(hook_html_parts)
+
+    # ── "Here's my read" — macro driver paragraph (para 2) ────────────────────
+    read_para = paras[2] if len(paras) > 2 else (paras[1] if len(paras) > 1 else "")
+    read_html = f"<p><strong>Here's my read:</strong> {_strip_markdown(read_para)}</p>" if read_para else ""
+
+    # ── One Trade block ────────────────────────────────────────────────────────
+    if ot and isinstance(ot, dict):
+        thesis  = _strip_markdown(ot.get("thesis",  ""))
+        confirm = _strip_markdown(ot.get("confirm", ""))
+        risk    = _strip_markdown(ot.get("risk",    ""))
+        ot_html = (
+            f"<hr>\n"
+            f"<h2>The One Trade: {ot_direction} {cashtag}</h2>\n"
+            f"<p>{thesis}</p>\n"
+        )
+        if confirm:
+            ot_html += f"<p><strong>Entry confirm:</strong> {confirm}</p>\n"
+        if risk:
+            ot_html += f"<p><strong>Risk:</strong> {risk}</p>\n"
+    else:
+        ot_html = ""
+
+    # ── Positioning tips as "What else I'm watching" bullets ──────────────────
+    if tips:
+        tips_items = "".join(f"<li>{_md_to_html(tip).strip()}</li>\n" for tip in tips)
+        # _md_to_html wraps in <p>; strip those for inline list items
+        tips_items = tips_items.replace("<p>", "").replace("</p>", "")
+        tips_html = f"<hr>\n<h2>What else I'm watching</h2>\n<ul>\n{tips_items}</ul>\n"
+    else:
+        tips_html = ""
+
+    # ── Footer ─────────────────────────────────────────────────────────────────
+    footer_html = (
+        f"<hr>\n"
+        f"<p><em>Full edition + positioning notes: "
+        f"<a href=\"{url}\">{url.replace('https://', '')}</a></em></p>\n"
+        f"<p><em>Not investment advice. For informational purposes only.</em></p>\n"
+        f"<p><em>Framework Foundry · "
+        f"<a href=\"https://frameworkfoundrymarket.substack.com\">frameworkfoundrymarket.substack.com</a></em></p>\n"
+    )
 
     return (
         f"<h1>{title}</h1>\n"
         f"<h3>{subtitle}</h3>\n"
         f"<hr>\n"
-        f"{_md_to_html(body_md)}\n"
+        f"{hook_html}\n"
+        f"{read_html}\n"
+        f"{ot_html}"
+        f"{tips_html}"
+        f"{footer_html}"
     )
 
 
 # ── Context builder ───────────────────────────────────────────────────────────
 
-def build_daybreak_context(raw: dict) -> dict:
+def build_daybreak_context(raw: dict, use_claude: bool = True) -> dict:
     """Build the full template context for the daybreak edition.
 
     Args:
         raw: Full daybreak payload from fetch_daybreak_data().
+        use_claude: If False, skip the Claude API call and use template fallback.
+                    Use False when the approved .md will override narrative fields anyway.
 
     Returns:
         Dict ready for Jinja2 rendering and HTML generation.
@@ -1662,10 +1731,16 @@ def build_daybreak_context(raw: dict) -> dict:
 
     market_news_raw = raw.get("market_news", [])
 
-    narrative, brief_body, investor_section, one_trade, email_subject, tips = build_daybreak_narrative_sections(
-        us_indices, intl_indices, fx_rates, futures,
-        yesterday_events, today_events, market_news_raw,
-    )
+    if use_claude:
+        narrative, brief_body, investor_section, one_trade, email_subject, tips = build_daybreak_narrative_sections(
+            us_indices, intl_indices, fx_rates, futures,
+            yesterday_events, today_events, market_news_raw,
+        )
+    else:
+        # Skip Claude API — approved .md will override narrative fields
+        narrative = brief_body = investor_section = ""
+        one_trade = email_subject = None
+        tips = []
 
     # ── Editorial overrides (stored in fixture under "editorial" key) ──────────
     editorial = raw.get("editorial", {})

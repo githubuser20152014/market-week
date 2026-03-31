@@ -50,51 +50,65 @@ cd "$SCRIPT_DIR"
 MD_PATH="$SCRIPT_DIR/output/market_day_break_${DATE_STR}.md"
 
 # Phase 1: Generate Markdown only (no PDF or social posts yet)
+# Skipped entirely when --publish is set — approved MD must already exist.
 FIXTURE_PATH="$SCRIPT_DIR/fixtures/daybreak_${DATE_STR}.json"
 
-if [[ ! -f "$MD_PATH" ]]; then
-  if [[ -f "$FIXTURE_PATH" ]]; then
-    echo "==> Fixture found — generating from verified Perplexity fixture ..."
-    python generate_market_day_break.py --date "$DATE_STR" --md-only
-  else
-    echo "==> No fixture found — fetching live data ..."
-    python generate_market_day_break.py --date "$DATE_STR" --live --md-only
+if [[ "$PUBLISH" == "--publish" ]]; then
+  # Publishing to website — approved MD is the ONLY content source.
+  # Never call the Claude API here; never regenerate narrative.
+  if [[ ! -f "$MD_PATH" ]]; then
+    echo "ERROR: Cannot publish — approved markdown not found:"
+    echo "  $MD_PATH"
+    echo ""
+    echo "Run without --publish first to generate and review the content:"
+    echo "  bash weekly-newsletter/publish_daybreak.sh $DATE_STR"
+    exit 1
   fi
+  echo "==> Approved newsletter found for $DATE_STR — proceeding to publish."
 else
-  echo "==> Using existing newsletter for $DATE_STR (skipping regeneration)"
-fi
-
-echo ""
-echo "Newsletter ready for review:"
-echo "  $MD_PATH"
-
-# Phase 1b: Optional headless polish pass
-if [[ "$POLISH" == "--polish" ]]; then
-  echo ""
-  echo "==> Running headless polish pass ..."
-  PROMPT_FILE="$REPO_ROOT/.claude/commands/headless-daybreak-polish.md"
-  if [[ ! -f "$PROMPT_FILE" ]]; then
-    echo "  [WARN] Polish prompt not found at $PROMPT_FILE — skipping polish step."
-  elif ! command -v claude &>/dev/null; then
-    echo "  [WARN] 'claude' CLI not found in PATH — skipping polish step."
+  # Generate-only mode: write the draft MD (calls Claude API once).
+  if [[ ! -f "$MD_PATH" ]]; then
+    if [[ -f "$FIXTURE_PATH" ]]; then
+      echo "==> Fixture found — generating from verified Perplexity fixture ..."
+      python generate_market_day_break.py --date "$DATE_STR" --md-only
+    else
+      echo "==> No fixture found — fetching live data ..."
+      python generate_market_day_break.py --date "$DATE_STR" --live --md-only
+    fi
   else
-    PROMPT=$(sed "s|\\\$DAYBREAK_FILE|${MD_PATH}|g" "$PROMPT_FILE")
-    claude -p "$PROMPT" \
-      --allowedTools Read,Edit \
-      --dangerously-skip-permissions \
-      --model claude-sonnet-4-6
-    echo "  Polish pass complete."
+    echo "==> Using existing newsletter for $DATE_STR (skipping regeneration)"
   fi
-fi
 
-if [[ "$SEND_EMAIL" == "--send-email" && "$PUBLISH" != "--publish" ]]; then
   echo ""
-  echo "==> Sending email to subscribers ..."
-  python "$SCRIPT_DIR/send_email.py" --edition daybreak --date "$DATE_STR"
-  exit 0
-fi
+  echo "Newsletter ready for review:"
+  echo "  $MD_PATH"
 
-if [[ "$PUBLISH" != "--publish" ]]; then
+  # Optional headless polish pass
+  if [[ "$POLISH" == "--polish" ]]; then
+    echo ""
+    echo "==> Running headless polish pass ..."
+    PROMPT_FILE="$REPO_ROOT/.claude/commands/headless-daybreak-polish.md"
+    if [[ ! -f "$PROMPT_FILE" ]]; then
+      echo "  [WARN] Polish prompt not found at $PROMPT_FILE — skipping polish step."
+    elif ! command -v claude &>/dev/null; then
+      echo "  [WARN] 'claude' CLI not found in PATH — skipping polish step."
+    else
+      PROMPT=$(sed "s|\\\$DAYBREAK_FILE|${MD_PATH}|g" "$PROMPT_FILE")
+      claude -p "$PROMPT" \
+        --allowedTools Read,Edit \
+        --dangerously-skip-permissions \
+        --model claude-sonnet-4-6
+      echo "  Polish pass complete."
+    fi
+  fi
+
+  if [[ "$SEND_EMAIL" == "--send-email" ]]; then
+    echo ""
+    echo "==> Sending email to subscribers ..."
+    python "$SCRIPT_DIR/send_email.py" --edition daybreak --date "$DATE_STR"
+    exit 0
+  fi
+
   echo ""
   echo "Review the Markdown above, then run with --publish to generate social posts and deploy:"
   echo "  bash weekly-newsletter/publish_daybreak.sh $DATE_STR --publish"

@@ -263,9 +263,14 @@ def check_positioning(md_text: str, html: str, errors: list[str]) -> None:
     html_tips = []
     for row in html_rows:
         if len(row) >= 2:
-            html_tips.append(norm(row[0] + ' ' + row[1], lower=True))
+            combined = norm(row[0] + ' ' + row[1], lower=True)
         elif row:
-            html_tips.append(norm(row[0], lower=True))
+            combined = norm(row[0], lower=True)
+        else:
+            continue
+        # Apply same dash normalization as MD path: -- / – / — → space
+        combined = re.sub(r'\s+(?:--|[\u2013\u2014])\s+', ' ', combined)
+        html_tips.append(combined)
 
     if len(md_tips) != len(html_tips):
         errors.append(

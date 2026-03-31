@@ -2,12 +2,18 @@ The One Trade: GLD Long
 
 Gold is posting its worst month since 2008 in the middle of an active shooting war — that is a forced-liquidation anomaly, not a fundamental signal, and exhaustion of that selling creates one of the more asymmetric long setups of the year.
 
+Here's why:
+
+The dominant driver is the Iran war entering its fifth week and now visibly disrupting supply chains at a structural level. Iran's attacks on aluminum producers are sending shockwaves through industrial metals, niche commodity prices are surging in ways that expose China's grip on critical supply chains, and US gasoline has crossed $4 per gallon for the first time since 2022. That last data point is the consumer tax hiding in plain sight — it functions like an automatic rate hike, draining discretionary spending roughly $0.15–$0.20 per gallon above the prior baseline. Oil's "choppy" trading reflects genuine uncertainty about how Trump's comments on Iran resolve, but the $100+ floor is now a working assumption in energy markets.
+
+For ETF investors, the playbook is fracturing along familiar fault lines. Energy (XLE, XOP) remains the clearest war-premium beneficiary, but at $102 oil the upside-to-downside is less clean than it was at $85 — you're playing cease-fire risk now, not a one-way trend. Gold's (GLD) collapse despite an active hot war is the most actionable anomaly: if this is a liquidation event rather than a genuine repricing of gold's safe-haven role, mean-reversion longs into weakness become compelling once the forced selling exhausts. Small caps (IWM) are where the consumer fuel squeeze will show up first in earnings revisions — avoid or reduce until gasoline stabilizes. On the defensive side, TLT is catching a bid on yields falling, consistent with a growth scare narrative rather than an inflation-panic narrative, and that tension is worth monitoring closely.
+
 Confirms: GLD reclaims yesterday's closing level ($4,561 spot equivalent) and holds above it through the first 45 minutes of trading on above-average volume — that's the signal that forced selling has cleared.
 Risk: GLD breaks below $4,500 spot on a closing basis, indicating the unwind is larger and longer than a single-session event and the trade thesis is premature.
 
 Best: WTI Crude Oil (+1.62%) | Worst: Russell 2000 (-1.46%)
 
-Full breakdown → frameworkfoundry.info
+Read on Substack → https://substack.com/profile/36755804-framework-foundry/note/c-235949949
 
 Not investment advice. For informational purposes only.
 

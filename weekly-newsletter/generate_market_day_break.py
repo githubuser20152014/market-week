@@ -13,6 +13,7 @@ Preview (no file saved):
 
 import argparse
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -27,6 +28,91 @@ from data.daybreak_process_data import (
     _generate_post_title,
 )
 from data.pdf_export import generate_pdf
+
+
+def _override_from_approved_md(ctx: dict, md_path: Path) -> dict:
+    """Read the approved .md file and override narrative fields in ctx.
+
+    Called when --no-rewrite-md is set so that social posts and the email
+    subject are generated from the human-approved content, not an empty context.
+    """
+    if not md_path.exists():
+        return ctx
+
+    md = md_path.read_text(encoding="utf-8")
+    sections: dict[str, str] = {}
+    current, buf = None, []
+    for line in md.splitlines():
+        if line.startswith("## "):
+            if current is not None:
+                sections[current] = "\n".join(buf)
+            current, buf = line[3:].strip(), []
+        elif current is not None:
+            buf.append(line)
+    if current is not None:
+        sections[current] = "\n".join(buf)
+
+    def _paras(text: str) -> str:
+        paras, block = [], []
+        for line in text.splitlines():
+            s = line.strip()
+            if not s or s == "---":
+                if block:
+                    paras.append(" ".join(block))
+                    block = []
+            else:
+                block.append(s)
+        if block:
+            paras.append(" ".join(block))
+        return "\n\n".join(paras)
+
+    if "The Brief" in sections:
+        text = _paras(sections["The Brief"])
+        if text:
+            ctx["narrative"] = text
+            ctx["brief_body"] = text
+
+    if "What it means for you" in sections:
+        text = _paras(sections["What it means for you"])
+        if text:
+            ctx["investor_section"] = text
+
+    if "The One Trade" in sections:
+        ot = sections["The One Trade"]
+        ticker = direction = thesis = confirm = risk = None
+        for line in ot.splitlines():
+            s = line.strip()
+            if not s:
+                continue
+            m = re.match(r"\*?\*?\[([A-Z0-9]+)\]\([^)]+\)\s*[—–-]+\s*(.+?)\*?\*?$", s)
+            if m and ticker is None:
+                ticker = m.group(1).strip()
+                direction = m.group(2).strip().rstrip("*")
+                continue
+            if s.startswith("*") and s.endswith("*") and thesis is None:
+                thesis = s.strip("*").strip()
+                continue
+            m2 = re.match(r"\*?\*?Confirms:\*?\*?\s*(.*)", s)
+            if m2 and confirm is None:
+                confirm = m2.group(1).strip()
+                continue
+            m3 = re.match(r"\*?\*?Risk:\*?\*?\s*(.*)", s)
+            if m3 and risk is None:
+                risk = m3.group(1).strip()
+        if ticker and direction:
+            ctx["one_trade"] = {
+                "ticker": ticker, "direction": direction,
+                "thesis": thesis or "", "confirm": confirm or "", "risk": risk or "",
+            }
+
+    if "Positioning Notes" in sections:
+        tips = [re.sub(r"^[-*]\s+", "", l.strip())
+                for l in sections["Positioning Notes"].splitlines()
+                if re.match(r"^[-*]\s", l.strip())]
+        if tips:
+            ctx["tips"] = tips
+
+    return ctx
 
 BASE_DIR     = Path(__file__).resolve().parent
 OUTPUT_DIR   = BASE_DIR / "output"
@@ -94,10 +180,17 @@ def main():
         print(f"Fixture saved -> {fixture_path}")
 
     # ── Process ───────────────────────────────────────────────────────────────
-    context = build_daybreak_context(raw)
+    # Skip Claude API when --no-rewrite-md: approved .md is the content source.
+    context = build_daybreak_context(raw, use_claude=not args.no_rewrite_md)
 
     # ── Render (Markdown via Jinja2) ──────────────────────────────────────────
     OUTPUT_DIR.mkdir(exist_ok=True)
+    md_path = OUTPUT_DIR / f"market_day_break_{date_str}.md"
+
+    # When not rewriting the MD, load the approved content into context so
+    # social posts and email are built from the human-reviewed text, not empty strings.
+    if args.no_rewrite_md:
+        context = _override_from_approved_md(context, md_path)
 
     if args.preview:
         # Render the HTML to stdout for quick inspection
@@ -111,7 +204,6 @@ def main():
     # Save Markdown
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     # Use daybreak template if it exists, otherwise render HTML only
-    md_path = OUTPUT_DIR / f"market_day_break_{date_str}.md"
     if args.no_rewrite_md:
         print(f"Skipping MD write — using existing approved {md_path.name}")
     else:

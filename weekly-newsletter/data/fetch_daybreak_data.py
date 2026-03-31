@@ -173,7 +173,7 @@ def fetch_from_perplexity(date_str: str, perplexity_data: dict) -> dict:
         "intl_overnight": _build_intl(intl_data,     prev_fixture),
         "fx":             _build_fx(fx_data,          prev_fixture),
         "futures":        _build_futures(us_data,     prev_fixture),
-        "econ_calendar":  _fetch_econ_calendar(date_str),
+        "econ_calendar":  {"yesterday": [], "today": []},
         "market_news":    _fetch_market_news(date_str),
     }
 
@@ -277,7 +277,6 @@ def _fetch_live(date_str: str) -> dict:
     intl_overnight = _fetch_intl_overnight(date_str, cfg["intl_indices"])
     fx             = _fetch_fx(date_str, cfg["fx"])
     futures        = _fetch_futures(date_str, cfg["futures"])
-    econ_calendar  = _fetch_econ_calendar(date_str)
     market_news    = _fetch_market_news(date_str)
 
     return {
@@ -290,7 +289,7 @@ def _fetch_live(date_str: str) -> dict:
         "intl_overnight": intl_overnight,
         "fx":             fx,
         "futures":        futures,
-        "econ_calendar":  econ_calendar,
+        "econ_calendar":  {"yesterday": [], "today": []},
         "market_news":    market_news,
     }
 

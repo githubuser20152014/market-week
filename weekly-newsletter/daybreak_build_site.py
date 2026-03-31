@@ -326,53 +326,6 @@ def render_html(ctx: dict) -> str:
               <td class="{pct_cls}">{perf_str}</td>
             </tr>"""
 
-    # ── Yesterday's Events ────────────────────────────────────────────────────
-    yesterday_rows = ""
-    for ev in ctx.get("yesterday_events", []):
-        surprise = ev.get("surprise", "neutral")
-        if surprise == "above":
-            tag = '<span class="tag above">Above</span>'
-        elif surprise == "below":
-            tag = '<span class="tag below">Below</span>'
-        else:
-            tag = '<span class="tag inline">Inline</span>'
-        actual   = f"{ev.get('actual', '--')}{ev.get('unit', '')}"
-        expected = f"{ev.get('expected', '--')}{ev.get('unit', '')}"
-        yesterday_rows += f"""
-            <tr>
-              <td>{ev.get('event', '')}</td>
-              <td>{actual}</td>
-              <td>{expected}</td>
-              <td>{ev.get('previous', '--')}</td>
-              <td>{tag}</td>
-            </tr>"""
-
-    if not yesterday_rows:
-        yesterday_rows = '<tr><td colspan="5" style="color:var(--muted);font-style:italic;">No major events recorded.</td></tr>'
-
-    # ── Today's Watch List ────────────────────────────────────────────────────
-    today_rows = ""
-    for ev in ctx.get("today_events", []):
-        imp = ev.get("importance", 1)
-        if imp >= 3:
-            imp_class, imp_label = "imp-high", "High"
-        elif imp == 2:
-            imp_class, imp_label = "imp-medium", "Medium"
-        else:
-            imp_class, imp_label = "imp-low", "Low"
-        time_est = ev.get("time_est", "--") or "--"
-        expected = f"{ev.get('expected', '--')}{ev.get('unit', '')}"
-        today_rows += f"""
-            <tr>
-              <td class="time-col">{time_est}</td>
-              <td>{ev.get('event', '')}</td>
-              <td><span class="{imp_class}">{imp_label}</span></td>
-              <td>{expected}</td>
-            </tr>"""
-
-    if not today_rows:
-        today_rows = '<tr><td colspan="4" style="color:var(--muted);font-style:italic;">No high-importance events scheduled today.</td></tr>'
-
     # ── Positioning Tips ──────────────────────────────────────────────────────
     tips_rows = ""
     for tip in ctx["tips"]:
@@ -623,39 +576,6 @@ def render_data_html(ctx: dict) -> str:
                     else ("futures-row-neg" if pct_val is not None else "")
         futures_rows += f"<tr class='{row_cls}'><td>{fut['name']}</td><td>{price_str}</td><td class='{pct_cls}'>{perf_str}</td></tr>"
 
-    # ── Yesterday's Events ────────────────────────────────────────────────────
-    yesterday_rows = ""
-    for ev in ctx.get("yesterday_events", []):
-        surprise = ev.get("surprise", "neutral")
-        tag = {'above': '<span class="tag above">Above</span>',
-               'below': '<span class="tag below">Below</span>'}.get(
-               surprise, '<span class="tag inline">Inline</span>')
-        actual   = f"{ev.get('actual', '--')}{ev.get('unit', '')}"
-        expected = f"{ev.get('expected', '--')}{ev.get('unit', '')}"
-        yesterday_rows += (f"<tr><td>{ev.get('event', '')}</td><td>{actual}</td>"
-                           f"<td>{expected}</td><td>{ev.get('previous', '--')}</td>"
-                           f"<td>{tag}</td></tr>")
-    if not yesterday_rows:
-        yesterday_rows = '<tr><td colspan="5" style="color:var(--muted);font-style:italic;">No major events recorded.</td></tr>'
-
-    # ── Today's Watch List ────────────────────────────────────────────────────
-    today_rows = ""
-    for ev in ctx.get("today_events", []):
-        imp = ev.get("importance", 1)
-        if imp >= 3:
-            imp_class, imp_label = "imp-high", "High"
-        elif imp == 2:
-            imp_class, imp_label = "imp-medium", "Medium"
-        else:
-            imp_class, imp_label = "imp-low", "Low"
-        time_est = ev.get("time_est", "--") or "--"
-        expected = f"{ev.get('expected', '--')}{ev.get('unit', '')}"
-        today_rows += (f"<tr><td class='time-col'>{time_est}</td><td>{ev.get('event', '')}</td>"
-                       f"<td><span class='{imp_class}'>{imp_label}</span></td>"
-                       f"<td>{expected}</td></tr>")
-    if not today_rows:
-        today_rows = '<tr><td colspan="4" style="color:var(--muted);font-style:italic;">No high-importance events scheduled today.</td></tr>'
-
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -699,7 +619,7 @@ def render_data_html(ctx: dict) -> str:
   </header>
 
   <div class="region-banner">
-    <span>US Close \u00b7 Asia-Pacific \u00b7 Europe \u00b7 FX \u00b7 Futures \u00b7 Economic Calendar</span>
+    <span>US Close \u00b7 Asia-Pacific \u00b7 Europe \u00b7 FX \u00b7 Futures</span>
     <div class="region-dots"><span class="region-dot">\U0001f4ca</span></div>
   </div>
 
@@ -739,22 +659,6 @@ def render_data_html(ctx: dict) -> str:
       <table class="snapshot-table">
         <thead><tr><th>Contract</th><th>Price</th><th>Daily %</th></tr></thead>
         <tbody>{futures_rows if futures_rows else '<tr><td colspan="3" style="color:var(--muted);font-style:italic;">No futures data.</td></tr>'}</tbody>
-      </table>
-    </div>
-
-    <div class="section-block">
-      <div class="section-title">What Moved Markets Yesterday</div>
-      <table class="events-table">
-        <thead><tr><th>Event</th><th>Actual</th><th>Expected</th><th>Previous</th><th>Surprise</th></tr></thead>
-        <tbody>{yesterday_rows}</tbody>
-      </table>
-    </div>
-
-    <div class="section-block">
-      <div class="section-title">Today\u2019s Watch List</div>
-      <table class="upcoming-table">
-        <thead><tr><th>Time (EST)</th><th>Event</th><th>Importance</th><th>Expected</th></tr></thead>
-        <tbody>{today_rows}</tbody>
       </table>
     </div>
 

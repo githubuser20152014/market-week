@@ -3957,22 +3957,27 @@ def build(use_mock=True):
     for date_str in daybreak_dates:
         issue_dir = SITE_DIR / "daily" / date_str
         html_file = issue_dir / "index.html"
-        # Skip re-rendering historical editions that already have published HTML
-        # — but still build the context so hub pages can reference it.
         from datetime import date as _date
         skip_render = html_file.exists() and date_str != _date.today().isoformat()
         if not skip_render:
             print(f"Building Daily {date_str} …")
         try:
             raw = fetch_daybreak_data(date_str, use_mock=use_mock)
-            ctx = build_daybreak_context(raw)
-            ctx = _override_ctx_from_approved_md(ctx, date_str)
+            if skip_render:
+                # Historical edition: build minimal ctx (futures only) for hub cards.
+                # Never call Claude API or regenerate content for published editions.
+                from data.daybreak_process_data import process_futures as _proc_futures
+                ctx = {"date": date_str, "futures": _proc_futures(raw.get("futures", {}))}
+                print(f"Skipping Daily {date_str} (HTML already published)")
+            else:
+                # Today's edition: skip Claude API — approved .md is the content source.
+                ctx = build_daybreak_context(raw, use_claude=False)
+                ctx = _override_ctx_from_approved_md(ctx, date_str)
         except Exception as e:
             print(f"  WARNING: could not build daybreak context for {date_str}: {e}")
             continue
         daybreak_ctxs[date_str] = ctx
         if skip_render:
-            print(f"Skipping Daily {date_str} (HTML already published)")
             continue
 
         issue_dir = SITE_DIR / "daily" / date_str

@@ -52,7 +52,8 @@ python send_email.py --edition global --date DATE
 
 ## Step 5 — Social posts
 
-Ask Claude: *"Create X thread and LinkedIn post for the Global Investor Edition DATE. Point to: [SUBSTACK URL]"*
+Ask Claude: *"Create X thread and LinkedIn post for the Global Investor Edition DATE."*
+Claude will ask for the Substack URL — paste it in at that point (URL changes every issue).
 
 - [ ] Review `output/global_x_thread_DATE.md` — post as thread on X
 - [ ] Review `output/global_linkedin_DATE.md` — post on LinkedIn
