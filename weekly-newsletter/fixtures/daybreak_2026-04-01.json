@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-04-01",
+    "generated_at": "2026-04-01T10:42:47.480074Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6343.72,
+      "close": 6528.52,
+      "daily_pct": 2.9131,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 45166.64,
+      "close": 46341.51,
+      "daily_pct": 2.6012,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 20794.64,
+      "close": 21590.63,
+      "daily_pct": 3.8279,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2414.01,
+      "close": 2496,
+      "daily_pct": 3.3964,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4561.5,
+      "close": 4561.68,
+      "daily_pct": 0.0039,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.356,
+      "close": 4.31,
+      "daily_pct": -1.056,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -4.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.5,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 102.88,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53200,
+      "prev_close": 51245.5,
+      "daily_pct": 3.814,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25396,
+      "prev_close": 24624.55,
+      "daily_pct": 3.1328,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5478.7,
+      "prev_close": 5097.11,
+      "daily_pct": 7.4864,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22331,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8671.8,
+      "prev_close": 8481.8,
+      "daily_pct": 2.2401,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 22680,
+      "prev_close": 22562.88,
+      "daily_pct": 0.5191,
+      "session_note": "Early session"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10176,
+      "prev_close": 10127.96,
+      "daily_pct": 0.4743,
+      "session_note": "Early session"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 7772.45,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 5541.79,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.156,
+      "prev_close": 1.1495,
+      "daily_pct": 0.5655
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3912,
+      "prev_close": 1.3237,
+      "daily_pct": 5.0993
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.9,
+      "prev_close": 159.737,
+      "daily_pct": -0.524
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6849,
+      "prev_close": 0.6849,
+      "daily_pct": 0.0
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 7.17,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 0.7982,
+      "prev_close": null,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": null,
+      "prev_close": 45283.06,
+      "daily_pct": null
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Iran threatens Nvidia, Apple and other tech giants with attack",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 10:28:08 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/iran-irgc-nvidia-appple-attack-threat.html",
+      "summary": "Iran's Islamic Revolutionary Guard Corps (IRGC) has warned a number of tech companies with Middle East operations they'll be considered \"legitimate targets.\""
+    },
+    {
+      "headline": "Trump says he's considering pulling U.S. out of 'paper tiger' NATO",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 10:08:20 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/trump-says-hes-considering-pulling-us-out-of-paper-tiger-nato.html",
+      "summary": "The President's comments are the latest threat to America's allies after their reluctance to help reopen the Strait of Hormuz."
+    },
+    {
+      "headline": "Anthropic leaks part of Claude Code's internal source code",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 20:56:59 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/anthropic-leak-claude-code-internal-source.html",
+      "summary": "Claude Code has seen massive adoption over the last year, and its run-rate revenue had swelled to more than $2.5 billion as of February."
+    },
+    {
+      "headline": "Social Security needs money to fix its shortfall. The question is, who will pay?",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 18:58:39 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/social-security-shortfall-who-will-pay.html",
+      "summary": "Social Security's retirement trust fund may run out of money in 2032, according to the latest projections. Lawmakers have some ideas for how to fix the program."
+    },
+    {
+      "headline": "Oil prices seesaw around $100 in volatile trading after Trump war exit comments",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 10:20:54 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/oil-prices-today-brent-wti.html",
+      "summary": "Crude prices seesawed on Wednesday as President Donald Trump signaled a willingness to exit the Iran war even as the Strait of Hormuz remains largely closed."
+    },
+    {
+      "headline": "Jim Cramer: Three ways the stock market will flip if the U.S.-Iran war ends",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 22:35:34 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/jim-cramer-three-ways-the-stock-market-will-flip-if-the-us-iran-war-ends.html",
+      "summary": "Want to know how the market will react when the war's over? CNBC's Jim Cramer says Tuesday's session gives investors a hint."
+    },
+    {
+      "headline": "Nike shares fall 9% on weak outlook, expected 20% sales decline in China",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 06:13:56 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/nike-nke-earnings-q3-2026.html",
+      "summary": "Nike has shown some gains in North America, its largest market, amid its turnaround, but the strength was offset by weakness in China."
+    },
+    {
+      "headline": "Women are making strides in education and employment. But an investing glass ceiling remains",
+      "source": "CNBC",
+      "published": "Tue, 31 Mar 2026 20:39:51 GMT",
+      "url": "https://www.cnbc.com/2026/03/31/women-stock-market-investing-gap.html",
+      "summary": "Women haven't broken through the glass ceiling when it comes to participation in the stock market. Societal norms and ongoing pay disparities are to blame."
+    }
+  ]
+}
