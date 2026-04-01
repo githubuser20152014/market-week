@@ -11,9 +11,6 @@ excerpt: Portfolio drift is silent and automatic. Your target allocation shifts 
 read_time: 8 min read
 ---
 
-# The Blueprint: Issue #3
-## Your 70/30 portfolio is probably 82/18 right now
-
 *Published: Wednesday, April 1, 2026*
 *Series: The Blueprint | Practical Investing Guides*
 
