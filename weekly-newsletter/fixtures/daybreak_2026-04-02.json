@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-04-02",
+    "generated_at": "2026-04-02T09:24:29.322095Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6528.52,
+      "close": 6575.32,
+      "daily_pct": 0.7169,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46341.51,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21590.63,
+      "close": 21840.95,
+      "daily_pct": 1.1594,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2496,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4561.68,
+      "close": 4767.2,
+      "daily_pct": 4.5054,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.31,
+      "close": 4.319,
+      "daily_pct": 0.2088,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": null,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": null,
+      "close": 99.63,
+      "daily_pct": null,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 52463.27,
+      "prev_close": 53200,
+      "daily_pct": -1.3848,
+      "session_note": "Down 2.40%"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25294.03,
+      "prev_close": 25396,
+      "daily_pct": -0.4015,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5234.05,
+      "prev_close": 5478.7,
+      "daily_pct": -4.4655,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 22331,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8579.5,
+      "prev_close": 8671.8,
+      "daily_pct": -1.0644,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 22680,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 10176,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": null,
+      "prev_close": 1.156,
+      "daily_pct": null
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": null,
+      "prev_close": 1.3912,
+      "daily_pct": null
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": null,
+      "prev_close": 158.9,
+      "daily_pct": null
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": null,
+      "prev_close": 0.6849,
+      "daily_pct": null
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": null,
+      "prev_close": 7.17,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": null,
+      "prev_close": 0.7982,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": null,
+      "prev_close": null,
+      "daily_pct": null
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Stock market is in for 'choppy, bumpy ride' in 2026, strategist says. Why it pays to stay invested",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 19:28:49 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/investors-stock-market-volatility.html",
+      "summary": "The market's worst days are often followed by the best days, according to JPMorgan Asset Management data. Investors who stay the course stand to gain the most."
+    },
+    {
+      "headline": "EV demand is getting a boost from the Iran war \u2014 just as auto giants pivot back to combustion engines",
+      "source": "CNBC",
+      "published": "Thu, 02 Apr 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/02/evs-autos-energy-oil-iran-war-electric-transport-fossil-fuels.html",
+      "summary": "Various car selling platforms have reported a sharp increase in consumer interest for EVs since the Middle East crisis began."
+    },
+    {
+      "headline": "Wall Street loses patience with Nike as turnaround drags, China weakness deepens",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 20:32:47 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/nike-q3-2026-turnaround-drags-china-sales-slump.html",
+      "summary": "Nike warned that its turnaround is taking longer than it expected, leading three Wall Street banks to downgrade the stock as investors lose patience."
+    },
+    {
+      "headline": "Iran's war propaganda homes in on Trump with Lego memes",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 22:03:58 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/iran-war-social-media-meme-propaganda.html",
+      "summary": "Iranian propaganda is also homing in on the war's destabilizing impact on the global economy and energy prices, which have shot up in the U.S."
+    },
+    {
+      "headline": "Here are 3 ways to ignite a rally in beaten-down bank stocks like Wells Fargo and Goldman",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 20:27:36 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/here-are-3-ways-to-ignite-a-2026-rally-in-beaten-down-bank-stocks.html",
+      "summary": "Private credit risks, mass AI adoption and the U.S.-Iran war have all weighed on banks in 2026."
+    },
+    {
+      "headline": "Inside India newsletter: The worst might not be over for Indian equities",
+      "source": "CNBC",
+      "published": "Thu, 02 Apr 2026 02:15:32 GMT",
+      "url": "https://www.cnbc.com/2026/04/02/iran-war-indian-stocks-meltdown-worsen.html",
+      "summary": "Indian equities plunged as the Iran war triggered a record wave of foreign investor sell\u2011offs. Experts warn the downturn may not be over yet."
+    },
+    {
+      "headline": "Trump says he's considering pulling U.S. out of 'paper tiger' NATO",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 17:15:13 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/trump-says-hes-considering-pulling-us-out-of-paper-tiger-nato.html",
+      "summary": "The president's comments are the latest threat to America's allies after their reluctance to help reopen the Strait of Hormuz."
+    },
+    {
+      "headline": "Volkswagen deal with EV maker Xpeng shows how China tech threatens Western automakers",
+      "source": "CNBC",
+      "published": "Wed, 01 Apr 2026 12:38:32 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/volkswagen-xpeng-deal-threat-rivian-us-automakers.html",
+      "summary": "Xpeng's deal to make software, hardware and even vehicles with VW Group in China shows that Chinese firms are now making the high-value components."
+    }
+  ]
+}
