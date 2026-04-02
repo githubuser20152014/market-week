@@ -188,31 +188,37 @@
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": null,
+      "price": 6539,
       "prev_close": null,
       "daily_pct": null
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": null,
+      "price": 23826,
       "prev_close": null,
       "daily_pct": null
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": null,
+      "price": 46333,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "Russell 2000 Futures": {
+      "symbol": "RTY=F",
+      "price": 2485,
       "prev_close": null,
       "daily_pct": null
     },
     "Gold Futures": {
       "symbol": "GC=F",
-      "price": null,
+      "price": 4643,
       "prev_close": null,
       "daily_pct": null
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": null,
+      "price": 107.84,
       "prev_close": null,
       "daily_pct": null
     }
