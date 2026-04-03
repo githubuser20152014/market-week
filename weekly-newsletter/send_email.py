@@ -31,7 +31,7 @@ SUBJECTS = {
     "daybreak":  "The Morning Brief — {date}",
     "weekly":    "Framework Foundry Weekly (US Edition) — {date}",
     "intl":      "Framework Foundry Weekly (Intl Edition) — {date}",
-    "blueprint": "The Blueprint — {title} — {date}",
+    "blueprint": "{title} — {date}",
     "global":    "Global Investor Edition — {title}",
 }
 
@@ -45,7 +45,7 @@ SUBSCRIPTION_NAMES = {
 
 BLUEPRINT_CTA = (
     "Found this useful? Forward it to someone who's been meaning to get their 401(k) sorted. "
-    'They can subscribe at <a href="https://frameworkfoundrymarket.substack.com/" style="color:#4a7fb5;">frameworkfoundrymarket.substack.com</a>.'
+    'They can subscribe at <a href="https://frameworkfoundrymkt.substack.com/" style="color:#4a7fb5;">frameworkfoundrymkt.substack.com</a>.'
 )
 
 

@@ -1691,7 +1691,7 @@ def generate_substack_post(context: dict) -> str:
         f"<a href=\"{url}\">{url.replace('https://', '')}</a></em></p>\n"
         f"<p><em>Not investment advice. For informational purposes only.</em></p>\n"
         f"<p><em>Framework Foundry · "
-        f"<a href=\"https://frameworkfoundrymarket.substack.com\">frameworkfoundrymarket.substack.com</a></em></p>\n"
+        f"<a href=\"https://frameworkfoundrymkt.substack.com\">frameworkfoundrymkt.substack.com</a></em></p>\n"
     )
 
     return (

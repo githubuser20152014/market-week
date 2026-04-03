@@ -285,3 +285,76 @@ Two changes made:
 Review the Markdown above, then run with --publish to generate social posts and deploy:
   bash weekly-newsletter/publish_daybreak.sh 2026-03-25 --publish
 ==> No fixture found — fetching live data ...
+==> No fixture found — fetching live data ...
+
+Daybreak Price Verification � 2026-03-30
+Asset                      yfinance    Secondary    Diff%   Status
+--------------------------------------------------------------------
+  FRED fetch failed for GOLDAMGBD228NLBM: HTTP Error 404: Not Found
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  -- US Indices / Rates --
+  S&P 500                6,368.8501          N/A      N/A   ? secondary unavailable
+  Dow Jones             45,166.6406          N/A      N/A   ? secondary unavailable
+  Nasdaq                20,948.3594          N/A      N/A   ? secondary unavailable
+  Russell 2000           2,449.7000          N/A      N/A   ? secondary unavailable
+  USD Index                100.2850          N/A      N/A   ? secondary unavailable
+  Gold                   4,561.5000          N/A      N/A   ? secondary unavailable
+  10Y Treasury               4.4400       4.4200     0.5%   OK
+  -- International Indices --
+  Nikkei 225            51,885.8500          N/A      N/A   ? secondary unavailable
+  Hang Seng             24,750.7900          N/A      N/A   ? secondary unavailable
+  KOSPI                  5,277.3000          N/A      N/A   ? secondary unavailable
+  Nifty 50              22,348.4000          N/A      N/A   ? secondary unavailable
+  ASX 200                8,461.0000          N/A      N/A   ? secondary unavailable
+  DAX                   22,271.1600          N/A      N/A   ? secondary unavailable
+  FTSE 100              10,018.8100          N/A      N/A   ? secondary unavailable
+  CAC 40                 7,700.0700          N/A      N/A   ? secondary unavailable
+  Euro Stoxx 50          5,502.7900          N/A      N/A   ? secondary unavailable
+  -- FX --
+  EUR/USD                    1.1498          N/A      N/A   ? secondary unavailable
+  GBP/USD                    1.3237          N/A      N/A   ? secondary unavailable
+  USD/JPY                  159.5980          N/A      N/A   ? secondary unavailable
+  AUD/USD                    0.6855          N/A      N/A   ? secondary unavailable
+  USD/CNH                    6.9158          N/A      N/A   ? secondary unavailable
+  CHF/USD                    1.2508          N/A      N/A   ? secondary unavailable
+  -- Futures (no secondary source) --
+  S&P Futures              6,437.00          N/A      N/A   - no secondary
+  Nasdaq Futures          23,403.25          N/A      N/A   - no secondary
+  Dow Futures             45,576.00          N/A      N/A   - no secondary
+  Gold Futures             4,562.60          N/A      N/A   - no secondary
+  10Y T-Note                 110.41          N/A      N/A   - no secondary
+  WTI Crude Oil              101.24          N/A      N/A   - no secondary
+
+  Resolution log -> price_resolution_2026-03-30.txt
+Daybreak prices verified (tolerance=2.0%).
+
+Fixture saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\fixtures\daybreak_2026-03-30.json
+Narrative generated via Claude API.
+Newsletter saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\market_day_break_2026-03-30.md
+Email subject saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\title_2026-03-30.txt
+MD-only mode � skipping social posts and PDF.
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-03-30.md
+
+==> Running headless polish pass ...
+Two changes made:
+
+**Teaser** — compressed from 3 sentences to 2. The new version leads with the supply-shock framing immediately, names the APAC confirmation with the specific -2.79% figure, and frames the open question as a binary: de-escalation signal today vs. war premium entrenching for the week.
+
+**TLT positioning** — replaced the vague "until the oil-inflation signal cools" with two specific trigger levels: WTI below $95 or 10Y yield peaking and reversing. Now readers know exactly what to watch for.
+
+Everything else — all numbers, tickers, percentages, dates, and URLs — is untouched.
+  Polish pass complete.
+
+Review the Markdown above, then run with --publish to generate social posts and deploy:
+  bash weekly-newsletter/publish_daybreak.sh 2026-03-30 --publish
+==> Using existing newsletter for 2026-03-31 (skipping regeneration)
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-03-31.md
+
+==> Running headless polish pass ...
+==> No fixture found — fetching live data ...
