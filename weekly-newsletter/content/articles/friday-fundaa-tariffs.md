@@ -1,4 +1,4 @@
-# Friday Fundaa: Tariffs - The Tax You Pay That the Other Country Doesn't
+# Friday Fundaa — Who actually pays a tariff? (Spoiler: you already know)
 *Topic: Tariffs | Date: 2026-04-04 (Friday)*
 
 ---
