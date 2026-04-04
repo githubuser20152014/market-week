@@ -1,63 +1,44 @@
 # X Thread — Global Investor Edition 2026-04-04
 
-1/ Trump's April 2 speech just split global markets in two.
+1/ Trump's April 2 speech just split global markets in two. 
 
-Announced: US will hit Iranian energy infrastructure if no surrender deal.
-Result: Brent crude surged 6% immediately. WTI closed at $111.69 (up 69% YTD from $66).
-The Strait of Hormuz is effectively closed. This is a structural oil shock, not temporary.
+Announced: US will hit Iranian energy infrastructure if no deal. Result: Brent +6%, WTI at $111.69 (up 69% YTD from $66). Strait of Hormuz effectively closed. This is a structural oil shock, not temporary.
 
-2/ Here's the split:
+2/ The split:
 
 🟢 EUROPE: FTSE +4.7%, DAX +3.89%, Euro Stoxx +4.1%
-🔴 JAPAN: Nikkei −0.4% (fell 2.4% on April 2 alone)
-🔴 AUSTRALIA: AUD −2.1% (worst FX move of the week)
+🔴 JAPAN: Nikkei −0.4% (fell 2.4% on Apr 2)
+🔴 AUSTRALIA: AUD −2.1%
 
-Why? War makes Europe attractive. Defense budgets exploding. Energy companies (Shell, BP, TotalEnergies) capturing oil surge premium directly in earnings.
+Geography = outcome. War makes Europe attractive: defense budgets exploding, energy companies (Shell, BP, TotalEnergies) capturing oil surge premium.
 
-Japan imports 90% of its crude. Triple-digit oil = margin squeeze on everything. No defense offset.
+3/ Japan imports 90% of its crude. Triple-digit oil = direct margin squeeze on manufacturing, power, autos. No defense offset. Australia drowns with China slowdown.
 
-3/ But here's where it gets unstable: yields FELL to 4.31% (10Y) despite $111 oil.
+Europe wins. Oil-dependent economies lose. That's the war trade.
 
-Bond market was pricing stagflation (high prices + slow growth). Then March NFP printed on Good Friday:
+4/ Here's what breaks it: Yields FELL to 4.31% despite $111 oil.
 
-**178,000 jobs added vs. 65,000 expected.**
-Unemployment: 4.3% (steady).
+Bond market priced stagflation (high prices + slow growth). Then March NFP printed Friday:
 
-This inverts EVERYTHING.
+**178,000 jobs added vs 65,000 expected.**
+Unemployment 4.3%.
 
-4/ Not stagflation. Not slow growth.
+Not stagflation. INFLATION + GROWTH.
 
-High prices + STRONG growth = inflation in an *expanding* economy.
+5/ High prices + strong growth = inflation in an expanding economy.
 
-That means yields should be RISING, not falling. The 10Y's 9.5 bps drop was panic-selling on war fears, not a real economic signal.
+Yields should be RISING, not falling. The 10Y's 9.5 bps drop was war panic, not real economics.
 
-Monday's open will be volatile as the bond market reprices.
+Monday's open will be volatile as bond market reprices yields higher. Tech duration trade at risk.
 
-5/ The market's betting on one outcome:
-- Europe rallies on defense/energy
-- US stable on strong jobs
-- Asia suffers on oil dependency
-- Oil stays $105-115
-- Nothing escalates further
+6/ One trade: $XLE (Energy ETF).
 
-That's a crowded, fragile positioning.
+Strait of Hormuz closed. Trump threatened Iranian infrastructure. As long as war continues, crude supply is constrained and geopolitical risk premium is structural.
 
-One Trump escalation announcement or ceasefire signal and the entire trade unwinds.
-
-6/ Our one trade: $XLE (Energy ETF).
-
-The Strait of Hormuz is closed. Trump threatened Iranian energy infrastructure. As long as the war continues (week 5), crude supply is constrained and the geopolitical risk premium is baked in.
-
-Risk: De-escalation = oil crashes + XLE sells off sharply.
-
-Confirm: Watch Trump's next statement on Iran.
+Risk: De-escalation = XLE crashes. Watch Trump's next Iran statement.
 
 ---
 
 Full analysis: https://frameworkfoundrymkt.substack.com/p/framework-foundry-global-investor
 
-Why Europe wins (and Japan drowns) in this war. Plus why the 178k jobs print just broke the yield trade.
-
----
-
-**Disclaimer:** This analysis is for informational purposes only and does not constitute investment advice. Past performance does not guarantee future results. Markets are inherently volatile and geopolitical events can cause sharp reversals. Consult a qualified financial advisor before making investment decisions. All statements are based on publicly available data and market analysis as of April 4, 2026.
+**Disclaimer:** For informational purposes only. Not investment advice. Past performance ≠ future results. All investments carry risk. Geopolitical volatility can cause sharp reversals. Consult a qualified financial advisor. Data as of April 4, 2026.
