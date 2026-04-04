@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-04-03",
+    "generated_at": "2026-04-03T14:17:41.072498Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6575.3198,
+      "close": 6582.6899,
+      "daily_pct": 0.1121,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46565.7383,
+      "close": 46504.6719,
+      "daily_pct": -0.1311,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21840.9492,
+      "close": 21879.1797,
+      "daily_pct": 0.175,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2512.3701,
+      "close": 2530.04,
+      "daily_pct": 0.7033,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4783.2002,
+      "close": 4651.5,
+      "daily_pct": -2.7534,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.319,
+      "close": 4.313,
+      "daily_pct": -0.1389,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -0.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.03,
+      "close": 100.088,
+      "daily_pct": 0.058,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 100.12,
+      "close": 111.54,
+      "daily_pct": 11.4063,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53123.49,
+      "prev_close": 52463.27,
+      "daily_pct": 1.2584,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25116.53,
+      "prev_close": 25294.03,
+      "daily_pct": -0.7017,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5377.3,
+      "prev_close": 5234.05,
+      "daily_pct": 2.7369,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22713.1,
+      "prev_close": 22679.4,
+      "daily_pct": 0.1486,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8579.5,
+      "prev_close": 8671.8,
+      "daily_pct": -1.0644,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23111.31,
+      "prev_close": 23298.89,
+      "daily_pct": -0.8051,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10428.56,
+      "prev_close": 10364.8,
+      "daily_pct": 0.6152,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7946.92,
+      "prev_close": 7981.27,
+      "daily_pct": -0.4304,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5678.0,
+      "prev_close": 5732.71,
+      "daily_pct": -0.9543,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15314,
+      "prev_close": 1.15906,
+      "daily_pct": -0.5108
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32094,
+      "prev_close": 1.33026,
+      "daily_pct": -0.7013
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.537,
+      "prev_close": 158.688,
+      "daily_pct": 0.535
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6898,
+      "prev_close": 0.6924,
+      "daily_pct": -0.3751
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.88382,
+      "prev_close": 6.89108,
+      "daily_pct": -0.1054
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.2512,
+      "prev_close": 1.25953,
+      "daily_pct": -0.6606
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6603.75,
+      "prev_close": 6622.25,
+      "daily_pct": -0.2794
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24129.75,
+      "prev_close": 24218.0,
+      "daily_pct": -0.3644
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46629.0,
+      "prev_close": 46732.0,
+      "daily_pct": -0.2204
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4651.5,
+      "prev_close": 4783.2,
+      "daily_pct": -2.7534
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.72,
+      "prev_close": 111.02,
+      "daily_pct": -0.2674
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 111.54,
+      "prev_close": 100.12,
+      "daily_pct": 11.4063
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "U.S. payrolls rose by 178,000 in March, more than expected; unemployment at 4.3%",
+      "source": "CNBC",
+      "published": "Fri, 03 Apr 2026 13:35:34 GMT",
+      "url": "https://www.cnbc.com/2026/04/03/jobs-report-march-2026-.html",
+      "summary": "Nonfarm payrolls were expected to increase by 59,000 in March, with the unemployment rate holding at 4.4%."
+    },
+    {
+      "headline": "Trump threatens to destroy Iranian infrastructure, saying its government 'knows what has to be done'",
+      "source": "CNBC",
+      "published": "Fri, 03 Apr 2026 14:13:03 GMT",
+      "url": "https://www.cnbc.com/2026/04/03/trump-iran-threats-un-resolution-blocked-strait-of-hormuz-f35-shot-down.html",
+      "summary": "The threat comes a day after he said in a nationwide address that the U.S. military will be hitting Tehran \"extremely hard\" for the next two or three weeks."
+    },
+    {
+      "headline": "Trump tariff fallout: Some industries grapple with lingering effects one year later",
+      "source": "CNBC",
+      "published": "Fri, 03 Apr 2026 11:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/03/trump-tariffs-trade-war-impact.html",
+      "summary": "A year after his \"liberation day,\" Trump's trade war has reshaped how companies in industries such as retail and autos are modeling economic and policy risk."
+    },
+    {
+      "headline": "Meta, Google under attack as court cases bypass 30-year-old legal shield",
+      "source": "CNBC",
+      "published": "Fri, 03 Apr 2026 12:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/03/meta-google-under-attack-court-cases-bypass-30-year-old-legal-shield.html",
+      "summary": "Internet platforms have long been able to rely on special protections to avoid liability for what takes place on their sites. But that may be changing."
+    },
+    {
+      "headline": "The cost to fly private is up as much as 20% with fuel prices soaring",
+      "source": "CNBC",
+      "published": "Fri, 03 Apr 2026 13:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/03/private-jet-travel-costs-rise-fuel-prices.html",
+      "summary": "Deep-pocketed travelers are less likely to get priced out as airfares rise, but they have to navigate unexpected fees related to the Iran war and rising fuel costs."
+    },
+    {
+      "headline": "Analysis: Trump's Iran speech ignores the risks of a return to the 1970s",
+      "source": "CNBC",
+      "published": "Thu, 02 Apr 2026 14:12:31 GMT",
+      "url": "https://www.cnbc.com/2026/04/01/trump-iran-war-speech-1970s-energy-crisis.html",
+      "summary": "Oil shocks crippled past presidencies. The Iran war is putting Trump into the danger zone."
+    },
+    {
+      "headline": "Iran and Oman drafting protocol to 'monitor' Hormuz Strait traffic: IRNA",
+      "source": "CNBC",
+      "published": "Thu, 02 Apr 2026 18:46:52 GMT",
+      "url": "https://www.cnbc.com/2026/04/02/iran-war-oman-hormuz-strait.html",
+      "summary": "The Strait of Hormuz, the vital artery for global oil transit, has been effectively closed since the Iran war started in late February."
+    },
+    {
+      "headline": "Chinese chip firms hit record high revenue driven by the AI boom and U.S. curbs",
+      "source": "CNBC",
+      "published": "Fri, 03 Apr 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/03/chinese-chip-firms-record-revenue-ai-boom-us-curbs.html",
+      "summary": "Chinese chip companies have benefited from strong domestic demand for AI as U.S. tech curbs have bolstered local firms."
+    }
+  ]
+}

@@ -117,7 +117,15 @@
       "Bash(bash weekly-newsletter/publish_daybreak.sh 2026-03-23)",
       "mcp__perplexity__perplexity_search",
       "Bash(bash weekly-newsletter/publish_daybreak.sh 2026-03-27)",
-      "Bash(bash weekly-newsletter/publish_daybreak.sh 2026-03-27 --publish)"
+      "Bash(bash weekly-newsletter/publish_daybreak.sh 2026-03-27 --publish)",
+      "Read(//c/tmp/claude/**)",
+      "Read(//c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/$LOCALAPPDATA/Temp/**)",
+      "Bash(grep -E \"\\\\.py$\")",
+      "Bash(grep \"\\\\.py$\")",
+      "Bash(taskkill /F /IM python.exe)",
+      "Bash(kill -9 3200 2956)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(kill -9 3616)"
     ]
   }
 }
