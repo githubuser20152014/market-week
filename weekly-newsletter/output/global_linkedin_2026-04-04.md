@@ -29,3 +29,7 @@ That's not stagflation. That's **inflation in a growing economy** — and yields
 Read the full analysis → https://frameworkfoundrymkt.substack.com/p/framework-foundry-global-investor
 
 #MacroInvesting #GlobalMarkets #EnergyMarkets #MiddleEast #PortfolioStrategy
+
+---
+
+**Disclaimer:** This analysis is for informational purposes only and does not constitute investment advice. Past performance does not guarantee future results. All investments carry risk, including potential loss of principal. Geopolitical events and market volatility can cause sharp reversals in asset prices. Consult a qualified financial advisor before making investment decisions. All statements are based on publicly available data and market analysis as of April 4, 2026.

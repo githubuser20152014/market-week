@@ -57,3 +57,7 @@ Confirm: Watch Trump's next statement on Iran.
 Full analysis: https://frameworkfoundrymkt.substack.com/p/framework-foundry-global-investor
 
 Why Europe wins (and Japan drowns) in this war. Plus why the 178k jobs print just broke the yield trade.
+
+---
+
+**Disclaimer:** This analysis is for informational purposes only and does not constitute investment advice. Past performance does not guarantee future results. Markets are inherently volatile and geopolitical events can cause sharp reversals. Consult a qualified financial advisor before making investment decisions. All statements are based on publicly available data and market analysis as of April 4, 2026.
