@@ -42,7 +42,7 @@ The dollar slipped 0.3% (DXY to 99.4), and the euro ticked up to 1.154. These ar
 
 ---
 
-### Commodities & Metals — Stagflation in One Chart
+### Commodities & Metals — Inflation Without Stagnation
 
 **WTI crude to $111.69 (+6.7% weekly) is not an inflation signal; it's a *war signal*.** Trump's April 2 speech directly triggered the surge. The Strait of Hormuz closure is not temporary — it's structural as long as the war continues. At $111, oil is now up 69% year-to-date, and the bond market's response tells you exactly what it thinks: **yields fell, not because easing is coming, but because traders panicked about war escalation.** But the 178k jobs print on Friday changes that calculation. **High prices + strong growth = inflation in an expanding economy, not stagflation.** That's worse for bonds and worse for the "flight to safety" narrative. 
 
