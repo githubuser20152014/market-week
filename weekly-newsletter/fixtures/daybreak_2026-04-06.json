@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-04-06",
+    "generated_at": "2026-04-06T10:42:38.761533Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6575.3198,
+      "close": 6582.6899,
+      "daily_pct": 0.1121,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46565.7383,
+      "close": 46504.6719,
+      "daily_pct": -0.1311,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21840.9492,
+      "close": 21879.1797,
+      "daily_pct": 0.175,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2512.3701,
+      "close": 2530.04,
+      "daily_pct": 0.7033,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4651.5,
+      "close": 4717.0,
+      "daily_pct": 1.4081,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.319,
+      "close": 4.313,
+      "daily_pct": -0.1389,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -0.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.03,
+      "close": 99.941,
+      "daily_pct": -0.089,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 111.54,
+      "close": 110.37,
+      "daily_pct": -1.0489,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53413.68,
+      "prev_close": 53123.49,
+      "daily_pct": 0.5463,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25116.53,
+      "prev_close": 25294.03,
+      "daily_pct": -0.7017,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5450.33,
+      "prev_close": 5377.3,
+      "daily_pct": 1.3581,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22968.25,
+      "prev_close": 22713.1,
+      "daily_pct": 1.1234,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8579.5,
+      "prev_close": 8671.8,
+      "daily_pct": -1.0644,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23111.31,
+      "prev_close": 23298.89,
+      "daily_pct": -0.8051,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10428.56,
+      "prev_close": 10364.8,
+      "daily_pct": 0.6152,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7946.92,
+      "prev_close": 7981.27,
+      "daily_pct": -0.4304,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5678.0,
+      "prev_close": 5732.71,
+      "daily_pct": -0.9543,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1554,
+      "prev_close": 1.15417,
+      "daily_pct": 0.1063
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32491,
+      "prev_close": 1.32303,
+      "daily_pct": 0.142
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.448,
+      "prev_close": 159.491,
+      "daily_pct": -0.027
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69306,
+      "prev_close": 0.69115,
+      "daily_pct": 0.2761
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.87636,
+      "prev_close": 6.88146,
+      "daily_pct": -0.0741
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25349,
+      "prev_close": 1.25214,
+      "daily_pct": 0.1078
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6637.25,
+      "prev_close": 6622.25,
+      "daily_pct": 0.2265
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24340.25,
+      "prev_close": 24218.0,
+      "daily_pct": 0.5048
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46725.0,
+      "prev_close": 46732.0,
+      "daily_pct": -0.015
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4717.0,
+      "prev_close": 4651.5,
+      "daily_pct": 1.4081
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.75,
+      "prev_close": 111.02,
+      "daily_pct": -0.2393
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 110.33,
+      "prev_close": 111.54,
+      "daily_pct": -1.0848
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "JPMorgan CEO Jamie Dimon in annual letter cites risks in geopolitics, AI and private markets",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 10:27:21 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/jpmorgan-ceo-jamie-dimon-annual-letter-risks.html",
+      "summary": "JPMorgan CEO Jamie Dimon in his annual letter to shareholders noted the country's 250th anniversary and called for a broad recommitment to American ideals."
+    },
+    {
+      "headline": "Warsh nomination moves ahead, putting Trump's competing Fed plans on a collision course",
+      "source": "CNBC",
+      "published": "Sat, 04 Apr 2026 13:19:30 GMT",
+      "url": "https://www.cnbc.com/2026/04/04/warsh-fed-nomination-hearing-set-for-mid-april.html",
+      "summary": "A Senate committee will consider Kevin Warsh's nomination even as one of its members still plans to block it."
+    },
+    {
+      "headline": "India turns to Iran for oil and gas after 7-year hiatus, signaling limits to U.S. tilt",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 07:43:06 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/india-iran-oil-imports-strait-hormuz-us-tensions.html",
+      "summary": "India has resumed oil and gas imports from Iran after seven years, in a bid to rebalance its ties with Tehran and secure supplies through the Strait of Hormuz."
+    },
+    {
+      "headline": "Buffett may end donations to Gates charity over Bill's ties to Epstein",
+      "source": "CNBC",
+      "published": "Sat, 04 Apr 2026 13:08:53 GMT",
+      "url": "https://www.cnbc.com/2026/04/04/buffett-may-end-donations-to-gates-charity-over-bills-ties-to-epstein.html",
+      "summary": "Revelations about Jeffrey Epstein's ties to Bill Gates have strained his friendship with Warren Buffett and the Omaha billionaire's annual multi-billion-dollar donations to the Gates Foundation."
+    },
+    {
+      "headline": "U.S.-Iran war 'tax' begins to hit American businesses and consumers",
+      "source": "CNBC",
+      "published": "Sat, 04 Apr 2026 13:16:08 GMT",
+      "url": "https://www.cnbc.com/2026/04/04/us-iran-war-gas-prices-diesel-jet-fuel-economy-consumer-tax.html",
+      "summary": "A U.S.-Iran war 'tax' is beginning to hit consumers as diesel and jet fuel prices rise and stress business profitability, and there is no relief in sight."
+    },
+    {
+      "headline": "As 401(k) balances swell, financial advisors warn of retirement planning pitfalls",
+      "source": "CNBC",
+      "published": "Sat, 04 Apr 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/04/401k-balances-retirement-planning-pitfalls.html",
+      "summary": "While a big retirement account balance is a good problem to have, it can come with challenges, financial advisors say."
+    },
+    {
+      "headline": "AI data center boom \u2018stress tests\u2019 insurers as private capital floods in",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 05:38:40 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/ai-data-centers-financing-insurance-deals-gpu-debt.html",
+      "summary": "Rapid technological advancements and the huge sums of money flowing into the data center are posing both risks and rewards for insurers."
+    },
+    {
+      "headline": "The mega IPOs of SpaceX, Anthropic and OpenAI alone can't fix this stock market",
+      "source": "CNBC",
+      "published": "Sun, 05 Apr 2026 17:16:39 GMT",
+      "url": "https://www.cnbc.com/2026/04/05/cramer-ipos-of-spacex-anthropic-and-openai-alone-cant-fix-this-market.html",
+      "summary": "We have three big headwinds draggins stocks down, and one long-shot solution."
+    }
+  ]
+}
