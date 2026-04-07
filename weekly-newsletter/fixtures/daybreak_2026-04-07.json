@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-04-07",
+    "generated_at": "2026-04-07T09:15:12.672147Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6582.6899,
+      "close": 6611.8301,
+      "daily_pct": 0.4427,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46504.6719,
+      "close": 46669.8789,
+      "daily_pct": 0.3552,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 21879.1797,
+      "close": 21996.3398,
+      "daily_pct": 0.5355,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2530.04,
+      "close": 2540.6399,
+      "daily_pct": 0.419,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4656.7998,
+      "close": 4710.3999,
+      "daily_pct": 1.151,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.313,
+      "close": 4.335,
+      "daily_pct": 0.5101,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.98,
+      "close": 99.802,
+      "daily_pct": -0.178,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 112.41,
+      "close": 112.64,
+      "daily_pct": 0.2046,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 53429.56,
+      "prev_close": 53413.68,
+      "daily_pct": 0.0297,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25116.53,
+      "prev_close": 25294.03,
+      "daily_pct": -0.7017,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5494.78,
+      "prev_close": 5450.33,
+      "daily_pct": 0.8155,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23029.05,
+      "prev_close": 22968.25,
+      "daily_pct": 0.2647,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8728.8,
+      "prev_close": 8579.5,
+      "daily_pct": 1.7402,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23324.82,
+      "prev_close": 23168.08,
+      "daily_pct": 0.6765,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10463.35,
+      "prev_close": 10436.3,
+      "daily_pct": 0.2592,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8060.51,
+      "prev_close": 7962.39,
+      "daily_pct": 1.2323,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5734.38,
+      "prev_close": 5692.86,
+      "daily_pct": 0.7293,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15727,
+      "prev_close": 1.151,
+      "daily_pct": 0.5451
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32756,
+      "prev_close": 1.31863,
+      "daily_pct": 0.6767
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.548,
+      "prev_close": 159.78,
+      "daily_pct": -0.1452
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69434,
+      "prev_close": 0.68855,
+      "daily_pct": 0.8406
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.858,
+      "prev_close": 6.87703,
+      "daily_pct": -0.2767
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25268,
+      "prev_close": 1.24821,
+      "daily_pct": 0.3583
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6656.25,
+      "prev_close": 6651.0,
+      "daily_pct": 0.0789
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24364.5,
+      "prev_close": 24358.5,
+      "daily_pct": 0.0246
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 46979.0,
+      "prev_close": 46902.0,
+      "daily_pct": 0.1642
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4710.4,
+      "prev_close": 4656.8,
+      "daily_pct": 1.151
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.89,
+      "prev_close": 110.81,
+      "daily_pct": 0.0705
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 112.69,
+      "prev_close": 112.41,
+      "daily_pct": 0.2491
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "JD Vance heads to Hungary to support Viktor Orb\u00e1n ahead of high-stakes election",
+      "source": "CNBC",
+      "published": "Tue, 07 Apr 2026 08:59:33 GMT",
+      "url": "https://www.cnbc.com/2026/04/07/jd-vance-visits-hungary-viktor-orban-trump-russia-eu.html",
+      "summary": "Viktor Orb\u00e1n has said the EU is a greater threat to Hungary than Russia. As an election defeat looms, U.S. Vice President JD Vance is visiting to support him."
+    },
+    {
+      "headline": "Offbeat Wall Street research firm says it sent an analyst to Strait of Hormuz. Here's what they learned",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 20:47:02 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/wall-street-firm-sends-analyst-to-the-strait-of-hormuz-heres-what-they-found-out.html",
+      "summary": "Before the U.S and Israel began their war against Iran, about 20% of the world's oil was shipped through the narrow Strait of Hormuz."
+    },
+    {
+      "headline": "AI data center boom \u2018stress tests\u2019 insurers as private capital floods in",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 05:38:40 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/ai-data-centers-financing-insurance-deals-gpu-debt.html",
+      "summary": "Rapid technological advancements and the huge sums of money flowing into the data center are posing both risks and rewards for insurers."
+    },
+    {
+      "headline": "Asia-Pacific markets trade mixed as investors assess Trump's hardened rhetoric on Iran war",
+      "source": "CNBC",
+      "published": "Tue, 07 Apr 2026 08:24:55 GMT",
+      "url": "https://www.cnbc.com/2026/04/07/asia-pacific-markets-toda-kospi-nikkei225-nifty50.html",
+      "summary": "Trump renewed threats on targeting Iran's civilian infrastructure if a peace deal is not reached in less than 24 hours, while signaling Iranian leadership is negotiating in earnest."
+    },
+    {
+      "headline": "Epstein files: Commerce Secretary Howard Lutnick set for May 6 interview by House Oversight",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 21:22:58 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/jeffrey-epstein-howard-lutnick-house-oversight-interview.html",
+      "summary": "Commerce Secretary Lutnick originally claimed to have cut off contact with Jeffrey Epstein in 2005. But he and his family had lunch with the predator in 2012."
+    },
+    {
+      "headline": "CNBC's The China Connection newsletter: Why AI isn't replacing jobs in China (yet)",
+      "source": "CNBC",
+      "published": "Tue, 07 Apr 2026 05:36:46 GMT",
+      "url": "https://www.cnbc.com/2026/04/07/ai-jobs-layoffs-us-china-engineers-hiring.html",
+      "summary": "Rapid adoption of artificial intelligence has many in Silicon Valley reeling from news of layoffs. Engineers in China appear to be more insulated."
+    },
+    {
+      "headline": "India turns to Iran for oil and gas after 7-year hiatus, signaling limits to U.S. tilt",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 07:43:06 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/india-iran-oil-imports-strait-hormuz-us-tensions.html",
+      "summary": "India has resumed oil and gas imports from Iran after seven years, in a bid to rebalance its ties with Tehran and secure supplies through the Strait of Hormuz."
+    },
+    {
+      "headline": "S&P 500 aims to extend win streak \u2014 plus, a CFO switch at one of our key names",
+      "source": "CNBC",
+      "published": "Mon, 06 Apr 2026 18:24:54 GMT",
+      "url": "https://www.cnbc.com/2026/04/06/sp-500-aims-to-extend-win-streak-plus-a-cfo-switch-at-one-of-our-key-names.html",
+      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+    }
+  ]
+}
