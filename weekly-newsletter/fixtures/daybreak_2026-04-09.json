@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-04-09",
+    "generated_at": "2026-04-09T11:12:45.001323Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6616.8501,
+      "close": 6782.8101,
+      "daily_pct": 2.5081,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 46584.4609,
+      "close": 47909.9219,
+      "daily_pct": 2.8453,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22017.8496,
+      "close": 22634.9902,
+      "daily_pct": 2.8029,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2544.95,
+      "close": 2620.46,
+      "daily_pct": 2.9671,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4749.5,
+      "close": 4765.6001,
+      "daily_pct": 0.339,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.343,
+      "close": 4.291,
+      "daily_pct": -1.1973,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -5.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.03,
+      "close": 99.032,
+      "daily_pct": 0.002,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 94.41,
+      "close": 99.42,
+      "daily_pct": 5.3066,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 55895.32,
+      "prev_close": 56308.42,
+      "daily_pct": -0.7336,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25752.4,
+      "prev_close": 25893.02,
+      "daily_pct": -0.5431,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5778.01,
+      "prev_close": 5872.34,
+      "daily_pct": -1.6063,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23775.1,
+      "prev_close": 23997.35,
+      "daily_pct": -0.9261,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8973.2,
+      "prev_close": 8951.8,
+      "daily_pct": 0.2391,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23786.26,
+      "prev_close": 24080.63,
+      "daily_pct": -1.2224,
+      "session_note": "Early session (~3h in)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10575.36,
+      "prev_close": 10608.9,
+      "daily_pct": -0.3162,
+      "session_note": "Early session (~3h in)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8189.94,
+      "prev_close": 8263.87,
+      "daily_pct": -0.8946,
+      "session_note": "Early session (~3h in)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5858.77,
+      "prev_close": 5913.37,
+      "daily_pct": -0.9233,
+      "session_note": "Early session (~3h in)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16795,
+      "prev_close": 1.16866,
+      "daily_pct": -0.0607
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34056,
+      "prev_close": 1.34018,
+      "daily_pct": 0.0286
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.015,
+      "prev_close": 158.716,
+      "daily_pct": 0.1884
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70324,
+      "prev_close": 0.70768,
+      "daily_pct": -0.6266
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83877,
+      "prev_close": 6.82513,
+      "daily_pct": 0.1998
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26385,
+      "prev_close": 1.26518,
+      "daily_pct": -0.1049
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6797.25,
+      "prev_close": 6823.75,
+      "daily_pct": -0.3883
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 24989.0,
+      "prev_close": 25074.25,
+      "daily_pct": -0.34
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47947.0,
+      "prev_close": 48144.0,
+      "daily_pct": -0.4092
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4765.6,
+      "prev_close": 4749.5,
+      "daily_pct": 0.339
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.28,
+      "prev_close": 111.23,
+      "daily_pct": 0.0421
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 99.42,
+      "prev_close": 94.41,
+      "daily_pct": 5.3066
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Trump says U.S. ready for 'next conquest,' warns military to remain near Iran until 'real agreement' is honored",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 04:58:43 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/trump-military-troops-iran-conflict-middle-east-hormuz.html",
+      "summary": "The statement came a day after Washington and Tehran agreed to a two-week ceasefire brokered by Pakistan, which halted six weeks of fighting."
+    },
+    {
+      "headline": "Britain to call for toll-free Strait of Hormuz, says Lebanon must be part of Iran ceasefire",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 09:04:03 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/uk-cooper-iran-war-strait-of-hormuz-tolls-lebanon-israel-ceasefire.html",
+      "summary": "In an annual foreign policy speech, Cooper is expected to say that shipping must be toll-free through the strategically vital Strait of Hormuz."
+    },
+    {
+      "headline": "As millions lose weight on GLP-1s, they're starting to turn to retailers to refresh their wardrobes",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/weight-loss-pills-glp-1s-stitch-fix-apparel-retailers.html",
+      "summary": "Apparel retailers could see an up to $13 billion annual boost in spending because of GLP-1 drugs, according to an estimate by equity research firm Bernstein."
+    },
+    {
+      "headline": "'Poorly run, piece of ice': Trump targets Greenland again as Iran war deepens NATO rift",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 03:05:25 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/trump-greenland-nato-rift-iran-war-deepens.html",
+      "summary": "Trump has set his eyes on Greenland again while venting frustration at NATO, as the diplomatic fallout from Iran war exposed rifts in the security alliance."
+    },
+    {
+      "headline": "Constellation Brands, U.S. maker of Modelo and Corona, withdraws 2028 guidance due to uncertainty",
+      "source": "CNBC",
+      "published": "Wed, 08 Apr 2026 22:48:45 GMT",
+      "url": "https://www.cnbc.com/2026/04/08/constellation-brands-stz-q4-2026-earnings.html",
+      "summary": "Constellation Brands withdrew its previously issued fiscal 2028 outlook on Wednesday and reported \"subdued\" demand across its categories."
+    },
+    {
+      "headline": "Pirro's Powell probe faces a difficult road to appeal, former prosecutors say",
+      "source": "CNBC",
+      "published": "Wed, 08 Apr 2026 19:50:27 GMT",
+      "url": "https://www.cnbc.com/2026/04/08/fed-jeanine-pirro-fed-jerome-powell-appeal-kevin-warsh.html",
+      "summary": "Federal Reserve chair nominee Kevin Warsh may be in limbo while the legal process plays out."
+    },
+    {
+      "headline": "From war to weather: A 'super El Ni\u00f1o' event poses fresh risks to global food costs",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 05:01:10 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/el-nino-food-risks-iran-war-fertilizer-weather.html",
+      "summary": "An unusually powerful El Ni\u00f1o weather event could take shape later this year, exacerbating global food security fears."
+    },
+    {
+      "headline": "How to save money on flights as airlines raise prices",
+      "source": "CNBC",
+      "published": "Wed, 08 Apr 2026 23:01:24 GMT",
+      "url": "https://www.cnbc.com/2026/04/08/iran-war-airlines-prices-airfare-flights-how-to-save-money.html",
+      "summary": "Airlines are raising fares, adding fuel surcharges and increasing fees to check bags. Budget-conscious travelers are wondering where to turn."
+    }
+  ]
+}
