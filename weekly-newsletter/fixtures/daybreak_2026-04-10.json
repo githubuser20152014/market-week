@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-04-10",
+    "generated_at": "2026-04-10T09:18:40.147971Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6782.8101,
+      "close": 6824.66,
+      "daily_pct": 0.617,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 47909.9219,
+      "close": 48185.8,
+      "daily_pct": 0.5758,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22634.9902,
+      "close": 22822.42,
+      "daily_pct": 0.8281,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2620.46,
+      "close": 2636.31,
+      "daily_pct": 0.6049,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4765.6001,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.291,
+      "close": null,
+      "daily_pct": null,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": null
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.032,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 99.42,
+      "close": null,
+      "daily_pct": null,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 56924,
+      "prev_close": 55895.32,
+      "daily_pct": 1.8404,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25919.12,
+      "prev_close": 25752.4,
+      "daily_pct": 0.6474,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5879.71,
+      "prev_close": 5778.01,
+      "daily_pct": 1.7601,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23780,
+      "prev_close": 23775.1,
+      "daily_pct": 0.0206,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 8973.2,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23794,
+      "prev_close": 23786.26,
+      "daily_pct": 0.0325,
+      "session_note": "Early session"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10615,
+      "prev_close": 10575.36,
+      "daily_pct": 0.3748,
+      "session_note": "Early session"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8252,
+      "prev_close": 8189.94,
+      "daily_pct": 0.7578,
+      "session_note": "Early session"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 5858.77,
+      "daily_pct": null,
+      "session_note": "No data / holiday"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.167,
+      "prev_close": 1.16795,
+      "daily_pct": -0.0813
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3439,
+      "prev_close": 1.34056,
+      "daily_pct": 0.2491
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.03,
+      "prev_close": 159.015,
+      "daily_pct": 0.0094
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": null,
+      "prev_close": 0.70324,
+      "daily_pct": null
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": null,
+      "prev_close": 6.83877,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": null,
+      "prev_close": 1.26385,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6854,
+      "prev_close": 6797.25,
+      "daily_pct": 0.8349
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 25212,
+      "prev_close": 24989.0,
+      "daily_pct": 0.8924
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 48316,
+      "prev_close": 47947.0,
+      "daily_pct": 0.7696
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4768.5,
+      "prev_close": 4765.6,
+      "daily_pct": 0.0609
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 99.84,
+      "prev_close": 99.42,
+      "daily_pct": 0.4225
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "TSMC posts 35% jump in revenue to new record high as AI chip demand stays strong",
+      "source": "CNBC",
+      "published": "Fri, 10 Apr 2026 08:13:07 GMT",
+      "url": "https://www.cnbc.com/2026/04/10/tsmc-q1-record-revenue-ai-chip-demand-strong.html",
+      "summary": "TSMC is benefiting from sustained demand for advanced semiconductors from its key customers like Apple and Nvidia."
+    },
+    {
+      "headline": "Kevin Warsh Fed chair confirmation plan hits snag as nomination hearing is delayed",
+      "source": "CNBC",
+      "published": "Fri, 10 Apr 2026 02:55:07 GMT",
+      "url": "https://www.cnbc.com/2026/04/10/warsh-fed-nomination-hearing-delayed.html",
+      "summary": "President Trump's nomination of Kevin Warsh as Federal Reserve chair already faced a hurdle by Sen. Thom Tillis over a probe of current chair Jerome Powell."
+    },
+    {
+      "headline": "Trump says Iran 'better stop now' if it's charging oil tankers fees to go through Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 22:41:02 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/trump-iran-strait-of-hormuz-oil-toll.html",
+      "summary": "President Donald Trump said that Iran \"better stop now\" if it's charging fees to oil tankers passing through the Strait of Hormuz."
+    },
+    {
+      "headline": "Oil prices rise as U.S.-Iran ceasefire fails to boost tanker traffic via Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Fri, 10 Apr 2026 06:57:38 GMT",
+      "url": "https://www.cnbc.com/2026/04/10/oil-price-wti-brent-saudi-pipeline-attack-middle-east-war.html",
+      "summary": "U.S. President Donald Trump on Thursday warned Iran to \"stop now\" if it was charging tankers to transit the Strait of Hormuz."
+    },
+    {
+      "headline": "Cramer explains the divergence in tech stocks \u2013 and why software may continue to lag",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 22:13:47 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/jim-cramer-tech-stocks-diverge.html",
+      "summary": "Jim Cramer marveled at the divergent fates of technology stocks \u2014 from hardware winners like Intel to software losers like Salesforce and Adobe."
+    },
+    {
+      "headline": "Iran attacks on crucial Saudi pipeline and production facilities slash kingdom's oil output",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 20:44:10 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/iran-war-oil-saudi-arabia-east-west-pipeline.html",
+      "summary": "The damage to Saudi infrastructure will only compound the disruption to global oil supplies trigged by Iran's attacks on tankers in the Strait of Hormuz."
+    },
+    {
+      "headline": "Automatic U.S. military draft registration planned by December, filing shows",
+      "source": "CNBC",
+      "published": "Thu, 09 Apr 2026 20:03:59 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/military-draft-registration-automatic-iran-war.html",
+      "summary": "The proposed timetable for automatic military draft registration came weeks after the U.S. and Israel launched a war against Iran."
+    },
+    {
+      "headline": "Keir Starmer: 'I'm fed up' with Trump and Putin affecting UK energy costs",
+      "source": "CNBC",
+      "published": "Fri, 10 Apr 2026 04:49:22 GMT",
+      "url": "https://www.cnbc.com/2026/04/09/keir-starmer-fed-up-trump-putin-uk-energy-costs.html",
+      "summary": "Iran has effectively closed the Strait of Hormuz in the war with the U.S. and Israel, creating an oil supply crunch and sending global energy prices soaring."
+    }
+  ]
+}
