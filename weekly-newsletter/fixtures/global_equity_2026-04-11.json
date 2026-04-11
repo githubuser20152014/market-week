@@ -1,0 +1,347 @@
+{
+  "S&P 500": {
+    "symbol": "^GSPC",
+    "region": "US",
+    "etf_proxy": "SPY",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 6782.98,
+        "high": 6782.98,
+        "low": 6782.98,
+        "close": 6782.98,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 6816.89,
+        "high": 6816.89,
+        "low": 6816.89,
+        "close": 6816.89,
+        "volume": 0
+      }
+    ]
+  },
+  "Dow Jones": {
+    "symbol": "^DJI",
+    "region": "US",
+    "etf_proxy": "DIA",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 48205.8,
+        "high": 48205.8,
+        "low": 48205.8,
+        "close": 48205.8,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 47916.57,
+        "high": 47916.57,
+        "low": 47916.57,
+        "close": 47916.57,
+        "volume": 0
+      }
+    ]
+  },
+  "Nasdaq": {
+    "symbol": "^IXIC",
+    "region": "US",
+    "etf_proxy": "QQQ",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 22834.39,
+        "high": 22834.39,
+        "low": 22834.39,
+        "close": 22834.39,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 22902.89,
+        "high": 22902.89,
+        "low": 22902.89,
+        "close": 22902.89,
+        "volume": 0
+      }
+    ]
+  },
+  "Russell 2000": {
+    "symbol": "^RUT",
+    "region": "US",
+    "etf_proxy": "IWM",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 2620.11,
+        "high": 2620.11,
+        "low": 2620.11,
+        "close": 2620.11,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 2630.59,
+        "high": 2630.59,
+        "low": 2630.59,
+        "close": 2630.59,
+        "volume": 0
+      }
+    ]
+  },
+  "10Y Treasury": {
+    "symbol": "^TNX",
+    "region": "US",
+    "etf_proxy": "TLT",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 4.28,
+        "high": 4.28,
+        "low": 4.28,
+        "close": 4.28,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 4.32,
+        "high": 4.32,
+        "low": 4.32,
+        "close": 4.32,
+        "volume": 0
+      }
+    ]
+  },
+  "USD Index": {
+    "symbol": "DX=F",
+    "region": "US",
+    "etf_proxy": "UUP",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 99.2,
+        "high": 99.2,
+        "low": 99.2,
+        "close": 99.2,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 98.7,
+        "high": 98.7,
+        "low": 98.7,
+        "close": 98.7,
+        "volume": 0
+      }
+    ]
+  },
+  "VIX": {
+    "symbol": "^VIX",
+    "region": "US",
+    "etf_proxy": "VIXY",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 17.91,
+        "high": 17.91,
+        "low": 17.91,
+        "close": 17.91,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 15.67,
+        "high": 15.67,
+        "low": 15.67,
+        "close": 15.67,
+        "volume": 0
+      }
+    ]
+  },
+  "DAX": {
+    "symbol": "^GDAXI",
+    "region": "Europe",
+    "etf_proxy": "EWG",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 23169.12,
+        "high": 23169.12,
+        "low": 23169.12,
+        "close": 23169.12,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 23803.95,
+        "high": 23803.95,
+        "low": 23803.95,
+        "close": 23803.95,
+        "volume": 0
+      }
+    ]
+  },
+  "FTSE 100": {
+    "symbol": "^FTSE",
+    "region": "Europe",
+    "etf_proxy": "EWU",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 10436.67,
+        "high": 10436.67,
+        "low": 10436.67,
+        "close": 10436.67,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 10600.53,
+        "high": 10600.53,
+        "low": 10600.53,
+        "close": 10600.53,
+        "volume": 0
+      }
+    ]
+  },
+  "CAC 40": {
+    "symbol": "^FCHI",
+    "region": "Europe",
+    "etf_proxy": "EWQ",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 7962.6,
+        "high": 7962.6,
+        "low": 7962.6,
+        "close": 7962.6,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 8259.6,
+        "high": 8259.6,
+        "low": 8259.6,
+        "close": 8259.6,
+        "volume": 0
+      }
+    ]
+  },
+  "Euro Stoxx 50": {
+    "symbol": "^STOXX50E",
+    "region": "Europe",
+    "etf_proxy": "FEZ",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 5908.38,
+        "high": 5908.38,
+        "low": 5908.38,
+        "close": 5908.38,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 5926.11,
+        "high": 5926.11,
+        "low": 5926.11,
+        "close": 5926.11,
+        "volume": 0
+      }
+    ]
+  },
+  "Nikkei 225": {
+    "symbol": "^N225",
+    "region": "Asia-Pacific",
+    "etf_proxy": "EWJ",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 38442.31,
+        "high": 38442.31,
+        "low": 38442.31,
+        "close": 38442.31,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 38442.31,
+        "high": 38442.31,
+        "low": 38442.31,
+        "close": 38442.31,
+        "volume": 0
+      }
+    ]
+  },
+  "Hang Seng": {
+    "symbol": "^HSI",
+    "region": "Asia-Pacific",
+    "etf_proxy": "EWH",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 20194.67,
+        "high": 20194.67,
+        "low": 20194.67,
+        "close": 20194.67,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 20194.67,
+        "high": 20194.67,
+        "low": 20194.67,
+        "close": 20194.67,
+        "volume": 0
+      }
+    ]
+  },
+  "ASX 200": {
+    "symbol": "^AXJO",
+    "region": "Asia-Pacific",
+    "etf_proxy": "EWA",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 7891.54,
+        "high": 7891.54,
+        "low": 7891.54,
+        "close": 7891.54,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 7891.54,
+        "high": 7891.54,
+        "low": 7891.54,
+        "close": 7891.54,
+        "volume": 0
+      }
+    ]
+  },
+  "MSCI EM": {
+    "symbol": "EEM",
+    "region": "Emerging Markets",
+    "etf_proxy": "EEM",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 60.32,
+        "high": 60.32,
+        "low": 60.32,
+        "close": 60.32,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 60.56,
+        "high": 60.56,
+        "low": 60.56,
+        "close": 60.56,
+        "volume": 0
+      }
+    ]
+  }
+}

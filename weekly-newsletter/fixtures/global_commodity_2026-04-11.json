@@ -1,0 +1,112 @@
+{
+  "WTI Crude Oil": {
+    "symbol": "CL=F",
+    "etf_proxy": "USO",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 112.0,
+        "high": 112.0,
+        "low": 112.0,
+        "close": 112.0,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 100.46,
+        "high": 100.46,
+        "low": 100.46,
+        "close": 100.46,
+        "volume": 0
+      }
+    ]
+  },
+  "Natural Gas": {
+    "symbol": "NG=F",
+    "etf_proxy": "UNG",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 2.88,
+        "high": 2.88,
+        "low": 2.88,
+        "close": 2.88,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 3.04,
+        "high": 3.04,
+        "low": 3.04,
+        "close": 3.04,
+        "volume": 0
+      }
+    ]
+  },
+  "Gold": {
+    "symbol": "GC=F",
+    "etf_proxy": "GLD",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 4677.45,
+        "high": 4677.45,
+        "low": 4677.45,
+        "close": 4677.45,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 4771.0,
+        "high": 4771.0,
+        "low": 4771.0,
+        "close": 4771.0,
+        "volume": 0
+      }
+    ]
+  },
+  "Silver": {
+    "symbol": "SI=F",
+    "etf_proxy": "SLV",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 76.0,
+        "high": 76.0,
+        "low": 76.0,
+        "close": 76.0,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 76.0,
+        "high": 76.0,
+        "low": 76.0,
+        "close": 76.0,
+        "volume": 0
+      }
+    ]
+  },
+  "US 30Y": {
+    "symbol": "^TYX",
+    "etf_proxy": "TLT",
+    "data": [
+      {
+        "date": "2026-04-06",
+        "open": 4.9,
+        "high": 4.9,
+        "low": 4.9,
+        "close": 4.9,
+        "volume": 0
+      },
+      {
+        "date": "2026-04-10",
+        "open": 4.91,
+        "high": 4.91,
+        "low": 4.91,
+        "close": 4.91,
+        "volume": 0
+      }
+    ]
+  }
+}
