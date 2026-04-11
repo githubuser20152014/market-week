@@ -426,3 +426,228 @@ Three edits made:
 
 Review the Markdown above, then run with --publish to generate social posts and deploy:
   bash weekly-newsletter/publish_daybreak.sh 2026-04-03 --publish
+==> No fixture found — fetching live data ...
+
+Daybreak Price Verification � 2026-04-06
+Asset                      yfinance    Secondary    Diff%   Status
+--------------------------------------------------------------------
+  FRED fetch failed for GOLDAMGBD228NLBM: HTTP Error 404: Not Found
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  -- US Indices / Rates --
+  S&P 500                6,582.6899          N/A      N/A   ? secondary unavailable
+  Dow Jones             46,504.6719          N/A      N/A   ? secondary unavailable
+  Nasdaq                21,879.1797          N/A      N/A   ? secondary unavailable
+  Russell 2000           2,530.0400          N/A      N/A   ? secondary unavailable
+  USD Index                 99.9410          N/A      N/A   ? secondary unavailable
+  Gold                   4,717.0000          N/A      N/A   ? secondary unavailable
+  10Y Treasury               4.3130       4.3100     0.1%   OK
+  -- International Indices --
+  Nikkei 225            53,413.6800          N/A      N/A   ? secondary unavailable
+  Hang Seng             25,116.5300          N/A      N/A   ? secondary unavailable
+  KOSPI                  5,450.3300          N/A      N/A   ? secondary unavailable
+  Nifty 50              22,968.2500          N/A      N/A   ? secondary unavailable
+  ASX 200                8,579.5000          N/A      N/A   ? secondary unavailable
+  DAX                   23,111.3100          N/A      N/A   ? secondary unavailable
+  FTSE 100              10,428.5600          N/A      N/A   ? secondary unavailable
+  CAC 40                 7,946.9200          N/A      N/A   ? secondary unavailable
+  Euro Stoxx 50          5,678.0000          N/A      N/A   ? secondary unavailable
+  -- FX --
+  EUR/USD                    1.1554          N/A      N/A   ? secondary unavailable
+  GBP/USD                    1.3249          N/A      N/A   ? secondary unavailable
+  USD/JPY                  159.4480          N/A      N/A   ? secondary unavailable
+  AUD/USD                    0.6931          N/A      N/A   ? secondary unavailable
+  USD/CNH                    6.8764          N/A      N/A   ? secondary unavailable
+  CHF/USD                    1.2535          N/A      N/A   ? secondary unavailable
+  -- Futures (no secondary source) --
+  S&P Futures              6,637.25          N/A      N/A   - no secondary
+  Nasdaq Futures          24,340.25          N/A      N/A   - no secondary
+  Dow Futures             46,725.00          N/A      N/A   - no secondary
+  Gold Futures             4,717.00          N/A      N/A   - no secondary
+  10Y T-Note                 110.75          N/A      N/A   - no secondary
+  WTI Crude Oil              110.33          N/A      N/A   - no secondary
+
+  Resolution log -> price_resolution_2026-04-06.txt
+Daybreak prices verified (tolerance=2.0%).
+
+Fixture saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\fixtures\daybreak_2026-04-06.json
+Narrative generated via Claude API.
+Newsletter saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\market_day_break_2026-04-06.md
+Email subject saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\title_2026-04-06.txt
+MD-only mode � skipping social posts and PDF.
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-04-06.md
+
+==> Running headless polish pass ...
+Polish pass complete. Two changes made:
+
+1. **Opening teaser** — Collapsed the 3-sentence opener into 2 punchy sentences. Leads with the gold/insurance divergence, then lands the Iran thread as the unifying swing factor. Cuts the "bifurcated mood" framing (too vague) in favour of a concrete cross-asset read.
+
+2. **KWEB/EM positioning note** — Added a failure trigger ("if European open can't stabilize APAC sentiment") and reframed the India-Iran story as structural rather than tactical, which gives the reader an actionable decision frame instead of a general caution.
+
+No anomaly flags needed — the largest single-day equity move was Russell 2000 at +0.70%, and the 10Y yield move was a fractional dip, both well within normal bounds. Gold's +1.41% move, while significant, doesn't cross the ±3% equity or ±20bps yield thresholds.
+  Polish pass complete.
+
+Review the Markdown above, then run with --publish to generate social posts and deploy:
+  bash weekly-newsletter/publish_daybreak.sh 2026-04-06 --publish
+==> No fixture found — fetching live data ...
+
+Daybreak Price Verification � 2026-04-07
+Asset                      yfinance    Secondary    Diff%   Status
+--------------------------------------------------------------------
+  FRED fetch failed for GOLDAMGBD228NLBM: HTTP Error 404: Not Found
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  -- US Indices / Rates --
+  S&P 500                6,611.8301          N/A      N/A   ? secondary unavailable
+  Dow Jones             46,669.8789          N/A      N/A   ? secondary unavailable
+  Nasdaq                21,996.3398          N/A      N/A   ? secondary unavailable
+  Russell 2000           2,540.6399          N/A      N/A   ? secondary unavailable
+  USD Index                 99.8020          N/A      N/A   ? secondary unavailable
+  Gold                   4,710.3999          N/A      N/A   ? secondary unavailable
+  10Y Treasury               4.3350       4.3500     0.3%   OK
+  -- International Indices --
+  Nikkei 225            53,429.5600          N/A      N/A   ? secondary unavailable
+  Hang Seng             25,116.5300          N/A      N/A   ? secondary unavailable
+  KOSPI                  5,494.7800          N/A      N/A   ? secondary unavailable
+  Nifty 50              23,029.0500          N/A      N/A   ? secondary unavailable
+  ASX 200                8,728.8000          N/A      N/A   ? secondary unavailable
+  DAX                   23,324.8200          N/A      N/A   ? secondary unavailable
+  FTSE 100              10,463.3500          N/A      N/A   ? secondary unavailable
+  CAC 40                 8,060.5100          N/A      N/A   ? secondary unavailable
+  Euro Stoxx 50          5,734.3800          N/A      N/A   ? secondary unavailable
+  -- FX --
+  EUR/USD                    1.1573          N/A      N/A   ? secondary unavailable
+  GBP/USD                    1.3276          N/A      N/A   ? secondary unavailable
+  USD/JPY                  159.5480          N/A      N/A   ? secondary unavailable
+  AUD/USD                    0.6943          N/A      N/A   ? secondary unavailable
+  USD/CNH                    6.8580          N/A      N/A   ? secondary unavailable
+  CHF/USD                    1.2527          N/A      N/A   ? secondary unavailable
+  -- Futures (no secondary source) --
+  S&P Futures              6,656.25          N/A      N/A   - no secondary
+  Nasdaq Futures          24,364.50          N/A      N/A   - no secondary
+  Dow Futures             46,979.00          N/A      N/A   - no secondary
+  Gold Futures             4,710.40          N/A      N/A   - no secondary
+  10Y T-Note                 110.89          N/A      N/A   - no secondary
+  WTI Crude Oil              112.69          N/A      N/A   - no secondary
+
+  Resolution log -> price_resolution_2026-04-07.txt
+Daybreak prices verified (tolerance=2.0%).
+
+Fixture saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\fixtures\daybreak_2026-04-07.json
+Narrative generated via Claude API.
+Newsletter saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\market_day_break_2026-04-07.md
+Email subject saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\title_2026-04-07.txt
+MD-only mode � skipping social posts and PDF.
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-04-07.md
+
+==> Running headless polish pass ...
+Two changes made:
+
+1. **Teaser** — condensed from 3 sentences to 2. Now leads with the gold/equity divergence as the dominant signal, names the Hormuz analyst piece and India oil route as the specific catalysts, and closes with the open question (energy equities catching up to crude).
+
+2. **AMLP positioning note** — replaced the vague "A good option for investors who want energy exposure without chasing momentum" with a specific asymmetry argument: if XOP feels extended, AMLP offers the same Hormuz upside with lower drawdown risk at $112 crude.
+
+All other positioning notes already had named failure conditions and trigger levels — no changes needed there. No anomaly flags required (largest move: ASX +1.74%, 10Y +2.2bps).
+  Polish pass complete.
+
+Review the Markdown above, then run with --publish to generate social posts and deploy:
+  bash weekly-newsletter/publish_daybreak.sh 2026-04-07 --publish
+==> Using existing newsletter for 2026-04-08 (skipping regeneration)
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-04-08.md
+
+==> Running headless polish pass ...
+Polish pass complete. Four changes made:
+
+1. **Teaser** — Condensed from 3 sentences to 2. Leads with oil as the mechanism (not just "ceasefire"), surfaces gold's non-sell-off as the key cross-asset signal, and lands the durability question as the open issue for today.
+
+2. **XTN/JETS note** — Replaced "cleaner beneficiaries" framing with a specific failure condition: WTI holding below $95 into Friday. If it snaps back above $100, the thesis breaks before estimates move.
+
+3. **Anomaly flags** — Added two inline `[Editor flag]` notes:
+   - Gold +3.97% (exceeds ±3% threshold)
+   - WTI -15.3% (exceptional commodity move, flagged for verification)
+  Polish pass complete.
+
+Review the Markdown above, then run with --publish to generate social posts and deploy:
+  bash weekly-newsletter/publish_daybreak.sh 2026-04-08 --publish
+==> No fixture found — fetching live data ...
+
+Daybreak Price Verification � 2026-04-09
+Asset                      yfinance    Secondary    Diff%   Status
+--------------------------------------------------------------------
+  FRED fetch failed for GOLDAMGBD228NLBM: HTTP Error 404: Not Found
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  pandas_datareader not installed; skipping Stooq verification.
+  -- US Indices / Rates --
+  S&P 500                6,782.8101          N/A      N/A   ? secondary unavailable
+  Dow Jones             47,909.9219          N/A      N/A   ? secondary unavailable
+  Nasdaq                22,634.9902          N/A      N/A   ? secondary unavailable
+  Russell 2000           2,620.4600          N/A      N/A   ? secondary unavailable
+  USD Index                 99.0260          N/A      N/A   ? secondary unavailable
+  Gold                   4,769.1001          N/A      N/A   ? secondary unavailable
+  10Y Treasury               4.2910       4.3300     0.9%   OK
+  -- International Indices --
+  Nikkei 225            55,895.3200          N/A      N/A   ? secondary unavailable
+  Hang Seng             25,752.4000          N/A      N/A   ? secondary unavailable
+  KOSPI                  5,778.0100          N/A      N/A   ? secondary unavailable
+  Nifty 50              23,775.1000          N/A      N/A   ? secondary unavailable
+  ASX 200                8,973.2000          N/A      N/A   ? secondary unavailable
+  DAX                   23,804.9500          N/A      N/A   ? secondary unavailable
+  FTSE 100              10,576.5200          N/A      N/A   ? secondary unavailable
+  CAC 40                 8,195.9000          N/A      N/A   ? secondary unavailable
+  Euro Stoxx 50          5,863.4300          N/A      N/A   ? secondary unavailable
+  -- FX --
+  EUR/USD                    1.1675          N/A      N/A   ? secondary unavailable
+  GBP/USD                    1.3400          N/A      N/A   ? secondary unavailable
+  USD/JPY                  159.0570          N/A      N/A   ? secondary unavailable
+  AUD/USD                    0.7030          N/A      N/A   ? secondary unavailable
+  USD/CNH                    6.8395          N/A      N/A   ? secondary unavailable
+  CHF/USD                    1.2635          N/A      N/A   ? secondary unavailable
+  -- Futures (no secondary source) --
+  S&P Futures              6,800.50          N/A      N/A   - no secondary
+  Nasdaq Futures          25,006.00          N/A      N/A   - no secondary
+  Dow Futures             47,957.00          N/A      N/A   - no secondary
+  Gold Futures             4,768.90          N/A      N/A   - no secondary
+  10Y T-Note                 111.27          N/A      N/A   - no secondary
+  WTI Crude Oil               99.41          N/A      N/A   - no secondary
+
+  Resolution log -> price_resolution_2026-04-09.txt
+Daybreak prices verified (tolerance=2.0%).
+
+Fixture saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\fixtures\daybreak_2026-04-09.json
+Narrative generated via Claude API.
+Newsletter saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\market_day_break_2026-04-09.md
+Email subject saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\title_2026-04-09.txt
+MD-only mode � skipping social posts and PDF.
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-04-09.md
+
+==> Running headless polish pass ...
+Three targeted changes made:
+
+1. **Teaser** — condensed from 3 sentences to 1. Leads with the dominant story (crude spike + equity rip on Iran relief), lands the cross-asset insight (gold not selling = tail risk still priced), and frames today's open question in a single punchy sentence.
+
+2. **TLT positioning note** — dropped the hedgy "Reduce or avoid" for a clean "Avoid" and added "you have neither today" as the closing line, which gives the reader a clear, time-specific conclusion rather than leaving them to infer.
+
+3. **USO positioning note** — changed "Watch" (observational) to "Add" (actionable), named the asymmetry (outperforms sector ETFs if oil moves without a broad equity rally), and added a specific exit trigger ($96 WTI).
+
+No anomaly flags needed — no equity move exceeded ±3% (IWM +2.97% just misses), and the 10-year yield moved only 5.2 bps vs. the 20 bps threshold. The WTI move (+5.27%) is already prominently flagged throughout the narrative.
+  Polish pass complete.
+
+Review the Markdown above, then run with --publish to generate social posts and deploy:
+  bash weekly-newsletter/publish_daybreak.sh 2026-04-09 --publish
+==> Using existing newsletter for 2026-04-10 (skipping regeneration)
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-04-10.md
+
+==> Running headless polish pass ...

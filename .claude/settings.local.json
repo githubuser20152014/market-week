@@ -125,7 +125,9 @@
       "Bash(taskkill /F /IM python.exe)",
       "Bash(kill -9 3200 2956)",
       "Bash(echo \"EXIT: $?\")",
-      "Bash(kill -9 3616)"
+      "Bash(kill -9 3616)",
+      "Bash(bash:*)",
+      "Bash(curl -s \"https://frameworkfoundry.info/index.html\")"
     ]
   }
 }
