@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-04-13",
+    "generated_at": "2026-04-13T09:11:20.011210Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6824.66,
+      "close": 6816.89,
+      "daily_pct": -0.1139,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 48185.8,
+      "close": 47916.57,
+      "daily_pct": -0.5587,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22822.42,
+      "close": 22902.89,
+      "daily_pct": 0.3526,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2636.31,
+      "close": 2630.59,
+      "daily_pct": -0.217,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": null,
+      "close": 4728.25,
+      "daily_pct": null,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": null,
+      "close": 4.32,
+      "daily_pct": null,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": null
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": null,
+      "close": 99.0,
+      "daily_pct": null,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": null,
+      "close": 104.36,
+      "daily_pct": null,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 56502,
+      "prev_close": 56924,
+      "daily_pct": -0.7413,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25600,
+      "prev_close": 25919.12,
+      "daily_pct": -1.2312,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5808.62,
+      "prev_close": 5879.71,
+      "daily_pct": -1.2091,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23868.25,
+      "prev_close": 23780,
+      "daily_pct": 0.3711,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8917.4,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 23794,
+      "daily_pct": null,
+      "session_note": "Easter Monday - market closed"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 10615,
+      "daily_pct": null,
+      "session_note": "Easter Monday - market closed"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": 8252,
+      "daily_pct": null,
+      "session_note": "Easter Monday - market closed"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "no_data",
+      "close": null,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Easter Monday - market closed"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1447,
+      "prev_close": 1.167,
+      "daily_pct": -1.9109
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3128,
+      "prev_close": 1.3439,
+      "daily_pct": -2.3142
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.97,
+      "prev_close": 159.03,
+      "daily_pct": 2.4775
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6886,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27,
+      "prev_close": null,
+      "daily_pct": null
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 6816.5,
+      "prev_close": 6854,
+      "daily_pct": -0.5471
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 25112,
+      "prev_close": 25212,
+      "daily_pct": -0.3966
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 47500,
+      "prev_close": 48316,
+      "daily_pct": -1.6889
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4746.3,
+      "prev_close": 4768.5,
+      "daily_pct": -0.4656
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 104.36,
+      "prev_close": 99.84,
+      "daily_pct": 4.5272
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Hormuz blockade could deepen world\u2019s worst energy crisis \u2014 and risk a dangerous misstep",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 07:08:45 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/trump-hormuz-blockade-oil-shock-china-iran-india-vessels-peace-talks.html",
+      "summary": "The U.S. naval blockade of the Strait of Hormuz threatens to halt more tanker traffic, sending oil surging and risks drawing China into a widening confrontation with Washington."
+    },
+    {
+      "headline": "Trump threatens 50% tariffs on China as report suggests plans for arms shipment to Iran",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 08:03:40 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/trump-threatens-50percent-tariffs-on-china-as-report-suggests-plans-for-arms-shipment-to-iran.html",
+      "summary": "U.S. President Donald Trump has threatened to impose a 50% tariff on China, after a report on Sunday that Beijing was preparing a weapons shipment to Iran."
+    },
+    {
+      "headline": "Goldman Sachs is set to report first-quarter earnings \u2014 here's what Wall Street expects",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 04:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/goldman-sachs-gs-earnings-1q-2026.html",
+      "summary": "Trading desks across Wall Street have been busy at the start of the year as institutional investors set new positions against the churn of AI-led disruption."
+    },
+    {
+      "headline": "Trump blasts Pope Leo for criticism of U.S. foreign policy",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 02:08:52 GMT",
+      "url": "https://www.cnbc.com/2026/04/12/trump-pope-leo-catholic-church-iran.html",
+      "summary": "Leo, the first U.S.-born pope who hails from Chicago, has condemned Trump's war effort with Iran."
+    },
+    {
+      "headline": "Why pressure is mounting at oil giant BP ahead of its annual general meeting",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/oil-bp-agm-shareholders-climate-energy-shareholders.html",
+      "summary": "Oil giant BP is bracing for a possible shareholder revolt at its upcoming annual general meeting."
+    },
+    {
+      "headline": "From panic to pricing in: Are markets past 'peak fear and sell-off' despite oil price surge?",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 06:53:50 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/markets-trump-strait-of-hormuz-blockade-gold-stocks-dollar.html",
+      "summary": "Investors appear to have already priced in much of the geopolitical risks and are growing less reactive to headlines."
+    },
+    {
+      "headline": "Why the stock market has stayed resilient despite the Iran war and software stock rout",
+      "source": "CNBC",
+      "published": "Sun, 12 Apr 2026 19:40:10 GMT",
+      "url": "https://www.cnbc.com/2026/04/12/jim-cramer-iran-war-software-stock-selloff-earnings-season-investing-club.html",
+      "summary": "In his Sunday column, Jim Cramer explored key battleground issues for the stock market such as the Iran war and software sell-off."
+    },
+    {
+      "headline": "How bond market's private credit crisis fears are playing out in fixed-income ETFs",
+      "source": "CNBC",
+      "published": "Sat, 11 Apr 2026 21:37:12 GMT",
+      "url": "https://www.cnbc.com/2026/04/11/bond-market-private-credit-crisis-fixed-income-etfs.html",
+      "summary": "Fears of a private credit crisis arrived just as the growing and less transparent bond market was being included in more fixed-income ETFs."
+    }
+  ]
+}
