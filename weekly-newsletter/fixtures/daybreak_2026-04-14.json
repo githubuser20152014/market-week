@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-04-14",
+    "generated_at": "2026-04-14T10:08:44.211860Z",
+    "generation_source": "perplexity"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6816.89,
+      "close": 6886.24,
+      "daily_pct": 1.0173,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 47916.57,
+      "close": 48218.25,
+      "daily_pct": 0.6296,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 22902.89,
+      "close": 23183.74,
+      "daily_pct": 1.2263,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2630.59,
+      "close": 2630.59,
+      "daily_pct": 0.0,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4728.25,
+      "close": 4759.0,
+      "daily_pct": 0.6503,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.32,
+      "close": 4.24,
+      "daily_pct": -1.8519,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -8.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.0,
+      "close": 98.21,
+      "daily_pct": -0.798,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 104.36,
+      "close": 104.36,
+      "daily_pct": 0.0,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 57877.39,
+      "prev_close": 56502,
+      "daily_pct": 2.4342,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25929.4,
+      "prev_close": 25600,
+      "daily_pct": 1.2867,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5858.87,
+      "prev_close": 5808.62,
+      "daily_pct": 0.8651,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23842.65,
+      "prev_close": 23868.25,
+      "daily_pct": -0.1073,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8990.3,
+      "prev_close": 8917.4,
+      "daily_pct": 0.8175,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23742.44,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Early session"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10582.96,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Early session"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8235.98,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Early session"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5926.11,
+      "prev_close": null,
+      "daily_pct": null,
+      "session_note": "Early session"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1763,
+      "prev_close": 1.1447,
+      "daily_pct": 2.7605
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3516,
+      "prev_close": 1.3128,
+      "daily_pct": 2.9555
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.06,
+      "prev_close": 162.97,
+      "daily_pct": -2.3992
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6525,
+      "prev_close": 0.6886,
+      "daily_pct": -5.2425
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83,
+      "prev_close": 6.83,
+      "daily_pct": 0.0
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.24,
+      "prev_close": 1.27,
+      "daily_pct": -2.3622
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": null,
+      "prev_close": 6816.5,
+      "daily_pct": null
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": null,
+      "prev_close": 25112,
+      "daily_pct": null
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": null,
+      "prev_close": 47500,
+      "daily_pct": null
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": null,
+      "prev_close": 4746.3,
+      "daily_pct": null
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": null,
+      "prev_close": 104.36,
+      "daily_pct": null
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Oil falls as IEA predicts \u2018demand destruction will spread\u2019 and hopes for fresh Iran talks grow",
+      "source": "CNBC",
+      "published": "Tue, 14 Apr 2026 08:05:26 GMT",
+      "url": "https://www.cnbc.com/2026/04/14/oil-wti-brent-as-markets-hormuz-blockade-vance-trump.html",
+      "summary": "U.S. Vice President JD Vance said Monday that the next steps in U.S.-Iran peace efforts now depend on Tehran."
+    },
+    {
+      "headline": "China calls U.S. blockade of the Strait of Hormuz 'dangerous and irresponsible'",
+      "source": "CNBC",
+      "published": "Tue, 14 Apr 2026 09:29:14 GMT",
+      "url": "https://www.cnbc.com/2026/04/14/china-us-strait-of-hormuz-war-donald-trump-oil-energy-crisis-conflict-middle-east-iran.html",
+      "summary": "The Chinese foreign ministry said only a \"comprehensive ceasefire\" would help ease the ongoing crisis in the Middle East."
+    },
+    {
+      "headline": "The Iran war could cost the American taxpayer $1 trillion, says Harvard academic",
+      "source": "CNBC",
+      "published": "Tue, 14 Apr 2026 10:01:42 GMT",
+      "url": "https://www.cnbc.com/2026/04/14/iran-war-cost-us-taxpayer-trillion-harvard.html",
+      "summary": "As efforts to reach a lasting settlement have so far proved unsuccessful, one Harvard academic estimates the total could end up far higher than was promised."
+    },
+    {
+      "headline": "Trump is blockading Iranian ports in the Persian Gulf. What does that mean?",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 22:03:31 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/trump-iran-war-blockade-persian-gulf-ports.html",
+      "summary": "A former Pentagon official said the goal of the U.S. blockade is to get the Iranians to back down and restore freedom of navigation to the strait."
+    },
+    {
+      "headline": "Suspect in attack at Sam Altman's house aimed to kill OpenAI CEO, warned of humanity's extinction from AI",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 23:27:13 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/sam-altman-openai-ai-arson.html",
+      "summary": "San Francisco Police Department officers recovered a document from the suspect that detailed his intentions, according to a filing."
+    },
+    {
+      "headline": "Oracle expands Bloom Energy deal days after receiving $400 million stock warrant",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 22:32:50 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/oracle-expands-bloom-energy-deal-days-after-400-million-stock-warrant.html",
+      "summary": "Last week Oracle received a warrant to buy nearly $400 million in Bloom Energy's stock, which jumped on Monday after the companies announced an expanded deal."
+    },
+    {
+      "headline": "BP flags 'exceptional' oil trading performance as Iran war chokes supply",
+      "source": "CNBC",
+      "published": "Tue, 14 Apr 2026 07:43:14 GMT",
+      "url": "https://www.cnbc.com/2026/04/14/bp-flags-exceptional-oil-trading-performance-as-iran-war-chokes-supply.html",
+      "summary": "BP said its oil trading performance had turned around dramatically after a \"weak\" fourth quarter."
+    },
+    {
+      "headline": "Fed nominee Warsh clears a hurdle to Senate hearing",
+      "source": "CNBC",
+      "published": "Mon, 13 Apr 2026 20:32:31 GMT",
+      "url": "https://www.cnbc.com/2026/04/13/fed-chair-nominee-kevin-warsh-senate-confirmation-hearing.html",
+      "summary": "Kevin Warsh submitted required ethics paperwork to the Senate Monday."
+    }
+  ]
+}
