@@ -1,16 +1,21 @@
 Run the Market Day Break generator with review checkpoints before publishing and before sending email.
 
+Model assignment:
+- Data collection (Step 0) → Haiku sub-agent (`/daybreak-fetch`)
+- Content creation + user review (Steps 1–2) → Sonnet (this agent)
+- Publishing + email preview (Steps 3–4) → Haiku sub-agent (`/daybreak-publish`)
+- Email send (Step 5) → Haiku sub-agent (inline)
+
 **Step 0 — Fetch & Verify Market Data:**
 
 1. Determine DATE from $ARGUMENTS (or today if empty).
 2. Check if `weekly-newsletter/fixtures/daybreak_DATE.json` already exists — if so, skip to Step 1.
-3. Run the automated fetcher and verifier:
-   ```bash
-   python weekly-newsletter/data/fetch_and_verify_daybreak.py --date DATE
-   ```
-4. This script will display a summary table and any verification flags (discrepancies between yfinance and FRED/Stooq).
-5. Review the summary in the terminal. If any prices look suspicious or are flagged, ask the user to confirm or provide a manual correction.
-6. Once the data is confirmed in the terminal (by typing 'y'), the script saves the fixture to `weekly-newsletter/fixtures/daybreak_DATE.json`.
+3. Spawn a Haiku agent to run the fetcher and return a structured report:
+   - Use the `daybreak-fetch` skill with DATE as the argument
+   - Model: haiku
+4. Display the summary table and any flagged assets to the user.
+5. If STATUS is "flagged" or any assets are listed in FLAGGED_ASSETS, ask the user to confirm or provide a manual correction before proceeding.
+6. If STATUS is "ok" and no flags, inform the user the data looks clean and proceed automatically.
 
 **Step 1 — Generate the Markdown only:**
 
@@ -31,28 +36,31 @@ Wait for the user's response. If they request changes, make the edits to the `.m
 
 **Step 3 — Generate PDF + social posts + publish (only after user confirms content):**
 
-Once the user approves the content, run:
+Once the user approves the content, spawn a Haiku sub-agent to run the publish step and return an email preview report:
+- Use the `daybreak-publish` skill with DATE as the argument
+- Model: haiku
 
-```bash
-bash weekly-newsletter/publish_daybreak.sh [DATE] --publish
-```
-
-This generates the PDF and social posts (LinkedIn, X, Substack) from the approved Markdown, rebuilds the static site, commits, pushes to GitHub Pages, and saves an email preview HTML to `output/email_preview_[DATE].html`.
+If STATUS is "error", display the PUBLISH_NOTES and do not proceed to Step 4.
 
 **Step 4 — Review checkpoint (email):**
 
-Read `weekly-newsletter/output/email_preview_[DATE].html` and display the email subject line and a summary of its contents. Then ask the user:
+Using the report returned by the Haiku publish agent, display to the user:
+- The email subject line (from SUBJECT)
+- The email body summary (from EMAIL_SUMMARY)
 
-> "The site is live. Here's a preview of the subscriber email — subject: '[subject]'. Ready to send to subscribers?"
+Then ask the user:
+> "The site is live. Here's a preview of the subscriber email — subject: '[SUBJECT]'. Ready to send to subscribers?"
 
-Wait for the user's response. If they request changes, edit the `.md` file, then re-run Step 3 to regenerate all outputs.
+Wait for the user's response. If they request changes, edit the `.md` file, then re-run Step 3 (spawn a new Haiku publish agent).
 
 **Step 5 — Send email (only after user confirms):**
 
-Once the user approves, run:
+Once the user approves, spawn a Haiku sub-agent with this exact task:
 
-```bash
-bash weekly-newsletter/publish_daybreak.sh [DATE] --send-email
-```
+> Run `bash weekly-newsletter/publish_daybreak.sh [DATE] --send-email` and report back: did it succeed or fail? If it failed, what error was shown?
+
+Model: haiku
+
+Report the result to the user.
 
 If $ARGUMENTS is empty, use today's date for all steps.
