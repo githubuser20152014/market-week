@@ -1,66 +1,66 @@
 {
   "meta": {
     "date": "2026-04-15",
-    "generated_at": "2026-04-15T10:18:56.235741Z",
-    "generation_source": "perplexity"
+    "generated_at": "2026-04-15T11:21:05.821228Z",
+    "generation_source": "verified_code"
   },
   "us_close": {
     "S&P 500": {
       "symbol": "^GSPC",
-      "prev_close": 6816.89,
-      "close": 6967.38,
-      "daily_pct": 2.21,
+      "prev_close": 6886.2402,
+      "close": 6967.3799,
+      "daily_pct": 1.1783,
       "table": true
     },
     "Dow Jones": {
       "symbol": "^DJI",
-      "prev_close": 47916.57,
-      "close": 48535.99,
-      "daily_pct": 1.29,
+      "prev_close": 48218.25,
+      "close": 48535.9883,
+      "daily_pct": 0.659,
       "table": true
     },
     "Nasdaq": {
       "symbol": "^IXIC",
-      "prev_close": 22902.89,
-      "close": 23639.08,
-      "daily_pct": 3.22,
+      "prev_close": 23183.7402,
+      "close": 23639.0801,
+      "daily_pct": 1.964,
       "table": true
     },
     "Russell 2000": {
       "symbol": "^RUT",
-      "prev_close": 2630.59,
-      "close": 2705.67,
-      "daily_pct": 2.85,
+      "prev_close": 2670.49,
+      "close": 2705.6699,
+      "daily_pct": 1.3174,
       "table": true
     },
     "Gold": {
       "symbol": "GC=F",
-      "prev_close": 4759.0,
-      "close": 4759.0,
-      "daily_pct": 0.0,
+      "prev_close": 4825.0,
+      "close": 4824.1001,
+      "daily_pct": -0.0187,
       "table": true
     },
     "10Y Treasury": {
       "symbol": "^TNX",
-      "prev_close": 4.24,
-      "close": 4.24,
-      "daily_pct": 0.0,
+      "prev_close": 4.297,
+      "close": 4.256,
+      "daily_pct": -0.9542,
       "table": true,
       "is_yield": true,
-      "yield_change_bps": 0.0
+      "yield_change_bps": -4.1
     },
     "USD Index": {
       "symbol": "DX-Y.NYB",
-      "prev_close": 98.21,
-      "close": 98.21,
-      "daily_pct": 0.0,
+      "prev_close": 98.12,
+      "close": 98.238,
+      "daily_pct": 0.1203,
       "table": true
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "prev_close": 104.36,
-      "close": 92.81,
-      "daily_pct": -11.07,
+      "prev_close": 91.28,
+      "close": 92.58,
+      "daily_pct": 1.4242,
       "table": true
     }
   },
@@ -79,17 +79,17 @@
       "region": "Asia-Pacific",
       "status": "closed",
       "close": 25947.32,
-      "prev_close": 25929.4,
-      "daily_pct": 0.0691,
+      "prev_close": 25872.32,
+      "daily_pct": 0.2899,
       "session_note": "Previous close"
     },
     "KOSPI": {
       "symbol": "^KS11",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": 6026,
-      "prev_close": 5858.87,
-      "daily_pct": 2.8526,
+      "close": 6091.39,
+      "prev_close": 5967.75,
+      "daily_pct": 2.0718,
       "session_note": "Previous close"
     },
     "Nifty 50": {
@@ -105,143 +105,167 @@
       "symbol": "^AXJO",
       "region": "Asia-Pacific",
       "status": "closed",
-      "close": 8972,
-      "prev_close": 8990.3,
-      "daily_pct": -0.2036,
+      "close": 8978.7,
+      "prev_close": 8970.8,
+      "daily_pct": 0.0881,
       "session_note": "Previous close"
     },
     "DAX": {
       "symbol": "^GDAXI",
       "region": "Europe",
       "status": "partial",
-      "close": 24045.07,
-      "prev_close": 23742.44,
-      "daily_pct": 1.2746,
-      "session_note": "Early session"
+      "close": 24038.13,
+      "prev_close": 24037.83,
+      "daily_pct": 0.0013,
+      "session_note": "Intraday (early session)"
     },
     "FTSE 100": {
       "symbol": "^FTSE",
       "region": "Europe",
       "status": "partial",
-      "close": 10611.07,
-      "prev_close": 10582.96,
-      "daily_pct": 0.2656,
-      "session_note": "Early session"
+      "close": 10619.2,
+      "prev_close": 10619.2,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
     },
     "CAC 40": {
       "symbol": "^FCHI",
       "region": "Europe",
       "status": "partial",
-      "close": 8278.6,
-      "prev_close": 8235.98,
-      "daily_pct": 0.5175,
-      "session_note": "Early session"
+      "close": 8275.21,
+      "prev_close": 8275.21,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
     },
     "Euro Stoxx 50": {
       "symbol": "^STOXX50E",
       "region": "Europe",
       "status": "partial",
-      "close": 5961.81,
-      "prev_close": 5926.11,
-      "daily_pct": 0.6024,
-      "session_note": "Early session"
+      "close": 5961.42,
+      "prev_close": 5961.42,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
     }
   },
   "fx": {
     "EUR/USD": {
       "symbol": "EURUSD=X",
-      "rate": 1.1806,
-      "prev_close": 1.1763,
-      "daily_pct": 0.3656
+      "rate": 1.17813,
+      "prev_close": 1.17689,
+      "daily_pct": 0.106
     },
     "GBP/USD": {
       "symbol": "GBPUSD=X",
-      "rate": 1.3585,
-      "prev_close": 1.3516,
-      "daily_pct": 0.5105
+      "rate": 1.35496,
+      "prev_close": 1.35153,
+      "daily_pct": 0.2534
     },
     "USD/JPY": {
       "symbol": "JPY=X",
-      "rate": 158.73,
-      "prev_close": 159.06,
-      "daily_pct": -0.2075
+      "rate": 158.97701,
+      "prev_close": 159.214,
+      "daily_pct": -0.1489
     },
     "AUD/USD": {
       "symbol": "AUDUSD=X",
-      "rate": 0.71,
-      "prev_close": 0.6525,
-      "daily_pct": 8.8123
+      "rate": 0.71378,
+      "prev_close": 0.70993,
+      "daily_pct": 0.5418
     },
     "USD/CNH": {
       "symbol": "USDCNH=X",
-      "rate": 6.82,
-      "prev_close": 6.83,
-      "daily_pct": -0.1464
+      "rate": 6.81835,
+      "prev_close": null,
+      "daily_pct": null
     },
     "CHF/USD": {
       "symbol": "CHFUSD=X",
-      "rate": 1.28,
-      "prev_close": 1.24,
-      "daily_pct": 3.2258
+      "rate": 1.27784,
+      "prev_close": 1.27681,
+      "daily_pct": 0.0805
     }
   },
   "futures": {
     "S&P Futures": {
       "symbol": "ES=F",
-      "price": 6995,
-      "prev_close": 6967.38,
-      "daily_pct": 0.40
+      "price": 7005.0,
+      "prev_close": 7005.0,
+      "daily_pct": 0.0036
     },
     "Nasdaq Futures": {
       "symbol": "NQ=F",
-      "price": 25955,
-      "prev_close": 25112,
-      "daily_pct": 3.36
+      "price": 25992.0,
+      "prev_close": 25992.0,
+      "daily_pct": -0.0183
     },
     "Dow Futures": {
       "symbol": "YM=F",
-      "price": 48678,
-      "prev_close": 48535.99,
-      "daily_pct": 0.29
+      "price": 48735.0,
+      "prev_close": 48735.0,
+      "daily_pct": -0.041
     },
     "Gold Futures": {
       "symbol": "GC=F",
-      "price": 4817,
-      "prev_close": 4746.3,
-      "daily_pct": 1.49
+      "price": 4823.6,
+      "prev_close": 4823.6,
+      "daily_pct": -0.029
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.5,
+      "prev_close": 111.5,
+      "daily_pct": -0.028
     },
     "WTI Crude Oil": {
       "symbol": "CL=F",
-      "price": 92.81,
-      "prev_close": 104.36,
-      "daily_pct": -11.07
+      "price": 92.6,
+      "prev_close": 92.6,
+      "daily_pct": 1.4461
     }
   },
   "econ_calendar": {
-    "yesterday": [],
+    "yesterday": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
     "today": []
   },
   "market_news": [
     {
-      "headline": "Russia offers China energy lifeline as the Iran war strangles global supply",
+      "headline": "Iran war 'very close to over,' Trump says \u2014 and the stock market 'is going to boom'",
       "source": "CNBC",
-      "published": "Wed, 15 Apr 2026 09:30:07 GMT",
-      "url": "https://www.cnbc.com/2026/04/15/russia-china-energy-supplies-iran-war-trump-strait-of-hormuz-blockade.html",
-      "summary": "\"Russia can certainly fill the resource gap that has arisen in China,\" Russian foreign minister Sergei Lavrov said Wednesday."
+      "published": "Wed, 15 Apr 2026 10:58:16 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/iran-war-trump-peace-deal-us-talks-stock-market-oil-prices-.html",
+      "summary": "The U.S. has beaten Iran \"militarily\" and that the war is \"very close to over,\" Trump said, claiming a peace deal likely."
     },
     {
-      "headline": "Bank of America is set to report earnings. Here's what to expect",
+      "headline": "Bank of America tops estimates as CEO Brian Moynihan says consumer banking is 'healthy'",
       "source": "CNBC",
-      "published": "Wed, 15 Apr 2026 10:15:01 GMT",
+      "published": "Wed, 15 Apr 2026 11:19:44 GMT",
       "url": "https://www.cnbc.com/2026/04/15/bank-of-america-bac-earnings-q1-2026.html",
       "summary": "Bank of America, the second-largest U.S. bank by assets, has topped expectations for earnings per share for 23 consecutive quarters."
     },
     {
-      "headline": "Altman arson suspect Moreno-Gama suffered 'acute mental health crisis,' lawyer says",
+      "headline": "Morgan Stanley is set to report first-quarter earnings \u2014 here's what the Street expects",
       "source": "CNBC",
-      "published": "Wed, 15 Apr 2026 00:50:58 GMT",
-      "url": "https://www.cnbc.com/2026/04/14/sam-altman-openai-molotov-attack-arraignment.html",
-      "summary": "Daniel Moreno-Gama allegedly threw a lit Molotov cocktail at the driveway gate of OpenAI CEO Sam Altman's home."
+      "published": "Wed, 15 Apr 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/morgan-stanley-ms-earnings-1q-2026.html",
+      "summary": "Morgan Stanley is expected to benefit from robust investment banking and trading revenue in the quarter, as rivals JPMorgan Chase and Goldman Sachs have shown."
+    },
+    {
+      "headline": "Power Insider: The markets are obsessed with the Strait of Hormuz. Why it matters less than you think",
+      "source": "CNBC",
+      "published": "Wed, 15 Apr 2026 11:00:55 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/power-insider-the-markets-are-obsessed-with-the-strait-of-hormuz-why-it-matters-less-than-you-think.html",
+      "summary": "Retail and pro traders are obsessed with gauging the traffic in the Strait of Hormuz, thinking they can gain an edge on where oil prices are going. They can\u2019t."
     },
     {
       "headline": "Trump takes aim at Pope Leo again, days after calling him 'weak on crime'",
@@ -251,6 +275,13 @@
       "summary": "Trump's remarks came amid a running spat between the White House and the Vatican over the U.S.-Israel war against Iran."
     },
     {
+      "headline": "Russia offers China energy lifeline as the Iran war strangles global supply",
+      "source": "CNBC",
+      "published": "Wed, 15 Apr 2026 09:30:07 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/russia-china-energy-supplies-iran-war-trump-strait-of-hormuz-blockade.html",
+      "summary": "\"Russia can certainly fill the resource gap that has arisen in China,\" Russian foreign minister Sergei Lavrov said Wednesday."
+    },
+    {
       "headline": "Chip giant ASML raises 2026 guidance as AI semiconductor demand stays strong",
       "source": "CNBC",
       "published": "Wed, 15 Apr 2026 07:30:25 GMT",
@@ -258,25 +289,11 @@
       "summary": "ASML beat first-quarter revenue and profit expectations and raised its sales guidance for 2026."
     },
     {
-      "headline": "Jamie Dimon says Anthropic's Mythos reveals 'a lot more vulnerabilities' for cyberattacks",
-      "source": "CNBC",
-      "published": "Tue, 14 Apr 2026 20:55:03 GMT",
-      "url": "https://www.cnbc.com/2026/04/14/jamie-dimon-anthropic-mythos-vulnerabilities-cyber-attacks.html",
-      "summary": "The remarks show how a technology welcomed by corporations as a productivity boon can also pose serious threats, like uncovering new ways to hack into systems."
-    },
-    {
       "headline": "Luxury stocks fall as Iran war weighs on earnings; Hermes sinks 14%",
       "source": "CNBC",
       "published": "Wed, 15 Apr 2026 10:03:43 GMT",
       "url": "https://www.cnbc.com/2026/04/15/kering-stock-q1-earnings-gucci-sales-iran-war-middle-east-luxury.html",
       "summary": "Hermes said wholesale activity was \"significantly affected\" in the first quarter by lower sales to concession stores, particularly in the Middle East and in airports."
-    },
-    {
-      "headline": "Stocks keep the rally going and oil tumbles. Here's why we have some trepidation",
-      "source": "CNBC",
-      "published": "Tue, 14 Apr 2026 19:06:48 GMT",
-      "url": "https://www.cnbc.com/2026/04/14/stocks-keep-the-rally-going-and-oil-tumbles-heres-why-we-have-some-trepidation-.html",
-      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
     }
   ]
 }

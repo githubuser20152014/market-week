@@ -268,8 +268,12 @@ def _build_futures(us: dict, prev_fixture) -> dict:
 
 # ── Live fetchers ─────────────────────────────────────────────────────────────
 
-def _fetch_live(date_str: str) -> dict:
-    """Assemble the full daybreak payload from live sources."""
+def _fetch_live(date_str: str, include_secondaries: bool = False) -> dict:
+    """Assemble the full daybreak payload from live sources.
+    
+    If include_secondaries=True, also fetches FRED/Stooq prices for verification
+    and embeds them in the result dict under a 'verification' key.
+    """
     with open(CONFIG_DIR / "daybreak_symbols.json") as f:
         cfg = json.load(f)
 
@@ -278,8 +282,9 @@ def _fetch_live(date_str: str) -> dict:
     fx             = _fetch_fx(date_str, cfg["fx"])
     futures        = _fetch_futures(date_str, cfg["futures"])
     market_news    = _fetch_market_news(date_str)
+    econ_calendar  = _fetch_econ_calendar(date_str)
 
-    return {
+    payload = {
         "meta": {
             "date": date_str,
             "generated_at": datetime.utcnow().isoformat() + "Z",
@@ -289,22 +294,51 @@ def _fetch_live(date_str: str) -> dict:
         "intl_overnight": intl_overnight,
         "fx":             fx,
         "futures":        futures,
-        "econ_calendar":  {"yesterday": [], "today": []},
+        "econ_calendar":  econ_calendar,
         "market_news":    market_news,
+    }
+
+    if include_secondaries:
+        payload["verification"] = _fetch_secondary_verification(date_str)
+
+    return payload
+
+
+def _fetch_secondary_verification(date_str: str) -> dict:
+    """Fetch verification prices from FRED and Stooq."""
+    try:
+        from .base_fetchers import (
+            FRED_MAP, STOOQ_MAP, STOOQ_INTL_MAP, STOOQ_FX_MAP,
+            fetch_fred_price, fetch_stooq_prices
+        )
+    except ImportError:
+        from base_fetchers import (
+            FRED_MAP, STOOQ_MAP, STOOQ_INTL_MAP, STOOQ_FX_MAP,
+            fetch_fred_price, fetch_stooq_prices
+        )
+    
+    fred_results  = {}
+    for name, series_id in FRED_MAP.items():
+        val = fetch_fred_price(series_id, date_str)
+        if val is not None:
+            fred_results[name] = val
+
+    stooq_results = fetch_stooq_prices(STOOQ_MAP, date_str)
+    stooq_intl    = fetch_stooq_prices(STOOQ_INTL_MAP, date_str)
+    stooq_fx      = fetch_stooq_prices(STOOQ_FX_MAP, date_str)
+
+    return {
+        "fred":  fred_results,
+        "stooq": {**stooq_results, **stooq_intl, **stooq_fx}
     }
 
 
 def _fetch_us_close(date_str: str, index_cfg: dict) -> dict:
-    """Fetch previous US session closes (yesterday's 4 PM data).
-
-    Uses a 2-day download to get both yesterday's close and the day before
-    (for daily_pct calculation).
-    """
+    """Fetch previous US session closes (yesterday's 4 PM data)."""
     import yfinance as yf
-    from pandas import Timestamp
 
     target = datetime.strptime(date_str, "%Y-%m-%d")
-    # Download from 5 days back to catch weekends/holidays
+    # Download buffer to ensure we catch the last two sessions
     start = (target - timedelta(days=7)).strftime("%Y-%m-%d")
     end   = (target + timedelta(days=1)).strftime("%Y-%m-%d")
 
@@ -315,122 +349,125 @@ def _fetch_us_close(date_str: str, index_cfg: dict) -> dict:
         try:
             df = yf.download(symbol, start=start, end=end,
                              progress=False, auto_adjust=True)
+            if df.empty:
+                result[name] = _empty_us_entry(symbol, is_yield)
+                continue
+                
             if isinstance(df.columns, __import__("pandas").MultiIndex):
                 df.columns = df.columns.droplevel(1)
-            df = df[df.index.dayofweek < 5]  # drop weekends
-            if len(df) < 2:
-                result[name] = _empty_us_entry(symbol, is_yield, table=info.get("table", True))
+            
+            # Ensure we only have weekday data
+            df = df[df.index.dayofweek < 5]
+            
+            if len(df) < 1:
+                result[name] = _empty_us_entry(symbol, is_yield)
                 continue
 
-            prev_close = float(df["Close"].iloc[-2])
-            close      = float(df["Close"].iloc[-1])
-            daily_pct  = (close / prev_close - 1) * 100
+            # Close is the last available day <= date_str
+            # prev_close is the day before that
+            # We filter for index <= target to be safe if running on weekends/future dates
+            df_filtered = df[df.index <= target]
+            if len(df_filtered) < 1:
+                 result[name] = _empty_us_entry(symbol, is_yield)
+                 continue
+
+            close = float(df_filtered["Close"].iloc[-1])
+            prev_close = float(df_filtered["Close"].iloc[-2]) if len(df_filtered) >= 2 else None
+            
+            daily_pct = ((close / prev_close) - 1) * 100 if prev_close else None
 
             entry = {
                 "symbol":    symbol,
-                "prev_close": round(prev_close, 4),
+                "prev_close": round(prev_close, 4) if prev_close else None,
                 "close":      round(close, 4),
-                "daily_pct":  round(daily_pct, 4),
+                "daily_pct":  round(daily_pct, 4) if daily_pct is not None else None,
                 "table":      info.get("table", True),
             }
             if is_yield:
                 entry["is_yield"]          = True
-                entry["yield_change_bps"]  = round((close - prev_close) * 100, 2)
+                entry["yield_change_bps"]  = round((close - prev_close) * 100, 2) if prev_close else None
             result[name] = entry
         except Exception as e:
             print(f"  US close fetch failed for {name} ({e})")
-            result[name] = _empty_us_entry(symbol, is_yield, table=info.get("table", True))
+            result[name] = _empty_us_entry(symbol, is_yield)
 
     return result
-
-
-def _empty_us_entry(symbol: str, is_yield: bool = False, table: bool = True) -> dict:
-    entry = {"symbol": symbol, "prev_close": None, "close": None, "daily_pct": None, "table": table}
-    if is_yield:
-        entry["is_yield"] = True
-        entry["yield_change_bps"] = None
-    return entry
 
 
 def _fetch_intl_overnight(date_str: str, index_cfg: dict) -> dict:
     """Fetch overnight international index data.
 
-    - APAC (Asia-Pacific): markets have closed by 6 AM EST; use yesterday's close.
-    - Europe: markets may be ~2-3h into the session; use intraday price where available.
-
-    Each entry carries status="closed" or status="partial".
+    - APAC: Asia-Pacific markets closed; use last close.
+    - Europe: Early session; use intraday price (1m) if current date matches date_str.
     """
     import yfinance as yf
 
     target = datetime.strptime(date_str, "%Y-%m-%d")
-    start  = (target - timedelta(days=7)).strftime("%Y-%m-%d")
-    end    = (target + timedelta(days=1)).strftime("%Y-%m-%d")
+    is_today = target.date() == datetime.now().date()
+    
+    start = (target - timedelta(days=7)).strftime("%Y-%m-%d")
+    end   = (target + timedelta(days=1)).strftime("%Y-%m-%d")
 
     result = {}
     for name, info in index_cfg.items():
         symbol = info["symbol"]
         region = info.get("region", "")
         try:
-            # First get daily data for prev_close and last available close
+            # Daily data for base reference
             df_daily = yf.download(symbol, start=start, end=end,
                                    progress=False, auto_adjust=True)
-            if isinstance(df_daily.columns, __import__("pandas").MultiIndex):
-                df_daily.columns = df_daily.columns.droplevel(1)
-            df_daily = df_daily[df_daily.index.dayofweek < 5]
-
-            if len(df_daily) < 1:
+            if df_daily.empty:
                 result[name] = _empty_intl_entry(symbol, region)
                 continue
 
-            prev_close = float(df_daily["Close"].iloc[-2]) if len(df_daily) >= 2 else None
-            last_close = float(df_daily["Close"].iloc[-1])
+            if isinstance(df_daily.columns, __import__("pandas").MultiIndex):
+                df_daily.columns = df_daily.columns.droplevel(1)
+            
+            df_daily = df_daily[df_daily.index.dayofweek < 5]
+            df_filtered = df_daily[df_daily.index <= target]
 
-            if region == "Europe":
-                # Try to get a live intraday price for European early session
+            if len(df_filtered) < 1:
+                result[name] = _empty_intl_entry(symbol, region)
+                continue
+
+            last_close = float(df_filtered["Close"].iloc[-1])
+            prev_close = float(df_filtered["Close"].iloc[-2]) if len(df_filtered) >= 2 else None
+
+            if region == "Europe" and is_today:
+                # Try to get live 1m price for active session
                 try:
                     df_1m = yf.download(symbol, period="1d", interval="1m",
                                         progress=False, auto_adjust=True)
-                    if isinstance(df_1m.columns, __import__("pandas").MultiIndex):
-                        df_1m.columns = df_1m.columns.droplevel(1)
                     if not df_1m.empty:
+                        if isinstance(df_1m.columns, __import__("pandas").MultiIndex):
+                            df_1m.columns = df_1m.columns.droplevel(1)
                         live_price = float(df_1m["Close"].iloc[-1])
-                        daily_pct  = ((live_price / prev_close) - 1) * 100 if prev_close else None
+                        # For Europe, daily_pct is usually vs YESTERDAY'S close
+                        daily_pct = ((live_price / last_close) - 1) * 100
                         result[name] = {
                             "symbol":       symbol,
                             "region":       region,
                             "status":       "partial",
                             "close":        round(live_price, 2),
-                            "prev_close":   round(prev_close, 2) if prev_close else None,
-                            "daily_pct":    round(daily_pct, 4) if daily_pct is not None else None,
-                            "session_note": "Early session (~3h in)",
+                            "prev_close":   round(last_close, 2),
+                            "daily_pct":    round(daily_pct, 4),
+                            "session_note": "Intraday (early session)",
                         }
                         continue
                 except Exception:
-                    pass  # fall through to daily close
+                    pass
 
-                # Fallback: yesterday's close
-                daily_pct = ((last_close / prev_close) - 1) * 100 if prev_close else None
-                result[name] = {
-                    "symbol":       symbol,
-                    "region":       region,
-                    "status":       "closed",
-                    "close":        round(last_close, 2),
-                    "prev_close":   round(prev_close, 2) if prev_close else None,
-                    "daily_pct":    round(daily_pct, 4) if daily_pct is not None else None,
-                    "session_note": "Previous close",
-                }
-            else:
-                # APAC — always use yesterday's close
-                daily_pct = ((last_close / prev_close) - 1) * 100 if prev_close else None
-                result[name] = {
-                    "symbol":       symbol,
-                    "region":       region,
-                    "status":       "closed",
-                    "close":        round(last_close, 2),
-                    "prev_close":   round(prev_close, 2) if prev_close else None,
-                    "daily_pct":    round(daily_pct, 4) if daily_pct is not None else None,
-                    "session_note": "Previous close",
-                }
+            # Fallback for APAC or Europe (if weekend/non-today/failure)
+            daily_pct = ((last_close / prev_close) - 1) * 100 if prev_close else None
+            result[name] = {
+                "symbol":       symbol,
+                "region":       region,
+                "status":       "closed",
+                "close":        round(last_close, 2),
+                "prev_close":   round(prev_close, 2) if prev_close else None,
+                "daily_pct":    round(daily_pct, 4) if daily_pct is not None else None,
+                "session_note": "Previous close",
+            }
         except Exception as e:
             print(f"  Intl overnight fetch failed for {name} ({e})")
             result[name] = _empty_intl_entry(symbol, region)
@@ -438,16 +475,8 @@ def _fetch_intl_overnight(date_str: str, index_cfg: dict) -> dict:
     return result
 
 
-def _empty_intl_entry(symbol: str, region: str) -> dict:
-    return {
-        "symbol": symbol, "region": region, "status": "closed",
-        "close": None, "prev_close": None, "daily_pct": None,
-        "session_note": "No data",
-    }
-
-
 def _fetch_fx(date_str: str, fx_cfg: dict) -> dict:
-    """Fetch FX rates (2-day download for daily_pct)."""
+    """Fetch FX rates with robust fallback."""
     import yfinance as yf
 
     target = datetime.strptime(date_str, "%Y-%m-%d")
@@ -462,109 +491,100 @@ def _fetch_fx(date_str: str, fx_cfg: dict) -> dict:
                              progress=False, auto_adjust=True)
             if isinstance(df.columns, __import__("pandas").MultiIndex):
                 df.columns = df.columns.droplevel(1)
+            
             df = df[df.index.dayofweek < 5]
-            if len(df) < 2:
-                # Fallback: hourly data over 5 days (handles pairs like CNH=X)
-                try:
-                    df_h = yf.download(symbol, period="5d", interval="1h",
-                                       progress=False, auto_adjust=True)
-                    if isinstance(df_h.columns, __import__("pandas").MultiIndex):
-                        df_h.columns = df_h.columns.droplevel(1)
-                    if len(df_h) >= 2:
-                        # ~24h ago as prev_close proxy
-                        prev_close = float(df_h["Close"].iloc[-25]) \
-                            if len(df_h) > 25 else float(df_h["Close"].iloc[0])
-                        rate      = float(df_h["Close"].iloc[-1])
-                        daily_pct = (rate / prev_close - 1) * 100
-                        result[name] = {
-                            "symbol":     symbol,
-                            "rate":       round(rate, 5),
-                            "prev_close": round(prev_close, 5),
-                            "daily_pct":  round(daily_pct, 4),
-                        }
-                    else:
-                        result[name] = {"symbol": symbol, "rate": None,
-                                        "prev_close": None, "daily_pct": None}
-                except Exception:
-                    result[name] = {"symbol": symbol, "rate": None,
-                                    "prev_close": None, "daily_pct": None}
-                continue
+            df_filtered = df[df.index <= target]
 
-            prev_close = float(df["Close"].iloc[-2])
-            rate       = float(df["Close"].iloc[-1])
-            daily_pct  = (rate / prev_close - 1) * 100
-
-            result[name] = {
-                "symbol":     symbol,
-                "rate":       round(rate, 5),
-                "prev_close": round(prev_close, 5),
-                "daily_pct":  round(daily_pct, 4),
-            }
+            if len(df_filtered) >= 2:
+                rate = float(df_filtered["Close"].iloc[-1])
+                prev = float(df_filtered["Close"].iloc[-2])
+                result[name] = {
+                    "symbol":     symbol,
+                    "rate":       round(rate, 5),
+                    "prev_close": round(prev, 5),
+                    "daily_pct":  round(((rate / prev) - 1) * 100, 4),
+                }
+            elif not df_filtered.empty:
+                 rate = float(df_filtered["Close"].iloc[-1])
+                 result[name] = {"symbol": symbol, "rate": round(rate, 5), "prev_close": None, "daily_pct": None}
+            else:
+                 # Last resort: 1d period
+                 ticker = yf.Ticker(symbol)
+                 rate = ticker.fast_info.get("last_price")
+                 result[name] = {"symbol": symbol, "rate": round(rate, 5) if rate else None, "prev_close": None, "daily_pct": None}
         except Exception as e:
             print(f"  FX fetch failed for {name} ({e})")
-            result[name] = {"symbol": symbol, "rate": None,
-                            "prev_close": None, "daily_pct": None}
+            result[name] = {"symbol": symbol, "rate": None, "prev_close": None, "daily_pct": None}
     return result
 
 
 def _fetch_futures(date_str: str, futures_cfg: dict) -> dict:
-    """Fetch pre-market futures prices.
-
-    Uses fast_info["last_price"] for the current price when available,
-    falling back to the last available close from a 2-day download.
-    """
+    """Fetch pre-market futures with high resolution."""
     import yfinance as yf
 
     target = datetime.strptime(date_str, "%Y-%m-%d")
-    start  = (target - timedelta(days=7)).strftime("%Y-%m-%d")
-    end    = (target + timedelta(days=1)).strftime("%Y-%m-%d")
+    is_today = target.date() == datetime.now().date()
 
     result = {}
     for name, info in futures_cfg.items():
         symbol = info["symbol"]
         try:
             ticker = yf.Ticker(symbol)
-            # Try fast_info for live price
             live_price = None
-            try:
-                fi = ticker.fast_info
-                lp = fi.get("last_price") if hasattr(fi, "get") else getattr(fi, "last_price", None)
-                if lp and lp > 0:
-                    live_price = float(lp)
-            except Exception:
-                pass
+            
+            if is_today:
+                # 1. Try fast_info
+                try:
+                    fi = ticker.fast_info
+                    lp = fi.get("last_price")
+                    if lp and lp > 0:
+                        live_price = float(lp)
+                except Exception:
+                    pass
+                
+                # 2. Try 1m download if fast_info fails or to confirm
+                if not live_price:
+                    try:
+                        df_1m = yf.download(symbol, period="1d", interval="1m", progress=False)
+                        if not df_1m.empty:
+                            live_price = float(df_1m["Close"].iloc[-1])
+                    except Exception:
+                        pass
 
-            # Daily data for prev_close
-            df = yf.download(symbol, start=start, end=end,
-                             progress=False, auto_adjust=True)
+            # Get daily history for settlement/prev_close
+            start = (target - timedelta(days=7)).strftime("%Y-%m-%d")
+            end   = (target + timedelta(days=1)).strftime("%Y-%m-%d")
+            df = yf.download(symbol, start=start, end=end, progress=False)
+            
             if isinstance(df.columns, __import__("pandas").MultiIndex):
                 df.columns = df.columns.droplevel(1)
+            
             df = df[df.index.dayofweek < 5]
+            df_filtered = df[df.index <= target]
 
-            if len(df) < 2:
-                result[name] = {"symbol": symbol, "price": live_price,
-                                "prev_close": None, "daily_pct": None}
+            if df_filtered.empty:
+                result[name] = {"symbol": symbol, "price": live_price, "prev_close": None, "daily_pct": None}
                 continue
 
-            if live_price:
-                prev_close = float(df["Close"].iloc[-1])   # prior session settlement
-                price      = live_price
-            else:
-                prev_close = float(df["Close"].iloc[-2])   # fallback: day-over-day from df
-                price      = float(df["Close"].iloc[-1])
-            daily_pct = (price / prev_close - 1) * 100
+            settlement = float(df_filtered["Close"].iloc[-1])
+            prev_settle = float(df_filtered["Close"].iloc[-2]) if len(df_filtered) >= 2 else None
+
+            price = live_price if live_price else settlement
+            # daily_pct for futures in morning brief is vs prior settlement
+            daily_pct = ((price / settlement) - 1) * 100 if is_today and live_price else \
+                        (((price / prev_settle) - 1) * 100 if prev_settle else None)
 
             result[name] = {
                 "symbol":     symbol,
                 "price":      round(price, 2),
-                "prev_close": round(prev_close, 2),
-                "daily_pct":  round(daily_pct, 4),
+                "prev_close": round(settlement, 2),
+                "daily_pct":  round(daily_pct, 4) if daily_pct is not None else None,
             }
         except Exception as e:
             print(f"  Futures fetch failed for {name} ({e})")
-            result[name] = {"symbol": symbol, "price": None,
-                            "prev_close": None, "daily_pct": None}
+            result[name] = {"symbol": symbol, "price": None, "prev_close": None, "daily_pct": None}
     return result
+
 
 
 def _fetch_econ_calendar(date_str: str) -> dict:
