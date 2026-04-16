@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-04-16",
+    "generated_at": "2026-04-16T10:30:25.921937Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 6967.3799,
+      "close": 7022.9502,
+      "daily_pct": 0.7976,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 48535.9883,
+      "close": 48463.7188,
+      "daily_pct": -0.1489,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 23639.0801,
+      "close": 24016.0195,
+      "daily_pct": 1.5946,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2705.6699,
+      "close": 2713.6599,
+      "daily_pct": 0.2953,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4800.0,
+      "close": 4829.2002,
+      "daily_pct": 0.6083,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.256,
+      "close": 4.282,
+      "daily_pct": 0.6109,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.06,
+      "close": 98.229,
+      "daily_pct": 0.1723,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 91.29,
+      "close": 89.33,
+      "daily_pct": -2.147,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59518.34,
+      "prev_close": 58134.24,
+      "daily_pct": 2.3809,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26394.26,
+      "prev_close": 25947.32,
+      "daily_pct": 1.7225,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6226.05,
+      "prev_close": 6091.39,
+      "daily_pct": 2.2107,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24196.75,
+      "prev_close": 24231.3,
+      "daily_pct": -0.1426,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8955.0,
+      "prev_close": 8978.7,
+      "daily_pct": -0.264,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24178.41,
+      "prev_close": 24178.41,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10606.34,
+      "prev_close": 10606.38,
+      "daily_pct": -0.0004,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8315.38,
+      "prev_close": 8315.69,
+      "daily_pct": -0.0037,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5968.29,
+      "prev_close": 5968.37,
+      "daily_pct": -0.0013,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17772,
+      "prev_close": 1.17994,
+      "daily_pct": -0.1884
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35323,
+      "prev_close": 1.35753,
+      "daily_pct": -0.3167
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.121,
+      "prev_close": 158.79201,
+      "daily_pct": 0.2072
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71649,
+      "prev_close": 0.71293,
+      "daily_pct": 0.4988
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.8231,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27505,
+      "prev_close": 1.28056,
+      "daily_pct": -0.4297
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7067.75,
+      "prev_close": 7067.75,
+      "daily_pct": 0.1027
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 26443.5,
+      "prev_close": 26443.5,
+      "daily_pct": 0.2958
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 48707.0,
+      "prev_close": 48707.0,
+      "daily_pct": 0.0781
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4829.4,
+      "prev_close": 4829.4,
+      "daily_pct": 0.6125
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.45,
+      "prev_close": 111.45,
+      "daily_pct": 0.0842
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 89.33,
+      "prev_close": 89.33,
+      "daily_pct": -2.147
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "PepsiCo earnings beat estimates as North American food business improves",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 10:25:06 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/pepsico-pep-q1-2026-earnings.html",
+      "summary": "PepsiCo's quarterly earnings and revenue topped Wall Street's expectations."
+    },
+    {
+      "headline": "Treasury Secretary Scott Bessent is preparing banks to collect citizenship data",
+      "source": "CNBC",
+      "published": "Wed, 15 Apr 2026 21:59:18 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/banks-citizenship-data-collection-customer-accounts.html",
+      "summary": "Treasury Secretary Scott Bessent says the Trump administration expects banks to comply in collecting citizenship information from customers."
+    },
+    {
+      "headline": "The market is seeing a feverish rotation. Here\u2019s Cramer\u2019s advice on how to play it",
+      "source": "CNBC",
+      "published": "Wed, 15 Apr 2026 22:29:35 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/jim-cramer-navigate-market-rotation.html",
+      "summary": "CNBC\u2019s Jim Cramer offers guidance for navigating a \u201ctricky\u201d market rotation."
+    },
+    {
+      "headline": "Here are all the ways the Iran war has affected the U.S. economy so far",
+      "source": "CNBC",
+      "published": "Wed, 15 Apr 2026 17:13:37 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/here-are-all-the-ways-the-iran-war-has-affected-the-us-economy-so-far.html",
+      "summary": "The Iran war is starting to show up in the U.S. economy in ways both obvious and not so much."
+    },
+    {
+      "headline": "White House budget chief Russell Vought won't estimate Iran war cost in testimony",
+      "source": "CNBC",
+      "published": "Wed, 15 Apr 2026 18:30:48 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/iran-war-budget-white-house-russ-vought.html",
+      "summary": "Office of Management and Budget Director Russell Vought testified before the House Budget Committee on Wednesday."
+    },
+    {
+      "headline": "Don't call time on dollar dominance just yet, say analysts as 'petroyuan' call sparks debate",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 08:40:59 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/us-dollar-dominance-reserve-currency-iran-war-oil-china.html",
+      "summary": "The dollar index, which tracks its performance against a basket of major currencies, fell almost 10% through 2025."
+    },
+    {
+      "headline": "Iran war damaged as much as $58 billion of energy infrastructure, Rystad estimates",
+      "source": "CNBC",
+      "published": "Wed, 15 Apr 2026 20:42:48 GMT",
+      "url": "https://www.cnbc.com/2026/04/15/iran-war-energy-facilities-refinery-pipeline-lng.html",
+      "summary": "It could take years to repair damaged energy infrastructure in the Middle East and restore production to prewar levels."
+    },
+    {
+      "headline": "Iran war drags India\u2019s goods exports 7% lower in March \u2014 more pain ahead",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 07:56:14 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/india-goods-exports-march-drop-more-pain-ahead.html",
+      "summary": "Iran war cuts India\u2019s March goods exports by over 7%, hammering key sectors and markets, lifting costs and delaying recovery for months."
+    }
+  ]
+}
