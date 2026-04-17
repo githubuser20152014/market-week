@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-04-17",
+    "generated_at": "2026-04-17T09:17:42.008867Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7022.9502,
+      "close": 7041.2798,
+      "daily_pct": 0.261,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 48463.7188,
+      "close": 48578.7188,
+      "daily_pct": 0.2373,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24016.0195,
+      "close": 24102.6992,
+      "daily_pct": 0.3609,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2713.6599,
+      "close": 2719.6001,
+      "daily_pct": 0.2189,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4785.3999,
+      "close": 4818.7998,
+      "daily_pct": 0.698,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.282,
+      "close": 4.309,
+      "daily_pct": 0.6305,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.22,
+      "close": 98.096,
+      "daily_pct": -0.1262,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 94.69,
+      "close": 88.84,
+      "daily_pct": -6.1781,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 58475.9,
+      "prev_close": 59518.34,
+      "daily_pct": -1.7515,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26160.33,
+      "prev_close": 26394.26,
+      "daily_pct": -0.8863,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6191.92,
+      "prev_close": 6226.05,
+      "daily_pct": -0.5482,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24350.95,
+      "prev_close": 24196.75,
+      "daily_pct": 0.6373,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8946.9,
+      "prev_close": 8955.0,
+      "daily_pct": -0.0904,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24320.95,
+      "prev_close": 24320.95,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10584.54,
+      "prev_close": 10584.6,
+      "daily_pct": -0.0006,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8300.13,
+      "prev_close": 8300.13,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5961.46,
+      "prev_close": 5961.46,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17966,
+      "prev_close": 1.18092,
+      "daily_pct": -0.1062
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35321,
+      "prev_close": 1.35737,
+      "daily_pct": -0.3064
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.16499,
+      "prev_close": 158.80901,
+      "daily_pct": 0.2242
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71768,
+      "prev_close": 0.71758,
+      "daily_pct": 0.0146
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.8244,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27791,
+      "prev_close": 1.2799,
+      "daily_pct": -0.1559
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7091.25,
+      "prev_close": 7091.25,
+      "daily_pct": 0.2014
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 26521.75,
+      "prev_close": 26521.75,
+      "daily_pct": 0.1303
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 48935.0,
+      "prev_close": 48935.0,
+      "daily_pct": 0.3445
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4819.2,
+      "prev_close": 4819.2,
+      "daily_pct": 0.7063
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.28,
+      "prev_close": 111.28,
+      "daily_pct": 0.0562
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 88.84,
+      "prev_close": 88.84,
+      "daily_pct": -6.1781
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil falls as Trump reiterates Iran war \u2018should\u2019 end soon and Israel-Lebanon truce lifts hopes",
+      "source": "CNBC",
+      "published": "Fri, 17 Apr 2026 05:04:31 GMT",
+      "url": "https://www.cnbc.com/2026/04/17/oil-prices-wti-brent-israel-lebanon-ceasefire-trump.html",
+      "summary": "Oil prices fell after Donald Trump said Israel and Lebanon had agreed to a 10-day ceasefire following talks in Washington."
+    },
+    {
+      "headline": "Netflix stock sinks after streamer reiterates guidance, says Reed Hastings to exit board",
+      "source": "CNBC",
+      "published": "Fri, 17 Apr 2026 02:22:51 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/netflix-nflx-earnings-q1-2026.html",
+      "summary": "Netflix beat expectations for Q1 revenue and reported a big jump in earnings per share thanks in part to a termination fee related to its proposed WBD deal."
+    },
+    {
+      "headline": "Trump nominates Erica Schwartz as CDC director amid turmoil around leadership, vaccine policy",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 22:39:45 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/trump-nominates-erica-schwartz-as-cdc-director.html",
+      "summary": "The CDC has been going through turmoil and several leadership shakeups under HHS Secretary Robert F. Kennedy Jr."
+    },
+    {
+      "headline": "Kevin Warsh wants to lead a scandal-ridden Fed. His wealth is a complication.",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 20:12:16 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/fed-kevin-warsh-elizabeth-warren-financial-disclosures.html",
+      "summary": "Sen. Elizabeth Warren, D-Mass., is calling attention to potential issues in the Fed chair nominee's financial disclosures."
+    },
+    {
+      "headline": "Trump says gas prices 'not very high' as most U.S. voters blame him for price spike",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 20:51:27 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/trump-gas-prices-iran-war.html",
+      "summary": "Trump touted the rising stock market as he brushed off concerns that Americans are laboring under higher gas prices as a result of the Iran war."
+    },
+    {
+      "headline": "Why the stock market is hitting records despite Iran war",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 20:32:19 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/stocks-record-highs-iran-war.html",
+      "summary": "The S&amp;P 500 closed at an all-time high even with little apparent progress in a peace deal between the U.S. and Iran, and a continued oil-supply disruption."
+    },
+    {
+      "headline": "ICE agent charged with assault by Minnesota prosecutors, arrest warrant issued",
+      "source": "CNBC",
+      "published": "Fri, 17 Apr 2026 02:57:27 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/ice-agent-assault-charge-minnesota-minneapolis.html",
+      "summary": "Minnesota state prosecutors continue to investigation the killings of Renee Good and Alex Pretti by federal agents in Minneapolis."
+    },
+    {
+      "headline": "Vance's Iran and Orb\u00e1n setbacks raise questions about his standing with Trump",
+      "source": "CNBC",
+      "published": "Thu, 16 Apr 2026 19:30:53 GMT",
+      "url": "https://www.cnbc.com/2026/04/16/vance-trump-iran-orban-rubio.html",
+      "summary": "Recent staffing moves among JD Vance's aides have fueled new speculation that the VP and his allies are preparing for a 2028 presidential bid."
+    }
+  ]
+}
