@@ -224,24 +224,36 @@ def _find_closest_fixture(prefix, target_date):
 def _yfinance_ohlcv(symbol, start, friday, decimals=2):
     """Pull a single ticker from yfinance and return list of daily OHLCV dicts."""
     import yfinance as yf
-    ticker = yf.Ticker(symbol)
-    hist = ticker.history(
-        start=start.strftime("%Y-%m-%d"),
-        end=(friday + timedelta(days=1)).strftime("%Y-%m-%d"),
-    )
-    rows = []
-    for idx, row in hist.iterrows():
-        if idx.weekday() >= 5:
-            continue
-        rows.append({
-            "date":   idx.strftime("%Y-%m-%d"),
-            "open":   round(row["Open"],   decimals),
-            "high":   round(row["High"],   decimals),
-            "low":    round(row["Low"],    decimals),
-            "close":  round(row["Close"],  decimals),
-            "volume": int(row["Volume"]),
-        })
-    return rows[-5:]
+    try:
+        ticker = yf.Ticker(symbol)
+        hist = ticker.history(
+            start=start.strftime("%Y-%m-%d"),
+            end=(friday + timedelta(days=1)).strftime("%Y-%m-%d"),
+            auto_adjust=True
+        )
+        if hist.empty:
+            return []
+        
+        # Clean up column names if MultiIndex
+        if isinstance(hist.columns, __import__("pandas").MultiIndex):
+            hist.columns = hist.columns.droplevel(1)
+            
+        rows = []
+        for idx, row in hist.iterrows():
+            if idx.weekday() >= 5:
+                continue
+            rows.append({
+                "date":   idx.strftime("%Y-%m-%d"),
+                "open":   round(row["Open"],   decimals),
+                "high":   round(row["High"],   decimals),
+                "low":    round(row["Low"],    decimals),
+                "close":  round(row["Close"],  decimals),
+                "volume": int(row["Volume"]),
+            })
+        return rows[-5:]
+    except Exception as e:
+        print(f"  yfinance fetch failed for {symbol} ({e})")
+        return []
 
 
 def _friday_window(end_date):
@@ -254,6 +266,90 @@ def _friday_window(end_date):
 
 
 # ── Equity + Fixed Income + FX-hedge indicators ───────────────────────────────
+
+def _fetch_secondary_verification_global(date_str):
+    """Fetch verification prices from FRED and Stooq for global assets."""
+    try:
+        from .base_fetchers import (
+            FRED_MAP, STOOQ_MAP, STOOQ_INTL_MAP, STOOQ_FX_MAP,
+            fetch_fred_price, fetch_stooq_prices
+        )
+    except ImportError:
+        from base_fetchers import (
+            FRED_MAP, STOOQ_MAP, STOOQ_INTL_MAP, STOOQ_FX_MAP,
+            fetch_fred_price, fetch_stooq_prices
+        )
+    
+    # 1. FRED: Gold, 10Y
+    fred_results = {}
+    for name, series_id in FRED_MAP.items():
+        val = fetch_fred_price(series_id, date_str)
+        if val is not None:
+            fred_results[name] = val
+
+    # 2. Stooq: S&P, Dow, Nasdaq, Russell, USD Index, Intl, FX
+    stooq_results = fetch_stooq_prices(STOOQ_MAP, date_str)
+    stooq_intl    = fetch_stooq_prices(STOOQ_INTL_MAP, date_str)
+    stooq_fx      = fetch_stooq_prices(STOOQ_FX_MAP, date_str)
+
+    return {
+        "fred":  fred_results,
+        "stooq": {**stooq_results, **stooq_intl, **stooq_fx}
+    }
+
+
+def _fetch_live_futures_global(date_str):
+    """Fetch pre-market or current futures for context in global summary."""
+    import yfinance as yf
+    
+    symbols = {
+        "S&P Futures":     "ES=F",
+        "Nasdaq Futures":  "NQ=F",
+        "Dow Futures":     "YM=F",
+        "Gold Futures":    "GC=F",
+        "WTI Crude Oil":   "CL=F",
+    }
+    
+    target = datetime.strptime(date_str, "%Y-%m-%d")
+    is_today = target.date() == datetime.now().date()
+    
+    result = {}
+    for name, symbol in symbols.items():
+        try:
+            ticker = yf.Ticker(symbol)
+            live_price = None
+            if is_today:
+                fi = ticker.fast_info
+                lp = fi.get("last_price")
+                if lp and lp > 0:
+                    live_price = float(lp)
+                
+            # History for settlement
+            start = (target - timedelta(days=7)).strftime("%Y-%m-%d")
+            end   = (target + timedelta(days=1)).strftime("%Y-%m-%d")
+            df = yf.download(symbol, start=start, end=end, progress=False)
+            
+            if isinstance(df.columns, __import__("pandas").MultiIndex):
+                df.columns = df.columns.droplevel(1)
+            
+            df = df[df.index.dayofweek < 5]
+            df_filtered = df[df.index <= target]
+
+            if not df_filtered.empty:
+                settlement = float(df_filtered["Close"].iloc[-1])
+                prev_settle = float(df_filtered["Close"].iloc[-2]) if len(df_filtered) >= 2 else None
+                price = live_price if live_price else settlement
+                daily_pct = ((price / settlement) - 1) * 100 if is_today and live_price else \
+                            (((price / prev_settle) - 1) * 100 if prev_settle else None)
+                
+                result[name] = {
+                    "price": round(price, 2),
+                    "daily_pct": round(daily_pct, 4) if daily_pct is not None else None
+                }
+        except Exception:
+            pass
+    return result
+
 
 def fetch_global_equity_data(end_date, use_mock=True):
     """Fetch US indices + intl indices + VIX.

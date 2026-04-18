@@ -24,7 +24,7 @@
     "etf_proxy": "TLT"
   },
   "USD Index": {
-    "symbol": "DX=F",
+    "symbol": "DX-Y.NYB",
     "etf_proxy": "UUP"
   }
 }
