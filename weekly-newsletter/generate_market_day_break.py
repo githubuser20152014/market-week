@@ -159,7 +159,16 @@ def main():
         action="store_true",
         help="Cross-check prices against FRED + Stooq before generating.",
     )
+    parser.add_argument(
+        "--digest-dir",
+        default=None,
+        help="Path to news digest directory (YYYY-MM-DD-digest.md files). "
+             "Falls back to DIGEST_DIR env var if not set.",
+    )
     args = parser.parse_args()
+
+    import os
+    digest_dir = args.digest_dir or os.environ.get("DIGEST_DIR")
 
     use_mock = not args.live
     date_str = args.date
@@ -181,7 +190,7 @@ def main():
 
     # ── Process ───────────────────────────────────────────────────────────────
     # Skip Claude API when --no-rewrite-md: approved .md is the content source.
-    context = build_daybreak_context(raw, use_claude=not args.no_rewrite_md)
+    context = build_daybreak_context(raw, use_claude=not args.no_rewrite_md, digest_dir=digest_dir)
 
     # ── Render (Markdown via Jinja2) ──────────────────────────────────────────
     OUTPUT_DIR.mkdir(exist_ok=True)

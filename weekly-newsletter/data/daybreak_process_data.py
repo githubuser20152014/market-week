@@ -1,5 +1,49 @@
 """Process raw daybreak data into newsletter-ready content."""
 
+import re
+from datetime import datetime, timedelta
+from pathlib import Path
+
+
+_DIGEST_SECTIONS = ["Markets & Macro", "Global Events", "Major Events"]
+
+
+def load_daybreak_digest_context(data_date: str, digest_dir) -> str:
+    """Extract causal-context sections from today's and yesterday's digest files.
+
+    Loads two digest files: data_date and the previous trading day (skips weekends).
+    Extracts 'Markets & Macro', 'Global Events', and 'Major Events' sections.
+    Returns empty string if digest_dir is None or no files are found.
+    """
+    if not digest_dir:
+        return ""
+
+    end = datetime.strptime(data_date, "%Y-%m-%d")
+
+    # Find the previous trading day
+    prev = end - timedelta(days=1)
+    while prev.weekday() >= 5:
+        prev -= timedelta(days=1)
+
+    dates_to_try = [end.strftime("%Y-%m-%d"), prev.strftime("%Y-%m-%d")]
+
+    chunks = []
+    for date_str in dates_to_try:
+        path = Path(digest_dir) / f"{date_str}-digest.md"
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for section in _DIGEST_SECTIONS:
+            match = re.search(
+                rf"(?:#+\s+[^\n]*{re.escape(section)}[^\n]*\n)(.*?)(?=\n#+\s|\Z)",
+                text,
+                re.DOTALL | re.IGNORECASE,
+            )
+            if match:
+                chunks.append(f"### {date_str} - {section}\n{match.group(1).strip()}")
+
+    return "\n\n".join(chunks)
+
 
 def process_market_news(raw_news: list) -> list:
     """Pass through news items, truncating long summaries."""
@@ -113,7 +157,14 @@ you the pre-open rundown. Not a reporter, not a cheerleader. Someone who tells \
 you what actually matters and what to do about it.
 
 You will receive structured JSON with yesterday's US close, overnight/APAC \
-markets, pre-market futures, FX, and news headlines. \
+markets, pre-market futures, FX, news headlines, and optionally a news_context \
+field containing excerpts from recent daily news digests (Markets & Macro, \
+Global Events, Major Events sections). \
+If news_context is non-empty, anchor causal explanations to specific events from \
+it - name the catalyst (a Fed speaker, earnings report, geopolitical event, data \
+release, diplomatic development) that drove each market move. Do not infer \
+causality from price correlations alone. If news_context is empty, construct the \
+best narrative you can from the market data. \
 Return a JSON object with exactly these 4 keys:
 
 - narrative: 2–3 sentences. Sharp scene-setter. What is the dominant mood? \
@@ -168,7 +219,8 @@ Return ONLY valid JSON — no markdown fences, no extra keys, no commentary outs
 
 def generate_daybreak_claude_narrative(
     us_indices, intl_indices, fx, futures,
-    yesterday_events, today_events, news_items
+    yesterday_events, today_events, news_items,
+    digest_context: str = "",
 ):
     """Call Claude API to generate narrative, plain_summary, and positioning.
 
@@ -193,6 +245,7 @@ def generate_daybreak_claude_narrative(
             {"headline": n.get("headline", ""), "source": n.get("source", "")}
             for n in (news_items or [])
         ],
+        "news_context": digest_context,
     }
 
     try:
@@ -200,7 +253,7 @@ def generate_daybreak_claude_narrative(
         client = anthropic.Anthropic(api_key=api_key)
         response = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=1800,
+            max_tokens=2500,
             system=_DAYBREAK_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": _json.dumps(payload, default=str)}],
         )
@@ -264,7 +317,8 @@ def _hyperlink_tickers(text: str) -> str:
 
 def build_daybreak_narrative_sections(
     us_indices, intl_indices, fx, futures,
-    yesterday_events, today_events, news_items
+    yesterday_events, today_events, news_items,
+    digest_context: str = "",
 ):
     """Return (narrative, brief_body, investor_section, tips) using Claude if available.
 
@@ -275,7 +329,8 @@ def build_daybreak_narrative_sections(
     """
     claude = generate_daybreak_claude_narrative(
         us_indices, intl_indices, fx, futures,
-        yesterday_events, today_events, news_items
+        yesterday_events, today_events, news_items,
+        digest_context=digest_context,
     )
 
     if claude:
@@ -1708,13 +1763,15 @@ def generate_substack_post(context: dict) -> str:
 
 # ── Context builder ───────────────────────────────────────────────────────────
 
-def build_daybreak_context(raw: dict, use_claude: bool = True) -> dict:
+def build_daybreak_context(raw: dict, use_claude: bool = True, digest_dir=None) -> dict:
     """Build the full template context for the daybreak edition.
 
     Args:
         raw: Full daybreak payload from fetch_daybreak_data().
         use_claude: If False, skip the Claude API call and use template fallback.
                     Use False when the approved .md will override narrative fields anyway.
+        digest_dir: Path to news digest directory. If set, loads today's and yesterday's
+                    digest to provide causal context to the Claude narrative prompt.
 
     Returns:
         Dict ready for Jinja2 rendering and HTML generation.
@@ -1731,10 +1788,17 @@ def build_daybreak_context(raw: dict, use_claude: bool = True) -> dict:
 
     market_news_raw = raw.get("market_news", [])
 
+    digest_context = load_daybreak_digest_context(date_str, digest_dir)
+    if digest_context:
+        print(f"Digest context loaded ({len(digest_context)} chars from {date_str}).")
+    else:
+        print("No digest context — proceeding without news digest.")
+
     if use_claude:
         narrative, brief_body, investor_section, one_trade, email_subject, tips = build_daybreak_narrative_sections(
             us_indices, intl_indices, fx_rates, futures,
             yesterday_events, today_events, market_news_raw,
+            digest_context=digest_context,
         )
     else:
         # Skip Claude API — approved .md will override narrative fields

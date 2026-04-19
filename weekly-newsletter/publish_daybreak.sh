@@ -67,13 +67,18 @@ if [[ "$PUBLISH" == "--publish" ]]; then
   echo "==> Approved newsletter found for $DATE_STR — proceeding to publish."
 else
   # Generate-only mode: write the draft MD (calls Claude API once).
+  DIGEST_FLAG=""
+  if [[ -n "${DIGEST_DIR:-}" ]]; then
+    DIGEST_FLAG="--digest-dir $DIGEST_DIR"
+  fi
+
   if [[ ! -f "$MD_PATH" ]]; then
     if [[ -f "$FIXTURE_PATH" ]]; then
       echo "==> Fixture found — generating from verified Perplexity fixture ..."
-      python generate_market_day_break.py --date "$DATE_STR" --md-only
+      python generate_market_day_break.py --date "$DATE_STR" --md-only $DIGEST_FLAG
     else
       echo "==> No fixture found — fetching live data ..."
-      python generate_market_day_break.py --date "$DATE_STR" --live --md-only
+      python generate_market_day_break.py --date "$DATE_STR" --live --md-only $DIGEST_FLAG
     fi
   else
     echo "==> Using existing newsletter for $DATE_STR (skipping regeneration)"
