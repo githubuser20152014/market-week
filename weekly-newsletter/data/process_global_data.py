@@ -2,6 +2,9 @@
 
 import json
 import os
+import re
+from datetime import datetime, timedelta
+from pathlib import Path
 
 
 # ── Weekly % computation ──────────────────────────────────────────────────────
@@ -160,21 +163,21 @@ def compute_macro_regime(us_indices, fixed_income, vix):
     spx = next((i for i in us_indices if "S&P" in i["name"]), None)
     spx_pct = (spx["weekly_pct"] or 0) if spx else 0
     if spx_pct >= 1:
-        growth = {"signal": "green",  "note": f"S&P 500 +{spx_pct:.1f}% — risk-on expansion"}
+        growth = {"signal": "green",  "note": f"S&P 500 +{spx_pct:.1f}% - risk-on expansion"}
     elif spx_pct <= -1:
-        growth = {"signal": "red",    "note": f"S&P 500 {spx_pct:.1f}% — contraction signal"}
+        growth = {"signal": "red",    "note": f"S&P 500 {spx_pct:.1f}% - contraction signal"}
     else:
-        growth = {"signal": "yellow", "note": f"S&P 500 {spx_pct:+.1f}% — growth neutral"}
+        growth = {"signal": "yellow", "note": f"S&P 500 {spx_pct:+.1f}% - growth neutral"}
 
     # Rate direction: 10Y Treasury bps change
     tnx = next((i for i in fixed_income if "10Y" in i["name"]), None)
     bps = (tnx.get("yield_change_bps") or 0) if tnx else 0
     if bps >= 5:
-        rate_dir = {"signal": "red",    "note": f"10Y +{bps:.0f} bps — tightening pressure"}
+        rate_dir = {"signal": "red",    "note": f"10Y +{bps:.0f} bps - tightening pressure"}
     elif bps <= -5:
-        rate_dir = {"signal": "green",  "note": f"10Y {bps:.0f} bps — easing signal"}
+        rate_dir = {"signal": "green",  "note": f"10Y {bps:.0f} bps - easing signal"}
     else:
-        rate_dir = {"signal": "yellow", "note": f"10Y {bps:+.0f} bps — rates stable"}
+        rate_dir = {"signal": "yellow", "note": f"10Y {bps:+.0f} bps - rates stable"}
 
     # Inflation proxy: rates rising fast = inflation concern
     if bps >= 10:
@@ -187,11 +190,11 @@ def compute_macro_regime(us_indices, fixed_income, vix):
     # Risk appetite: VIX level
     vix_close = (vix["close"] or 20) if vix else 20
     if vix_close < 15:
-        risk = {"signal": "green",  "note": f"VIX {vix_close:.1f} — low fear, risk-on"}
+        risk = {"signal": "green",  "note": f"VIX {vix_close:.1f} - low fear, risk-on"}
     elif vix_close > 25:
-        risk = {"signal": "red",    "note": f"VIX {vix_close:.1f} — elevated fear, risk-off"}
+        risk = {"signal": "red",    "note": f"VIX {vix_close:.1f} - elevated fear, risk-off"}
     else:
-        risk = {"signal": "yellow", "note": f"VIX {vix_close:.1f} — moderate uncertainty"}
+        risk = {"signal": "yellow", "note": f"VIX {vix_close:.1f} - moderate uncertainty"}
 
     return {
         "growth":          growth,
@@ -201,50 +204,117 @@ def compute_macro_regime(us_indices, fixed_income, vix):
     }
 
 
+# ── News digest context ───────────────────────────────────────────────────────
+
+_DIGEST_SECTIONS = ["Markets & Macro", "Global Events", "Major Events"]
+
+
+def load_digest_context(data_date: str, digest_dir) -> str:
+    """Extract causal-context sections from daily digests for the week ending data_date.
+
+    Pulls only 'Markets & Macro', 'Global Events', and 'Major Events' from each
+    Mon-Fri digest file. Returns empty string if digest_dir is None or files are absent.
+    """
+    if not digest_dir:
+        return ""
+
+    end = datetime.strptime(data_date, "%Y-%m-%d")
+    trading_days = []
+    for i in range(6, -1, -1):
+        d = end - timedelta(days=i)
+        if d.weekday() < 5:
+            trading_days.append(d.strftime("%Y-%m-%d"))
+    trading_days = trading_days[-5:]
+
+    chunks = []
+    for date_str in trading_days:
+        path = Path(digest_dir) / f"{date_str}-digest.md"
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for section in _DIGEST_SECTIONS:
+            match = re.search(
+                rf"(?:#+\s+[^\n]*{re.escape(section)}[^\n]*\n)(.*?)(?=\n#+\s|\Z)",
+                text,
+                re.DOTALL | re.IGNORECASE,
+            )
+            if match:
+                chunks.append(f"### {date_str} - {section}\n{match.group(1).strip()}")
+
+    return "\n\n".join(chunks)
+
+
 # ── Claude API narrative ───────────────────────────────────────────────────────
 
 _GLOBAL_SYSTEM_PROMPT = """\
-You are the editor of Framework Foundry Weekly — Global Investor Edition, a premium \
+You are the editor of Framework Foundry Weekly - Global Investor Edition, a premium \
 weekly newsletter for serious ETF investors managing diversified global portfolios. \
 Your voice is authoritative but accessible: sharp analysis, no jargon for jargon's sake, \
 and always focused on what it means for a patient, macro-aware investor.
 
-You will receive structured JSON market data and must return a JSON object with exactly \
-these 8 keys:
+Never use em dashes (—). Use " - " (space-dash-space) instead.
 
-- big_theme_title: A punchy 6–10 word headline capturing the week's dominant macro theme.
-- big_theme_body: 2–3 paragraphs. What was the biggest macro story? Why did it happen? \
-  What does it tell us about the regime?
+If the input contains a non-empty "news_context" field, it holds excerpts from daily news \
+digests (Markets & Macro, Global Events, Major Events sections) covering the same week as \
+the market data. You MUST anchor causal explanations to specific events from news_context \
+rather than inferring causality from price correlations alone. Name the geopolitical event, \
+policy decision, or macro catalyst that actually drove the move. If news_context is empty \
+or absent, construct the best narrative you can from market data, but note that causal \
+context was limited.
+
+You will receive structured JSON market data and must return a JSON object with exactly \
+these 13 keys:
+
+- big_theme_title: A punchy 6-10 word headline capturing the week's dominant macro theme.
+- big_theme_body: 2-3 paragraphs. What was the biggest macro story? Why did it happen? \
+  What does it tell us about the regime? Use **bold** for key facts and counterintuitive insights.
+- equity_subtitle: 5-8 word punchy subtitle for the equity section (e.g. "Europe Leads While US Consolidates").
 - equity_narrative: 2 paragraphs. Compare US, European, and Asia-Pacific markets. \
-  What diverged, what converged, and what does that signal?
-- fx_narrative: 1–2 paragraphs. What moved in currencies and why? What does USD strength/\
-  weakness mean for global investors?
-- commodities_narrative: 1–2 paragraphs. Key moves in energy, metals. Any regime signals?
-- events_commentary: 1–2 paragraphs. Interpret the week's economic data releases. \
+  What diverged, what converged, and what does that signal? Use **bold** for key data points.
+- fx_subtitle: 5-8 word punchy subtitle for the currency section (e.g. "Dollar Slips, EM Gets Relief").
+- fx_narrative: 1-2 paragraphs. What moved in currencies and why? What does USD strength/\
+  weakness mean for global investors? Use **bold** for key moves.
+- commodities_subtitle: 5-8 word punchy subtitle for the commodities section (e.g. "Oil Breaks, Gold Holds Its Ground").
+- commodities_narrative: 1-2 paragraphs. Key moves in energy, metals. Any regime signals? \
+  Use **bold** for the most important move.
+- events_commentary: 1-2 paragraphs. Interpret the week's economic data releases. \
   Any surprises vs. expectations?
 - next_week_commentary: 1 paragraph. What events next week matter most and why?
-- positioning: 3–5 bullet points (plain text, one per line starting with "- "). \
+- one_trade_ticker: The single best ETF ticker for the week's highest-conviction trade (e.g. "FEZ").
+- one_trade_direction: "Long" or "Short".
+- one_trade_body: 2-3 paragraphs making the case for the trade, followed by two lines: \
+  "**Confirms:** [specific price/data trigger that validates the trade]" and \
+  "**Risk:** [specific scenario that invalidates it]". Use **bold** for emphasis. \
+  Do not repeat the ticker or direction in the body - that appears in the heading.
+- positioning: 3-5 bullet points (plain text, one per line starting with "- "). \
+  Each bullet: **bold ETF ticker(s)** followed by the rationale. \
   Concrete, actionable ETF-level positioning suggestions based on the week's signals.
 
-Return ONLY valid JSON — no markdown fences, no extra keys, no commentary outside the JSON.
+Return ONLY valid JSON - no markdown fences, no extra keys, no commentary outside the JSON.
 """
 
 
-def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_regime):
+def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_regime, digest_context=""):
     """Call Claude API to generate narrative sections.
 
     Returns:
         dict with 8 narrative keys (falls back to placeholder strings on error).
     """
     _FALLBACK = {
-        "big_theme_title":     "Markets Navigating Macro Crosscurrents",
-        "big_theme_body":      "Global markets moved cautiously this week as investors weighed mixed signals from major economies.",
-        "equity_narrative":    "Equity markets showed regional divergence across US, Europe, and Asia-Pacific.",
-        "fx_narrative":        "Currency markets reflected shifting rate expectations and risk sentiment.",
+        "big_theme_title":       "Markets Navigating Macro Crosscurrents",
+        "big_theme_body":        "Global markets moved cautiously this week as investors weighed mixed signals from major economies.",
+        "equity_subtitle":       "Regional Divergence Across US, Europe, and Asia-Pacific",
+        "equity_narrative":      "Equity markets showed regional divergence across US, Europe, and Asia-Pacific.",
+        "fx_subtitle":           "Dollar Steady as Rate Expectations Shift",
+        "fx_narrative":          "Currency markets reflected shifting rate expectations and risk sentiment.",
+        "commodities_subtitle":  "Energy and Metals Respond to Global Demand Signals",
         "commodities_narrative": "Commodity prices responded to global demand signals and USD movements.",
-        "events_commentary":   "Economic data releases were broadly in line with expectations.",
-        "next_week_commentary": "Key data releases next week will provide further clarity on the macro outlook.",
-        "positioning":         "- Maintain diversified global ETF exposure\n- Monitor rate sensitive sectors\n- Watch USD for EM signals",
+        "events_commentary":     "Economic data releases were broadly in line with expectations.",
+        "next_week_commentary":  "Key data releases next week will provide further clarity on the macro outlook.",
+        "one_trade_ticker":      "EFA",
+        "one_trade_direction":   "Long",
+        "one_trade_body":        "International developed markets offer diversification away from US-centric risk.\n\n**Confirms:** EFA holds above prior week's close with dollar weakness continuing.\n**Risk:** Dollar reverses sharply higher on strong US data, compressing international returns.",
+        "positioning":           "- Maintain diversified global ETF exposure\n- Monitor rate sensitive sectors\n- Watch USD for EM signals",
     }
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -263,14 +333,15 @@ def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_
         "fx":             fx_data,
         "commodities":    commodity_data,
         "econ_events":    econ,
+        "news_context":   digest_context,
     }
 
     try:
         import anthropic
         client = anthropic.Anthropic(api_key=api_key)
         response = client.messages.create(
-            model="claude-opus-4-6",
-            max_tokens=2048,
+            model="claude-sonnet-4-6",
+            max_tokens=4096,
             system=_GLOBAL_SYSTEM_PROMPT,
             messages=[
                 {
@@ -280,11 +351,9 @@ def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_
             ],
         )
         raw_text = response.content[0].text.strip()
-        # Strip potential markdown fences
-        if raw_text.startswith("```"):
-            raw_text = raw_text.split("```")[1]
-            if raw_text.startswith("json"):
-                raw_text = raw_text[4:]
+        # Strip markdown fences if present
+        raw_text = re.sub(r'^```(?:json)?\s*', '', raw_text)
+        raw_text = re.sub(r'\s*```$', '', raw_text).strip()
         result = json.loads(raw_text)
         # Ensure all 8 keys present
         for k, v in _FALLBACK.items():
@@ -298,7 +367,8 @@ def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_
 # ── Full context assembly ─────────────────────────────────────────────────────
 
 def build_global_template_context(
-    equity_data, fx_data, commodity_data, econ, date_str
+    equity_data, fx_data, commodity_data, econ, date_str,
+    digest_dir=None, data_date=None,
 ):
     """Assemble the full context dict for Jinja2 / HTML rendering.
 
@@ -318,8 +388,12 @@ def build_global_template_context(
         equity_data["vix"],
     )
 
+    digest_context = load_digest_context(data_date or date_str, digest_dir)
+    if digest_context:
+        print(f"Digest context loaded ({len(digest_context)} chars from {data_date or date_str} week).")
+
     narrative = generate_global_narrative(
-        equity_data, fx_data, commodity_data, econ, macro_regime
+        equity_data, fx_data, commodity_data, econ, macro_regime, digest_context
     )
 
     # Flatten all equities for the data appendix
@@ -337,11 +411,17 @@ def build_global_template_context(
         # Narrative sections (from LLM)
         "big_theme_title":        narrative["big_theme_title"],
         "big_theme_body":         narrative["big_theme_body"],
+        "equity_subtitle":        narrative["equity_subtitle"],
         "equity_narrative":       narrative["equity_narrative"],
+        "fx_subtitle":            narrative["fx_subtitle"],
         "fx_narrative":           narrative["fx_narrative"],
+        "commodities_subtitle":   narrative["commodities_subtitle"],
         "commodities_narrative":  narrative["commodities_narrative"],
         "events_commentary":      narrative["events_commentary"],
         "next_week_commentary":   narrative["next_week_commentary"],
+        "one_trade_ticker":       narrative["one_trade_ticker"],
+        "one_trade_direction":    narrative["one_trade_direction"],
+        "one_trade_body":         narrative["one_trade_body"],
         "positioning":            narrative["positioning"],
         # Market data for appendix tables
         "us_indices":    equity_data["us_indices"],

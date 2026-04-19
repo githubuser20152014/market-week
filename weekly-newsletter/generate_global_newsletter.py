@@ -50,7 +50,12 @@ def main():
     parser.add_argument(
         "--date",
         default=date.today().isoformat(),
-        help="Newsletter date (YYYY-MM-DD). Default: today.",
+        help="Data/fixture date (YYYY-MM-DD). Default: today.",
+    )
+    parser.add_argument(
+        "--pub-date",
+        default=None,
+        help="Publication display date (YYYY-MM-DD). Overrides --date for header and filename.",
     )
     parser.add_argument(
         "--preview",
@@ -72,10 +77,16 @@ def main():
         action="store_true",
         help="Also generate a PDF version of the newsletter.",
     )
+    parser.add_argument(
+        "--digest-dir",
+        default=os.environ.get("DIGEST_DIR"),
+        help="Path to news-digest directory for causal context (ContentRepo/07-Reading/news-digest). Also set via DIGEST_DIR env var.",
+    )
     args = parser.parse_args()
 
     use_mock = not args.live
     date_str = args.date
+    pub_date_str = args.pub_date if args.pub_date else date_str
 
     # ── Fetch ──────────────────────────────────────────────────────────────────
     print(f"Fetching global equity data ({date_str}) …")
@@ -110,7 +121,9 @@ def main():
 
     print("Generating narrative (Claude API) …")
     context = build_global_template_context(
-        equity_data, fx_data, commodity_data, econ, date_str
+        equity_data, fx_data, commodity_data, econ, pub_date_str,
+        digest_dir=args.digest_dir,
+        data_date=date_str,
     )
 
     # ── Chart ──────────────────────────────────────────────────────────────────
@@ -123,7 +136,7 @@ def main():
         if info.get("region") == "US" and "VIX" not in name
     }
     chart_path = generate_price_chart(
-        chart_raw, date_str, OUTPUT_DIR, prefix="global_chart"
+        chart_raw, pub_date_str, OUTPUT_DIR, prefix="global_chart"
     )
     context["chart_path"] = chart_path.name
 
@@ -135,19 +148,18 @@ def main():
         print(newsletter)
         print(f"\nChart saved to {chart_path}")
     else:
-        out_path = OUTPUT_DIR / f"global_newsletter_{date_str}.md"
+        out_path = OUTPUT_DIR / f"global_newsletter_{pub_date_str}.md"
         out_path.write_text(newsletter, encoding="utf-8")
         print(f"Newsletter saved to {out_path}")
         print(f"Chart saved to {chart_path}")
 
     # ── PDF ────────────────────────────────────────────────────────────────────
     if args.pdf:
-        # Build a minimal context compatible with generate_pdf (which expects 'indices')
         pdf_ctx = dict(context)
         pdf_ctx.setdefault("indices", equity_data.get("us_indices", []))
         pdf_path = generate_pdf(
-            pdf_ctx, chart_path, OUTPUT_DIR, date_str,
-            filename=f"global_newsletter_{date_str}.pdf",
+            pdf_ctx, chart_path, OUTPUT_DIR, pub_date_str,
+            filename=f"global_newsletter_{pub_date_str}.pdf",
         )
         print(f"PDF saved to {pdf_path}")
 
