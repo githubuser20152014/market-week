@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Framework Foundry — The Morning Brief · 2026-04-20</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --navy:      #0f1f3d;
+    --accent:    #4a7fb5;
+    --accent-lt: #7aabda;
+    --white:     #ffffff;
+    --off-white: #f5f4f0;
+    --text:      #1a1a2e;
+    --border:    #ddd8cc;
+    --muted:     #6b7280;
+    --green:     #2a7d4f;
+    --red:       #b91c1c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #dde3ea;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    padding: 32px 16px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px 24px;
+    gap: 24px;
+  }
+
+  .logo-icon { flex-shrink: 0; width: 64px; height: 64px; }
+  .logo-text { flex: 1; }
+
+  .logo-name-framework {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+  }
+
+  .logo-name-foundry {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    color: var(--accent);
+    display: block;
+    margin-top: 5px;
+    line-height: 1;
+  }
+
+  .logo-rule {
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 8px 0 6px;
+  }
+
+  .logo-tagline {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8.5px;
+    font-weight: 300;
+    letter-spacing: 3.5px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+
+  .header-meta { text-align: right; flex-shrink: 0; }
+
+  .header-meta .issue-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .header-meta .issue-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--white);
+    display: block;
+    margin-top: 3px;
+    line-height: 1.1;
+  }
+
+  .header-meta .issue-week {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    display: block;
+    margin-top: 4px;
+  }
+
+  .header-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
+  }
+
+  /* REGION BANNER */
+  .region-banner {
+    background: var(--accent);
+    padding: 7px 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .region-banner span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.9);
+    text-transform: uppercase;
+  }
+
+  .region-dots { display: flex; gap: 6px; margin-left: auto; }
+  .region-dot { font-size: 14px; line-height: 1; }
+
+  /* CONTENT */
+  .content { padding: 36px 40px; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+
+  .section-block { margin-bottom: 36px; }
+
+  .brief-text {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #2c2c3e;
+    font-weight: 300;
+  }
+
+  .brief-text + .brief-text { margin-top: 12px; }
+
+  .plain-list {
+    margin: 8px 0 8px 20px;
+    padding: 0;
+  }
+  .plain-list li {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #2c2c3e;
+    font-weight: 300;
+    margin-bottom: 6px;
+  }
+
+  /* INDEX CARDS */
+  .index-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .index-card {
+    border-top: 3px solid var(--accent);
+    padding: 14px;
+    background: var(--off-white);
+  }
+
+  .index-card h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .index-card .idx-row {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .pct-pos { color: var(--green); font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; }
+  .pct-neg { color: var(--red);   font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; }
+
+  /* MARKET SNAPSHOT TABLE */
+  .snapshot-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+  }
+
+  .snapshot-table thead tr { background: var(--navy); color: var(--white); }
+  .snapshot-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  .snapshot-table tbody tr { border-bottom: 1px solid var(--border); }
+  .snapshot-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .snapshot-table tbody td { padding: 10px 14px; }
+
+  .pct { font-weight: 600; }
+  .pct.positive { color: var(--green); }
+  .pct.negative { color: var(--red); }
+
+  .snapshot-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .snapshot-footer .best  { color: var(--green); }
+  .snapshot-footer .worst { color: var(--red); }
+
+  /* ECONOMIC EVENTS */
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+  }
+
+  .events-table thead tr { background: var(--navy); color: var(--white); }
+  .events-table thead th {
+    padding: 9px 12px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .events-table tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .events-table tbody tr:nth-child(even) { background: var(--off-white); }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .tag.above  { background: #d4edda; color: #155724; }
+  .tag.below  { background: #f8d7da; color: #721c24; }
+  .tag.inline { background: #e8e8e8; color: #555; }
+
+  /* ANALYSIS CARDS */
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .analysis-card {
+    border-left: 3px solid var(--accent);
+    padding: 12px 14px;
+    background: var(--off-white);
+  }
+
+  .analysis-card h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .analysis-card p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #3a3a4a;
+    font-weight: 300;
+  }
+
+  /* UPCOMING TABLE */
+  .upcoming-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+  }
+
+  .upcoming-table thead tr { background: var(--navy); color: var(--white); }
+  .upcoming-table thead th {
+    padding: 9px 12px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .upcoming-table tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .upcoming-table tbody tr:nth-child(even) { background: var(--off-white); }
+
+  .imp-high   { color: var(--red);   font-weight: 700; font-size: 11px; }
+  .imp-medium { color: #d97706;      font-weight: 600; font-size: 11px; }
+  .imp-low    { color: var(--muted); font-weight: 400; font-size: 11px; }
+
+  /* POSITIONING TIPS */
+  .tips-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+  }
+
+  .tips-table thead tr { background: var(--navy); color: var(--white); }
+  .tips-table thead th {
+    padding: 9px 14px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .tips-table tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.55;
+    vertical-align: top;
+  }
+
+  .tips-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .tips-table .signal-col { color: var(--navy); font-weight: 500; width: 45%; }
+  .tips-table .action-col { color: #2c2c3e; font-weight: 300; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-disclaimer {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8.5px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.5px;
+    text-align: right;
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  /* SUBSCRIBE */
+  .subscribe-section {
+    background: var(--navy);
+    padding: 36px 40px;
+    text-align: center;
+  }
+
+  .subscribe-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .subscribe-section p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+  .subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .subscribe-form input[type="email"] {
+    flex: 1;
+    padding: 10px 16px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    outline: none;
+  }
+
+  .subscribe-form input[type="email"]::placeholder { color: rgba(255,255,255,0.35); }
+
+  .subscribe-form button {
+    padding: 10px 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .subscribe-form button:hover { background: var(--accent-lt); }
+
+  @media (max-width: 600px) {
+    .subscribe-section { padding: 28px 20px; }
+    .subscribe-form { flex-direction: column; }
+    .subscribe-form input[type="email"] {
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: none;
+      border-radius: 2px 2px 0 0;
+    }
+    .subscribe-form button { border-radius: 0 0 2px 2px; }
+  }
+
+  /* SHARE BAR */
+  .share-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-top: 1px solid var(--border);
+    background: var(--off-white);
+  }
+
+  .share-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .share-buttons { display: flex; gap: 10px; }
+
+  .share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .share-btn:hover { background: var(--accent); }
+  .share-btn svg { width: 16px; height: 16px; fill: white; }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 20px 20px 16px; flex-wrap: wrap; }
+    .content { padding: 24px 20px; }
+    .index-grid { grid-template-columns: 1fr; }
+    .analysis-grid { grid-template-columns: 1fr; }
+    .footer { padding: 14px 20px; flex-direction: column; gap: 10px; }
+    .share-bar { padding: 16px 20px; }
+  }
+
+  /* DAYBREAK-SPECIFIC STYLES */
+
+  body { font-family: 'Source Serif 4', Georgia, serif; }
+  .plain-text, .brief-text { font-weight: 400; line-height: 1.85; font-size: 15px; color: #2a2a3a; }
+
+
+  /* Session badge for partial (early) European markets */
+  .session-partial {
+    display: inline-block;
+    background: #c9a84c22;
+    color: #c9a84c;
+    border: 1px solid #c9a84c55;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .session-closed {
+    display: inline-block;
+    background: rgba(107,114,128,0.12);
+    color: var(--muted);
+    border: 1px solid rgba(107,114,128,0.3);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  /* Time column in today's watch list */
+  .time-col {
+    font-family: 'Raleway', sans-serif;
+    color: var(--muted);
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  /* Futures table row tinting */
+  .futures-row-pos { background: rgba(42,125,79,0.07) !important; }
+  .futures-row-neg { background: rgba(185,28,28,0.07) !important; }
+
+  /* Paragraph spacing inside section blocks */
+  .plain-text + .plain-text { margin-top: 16px; }
+
+  /* The One Trade card */
+  .one-trade-card {
+    border-left: 3px solid var(--accent);
+    background: #f7f4ef;
+    padding: 16px 20px;
+    margin: 0;
+  }
+  .one-trade-ticker {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .one-trade-ticker a { color: var(--accent); text-decoration: none; }
+  .one-trade-ticker a:hover { text-decoration: underline; }
+  .one-trade-thesis {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    margin: 8px 0 12px;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .one-trade-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  .one-trade-meta strong { color: var(--text); font-weight: 600; }
+
+  /* Sub-section labels within a section */
+  .sub-section-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 16px 0 8px;
+  }
+
+  .sub-section-label:first-child { margin-top: 0; }
+
+  /* News table */
+  .news-table td.idx-col    { width: 2rem; color: #888; text-align: center; }
+  .news-table td.source-col { width: 7rem; color: #555; font-size: 0.85rem; }
+  .news-table a             { color: #1a5276; text-decoration: none; }
+  .news-table a:hover       { text-decoration: underline; }
+
+      .header-home-link {
+      position: absolute; inset: 0; z-index: 1;
+      display: block; cursor: pointer;
+    }
+    .header-inner, .header-meta, .header-accent { position: relative; z-index: 2; }
+      .breadcrumb {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px; padding-top: 4px;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { margin: 0 8px; color: var(--border); }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header"><a href="../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
+    <div class="header-inner">
+      <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+        <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Daily Edition · Market intelligence at the open</span>
+      </div>
+      <div class="header-meta">
+        <span class="issue-label">The Morning Brief</span>
+        <span class="issue-date">Apr 20, 2026</span>
+        <span class="issue-week">Daily Edition</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <!-- REGION BANNER -->
+  <div class="region-banner">
+    <span>Coverage: US Close · Asia-Pacific · Europe · FX · Macro</span>
+    <div class="region-dots">
+      <span class="region-dot">🌐</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#markets">Markets</a>
+      <span class="sep">/</span>
+      <a href="../../daily/index.html">Day Break</a>
+      <span class="sep">/</span>
+      <span>Apr 20, 2026</span>
+    </nav>
+
+    <!-- THE BRIEF -->
+    <div class="section-block">
+      <div class="section-title">The Brief</div>
+      <p class="plain-text">The dominant theme today is the "Hormuz Deadlock" repricing across every asset class simultaneously. Friday's ceasefire rally is fully unwinding: <strong>WTI crude is surging +6% to ~$89</strong> and Brent is approaching $96.50 as Iran reversed its decision to reopen the Strait following the USS Spruance's seizure of the *Touska*. But unlike a clean risk-off or supply-shock trade, the cross-asset picture is messy - <strong>gold is pulling back</strong> from Friday's record close ($4,857 to $4,829), the <strong>10-year yield is climbing to 4.27%</strong> as markets price persistent inflation, and <strong>S&P 500 futures are off 0.58% to 7,085</strong>. That combination - oil up, bonds selling off, gold fading, equities weak - is the textbook stagflation signal: energy costs rising, growth slowing, and the Fed boxed in with Kevin Warsh's confirmation hearing tomorrow.</p>
+<p class="plain-text">Friday's session was a broad risk-on sweep: <strong>Russell 2000 led at +2.1%</strong>, Dow closed at <strong>49,447</strong>, Nasdaq added 1.5%, and the S&P 500 settled at <strong>7,126</strong> - all riding optimism from what appeared to be a diplomatic thaw. Gold closed at a record <strong>$4,857</strong> (+1.5%), the 10-year yield fell 6.3 bps to <strong>4.246%</strong>, and WTI crude cratered <strong>11.4% to $83.85</strong> as traders priced demand destruction from a Hormuz reopening.</p>
+<p class="plain-text">The weekend destroyed that thesis entirely. The *Touska* seizure ended any de-escalation story: Iran signaled withdrawal from the Islamabad peace talks and allegedly opened fire on Indian-flagged vessels in the Strait. Markets are now in a full 180 - crude bouncing back toward where it was before Friday's collapse, yields rising on the inflation-from-energy narrative, and gold giving back some of Friday's gains as profit-taking hits the extended long. The signal beneath the noise: <strong>bonds and gold are both selling off while oil surges</strong> - that's not fear, it's stagflation pricing. Investors aren't fleeing to safety; they're pricing a world where the Fed can't cut and energy stays expensive.</p>
+<p class="plain-text">Beyond Iran, two weekend events add to the regime-change feel: <strong>Hungary's Tisza Party ousted Viktor Orbán's Fidesz</strong> in a landslide, with new leader Péter Magyar pledging to lift Hungary's EU aid veto on Ukraine - a significant European geopolitical realignment. And <strong>Rory McIlroy won the 2026 Masters</strong>, providing the one piece of uncomplicated good news from the weekend.</p>
+
+    </div>
+
+    <!-- WHAT IT MEANS FOR YOU -->
+    <div class="section-block">
+      <div class="section-title">What it means for you</div>
+      <p class="plain-text">For ETF investors, the playbook has shifted from "geopolitical risk-off" to "stagflation positioning." The key inputs: oil up +6%, 10Y yield rising to 4.27%, gold pulling back, equities soft. That's not a war-panic trade - it's an inflation-persistence trade.</p>
+<p class="plain-text"><strong><a href="https://finance.yahoo.com/quote/GLD" target="_blank">GLD</a></strong> is no longer the slam-dunk it looked like Friday. Gold is down from its close as profit-taking hits the extended position, and rising nominal yields are a headwind. It remains a long-term hedge but it's not the momentum trade this morning. <strong><a href="https://finance.yahoo.com/quote/XLE" target="_blank">XLE</a></strong> is the reversal story: energy stocks sold off hard Friday on the crude collapse and haven't repriced the +6% crude bounce yet - with WTI holding above $87, XLE is a buy-the-laggard setup. <strong><a href="https://finance.yahoo.com/quote/ITA" target="_blank">ITA</a></strong> benefits from geopolitical escalation (Mitsubishi warship deal, UK's 120,000-drone Ukraine package, Hungary's NATO realignment) and doesn't move with oil. <strong><a href="https://finance.yahoo.com/quote/TLT" target="_blank">TLT</a></strong> is in the worst position: yields rising on inflation fears plus Warsh's "higher-for-longer" reputation means duration is the asset most at risk today.</p>
+<p class="plain-text">Going into today, <strong>S&P futures are down ~0.58% to 7,085</strong>, pulling back from Friday's historic close above 7,000. The <strong>9:15 AM ET Industrial Production</strong> print is today's scheduled data point but is second-tier. The real swing factors are: (1) whether Tehran formally withdraws from Islamabad talks, and (2) what tone Kevin Warsh sets ahead of tomorrow's confirmation hearing. Technically, <strong>7,050 on the S&P</strong> is the first meaningful support after Friday's gap-up; a break there opens the door to a retest of 6,950.</p>
+
+    </div>
+
+    <div class="section-block">
+  <div class="section-title">The One Trade</div>
+  <div class="one-trade-card">
+    <div class="one-trade-ticker"><a href="https://finance.yahoo.com/quote/XLE" target="_blank">XLE</a> &mdash; Long</div>
+    <div class="one-trade-thesis">Energy stocks got crushed Friday on WTI's 11.4% single-day collapse, but crude is bouncing +6% this morning as supply-shock logic reasserts post-Touska. XLE hasn't repriced the crude recovery yet - that lag is the trade.</div>
+    <div class="one-trade-meta"><strong>Confirms:</strong> WTI holds above $87 through the first 30 minutes and XLE opens flat-to-green while broader indices stay weak - sector strength into a soft market is the confirmation that energy is catching up, not gap-filling.</div>
+    <div class="one-trade-meta"><strong>Risk:</strong> A credible diplomatic signal from Tehran re-engaging Islamabad talks would collapse the oil bid and take XLE with it. Also watch the 9:15 AM Industrial Production print - a weak number would add demand-destruction fuel to the bearish crude case.</div>
+  </div>
+</div>
+
+
+    <div class="section-block">
+  <div class="section-title">Market-Moving Headlines</div>
+  <table class="snapshot-table news-table">
+    <thead><tr><th>#</th><th>Headline</th><th>Source</th></tr></thead>
+    <tbody>
+<tr><td class="idx-col">1</td><td><a href="https://www.cnbc.com/2026/04/20/us-iran-war-middle-east-conflict-peace-deal-strait-hormuz-shipping-ceasefire-tensions.html" target="_blank" title="A U.S. seizure of an Iranian cargo ship and reports of vessels coming under fire in the Gulf have pushed a fragile ceasefire with Tehran to the brink.">'Resumption of hostilities': seized ship, vessel attacks push U.S.-Iran ceasefire toward brink</a></td><td class="source-col">CNBC</td></tr>
+<tr><td class="idx-col">2</td><td><a href="https://www.bloomberg.com" target="_blank" title="Global energy benchmarks jumped 6% with Brent crude trading near $96.49 following reports that Iran reversed its decision to reopen the Strait of Hormuz after the U.S. Navy boarded">Brent Crude Surges Toward $100 as Iran Re-Closes Strait of Hormuz</a></td><td class="source-col">Bloomberg</td></tr>
+<tr><td class="idx-col">3</td><td><a href="https://www.ft.com" target="_blank" title="Bond yields rose sharply as markets priced in persistent inflation driven by $95+ oil, with investors closely watching tomorrow's confirmation hearing for Kevin Warsh as the next F">U.S. 10-Year Treasury Yield Climbs to 4.27% on "Higher-for-Longer" Bets</a></td><td class="source-col">FT</td></tr>
+<tr><td class="idx-col">4</td><td><a href="https://www.bbc.com" target="_blank" title="The Tisza Party has ended 16 years of rule by Viktor Orbán's Fidesz party. New leader Péter Magyar has pledged to remove Hungary's veto on EU aid to Ukraine, signaling a major EU r">Hungary Pivots West as Péter Magyar's Tisza Party Wins Landslide</a></td><td class="source-col">BBC</td></tr>
+<tr><td class="idx-col">5</td><td><a href="https://www.nikkei.com" target="_blank" title="The LDP has elected Takaichi as its leader, positioning her to take the premiership. The Nikkei 225 surged 4% on the news as investors anticipate aggressive fiscal spending and mar">Japan's Sanae Takaichi Set to Become First Female Prime Minister</a></td><td class="source-col">Nikkei</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+    <!-- POSITIONING NOTES -->
+    <div class="section-block">
+      <div class="section-title">Positioning Notes</div>
+      <table class="tips-table">
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>Suggested Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="signal-col">**<a href="https://finance.yahoo.com/quote/XLE" target="_blank">XLE</a> - Buy the laggard**</td>
+              <td class="action-col">WTI up +6% to ~$89 pre-market; energy stocks haven't caught up to the crude bounce from Friday's oversell. If WTI holds above $87 at the open, XLE is the highest-conviction catch-up trade today.</td>
+            </tr>
+            <tr>
+              <td class="signal-col">**<a href="https://finance.yahoo.com/quote/GLD" target="_blank">GLD</a> - Hold, don't add**</td>
+              <td class="action-col">Gold is off Friday's record close ($4,857 to $4,829) on profit-taking and rising nominal yields. Still a long-term stagflation hedge but not the momentum trade this morning. Add only on a dip toward $4,800 if the Iran situation escalates further.</td>
+            </tr>
+            <tr>
+              <td class="signal-col">**<a href="https://finance.yahoo.com/quote/ITA" target="_blank">ITA</a> - Accumulate on weakness**</td>
+              <td class="action-col">Mitsubishi warship deal, UK drone package, and Hungary's NATO realignment all point to structural global rearmament spending. ITA is geopolitical-escalation-positive and doesn't move with crude. A flat-to-green open while broad markets sell off is the signal.</td>
+            </tr>
+            <tr>
+              <td class="signal-col">**Trim broad index exposure (<a href="https://finance.yahoo.com/quote/SPY" target="_blank">SPY</a>, <a href="https://finance.yahoo.com/quote/QQQ" target="_blank">QQQ</a>)**</td>
+              <td class="action-col">Futures rolling over from Friday's historically elevated close. The ceasefire narrative is dead, Warsh hearing tomorrow, Hormuz still closed. Reduce beta, don't add it. Hold cash until 7,050 proves itself as support on <a href="https://finance.yahoo.com/quote/SPY" target="_blank">SPY</a>.</td>
+            </tr>
+            <tr>
+              <td class="signal-col">**<a href="https://finance.yahoo.com/quote/TLT" target="_blank">TLT</a> - Avoid**</td>
+              <td class="action-col">10Y yield climbing to 4.27% as markets price persistent energy-driven inflation. Warsh's "higher-for-longer" reputation caps any safe-haven bond bid. Duration is the worst place to be in a stagflation regime. Stay away until oil reverses.</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <!-- RAW DATA LINK -->
+  <div style="text-align:center;padding:12px 40px 0;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:1px;color:var(--muted);">
+    Want the raw numbers?
+    <a href="data/index.html" style="color:var(--accent);text-decoration:none;margin-left:4px;">View full market data &rarr;</a>
+  </div>
+
+  </div><!-- /content -->
+
+  <!-- SUBSCRIBE -->
+  <div class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Free daily market intelligence, every morning.</p>
+    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span class="share-label">Share this edition</span>
+    <div class="share-buttons">
+      <a class="share-btn twitter" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('The Morning Brief via Framework Foundry —  '+window.location.href);return true;"
+         title="Share on X / Twitter">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="share-btn linkedin" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href);return true;"
+         title="Share on LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a class="share-btn facebook" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href);return true;"
+         title="Share on Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.35); font-size:10px; letter-spacing:1px;">DAILY EDITION</span></div>
+    <div class="footer-disclaimer">
+      Disclaimer: For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
