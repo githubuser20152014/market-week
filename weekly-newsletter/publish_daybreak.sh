@@ -67,8 +67,10 @@ if [[ "$PUBLISH" == "--publish" ]]; then
   echo "==> Approved newsletter found for $DATE_STR — proceeding to publish."
 else
   # Generate-only mode: write the draft MD (calls Claude API once).
+  DEFAULT_DIGEST_DIR="$HOME/Documents/ContentRepo/07-Reading/news-digest"
+  DIGEST_DIR="${DIGEST_DIR:-$DEFAULT_DIGEST_DIR}"
   DIGEST_FLAG=""
-  if [[ -n "${DIGEST_DIR:-}" ]]; then
+  if [[ -n "${DIGEST_DIR:-}" && -d "$DIGEST_DIR" ]]; then
     DIGEST_FLAG="--digest-dir $DIGEST_DIR"
   fi
 
