@@ -1,0 +1,300 @@
+{
+  "meta": {
+    "date": "2026-04-20",
+    "generated_at": "2026-04-20T09:08:52.387412Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7041.2798,
+      "close": 7126.0601,
+      "daily_pct": 1.204,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 48578.7188,
+      "close": 49447.4297,
+      "daily_pct": 1.7883,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24102.6992,
+      "close": 24468.4805,
+      "daily_pct": 1.5176,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2719.6001,
+      "close": 2776.8999,
+      "daily_pct": 2.1069,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4785.3999,
+      "close": 4857.6001,
+      "daily_pct": 1.5088,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.309,
+      "close": 4.246,
+      "daily_pct": -1.4621,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -6.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.1,
+      "close": 98.303,
+      "daily_pct": 0.2069,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 94.69,
+      "close": 83.85,
+      "daily_pct": -11.4479,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 58899.49,
+      "prev_close": 58475.9,
+      "daily_pct": 0.7244,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26376.98,
+      "prev_close": 26160.33,
+      "daily_pct": 0.8282,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6255.2,
+      "prev_close": 6191.92,
+      "daily_pct": 1.022,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24353.55,
+      "prev_close": 24196.75,
+      "daily_pct": 0.648,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8946.3,
+      "prev_close": 8946.9,
+      "daily_pct": -0.0067,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "closed",
+      "close": 24702.24,
+      "prev_close": 24154.47,
+      "daily_pct": 2.2678,
+      "session_note": "Previous close"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "closed",
+      "close": 10667.6,
+      "prev_close": 10590.0,
+      "daily_pct": 0.7328,
+      "session_note": "Previous close"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "closed",
+      "close": 8425.13,
+      "prev_close": 8262.7,
+      "daily_pct": 1.9658,
+      "session_note": "Previous close"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "closed",
+      "close": 6057.71,
+      "prev_close": 5933.28,
+      "daily_pct": 2.0972,
+      "session_note": "Previous close"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1755,
+      "prev_close": 1.17827,
+      "daily_pct": -0.2351
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34869,
+      "prev_close": 1.35261,
+      "daily_pct": -0.2898
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.935,
+      "prev_close": 159.19501,
+      "daily_pct": -0.1633
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71464,
+      "prev_close": 0.7159,
+      "daily_pct": -0.1756
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.82016,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.2767,
+      "prev_close": 1.27681,
+      "daily_pct": -0.0089
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7085.0,
+      "prev_close": 7126.06,
+      "daily_pct": -0.58
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 26646.25,
+      "prev_close": 26646.25,
+      "daily_pct": -0.6682
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49282.0,
+      "prev_close": 49282.0,
+      "daily_pct": -0.7232
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4829.4,
+      "prev_close": 4857.6,
+      "daily_pct": -0.58
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.72,
+      "prev_close": 111.72,
+      "daily_pct": -0.25,
+      "yield_note": "10Y yield climbing to 4.27% on higher-for-longer bets"
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 89.0,
+      "prev_close": 83.85,
+      "daily_pct": 6.14
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "'Resumption of hostilities': seized ship, vessel attacks push U.S.-Iran ceasefire toward brink",
+      "source": "CNBC",
+      "published": "Mon, 20 Apr 2026 08:05:03 GMT",
+      "url": "https://www.cnbc.com/2026/04/20/us-iran-war-middle-east-conflict-peace-deal-strait-hormuz-shipping-ceasefire-tensions.html",
+      "summary": "A U.S. seizure of an Iranian cargo ship and reports of vessels coming under fire in the Gulf have pushed a fragile ceasefire with Tehran to the brink."
+    },
+    {
+      "headline": "Brent Crude Surges Toward $100 as Iran Re-Closes Strait of Hormuz",
+      "source": "Bloomberg",
+      "published": "Mon, 20 Apr 2026 08:36:30 GMT",
+      "url": "https://www.bloomberg.com",
+      "summary": "Global energy benchmarks jumped 6% with Brent crude trading near $96.49 following reports that Iran reversed its decision to reopen the Strait of Hormuz after the U.S. Navy boarded an Iranian cargo vessel."
+    },
+    {
+      "headline": "U.S. 10-Year Treasury Yield Climbs to 4.27% on \"Higher-for-Longer\" Bets",
+      "source": "FT",
+      "published": "Mon, 20 Apr 2026 08:00:00 GMT",
+      "url": "https://www.ft.com",
+      "summary": "Bond yields rose sharply as markets priced in persistent inflation driven by $95+ oil, with investors closely watching tomorrow's confirmation hearing for Kevin Warsh as the next Fed Chair."
+    },
+    {
+      "headline": "Hungary Pivots West as P\u00e9ter Magyar's Tisza Party Wins Landslide",
+      "source": "BBC",
+      "published": "Mon, 20 Apr 2026 07:00:00 GMT",
+      "url": "https://www.bbc.com",
+      "summary": "The Tisza Party has ended 16 years of rule by Viktor Orb\u00e1n's Fidesz party. New leader P\u00e9ter Magyar has pledged to remove Hungary's veto on EU aid to Ukraine, signaling a major EU realignment."
+    },
+    {
+      "headline": "Japan's Sanae Takaichi Set to Become First Female Prime Minister",
+      "source": "Nikkei",
+      "published": "Mon, 20 Apr 2026 06:00:00 GMT",
+      "url": "https://www.nikkei.com",
+      "summary": "The LDP has elected Takaichi as its leader, positioning her to take the premiership. The Nikkei 225 surged 4% on the news as investors anticipate aggressive fiscal spending and market-friendly reforms."
+    },
+    {
+      "headline": "Asia markets mostly rise as U.S.-Iran tensions escalate after ship seizure",
+      "source": "CNBC",
+      "published": "Mon, 20 Apr 2026 08:24:56 GMT",
+      "url": "https://www.cnbc.com/2026/04/20/asia-markets-set-to-open-higher-amid-renewed-iran-us-tensions-.html",
+      "summary": "Asia-Pacific markets were mostly higher Monday as a U.S. seizure of an Iranian vessel deepened tensions, keeping investors on edge."
+    },
+    {
+      "headline": "Here are things going right for stocks despite new Iran war setbacks",
+      "source": "CNBC",
+      "published": "Sun, 19 Apr 2026 21:36:49 GMT",
+      "url": "https://www.cnbc.com/2026/04/19/jim-cramer-here-are-things-going-right-for-stocks-despite-new-iran-war-setbacks.html",
+      "summary": "The big stock rally Friday had as much to do with bond yields going down as it did with oil plunging. The Mag 7 are also back."
+    },
+    {
+      "headline": "Software stock dogs have joined market rally. There's a classic investing lesson in the rebound",
+      "source": "CNBC",
+      "published": "Sun, 19 Apr 2026 18:38:11 GMT",
+      "url": "https://www.cnbc.com/2026/04/19/software-tech-stocks-market-rally-microsoft.html",
+      "summary": "In a 2026 market that had Microsoft down close to 20%, looking for opportunities to buy after big drawdowns is coming to more tech and software stocks."
+    }
+  ]
+}
