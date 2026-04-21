@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-04-21",
+    "generated_at": "2026-04-21T11:19:46.431938Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7126.0601,
+      "close": 7109.1401,
+      "daily_pct": -0.2374,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49447.4297,
+      "close": 49442.5586,
+      "daily_pct": -0.0099,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24468.4805,
+      "close": 24404.3906,
+      "daily_pct": -0.2619,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2776.8999,
+      "close": 2792.96,
+      "daily_pct": 0.5783,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4806.6001,
+      "close": 4799.1001,
+      "daily_pct": -0.156,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.246,
+      "close": 4.25,
+      "daily_pct": 0.0942,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.05,
+      "close": 98.269,
+      "daily_pct": 0.2233,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 89.61,
+      "close": 87.47,
+      "daily_pct": -2.3881,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59349.17,
+      "prev_close": 58824.89,
+      "daily_pct": 0.8913,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26487.48,
+      "prev_close": 26361.07,
+      "daily_pct": 0.4795,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6388.47,
+      "prev_close": 6219.09,
+      "daily_pct": 2.7236,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24576.6,
+      "prev_close": 24364.85,
+      "daily_pct": 0.8691,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8949.4,
+      "prev_close": 8953.3,
+      "daily_pct": -0.0436,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24583.57,
+      "prev_close": 24583.62,
+      "daily_pct": -0.0002,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10617.05,
+      "prev_close": 10617.05,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8351.33,
+      "prev_close": 8351.33,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6010.83,
+      "prev_close": 6010.83,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17647,
+      "prev_close": 1.17412,
+      "daily_pct": 0.2
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35105,
+      "prev_close": 1.34844,
+      "daily_pct": 0.1941
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.20399,
+      "prev_close": 159.161,
+      "daily_pct": 0.027
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71588,
+      "prev_close": 0.7135,
+      "daily_pct": 0.333
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.8164,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28205,
+      "prev_close": 1.27606,
+      "daily_pct": 0.4692
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7173.5,
+      "prev_close": 7173.5,
+      "daily_pct": 0.3567
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 26857.5,
+      "prev_close": 26857.5,
+      "daily_pct": 0.4066
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49925.0,
+      "prev_close": 49925.0,
+      "daily_pct": 0.5762
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4798.5,
+      "prev_close": 4798.5,
+      "daily_pct": -0.1685
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.5,
+      "prev_close": 111.5,
+      "daily_pct": -0.1399
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 87.36,
+      "prev_close": 87.36,
+      "daily_pct": -2.5109
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "-0.5%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Here's what to expect from Fed chair nominee Kevin Warsh's Senate hearing Tuesday",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 10:00:57 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/kevin-warshs-senate-hearing-what-to-expect.html",
+      "summary": "In a much-anticipated hearing before the Banking Committee, the former Fed governor will face questioning over a variety of subjects"
+    },
+    {
+      "headline": "UnitedHealth tops quarterly estimates, hikes profit outlook as insurer manages high medical costs",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 09:59:22 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/unitedhealth-group-unh-earnings-q1-2026.html",
+      "summary": "The nation's largest private insurer expects 2026 adjusted earnings of more than $18.25 per share, up from a previous outlook of greater than $17.75 per share."
+    },
+    {
+      "headline": "\u2018New cards on the battlefield\u2019: U.S., Iran ratchet up rhetoric with peace talks in limbo",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 11:16:56 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/new-cards-on-the-battlefield-us-iran-ratchet-up-rhetoric-with-peace-talks-in-limbo.html",
+      "summary": "American negotiators may be outmatched at the negotiating table by Iran's experienced diplomatic delegation, says analyst, ahead of potential high-stakes meeting."
+    },
+    {
+      "headline": "Tariff refunds begin on Monday. These retailers are due big paydays",
+      "source": "CNBC",
+      "published": "Mon, 20 Apr 2026 19:05:08 GMT",
+      "url": "https://www.cnbc.com/2026/04/20/tariff-refunds-begin-on-monday-these-retailers-are-due-big-paydays.html",
+      "summary": "U.S. importers, such as Walmart and Target, could be in line for billions in tariff refunds as the government launches its claims-filing portal on Monday."
+    },
+    {
+      "headline": "Oil falls as investors assess mixed messaging on Iran peace talks ahead of ceasefire deadline",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 10:00:48 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/oil-price-iran-war-strait-hormuz-tanker-ceasefire-peace-talks.html",
+      "summary": "West Texas Intermediate\u00a0and Brent had settled 7% and 5% higher on Monday."
+    },
+    {
+      "headline": "Tim Cook reactions: Sam Altman, Palmer Luckey, Warren Buffett react to Apple CEO move",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 10:32:37 GMT",
+      "url": "https://www.cnbc.com/2026/04/20/tim-cook-apple-reactions-ceo.html",
+      "summary": "Apple CEO Tim Cook's move to executive chair spurred commentary from tech leaders Sam Altman and Palmer Luckey, as well as Warren Buffett."
+    },
+    {
+      "headline": "Jim Cramer gives four reasons why the market keeps shrugging off the Iran war",
+      "source": "CNBC",
+      "published": "Mon, 20 Apr 2026 22:24:28 GMT",
+      "url": "https://www.cnbc.com/2026/04/20/jim-cramer-explains-why-the-market-keeps-shrugging-off-the-iran-war.html",
+      "summary": "CNBC's Jim Cramer explained why the stock market keeps shrugging off the Iran war."
+    },
+    {
+      "headline": "Hormuz disruptions hit China\u2019s Christmas capital \u2014 and holiday spending",
+      "source": "CNBC",
+      "published": "Mon, 20 Apr 2026 18:40:02 GMT",
+      "url": "https://www.cnbc.com/2026/04/20/hormuz-china-christmas-capital-holiday-spending.html",
+      "summary": "Manufacturers told CNBC that shoppers will likely have to pay higher prices to match rising costs of plastic and other materials."
+    }
+  ]
+}
