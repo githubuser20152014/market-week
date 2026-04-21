@@ -14,19 +14,28 @@ All three social formats must be opinionated and meaty — not data dumps. The O
 
 ## X Thread (4 tweets, ≤280 chars each)
 
-- **Tweet 1** — The anomaly/hook. First sentence(s) of `brief_body`. No data table. Provocative statement that makes people want to read on.
-- **Tweet 2** — "Here's my read:" + the macro driver paragraph (para 2 of plain_summary, NOT the data recap). Expresses a thesis.
-- **Tweet 3** — The One Trade: `$TICKER DIRECTION` (cashtag format). Thesis trimmed + Entry + Risk.
-- **Tweet 4** — "Read on Substack:" + Substack note URL (swapped in manually after publishing). Hashtags.
+No One Trade section. Commentary only — the trade lives on Substack.
+
+- **Tweet 1** — The anomaly/hook. Explain APAC moves, not just report them. Pre-market data (futures, key overnight index moves with reasons).
+- **Tweet 2** — "Here's my read:" + the day's catalyst framework (what's landing before noon and why it matters for oil/bonds/equities).
+- **Tweet 3** — Positioning rundown. Quick-fire bullets with $CASHTAGS: what to long, what to avoid, what to watch as the tell.
+- **Tweet 4** — "Full breakdown:" + `frameworkfoundrymkt.substack.com`. Hashtags (include #IranWar / #FedWatch as relevant).
+
+**Why:** User confirmed 2026-04-21 — The One Trade belongs on Substack only; X gets the macro read and positioning context.
 
 ## LinkedIn Post
 
-- Lead: "The One Trade: TICKER DIRECTION" + thesis
-- "Here's why:" + macro driver paragraph (para 2)
-- Investor implication paragraph (para 3)
-- Confirms / Risk
-- Best/Worst line
-- "Read on Substack →" + Substack note URL
+No One Trade section. Commentary only — the trade lives on Substack and X.
+
+Structure:
+- Lead: numbered catalyst framework (what's driving the tape today)
+- Yesterday's scorecard — dense data block (indices, commodities, yields)
+- Overnight/pre-market context — explain APAC moves, not just report them
+- Positioning rundown — quick-fire bullets (XLE, GLD, TLT, IWM etc.)
+- "Full breakdown →" + `frameworkfoundrymkt.substack.com`
+- Hashtags
+
+**Why:** User confirmed 2026-04-21 — The One Trade belongs on Substack/X; LinkedIn readers want the macro picture and positioning context, not a single trade card.
 
 ## Substack Note (HTML)
 
