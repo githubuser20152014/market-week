@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spain: The Visa Decision, Beckham Law, and the FEIE Trap — The American Expat Investor</title>
+  <meta property="og:title" content="Spain: The Visa Decision, Beckham Law, and the FEIE Trap"/>
+  <meta property="og:description" content="Moving to Spain as an American is a major financial decision. From the Digital Nomad Visa to the Beckham Law, here's how to navigate the tax complexity."/>
+  <meta property="og:image" content="https://frameworkfoundry.info/expat/issue-02/og-image.jpg"/>
+  <meta property="og:url" content="https://frameworkfoundry.info/expat/issue-02/"/>
+  <meta property="og:type" content="website"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+  <style>
+    :root {
+      --navy:      #0f1f3d;
+      --navy-mid:  #1a3260;
+      --accent:    #4a7fb5;
+      --accent-lt: #7aabda;
+      --gold:      #c9a84c;
+      --gold-lt:   #e0c97a;
+      --white:     #ffffff;
+      --off-white: #f5f4f0;
+      --text:      #1a1a2e;
+      --border:    #ddd8cc;
+      --muted:     #6b7280;
+      --green:     #2a7d4f;
+      --red:       #b91c1c;
+      --bg:        #dde3ea;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: 'Source Serif 4', Georgia, serif;
+      color: var(--text);
+      padding: 32px 16px;
+      min-height: 100vh;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .header-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 40px 20px;
+      gap: 20px;
+    }
+    .header-left { display: flex; align-items: center; gap: 16px; }
+    .logo-icon { flex-shrink: 0; width: 56px; height: 56px; }
+    .logo-name-framework {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: var(--white);
+      display: block;
+      line-height: 1;
+    }
+    .logo-name-foundry {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 11px;
+      color: var(--accent);
+      display: block;
+      margin-top: 4px;
+    }
+    .logo-rule { height: 1px; background: rgba(255,255,255,0.15); margin: 6px 0 4px; }
+    .logo-tagline {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+    .header-accent {
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-lt) 50%, transparent 100%);
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 40px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+    /* ── BOOK SECTION ── */
+    .book-section {
+      padding: 32px 24px 28px;
+      background: #222d40;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .book-header-row {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .book-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .book-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 1px;
+    }
+
+    #book { touch-action: none; }
+
+    .flip-controls {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-top: 20px;
+    }
+    .flip-btn {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.65);
+      padding: 9px 22px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .flip-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .flip-counter {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.35);
+      min-width: 64px;
+      text-align: center;
+    }
+    .flip-hint {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    /* ── MAGAZINE PAGE BASE ── */
+    .page {
+      background: var(--white);
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+    }
+    .page.page-cover { background: var(--navy); }
+    .page.left-page  { border-right: 1px solid rgba(0,0,0,0.08); }
+    .page.right-page { border-left: 1px solid rgba(0,0,0,0.05); }
+
+    /* Inner page wrapper */
+    .pg {
+      padding: 26px 22px 16px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Typography */
+    .pg-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .pg-section {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    .pg-rule {
+      height: 1px;
+      background: var(--border);
+      margin: 7px 0 8px;
+    }
+    .pg-subsection {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 7px 0 3px;
+      padding-left: 8px;
+      border-left: 2px solid var(--gold);
+    }
+    .pg-text {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 11.5px;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+    .pg-text-sm {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .pg-bold  { font-weight: 600; color: var(--navy); }
+    .pg-num {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--border);
+      text-align: center;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+    .pg-photo {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+      display: block;
+    }
+    .pg-photo-caption {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      text-align: right;
+      margin-top: -7px;
+      margin-bottom: 8px;
+    }
+
+    /* Callout boxes */
+    .pg-highlight {
+      background: #fff9ed;
+      border-left: 3px solid var(--gold);
+      padding: 6px 10px;
+      margin: 5px 0;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .pg-flag {
+      background: #fff5f5;
+      border-left: 3px solid var(--red);
+      padding: 6px 10px;
+      margin: 5px 0;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    /* Cost table */
+    .pg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Raleway', sans-serif;
+      font-size: 8.5px;
+      margin-top: 6px;
+    }
+    .pg-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 5px 7px;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .pg-table td {
+      padding: 4px 7px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      line-height: 1.35;
+    }
+    .pg-table tr:nth-child(even) td { background: var(--off-white); }
+    .pg-table tr.total td {
+      background: #eae6d8;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+    }
+
+    /* Checklist */
+    .pg-checklist {
+      list-style: none;
+      margin-top: 6px;
+    }
+    .pg-checklist li {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.5;
+      padding: 5px 0 5px 20px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .toc-row:hover td { background: #f0f4f8; color: var(--accent); }
+    .toc-row:hover td { transition: background 0.12s; }
+
+    .pg-checklist li::before {
+      content: '□';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    /* ── COVER ── */
+    .cover-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 22, 50, 0.68);
+      pointer-events: none;
+    }
+    .cover-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .cover-top {
+      padding: 22px 24px 0;
+      position: relative;
+    }
+    .cover-pub-line {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7px;
+      font-weight: 500;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .cover-ff-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: var(--accent-lt);
+      text-transform: uppercase;
+    }
+    .cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      position: relative;
+      text-align: center;
+    }
+    .cover-issue-badge {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .cover-the {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 6px;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .cover-american {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 2px;
+      line-height: 1.05;
+    }
+    .cover-expat {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+    .cover-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 18px;
+    }
+    .cover-issue-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold-lt);
+      margin-bottom: 5px;
+    }
+    .cover-country {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .cover-topics {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cover-topic {
+      font-family: 'Raleway', sans-serif;
+      font-size: 6.5px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.13);
+      padding: 3px 9px;
+    }
+    .cover-bottom {
+      padding: 10px 24px;
+      background: rgba(0,0,0,0.28);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .cover-date {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+    }
+    .cover-domain {
+      font-family: 'Raleway', sans-serif;
+      font-size: 7.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+    }
+
+    /* ── BACK COVER ── */
+    .back-inner {
+      height: 100%;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .back-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .back-ff   { font-family: 'Cormorant Garamond', serif; font-size: 10px; font-weight: 600; letter-spacing: 6px; color: rgba(255,255,255,0.25); text-transform: uppercase; margin-bottom: 28px; position: relative; }
+    .back-tagline { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.7); line-height: 1.55; max-width: 280px; margin-bottom: 24px; position: relative; }
+    .back-rule { width: 36px; height: 1px; background: var(--gold); margin: 0 auto 24px; position: relative; }
+    .back-sub-label { font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; position: relative; }
+    .back-sub-text  { font-family: 'Source Serif 4', Georgia, serif; font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.55; margin-bottom: 18px; position: relative; }
+    .back-domain    { font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; color: var(--white); position: relative; }
+    .back-issue     { font-family: 'Raleway', sans-serif; font-size: 7px; font-weight: 400; letter-spacing: 2.5px; color: rgba(255,255,255,0.2); text-transform: uppercase; margin-top: 28px; position: relative; }
+
+    /* ── SUBSCRIBE SECTION ── */
+    .subscribe-section {
+      background: var(--navy);
+      padding: 40px;
+      text-align: center;
+    }
+    .subscribe-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .subscribe-section p {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+    .subscribe-form {
+      display: flex;
+      justify-content: center;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .subscribe-form input {
+      flex: 1;
+      padding: 10px 16px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      outline: none;
+    }
+    .subscribe-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .subscribe-form button {
+      padding: 10px 24px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #0a1528;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    .footer-nav { margin-bottom: 10px; }
+    .footer-nav a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+    .footer-nav a:hover { color: var(--accent-lt); }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 8px;
+    }
+    .footer-logo span { color: var(--accent-lt); }
+    .footer-disclaimer {
+      font-family: 'Raleway', sans-serif;
+      font-size: 8px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.18);
+      line-height: 1.6;
+    }
+
+    /* ── FULLSCREEN ── */
+    :fullscreen body,
+    :-webkit-full-screen body { padding: 0; background: #1a2233; }
+
+    :fullscreen .page-wrapper,
+    :-webkit-full-screen .page-wrapper { max-width: 100%; box-shadow: none; }
+
+    :fullscreen .header,
+    :fullscreen .breadcrumb,
+    :fullscreen .subscribe-section,
+    :fullscreen .footer,
+    :-webkit-full-screen .header,
+    :-webkit-full-screen .breadcrumb,
+    :-webkit-full-screen .subscribe-section,
+    :-webkit-full-screen .footer { display: none; }
+
+    :fullscreen .book-section,
+    :-webkit-full-screen .book-section {
+      min-height: 100vh;
+      padding: 24px 16px 20px;
+      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 12px 6px; }
+      .header-inner { padding: 16px 20px; }
+      .breadcrumb { padding: 8px 20px; }
+      .book-section { padding: 20px 4px; }
+      .subscribe-section { padding: 28px 20px; }
+      .footer { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ══ HEADER ══ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <svg class="logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="29" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+          <line x1="32" y1="3"  x2="32" y2="61" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <line x1="3"  y1="32" x2="61" y2="32" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <line x1="10" y1="10" x2="54" y2="54" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <line x1="54" y1="10" x2="10" y2="54" stroke="rgba(255,255,255,0.1)"  stroke-width="1"/>
+          <rect x="24" y="24" width="16" height="16" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" fill="none"/>
+          <line x1="14" y1="50" x2="50" y2="14" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="50" cy="14" r="2.5" fill="#c9a84c"/>
+        </svg>
+        <div>
+          <span class="logo-name-framework">FRAMEWORK</span>
+          <span class="logo-name-foundry">FOUNDRY</span>
+          <div class="logo-rule"></div>
+          <span class="logo-tagline">Economic Intelligence &nbsp;·&nbsp; Research for the Serious Investor</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <!-- ══ BREADCRUMB ══ -->
+  <nav class="breadcrumb">
+    <a href="../../index.html">Framework Foundry</a>
+    <span>/</span>
+    <a href="../../index.html" onclick="setTimeout(()=>showSection&&showSection('expat'),100);return true;">Expat Investing</a>
+    <span>/</span>
+    Issue 02 &nbsp;·&nbsp; The Spain Issue
+  </nav>
+
+  <!-- ══ BOOK SECTION ══ -->
+  <div class="book-section">
+    <div class="book-header-row">
+      <div class="book-eyebrow">The American Expat Investor</div>
+      <div class="book-title">Issue 02 &mdash; The Spain Issue</div>
+    </div>
+
+    <!-- ── FLIP BOOK ── -->
+    <div id="book">
+
+      <!-- PAGE 1: FRONT COVER -->
+      <div class="page page-cover" data-density="hard" style="background-image: url('https://images.unsplash.com/photo-1512470876302-972fad2aa9dd?w=960&q=82&fit=crop'); background-size: cover; background-position: center;">
+        <div class="cover-inner">
+          <div class="cover-overlay"></div>
+          <div class="cover-grid"></div>
+          <div class="cover-top">
+            <div class="cover-pub-line">Framework Foundry &nbsp;·&nbsp; Expat Investing Series</div>
+            <div class="cover-ff-label">americanexpatinvestor.com</div>
+          </div>
+          <div class="cover-body">
+            <div class="cover-issue-badge">Issue 02</div>
+            <div class="cover-the">The American</div>
+            <div class="cover-american">Expat</div>
+            <div class="cover-expat">Investor</div>
+            <div class="cover-rule"></div>
+            <div class="cover-issue-title">The Spain Issue</div>
+            <div class="cover-country">NLV vs. Digital Nomad &nbsp;·&nbsp; Beckham Law &nbsp;·&nbsp; FEIE &nbsp;·&nbsp; FATCA</div>
+            <div class="cover-topics">
+              <span class="cover-topic">Málaga &amp; Valencia</span>
+              <span class="cover-topic">Beckham Law</span>
+              <span class="cover-topic">FEIE vs FTC</span>
+              <span class="cover-topic">PRIIPs &amp; IBKR</span>
+              <span class="cover-topic">Physical Presence</span>
+              <span class="cover-topic">Spain Checklist</span>
+            </div>
+          </div>
+          <div class="cover-bottom">
+            <span class="cover-date">April 2026</span>
+            <span class="cover-domain">americanexpatinvestor.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 2: TABLE OF CONTENTS PART 1 (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Issue 02 &nbsp;·&nbsp; April 2026</div>
+          <div class="pg-section">Contents</div>
+          <div class="pg-rule"></div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 1 &mdash; The Spain File</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(4)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Why Americans Are Going There</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">5</td></tr>
+              <tr class="toc-row" onclick="goToPage(5)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Málaga &amp; Costa del Sol</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">6</td></tr>
+              <tr class="toc-row" onclick="goToPage(6)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Valencia: The Best Value Hub</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">7</td></tr>
+              <tr class="toc-row" onclick="goToPage(7)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Barcelona &amp; Madrid</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">8</td></tr>
+              <tr class="toc-row" onclick="goToPage(9)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Seville &amp; Authenticity</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">10</td></tr>
+              <tr class="toc-row" onclick="goToPage(10)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">History &amp; Cultural Identity</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">11</td></tr>
+              <tr class="toc-row" onclick="goToPage(12)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Social Etiquette</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">13</td></tr>
+              <tr class="toc-row" onclick="goToPage(14)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">What Americans Specifically Need to Know</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">15</td></tr>
+              <tr class="toc-row" onclick="goToPage(16)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Cost of Living Snapshot</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">17</td></tr>
+              <tr class="toc-row" onclick="goToPage(17)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">A Day in the Life: Valencia</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">18</td></tr>
+            </table>
+          </div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 2 &mdash; Money &amp; Visas</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(18)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">NLV vs. Digital Nomad Visa</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">19</td></tr>
+              <tr class="toc-row" onclick="goToPage(20)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">The Beckham Law Window</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">21</td></tr>
+              <tr class="toc-row" onclick="goToPage(21)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Spanish Tax Rates &amp; Treaties</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">22</td></tr>
+              <tr class="toc-row" onclick="goToPage(23)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">FTC vs FEIE: The Strategy</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">24</td></tr>
+              <tr class="toc-row" onclick="goToPage(25)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Banking &amp; Investment Access</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">26</td></tr>
+            </table>
+          </div>
+
+          <div class="pg-num">2</div>
+        </div>
+      </div>
+
+      <!-- PAGE 3: TABLE OF CONTENTS PART 2 (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Contents</div>
+          <div class="pg-section">Contents (continued)</div>
+          <div class="pg-rule"></div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 3 &mdash; The Compliance Layer</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(27)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">FEIE: Deep Dive &amp; Traps</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">28</td></tr>
+            </table>
+          </div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 4 &mdash; The Financial Checklist</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(28)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">12 Months + 6 Months Out</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">29</td></tr>
+              <tr class="toc-row" onclick="goToPage(29)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">3 Months + 1 Month Out</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">30</td></tr>
+              <tr class="toc-row" onclick="goToPage(30)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">On Arrival + Annual Recurring</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">31</td></tr>
+            </table>
+          </div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 5 &mdash; Language</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(31)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Castilian vs. Latin American</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">32</td></tr>
+              <tr class="toc-row" onclick="goToPage(32)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Learning Resources &amp; Regionalism</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">33</td></tr>
+            </table>
+          </div>
+
+          <div style="margin-bottom:10px">
+            <div style="font-family:'Raleway',sans-serif;font-size:7px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Section 6 &mdash; Closing</div>
+            <table style="width:100%;border-collapse:collapse">
+              <tr class="toc-row" onclick="goToPage(33)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">Curated Resources</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">34</td></tr>
+              <tr class="toc-row" onclick="goToPage(34)" style="cursor:pointer"><td style="font-family:'Source Serif 4',Georgia,serif;font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px dotted var(--border)">The Case for Going &amp; Next Issue</td><td style="font-family:'Raleway',sans-serif;font-size:8.5px;font-weight:600;color:var(--accent);text-align:right;padding:3px 0;border-bottom:1px dotted var(--border);width:24px">35</td></tr>
+            </table>
+          </div>
+
+          <div class="pg-num">3</div>
+        </div>
+      </div>
+
+      <!-- PAGE 4: INTRO (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">About This Issue</div>
+          <div class="pg-section">Built in Public</div>
+          <div class="pg-rule"></div>
+          <img class="pg-photo" src="https://images.unsplash.com/photo-1543783232-af41423c046f?w=600&q=80&fit=crop&crop=center" alt="Madrid Gran Via">
+          <p class="pg-photo-caption">Madrid &nbsp;·&nbsp; Unsplash</p>
+          <p class="pg-text">I've been tracking my family's move timeline for months.</p>
+          <p class="pg-text">What I'm learning is that Spain is where most of the financial complexity actually happens for Americans — not because Spain is hostile, but because Spain is closer to full "global wealth tax" thinking than Portugal ever was. And because most people get FEIE completely wrong.</p>
+          <p class="pg-text"><em>The American Expat Investor</em> is what I needed: one country, one financial mechanism, one pre-departure checklist. Built in public. Shared as I understand it.</p>
+          <p class="pg-text"><span class="pg-bold">This month: Spain</span> — the visa decision (NLV vs Digital Nomad), the Beckham Law, the real cost of living, and what FEIE actually means when you're earning income abroad.</p>
+          <div class="pg-highlight">
+            <em>Orientation only. Verify specifics with a qualified cross-border expat CPA.</em>
+          </div>
+          <div class="pg-num">4</div>
+        </div>
+      </div>
+
+      <!-- PAGE 5: WHY AMERICANS (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">Why Americans Are Going There</div>
+          <div class="pg-rule"></div>
+          <img class="pg-photo" src="https://images.unsplash.com/photo-1512470876302-972fad2aa9dd?w=600&q=80&fit=crop&crop=center" alt="Valencia waterfront">
+          <p class="pg-photo-caption">Valencia &nbsp;·&nbsp; Unsplash</p>
+          <p class="pg-text-sm"><span class="pg-bold">Regional variety.</span> Spain is five times larger than Portugal. You're not choosing a country; you're choosing a region. From the sun-drenched Costa del Sol to the green, cool north, Spain has actual seasons and regional identities.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Modern visas.</span> The Digital Nomad Visa (introduced Jan 2023) is flexible and actively designed for remote workers. It's a genuine pathway that didn't exist three years ago.</p>
+          <p class="pg-text-sm"><span class="pg-bold">The Beckham Law.</span> While Portugal closed its NHR regime in 2024, Spain's Beckham Law remains open. For higher earners on the Digital Nomad Visa, a 24% flat tax rate is a massive differentiator.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Infrastructure.</span> The "Americans in Spain" ecosystem is enormous. City-specific hubs in Málaga, Valencia, Barcelona, and Madrid provide a robust safety net of services and community.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Cost value.</span> Portugal's cost advantage has narrowed. Valencia and Málaga now offer competitive or better value for the quality of urban infrastructure provided.</p>
+          <div class="pg-num">5</div>
+        </div>
+      </div>
+
+      <!-- PAGE 6: MALAGA (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">Málaga &amp; Costa del Sol</div>
+          <div class="pg-rule"></div>
+          <img class="pg-photo" src="https://images.unsplash.com/photo-1549410183-4a64f7725516?w=600&q=80&fit=crop&crop=center" alt="Malaga sunset">
+          <p class="pg-photo-caption">Málaga &nbsp;·&nbsp; Unsplash</p>
+          <p class="pg-text-sm"><span class="pg-bold">The largest hub.</span> estimated at 10,000+ Americans. Why? 320 days of sun, beach access, and a cost of living that's still reasonable. Rent for a 1-bedroom in central Málaga runs €850–1,100/month.</p>
+          <p class="pg-text-sm">It's "beginner-friendly." Infrastructure is established — English-speaking dentists, international food, and legal services built around expat relocation. It's the default choice for a reason.</p>
+          <div class="pg-highlight">
+            <span class="pg-bold">Note:</span> Málaga has priced up. The advantage exists if you live 20 minutes outside the center. Inside the center, costs rival inner Barcelona.
+          </div>
+          <div class="pg-num">6</div>
+        </div>
+      </div>
+
+      <!-- PAGE 7: VALENCIA (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">Valencia: The Best Value Hub</div>
+          <div class="pg-rule"></div>
+          <img class="pg-photo" src="https://images.unsplash.com/photo-1558642084-fd07fae5282e?w=600&q=80&fit=crop&crop=center" alt="Valencia street">
+          <p class="pg-photo-caption">Valencia, Ruzafa &nbsp;·&nbsp; Unsplash</p>
+          <p class="pg-text-sm">Valencia is the third-largest city in Spain, yet it offers the lowest rent of any major hub. A 1-bedroom in the trendy Ruzafa neighborhood: €700–900/month.</p>
+          <p class="pg-text-sm">It balances real city infrastructure with world-class beaches and the stunning Turia park. If you're looking for "best financial value + international community," Valencia is the answer.</p>
+          <div class="pg-num">7</div>
+        </div>
+      </div>
+
+      <!-- PAGE 8: BARCELONA & MADRID (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">Barcelona &amp; Madrid</div>
+          <div class="pg-rule"></div>
+          <div class="pg-subsection">Barcelona</div>
+          <p class="pg-text-sm">Capital of Catalonia. World-class culture, Mediterranean coast, and expensive. Rent: €1,300–1,800/month. Add the regional tax surcharge, and it's the most expensive choice for an American. Good for high salaries; bad for cost optimization.</p>
+          <div class="pg-subsection">Madrid</div>
+          <p class="pg-text-sm">The "normal city." Inland, dry, and where multinationals headquarter. It's the destination for families and corporate relocations, offering international schools and a practical, metropolitan lifestyle. Rent: €1,000–1,500/month.</p>
+          <div class="pg-num">8</div>
+        </div>
+      </div>
+
+      <!-- PAGE 9: SEVILLE (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">Seville: Authentic &amp; Affordable</div>
+          <div class="pg-rule"></div>
+          <img class="pg-photo" src="https://images.unsplash.com/photo-1559564851-f3f350c9502b?w=600&q=80&fit=crop&crop=center" alt="Seville Plaza de Espana">
+          <p class="pg-photo-caption">Seville &nbsp;·&nbsp; Unsplash</p>
+          <p class="pg-text-sm">Capital of Andalusia. Genuinely beautiful and the most affordable major city. Rent: €600–900/month. A couple can live well for €2,000–2,800/month.</p>
+          <p class="pg-text-sm">Trade-off: Summer heat (40°C+), less English spoken, and smaller expat infrastructure. But for Andalusian authenticity, Seville delivers.</p>
+          <div class="pg-num">9</div>
+        </div>
+      </div>
+
+      <!-- PAGE 10: HISTORY (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">History &amp; Cultural Identity</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm"><span class="pg-bold">The Reconquista.</span> For 800 years, much of Spain was under Islamic rule. The Christian reconquest (ending in 1492) is foundational to national identity and visible in the stunning architecture of the Alhambra.</p>
+          <p class="pg-text-sm"><span class="pg-bold">The Civil War &amp; Franco.</span> scarred by the 1936–39 war and subsequent dictatorship until 1975. This is recent history; the wounds of political and regional suppression (Catalonia, Basque) are still healing.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Regional Identity.</span> Spain is multiple cultures Negotiating an arrangement. Catalonia, the Basque Country, and Galicia have their own languages and political aspirations. It's not one culture.</p>
+          <div class="pg-num">10</div>
+        </div>
+      </div>
+
+      <!-- PAGE 11: ETIQUETTE 1 (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">Social Etiquette</div>
+          <div class="pg-rule"></div>
+          <div class="pg-subsection">Greetings</div>
+          <p class="pg-text-sm">Handshakes for men; two cheek kisses (right then left) once you know each other. First meetings are formal; subsequent ones are animated and expressive.</p>
+          <div class="pg-subsection">Meals</div>
+          <p class="pg-text-sm">Lunch (1–3pm) is the main event. Dinner starts late (8:30–10pm). Waiters won't rush you; ask for "la cuenta." Tipping is appreciated (5–10%) but never expected.</p>
+          <div class="pg-num">11</div>
+        </div>
+      </div>
+
+      <!-- PAGE 12: ETIQUETTE 2 (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">Social Etiquette (cont.)</div>
+          <div class="pg-rule"></div>
+          <div class="pg-subsection">Volume &amp; Expression</div>
+          <p class="pg-text-sm">Public culture is loud and animated. Conversations in cafes are lively and emotional expression is normal. This can be a relief for those who find Northern Europe cold.</p>
+          <div class="pg-subsection">Time</div>
+          <p class="pg-text-sm">Social time is flexible (15 mins late is normal). Bureaucratic time is strict. Arrive early for government appointments.</p>
+          <div class="pg-num">12</div>
+        </div>
+      </div>
+
+      <!-- PAGE 13: NEED TO KNOW 1 (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">What Americans Specifically Need to Know</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm"><span class="pg-bold">Meal timing culture shock.</span> You'll eat alone if you go at 6pm. Spain works on a shifted clock.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Siesta vs. Bureaucracy.</span> Offices and banks close in the afternoon (often 1–4pm) and don't reopen. Plan for morning-only productivity.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Spanish is required.</span> English proficiency is lower than in Portugal. In bureaucratic offices and daily retail, you'll need the local language.</p>
+          <div class="pg-num">13</div>
+        </div>
+      </div>
+
+      <!-- PAGE 14: NEED TO KNOW 2 (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · The Spain File</div>
+          <div class="pg-section">What Americans Specifically Need to Know (cont.)</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm"><span class="pg-bold">Form-driven bureaucracy.</span> It's document-heavy. Don't fight it; bring everything apostilled and translated. Patience is the only currency that works.</p>
+          <p class="pg-text-sm"><span class="pg-bold">Cash matters.</span> Small establishments often don't take cards for small purchases. Carry some euros for markets and traditional bars.</p>
+          <div class="pg-num">14</div>
+        </div>
+      </div>
+
+      <!-- PAGE 15: COST OF LIVING TABLE (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · Cost of Living</div>
+          <div class="pg-section">What It Actually Costs in 2025–26</div>
+          <div class="pg-rule"></div>
+          <table class="pg-table">
+            <thead>
+              <tr>
+                <th style="width:44%">Category</th>
+                <th style="width:28%">EUR / mo</th>
+                <th style="width:28%">USD (~)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Rent — Málaga, 1-bed</td><td>€850–1,100</td><td>$920–1,190</td></tr>
+              <tr><td>Rent — Valencia, 1-bed</td><td>€700–900</td><td>$755–970</td></tr>
+              <tr><td>Rent — Barcelona, 1-bed</td><td>€1,300–1,800</td><td>$1,400–1,945</td></tr>
+              <tr><td>Rent — Seville, 1-bed</td><td>€600–900</td><td>$645–970</td></tr>
+              <tr><td>Restaurant dinner (2)</td><td>€40–60</td><td>$43–65</td></tr>
+              <tr><td>Lunch menu (3-course)</td><td>€10–15</td><td>$11–16</td></tr>
+              <tr><td>Health insurance</td><td>€50–150</td><td>$54–160</td></tr>
+              <tr class="total"><td>Single / Comfortable / Malaga</td><td>€2,100–3,200</td><td>$2,270–3,450</td></tr>
+            </tbody>
+          </table>
+          <p class="pg-text-sm" style="margin-top:7px">A couple on €3,500–4,500/month lives at a standard that costs $5,000–8,000/month in the US.</p>
+          <div class="pg-num">15</div>
+        </div>
+      </div>
+
+      <!-- PAGE 16: DAY IN THE LIFE (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 1 · Life on the Ground</div>
+          <div class="pg-section">A Day in the Life: Valencia</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Standing at the counter for a €1.20 espresso at 9am. Checking the Physical Presence Test calendar — 330 days out of 365 is the goal. Your Beckham Law application was approved: 24% flat tax for 6 years.</p>
+          <p class="pg-text-sm">Markets open at 2:30pm (8:30am ET). Until then, the morning is yours. A walk through the Turia park, client emails from a cafe in Ruzafa. New capital flows to IBKR for US ETFs, while your old Schwab account sits untouched. It's a structured, optimized life.</p>
+          <div class="pg-num">16</div>
+        </div>
+      </div>
+
+      <!-- PAGE 17: NLV (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · Visas</div>
+          <div class="pg-section">The Non-Lucrative Visa (NLV)</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Spain's answer to Portugal's D7. For those with passive income only. Requirement: <span class="pg-bold">€28,800/year</span> for a single person. Truly passive: dividends, rental, pension. <span class="pg-bold">No remote work allowed.</span></p>
+          <p class="pg-text-sm">Renewable every two years. After five years: permanent residency. After ten: citizenship eligible. Documentation is key: banks, FBI background, private health insurance.</p>
+          <div class="pg-num">17</div>
+        </div>
+      </div>
+
+      <!-- PAGE 18: DIGITAL NOMAD (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · Visas</div>
+          <div class="pg-section">Digital Nomad Visa</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Introduced Jan 2023. For remote workers and freelancers. Requirement: <span class="pg-bold">~€32,400/year</span>. Requires proof of foreign employment and 3+ years experience or a degree.</p>
+          <p class="pg-text-sm">Crucially: this visa opens the door to the <span class="pg-bold">Beckham Law</span>. But the window is tight — apply within 6 months of social security registration or lose it forever.</p>
+          <div class="pg-num">18</div>
+        </div>
+      </div>
+
+      <!-- PAGE 19: TAX RATES (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · Taxes</div>
+          <div class="pg-section">Spanish Tax Rates (IRPF)</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Standard progressive rates reach <span class="pg-bold">47%</span> over €300k. Savings income (dividends, gains) taxed at 19–30%. Regional surcharges (like Catalonia) add complexity. If you're a resident (183+ days), Spain taxes your worldwide income.</p>
+          <p class="pg-text-sm">This is why the Beckham Law's 24% flat rate is so powerful — it shelters you from these progressive brackets for six years.</p>
+          <div class="pg-num">19</div>
+        </div>
+      </div>
+
+      <!-- PAGE 20: FTC vs FEIE (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · Taxes</div>
+          <div class="pg-section">FTC vs. FEIE: The Strategy</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Most Americans default to FEIE (exclusion). In high-tax Spain, <span class="pg-bold">Foreign Tax Credit (FTC) usually wins.</span></p>
+          <p class="pg-text-sm">Spain's rates (up to 47%) exceed US rates. Paying Spain first and crediting it against your US bill often eliminates US tax entirely and creates carryforward credits. FEIE, by contrast, doesn't cover self-employment tax. Run the math.</p>
+          <div class="pg-num">20</div>
+        </div>
+      </div>
+
+      <!-- PAGE 21: BANKING (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 2 · Banking</div>
+          <div class="pg-section">Banking &amp; Investment Access</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm"><span class="pg-bold">Santander, CaixaBank, BBVA.</span> All accept Americans. They are FATCA-compliant and will report your account to the IRS. FBAR reporting ($10k aggregate threshold) is your responsibility.</p>
+          <p class="pg-text-sm"><span class="pg-bold">IBKR is the expat solution.</span> EU PRIIPs rules block you from buying US-listed ETFs through European brokers. IBKR explicitly supports expats and allows continued access to US markets.</p>
+          <div class="pg-num">21</div>
+        </div>
+      </div>
+
+      <!-- PAGE 22: FEIE DEEP DIVE (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 3 · Compliance</div>
+          <div class="pg-section">FEIE: The Most Misunderstood Tool</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">It's not automatic. You must elect it (Form 2555). It only covers <span class="pg-bold">earned income</span> (wages, self-employment). Passive income (dividends, rental) is NOT excludable. Self-employment tax (15.3%) is still owed. Meticulous tracking of days (Physical Presence Test) is required.</p>
+          <div class="pg-num">22</div>
+        </div>
+      </div>
+
+      <!-- PAGE 23: CHECKLIST A (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 4 · Checklist</div>
+          <div class="pg-section">12 Months + 6 Months Out</div>
+          <div class="pg-rule"></div>
+          <ul class="pg-checklist">
+            <li>Determine visa path (NLV vs Digital Nomad)</li>
+            <li>Verify income thresholds (IPREM vs SMI)</li>
+            <li>Check state tax exit requirements (CA, NY, etc.)</li>
+            <li>Obtain Spanish NIE (Tax ID) via consulate</li>
+            <li>Order FBI criminal background check (apostilled)</li>
+            <li>Apply for Spanish private health insurance</li>
+          </ul>
+          <div class="pg-num">23</div>
+        </div>
+      </div>
+
+      <!-- PAGE 24: CHECKLIST B (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 4 · Checklist</div>
+          <div class="pg-section">3 Months + 1 Month Out</div>
+          <div class="pg-rule"></div>
+          <ul class="pg-checklist">
+            <li>Submit visa application at US consulate</li>
+            <li>Establish Physical Presence Test calendar</li>
+            <li>Open Wise account for EUR/USD transfers</li>
+            <li>Address strategy: Mail forwarding for brokerages</li>
+            <li>Hire cross-border CPA (Spain + US specialist)</li>
+            <li>Alert US banks/cards of relocation</li>
+          </ul>
+          <div class="pg-num">24</div>
+        </div>
+      </div>
+
+      <!-- PAGE 25: CHECKLIST C (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 4 · Checklist</div>
+          <div class="pg-section">Arrival &amp; Annual Recurring</div>
+          <div class="pg-rule"></div>
+          <ul class="pg-checklist">
+            <li>Register with town hall (Empadronamiento)</li>
+            <li>Apply for TIE biometric card at police station</li>
+            <li>Open Spanish bank account (Santander, etc.)</li>
+            <li>Digital Nomad: Apply for Beckham Law (6-mo limit)</li>
+            <li>File FBAR (April 15 / Oct 15)</li>
+            <li>File Spanish income tax (June 30)</li>
+          </ul>
+          <div class="pg-num">25</div>
+        </div>
+      </div>
+
+      <!-- PAGE 26: LANGUAGE 1 (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 5 · Language</div>
+          <div class="pg-section">Castilian vs. Latin American</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Spanish has the same issue as Portuguese: pronunciation and vocabulary vary by region. In Spain, you need <span class="pg-bold">Castilian</span>. Note the 'theta' sound for Z/C and the use of 'vosotros'. Most apps default to Latin American; choose carefully.</p>
+          <div class="pg-num">26</div>
+        </div>
+      </div>
+
+      <!-- PAGE 27: LANGUAGE 2 (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 5 · Language</div>
+          <div class="pg-section">Regionalism &amp; Resources</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">In Barcelona, Catalan is co-official. In the Basque Country, it's Euskera. Castilian works everywhere, but regional pride is high. For learning: <span class="pg-bold">Pimsleur Castilian</span> is the gold standard for survival, followed by <span class="pg-bold">italki</span> for live practice.</p>
+          <div class="pg-num">27</div>
+        </div>
+      </div>
+
+      <!-- PAGE 28: RESOURCES (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Section 6 · Resources</div>
+          <div class="pg-section">Curated Resources</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Taxes for Expats (taxesforexpats.com), Global Citizen Solutions (visas), "Americans in Spain" Facebook group (50k+ members), Numbeo (cost comparisons).</p>
+          <div class="pg-num">28</div>
+        </div>
+      </div>
+
+      <!-- PAGE 29: CLOSING (left) -->
+      <div class="page left-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Closing</div>
+          <div class="pg-section">The Case for Going</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text">Spain is complex, but the infrastructure for Americans is robust. If you prepare — accounts, tax strategy, visa path — it rewards you with a lifestyle that simply doesn't exist at the same price point in the US. Prepare, then move.</p>
+          <div class="pg-num">29</div>
+        </div>
+      </div>
+
+      <!-- PAGE 30: NEXT ISSUE (right) -->
+      <div class="page right-page">
+        <div class="pg">
+          <div class="pg-eyebrow">Coming Next · Issue 03 · May 2026</div>
+          <div class="pg-section">Italy</div>
+          <div class="pg-rule"></div>
+          <p class="pg-text-sm">Where Spain focuses on FEIE, Italy focuses on <span class="pg-bold">401k and IRA rules abroad</span>. How to handle your US retirement accounts when you're a resident of Italy. Subscribe at americanexpatinvestor.com.</p>
+          <div class="pg-num">30</div>
+        </div>
+      </div>
+
+      <!-- PAGE 31: BACK COVER -->
+      <div class="page page-cover" data-density="hard">
+        <div class="back-inner" style="background-image: url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=960&q=82&fit=crop'); background-size: cover; background-position: center;">
+          <div class="cover-overlay"></div>
+          <div class="back-grid"></div>
+          <div class="back-ff">Framework Foundry</div>
+          <div class="back-tagline">"One country. One financial mechanism.<br/>One pre-departure checklist."</div>
+          <div class="back-rule"></div>
+          <div class="back-sub-label">Subscribe &mdash; It&rsquo;s Free</div>
+          <div class="back-sub-text">New country every month.<br/>Built in public. Shared as I go.</div>
+          <div class="back-domain">americanexpatinvestor.com</div>
+          <div class="back-issue">The American Expat Investor &nbsp;·&nbsp; Issue 02 &nbsp;·&nbsp; April 2026</div>
+        </div>
+      </div>
+
+    </div><!-- #book -->
+
+    <!-- ── CONTROLS ── -->
+    <div class="flip-controls">
+      <button class="flip-btn" id="btn-prev">&#8592; Prev</button>
+      <button class="flip-btn flip-btn-toc" onclick="goToPage(1)" title="Table of Contents">&#9776; Contents</button>
+      <span class="flip-counter" id="page-counter">1 / 30</span>
+      <button class="flip-btn" id="btn-next">Next &#8594;</button>
+      <button class="flip-btn" id="btn-fullscreen" onclick="toggleFullscreen()">&#x26F6; Full Screen</button>
+    </div>
+    <div class="flip-hint">click pages to turn &nbsp;·&nbsp; drag to flip &nbsp;·&nbsp; swipe on mobile</div>
+
+  </div><!-- .book-section -->
+
+  <!-- ══ SUBSCRIBE ══ -->
+  <div class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Free market intelligence &mdash; weekly editions, daily briefs, and the expat series.</p>
+    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required/>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-nav">
+      <a href="../../index.html">Framework Foundry</a>
+      <a href="../../index.html">Expat Investing</a>
+    </div>
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span></div>
+    <div class="footer-disclaimer">
+      For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- .page-wrapper -->
+
+<script>
+var pageFlip;
+
+function goToPage(idx) {
+  if (pageFlip) pageFlip.flip(idx);
+}
+
+function toggleFullscreen() {
+  var el = document.documentElement;
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  } else {
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+  }
+}
+
+function onFullscreenChange() {
+  var inFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+  var btn  = document.getElementById('btn-fullscreen');
+  var bookEl = document.getElementById('book');
+
+  setTimeout(function () {
+    if (inFS) {
+      var availW = window.innerWidth  - 32;
+      var availH = window.innerHeight - 110;
+      var scale  = Math.min(availW / bookEl.offsetWidth, availH / bookEl.offsetHeight);
+      bookEl.style.transform       = 'scale(' + scale + ')';
+      bookEl.style.transformOrigin = 'center top';
+      bookEl.style.marginBottom    = ((bookEl.offsetHeight * scale) - bookEl.offsetHeight) + 'px';
+      if (btn) btn.textContent = '\u2716 Exit Full Screen';
+    } else {
+      bookEl.style.transform    = '';
+      bookEl.style.transformOrigin = '';
+      bookEl.style.marginBottom = '';
+      if (btn) btn.textContent = '\u26F6 Full Screen';
+    }
+  }, 80);
+}
+
+document.addEventListener('fullscreenchange',       onFullscreenChange);
+document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+
+document.addEventListener('keydown', function (e) {
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) return;
+  if (e.key === 'ArrowRight') pageFlip.flipNext('bottom');
+  if (e.key === 'ArrowLeft')  pageFlip.flipPrev('bottom');
+});
+
+window.addEventListener('load', function () {
+  var wrapper   = document.querySelector('.page-wrapper');
+  var available = Math.min(wrapper.offsetWidth - 48, 900);
+  var portrait  = window.innerWidth < 680;
+  var pageW, pageH;
+
+  if (portrait) {
+    pageW = Math.min(wrapper.offsetWidth - 24, 420);
+  } else {
+    pageW = Math.floor(available / 2);
+  }
+  pageH = Math.round(pageW * 1.4);
+
+  pageFlip = new St.PageFlip(document.getElementById('book'), {
+    width:               pageW,
+    height:              pageH,
+    size:                'fixed',
+    showCover:           true,
+    usePortrait:         portrait,
+    drawShadow:          true,
+    flippingTime:        700,
+    useMouseEvents:      true,
+    swipeDistance:       30,
+    mobileScrollSupport: false,
+    autoSize:            false
+  });
+
+  pageFlip.loadFromHTML(document.querySelectorAll('#book .page'));
+
+  var counter = document.getElementById('page-counter');
+  var total   = pageFlip.getPageCount();
+  counter.textContent = '1 / ' + total;
+
+  pageFlip.on('flip', function (e) {
+    counter.textContent = (e.data + 1) + ' / ' + total;
+  });
+
+  document.getElementById('btn-prev').addEventListener('click', function () {
+    pageFlip.flipPrev('bottom');
+  });
+  document.getElementById('btn-next').addEventListener('click', function () {
+    pageFlip.flipNext('bottom');
+  });
+});
+</script>
+
+</body>
+</html>
