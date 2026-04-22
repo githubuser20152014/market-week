@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-04-22",
+    "generated_at": "2026-04-22T10:22:42.569915Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7109.1401,
+      "close": 7064.0098,
+      "daily_pct": -0.6348,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49442.5586,
+      "close": 49149.3789,
+      "daily_pct": -0.593,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24404.3906,
+      "close": 24259.9609,
+      "daily_pct": -0.5918,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2792.96,
+      "close": 2764.97,
+      "daily_pct": -1.0022,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4698.3999,
+      "close": 4767.2002,
+      "daily_pct": 1.4643,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.25,
+      "close": 4.292,
+      "daily_pct": 0.9882,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.41,
+      "close": 98.347,
+      "daily_pct": -0.064,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 92.13,
+      "close": 90.75,
+      "daily_pct": -1.4979,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59585.86,
+      "prev_close": 59349.17,
+      "daily_pct": 0.3988,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26163.24,
+      "prev_close": 26487.48,
+      "daily_pct": -1.2241,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6417.93,
+      "prev_close": 6388.47,
+      "daily_pct": 0.4611,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24378.1,
+      "prev_close": 24576.6,
+      "daily_pct": -0.8077,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8843.6,
+      "prev_close": 8949.4,
+      "daily_pct": -1.1822,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24203.48,
+      "prev_close": 24203.48,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10488.64,
+      "prev_close": 10488.64,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8202.29,
+      "prev_close": 8202.29,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5918.24,
+      "prev_close": 5918.24,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17536,
+      "prev_close": 1.17844,
+      "daily_pct": -0.2609
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35204,
+      "prev_close": 1.35313,
+      "daily_pct": -0.0802
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.30299,
+      "prev_close": 158.84399,
+      "daily_pct": 0.289
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71605,
+      "prev_close": 0.71742,
+      "daily_pct": -0.1909
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.826,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28059,
+      "prev_close": 1.28451,
+      "daily_pct": -0.3048
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7136.0,
+      "prev_close": 7136.0,
+      "daily_pct": 0.507
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 26815.5,
+      "prev_close": 26815.5,
+      "daily_pct": 0.6786
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49547.0,
+      "prev_close": 49547.0,
+      "daily_pct": 0.4216
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4767.1,
+      "prev_close": 4767.1,
+      "daily_pct": 1.4622
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.34,
+      "prev_close": 111.34,
+      "daily_pct": 0.0421
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 90.83,
+      "prev_close": 90.83,
+      "daily_pct": -1.411
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Two ships attacked in Strait of Hormuz, UK says, after U.S. extends Iran ceasefire",
+      "source": "CNBC",
+      "published": "Wed, 22 Apr 2026 10:18:56 GMT",
+      "url": "https://www.cnbc.com/2026/04/22/strait-of-hormuz-ships-attacked-iran-war.html",
+      "summary": "The attacks come shortly after President Donald Trump said the U.S. would extend the ceasefire with Iran to allow peace talks to continue."
+    },
+    {
+      "headline": "Hormuz is just a \u2018dry run\u2019 if China and U.S. go to war in the Pacific, Singapore foreign minister warns",
+      "source": "CNBC",
+      "published": "Wed, 22 Apr 2026 04:53:30 GMT",
+      "url": "https://www.cnbc.com/2026/04/22/cnbc-converge-live-hormuz-singapore-fm-vivian-iran-war.html",
+      "summary": "Balakrishnan was discussing the complexities of the U.S.- China relationship from Singapore's perspective with CNBC's Steve Sedgwick at the CONVERGE LIVE event."
+    },
+    {
+      "headline": "United Airlines slashes 2026 forecast as fuel costs surge",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 22:09:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/united-airlines-ual-q1-2026-earnings.html",
+      "summary": "The carrier's first-quarter earnings topped Wall Street's expectations."
+    },
+    {
+      "headline": "Gates Foundation reviewing Jeffrey Epstein ties, will slash 20% of staff, WSJ reports",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 21:18:37 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/gates-foundation-jeffrey-epstein-jobs-cuts.html",
+      "summary": "Berkshire Hathaway Chair Warren Buffett had told CNBC he hasn't spoken to Bill Gates since details of Jeffrey Epstein's communications with him were revealed."
+    },
+    {
+      "headline": "CEO of Southeast Asia\u2019s largest bank names the 'new war' keeping her up at night",
+      "source": "CNBC",
+      "published": "Wed, 22 Apr 2026 10:12:33 GMT",
+      "url": "https://www.cnbc.com/2026/04/22/dbs-ceo-tan-su-shan-cyber-threats-are-keeping-her-up-at-night.html",
+      "summary": "For DBS CEO Tan Su Shan, the biggest risk keeping her up at night is not just market volatility or geopolitical shocks, but cyberattacks."
+    },
+    {
+      "headline": "Trump administration discussing currency swap line with United Arab Emirates",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 22:09:55 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/trump-iran-war-white-house-uae-currency-swap-line.html",
+      "summary": "Such a move would provide liquidity in dollars to the oil-rich UAE, but could be politically tenuous for the administration amid higher prices at home."
+    },
+    {
+      "headline": "Analysis: Warsh emerges from a difficult hearing with his Fed 'regime-change' plan intact",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 19:57:56 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/kevin-warsh-fed-regime-change-senate-confirmation-hearing.html",
+      "summary": "The Fed chair faced many questions about his finances, but few about his plan to overhaul the central bank."
+    },
+    {
+      "headline": "Apple's elevation of silicon head Johny Srouji signals sprint to build in-house chips for all devices",
+      "source": "CNBC",
+      "published": "Tue, 21 Apr 2026 22:28:30 GMT",
+      "url": "https://www.cnbc.com/2026/04/21/apple-promotes-chip-lead-srouji-as-it-corners-silicon-in-iphones-macs.html",
+      "summary": "With the promotion of silicon head Johny Srouji to hardware boss, Apple is showing urgency its its effort to make custom chips for all iPhones and Macs."
+    }
+  ]
+}
