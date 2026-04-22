@@ -123,8 +123,11 @@ Update cadences per card:
 - When updating, also bump the "Generated" date in the footer
 
 ## Global Investor Edition
-- [project_global_edition_launch.md](project_global_edition_launch.md) — first publish date 2026-03-21, workflow notes
-- [project_global_2026-03-27_in_progress.md](project_global_2026-03-27_in_progress.md) — **Fully published 2026-03-28**. Web + Substack + email (12 subscribers) + X thread + LinkedIn done.
+- [project_global_skill_rearchitect.md](project_global_skill_rearchitect.md) — /global rearchitected 2026-04-18: Haiku fetch + Sonnet orchestrate + Haiku publish; --pub-date flag; fixture check uses DATA_DATE
+- [feedback_publish_weekly_two_step.md](feedback_publish_weekly_two_step.md) — publish_weekly.sh: generation and --publish are strictly separated; --publish never regenerates; no email sending
+- [feedback_global_template_format.md](feedback_global_template_format.md) — approved MD + Substack HTML format; 13 LLM keys; macro regime as bullet list; no data tables in Substack
+- **2026-04-18**: Web live. Substack HTML written manually. X + LinkedIn pending.
+- [project_global_2026-04-11.md](project_global_2026-04-11.md) — Web live 2026-04-11.
 - [reference_substack_global.md](reference_substack_global.md) — Substack URL: frameworkfoundrymarket.substack.com
 - Full end-to-end checklist: `weekly-newsletter/content/checklist_global_edition.md`
 
@@ -175,12 +178,14 @@ To publish: run `build_combined_site.py`, commit `site/fundaa/YYYY-MM-DD/` + `si
 ## Daybreak — Social Post Standards (updated 2026-03-31)
 - [feedback_daybreak_social_post_standards.md](feedback_daybreak_social_post_standards.md) — X thread (anomaly hook → "Here's my read:" → $TICKER One Trade → Substack link), LinkedIn (One Trade → "Here's why:" → implication), Substack note (punchy paras, One Trade centrepiece, "What else I'm watching" bullets), email subject must reference The One Trade
 - [feedback_daybreak_substack_first.md](feedback_daybreak_substack_first.md) — publish Substack note first; swap URL in X/LinkedIn from frameworkfoundry.info to live Substack note URL; CTA is "Read on Substack", never "Full breakdown"
+- [feedback_linkedin_substack_url.md](feedback_linkedin_substack_url.md) — LinkedIn: use frameworkfoundrymkt.substack.com (root domain, not full note URL)
 
 ## Friday Fundaa — WhatsApp Tone
 - [feedback_whatsapp_tone.md](feedback_whatsapp_tone.md) — punchy, cheeky, irreverent; give concepts personality; dry humor + emoji; not a condensed Substack
 
 ## Publishing Standards
 
+- [No em dashes](feedback_no_em_dash.md) — replace — with " - " in all newsletter output (all editions, prose + headers + tables)
 - [Email and Substack formatting](feedback_email_and_substack_format.md) — subscriber emails need Framework Foundry banner; Substack content must be HTML
 
 ## Publishing — Never Build or Deploy Without Being Asked
@@ -202,3 +207,24 @@ separately with explicit user sign-off.
 
 ### Price verification (--verify flag)
 `generate_newsletter.py --live --verify` cross-checks yfinance prices against FRED + Stooq before generating. Raises `PriceDiscrepancyError` if any asset diverges >2%.
+
+---
+
+## Expat Magazine — Issue 02 (Spain)
+
+### 2026-04-21 — Publication wrap-up
+
+**Done:**
+- Added Issue 02 (Spain) card to `_EXPAT_PANEL` in `build_combined_site.py`
+- Regenerated `site/index.html` with new Issue 02 card
+- Committed and pushed to GitHub Pages — now live at https://frameworkfoundry.info/index.html#expat
+- Both Issue 01 (Portugal) and Issue 02 (Spain) appear as clickable cards in the Expat Investing section
+
+**Open/Blocked:**
+- [ ] **Missing OG image:** `site/expat/issue-02/og-image.jpg` does not exist. File is referenced in `<meta property="og:image">` but not present. Social sharing previews (Twitter/WhatsApp) will fail until this is added.
+- [ ] **Thin content / missing pictures:** The Spain Issue HTML exists but content appears sparse and images may be missing or incomplete. Recommend review of visual assets before considering the magazine fully launched.
+
+**Next steps:**
+1. Add OG image (og-image.jpg) to `site/expat/issue-02/` — suggest Spain/Valencia themed image matching Issue 01 structure
+2. Review Issue 02 content for completeness — verify all charts, images, and visual elements render properly
+3. Test social sharing on Twitter/LinkedIn to confirm OG image displays once added
