@@ -2,7 +2,7 @@
 title: "Your Retirement Account Has Two Settings. One Costs $67,643."
 series: The Blueprint
 issue: 6
-date: 2026-04-23
+date: 2026-04-22
 slug: roth-vs-traditional
 url: /investing-101/roth-vs-traditional/index.html
 tag: Investing 101
@@ -11,65 +11,10 @@ excerpt: Most people pick their IRA type by accident. The wrong default costs $6
 read_time: 8 min read
 ---
 
-# Issue #6 — Roth or Traditional: This Looks Like a Tax Form. It's Actually a Bet.
-
-**Status:** DRAFT — prose complete
-**Scheduled:** Wednesday, April 23, 2026
+*Published: Wednesday, April 22, 2026*
+*Series: The Blueprint | Practical Investing Guides*
 
 ---
-
-## VERIFIED CALCULATIONS
-
-### Core example: Marcus, 48 / $7,500/year / 7% / 20 years
-
-**Future Value formula:** FV = PMT × [(1 + r)^n − 1] / r
-
-Step-by-step (1.07)^20:
-- (1.07)^2  = 1.1449
-- (1.07)^4  = 1.310796
-- (1.07)^5  = 1.402552
-- (1.07)^10 = 1.967151
-- (1.07)^20 = 3.869684
-
-FV = $7,500 × (3.869684 − 1) / 0.07 = $7,500 × 40.9955 = **$307,466**
-
-**Traditional IRA at withdrawal (22% flat rate):**
-- Tax = $307,466 × 0.22 = $67,643
-- After-tax = $307,466 − $67,643 = **$239,823**
-
-**Roth IRA at withdrawal:**
-- Tax = $0
-- After-tax = **$307,466**
-
-**Difference: $67,643 (Roth wins)**
-
----
-
-### Honest caveat: what if Marcus invests the Traditional tax savings?
-
-Tax savings per year = $7,500 × 0.22 = $1,650/year
-
-FV of $1,650/year at 7% for 20 years:
-- $1,650 × 40.9955 = $67,642
-
-After 15% long-term capital gains tax:
-- Contributions = $1,650 × 20 = $33,000
-- Gains = $67,642 − $33,000 = $34,642
-- Tax = $34,642 × 0.15 = $5,196
-- Net taxable account = $67,642 − $5,196 = **$62,446**
-
-Total Traditional path (if tax savings invested): $239,823 + $62,446 = **$302,269**
-Roth path: **$307,466**
-Roth still wins by: **$5,197**
-
-At 0% capital gains rate: Traditional ≈ Roth (mathematical equivalence)
-In practice (savings spent, not invested): Roth wins by full $67,643
-
----
-
-## ARTICLE
-
-### Roth or Traditional: This Looks Like a Tax Form. It's Actually a Bet.
 
 Marcus opened his IRA last week. You told him to (Issue #5). He found the account type selector: Traditional or Roth. He vaguely remembered something about Traditional lowering his taxes now. He clicked it. He confirmed. He moved on.
 
@@ -189,5 +134,4 @@ The answer is probably not what you think. That is Issue #7.
 
 ---
 
-*Issue #6 | The Blueprint | Published April 23, 2026*
-*Draft started: 2026-04-19 | Prose complete: 2026-04-21*
+*Issue #6 | The Blueprint | Published April 22, 2026*
