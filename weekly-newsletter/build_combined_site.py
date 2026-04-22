@@ -3298,6 +3298,19 @@ _EXPAT_PANEL = """\
           <span class="article-read-time">Read Issue &rarr;</span>
         </div>
       </a>
+      <a class="article-row" href="/expat/issue-02/index.html">
+        <div class="article-tag-col">
+          <span class="article-tag guide">Issue 02</span>
+        </div>
+        <div class="article-content">
+          <div class="article-title">The Spain Issue</div>
+          <div class="article-excerpt">NLV vs. Digital Nomad Visa &middot; Beckham Law &middot; FEIE vs. FTC &middot; PRIIPs &mdash; Everything you need to know about moving money and building wealth as an American expat in Spain.</div>
+        </div>
+        <div class="article-meta-col">
+          <span class="article-date">Apr 2026</span>
+          <span class="article-read-time">Read Issue &rarr;</span>
+        </div>
+      </a>
     </div>
   </div>
 </div>"""
