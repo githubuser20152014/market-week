@@ -127,7 +127,16 @@
       "Bash(echo \"EXIT: $?\")",
       "Bash(kill -9 3616)",
       "Bash(bash:*)",
-      "Bash(curl -s \"https://frameworkfoundry.info/index.html\")"
+      "Bash(curl -s \"https://frameworkfoundry.info/index.html\")",
+      "Bash(grep -E \"\\\\.\\(md|json\\)$\")",
+      "Bash(cp \"C:/Users/Akhil/.claude/projects/C--Users-Akhil-Documents-cc4e-course-market-week/memory/MEMORY.md\" \"C:/Users/Akhil/Documents/cc4e-course/market-week/.claude/memory/MEMORY.md\")",
+      "Bash(cp \"C:/Users/Akhil/.claude/projects/C--Users-Akhil-Documents-cc4e-course-market-week/memory/project_global_skill_rearchitect.md\" \"C:/Users/Akhil/Documents/cc4e-course/market-week/.claude/memory/project_global_skill_rearchitect.md\")",
+      "Bash(cp \"C:/Users/Akhil/.claude/projects/C--Users-Akhil-Documents-cc4e-course-market-week/memory/feedback_publish_weekly_two_step.md\" \"C:/Users/Akhil/Documents/cc4e-course/market-week/.claude/memory/feedback_publish_weekly_two_step.md\")",
+      "Bash(cp \"C:/Users/Akhil/.claude/projects/C--Users-Akhil-Documents-cc4e-course-market-week/memory/feedback_global_template_format.md\" \"C:/Users/Akhil/Documents/cc4e-course/market-week/.claude/memory/feedback_global_template_format.md\")",
+      "Bash(rm output/market_day_break_2026-04-17.md)",
+      "Bash(DIGEST_DIR=\"C:/Users/Akhil/Documents/ContentRepo/07-Reading/news-digest\" python generate_market_day_break.py --date 2026-04-17 --md-only)",
+      "Bash(git -C \"C:/Users/Akhil/Documents/cc4e-course/market-week\" status)",
+      "Bash(git -C \"C:/Users/Akhil/Documents/cc4e-course/market-week\" diff)"
     ]
   }
 }

@@ -1,0 +1,60 @@
+{
+  "past_week": [
+    {
+      "date": "2026-04-13",
+      "event": "Trade Balance",
+      "importance": 2,
+      "actual": "-57,347.0",
+      "expected": "See tradingeconomics.com",
+      "previous": "-54,677.0",
+      "unit": "B",
+      "surprise": "",
+      "impact": ""
+    },
+    {
+      "date": "2026-04-13",
+      "event": "Industrial Production",
+      "importance": 2,
+      "actual": "-0.5%",
+      "expected": "See tradingeconomics.com",
+      "previous": "--",
+      "unit": "",
+      "surprise": "",
+      "impact": ""
+    },
+    {
+      "date": "2026-04-14",
+      "event": "Durable Goods Orders",
+      "importance": 2,
+      "actual": "--",
+      "expected": "See tradingeconomics.com",
+      "previous": "--",
+      "unit": "",
+      "surprise": "",
+      "impact": ""
+    },
+    {
+      "date": "2026-04-17",
+      "event": "New Home Sales",
+      "importance": 1,
+      "actual": "--",
+      "expected": "See tradingeconomics.com",
+      "previous": "--",
+      "unit": "",
+      "surprise": "",
+      "impact": ""
+    }
+  ],
+  "upcoming_week": [
+    {
+      "date": "2026-04-20",
+      "event": "Industrial Production",
+      "importance": 2
+    },
+    {
+      "date": "2026-04-24",
+      "event": "New Home Sales",
+      "importance": 1
+    }
+  ]
+}
