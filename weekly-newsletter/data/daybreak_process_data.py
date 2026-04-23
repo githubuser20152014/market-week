@@ -1376,6 +1376,9 @@ def generate_linkedin_post(context: dict) -> str:
 
     post = "\n\n".join(parts)
 
+    # Em dash sweep — catch any residual dashes from plain_summary content
+    post = post.replace(" — ", ": ").replace("—", ":")
+
     # LinkedIn personal post limit is 3,000 characters
     LINKEDIN_LIMIT = 3000
     if len(post) > LINKEDIN_LIMIT:
@@ -1392,21 +1395,26 @@ def generate_linkedin_post(context: dict) -> str:
 
 
 def generate_x_post(context: dict) -> str:
-    """Generate a 4-tweet opinionated thread for X (Twitter) from the daybreak context.
+    """Generate a 6-tweet story-driven thread for X (Twitter) from the daybreak context.
 
-    Tweet 1: The anomaly / hook — the ONE most striking cross-asset observation.
-             No data table. Written as a provocative statement.
-    Tweet 2: "Here's my read:" — the thesis/opinion explaining why this is happening.
-    Tweet 3: The One Trade with ticker ($TICKER cashtag), entry confirm, and risk.
-    Tweet 4: Link (date-specific URL) + hashtags.
+    Tweet 1: The anomaly / hook — ONE striking cross-asset observation.
+    Tweet 2: "Here's my read:" — the thesis/opinion (macro driver).
+    Tweet 3: "The numbers:" — data recap with specific moves and real figures.
+    Tweet 4: The One Trade with $TICKER cashtag, entry confirm, risk.
+    Tweet 5: "What I'm watching:" — first positioning tip.
+    Tweet 6: Link + hashtags.
 
-    Returns four blocks separated by '\\n---\\n', each ≤280 chars.
+    Returns six blocks separated by '\\n---\\n', each ≤280 chars.
     Warns via UserWarning if any block exceeds the limit.
     """
     import warnings
 
+    _EM = "—"  # em dash — banned in all output fields
+
     us_indices = context.get("us_indices") or []
     tips       = context.get("tips") or context.get("positioning_tips") or []
+    us_best    = context.get("us_best")
+    us_worst   = context.get("us_worst")
     # Reconstruct plain_summary from brief_body + investor_section if needed
     plain_summary = context.get("plain_summary") or "\n\n".join(filter(None, [
         context.get("brief_body", ""), context.get("investor_section", "")
@@ -1417,57 +1425,80 @@ def generate_x_post(context: dict) -> str:
     url = f"frameworkfoundry.info/daily/{date_str}/" if date_str else "frameworkfoundry.info/daily/"
 
     # ── Tweet 1: The anomaly/hook — ONE striking observation, no data table ────
-    # Use the first sentence(s) of the brief — already written as a hook.
     hook_para = paras[0] if paras else ""
     hook_text = _trim_to_sentences(_strip_markdown(hook_para), 250)
-    tweet1 = f"{hook_text}\n\n🧵 1/4"
+    hook_text = hook_text.replace(f" {_EM} ", ": ").replace(_EM, ":")
+    tweet1 = f"{hook_text}\n\n\U0001f9f5 1/6"
 
     # ── Tweet 2: "Here's my read:" + the macro cause paragraph ──────────────────
     # Para 0 = hook, para 1 = data recap, para 2 = macro driver/cause (the "why").
-    # Use para 2 when available; fall back to para 1.
-    # Allow up to 253 chars for the body (280 - "Here's my read:\n\n" 17 - "\n\n🧵 2/4" 8 - buffer 2).
     why_para = paras[2] if len(paras) > 2 else (paras[1] if len(paras) > 1 else hook_para)
     why_text = _trim_to_sentences(_strip_markdown(why_para), 253)
-    tweet2 = f"Here's my read:\n\n{why_text}\n\n🧵 2/4"
+    why_text = why_text.replace(f" {_EM} ", ": ").replace(_EM, ":")
+    tweet2 = f"Here's my read:\n\n{why_text}\n\n\U0001f9f5 2/6"
 
-    # ── Tweet 3: The One Trade with $TICKER cashtag ────────────────────────────
-    TWEET_BODY_LIMIT = 268  # 280 minus "🧵 3/4" (6) + "\n\n" (2) + buffer (4)
+    # ── Tweet 3: "The numbers:" + data recap paragraph ────────────────────────
+    # Para 1 = data recap with specific asset moves and real figures.
+    data_para = paras[1] if len(paras) > 1 else ""
+    data_text = _trim_to_sentences(_strip_markdown(data_para), 256)
+    data_text = data_text.replace(f" {_EM} ", ": ").replace(_EM, ":")
+    if not data_text and us_best and us_worst:
+        data_text = (
+            f"Best: {us_best['name']} ({us_best['daily_pct']:+.2f}%)"
+            f" | Worst: {us_worst['name']} ({us_worst['daily_pct']:+.2f}%)"
+        )
+    tweet3 = f"The numbers:\n\n{data_text}\n\n\U0001f9f5 3/6" if data_text else None
+
+    # ── Tweet 4: The One Trade with $TICKER cashtag ────────────────────────────
+    TWEET_BODY_LIMIT = 268  # 280 minus "🧵 4/6" (6) + "\n\n" (2) + buffer (4)
     ot = context.get("one_trade")
     if ot and isinstance(ot, dict):
         raw_ticker   = ot.get("ticker", "")
         ot_direction = ot.get("direction", "")
-        ot_thesis    = _strip_markdown(ot.get("thesis", ""))
-        ot_confirm   = _strip_markdown(ot.get("confirm", ""))
-        ot_risk      = _strip_markdown(ot.get("risk", ""))
-        # Format ticker as $TICKER cashtag if not already
+        ot_thesis    = _strip_markdown(ot.get("thesis", "")).replace(f" {_EM} ", ": ").replace(_EM, ":")
+        ot_confirm   = _strip_markdown(ot.get("confirm", "")).replace(f" {_EM} ", ": ").replace(_EM, ":")
+        ot_risk      = _strip_markdown(ot.get("risk", "")).replace(f" {_EM} ", ": ").replace(_EM, ":")
         cashtag = f"${raw_ticker.lstrip('$')}" if raw_ticker else ""
         ot_thesis_trimmed  = _trim_to_sentences(ot_thesis, 130)
         ot_confirm_trimmed = _trim_to_sentences(ot_confirm, 75)
         ot_risk_trimmed    = _trim_to_sentences(ot_risk, 75)
-        t3_body = f"The One Trade: {cashtag} {ot_direction}\n\n{ot_thesis_trimmed}"
+        t4_body = f"The One Trade: {cashtag} {ot_direction}\n\n{ot_thesis_trimmed}"
         if ot_confirm_trimmed:
-            t3_body += f"\n\nEntry: {ot_confirm_trimmed}"
+            t4_body += f"\n\nEntry: {ot_confirm_trimmed}"
         if ot_risk_trimmed:
-            t3_body += f"\nRisk: {ot_risk_trimmed}"
-        if len(t3_body) > TWEET_BODY_LIMIT:
-            t3_body = _trim_to_sentences(t3_body, TWEET_BODY_LIMIT)
-        tweet3 = f"{t3_body}\n\n🧵 3/4"
+            t4_body += f"\nRisk: {ot_risk_trimmed}"
+        if len(t4_body) > TWEET_BODY_LIMIT:
+            t4_body = _trim_to_sentences(t4_body, TWEET_BODY_LIMIT)
+        tweet4 = f"{t4_body}\n\n\U0001f9f5 4/6"
     else:
         top_tip = _strip_markdown(tips[0]) if tips else ""
+        top_tip = top_tip.replace(f" {_EM} ", ": ").replace(_EM, ":")
         if len(top_tip) > TWEET_BODY_LIMIT:
             top_tip = _trim_to_sentences(top_tip, TWEET_BODY_LIMIT)
-        tweet3 = f"{top_tip}\n\n🧵 3/4" if top_tip else f"See full positioning notes at {url}\n\n🧵 3/4"
+        tweet4 = f"{top_tip}\n\n\U0001f9f5 4/6" if top_tip else f"See full positioning notes at {url}\n\n\U0001f9f5 4/6"
 
-    # ── Tweet 4: Date-specific link + hashtags ─────────────────────────────────
-    tweet4 = f"Read on Substack:\n{url}\n\nNot investment advice. For informational purposes only.\n\n#MacroInvesting #ETFs #MarketOpen\n\n🧵 4/4"
+    # ── Tweet 5: "What I'm watching:" + first positioning tip ─────────────────
+    # When one_trade is present, tweet4 didn't consume tips, so use tips[0].
+    # When one_trade is absent, tips[0] was tweet4 fallback, so use tips[1].
+    watch_source = tips[0] if (ot and isinstance(ot, dict)) else (tips[1] if len(tips) > 1 else "")
+    if not watch_source and tips:
+        watch_source = tips[0]
+    WATCH_BODY_LIMIT = 250  # 280 - len("What I'm watching:\n\n") - len("\n\n🧵 5/6") - buffer
+    watch_text = _trim_to_sentences(_strip_markdown(watch_source), WATCH_BODY_LIMIT)
+    watch_text = watch_text.replace(f" {_EM} ", ": ").replace(_EM, ":")
+    tweet5 = f"What I'm watching:\n\n{watch_text}\n\n\U0001f9f5 5/6" if watch_text else None
+
+    # ── Tweet 6: Date-specific link + hashtags ─────────────────────────────────
+    tweet6 = f"Read on Substack:\n{url}\n\nNot investment advice. For informational purposes only.\n\n#MacroInvesting #ETFs #MarketOpen\n\n\U0001f9f5 6/6"
 
     TWEET_LIMIT = 280
-    tweets = [tweet1, tweet2, tweet3, tweet4]
+    tweets = [t for t in [tweet1, tweet2, tweet3, tweet4, tweet5, tweet6] if t is not None]
+    n = len(tweets)
     for i, tweet in enumerate(tweets, start=1):
         if len(tweet) > TWEET_LIMIT:
             overage = len(tweet) - TWEET_LIMIT
             warnings.warn(
-                f"X thread tweet {i}/4 is {len(tweet)} chars — {overage} over the 280-char limit. "
+                f"X thread tweet {i}/{n} is {len(tweet)} chars — {overage} over the 280-char limit. "
                 "Trim before posting.",
                 UserWarning,
                 stacklevel=2,
