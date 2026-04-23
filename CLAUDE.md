@@ -1,62 +1,83 @@
-# CLAUDE.md
+# CLAUDE.md — Market Week (Daybreak Newsletter Pipeline)
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## What this repo is
 
-## Project
+The Daybreak newsletter pipeline. Publishes Monday–Friday, 6–7 AM window. Daily market intelligence brief for serious ETF investors: yesterday's US close + overnight Asia/Europe + pre-market futures + one high-conviction trade.
 
-**Weekly Economic Newsletter Generator** — A Python CLI tool (`generate_newsletter.py`) that auto-generates a Markdown newsletter for active ETF investors. Runs weekly to review the past 7 days' macro events, major indices performance, and upcoming events with positioning tips. Output: `newsletter_[YYYY-MM-DD].md`. US-focused initially; designed for easy international expansion (Nikkei, FTSE, ECB).
+## Architecture (3-phase)
 
-Target user: Diversified ETF holder tilting on macro regimes (e.g., defensives on volatility).
+```
+Phase 1 — Generate (Haiku fetches data, Sonnet writes narrative)
+  bash weekly-newsletter/publish_daybreak.sh DATE
+  → Haiku: fetches market data → saves fixture (daybreak_DATE.json)
+  → Claude Sonnet API: generates narrative, plain_summary, positioning, one_trade
+  → Outputs: output/market_day_break_DATE.md
+  → STOPS. Human reviews the markdown.
 
-## Commands
+Phase 2 — Publish (Haiku builds site + git push)
+  bash weekly-newsletter/publish_daybreak.sh DATE --publish
+  → Reads approved .md (does NOT call Claude API again)
+  → Generates social posts from approved content
+  → Builds site, git push, email preview
 
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run newsletter generation (defaults to today)
-python generate_newsletter.py
-
-# Run for a specific date
-python generate_newsletter.py --date 2026-02-16
-
-# Preview to stdout without saving
-python generate_newsletter.py --preview
+Phase 3 — Send
+  bash weekly-newsletter/publish_daybreak.sh DATE --send-email
+  → Sends to subscriber list via Gmail SMTP
 ```
 
-## Architecture
+## Key files
 
 ```
 weekly-newsletter/
-├── generate_newsletter.py   # Main CLI entry point: fetch → process → render → save
+├── publish_daybreak.sh                   ← Shell orchestrator (entry point)
+├── generate_market_day_break.py          ← Python coordinator
 ├── data/
-│   ├── fetch_data.py        # API calls to Alpha Vantage & Finnhub → JSON
-│   └── process_data.py      # Compute % changes, filter/group events, generate tips
-├── templates/
-│   └── newsletter_template.md  # Jinja2 Markdown template
-├── config/
-│   ├── indices.json         # Index symbol mapping (e.g., {"SPX": "^GSPC"})
-│   └── api_keys.env         # Environment variable template (not committed)
-├── output/                  # Generated newsletters land here
-└── requirements.txt         # pandas, requests, python-dotenv, jinja2, yfinance
+│   ├── fetch_daybreak_data.py            ← yfinance + Finnhub + Perplexity
+│   ├── daybreak_process_data.py          ← Claude API call + content generators
+│   │   └── _DAYBREAK_SYSTEM_PROMPT       ← The Claude system prompt (edit here for tone)
+│   └── email_sender.py                   ← Gmail SMTP
+├── output/
+│   └── market_day_break_DATE.md          ← The approved newsletter (human-reviewed source)
+├── fixtures/
+│   └── daybreak_DATE.json                ← Saved live data (written once)
+└── config/
+    ├── api_keys.env                       ← ANTHROPIC_API_KEY, GMAIL_*, FINNHUB_*
+    └── subscribers.txt                    ← One email per line
 ```
 
-**Data flow:** `generate_newsletter.py` orchestrates: `fetch_data.py` pulls from APIs → `process_data.py` transforms raw data into structured content → Jinja2 renders the template → output saved as Markdown.
+## Voice and tone (mandatory — applies to all content work in this repo)
 
-## Data Sources (Free APIs)
+The reader is a serious ETF investor. Not a trader. Not a beginner. They want signal, not noise.
 
-- **Indices**: Alpha Vantage `TIME_SERIES_DAILY` for ^GSPC, ^DJI, ^IXIC, ^RUT. Weekly % = `(close_today - close_7d_ago) / close_7d_ago`. Env var: `ALPHAVANTAGE_API_KEY`.
-- **Economic Calendar**: Finnhub `/calendar/economic` with date range, filter importance > 2, keywords: CPI, GDP, Fed, ECB. Env var: `FINNHUB_API_KEY`.
-- **News/Sentiment**: Finnhub `/news?category=general` filtered by keywords; RSS fallback.
-- **Edge cases**: Mock JSON fixtures if APIs fail. Use latest trading day for weekends.
+**The voice:** Portfolio manager briefing a colleague before the open. Direct. Short sentences. Named catalysts with exact numbers. No hedging.
 
-## Branding
+**Em dashes (—) are banned.** Use a colon for elaboration, comma for a parenthetical aside, period where two thoughts stand alone.
 
-Newsletter header: **"Framework Capital Weekly"**. Professional Markdown with tables.
+**Banned phrases:** "amid concerns", "market participants remain cautious", "volatility persists", "investors digest", "risk sentiment". Name the specific actor, catalyst, and price move.
 
-## Expansion Points
+**The one_trade thesis** starts with the signal or anomaly, not the action. The asymmetry should be obvious in one sentence.
 
-- International indices: add to `config/indices.json` (^N225, ^FTSE) and `config/intl.json` for ECB RSS
-- Email delivery: smtplib
-- PDF export: weasyprint
-- Automation: GitHub Actions cron
+**Bold callouts in plain_summary:** 6–10 highlights. Price figures at inflection points, named catalysts, cross-asset tension phrases. Not decorative — reward scanning.
+
+## Skills
+
+- `/daybreak DATE` — full Daybreak production run with review checkpoints
+- `/daybreak-fetch DATE` — data collection only (Haiku sub-agent)
+- `/daybreak-publish DATE` — publish + email preview (Haiku sub-agent)
+
+## Common commands
+
+```bash
+# Run generate phase only (review before publishing)
+bash weekly-newsletter/publish_daybreak.sh 2026-04-23
+
+# Publish after approving the markdown
+bash weekly-newsletter/publish_daybreak.sh 2026-04-23 --publish
+
+# Send email to subscribers
+bash weekly-newsletter/publish_daybreak.sh 2026-04-23 --send-email
+```
+
+## Critical invariant
+
+The approved `.md` file is the single source of truth for Phase 2. Nothing is regenerated from raw data after human approval. The Claude API is called exactly once (Phase 1). Phase 2 reads from the markdown via `_override_from_approved_md()`.

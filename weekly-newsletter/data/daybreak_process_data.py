@@ -213,6 +213,19 @@ Aim for 6–10 bold phrases across the 4 paragraphs — enough to reward scannin
     name the signal, the asset, or the anomaly. No trailing punctuation. \
     Example: "The One Trade: GLD Long — gold refuses to sell into a risk-on open"
 
+STYLE RULES — apply to every output field without exception:
+- Em dashes (—) are banned. Do not use them anywhere. Substitutes by context: \
+  colon to introduce an elaboration, comma for a parenthetical aside, \
+  period where two thoughts read better as separate sentences.
+- No financial boilerplate. Banned phrases: "amid concerns", "market participants \
+  remain cautious", "volatility persists", "investors digest", "risk sentiment". \
+  Name the specific catalyst, actor, and price move instead.
+- one_trade.thesis must start with the signal or anomaly, not the action. \
+  Wrong: "Consider going long GLD if conditions hold." \
+  Right: "Gold refuses to sell into a risk-on open — buyers are defending the floor."
+- plain_summary voice: portfolio manager briefing a colleague before the open. \
+  Short sentences. Active voice. Named catalysts, exact figures, no vague attribution.
+
 Return ONLY valid JSON — no markdown fences, no extra keys, no commentary outside the JSON.\
 """
 
@@ -1674,16 +1687,11 @@ def generate_substack_post(context: dict) -> str:
         raw_ticker   = ot.get("ticker", "")
         ot_direction = ot.get("direction", "")
         cashtag = f"${raw_ticker.lstrip('$')}" if raw_ticker else raw_ticker
-        # Use first clause of hook as the tagline — cut at em-dash or first sentence end
         hook_para_plain = _strip_markdown(paras[0]) if paras else ""
-        # Prefer the text before the first em-dash (clean clause boundary)
-        if " — " in hook_para_plain:
-            tagline = hook_para_plain.split(" — ")[0].strip()
-        else:
-            tagline = hook_para_plain.split(". ")[0].rstrip(".")
+        tagline = hook_para_plain.split(". ")[0].rstrip(".")
         if len(tagline) > 65:
             tagline = tagline[:65].rsplit(" ", 1)[0] + "…"
-        title = f"The One Trade: {ot_direction} {cashtag} — {tagline}"
+        title = f"The One Trade: {ot_direction} {cashtag}: {tagline}"
     else:
         title = context.get("email_subject") or _generate_post_title(context)
 

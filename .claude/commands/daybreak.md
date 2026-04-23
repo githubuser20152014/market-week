@@ -29,7 +29,17 @@ After running, read the generated Markdown file and display its full contents to
 
 **Step 2 — Review checkpoint (content):**
 
-Ask the user:
+Before displaying the draft to the user, run a pre-flight style check on the generated markdown. Check each of the following and report any violations:
+
+- [ ] No em dashes (—) anywhere in the file
+- [ ] `narrative` section is 2–3 sentences max, no boilerplate opener ("Markets showed...", "Stocks were...")
+- [ ] `one_trade` thesis starts with the signal or anomaly, not the action ("Consider..." or "If conditions..." = flag it)
+- [ ] No banned phrases: "amid concerns", "market participants", "investors remain cautious", "volatility persists", "risk sentiment"
+- [ ] Bold callouts in plain_summary: at least 4 (if fewer, note it)
+
+If any violations are found, list them clearly, fix what can be fixed by editing the `.md` directly, then display the corrected draft.
+
+Then ask the user:
 > "Here's the newsletter for [date]. Does everything look good, or would you like any changes before I generate the PDF and social posts?"
 
 Wait for the user's response. If they request changes, make the edits to the `.md` file directly, then show the updated sections and ask again.
