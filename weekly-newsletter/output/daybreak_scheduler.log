@@ -944,3 +944,4 @@ All other sections — data, One Trade, GLD/XLE/IWM/TLT notes — were left unto
 
 Review the Markdown above, then run with --publish to generate social posts and deploy:
   bash weekly-newsletter/publish_daybreak.sh 2026-04-22 --publish
+==> No fixture found — fetching live data ...

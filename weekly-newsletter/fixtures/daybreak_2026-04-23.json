@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-04-23",
+    "generated_at": "2026-04-23T09:38:38.053128Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7064.0098,
+      "close": 7137.8999,
+      "daily_pct": 1.046,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49149.3789,
+      "close": 49490.0312,
+      "daily_pct": 0.6931,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24259.9609,
+      "close": 24657.5703,
+      "daily_pct": 1.639,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2764.97,
+      "close": 2785.3799,
+      "daily_pct": 0.7382,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4732.5,
+      "close": 4718.2998,
+      "daily_pct": -0.3001,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.292,
+      "close": 4.294,
+      "daily_pct": 0.0466,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.59,
+      "close": 98.687,
+      "daily_pct": 0.0984,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 92.96,
+      "close": 94.54,
+      "daily_pct": 1.6997,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59140.23,
+      "prev_close": 59585.86,
+      "daily_pct": -0.7479,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25915.2,
+      "prev_close": 26163.24,
+      "daily_pct": -0.9481,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6475.81,
+      "prev_close": 6417.93,
+      "daily_pct": 0.9018,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24180.05,
+      "prev_close": 24378.1,
+      "daily_pct": -0.8124,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8793.4,
+      "prev_close": 8843.6,
+      "daily_pct": -0.5676,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24078.52,
+      "prev_close": 24078.52,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10392.28,
+      "prev_close": 10392.28,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8171.75,
+      "prev_close": 8171.75,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5865.7,
+      "prev_close": 5865.7,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16973,
+      "prev_close": 1.17443,
+      "daily_pct": -0.4
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35033,
+      "prev_close": 1.35097,
+      "daily_pct": -0.0469
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.72501,
+      "prev_close": 159.373,
+      "daily_pct": 0.2209
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71506,
+      "prev_close": 0.71562,
+      "daily_pct": -0.0779
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83628,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27408,
+      "prev_close": 1.28115,
+      "daily_pct": -0.5517
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7136.25,
+      "prev_close": 7136.25,
+      "daily_pct": -0.4881
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 26945.75,
+      "prev_close": 26945.75,
+      "daily_pct": -0.5068
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49405.0,
+      "prev_close": 49405.0,
+      "daily_pct": -0.5295
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4719.2,
+      "prev_close": 4719.2,
+      "daily_pct": -0.281
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 111.08,
+      "prev_close": 111.08,
+      "daily_pct": -0.1825
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 94.57,
+      "prev_close": 94.57,
+      "daily_pct": 1.7319
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Tesla misses on revenue but beats on profit as auto margins jump",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 01:19:59 GMT",
+      "url": "https://www.cnbc.com/2026/04/22/tesla-tsla-q1-2026-earnings-report.html",
+      "summary": "Tesla's stock has underperformed all of its megacap peers so far this year as global competition ramps up in the electric vehicle market."
+    },
+    {
+      "headline": "L'Oreal stock pops 9% after 'impressive' earnings, on track for biggest gain in 18 years",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 08:42:04 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/loreal-stock-q1-earnings-beauty-sales.html",
+      "summary": "The cosmetics market shows no signs of slowing down, analysts said after L'Oreal's \"impressive\" results."
+    },
+    {
+      "headline": "ServiceNow stock sinks 14% as subscription revenue takes hit from Iran war",
+      "source": "CNBC",
+      "published": "Wed, 22 Apr 2026 21:08:37 GMT",
+      "url": "https://www.cnbc.com/2026/04/22/servicenow-now-earnings-q1-2026.html",
+      "summary": "The software company beat expectations for earnings and revenue as it continued to expand its artificial intelligence offerings."
+    },
+    {
+      "headline": "IBM shares drop as company beats but opts to maintain guidance",
+      "source": "CNBC",
+      "published": "Wed, 22 Apr 2026 23:35:25 GMT",
+      "url": "https://www.cnbc.com/2026/04/22/ibm-q1-earnings-report-2026.html",
+      "summary": "Investors have been attuned to mainframe disruption threats from artificial intelligence, but IBM posted 51% growth in Z mainframe hardware revenue."
+    },
+    {
+      "headline": "Economic coercion from U.S. and Europe almost drove Canada 'into China's arms,' says Trudeau",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 08:47:19 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/trudeau-says-us-europe-nearly-drove-canada-towards-china.html",
+      "summary": "Former Canadian Prime Minister Justin Trudeau said U.S. actions almost allowed aircraft manufacturer Bombardier to be bought by China."
+    },
+    {
+      "headline": "Southwest Airlines forecasts quarterly earnings below estimates on higher fuel",
+      "source": "CNBC",
+      "published": "Wed, 22 Apr 2026 22:16:29 GMT",
+      "url": "https://www.cnbc.com/2026/04/22/southwest-airlines-luv-q1-2026-earnings.html",
+      "summary": "The airline reported that revenue in its first-quarter period rose nearly 13% to $7.25 billion."
+    },
+    {
+      "headline": "SK Hynix posts record first-quarter profit, in line with estimates as memory prices climb",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 02:45:56 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/sk-hynix-earnings-ai-memory-shortage-hbm-demand.html",
+      "summary": "SK Hynix posted yet another quarter of record profit and revenue, as prices for its products continue to surge amid strong AI demand."
+    },
+    {
+      "headline": "Roche CEO laments Swiss franc strength as drugmaker doubles down on U.S. investment",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 06:50:50 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/roche-stock-earnings-q1-ceo-swiss-franc-us-investment.html",
+      "summary": "Currency effects weighed on the Swiss drugmaker's first-quarter earnings"
+    }
+  ]
+}
