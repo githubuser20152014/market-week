@@ -1,19 +1,35 @@
-New Home Sales Day: Stocks Dipped. Here's Where to Stand.
+The equity market sold off yesterday. That's not the story.
 
-The dominant story is a stagflation squeeze: the Strait of Hormuz deadlock has pushed WTI to $97.23, a fifth consecutive day of crude gains, while the CPI print at 3.3% has forced markets to price out Fed cuts entirely. Equities sold off across the board, with the Nasdaq leading the decline at -0.89%, and the cross-asset picture is a stagflation signal, not a flight-to-safety bid: oil up, yields up, gold flat, dollar flat. Pre-market futures are directionless, with S&P flat and Nasdaq modestly positive on a tech-specific bid from Texas Instruments and TSMC, but Dow futures are leaking lower, suggesting the open will be choppy and sector-dependent.
+The story is that bonds sold off too. And gold barely moved. And crude posted its fifth consecutive daily gain.
 
-Yesterday's close: S&P 500 at 7,108, down 0.41%. Nasdaq fell 0.89% to 24,438, the Dow dropped 0.36% to 49,310, and the Russell 2000 shed 0.37% to 2,775. The real story was in commodities and rates: WTI crude surged 1.44% to $97.23, a fifth consecutive daily gain. The 10-year Treasury yield rose 2.9 basis points to 4.323%, gold was essentially unchanged at $4,707, and the USD index barely moved at 98.79. Cross-asset: bonds selling off in tandem with equities, gold doing nothing. That is not a flight-to-safety pattern. That is a stagflation pattern.
+That cross-asset pattern has a name. It's stagflation.
 
-The causal chain is straightforward. The Strait of Hormuz deadlock, now entering its second month with no resolution, has cut off roughly 20% of global oil trade. Brent is above $106, WTI at $97, and the lag is feeding directly into US CPI, which printed 3.3% headline on an 11% monthly energy price surge. Core remains at 2.6%, which tells you this is energy-driven, not demand-driven, but the Fed cannot cut into a 3.3% headline print regardless of the cause. Think of it like a tax on every American household that the Fed cannot offset without risking credibility. Meanwhile, ServiceNow and IBM results disappointed on AI spending visibility, dragging software stocks and reinforcing the split between hardware AI winners and software AI question marks.
+Here's what each market was actually saying:
 
-For ETF investors, the positioning implications are layered. Energy (XLE, XOP) remains the clearest fundamental trade as long as the Hormuz closure holds. The inflation shock is a structural headwind for long-duration bonds (TLT), which cannot rally until the oil war ends or core inflation cracks. Gold at $4,707 is doing nothing, which is the anomaly: in a genuine stagflation scare, gold should be running. Its inertia suggests the dollar has not broken down enough to give it a tailwind, and real yields are creeping higher. Tech is bifurcated: semiconductors (SOXX, SMH) are catching a bid from TSMC's record high and Texas Instruments' 19% single-day surge on AI hardware demand, while enterprise software (IGV) is under pressure from the ServiceNow and IBM misses. The energy trade is back on the table, and the AI hardware versus AI software divergence is the intraday rotation to watch.
+The bond market gave no comfort. The 10-year yield rose 2.9 basis points to 4.323% as equities sold off - both moving in the same direction. When stocks fall and bonds fall together, that is not a rotation into safety. That is a repricing of inflation risk. CPI just printed 3.3% headline on an 11% monthly energy surge. Core sits at 2.6% - the gap tells you this is entirely energy-driven. The Fed can see the difference but cannot cut into a 3.3% headline print without torching its credibility. Rate cuts are off the table.
 
-Going into today, S&P futures are flat at 7,142 and Nasdaq futures are up 0.57% on the tech earnings carryover. Dow futures are off 0.37%, consistent with the industrial and consumer drag from high energy costs. The Nikkei closed at 59,716, up 0.97%, near the 60,000 milestone, driven by semiconductor strength. That signal is constructive for SOXX and SMH at the open. The swing factor today is the 10:00 AM ET New Home Sales print: a weak number would compound the consumer confidence deterioration story (confidence already at its lowest since late 2023) and pressure rate-sensitive sectors like homebuilders (ITB, XHB). The technical level to watch on the S&P is 7,080, the intraday low from yesterday's session. A break below that on volume would shift the tape from choppy to distribution.
+Gold closed at $4,707 and did nothing. In a genuine stagflation scare, gold should be running. Its inertia is the anomaly in yesterday's tape. Real yields are creeping higher and capping the upside. Institutional money is sitting on its hedge and watching. That tells you the dollar hasn't broken down enough to give gold a tailwind yet - or the move is coming and the smart money is waiting for a cleaner entry.
 
-Best: WTI Crude Oil (+1.44%) | Worst: Nasdaq (-0.89%)
+WTI closed at $97.23 - fifth consecutive daily gain. Brent is above $106. The Strait of Hormuz has been locked for two months. Roughly 20% of global oil trade is bottled up. The Islamabad peace talks are off the table. This is not a sentiment trade. This is a structural supply shock with no visible exit, feeding directly into US inflation with no Fed offset available.
 
-Read on Substack → frameworkfoundry.info/daily/2026-04-24/
+Then earnings split the AI tape in half.
 
-Not investment advice. For informational purposes only.
+Texas Instruments surged 19% - its best day since 2000. The driver: AI hardware demand is accelerating and showing up in earnings. TSMC hit a record high overnight. The Nikkei is approaching 60,000 on semiconductor strength. The chip cycle is real and it is now confirmed by multiple earnings prints.
 
-#MacroInvesting #ETFs #MarketOpen
+ServiceNow and IBM went the opposite direction. Both disappointed on AI spending clarity. The software complex collapsed. The market is repricing the gap between AI infrastructure winners and AI application question marks. The divergence is not subtle and it is not a one-quarter event.
+
+The story nobody is covering: airlines.
+
+Brent above $106 means aviation fuel is a crisis for European carriers. Lufthansa already slashed 20,000 summer flights, calling them "unprofitable" due to fuel costs. That pressure hits every airline with European operations. The Hormuz story isn't just oil. It's aviation fuel, logistics costs, fertilizer production, food supply chains. Equity markets are pricing the first-order effects. The second and third-order effects have not arrived yet.
+
+So which market got it right?
+
+Bonds and crude are both saying this is structural. The 10-year won't rally until the Hormuz closure ends or core inflation cracks. Crude won't retreat until ships can physically move through the strait again. Gold's flat line is the most interesting signal of all - institutional money is not piling into the classic inflation hedge, which means either they're waiting for the dollar to break or they don't yet believe the full stagflation thesis has arrived.
+
+One of these markets is wrong. Historically, it isn't crude.
+
+Full analysis in today's Morning Brief.
+
+frameworkfoundrymkt.substack.com
+
+#Macro #Inflation #Stagflation #Commodities #Investing

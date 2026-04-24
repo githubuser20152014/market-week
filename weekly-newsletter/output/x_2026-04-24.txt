@@ -1,34 +1,47 @@
-The dominant story is a stagflation squeeze: the Strait of Hormuz deadlock has pushed WTI to $97.23, a fifth consecutive day of crude gains, while the CPI print at 3.3% has forced markets to price out Fed cuts entirely.
+The S&P didn't sell off because of earnings.
 
-🧵 1/6
+It sold off because Iran still controls the Strait of Hormuz and WTI just posted its fifth straight daily gain.
+
+Equities finally noticed the Hormuz premium.
+
+🧵 1/5
 ---
-Here's my read:
+Here's what the other markets were saying at the exact same time:
 
-The causal chain is straightforward. The Strait of Hormuz deadlock, now entering its second month with no resolution, has cut off roughly 20% of global oil trade.
+Bonds: sold off alongside equities. No flight-to-safety.
 
-🧵 2/6
+Gold: flat at $4,707. Should be running in a stagflation scare. It isn't.
+
+Crude: day five. No sign of stopping.
+
+🧵 2/5
 ---
-The numbers:
+Then earnings split the tape.
 
-Yesterday's close: S&P 500 at 7,108, down 0.41%. Nasdaq fell 0.89% to 24,438, the Dow dropped 0.36% to 49,310, and the Russell 2000 shed 0.37% to 2,775.
+Texas Instruments: up 19%. Best day since 2000. AI hardware demand is real and accelerating.
 
-🧵 3/6
+ServiceNow: crushed on AI spending concerns.
+
+Same sector. Opposite verdict. The market is choosing infrastructure over software.
+
+🧵 3/5
 ---
-XLE and XOP: stay long energy. The Hormuz closure is a structural supply shock with no near-term resolution, Brent above $106, and Islamabad peace talks postponed indefinitely. If ceasefire talks resume and crude drops below $92, reduce.
+The story nobody is covering: airlines.
 
-🧵 4/6
+Brent above $106 means aviation fuel is a crisis. Lufthansa already cut 20,000 summer flights. Called them "unprofitable."
+
+The Hormuz story isn't just oil. It's aviation, logistics, food.
+
+🧵 4/5
 ---
-What I'm watching:
+Bonds sold off. Gold didn't run. Crude hit day five.
 
-SMH or SOXX: the semiconductor bid is real and catalyst-backed. TSMC at a record high on Taiwan regulatory easing and Texas Instruments up 19% on AI hardware demand are specific, earnings-confirmed signals. Enter on a flat-to-up open;
+Oil up, yields up, gold flat. That's not a flight-to-safety. That's stagflation.
 
-🧵 5/6
----
-Read on Substack:
-frameworkfoundry.info/daily/2026-04-24/
+One of them will be right. It isn't equities.
 
-Not investment advice. For informational purposes only.
+Read on Substack: frameworkfoundrymkt.substack.com
 
-#MacroInvesting #ETFs #MarketOpen
+#Macro #Inflation #Stagflation
 
-🧵 6/6
+🧵 5/5
