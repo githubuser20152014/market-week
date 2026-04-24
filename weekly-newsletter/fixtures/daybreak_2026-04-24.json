@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-04-24",
+    "generated_at": "2026-04-24T09:14:15.917846Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7137.8999,
+      "close": 7108.3999,
+      "daily_pct": -0.4133,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49490.0312,
+      "close": 49310.3203,
+      "daily_pct": -0.3631,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24657.5703,
+      "close": 24438.5,
+      "daily_pct": -0.8885,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2785.3799,
+      "close": 2775.1001,
+      "daily_pct": -0.3691,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4705.1001,
+      "close": 4707.6001,
+      "daily_pct": 0.0531,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.294,
+      "close": 4.323,
+      "daily_pct": 0.6754,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.8,
+      "close": 98.785,
+      "daily_pct": -0.0152,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 95.85,
+      "close": 97.23,
+      "daily_pct": 1.4398,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59716.18,
+      "prev_close": 59140.23,
+      "daily_pct": 0.9739,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25978.07,
+      "prev_close": 25915.2,
+      "daily_pct": 0.2426,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6475.63,
+      "prev_close": 6475.81,
+      "daily_pct": -0.0028,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23915.6,
+      "prev_close": 24173.05,
+      "daily_pct": -1.065,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8786.5,
+      "prev_close": 8793.4,
+      "daily_pct": -0.0785,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24032.37,
+      "prev_close": 24032.37,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10369.42,
+      "prev_close": 10369.42,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8126.9,
+      "prev_close": 8126.35,
+      "daily_pct": 0.0068,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5849.41,
+      "prev_close": 5849.35,
+      "daily_pct": 0.001,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16918,
+      "prev_close": 1.1706,
+      "daily_pct": -0.1216
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34783,
+      "prev_close": 1.35004,
+      "daily_pct": -0.1636
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.698,
+      "prev_close": 159.48801,
+      "daily_pct": 0.1317
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71333,
+      "prev_close": 0.7158,
+      "daily_pct": -0.3447
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83591,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27201,
+      "prev_close": 1.27418,
+      "daily_pct": -0.1704
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7142.5,
+      "prev_close": 7142.5,
+      "daily_pct": -0.014
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27088.75,
+      "prev_close": 27088.75,
+      "daily_pct": 0.5746
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49306.0,
+      "prev_close": 49306.0,
+      "daily_pct": -0.3718
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4706.8,
+      "prev_close": 4706.8,
+      "daily_pct": 0.0361
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.97,
+      "prev_close": 110.97,
+      "daily_pct": -0.0704
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 97.21,
+      "prev_close": 97.21,
+      "daily_pct": 1.4189
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "TSMC shares jump to record high as Taiwan eases single-stock investment caps for funds",
+      "source": "CNBC",
+      "published": "Fri, 24 Apr 2026 06:21:37 GMT",
+      "url": "https://www.cnbc.com/2026/04/24/tsmc-shares-record-high-taiwan-single-stock-investment-cap-for-funds.html",
+      "summary": "TSMC, whose shares had a hit a record high on Thursday as well, last week reported a 58% increase in first-quarter profit."
+    },
+    {
+      "headline": "NYC Mayor Mamdani knocked Ken Griffin in pied-a-terre tax promo. His firm calls the move 'shameful'",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 20:46:42 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/nyc-mayor-mamdani-knocked-ken-griffin-in-pied-a-terre-tax-promo-his-firm-calls-the-move-shameful.html",
+      "summary": "Chief Operating Officer Gerald Beeson saying in a memo that targeting Griffin showed \"ignorance and disdain\" toward contributors to the city's economy."
+    },
+    {
+      "headline": "People will be 'living and working' on the moon in the 2030s, says space tech CEO",
+      "source": "CNBC",
+      "published": "Fri, 24 Apr 2026 05:30:48 GMT",
+      "url": "https://www.cnbc.com/2026/04/24/when-will-people-live-on-the-moon-in-the-2030s-says-voyager-technologies-ceo.html",
+      "summary": "A lunar base will be operating on the moon by the end of the 2020s, according to Dylan Taylor, who said humans will be living there in the next decade."
+    },
+    {
+      "headline": "Cohere to acquire German AI company Aleph Alpha as it looks to expand in Europe",
+      "source": "CNBC",
+      "published": "Fri, 24 Apr 2026 07:40:16 GMT",
+      "url": "https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html",
+      "summary": "Schwarz Group \u2014 a key backer of Aleph Alpha \u2014 plans to invest $600 million in Cohere's upcoming Series E round as part of the deal."
+    },
+    {
+      "headline": "China's DeepSeek releases preview of long-awaited V4 model as AI race intensifies",
+      "source": "CNBC",
+      "published": "Fri, 24 Apr 2026 08:01:50 GMT",
+      "url": "https://www.cnbc.com/2026/04/24/deepseek-v4-llm-preview-open-source-ai-competition-china.html",
+      "summary": "Chinese AI startup DeepSeek has released a preview version of its long awaited V4 large language model."
+    },
+    {
+      "headline": "Texas Instruments' stock jumps 19% for best day since 2000 as AI demand soars",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 21:20:51 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/texas-instruments-stock-soars-on-q1-earnings-as-ai-demand-jumps.html",
+      "summary": "Texas Instruments beat on earnings and revenue and gave upbeat guidance."
+    },
+    {
+      "headline": "White House warns of 'industrial-scale' efforts in China to rip off U.S. AI tech",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 18:10:21 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/trump-china-ai-technology.html",
+      "summary": "The U.S. government has previously accused China of targeting American AI technology and intellectual property."
+    },
+    {
+      "headline": "Software stocks plunge on ServiceNow, IBM results as AI fears escalate",
+      "source": "CNBC",
+      "published": "Thu, 23 Apr 2026 20:44:50 GMT",
+      "url": "https://www.cnbc.com/2026/04/23/software-stocks-plunge-on-servicenow-ibm-results-ai-fears-escalate.html",
+      "summary": "Shares of ServiceNow sank over 16%, dragging down other software names like Salesforce, Workday and Oracle with it."
+    }
+  ]
+}
