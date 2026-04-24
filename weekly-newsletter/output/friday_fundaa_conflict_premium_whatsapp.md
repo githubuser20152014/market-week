@@ -1,32 +1,28 @@
-*Friday Fundaa 🎓*
+*Friday Fundaa | The $52 Panic Tax* ⛽️💸
 
-*A short weekly moment of "huh, didn't know that" from the world of markets and money.*
+Grab a coffee. The market just gaslit you, and you probably paid for it.
 
-**The $28 "Ghost" Dollars in Your Gas Tank** 👻⛽
+Earlier this month, gas hit $4.17/gal and analysts were screaming about $150 oil. Today? Gas is $4.06 and crude is near $98.
 
-Two weeks ago, oil was $111. Today it’s $83. 
+Where did that $52 "doomsday" markup go? 
+Nowhere. It wasn't real. 
 
-Did we find a secret ocean of oil? Nope.
-Did everyone stop driving? Nope.
+You were just paying the **Conflict Premium.** 👻
 
-So where did $28 go? It was never "real." It was a **Conflict Premium.**
+**The Signal:** 📡
+When the Strait of Hormuz became a parking lot, the market didn't price in missing oil. It priced in the Dark Ages. 
 
-**What is it?** It’s the "Geopolitical Risk" tax. When there's a war (like the U.S.-Iran escalation we just saw), investors pay extra *just in case* the oil stops flowing. 
+**The Wealth Impact:** 💰
+Don't be the "Dumb Money" that buys $110 oil because of a scary headline. By the time you read the news, the "Smart Money" has already front-run the peace treaty and dumped the bill on you.
 
-Think of it like paying $10 for a $2 umbrella because it just started pouring. The umbrella is the same—the $8 extra is the "I don't want to get wet" premium. ☔️
+**The Vibe:** ⚡️
+Intellectual capital is the only asset that can't be deepfaked. Next time a price launches to the moon, ask yourself: Is this a shortage, or am I just funding someone else's panic attack?
 
-In early April, the fear of the Strait of Hormuz closing was at an all-time high. That fear was worth about $30 per barrel. 
-
-Now that the ceasefire is holding and the ships are moving again, the fear is gone. And so is the $28. 
-
-**The Lesson:** When you see prices spike during a crisis, you aren't just paying for the product. You're paying for the *anxiety*. When the headlines turn to peace, the "ghost money" is the first thing to vanish.
-
-Stay sharp! 🧠
+Stop paying the ghost dollars. 🧠
 
 ---
-
-For more of this kind of thing, we publish:
-📅 *Market Day Break* — daily market briefing
-📊 *Framework Foundry Weekly* — weekly macro deep-dive
+For more reality checks, we publish:
+📅 *Market Day Break* — daily briefing
+📊 *Framework Foundry Weekly* — macro deep-dive
 
 👉 frameworkfoundry.info/fundaa/2026-04-17/
