@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 import markdown as md_lib
 
 HEADER_TMPL = """\
-<p><strong>Framework Foundry — Global Investor Edition | {pub_date}</strong></p>
+<p><strong>Framework Foundry: Global Investor Edition | {pub_date}</strong></p>
 <p><em>Weekly macro briefing for globally diversified, long-term investors. What happened, why it matters, and what to do about it.</em></p>
 <hr>
 """
@@ -18,8 +18,8 @@ FOOTER_TMPL = """\
 <hr>
 <p><em>Framework Foundry publishes three editions:</em></p>
 <ul>
-  <li><em><strong>Morning Brief</strong> — daily pre-market briefing, Monday through Friday</em></li>
-  <li><em><strong>Global Investor Edition</strong> — international markets, FX, and positioning, every Saturday</em></li>
+  <li><em><strong>Morning Brief</strong>: daily pre-market briefing, Monday through Friday</em></li>
+  <li><em><strong>Global Investor Edition</strong>: international markets, FX, and positioning, every Saturday</em></li>
   <li><em><strong>The Blueprint</strong> — investment primers, every Wednesday</em></li>
 </ul>
 <p><em>Full edition with data tables and charts: <a href="https://frameworkfoundry.info/global/{date_str}/">frameworkfoundry.info/global/{date_str}</a></em></p>

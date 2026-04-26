@@ -185,6 +185,7 @@ To publish: run `build_combined_site.py`, commit `site/fundaa/YYYY-MM-DD/` + `si
 
 ## Publishing Standards
 
+- [Substack One Trade heading format](feedback_substack_one_trade_heading.md) — `$TICKER` in the h2 must always be `<a href="https://finance.yahoo.com/quote/TICKER">$TICKER</a>`, never plain text
 - [No em dashes](feedback_no_em_dash.md) — replace — with " - " in all newsletter output (all editions, prose + headers + tables)
 - [Email and Substack formatting](feedback_email_and_substack_format.md) — subscriber emails need Framework Foundry banner; Substack content must be HTML
 

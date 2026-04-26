@@ -252,7 +252,19 @@ weekly newsletter for serious ETF investors managing diversified global portfoli
 Your voice is authoritative but accessible: sharp analysis, no jargon for jargon's sake, \
 and always focused on what it means for a patient, macro-aware investor.
 
-Never use em dashes (—). Use " - " (space-dash-space) instead.
+Em dashes (—) are banned. Replace with context-appropriate punctuation: colon for an \
+elaboration ("here is the reason"), comma for a parenthetical aside, period where two \
+thoughts stand alone as separate sentences.
+
+STYLE RULES — apply to every output field without exception:
+- No financial boilerplate. Banned phrases: "amid concerns", "market participants remain \
+  cautious", "volatility persists", "investors digest", "risk sentiment". Name the \
+  specific catalyst, actor, price move, or policy decision instead.
+- one_trade_body must open with the signal or anomaly, not the action. \
+  Wrong: "Consider going long FEZ if conditions hold." \
+  Right: "European equities are holding a key support level into a rate-cut window."
+- Voice mandate: portfolio manager briefing a colleague before the week opens. \
+  Short sentences. Active voice. Named catalysts with exact figures. No hedging language.
 
 If the input contains a non-empty "news_context" field, it holds excerpts from daily news \
 digests (Markets & Macro, Global Events, Major Events sections) covering the same week as \
@@ -286,6 +298,14 @@ these 13 keys:
   "**Confirms:** [specific price/data trigger that validates the trade]" and \
   "**Risk:** [specific scenario that invalidates it]". Use **bold** for emphasis. \
   Do not repeat the ticker or direction in the body - that appears in the heading.
+- plain_summary: 4-6 short plain-English sentences. DO NOT start with "What it means for you" \
+  or any heading — the heading is already in the template. Write directly to a patient, globally \
+  diversified ETF investor who has 10 minutes. Name the specific risk or opportunity created by \
+  this week's moves. Reference ETF tickers where relevant. Use **bold** for the 2-3 most \
+  important facts. No bullet points - prose only.
+- positioning: 3-5 bullet points (plain text, one per line starting with "- "). \
+  Each bullet: **bold ETF ticker(s)** followed by the rationale. \
+  Concrete, actionable ETF-level positioning suggestions based on the week's signals.
 - positioning: 3-5 bullet points (plain text, one per line starting with "- "). \
   Each bullet: **bold ETF ticker(s)** followed by the rationale. \
   Concrete, actionable ETF-level positioning suggestions based on the week's signals.
@@ -314,6 +334,7 @@ def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_
         "one_trade_ticker":      "EFA",
         "one_trade_direction":   "Long",
         "one_trade_body":        "International developed markets offer diversification away from US-centric risk.\n\n**Confirms:** EFA holds above prior week's close with dollar weakness continuing.\n**Risk:** Dollar reverses sharply higher on strong US data, compressing international returns.",
+        "plain_summary":         "This week's key risk for global portfolios is energy-driven inflation. Hold your positions and watch next week's data before making changes.",
         "positioning":           "- Maintain diversified global ETF exposure\n- Monitor rate sensitive sectors\n- Watch USD for EM signals",
     }
 
@@ -403,26 +424,43 @@ def build_global_template_context(
         + equity_data["apac_indices"]
     )
 
+    def _clean(text):
+        """Strip em dashes and stray heading echoes from LLM output fields."""
+        if not isinstance(text, str):
+            return text
+        import re as _re
+        text = text.replace("—", "-")
+        # Remove echo of "What it means for you" heading if LLM included it
+        text = _re.sub(r"^What it means for you\s*\n*", "", text, flags=_re.IGNORECASE)
+        return text.strip()
+
+    def _clean_positioning(val):
+        """Coerce positioning to a newline-joined string; sweep em dashes."""
+        if isinstance(val, list):
+            val = "\n".join(str(item) for item in val)
+        return _clean(val)
+
     return {
         "date":             date_str,
         "date_display":     _fmt_date(date_str),
         # Macro
         "macro_regime":     macro_regime,
         # Narrative sections (from LLM)
-        "big_theme_title":        narrative["big_theme_title"],
-        "big_theme_body":         narrative["big_theme_body"],
-        "equity_subtitle":        narrative["equity_subtitle"],
-        "equity_narrative":       narrative["equity_narrative"],
-        "fx_subtitle":            narrative["fx_subtitle"],
-        "fx_narrative":           narrative["fx_narrative"],
-        "commodities_subtitle":   narrative["commodities_subtitle"],
-        "commodities_narrative":  narrative["commodities_narrative"],
-        "events_commentary":      narrative["events_commentary"],
-        "next_week_commentary":   narrative["next_week_commentary"],
-        "one_trade_ticker":       narrative["one_trade_ticker"],
-        "one_trade_direction":    narrative["one_trade_direction"],
-        "one_trade_body":         narrative["one_trade_body"],
-        "positioning":            narrative["positioning"],
+        "big_theme_title":        _clean(narrative["big_theme_title"]),
+        "big_theme_body":         _clean(narrative["big_theme_body"]),
+        "equity_subtitle":        _clean(narrative["equity_subtitle"]),
+        "equity_narrative":       _clean(narrative["equity_narrative"]),
+        "fx_subtitle":            _clean(narrative["fx_subtitle"]),
+        "fx_narrative":           _clean(narrative["fx_narrative"]),
+        "commodities_subtitle":   _clean(narrative["commodities_subtitle"]),
+        "commodities_narrative":  _clean(narrative["commodities_narrative"]),
+        "events_commentary":      _clean(narrative["events_commentary"]),
+        "next_week_commentary":   _clean(narrative["next_week_commentary"]),
+        "one_trade_ticker":       _clean(narrative["one_trade_ticker"]),
+        "one_trade_direction":    _clean(narrative["one_trade_direction"]),
+        "one_trade_body":         _clean(narrative["one_trade_body"]),
+        "plain_summary":          _clean(narrative.get("plain_summary", "")),
+        "positioning":            _clean_positioning(narrative["positioning"]),
         # Market data for appendix tables
         "us_indices":    equity_data["us_indices"],
         "eu_indices":    equity_data["eu_indices"],

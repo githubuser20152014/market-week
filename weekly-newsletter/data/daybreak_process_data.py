@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 
-_DIGEST_SECTIONS = ["Markets & Macro", "Global Events", "Major Events"]
+_DIGEST_SECTIONS = ["Markets", "Global", "Regional Highlights"]
 
 
 def load_daybreak_digest_context(data_date: str, digest_dir) -> str:

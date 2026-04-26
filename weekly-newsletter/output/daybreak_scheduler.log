@@ -945,3 +945,27 @@ All other sections — data, One Trade, GLD/XLE/IWM/TLT notes — were left unto
 Review the Markdown above, then run with --publish to generate social posts and deploy:
   bash weekly-newsletter/publish_daybreak.sh 2026-04-22 --publish
 ==> No fixture found — fetching live data ...
+==> Fixture found — generating from verified Perplexity fixture ...
+No digest context � proceeding without news digest.
+Narrative generated via Claude API.
+Newsletter saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\market_day_break_2026-04-24.md
+Email subject saved -> C:\Users\Akhil\Documents\cc4e-course\market-week\weekly-newsletter\output\title_2026-04-24.txt
+MD-only mode � skipping social posts and PDF.
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-04-24.md
+
+==> Running headless polish pass ...
+Polish complete. Four changes made:
+
+1. **Opening teaser** — tightened to two sentences, leads with the TI/software collision as the dominant story, lands the gold-yields cross-asset read, frames the open question.
+
+2. **Anomaly flag** — TI +19% is a ±3% threshold breach; inline flag added confirming it's an earnings gap, not a data error.
+
+3. **Gold positioning note** — replaced "earns its keep as portfolio ballast" with a concrete directive: trim equities before touching gold if the floor holds.
+
+4. **TLT positioning note** — replaced the vague "Size accordingly" with a specific hedge ratio tied to SOXX exposure going into the New Home Sales print.
+  Polish pass complete.
+
+Review the Markdown above, then run with --publish to generate social posts and deploy:
+  bash weekly-newsletter/publish_daybreak.sh 2026-04-24 --publish

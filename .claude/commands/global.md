@@ -30,12 +30,12 @@ Model assignment:
 
 If DATA_DATE equals PUB_DATE:
 ```bash
-cd weekly-newsletter && python generate_global_newsletter.py --date DATA_DATE
+cd weekly-newsletter && python generate_global_newsletter.py --date DATA_DATE --digest-dir "C:/Users/Akhil/Documents/ContentRepo/07-Reading/news-digest"
 ```
 
 If DATA_DATE differs from PUB_DATE (e.g. Saturday publish with Friday data):
 ```bash
-cd weekly-newsletter && python generate_global_newsletter.py --date DATA_DATE --pub-date PUB_DATE
+cd weekly-newsletter && python generate_global_newsletter.py --date DATA_DATE --pub-date PUB_DATE --digest-dir "C:/Users/Akhil/Documents/ContentRepo/07-Reading/news-digest"
 ```
 
 Because Step 0 already wrote the fixtures, the generator will detect them and run without `--live`.
@@ -44,7 +44,18 @@ After running, read the generated Markdown file at `weekly-newsletter/output/glo
 
 **Step 2 — Review checkpoint (content):**
 
-Ask the user:
+Before displaying the draft to the user, run a pre-flight style check on the generated markdown. Check each of the following and report any violations:
+
+- [ ] No em dashes (—) anywhere in the file
+- [ ] No banned phrases: "amid concerns", "market participants", "investors remain cautious", "volatility persists", "risk sentiment"
+- [ ] `one_trade_body` opens with the signal or anomaly, not the action ("Consider..." or "If conditions..." = flag it)
+- [ ] Each narrative section has ≥2 **bold** callouts (flag if fewer)
+- [ ] `big_theme_title` is 6–10 words and punchy (flag if generic, e.g. "Markets Navigate Crosscurrents")
+- [ ] Narrative sections name specific events from the week's news (not vague price-correlation language)
+
+If any violations are found, list them clearly, fix what can be fixed by editing the `.md` directly, then display the corrected draft.
+
+Then ask the user:
 > "Here's the Global Investor Edition for [PUB_DATE]. Does everything look good, or would you like any changes before I publish?"
 
 Wait for the user's response. If they request changes, edit the `.md` file directly, then show the updated sections and ask again.

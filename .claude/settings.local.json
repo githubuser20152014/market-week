@@ -143,7 +143,17 @@
       "Bash(grep *)",
       "Bash(git -C \"C:/Users/Akhil/Documents/cc4e-course/market-week\" add weekly-newsletter/output/market_day_break_2026-04-22.md weekly-newsletter/output/substack_2026-04-22.html weekly-newsletter/output/linkedin_2026-04-22.txt weekly-newsletter/output/x_2026-04-22.txt weekly-newsletter/output/title_2026-04-22.txt weekly-newsletter/output/price_resolution_2026-04-22.txt weekly-newsletter/fixtures/daybreak_2026-04-22.json \"weekly-newsletter/site/daily/2026-04-22/\" weekly-newsletter/site/daily/index.html weekly-newsletter/site/index.html weekly-newsletter/daybreak_build_site.py weekly-newsletter/output/daybreak_scheduler.log)",
       "Bash(git -C \"C:/Users/Akhil/Documents/cc4e-course/market-week\" status --short)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(py -c \"import json; d=json.load\\(open\\('weekly-newsletter/fixtures/daybreak_2026-04-24.json'\\)\\); print\\(list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(py *)",
+      "Bash(cp \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/substack_2026-04-24.html\" /tmp/substack_2026-04-24.html.bak)",
+      "Bash(cp \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/linkedin_2026-04-24.txt\" /tmp/linkedin_2026-04-24.txt.bak)",
+      "Bash(cp \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/x_2026-04-24.txt\" /tmp/x_2026-04-24.txt.bak)",
+      "Bash(cp \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/title_2026-04-24.txt\" /tmp/title_2026-04-24.txt.bak)",
+      "Bash(cp /tmp/substack_2026-04-24.html.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/substack_2026-04-24.html\")",
+      "Bash(cp /tmp/linkedin_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/linkedin_2026-04-24.txt\")",
+      "Bash(cp /tmp/x_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/x_2026-04-24.txt\")",
+      "Bash(cp /tmp/title_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/title_2026-04-24.txt\")"
     ]
   }
 }

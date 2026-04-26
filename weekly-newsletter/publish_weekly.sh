@@ -62,9 +62,16 @@ if [[ "$GLOBAL_ONLY" != "--global-only" ]]; then
   echo ""
 fi
 
+DEFAULT_DIGEST_DIR="$HOME/Documents/ContentRepo/07-Reading/news-digest"
+DIGEST_DIR="${DIGEST_DIR:-$DEFAULT_DIGEST_DIR}"
+DIGEST_FLAG=""
+if [[ -n "${DIGEST_DIR:-}" && -d "$DIGEST_DIR" ]]; then
+  DIGEST_FLAG="--digest-dir $DIGEST_DIR"
+fi
+
 GLOBAL_EQ_LIVE=$(_live_flag "$SCRIPT_DIR/fixtures/global_equity_${DATE_STR}.json")
 echo "==> Generating global edition for $DATE_STR ${GLOBAL_EQ_LIVE:+(live)}..."
-python generate_global_newsletter.py --date "$DATE_STR" $GLOBAL_EQ_LIVE
+python generate_global_newsletter.py --date "$DATE_STR" $GLOBAL_EQ_LIVE $DIGEST_FLAG
 
 echo ""
 echo "Newsletters ready for review:"
