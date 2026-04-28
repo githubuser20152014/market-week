@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "date": "2026-04-28",
+    "generated_at": "2026-04-28T10:30:06.080981Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7165.0801,
+      "close": 7173.9102,
+      "daily_pct": 0.1232,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49230.7109,
+      "close": 49167.7891,
+      "daily_pct": -0.1278,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24836.5996,
+      "close": 24887.0996,
+      "daily_pct": 0.2033,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2787.0,
+      "close": 2788.1899,
+      "daily_pct": 0.0427,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4675.3999,
+      "close": 4627.8999,
+      "daily_pct": -1.016,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.31,
+      "close": 4.336,
+      "daily_pct": 0.6032,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.48,
+      "close": 98.743,
+      "daily_pct": 0.2671,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.37,
+      "close": 99.71,
+      "daily_pct": 3.4658,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59917.46,
+      "prev_close": 60537.36,
+      "daily_pct": -1.024,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25679.78,
+      "prev_close": 25925.65,
+      "daily_pct": -0.9484,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6641.02,
+      "prev_close": 6615.03,
+      "daily_pct": 0.3929,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23995.7,
+      "prev_close": 24092.7,
+      "daily_pct": -0.4026,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8710.7,
+      "prev_close": 8766.4,
+      "daily_pct": -0.6354,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24106.94,
+      "prev_close": 24106.94,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10362.45,
+      "prev_close": 10362.45,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8156.36,
+      "prev_close": 8156.36,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5872.22,
+      "prev_close": 5872.22,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16959,
+      "prev_close": 1.17064,
+      "daily_pct": -0.0901
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34909,
+      "prev_close": 1.35151,
+      "daily_pct": -0.179
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.629,
+      "prev_close": 159.576,
+      "daily_pct": 0.0332
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71705,
+      "prev_close": 0.71435,
+      "daily_pct": 0.3782
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83957,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26626,
+      "prev_close": 1.27178,
+      "daily_pct": -0.4343
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7190.25,
+      "prev_close": 7190.25,
+      "daily_pct": -0.2186
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27272.75,
+      "prev_close": 27272.75,
+      "daily_pct": -0.6113
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49492.0,
+      "prev_close": 49492.0,
+      "daily_pct": 0.304
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4628.2,
+      "prev_close": 4628.2,
+      "daily_pct": -1.0095
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.91,
+      "prev_close": 110.91,
+      "daily_pct": -0.1126
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 99.71,
+      "prev_close": 99.71,
+      "daily_pct": 3.4658
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "-0.5%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "U.S. is 'being humiliated by Iran,' says Germany's Merz, as Europe's patience wanes",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 09:18:36 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/us-humiliated-germany-merz-europe-iran-war-energy-prices-fuel.html",
+      "summary": "The U.S. is being \"humiliated\" by the Iranian regime, Germany's chancellor has said, as European leaders grow increasingly frustrated at the war in Iran."
+    },
+    {
+      "headline": "UPS beats Wall Street estimates on top and bottom lines",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 10:19:12 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/ups-ups-q1-2026-earnings.html",
+      "summary": "Package delivery giant UPS beat Wall Street estimates for its first-quarter earnings."
+    },
+    {
+      "headline": "General Motors is set to report earnings before the bell. Here's what Wall Street expects",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 04:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/general-motors-gm-earnings-q1-2026.html",
+      "summary": "Aside from earnings and any change to GM's 2026 guidance, investors are monitoring impact from the Iran war, tariffs and EV write-downs."
+    },
+    {
+      "headline": "Novartis CEO warns reality of Trump's drug pricing policy will set in over 'the next 18 months'",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 10:19:07 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/novartis-ceo-stock-earnings-mfn-trump-drug-pricing-policy.html",
+      "summary": "Novartis' CEO warned Tuesday that U.S. drug pricing policy under President Donald Trump poses a \"very difficult situation.\""
+    },
+    {
+      "headline": "Citi UK CEO: 'Phenomenal' market resilience is keeping recession risk at bay \u2014 for now",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 09:32:00 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/citi-tiina-lee-iran-recession-war-ai-data-energy-markets-economy.html",
+      "summary": "Markets have performed in an orderly way, despite the economic turmoil wrought by Middle East war, said Citi UK CEO Tiina Lee."
+    },
+    {
+      "headline": "BP profits more than double, beating expectations as Iran war boosts oil prices",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 08:45:34 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/bp-q1-earnings-oil-energy.html",
+      "summary": "The results come shortly after BP's board suffered a shareholder revolt at its annual general meeting."
+    },
+    {
+      "headline": "Meta, Google, OpenAI among Big Tech firms seeing top staff leaving to launch AI startups",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 07:14:19 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/meta-google-big-tech-staff-ai-labs-investors.html",
+      "summary": "Former employees at AI giants are raising hundreds of millions of dollars from investors months on from launching."
+    },
+    {
+      "headline": "Cramer calls blistering rally in chip stocks 'worrisome.' How he's protecting his portfolio",
+      "source": "CNBC",
+      "published": "Mon, 27 Apr 2026 22:45:10 GMT",
+      "url": "https://www.cnbc.com/2026/04/27/cramer-chip-stocks-worrisome-positioning.html",
+      "summary": "CNBC's Jim Cramer explained that the recent run-up in AI related stocks may be a warning sign about the broader market."
+    }
+  ]
+}
