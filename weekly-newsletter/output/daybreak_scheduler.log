@@ -969,3 +969,22 @@ Polish complete. Four changes made:
 
 Review the Markdown above, then run with --publish to generate social posts and deploy:
   bash weekly-newsletter/publish_daybreak.sh 2026-04-24 --publish
+==> No fixture found — fetching live data ...
+==> Using existing newsletter for 2026-04-28 (skipping regeneration)
+
+Newsletter ready for review:
+  /c/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/market_day_break_2026-04-28.md
+
+==> Running headless polish pass ...
+Two changes made:
+
+1. **Teaser** — cut from three sentences to two. Led with the *Touska* catalyst, landed the stagflation-not-risk-off cross-asset read, framed the FOMC open question. Preserved all numbers.
+
+2. **QQQ positioning note** — replaced the vague "could be an early read" with a specific trigger (SOXX down >1%) and a clear action (trim before earnings print, not after).
+
+All other positioning notes were already specific: XLE/XOP has the $99 hold level, TLT names the political failure condition, GLD gives the $4,580 line in the sand, XLY names the $100 trigger. Left those untouched.
+  Polish pass complete.
+
+Review the Markdown above, then run with --publish to generate social posts and deploy:
+  bash weekly-newsletter/publish_daybreak.sh 2026-04-28 --publish
+==> No fixture found — fetching live data ...
