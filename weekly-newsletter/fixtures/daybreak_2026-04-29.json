@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-04-29",
+    "generated_at": "2026-04-29T10:39:16.291538Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7173.9102,
+      "close": 7138.7998,
+      "daily_pct": -0.4894,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49167.7891,
+      "close": 49141.9297,
+      "daily_pct": -0.0526,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24887.0996,
+      "close": 24663.8008,
+      "daily_pct": -0.8972,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2788.1899,
+      "close": 2756.05,
+      "daily_pct": -1.1527,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4591.5,
+      "close": 4584.7002,
+      "daily_pct": -0.1481,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.336,
+      "close": 4.354,
+      "daily_pct": 0.4151,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.62,
+      "close": 98.719,
+      "daily_pct": 0.1004,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 99.93,
+      "close": 103.44,
+      "daily_pct": 3.5125,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59917.46,
+      "prev_close": 60537.36,
+      "daily_pct": -1.024,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26111.84,
+      "prev_close": 25679.78,
+      "daily_pct": 1.6825,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6690.9,
+      "prev_close": 6641.02,
+      "daily_pct": 0.7511,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24177.65,
+      "prev_close": 23995.7,
+      "daily_pct": 0.7583,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8687.0,
+      "prev_close": 8710.7,
+      "daily_pct": -0.2721,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24019.31,
+      "prev_close": 24019.31,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10273.19,
+      "prev_close": 10273.19,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8065.77,
+      "prev_close": 8066.77,
+      "daily_pct": -0.0124,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5822.98,
+      "prev_close": 5823.31,
+      "daily_pct": -0.0057,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17055,
+      "prev_close": 1.17235,
+      "daily_pct": -0.1534
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35082,
+      "prev_close": 1.35382,
+      "daily_pct": -0.2215
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.767,
+      "prev_close": 159.35699,
+      "daily_pct": 0.2573
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71628,
+      "prev_close": 0.71909,
+      "daily_pct": -0.3906
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83539,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26614,
+      "prev_close": 1.27341,
+      "daily_pct": -0.571
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7179.0,
+      "prev_close": 7179.0,
+      "daily_pct": 0.1116
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27279.75,
+      "prev_close": 27279.75,
+      "daily_pct": 0.4086
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49332.0,
+      "prev_close": 49332.0,
+      "daily_pct": 0.071
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4584.6,
+      "prev_close": 4584.6,
+      "daily_pct": -0.1503
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.81,
+      "prev_close": 110.81,
+      "daily_pct": -0.0423
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 103.44,
+      "prev_close": 103.44,
+      "daily_pct": 3.5125
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices extend multi-day rally as Trump issues new threat to Iran; Brent tops $114 per barrel",
+      "source": "CNBC",
+      "published": "Wed, 29 Apr 2026 10:04:01 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/oil-prices-brent-wti-trump-iran.html",
+      "summary": "The latest move higher comes amid reports that the U.S. will look to extend its blockade of Iranian ports."
+    },
+    {
+      "headline": "Here's everything to expect when the Fed issues its latest interest rate decision Wednesday",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 20:15:32 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/fed-meeting-preview-april-2026.html",
+      "summary": "In what could be Jerome Powell's final meeting as Fed chair, he and his fellow policymakers are likely to continue their cautious approach."
+    },
+    {
+      "headline": "Jamie Dimon warns of 'some kind of bond crisis' ahead as global debt risks build",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 18:44:41 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/jamie-dimon-bond-crisis-global-debt-risks.html",
+      "summary": "Dimon, who runs JPMorgan Chase, the world's largest bank by market cap, said that today's growing mix of risks could combine in unpredictable ways."
+    },
+    {
+      "headline": "UAE's departure from the OPEC oil cartel is not without precedence. Who could be next?",
+      "source": "CNBC",
+      "published": "Wed, 29 Apr 2026 06:51:07 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/uae-opec-exit-oil-iran-war.html",
+      "summary": "The United Arab Emirates' decision to leave OPEC is reverberating across global energy markets, sparking questions on who else could follow."
+    },
+    {
+      "headline": "UBS profits rocket 80% to $3 billion for first quarter beat, shares pop 5%",
+      "source": "CNBC",
+      "published": "Wed, 29 Apr 2026 07:23:38 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/ubs-swiss-bank-first-quarter-earnings-profit-switzerland-trading.html",
+      "summary": "UBS reported its first quarter earnings on Wednesday, with net profits beating analyst estimates."
+    },
+    {
+      "headline": "We're raising our price target on Starbucks after a robust beat-and-raise quarter",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 23:04:11 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/were-raising-our-price-target-on-starbucks-after-its-robust-quarter.html",
+      "summary": "The \"turn\" in the turnaround is here, according to Niccol, and it's hard to argue with that based on the second-quarter results."
+    },
+    {
+      "headline": "UAE's shock OPEC exit: What it means for the oil cartel's future and for crude prices",
+      "source": "CNBC",
+      "published": "Tue, 28 Apr 2026 19:17:44 GMT",
+      "url": "https://www.cnbc.com/2026/04/28/oil-uae-opec-saudi-arabia.html",
+      "summary": "The UAE wants to ramp up production without constraints from OPEC, which could prove bearish for prices at some point."
+    },
+    {
+      "headline": "U.S. warns banks of sanctions risk over China \u2018teapot\u2019 refineries handling Iranian oil",
+      "source": "CNBC",
+      "published": "Wed, 29 Apr 2026 03:29:58 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/us-treasury-warns-sanctions-china-refineries-iran-oil-malaysian-blend.html",
+      "summary": "The alert said China purchases approximately 90% of Iran's oil exports, with teapot refineries accounting for the majority of these imports."
+    }
+  ]
+}
