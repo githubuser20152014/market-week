@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "date": "2026-04-30",
+    "generated_at": "2026-04-30T10:06:37.312129Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7138.7998,
+      "close": 7135.9502,
+      "daily_pct": -0.0399,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49141.9297,
+      "close": 48861.8086,
+      "daily_pct": -0.57,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24663.8008,
+      "close": 24673.2402,
+      "daily_pct": 0.0383,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2756.05,
+      "close": 2739.47,
+      "daily_pct": -0.6016,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4545.2002,
+      "close": 4637.7002,
+      "daily_pct": 2.0351,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.354,
+      "close": 4.418,
+      "daily_pct": 1.4699,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 6.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.92,
+      "close": 98.681,
+      "daily_pct": -0.2416,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 106.88,
+      "close": 106.88,
+      "daily_pct": 0.0,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59284.92,
+      "prev_close": 59917.46,
+      "daily_pct": -1.0557,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25776.53,
+      "prev_close": 26111.84,
+      "daily_pct": -1.2841,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6598.87,
+      "prev_close": 6690.9,
+      "daily_pct": -1.3754,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23997.55,
+      "prev_close": 24177.65,
+      "daily_pct": -0.7449,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8665.8,
+      "prev_close": 8687.0,
+      "daily_pct": -0.244,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24005.06,
+      "prev_close": 24005.06,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10315.35,
+      "prev_close": 10315.31,
+      "daily_pct": 0.0004,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8021.5,
+      "prev_close": 8021.5,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5802.35,
+      "prev_close": 5802.35,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16959,
+      "prev_close": 1.17178,
+      "daily_pct": -0.1871
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34996,
+      "prev_close": 1.35245,
+      "daily_pct": -0.1836
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.28101,
+      "prev_close": 159.552,
+      "daily_pct": -0.1698
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71485,
+      "prev_close": 0.71872,
+      "daily_pct": -0.539
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.82996,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27036,
+      "prev_close": 1.26744,
+      "daily_pct": 0.2299
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7172.0,
+      "prev_close": 7172.0,
+      "daily_pct": 0.0558
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27368.25,
+      "prev_close": 27368.25,
+      "daily_pct": 0.1574
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 48901.0,
+      "prev_close": 48901.0,
+      "daily_pct": -0.2265
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4637.6,
+      "prev_close": 4637.6,
+      "daily_pct": 2.0329
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.5,
+      "prev_close": 110.5,
+      "daily_pct": 0.1274
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 106.89,
+      "prev_close": 106.89,
+      "daily_pct": 0.0094
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "GDP",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "U.S. weighs 'reduction' of troops in Germany as Trump's feud with Berlin deepens",
+      "source": "CNBC",
+      "published": "Thu, 30 Apr 2026 07:34:00 GMT",
+      "url": "https://www.cnbc.com/2026/04/30/us-reviews-cutting-troop-numbers-in-germany-amid-trumps-berlin-feud-.html",
+      "summary": "The U.S. is considering the possibility of reducing the number of troops it has stationed in Germany, President Donald Trump said."
+    },
+    {
+      "headline": "Jerome Powell says he will continue to serve as a Fed governor, calls Trump criticism 'unprecedented'",
+      "source": "CNBC",
+      "published": "Wed, 29 Apr 2026 19:32:45 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/jerome-powell-says-he-will-continue-to-serve-as-a-fed-governor-even-after-chairmanship-ends-.html",
+      "summary": "Powell addressed the question of whether he will stay on as a Board of Governors member after his term as chair ends."
+    },
+    {
+      "headline": "Meta stock drops on quarterly results as 'internet disruptions' in Iran drag down user numbers",
+      "source": "CNBC",
+      "published": "Thu, 30 Apr 2026 01:37:17 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/meta-q1-earnings-report-2026.html",
+      "summary": "Meta beat on revenue, but showed disappointing user numbers and its capital expenditures were below estimates."
+    },
+    {
+      "headline": "Microsoft calls for $190 billion in 2026 capital spending on soaring memory prices",
+      "source": "CNBC",
+      "published": "Thu, 30 Apr 2026 02:05:49 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/microsoft-msft-q3-earnings-report-2026.html",
+      "summary": "Microsoft's forecast on revenue and operating margin was light, but the company sees $190 billion in 2026 capital spending, well above Wall Street's estimate."
+    },
+    {
+      "headline": "Qualcomm shares soar 16% on CEO comments about China orders, hyperscaler customer",
+      "source": "CNBC",
+      "published": "Wed, 29 Apr 2026 22:35:57 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/qualcomm-qcom-stock-earnings-china.html",
+      "summary": "Qualcomm CEO Cristiano Amon said that it would begin shipping data center chips to \"a large hyperscaler\" ahead of schedule, and called a bottom in China sales."
+    },
+    {
+      "headline": "Fed holds rates steady but with highest level of dissent since 1992",
+      "source": "CNBC",
+      "published": "Wed, 29 Apr 2026 19:25:28 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/fed-interest-rate-decision-april-2026.html",
+      "summary": "The Federal Reserve on Wednesday released its latest decision on interest rates."
+    },
+    {
+      "headline": "Investors still trust Google more than Meta when it comes to spending their money on AI",
+      "source": "CNBC",
+      "published": "Thu, 30 Apr 2026 01:02:40 GMT",
+      "url": "https://www.cnbc.com/2026/04/29/investors-trust-google-more-than-meta-when-comes-to-spending-on-ai.html",
+      "summary": "Alphabet and Meta both boosted their capex guidance in their first-quarter earnings reports, but Wall Street viewed one much more favorably than the other."
+    },
+    {
+      "headline": "Volkswagen warns planned cost cuts are not enough after 14% drop in first-quarter profit",
+      "source": "CNBC",
+      "published": "Thu, 30 Apr 2026 07:26:49 GMT",
+      "url": "https://www.cnbc.com/2026/04/30/volkswagen-q1-earnings-autos.html",
+      "summary": "The results come as top European original equipment manufacturers (OEMs) navigate several industry headwinds."
+    }
+  ]
+}
