@@ -241,30 +241,39 @@ def main():
 
     # ── LinkedIn post ─────────────────────────────────────────────────────────
     import warnings
-    with warnings.catch_warnings(record=True) as _w:
-        warnings.simplefilter("always")
-        linkedin_post = generate_linkedin_post(context)
     linkedin_path = OUTPUT_DIR / f"linkedin_{date_str}.txt"
-    linkedin_path.write_text(linkedin_post, encoding="utf-8")
-    char_count = len(linkedin_post)
-    limit_note = f" *** OVER LIMIT by {char_count - 3000} chars ***" if char_count > 3000 else ""
-    print(f"LinkedIn post saved -> {linkedin_path}  ({char_count}/3,000 chars{limit_note})")
+    if linkedin_path.exists():
+        print(f"LinkedIn post preserved (already exists) -> {linkedin_path}")
+    else:
+        with warnings.catch_warnings(record=True) as _w:
+            warnings.simplefilter("always")
+            linkedin_post = generate_linkedin_post(context)
+        linkedin_path.write_text(linkedin_post, encoding="utf-8")
+        char_count = len(linkedin_post)
+        limit_note = f" *** OVER LIMIT by {char_count - 3000} chars ***" if char_count > 3000 else ""
+        print(f"LinkedIn post saved -> {linkedin_path}  ({char_count}/3,000 chars{limit_note})")
 
     # ── X (Twitter) thread ────────────────────────────────────────────────────
-    with warnings.catch_warnings(record=True) as _wx:
-        warnings.simplefilter("always")
-        x_post = generate_x_post(context)
     x_path = OUTPUT_DIR / f"x_{date_str}.txt"
-    x_path.write_text(x_post, encoding="utf-8")
-    for w in _wx:
-        print(f"  [warn] {w.message}")
-    print(f"X thread saved -> {x_path}  ({len(x_post)} chars total)")
+    if x_path.exists():
+        print(f"X thread preserved (already exists) -> {x_path}")
+    else:
+        with warnings.catch_warnings(record=True) as _wx:
+            warnings.simplefilter("always")
+            x_post = generate_x_post(context)
+        x_path.write_text(x_post, encoding="utf-8")
+        for w in _wx:
+            print(f"  [warn] {w.message}")
+        print(f"X thread saved -> {x_path}  ({len(x_post)} chars total)")
 
     # ── Substack draft ────────────────────────────────────────────────────────
-    substack_post = generate_substack_post(context)
     substack_path = OUTPUT_DIR / f"substack_{date_str}.html"
-    substack_path.write_text(substack_post, encoding="utf-8")
-    print(f"Substack draft saved -> {substack_path}")
+    if substack_path.exists():
+        print(f"Substack draft preserved (already exists) -> {substack_path}")
+    else:
+        substack_post = generate_substack_post(context)
+        substack_path.write_text(substack_post, encoding="utf-8")
+        print(f"Substack draft saved -> {substack_path}")
 
     # ── PDF export ────────────────────────────────────────────────────────────
     if args.pdf:

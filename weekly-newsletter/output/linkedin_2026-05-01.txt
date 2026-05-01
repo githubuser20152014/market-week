@@ -1,20 +1,16 @@
-The One Trade: GLD Long
-
-Gold sold off into a GDP beat while PCE runs at 3.5%, the Hormuz blockade is on day 63, and the White House is reviewing strike options: the dip to $4,581 is a policy-risk discount, not a trend reversal.
+The One Trade today: Long $GLD on the $4,581 dip.
 
 Here's why:
 
-The rally had two engines. First, Q1 GDP printed at 2.0% versus a prior 0.5%, a sharp rebound that undercut the recession narrative the bears had been leaning on. Second, Apple guided revenue above estimates on iPhone and Mac demand, pulling tech sentiment higher even as Tim Cook flagged a memory supply crunch as a forward risk. Underneath both, the ceasefire holding the 60-day War Powers deadline at bay gave traders a window to buy the growth story without the immediate threat of new Hormuz kinetics. The Hormuz Premium in PCE at 3.5% YoY is real, but for one session the market chose to price the growth data, not the inflation tail.
+Markets rallied +2% yesterday on a strong GDP print — Q1 came in at +2.0% versus a prior +0.5%. That beat was real. But three other markets disagreed with the celebration: gold sold off 0.7%, the yen surged 2.25% (a classic safe-haven move), and the 10-year Treasury barely moved despite the growth data. Bonds never fully bought this rally.
 
-The divergence between equities and gold is the tension to respect. Gold selling into a broad market rally is normal. Gold selling when PCE is at 3.5%, the Strait remains blockaded, and Trump is being briefed on new Iran strike options is not normal. That tells you institutional players booked profits on the geopolitical bid, not that the inflation risk has cleared. For ETF holders, energy remains a live trade (XLE, USO) given WTI at $105 with a $150 black swan scenario still on the table. Small cap strength suggests the GDP print is being taken seriously, but IWM buyers here are betting the ceasefire holds. TLT is worth watching: the 10-year barely moved despite a growth beat, which means bonds never fully bought this rally.
+The macro case hasn't changed. PCE is running at 3.5% YoY. The Strait of Hormuz is on Day 63 of a blockade. The War Powers 60-day deadline just expired, with the Trump administration claiming a ceasefire exemption that Congress can challenge at any moment. WTI is holding at $105.
 
-Confirms: GLD holds above the $4,550 level through the first hour of trading and oil (WTI) stays above $104, confirming the geopolitical bid is still the floor.
-Risk: A credible ceasefire expansion or Congressional deal that lifts the Strait blockade, which would collapse the Hormuz Premium in both oil and gold simultaneously.
+Gold didn't sell off because the risk cleared. Institutional players booked profits on the geopolitical bid into a GDP-driven rally. That's not a trend reversal — it's a reload.
 
-Best: Russell 2000 (+2.21%) | Worst: Gold (-0.72%)
+Entry confirm: GLD holds above $4,550 through the first hour with WTI above $104.
+Kill switch: a credible Hormuz ceasefire expansion that collapses the Strait blockade — that reprices oil and gold simultaneously.
 
-Read on Substack → frameworkfoundry.info/daily/2026-05-01/
+Full breakdown: frameworkfoundrymkt.substack.com
 
-Not investment advice. For informational purposes only.
-
-#MacroInvesting #ETFs #MarketOpen
+#MacroInvesting #ETFInvesting #GoldTrade #EnergyMarkets
