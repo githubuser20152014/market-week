@@ -153,7 +153,8 @@
       "Bash(cp /tmp/substack_2026-04-24.html.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/substack_2026-04-24.html\")",
       "Bash(cp /tmp/linkedin_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/linkedin_2026-04-24.txt\")",
       "Bash(cp /tmp/x_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/x_2026-04-24.txt\")",
-      "Bash(cp /tmp/title_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/title_2026-04-24.txt\")"
+      "Bash(cp /tmp/title_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/title_2026-04-24.txt\")",
+      "PowerShell(Copy-Item *)"
     ]
   }
 }
