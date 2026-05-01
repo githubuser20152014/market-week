@@ -27,6 +27,6 @@ Your task — improve the draft WITHOUT changing any numbers, tickers, dates, ta
 
 4. Save the improved content back to the same file.
 
-Brand voice: direct, warm, confident. Not corporate. Not hype. Never "valued readers" or "exciting opportunities."
+Brand voice: edgy, opinionated, conviction-led. State opinions as facts, not possibilities. Short sentences. Named catalysts. No hedging language. "Kill switch" not "risk". "Stay away from" not "consider underweighting". Lead with the accusation or anomaly, not the summary. The April 23 2026 edition is the reference.
 
 Data integrity rule: every number, ticker, percentage, date, and URL in the original must appear unchanged in the output.
