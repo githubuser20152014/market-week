@@ -137,23 +137,16 @@ Wait for the user's response and apply any requested edits before proceeding.
 
 **Step 5 — Publish to web (only after user approves all social posts):**
 
-Before running the publish command, save the full approved content of all three social post files in memory (you will need to restore them after the publish command runs).
-
 Spawn a Haiku sub-agent to run the publish step and return a report:
 - Use the `global-publish` skill with PUB_DATE as the argument
 - Model: haiku
 
 If STATUS is "error", display the PUBLISH_NOTES and stop.
 
-After the sub-agent confirms success, immediately restore the approved social post files (the publish command regenerates these from scratch and overwrites them):
-- Write the approved Substack content back to `weekly-newsletter/output/global_substack_PUB_DATE.html`
-- Write the approved LinkedIn content back to `weekly-newsletter/output/global_linkedin_PUB_DATE.md`
-- Write the approved X thread content back to `weekly-newsletter/output/global_x_thread_PUB_DATE.md`
-
-Then run:
+After the sub-agent confirms success, commit the social post files:
 ```bash
 git add weekly-newsletter/output/global_substack_PUB_DATE.html weekly-newsletter/output/global_linkedin_PUB_DATE.md weekly-newsletter/output/global_x_thread_PUB_DATE.md
-git commit -m "Restore approved social posts for PUB_DATE"
+git commit -m "Add approved social posts for PUB_DATE"
 git push
 ```
 
