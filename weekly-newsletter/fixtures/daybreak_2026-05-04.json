@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-05-04",
+    "generated_at": "2026-05-04T11:38:50.834887Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7209.0098,
+      "close": 7230.1201,
+      "daily_pct": 0.2928,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49652.1406,
+      "close": 49499.2695,
+      "daily_pct": -0.3079,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24892.3105,
+      "close": 25114.4395,
+      "daily_pct": 0.8924,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2799.9099,
+      "close": 2812.8201,
+      "daily_pct": 0.4611,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4629.8999,
+      "close": 4573.2998,
+      "daily_pct": -1.2225,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.39,
+      "close": 4.378,
+      "daily_pct": -0.2734,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.21,
+      "close": 98.385,
+      "daily_pct": 0.1782,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.94,
+      "close": 105.17,
+      "daily_pct": 3.1685,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59513.12,
+      "prev_close": 59284.92,
+      "daily_pct": 0.3849,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26095.88,
+      "prev_close": 25776.53,
+      "daily_pct": 1.2389,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6936.99,
+      "prev_close": 6598.87,
+      "daily_pct": 5.1239,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24119.3,
+      "prev_close": 23997.55,
+      "daily_pct": 0.5073,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8697.1,
+      "prev_close": 8729.8,
+      "daily_pct": -0.3746,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24284.39,
+      "prev_close": 24284.48,
+      "daily_pct": -0.0004,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10375.37,
+      "prev_close": 10363.9,
+      "daily_pct": 0.1107,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8037.9,
+      "prev_close": 8037.9,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5823.33,
+      "prev_close": 5823.33,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17041,
+      "prev_close": 1.17291,
+      "daily_pct": -0.213
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35402,
+      "prev_close": 1.36027,
+      "daily_pct": -0.459
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.12399,
+      "prev_close": 156.978,
+      "daily_pct": 0.093
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71808,
+      "prev_close": 0.72008,
+      "daily_pct": -0.2775
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.82767,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27535,
+      "prev_close": 1.27975,
+      "daily_pct": -0.3443
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7247.0,
+      "prev_close": 7247.0,
+      "daily_pct": -0.1516
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27824.75,
+      "prev_close": 27824.75,
+      "daily_pct": -0.0395
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49435.0,
+      "prev_close": 49435.0,
+      "daily_pct": -0.425
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4573.1,
+      "prev_close": 4573.1,
+      "daily_pct": -1.2268
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.39,
+      "prev_close": 110.39,
+      "daily_pct": -0.226
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 105.13,
+      "prev_close": 105.13,
+      "daily_pct": 3.1293
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Warsh's take on Fed independence is met with confusion and some concern",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/fed-kevin-warsh-interest-rates.html",
+      "summary": "Fed chair nominee Kevin Warsh is putting his own spin on the independence of monetary policy. Many former Fed officials aren't sold."
+    },
+    {
+      "headline": "Rudy Giuliani, former New York mayor and Trump lawyer, hospitalized in critical condition",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 01:53:02 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/rudy-giuliani-hospital-critical-condition-trump.html",
+      "summary": "President Donald Trump called Rudy Giuliani a \"True Warrior, and the Best Mayor in the History of New York City, BY FAR,\" in a Truth Social post."
+    },
+    {
+      "headline": "Pirro reveals new Trump attack evidence; Cole Allen removed from 'suicide precautions'",
+      "source": "CNBC",
+      "published": "Sun, 03 May 2026 23:44:38 GMT",
+      "url": "https://www.cnbc.com/2026/05/03/trump-assassination-cole-allen-suicide-pirro.html",
+      "summary": "Until U.S. Attorney Jeanine Pirro's comments, prosecutors had not disclosed whose bullet hit the agent."
+    },
+    {
+      "headline": "Used EV sales are surging \u2014 how their ownership costs compare to gas-powered cars",
+      "source": "CNBC",
+      "published": "Sun, 03 May 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/03/ev-ownership-costs.html",
+      "summary": "With more affordable electric vehicles hitting used-car lots, buyers should be aware of some ownership costs that may differ from those that come with gas cars."
+    },
+    {
+      "headline": "Greg Abel earns solid scorecard from Berkshire shareholders after first annual meeting",
+      "source": "CNBC",
+      "published": "Sun, 03 May 2026 21:14:08 GMT",
+      "url": "https://www.cnbc.com/2026/05/03/berkshire-ceo-greg-abel-earns-solid-first-scorecard-after-first-annual-meeting.html",
+      "summary": "The reviews from longtime shareholders and professional investors were broadly positive, even as many acknowledged the notable absence of Warren Buffett."
+    },
+    {
+      "headline": "Pirro appears to drop plans to appeal criminal investigation of Fed Chair Powell",
+      "source": "CNBC",
+      "published": "Sun, 03 May 2026 18:58:42 GMT",
+      "url": "https://www.cnbc.com/2026/05/03/pirro-fed-powell.html",
+      "summary": "The U.S. attorney shifted legal strategies in her investigation of Federal Reserve Chairman Jerome Powell just ahead of a deadline."
+    },
+    {
+      "headline": "OPEC+ announces 188,000 barrels-per-day output increase in first meeting without UAE",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 05:19:19 GMT",
+      "url": "https://www.cnbc.com/2026/05/03/opec-announces-188000-barrels-per-day-output-increase-.html",
+      "summary": "Concerns around production were amplified further last week with news of the UAE's shock departure."
+    },
+    {
+      "headline": "Big Tech earnings show how big, smart spending can be rewarded by the market",
+      "source": "CNBC",
+      "published": "Sun, 03 May 2026 22:31:09 GMT",
+      "url": "https://www.cnbc.com/2026/05/03/big-tech-earnings-show-how-big-smart-spending-can-be-rewarded-by-the-market.html",
+      "summary": "It's obvious from this quarter that the bubble talk has been proven wrong."
+    }
+  ]
+}
