@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-05-05",
+    "generated_at": "2026-05-05T11:07:24.298176Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7230.1201,
+      "close": 7200.75,
+      "daily_pct": -0.4062,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49499.2695,
+      "close": 48941.8984,
+      "daily_pct": -1.126,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25114.4395,
+      "close": 25067.8008,
+      "daily_pct": -0.1857,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2812.8201,
+      "close": 2796.0,
+      "daily_pct": -0.598,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4519.5,
+      "close": 4553.2002,
+      "daily_pct": 0.7457,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.378,
+      "close": 4.446,
+      "daily_pct": 1.5532,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 6.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.47,
+      "close": 98.488,
+      "daily_pct": 0.0183,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 106.42,
+      "close": 104.16,
+      "daily_pct": -2.1237,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59513.12,
+      "prev_close": 59284.92,
+      "daily_pct": 0.3849,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25898.61,
+      "prev_close": 26095.88,
+      "daily_pct": -0.7559,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6936.99,
+      "prev_close": 6598.87,
+      "daily_pct": 5.1239,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24032.8,
+      "prev_close": 24119.3,
+      "daily_pct": -0.3586,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8680.5,
+      "prev_close": 8697.1,
+      "daily_pct": -0.1909,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24285.46,
+      "prev_close": 24285.46,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10255.15,
+      "prev_close": 10255.15,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8025.07,
+      "prev_close": 8025.28,
+      "daily_pct": -0.0026,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5844.3,
+      "prev_close": 5844.58,
+      "daily_pct": -0.0048,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16877,
+      "prev_close": 1.17266,
+      "daily_pct": -0.3319
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35367,
+      "prev_close": 1.35814,
+      "daily_pct": -0.3289
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.701,
+      "prev_close": 156.84599,
+      "daily_pct": 0.5451
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71674,
+      "prev_close": 0.72129,
+      "daily_pct": -0.6307
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.83146,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27592,
+      "prev_close": 1.2802,
+      "daily_pct": -0.3343
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7255.25,
+      "prev_close": 7255.25,
+      "daily_pct": 0.3458
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27933.75,
+      "prev_close": 27933.75,
+      "daily_pct": 0.5679
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49205.0,
+      "prev_close": 49205.0,
+      "daily_pct": 0.2567
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4553.9,
+      "prev_close": 4553.9,
+      "daily_pct": 0.7611
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.28,
+      "prev_close": 110.28,
+      "daily_pct": 0.0993
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 104.15,
+      "prev_close": 104.15,
+      "daily_pct": -2.1331
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "-0.5%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Palantir tops estimates on 85% revenue growth, fastest expansion since market debut in 2020",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 22:51:10 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/palantir-pltr-q1-earnings-report-2026.html",
+      "summary": "Palantir reported better-than-expected revenue and profit, driven by growth in sales to U.S. government agencies."
+    },
+    {
+      "headline": "Pirro changes course in Fed investigation, move unlikely to satisfy Powell",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 21:48:07 GMT",
+      "url": "https://www.cnbc.com/2026/05/03/pirro-fed-powell.html",
+      "summary": "The U.S. attorney opted not to appeal a ruling that had blocked her subpoenas to the Fed."
+    },
+    {
+      "headline": "Oil prices slide as new attacks in Strait of Hormuz threaten fragile U.S.-Iran ceasefire",
+      "source": "CNBC",
+      "published": "Tue, 05 May 2026 10:00:11 GMT",
+      "url": "https://www.cnbc.com/2026/05/05/oil-prices-today-wti-brent-iran-war-trump-hormuz.html",
+      "summary": "Oil prices declined on Tuesday, retreating from sharp gains in the previous session."
+    },
+    {
+      "headline": "Andy Jassy says Amazon investors will be rewarded by all its AI spending",
+      "source": "CNBC",
+      "published": "Tue, 05 May 2026 00:38:58 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/andy-jassy-amazon-investors-rewarded-ai-spending.html",
+      "summary": "CEO Andy Jassy said Amazon\u2019s massive AI spending reflects a once-in-a-generation opportunity and will ultimately reward investors."
+    },
+    {
+      "headline": "Crypto industry calls for lawmakers to act on legislation after breakthrough agreement",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 23:47:25 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/crypto-industry-calls-for-lawmakers-to-act-after-breakthrough-agreement.html",
+      "summary": "Senators are aiming to resolve one of the biggest debates around a key crypto bill as momentum builds for a vote."
+    },
+    {
+      "headline": "What's behind Eli Lilly's down-and-up day after last week's post-earnings surge",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 18:29:36 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/whats-behind-eli-lillys-down-and-up-day-after-last-weeks-surge.html",
+      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+    },
+    {
+      "headline": "Paramount earnings, revenue beat expectations as streaming business offers a boost",
+      "source": "CNBC",
+      "published": "Mon, 04 May 2026 20:48:58 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/paramount-skydance-psky-earnings-q1-2026.html",
+      "summary": "Paramount Skydance said it added streaming subscribers during the first quarter even as it instituted its first price hike since 2024."
+    },
+    {
+      "headline": "Pinterest surges 15% after earnings beat as company posts strong guidance",
+      "source": "CNBC",
+      "published": "Tue, 05 May 2026 02:33:42 GMT",
+      "url": "https://www.cnbc.com/2026/05/04/pinterest-pins-q1-earnings-report-2026.html",
+      "summary": "Pinterest cut nearly 15% of its workforce and reduced office space in January as it pushes more resources into AI."
+    }
+  ]
+}
