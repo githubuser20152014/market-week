@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-05-06",
+    "generated_at": "2026-05-06T11:00:22.355678Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7200.75,
+      "close": 7259.2202,
+      "daily_pct": 0.812,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 48941.8984,
+      "close": 49298.25,
+      "daily_pct": 0.7281,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25067.8008,
+      "close": 25326.1309,
+      "daily_pct": 1.0305,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2796.0,
+      "close": 2845.0,
+      "daily_pct": 1.7525,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4555.7998,
+      "close": 4723.2002,
+      "daily_pct": 3.6744,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.446,
+      "close": 4.416,
+      "daily_pct": -0.6748,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -3.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.48,
+      "close": 97.714,
+      "daily_pct": -0.7778,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 102.27,
+      "close": 91.68,
+      "daily_pct": -10.3549,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59513.12,
+      "prev_close": 59284.92,
+      "daily_pct": 0.3849,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26213.78,
+      "prev_close": 25898.61,
+      "daily_pct": 1.2169,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7384.56,
+      "prev_close": 6936.99,
+      "daily_pct": 6.4519,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24330.95,
+      "prev_close": 24032.8,
+      "daily_pct": 1.2406,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8793.6,
+      "prev_close": 8680.5,
+      "daily_pct": 1.3029,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25076.27,
+      "prev_close": 25076.27,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10451.43,
+      "prev_close": 10451.43,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8298.15,
+      "prev_close": 8299.5,
+      "daily_pct": -0.0163,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6040.88,
+      "prev_close": 6040.88,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17925,
+      "prev_close": 1.16919,
+      "daily_pct": 0.8597
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.36372,
+      "prev_close": 1.35314,
+      "daily_pct": 0.7814
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 155.73801,
+      "prev_close": 157.194,
+      "daily_pct": -0.9262
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72727,
+      "prev_close": 0.71675,
+      "daily_pct": 1.4684
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.80667,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28627,
+      "prev_close": 1.27556,
+      "daily_pct": 0.8399
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7354.25,
+      "prev_close": 7354.25,
+      "daily_pct": 0.9194
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28569.5,
+      "prev_close": 28569.5,
+      "daily_pct": 1.5407
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49939.0,
+      "prev_close": 49939.0,
+      "daily_pct": 1.0604
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4723.2,
+      "prev_close": 4723.2,
+      "daily_pct": 3.6744
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.89,
+      "prev_close": 110.89,
+      "daily_pct": 0.4956
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 91.63,
+      "prev_close": 91.63,
+      "daily_pct": -10.4038
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Disney pops 5% after streaming, parks drive revenue beat in first report under CEO Josh D'Amaro",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 10:59:24 GMT",
+      "url": "https://www.cnbc.com/2026/05/06/disney-dis-earnings-q2-2026.html",
+      "summary": "Disney revenue topped analyst expectations when the media giant reported its fiscal second-quarter earnings on Wednesday."
+    },
+    {
+      "headline": "Restaurant Brands International earnings top estimates, fueled by Burger King turnaround",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 10:31:19 GMT",
+      "url": "https://www.cnbc.com/2026/05/06/restaurant-brands-international-qsr-q1-2026-earnings.html",
+      "summary": "Restaurant Brands International reported quarterly earnings and revenue that topped Wall Street's estimates."
+    },
+    {
+      "headline": "Bitcoin treasury firm Strategy breaks from 'never sell' approach to the flagship crypto",
+      "source": "CNBC",
+      "published": "Tue, 05 May 2026 23:54:03 GMT",
+      "url": "https://www.cnbc.com/2026/05/05/strategy-breaks-from-never-sell-bitcoin-approach.html",
+      "summary": "Strategy is shifting from passive bitcoin accumulation to actively managing balance sheet to boost bitcoin per share value."
+    },
+    {
+      "headline": "AMD's stock soars 15% as data center growth pushes revenue and guidance past estimates",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 09:13:46 GMT",
+      "url": "https://www.cnbc.com/2026/05/05/amd-q1-2026-earnings-report.html",
+      "summary": "AMD's earnings report lands as investors rush into the stock on optimism that the AI boom is just getting started."
+    },
+    {
+      "headline": "EV maker Lucid suspends production guidance amid incoming CEO's business review",
+      "source": "CNBC",
+      "published": "Tue, 05 May 2026 22:52:00 GMT",
+      "url": "https://www.cnbc.com/2026/05/05/lucid-lcid-q1-2026.html",
+      "summary": "Lucid Group said it will make moves to better align its production with customer demand for its luxury all-electric vehicles."
+    },
+    {
+      "headline": "China presses Iran against resuming war, urges Hormuz reopening ahead of Trump-Xi summit",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 08:28:18 GMT",
+      "url": "https://www.cnbc.com/2026/05/06/china-iran-araghchi-wang-yi-trump-beijing-hormuz-talks.html",
+      "summary": "China called for a \"prompt resumption of shipping traffic through the Strait of Hormuz,\" though that point was absent in Iran's statement."
+    },
+    {
+      "headline": "Aluminum prices are surging. Here's how companies are handling the costs",
+      "source": "CNBC",
+      "published": "Tue, 05 May 2026 21:17:20 GMT",
+      "url": "https://www.cnbc.com/2026/05/05/aluminum-prices-hormuz-ford-molson-coors.html",
+      "summary": "Aluminum's surge since the start of the Iran war is creating cost pressures for some of America's largest companies."
+    },
+    {
+      "headline": "Anthropic CEO warns of cyber \u2018moment of danger\u2019 as AI exposes thousands of vulnerabilities",
+      "source": "CNBC",
+      "published": "Tue, 05 May 2026 19:36:16 GMT",
+      "url": "https://www.cnbc.com/2026/05/05/anthropic-ceo-cyber-moment-of-danger-mythos-vulnerabilities.html",
+      "summary": "Anthropic CEO Dario Amodei warned AI has created a narrow window for software firms, governments and banks to fix tens of thousands of vulnerabilities."
+    }
+  ]
+}
