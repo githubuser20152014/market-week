@@ -49,7 +49,7 @@ fi
 cd "$SCRIPT_DIR"
 
 CONTENT_REPO="C:/Users/Akhil/Documents/ContentRepo"
-ISSUES_DIR="$CONTENT_REPO/wednesday-series/Issues"
+ISSUES_DIR="$CONTENT_REPO/drafts/wednesday-series/Issues"
 
 # Resolve slug + issue number from ContentRepo article for this date
 SLUG=$(python -c "

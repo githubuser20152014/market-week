@@ -21,7 +21,7 @@ from pathlib import Path
 SCRIPT_DIR   = Path(__file__).parent
 OUTPUT_DIR   = SCRIPT_DIR / "output"
 CONTENT_REPO = Path("C:/Users/Akhil/Documents/ContentRepo")
-ISSUES_DIR   = CONTENT_REPO / "wednesday-series/Issues"
+ISSUES_DIR   = CONTENT_REPO / "drafts/wednesday-series/Issues"
 
 BASE_URL = "https://frameworkfoundry.info"
 

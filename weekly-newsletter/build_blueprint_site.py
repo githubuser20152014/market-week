@@ -21,7 +21,7 @@ import markdown as md_lib
 SCRIPT_DIR   = Path(__file__).resolve().parent
 SITE_DIR     = SCRIPT_DIR / "site"
 CONTENT_REPO = Path("C:/Users/Akhil/Documents/ContentRepo")
-ISSUES_DIR   = CONTENT_REPO / "wednesday-series/Issues"
+ISSUES_DIR   = CONTENT_REPO / "drafts/wednesday-series/Issues"
 
 FORMSPREE_ID = "mwpvyoal"
 BASE_URL     = "https://frameworkfoundry.info"
