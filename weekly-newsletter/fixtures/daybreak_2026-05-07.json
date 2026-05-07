@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-05-07",
+    "generated_at": "2026-05-07T10:32:41.829112Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7259.2202,
+      "close": 7365.1201,
+      "daily_pct": 1.4588,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49298.25,
+      "close": 49910.5898,
+      "daily_pct": 1.2421,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25326.1309,
+      "close": 25838.9395,
+      "daily_pct": 2.0248,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2845.0,
+      "close": 2886.77,
+      "daily_pct": 1.4682,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4681.8999,
+      "close": 4741.3999,
+      "daily_pct": 1.2709,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.416,
+      "close": 4.356,
+      "daily_pct": -1.3587,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -6.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.02,
+      "close": 97.838,
+      "daily_pct": -0.1857,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 95.08,
+      "close": 92.66,
+      "daily_pct": -2.5452,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62833.84,
+      "prev_close": 59513.12,
+      "daily_pct": 5.5798,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26626.28,
+      "prev_close": 26213.78,
+      "daily_pct": 1.5736,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7490.05,
+      "prev_close": 7384.56,
+      "daily_pct": 1.4285,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24326.65,
+      "prev_close": 24330.95,
+      "daily_pct": -0.0177,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8878.1,
+      "prev_close": 8793.6,
+      "daily_pct": 0.9609,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24867.23,
+      "prev_close": 24867.23,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10367.85,
+      "prev_close": 10367.85,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8292.74,
+      "prev_close": 8292.74,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6026.03,
+      "prev_close": 6026.03,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17772,
+      "prev_close": 1.17158,
+      "daily_pct": 0.5241
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.36288,
+      "prev_close": 1.35687,
+      "daily_pct": 0.4429
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 156.332,
+      "prev_close": 157.677,
+      "daily_pct": -0.853
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72648,
+      "prev_close": 0.72039,
+      "daily_pct": 0.8454
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.79803,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28645,
+      "prev_close": 1.27979,
+      "daily_pct": 0.521
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7395.5,
+      "prev_close": 7395.5,
+      "daily_pct": 0.0812
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28724.0,
+      "prev_close": 28724.0,
+      "daily_pct": 0.0252
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50061.0,
+      "prev_close": 50061.0,
+      "daily_pct": 0.054
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4741.4,
+      "prev_close": 4741.4,
+      "daily_pct": 1.2709
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.95,
+      "prev_close": 110.95,
+      "daily_pct": 0.141
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 92.65,
+      "prev_close": 92.65,
+      "daily_pct": -2.5557
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices fall below $100 as U.S.-Iran tensions keep traders focused on Strait of Hormuz risks",
+      "source": "CNBC",
+      "published": "Thu, 07 May 2026 09:05:48 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/oil-prices-today-trump-iran-strait-of-hormuz-us-crude-brent-.html",
+      "summary": "Oil prices fell Thursday, as investors continue to assess the latest developments in the Middle East amid concerns over renewed tensions between Iran and the U.S."
+    },
+    {
+      "headline": "Shell tops profit estimates as Iran war boosts oil price, cuts share buybacks",
+      "source": "CNBC",
+      "published": "Thu, 07 May 2026 07:18:40 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/oil-giant-shell-tops-quarterly-profit-estimates-as-iran-war-drives-price-surge.html",
+      "summary": "Britain's Shell posted stronger-than-expected quarterly profit as the Iran war sent fossil fuel prices soaring."
+    },
+    {
+      "headline": "McDonald's is about to report earnings. Here's what to expect",
+      "source": "CNBC",
+      "published": "Thu, 07 May 2026 04:01:02 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/mcdonalds-mcd-q1-2026-earnings.html",
+      "summary": "Shares of McDonald's have fallen 10% over the last year, hurt by concerns about the broader economy."
+    },
+    {
+      "headline": "Goodbye quarterly earnings? Here's when traders believe this big change will happen",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 17:48:21 GMT",
+      "url": "https://www.cnbc.com/2026/05/06/kalshi-traders-confident-sec-will-end-mandatory-quarterly-earnings-reports.html",
+      "summary": "Traders are evenly divided as to whether the change will happen by Jan. 1. That would be an unusually fast timeline for the commission."
+    },
+    {
+      "headline": "Apollo CEO Rowan warns of market correction, slams 'egregious' practices at rival insurers",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 20:33:58 GMT",
+      "url": "https://www.cnbc.com/2026/05/06/apollo-ceo-rowan-market-correction-rival-insurers.html",
+      "summary": "Apollo CEO Marc Rowan warned that markets face an elevated risk of unexpected shocks, saying he is positioning the firm defensively for an expected correction."
+    },
+    {
+      "headline": "Warner Bros. Discovery books $2.9 billion net loss tied to Paramount deal, restructuring costs",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 22:56:02 GMT",
+      "url": "https://www.cnbc.com/2026/05/06/warner-bros-discovery-net-loss-paramount-deal.html",
+      "summary": "Paramount agreed to pay a Netflix termination fee, but the cost lives on WBD's books until the close of the deal."
+    },
+    {
+      "headline": "It\u2019s not just Big Oil. Wind giants welcome profit beats as Iran war spurs energy pivot",
+      "source": "CNBC",
+      "published": "Thu, 07 May 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/iran-war-renewables-wind-oil-gas-equinor-orsted.html",
+      "summary": "Norway's Equinor told CNBC that the company expects the Iran war to deliver a boost to its transition industries."
+    },
+    {
+      "headline": "Airlines spent 56.4% more on jet fuel in month after Iran war started, U.S. government says",
+      "source": "CNBC",
+      "published": "Wed, 06 May 2026 19:15:47 GMT",
+      "url": "https://www.cnbc.com/2026/05/06/airlines-jet-fuel-iran-war.html",
+      "summary": "U.S. airlines spent 56.4% more on jet fuel in March than they did in February, U.S. government data released Wednesday shows."
+    }
+  ]
+}
