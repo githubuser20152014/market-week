@@ -37,9 +37,38 @@ Before displaying the draft to the user, run a pre-flight style check on the gen
 - [ ] No banned phrases: "amid concerns", "market participants", "investors remain cautious", "volatility persists", "risk sentiment"
 - [ ] Bold callouts in plain_summary: at least 4 (if fewer, note it)
 
-Fix any violations by editing the `.md` directly, then display the corrected draft.
+Fix any violations by editing the `.md` directly.
 
-Ask the user:
+**Narrative tone check — apply after fixing violations:**
+
+Rewrite **The Brief** and **What it means for you** sections if they read as plain financial reporting. The approved tone is cheeky, irreverent, dark humor: short punchy sentences, a sarcastic observation after each data point, dry wit on the macro themes. Guidelines:
+- Lead with the market's contradiction or absurdity, not a neutral summary
+- After stating a number, add the pointed observation ("because small-caps are the canaries of domestic credit, and right now they are canaries with a cough")
+- Dark humor on geopolitical and earnings catalysts — treat them as darkly comic, not tragic
+- "The smart money voted with its wallet and the wallet voted for gold" style conclusions
+- Short sentences. Never more than two clauses. Sarcasm over hedging.
+- All numbers and tickers must stay accurate — tone changes the delivery, not the data
+- Reference: `C:\Users\Akhil\Documents\ContentRepo\00-Dashboard\Vibe-Check.md` for the exact voice
+
+**Title generation — run after narrative tone check:**
+
+Generate 5 title options and write them to `weekly-newsletter/output/title_DATE.txt` (one per line, numbered). Do NOT pick one — present all 5 and ask the user to choose.
+
+Title rules:
+- Must contain at least one specific number from the day's data (price, %, bps, count)
+- Must be punchy: short sentences, period-separated, no em dashes
+- Should expose a contradiction, dark irony, or absurdity in the session
+- Dark humor and wit are features, not bugs
+- Style reference — the 2026-05-08 approved title: *"The Ceasefire Had a Great 24 Hours. Gold Hit $4,727 Anyway."*
+- More examples of the pattern:
+  - "[Thing that should have worked] had [timeframe]. [Asset/number] didn't care."
+  - "[N] markets voted [X]. [1 market/number] voted [Y]. [Event] settles it."
+  - "[Ironic observation with number]. [Darker punchline with number]."
+  - "[$Number]. [Dark observation]. [Escalating punchline]."
+
+Display the 5 options. Wait for user to pick one before proceeding. Write the chosen title back to `title_DATE.txt` (single line, no number prefix).
+
+Display the corrected draft with the chosen title, then ask:
 > "Here's the newsletter for [date]. Does everything look good, or would you like any changes before I write the social posts?"
 
 Wait for the user's response. If they request changes, make the edits to the `.md` file directly, then show the updated sections and ask again.
@@ -49,6 +78,11 @@ Wait for the user's response. If they request changes, make the edits to the `.m
 Using the approved markdown as the sole content source, write the Substack HTML and save it to `weekly-newsletter/output/substack_DATE.html`.
 
 Format requirements:
+- **Title + subtitle at the top** (added only after the user has approved the final title):
+  ```html
+  <h1>[APPROVED TITLE]</h1>
+  <p><em>The Morning Brief · Market intelligence at the open</em></p>
+  ```
 - **Opening hook:** 2–3 short punchy paragraphs. Lead with the accusation or anomaly — not a summary. First visible section ends with a kicker in `<em>italics</em>`.
 - **`<h2>Here's my read:</h2>`** — the macro driver paragraph. Bold key data points. Italics on punchline phrases.
 - **`<h2>The One Trade: DIRECTION <a href="https://finance.yahoo.com/quote/TICKER">$TICKER</a></h2>`** — the ticker MUST be a Yahoo Finance hyperlink, never plain text. Use "Kill switch:" not "Risk:". Italics on the consequence ("get out *fast*").
@@ -56,7 +90,7 @@ Format requirements:
 - Bold key numbers and verdicts. Italics on punchlines. Don't over-emphasize — save it for the moments that land hardest.
 - Footer: link to `frameworkfoundry.info/daily/DATE/` and `frameworkfoundrymkt.substack.com`
 - No em dashes (—) anywhere — use " - " instead.
-- Voice: edgy, opinionated, conviction-led. State opinions as facts. Short sentences. No hedging. The April 23 2026 edition is the reference.
+- Voice: cheeky, irreverent, dark humor. State opinions as facts. Short sentences. No hedging. Lead with the absurdity or contradiction, not the summary. Sarcastic observations after data points. The 2026-05-08 edition is the reference for narrative tone; the April 23 2026 edition is the reference for One Trade structure.
 
 Save the file, then display the full HTML to the user. Ask:
 > "Here's the Substack draft for [date]. Any changes?"

@@ -49,7 +49,7 @@ weekly-newsletter/
 
 The reader is a serious ETF investor. Not a trader. Not a beginner. They want signal, not noise.
 
-**The voice:** Portfolio manager briefing a colleague before the open. Direct. Short sentences. Named catalysts with exact numbers. No hedging.
+**The voice:** Cheeky, irreverent, dark humor. Short sentences. Named catalysts with exact numbers. Lead with the market's contradiction or absurdity. Sarcastic observation after each data point. State opinions as facts. No hedging. Reference edition: 2026-05-08 (narrative); 2026-04-23 (One Trade structure).
 
 **Em dashes (—) are banned.** Use a colon for elaboration, comma for a parenthetical aside, period where two thoughts stand alone.
 
