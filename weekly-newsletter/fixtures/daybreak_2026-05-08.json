@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "date": "2026-05-08",
+    "generated_at": "2026-05-08T09:25:00.142668Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7365.1201,
+      "close": 7337.1099,
+      "daily_pct": -0.3803,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49910.5898,
+      "close": 49596.9688,
+      "daily_pct": -0.6284,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25838.9395,
+      "close": 25806.1992,
+      "daily_pct": -0.1267,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2886.77,
+      "close": 2839.6299,
+      "daily_pct": -1.633,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4699.7998,
+      "close": 4727.6001,
+      "daily_pct": 0.5915,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.356,
+      "close": 4.392,
+      "daily_pct": 0.8265,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.25,
+      "close": 97.928,
+      "daily_pct": -0.3277,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 94.81,
+      "close": 94.37,
+      "daily_pct": -0.4641,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62713.65,
+      "prev_close": 62833.84,
+      "daily_pct": -0.1913,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26393.71,
+      "prev_close": 26626.28,
+      "daily_pct": -0.8735,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7498.0,
+      "prev_close": 7490.05,
+      "daily_pct": 0.1061,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24231.5,
+      "prev_close": 24326.65,
+      "daily_pct": -0.3911,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8744.4,
+      "prev_close": 8878.1,
+      "daily_pct": -1.5059,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24457.0,
+      "prev_close": 24457.0,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (live)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10222.0,
+      "prev_close": 10222.0,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (live)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8138.0,
+      "prev_close": 8138.0,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (live)"
+    },
+    "Euronext 100": {
+      "symbol": "^N100",
+      "region": "Europe",
+      "status": "partial",
+      "close": 1816.0,
+      "prev_close": 1816.0,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (live)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17758,
+      "prev_close": 1.17474,
+      "daily_pct": 0.2414
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.36221,
+      "prev_close": 1.35918,
+      "daily_pct": 0.2234
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 156.642,
+      "prev_close": 156.508,
+      "daily_pct": 0.0856
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72438,
+      "prev_close": 0.72351,
+      "daily_pct": 0.1196
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.80031,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28586,
+      "prev_close": 1.28393,
+      "daily_pct": 0.1504
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7399.25,
+      "prev_close": 7399.25,
+      "daily_pct": 0.4923
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28883.75,
+      "prev_close": 28883.75,
+      "daily_pct": 0.7025
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49854.0,
+      "prev_close": 49854.0,
+      "daily_pct": 0.3099
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4727.6,
+      "prev_close": 4727.6,
+      "daily_pct": 0.5915
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.7,
+      "prev_close": 110.7,
+      "daily_pct": 0.1697
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 94.37,
+      "prev_close": 94.37,
+      "daily_pct": -0.4641
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Nonfarm Payrolls / Unemployment",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Here's what to expect from Friday's release of the April jobs report",
+      "source": "CNBC",
+      "published": "Thu, 07 May 2026 19:20:55 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/heres-what-to-expect-from-fridays-release-of-the-april-jobs-report.html",
+      "summary": "The total picture is one of a labor market that, while undoubtedly cooling, is generally stable and resilient despite a number of challenges."
+    },
+    {
+      "headline": "Trump threatens EU with \u2018much higher\u2019 tariffs if no trade deal signed by new deadline",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 07:32:28 GMT",
+      "url": "https://www.cnbc.com/2026/05/08/trump-tariffs-trade-eu-europe-deal.html",
+      "summary": "President Donald Trump said he will give the European Union until July 4 to ratify its trade agreement with the U.S."
+    },
+    {
+      "headline": "Toyota fourth-quarter profit misses by wide margin as U.S. tariffs drive 49% slump",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 07:29:03 GMT",
+      "url": "https://www.cnbc.com/2026/05/08/toyota-1q-2026-earnings.html",
+      "summary": "The world's\u00a0largest automaker\u00a0by sales volume saw a\u00a01.89% year-on-year rise in revenue during the fourth quarter ended March."
+    },
+    {
+      "headline": "Cloudflare stock sinks 18% after earnings as company cuts 1,100 employees due to AI changes",
+      "source": "CNBC",
+      "published": "Thu, 07 May 2026 22:19:17 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/cloudflare-net-q1-2026-stock-earnings-layoffs.html",
+      "summary": "The cloud provider announced it is laying off 20% of its workforce as agentic artificial intelligence \"fundamentally changes\" the company's work."
+    },
+    {
+      "headline": "CoreWeave stock sinks 10% on weak revenue guidance, increased spending forecast",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 09:15:15 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/coreweave-crwv-q1-earnings-report-2026.html",
+      "summary": "CoreWeave has been raising debt to finance its data center buildout, and S&amp;P has boosted the company's credit rating."
+    },
+    {
+      "headline": "Oil resumes rally as U.S.-Iran fire exchange rattles fragile Hormuz ceasefire",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 03:57:41 GMT",
+      "url": "https://www.cnbc.com/2026/05/08/oil-prices-today-wti-brent-us-iran-fire-war-hormuz-ceasefire.html",
+      "summary": "The U.S. and Iran exchanged fire in the Strait of Hormuz, raising fresh fears that the fragile ceasefire between the two countries was unraveling."
+    },
+    {
+      "headline": "U.S. and Iran trade fire in Strait of Hormuz; each claims other shot first",
+      "source": "CNBC",
+      "published": "Thu, 07 May 2026 22:48:26 GMT",
+      "url": "https://www.cnbc.com/2026/05/07/iran-war-hormuz-strait-ceasefire-trump.html",
+      "summary": "CENTCOM's statement does not mention the status of the U.S.-Iran ceasefire, which has already been frayed by repeated claims that its terms are being breached."
+    },
+    {
+      "headline": "\u2018Not a Chance Hormuz Opens\u2019: How Wall Street\u2019s new NACHO trade bets on a prolonged oil shock",
+      "source": "CNBC",
+      "published": "Fri, 08 May 2026 05:39:21 GMT",
+      "url": "https://www.cnbc.com/2026/05/08/traders-nacho-trade-strait-hormuz-oil-markets-taco-trump-iran.html",
+      "summary": "Traders are embracing the \u201cNACHO\u201d trade, betting Hormuz disruptions and elevated oil prices will persist longer than expected."
+    }
+  ]
+}
