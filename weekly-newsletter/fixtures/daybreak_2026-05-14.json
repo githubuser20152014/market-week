@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-05-14",
+    "generated_at": "2026-05-14T08:59:24.331866Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7400.96,
+      "close": 7444.25,
+      "daily_pct": 0.5849,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49760.5586,
+      "close": 49693.1992,
+      "daily_pct": -0.1354,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26088.1992,
+      "close": 26402.3398,
+      "daily_pct": 1.2041,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2842.8301,
+      "close": 2843.9299,
+      "daily_pct": 0.0387,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4697.7002,
+      "close": 4702.3999,
+      "daily_pct": 0.1,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.463,
+      "close": 4.481,
+      "daily_pct": 0.4033,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.48,
+      "close": 98.511,
+      "daily_pct": 0.0315,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.02,
+      "close": 101.32,
+      "daily_pct": 0.297,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62654.05,
+      "prev_close": 63272.11,
+      "daily_pct": -0.9768,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26389.04,
+      "prev_close": 26388.44,
+      "daily_pct": 0.0023,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7981.41,
+      "prev_close": 7844.01,
+      "daily_pct": 1.7517,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23751.9,
+      "prev_close": 23412.6,
+      "daily_pct": 1.4492,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8640.7,
+      "prev_close": 8630.4,
+      "daily_pct": 0.1193,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24416.83,
+      "prev_close": 24416.83,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10335.9,
+      "prev_close": 10335.9,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8050.56,
+      "prev_close": 8050.56,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5849.8,
+      "prev_close": 5861.07,
+      "daily_pct": -0.1923,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17151,
+      "prev_close": 1.17354,
+      "daily_pct": -0.1734
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35192,
+      "prev_close": 1.3537,
+      "daily_pct": -0.1317
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.856,
+      "prev_close": 157.67101,
+      "daily_pct": 0.1173
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72548,
+      "prev_close": 0.72378,
+      "daily_pct": 0.2347
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.78423,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27889,
+      "prev_close": 1.28138,
+      "daily_pct": -0.1944
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7484.0,
+      "prev_close": 7484.0,
+      "daily_pct": 0.1941
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29555.5,
+      "prev_close": 29555.5,
+      "daily_pct": 0.2587
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50001.0,
+      "prev_close": 50001.0,
+      "daily_pct": 0.4197
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4703.4,
+      "prev_close": 4703.4,
+      "daily_pct": 0.1213
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.12,
+      "prev_close": 110.12,
+      "daily_pct": 0.1136
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 101.22,
+      "prev_close": 101.22,
+      "daily_pct": 0.198
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Xi asks Trump if U.S. and China can avoid 'Thucydides Trap' at high-stakes summit",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 08:21:16 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/trump-xi-beijing-summit-trade-taiwan-ai-iran-rare-earths-tariffs.html",
+      "summary": "U.S. President Donald Trump met Chinese President Xi Jinping in Beijing on Thursday morning for the start of a high-stakes summit that runs through Friday."
+    },
+    {
+      "headline": "Nvidia's Jensen Huang on China trip: \u2018President Trump asked me to come\u2019",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 08:55:39 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/nvidias-jensen-huang-on-china-trip-trump.html",
+      "summary": "U.S. President Donald Trump on Wednesday landed in Beijing for the high-stakes summit with China."
+    },
+    {
+      "headline": "Cuba says oil and diesel supplies have run dry under U.S. sanctions",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 07:17:19 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/cuba-oil-diesel-fuel-us-sanctions-blockade.html",
+      "summary": "A Cuban official said the situation is \u201cextremely tense\u201d as blackouts sparked protests in Havana on Wednesday."
+    },
+    {
+      "headline": "Trump-Xi summit revives China tech rally hopes as U.S. reportedly clears Nvidia H200 sales",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 07:44:10 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/trump-xi-meeting-china-stocks-ai-rally.html",
+      "summary": "Market watchers are betting that the Trump-Xi summit could extend trade truce and lift Chinese equities."
+    },
+    {
+      "headline": "Burberry says turnaround on track as Americas and China fuel strong growth",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 07:41:03 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/burberry-stock-brby-earnings-fy-turnaround-americas-china-sales-growth.html",
+      "summary": "Full-year revenue came in largely in line with expectations at \u00a32.4 billion."
+    },
+    {
+      "headline": "In photos: Trump kicks off high-stakes summit with Xi",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 04:44:16 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/in-photos-trump-lands-in-beijing-ahead-of-high-stakes-summit-with-xi.html",
+      "summary": "The high-stakes summit is expected to cover a wide range of contentious topics, including trade, technology, export controls, Taiwan, and the Iran war."
+    },
+    {
+      "headline": "Kevin Warsh wins Senate confirmation as the next Federal Reserve chair",
+      "source": "CNBC",
+      "published": "Wed, 13 May 2026 23:21:35 GMT",
+      "url": "https://www.cnbc.com/2026/05/13/kevin-warsh-wins-senate-confirmation-as-the-next-federal-reserve-chair.html",
+      "summary": "In the most divisive vote ever for a Fed chair, Warsh, 56, won confirmation to take over for Jerome Powell."
+    },
+    {
+      "headline": "Oil rises as IEA flags greater volatility ahead, OPEC cuts demand forecast",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 08:38:08 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/oil-prices-today-wti-brent-hormuz-trump-xi-meeting.html",
+      "summary": "OPEC cut its demand growth estimates for 2026 to about 1.2 million barrels per day."
+    }
+  ]
+}
