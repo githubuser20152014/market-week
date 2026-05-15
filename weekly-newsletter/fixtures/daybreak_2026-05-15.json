@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "date": "2026-05-15",
+    "generated_at": "2026-05-15T10:26:53.270719Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7444.25,
+      "close": 7501.2402,
+      "daily_pct": 0.7656,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49693.1992,
+      "close": 50063.4609,
+      "daily_pct": 0.7451,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26402.3398,
+      "close": 26635.2207,
+      "daily_pct": 0.882,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2843.9299,
+      "close": 2863.0901,
+      "daily_pct": 0.6737,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4678.1001,
+      "close": 4566.3999,
+      "daily_pct": -2.3877,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.481,
+      "close": 4.461,
+      "daily_pct": -0.4463,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.88,
+      "close": 99.144,
+      "daily_pct": 0.267,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.17,
+      "close": 100.18,
+      "daily_pct": -0.9785,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 61409.29,
+      "prev_close": 62654.05,
+      "daily_pct": -1.9867,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25962.73,
+      "prev_close": 26389.04,
+      "daily_pct": -1.6155,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7493.18,
+      "prev_close": 7981.41,
+      "daily_pct": -6.1171,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23643.5,
+      "prev_close": 23689.6,
+      "daily_pct": -0.1946,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8630.8,
+      "prev_close": 8640.7,
+      "daily_pct": -0.1146,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24056.22,
+      "prev_close": 24056.87,
+      "daily_pct": -0.0027,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10224.68,
+      "prev_close": 10224.68,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7967.09,
+      "prev_close": 7967.09,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5827.11,
+      "prev_close": 5827.11,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16428,
+      "prev_close": 1.1716,
+      "daily_pct": -0.6252
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33677,
+      "prev_close": 1.35263,
+      "daily_pct": -1.1724
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.47301,
+      "prev_close": 157.851,
+      "daily_pct": 0.394
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71644,
+      "prev_close": 0.7255,
+      "daily_pct": -1.2495
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.80778,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27397,
+      "prev_close": 1.27959,
+      "daily_pct": -0.4395
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7455.5,
+      "prev_close": 7455.5,
+      "daily_pct": -0.9302
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29278.5,
+      "prev_close": 29278.5,
+      "daily_pct": -1.3785
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49868.0,
+      "prev_close": 49868.0,
+      "daily_pct": -0.5702
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4566.7,
+      "prev_close": 4566.7,
+      "daily_pct": -2.3813
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.56,
+      "prev_close": 109.56,
+      "daily_pct": -0.4967
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 100.13,
+      "prev_close": 100.13,
+      "daily_pct": -1.028
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices jump after Trump says China agreed to buy U.S. crude following Xi talks",
+      "source": "CNBC",
+      "published": "Fri, 15 May 2026 08:33:21 GMT",
+      "url": "https://www.cnbc.com/2026/05/15/oil-prices-china-us-iran-strait-of-hormuz-middle-east.html",
+      "summary": "Oil prices rose Friday on news that China has agreed to purchase oil from America"
+    },
+    {
+      "headline": "Trump-Xi summit: the 3 big takeaways from historic meeting in Beijing",
+      "source": "CNBC",
+      "published": "Fri, 15 May 2026 09:11:05 GMT",
+      "url": "https://www.cnbc.com/2026/05/15/trump-xi-summit-the-3-big-takeaways-from-historic-meeting-in-beijing.html",
+      "summary": "The two-day meeting wrapped up Friday, setting the tone for further U.S.-China talks this year."
+    },
+    {
+      "headline": "UAE fast tracks second West-East oil pipeline to bypass Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Fri, 15 May 2026 09:19:57 GMT",
+      "url": "https://www.cnbc.com/2026/05/15/uae-west-east-oil-pipeline-strait-hormuz-iran-war.html",
+      "summary": "The second pipeline project comes as global energy supplies remain under pressure and flows through the Strait of Hormuz remain severely limited"
+    },
+    {
+      "headline": "Fed Governor Miran submits resignation, throws support behind Warsh as new chair",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 21:47:36 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/fed-governor-miran-submits-resignation-throws-support-behind-warsh-as-new-chair.html",
+      "summary": "Miran served as a contrarian voice on the rate-setting Federal Open Market Committee."
+    },
+    {
+      "headline": "CIA chief makes historic trip to Cuba as US blockade chokes island's energy supplies",
+      "source": "CNBC",
+      "published": "Fri, 15 May 2026 07:16:00 GMT",
+      "url": "https://www.cnbc.com/2026/05/15/cuba-cia-john-ratcliffe-oil-blockade-trump-blackouts.html",
+      "summary": "The U.S. has been restricting oil shipments to Cuba since January, plunging the country into blackouts lasting days at a time."
+    },
+    {
+      "headline": "SpaceX IPO prospectus could land as soon as next week, sources say",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 22:39:33 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/spacex-ipo-prospectus-could-land-as-soon-as-next-week-sources-say.html",
+      "summary": "Elon Musk's reusable rocket company is getting closer to what's expected to be a record stock market debut."
+    },
+    {
+      "headline": "Trump leaves China after talks dominated by trade, oil and Taiwan",
+      "source": "CNBC",
+      "published": "Fri, 15 May 2026 06:46:57 GMT",
+      "url": "https://www.cnbc.com/2026/05/15/trump-wraps-up-two-day-china-trip-invites-xi-for-a-september-visit.html",
+      "summary": "U.S. President Donald Trump traveled to China this week for two days of meetings with Chinese President Xi Jinping, after a year of heightened trade tensions."
+    },
+    {
+      "headline": "Gemini surges after Winklevoss Capital Fund invests $100 million in the crypto exchange",
+      "source": "CNBC",
+      "published": "Thu, 14 May 2026 22:23:40 GMT",
+      "url": "https://www.cnbc.com/2026/05/14/gemini-surges-after-winklevoss-capital-invests-100-million-in-the-crypto-exchange.html",
+      "summary": "The company also topped revenue expectations for the quarter and posted a narrower-than-expected loss than analysts anticipated, according to FactSet."
+    }
+  ]
+}
