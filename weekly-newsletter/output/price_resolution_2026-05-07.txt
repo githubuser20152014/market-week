@@ -1,0 +1,31 @@
+Price Resolution Audit — 2026-05-07
+============================================================
+
+S&P 500              yfinance=7,365.12     secondary=N/A          status=unverified           note=secondary unavailable
+Dow Jones            yfinance=49,910.59    secondary=N/A          status=unverified           note=secondary unavailable
+Nasdaq               yfinance=25,838.94    secondary=N/A          status=unverified           note=secondary unavailable
+Russell 2000         yfinance=2,886.77     secondary=N/A          status=unverified           note=secondary unavailable
+USD Index            yfinance=97.84        secondary=N/A          status=unverified           note=secondary unavailable
+Gold                 yfinance=4,741.40     secondary=N/A          status=unverified           note=secondary unavailable
+10Y Treasury         yfinance=4.36         secondary=4.43         status=OK                   note=diff 1.7%
+Nikkei 225           yfinance=62,833.84    secondary=N/A          status=unverified           note=secondary unavailable
+Hang Seng            yfinance=26,626.28    secondary=N/A          status=unverified           note=secondary unavailable
+KOSPI                yfinance=7,490.05     secondary=N/A          status=unverified           note=secondary unavailable
+Nifty 50             yfinance=24,326.65    secondary=N/A          status=unverified           note=secondary unavailable
+ASX 200              yfinance=8,878.10     secondary=N/A          status=unverified           note=secondary unavailable
+DAX                  yfinance=24,867.23    secondary=N/A          status=unverified           note=secondary unavailable
+FTSE 100             yfinance=10,367.85    secondary=N/A          status=unverified           note=secondary unavailable
+CAC 40               yfinance=8,292.74     secondary=N/A          status=unverified           note=secondary unavailable
+Euro Stoxx 50        yfinance=6,026.03     secondary=N/A          status=unverified           note=secondary unavailable
+EUR/USD              yfinance=1.18         secondary=N/A          status=unverified           note=secondary unavailable
+GBP/USD              yfinance=1.36         secondary=N/A          status=unverified           note=secondary unavailable
+USD/JPY              yfinance=156.33       secondary=N/A          status=unverified           note=secondary unavailable
+AUD/USD              yfinance=0.73         secondary=N/A          status=unverified           note=secondary unavailable
+USD/CNH              yfinance=6.80         secondary=N/A          status=unverified           note=secondary unavailable
+CHF/USD              yfinance=1.29         secondary=N/A          status=unverified           note=secondary unavailable
+S&P Futures          yfinance=7,395.50     secondary=N/A          status=no-secondary         note=futures — yfinance only
+Nasdaq Futures       yfinance=28,724.00    secondary=N/A          status=no-secondary         note=futures — yfinance only
+Dow Futures          yfinance=50,061.00    secondary=N/A          status=no-secondary         note=futures — yfinance only
+Gold Futures         yfinance=4,741.40     secondary=N/A          status=no-secondary         note=futures — yfinance only
+10Y T-Note           yfinance=110.95       secondary=N/A          status=no-secondary         note=futures — yfinance only
+WTI Crude Oil        yfinance=92.65        secondary=N/A          status=no-secondary         note=futures — yfinance only

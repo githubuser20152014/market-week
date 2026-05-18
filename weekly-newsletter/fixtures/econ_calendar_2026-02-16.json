@@ -1,0 +1,25 @@
+{
+  "past_week": [],
+  "upcoming_week": [
+    {
+      "date": "2026-02-23",
+      "event": "Industrial Production",
+      "importance": 2
+    },
+    {
+      "date": "2026-02-24",
+      "event": "Existing Home Sales",
+      "importance": 1
+    },
+    {
+      "date": "2026-02-27",
+      "event": "New Home Sales",
+      "importance": 1
+    },
+    {
+      "date": "2026-02-27",
+      "event": "Durable Goods Orders",
+      "importance": 2
+    }
+  ]
+}

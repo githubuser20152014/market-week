@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "date": "2026-05-12",
+    "generated_at": "2026-05-12T09:12:22.921721Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7398.9302,
+      "close": 7412.8398,
+      "daily_pct": 0.188,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49609.1602,
+      "close": 49704.4688,
+      "daily_pct": 0.1921,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26247.0801,
+      "close": 26274.1309,
+      "daily_pct": 0.1031,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2861.21,
+      "close": 2870.6399,
+      "daily_pct": 0.3296,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4718.7002,
+      "close": 4707.7998,
+      "daily_pct": -0.231,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.364,
+      "close": 4.41,
+      "daily_pct": 1.0541,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 97.94,
+      "close": 98.264,
+      "daily_pct": 0.3308,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 98.07,
+      "close": 101.03,
+      "daily_pct": 3.0183,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62742.57,
+      "prev_close": 62417.88,
+      "daily_pct": 0.5202,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26347.91,
+      "prev_close": 26406.84,
+      "daily_pct": -0.2232,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7643.15,
+      "prev_close": 7822.24,
+      "daily_pct": -2.2895,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23468.5,
+      "prev_close": 23815.85,
+      "daily_pct": -1.4585,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8670.7,
+      "prev_close": 8701.8,
+      "daily_pct": -0.3574,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24127.41,
+      "prev_close": 24127.41,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10218.98,
+      "prev_close": 10218.98,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8004.74,
+      "prev_close": 8004.74,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5840.63,
+      "prev_close": 5840.63,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17495,
+      "prev_close": 1.17689,
+      "daily_pct": -0.1645
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35325,
+      "prev_close": 1.35947,
+      "daily_pct": -0.4574
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.642,
+      "prev_close": 156.858,
+      "daily_pct": 0.4998
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72187,
+      "prev_close": 0.7237,
+      "daily_pct": -0.2535
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.79517,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.2808,
+      "prev_close": 1.28573,
+      "daily_pct": -0.383
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7408.5,
+      "prev_close": 7408.5,
+      "daily_pct": -0.3799
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29209.75,
+      "prev_close": 29209.75,
+      "daily_pct": -0.7281
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49738.0,
+      "prev_close": 49738.0,
+      "daily_pct": -0.1085
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4707.8,
+      "prev_close": 4707.8,
+      "daily_pct": -0.231
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.25,
+      "prev_close": 110.25,
+      "daily_pct": -0.1415
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 101.03,
+      "prev_close": 101.03,
+      "daily_pct": 3.0183
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "-0.5%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "CPI",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "On Holding beats first-quarter expectations, sees double-digit growth in China as Nike lags",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 09:01:12 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/on-onon-earnings-q1-2026.html",
+      "summary": "Swiss sneaker company On beat Wall Street's expectations on the top and bottom lines, helped in part by strong sales in China."
+    },
+    {
+      "headline": "Trump puts Taiwan arms sales, Hong Kong jailed activist Lai on agenda ahead of meeting with Xi",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 01:37:46 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/trump-xi-china-summit-taiwan-arms-sale-jimmy-lai-.html",
+      "summary": "Trump said Monday that U.S. arms sales to Taiwan and the imprisonment of Hong Kong media tycoon Jimmy Lai would be among the issues at the summit in Beijing."
+    },
+    {
+      "headline": "Trump, congressional Republicans float suspending federal gas tax amid Iran war",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 18:45:07 GMT",
+      "url": "https://www.cnbc.com/2026/05/11/trump-congress-gop-gas-tax-iran-war.html",
+      "summary": "Voters are souring on Trump's economy ahead of the 2026 midterm elections, and high gas prices are only adding to consumer discontent."
+    },
+    {
+      "headline": "Behind Big Oil\u2019s first-quarter beat: The quiet rise of trading desks",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/oil-energy-trading-iran-war-bp-shell.html",
+      "summary": "Europe's oil supermajors highlighted trading contributions as they reported stronger-than-expected profits through the first three months of the year."
+    },
+    {
+      "headline": "Redistricting war isn't over, Democrats say as Jeffries calls a meeting this week",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 20:34:56 GMT",
+      "url": "https://www.cnbc.com/2026/05/11/elections-redistricting-congress-house-democrats.html",
+      "summary": "Democrats are vowing to fight on after being dealt a series of blows in the partisan fight to redraw congressional maps ahead of the 2026 midterms."
+    },
+    {
+      "headline": "Trump invites Elon Musk, Tim Cook, Larry Fink and other CEOs to join China trip for Xi summit",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 17:24:05 GMT",
+      "url": "https://www.cnbc.com/2026/05/11/trump-ceos-elon-musk-tim-cook-larry-fink-xi-china-summit.html",
+      "summary": "Trump invited Tesla's Elon Musk, Apple's Tim Cook and Blackrock's Larry Fink to join his China trip for talks with Xi Jinping on trade, AI and geopolitics."
+    },
+    {
+      "headline": "Five things to watch in Asia as Trump prepares to meet China's Xi this week",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 02:47:29 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/tump-xi-china-summit-taiwan-iran-trade.html",
+      "summary": "The U.S. and Chinese presidents are scheduled to gather in Beijing on Thursday and Friday amid a packed week of diplomatic meetings."
+    },
+    {
+      "headline": "Saudi Aramco CEO says oil market won't normalize until 2027 if Hormuz disruption persists",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 18:17:02 GMT",
+      "url": "https://www.cnbc.com/2026/05/11/saudi-aramco-oil-iran-war-strait-hormuz.html",
+      "summary": "Oil inventories are rapidly drawing down as the Strait of Hormuz remains closed, Saudi Aramco CEO Amin Nasser said."
+    }
+  ]
+}

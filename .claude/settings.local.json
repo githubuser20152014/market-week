@@ -154,7 +154,22 @@
       "Bash(cp /tmp/linkedin_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/linkedin_2026-04-24.txt\")",
       "Bash(cp /tmp/x_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/x_2026-04-24.txt\")",
       "Bash(cp /tmp/title_2026-04-24.txt.bak \"C:/Users/Akhil/Documents/cc4e-course/market-week/weekly-newsletter/output/title_2026-04-24.txt\")",
-      "PowerShell(Copy-Item *)"
+      "PowerShell(Copy-Item *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Akhil\\\\Documents\\\\cc4e-course\\\\market-week\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Akhil\\\\Documents\\\\cc4e-course\\\\market-week\\\\weekly-newsletter\\\\content\\\\articles\\\\friday-fundaa*.md\")",
+      "Bash(Sort-Object LastWriteTime -Descending)",
+      "Bash(Select-Object Name, LastWriteTime)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Akhil\\\\Documents\\\\ContentRepo\\\\07-Reading\\\\news-digest\" -File)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Akhil\\\\Documents\\\\cc4e-course\\\\market-week\\\\weekly-newsletter\" -Recurse)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Test-Path *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Akhil\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Akhil-Documents-cc4e-course-market-week\\\\a2716f99-d693-4253-827d-f52fa48513b2\\\\tasks\\\\bferpgo19.output\" -Wait -Tail 50)",
+      "Bash(Write-Host \"---DONE---\")",
+      "Bash(Get-ChildItem *)",
+      "Bash(Start-Sleep -Seconds 45)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Akhil\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-Akhil-Documents-cc4e-course-market-week\\\\ae1ac99b-002d-491d-9fd1-df3e1f43f90c\\\\tasks\\\\bq5vt9tn1.output\")"
     ]
   }
 }

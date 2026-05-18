@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "date": "2026-05-13",
+    "generated_at": "2026-05-13T08:53:57.741509Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7412.8398,
+      "close": 7400.96,
+      "daily_pct": -0.1603,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49704.4688,
+      "close": 49760.5586,
+      "daily_pct": 0.1128,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26274.1309,
+      "close": 26088.1992,
+      "daily_pct": -0.7077,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2870.6399,
+      "close": 2842.8301,
+      "daily_pct": -0.9688,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4677.6001,
+      "close": 4704.0,
+      "daily_pct": 0.5644,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.41,
+      "close": 4.463,
+      "daily_pct": 1.2018,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.29,
+      "close": 98.491,
+      "daily_pct": 0.2045,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 102.18,
+      "close": 101.59,
+      "daily_pct": -0.5774,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 63272.11,
+      "prev_close": 62742.57,
+      "daily_pct": 0.844,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26388.44,
+      "prev_close": 26347.91,
+      "daily_pct": 0.1538,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7844.01,
+      "prev_close": 7643.15,
+      "daily_pct": 2.628,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23479.1,
+      "prev_close": 23379.55,
+      "daily_pct": 0.4258,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8630.4,
+      "prev_close": 8670.7,
+      "daily_pct": -0.4648,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24173.43,
+      "prev_close": 24173.43,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10326.24,
+      "prev_close": 10326.05,
+      "daily_pct": 0.0018,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7986.04,
+      "prev_close": 7986.04,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5843.58,
+      "prev_close": 5843.58,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17041,
+      "prev_close": 1.17799,
+      "daily_pct": -0.6437
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35217,
+      "prev_close": 1.36047,
+      "daily_pct": -0.6098
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.80701,
+      "prev_close": 157.231,
+      "daily_pct": 0.3663
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72417,
+      "prev_close": 0.72462,
+      "daily_pct": -0.063
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.78917,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27835,
+      "prev_close": 1.28508,
+      "daily_pct": -0.5241
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7453.0,
+      "prev_close": 7453.0,
+      "daily_pct": 0.3568
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29441.25,
+      "prev_close": 29441.25,
+      "daily_pct": 0.9299
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49830.0,
+      "prev_close": 49830.0,
+      "daily_pct": -0.0782
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4703.0,
+      "prev_close": 4703.0,
+      "daily_pct": 0.543
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.06,
+      "prev_close": 110.06,
+      "daily_pct": 0.0284
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 101.59,
+      "prev_close": 101.59,
+      "daily_pct": -0.5774
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "CPI",
+        "actual": "+0.6% MoM / +3.8% YoY",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Jensen Huang joins Trump's China trip after the U.S. president called the Nvidia CEO",
+      "source": "CNBC",
+      "published": "Wed, 13 May 2026 04:14:25 GMT",
+      "url": "https://www.cnbc.com/2026/05/13/nvidia-says-ceo-jensen-huang-is-joining-trumps-china-trip.html",
+      "summary": "The U.S. chipmaker executive was not included in earlier lists of business leaders participating in President Donald Trump's trip to China this week."
+    },
+    {
+      "headline": "Jamie Dimon warns JP Morgan may rethink new London office if 'very smart' Starmer is ousted as UK PM",
+      "source": "CNBC",
+      "published": "Wed, 13 May 2026 07:39:21 GMT",
+      "url": "https://www.cnbc.com/2026/05/13/jamie-dimon-says-jp-morgan-may-rethink-london-office-if-starmer-ousted.html",
+      "summary": "Starmer's leadership is under pressure, sparking concern in the bond market."
+    },
+    {
+      "headline": "For Chinese exporters, Iran worries eclipse tariff woes as Trump, Xi prepare to meet",
+      "source": "CNBC",
+      "published": "Wed, 13 May 2026 01:14:04 GMT",
+      "url": "https://www.cnbc.com/2026/05/13/trump-xi-summit-china-iran-war-tariffs.html",
+      "summary": "Heading into the summit, Beijing and Washington will likely reaffirm their shared intention to reopen the Strait of Hormuz and restore stability in the region."
+    },
+    {
+      "headline": "Marty Makary resigns as FDA commissioner following industry and White House backlash",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 20:04:29 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/trump-fda-commissioner-marty-makary-out.html",
+      "summary": "Makary's tenure was marked by internal dysfunction at the FDA, leadership turmoil and mounting backlash from drugmakers and physicians on regulatory decisions."
+    },
+    {
+      "headline": "Trump doesn't need Congress to restart Iran strikes: Hegseth",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 18:10:13 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/trump-congress-iran-war-hegseth.html",
+      "summary": "The Iran war, now well into its third month, has caused oil prices to soar globally as Iran continues to lock down the Strait of Hormuz."
+    },
+    {
+      "headline": "Traders will soon be able to bet on computer chip prices as AI drives costs skyward",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 19:47:13 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/new-futures-market-for-semiconductors-comes-as-ai-drives-costs-skyward.html",
+      "summary": "Contracts can be used to hedge against rising GPU rental rates and other operational costs"
+    },
+    {
+      "headline": "An under-the-radar AI stock just delivered the best quarter of the chip sector",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 19:20:49 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/an-under-the-radar-stock-delivered-the-best-quarter-of-the-chip-sector.html",
+      "summary": "Qnity is in a great position to keep grabbing market share, not only as chips get smaller but also as the industry shifts more toward stacking."
+    },
+    {
+      "headline": "Waymo recalls 3,800 robotaxis after glitch allowed some vehicles to 'drive into standing water'",
+      "source": "CNBC",
+      "published": "Tue, 12 May 2026 21:38:41 GMT",
+      "url": "https://www.cnbc.com/2026/05/12/waymo-recalls-3800-robotaxis-after-able-drive-into-standing-water.html",
+      "summary": "Waymo issued a voluntary recall of about 3,800 of its robotaxis to fix software issues that could allow them to drive into flooded roadways."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+Price Resolution Audit — 2026-05-15
+============================================================
+
+Gold                 yfinance=4,555.80     secondary=N/A          status=unverified           note=secondary unavailable
+10Y Treasury         yfinance=4.59         secondary=4.47         status=FAIL                 note=diff 2.7%
+S&P 500              yfinance=7,408.50     secondary=N/A          status=unverified           note=secondary unavailable
+Dow Jones            yfinance=49,526.17    secondary=N/A          status=unverified           note=secondary unavailable
+Nasdaq               yfinance=26,225.14    secondary=N/A          status=unverified           note=secondary unavailable
+Russell 2000         yfinance=2,793.30     secondary=N/A          status=unverified           note=secondary unavailable
+USD Index            yfinance=99.27        secondary=N/A          status=unverified           note=secondary unavailable

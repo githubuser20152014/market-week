@@ -118,7 +118,7 @@ A supply shock in the Persian Gulf raises the price of every barrel of crude on 
 
 6/ The "Peace Dividend" of the last few decades was built on free navigation. Right now, that system is broken, and we're all paying the insurance premium. 
 
-Full breakdown of the $1,000 War Premium on Substack: [Link]
+Full breakdown of the $1,000 War Premium on Substack: https://open.substack.com/pub/frameworkfoundrymkt/p/friday-fundaa-stop-staring-at-the?r=lvsyk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true
 
 ---
 
@@ -138,5 +138,5 @@ Here is the math your wallet didn’t ask for:
 
 We're all rich on paper (S&P 7200!), but we can't afford to drive to the bank to cash out. If you aren't hedged, you aren't paying attention. 🚢
 
-Full math and breakdown here: [Link]
+Full math and breakdown here: https://open.substack.com/pub/frameworkfoundrymkt/p/friday-fundaa-stop-staring-at-the?r=lvsyk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true
 

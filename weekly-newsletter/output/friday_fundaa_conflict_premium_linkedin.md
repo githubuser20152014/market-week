@@ -30,10 +30,10 @@ Stop paying the ghost dollars.
 - **Market Day Break** — daily market briefing
 - **Framework Foundry Weekly** — weekly macro deep-dive
 
-👉 frameworkfoundry.info
+👉 frameworkfoundrymkt.substack.com
 
 #Oil #Investing #MacroEconomics #Geopolitics #FridayFundaa #VibeCheck
 
 ---
 
-*Educational purposes only. Do your own research.*
+*Educational purposes only. Not investment advice. Do your own research.*

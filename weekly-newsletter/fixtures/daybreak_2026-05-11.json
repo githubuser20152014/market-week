@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "date": "2026-05-11",
+    "generated_at": "2026-05-11T09:01:03.649758Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7337.1099,
+      "close": 7398.9302,
+      "daily_pct": 0.8426,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49596.9688,
+      "close": 49609.1602,
+      "daily_pct": 0.0246,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25806.1992,
+      "close": 26247.0801,
+      "daily_pct": 1.7084,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2839.6299,
+      "close": 2861.21,
+      "daily_pct": 0.76,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4720.3999,
+      "close": 4678.2002,
+      "daily_pct": -0.894,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.392,
+      "close": 4.364,
+      "daily_pct": -0.6375,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 97.84,
+      "close": 97.964,
+      "daily_pct": 0.1267,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 95.42,
+      "close": 97.64,
+      "daily_pct": 2.3266,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62417.88,
+      "prev_close": 62713.65,
+      "daily_pct": -0.4716,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26406.84,
+      "prev_close": 26393.71,
+      "daily_pct": 0.0497,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7822.24,
+      "prev_close": 7498.0,
+      "daily_pct": 4.3244,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23928.8,
+      "prev_close": 24176.15,
+      "daily_pct": -1.0231,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8701.8,
+      "prev_close": 8744.4,
+      "daily_pct": -0.4872,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24339.93,
+      "prev_close": 24339.93,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10254.72,
+      "prev_close": 10254.72,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8047.45,
+      "prev_close": 8047.45,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5896.89,
+      "prev_close": 5896.89,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17744,
+      "prev_close": 1.17316,
+      "daily_pct": 0.365
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.36082,
+      "prev_close": 1.35556,
+      "daily_pct": 0.3878
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.07899,
+      "prev_close": 156.82899,
+      "daily_pct": 0.1594
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72417,
+      "prev_close": 0.72086,
+      "daily_pct": 0.4585
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": 6.79295,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.28474,
+      "prev_close": 1.28172,
+      "daily_pct": 0.2351
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7415.0,
+      "prev_close": 7415.0,
+      "daily_pct": -0.0539
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29303.5,
+      "prev_close": 29303.5,
+      "daily_pct": -0.0989
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49671.0,
+      "prev_close": 49671.0,
+      "daily_pct": -0.0402
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4678.7,
+      "prev_close": 4678.7,
+      "daily_pct": -0.8834
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.61,
+      "prev_close": 110.61,
+      "daily_pct": -0.127
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 97.66,
+      "prev_close": 97.66,
+      "daily_pct": 2.3475
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "European markets mixed as Iran's peace talks stall, defense stocks slide",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 08:45:37 GMT",
+      "url": "https://www.cnbc.com/2026/05/11/european-markets-stoxx-600-ftse-dax-cac-iran-war-oil-prices.html",
+      "summary": "European stocks were largely mixed in Monday trade as investors digest the latest in U.S.-Iran peace negotiations."
+    },
+    {
+      "headline": "Netanyahu says Iran war is 'not over' as Trump rejects latest Iranian offer",
+      "source": "CNBC",
+      "published": "Sun, 10 May 2026 20:28:55 GMT",
+      "url": "https://www.cnbc.com/2026/05/10/netanyahu-says-iran-war-is-not-over-as-peace-deal-remains-elusive.html",
+      "summary": "The Iran war, dragging into its second month, has spiked oil and gas prices in the U.S. and around the world."
+    },
+    {
+      "headline": "Do you need a chief AI officer? Here's how the tech is changing boardrooms",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 06:07:53 GMT",
+      "url": "https://www.cnbc.com/2026/05/11/heres-how-artificial-intelligence-is-changing-boardrooms.html",
+      "summary": "AI may now be coming for the C-suite, according to a report published Monday by IBM, which found that most companies were now staffing chief AI officer roles."
+    },
+    {
+      "headline": "Meet the YouTube whisperers, a booming class of advisors behind MrBeast and other million-dollar channels",
+      "source": "CNBC",
+      "published": "Sun, 10 May 2026 13:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/10/youtube-advisors-mrbeast-top-creators-platform-viewership.html",
+      "summary": "A burgeoning group of YouTube strategists are charging big money to YouTubers who want to expand their popularity."
+    },
+    {
+      "headline": "With Netflix new ad-free standard plan at $20, streaming's tipping point into old TV is getting closer",
+      "source": "CNBC",
+      "published": "Sun, 10 May 2026 14:48:33 GMT",
+      "url": "https://www.cnbc.com/2026/05/10/netflix-20-dollar-streaming-plan-price.html",
+      "summary": "The economics of streaming are nearing the point where cheaper plans with ads make as much if not more money for services like Netflix."
+    },
+    {
+      "headline": "Retailers are on a hiring spree. But consumers are sending warning signs",
+      "source": "CNBC",
+      "published": "Sun, 10 May 2026 11:29:25 GMT",
+      "url": "https://www.cnbc.com/2026/05/10/retailer-hiring-consumer-warning-jobs-report.html",
+      "summary": "The retail trades added nearly 22,000 jobs  in April, accounting for about one-fifth of total job growth."
+    },
+    {
+      "headline": "SEC delay on prediction markets ETFs echoes a long-fought bitcoin fund battle",
+      "source": "CNBC",
+      "published": "Sun, 10 May 2026 12:22:02 GMT",
+      "url": "https://www.cnbc.com/2026/05/10/sec-prediction-markets-etfs-trading-launch-delay.html",
+      "summary": "The Securities and Exchange Commission has delayed approval for prediction markets ETFs, bringing up memories of the long battle over bitcoin funds."
+    },
+    {
+      "headline": "Saudi Aramco first-quarter profit jumps 26% as key pipeline reaches capacity amid Iran war",
+      "source": "CNBC",
+      "published": "Mon, 11 May 2026 05:47:13 GMT",
+      "url": "https://www.cnbc.com/2026/05/10/saudi-aramco-q1-profit-jumps-26percent-as-key-pipeline-reaches-capacity.html",
+      "summary": "Aramco says its East-West pipeline has helped to mitigate the energy shock caused by the Iran war."
+    }
+  ]
+}

@@ -33,7 +33,6 @@
     "GBP/USD": { "symbol": "GBPUSD=X" },
     "USD/JPY": { "symbol": "JPY=X"    },
     "AUD/USD": { "symbol": "AUDUSD=X" },
-    "USD/CNH": { "symbol": "USDCNH=X" },
     "CHF/USD": { "symbol": "CHFUSD=X" }
   }
 }

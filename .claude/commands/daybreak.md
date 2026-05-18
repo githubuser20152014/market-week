@@ -88,7 +88,11 @@ Format requirements:
 - **`<h2>The One Trade: DIRECTION <a href="https://finance.yahoo.com/quote/TICKER">$TICKER</a></h2>`** — the ticker MUST be a Yahoo Finance hyperlink, never plain text. Use "Kill switch:" not "Risk:". Italics on the consequence ("get out *fast*").
 - **`<h2>What else I'm watching</h2>`** — positioning bullets with personality. Use language like "don't you dare sell it", "stay away from", "the trade nobody is talking about".
 - Bold key numbers and verdicts. Italics on punchlines. Don't over-emphasize — save it for the moments that land hardest.
-- Footer: link to `frameworkfoundry.info/daily/DATE/` and `frameworkfoundrymkt.substack.com`
+- Footer: link to `frameworkfoundry.info/daily/DATE/` and `frameworkfoundrymkt.substack.com`, followed by a standard financial disclaimer block:
+  ```html
+  <hr>
+  <p><small><strong>Disclaimer:</strong> This newsletter is for informational purposes only and does not constitute financial advice, investment advice, or a recommendation to buy or sell any security. All content reflects the author's opinions at the time of writing and is based on publicly available information. Past performance is not indicative of future results. Always conduct your own research and consult a qualified financial advisor before making any investment decisions. Framework Foundry is not a registered investment advisor.</small></p>
+  ```
 - No em dashes (—) anywhere — use " - " instead.
 - Voice: cheeky, irreverent, dark humor. State opinions as facts. Short sentences. No hedging. Lead with the absurdity or contradiction, not the summary. Sarcastic observations after data points. The 2026-05-08 edition is the reference for narrative tone; the April 23 2026 edition is the reference for One Trade structure.
 
