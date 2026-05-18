@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-05-18",
+    "generated_at": "2026-05-18T09:00:14.324379Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7501.2402,
+      "close": 7408.5,
+      "daily_pct": -1.2363,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50063.4609,
+      "close": 49526.1719,
+      "daily_pct": -1.0732,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26635.2207,
+      "close": 26225.1406,
+      "daily_pct": -1.5396,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2863.0901,
+      "close": 2793.3,
+      "daily_pct": -2.4376,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4555.7998,
+      "close": 4555.7998,
+      "daily_pct": 0.0,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.461,
+      "close": 4.595,
+      "daily_pct": 3.0038,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 13.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.27,
+      "close": 99.12,
+      "daily_pct": -0.1511,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 105.42,
+      "close": 101.9,
+      "daily_pct": -3.339,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 60815.95,
+      "prev_close": 61409.29,
+      "daily_pct": -0.9662,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25675.18,
+      "prev_close": 25962.73,
+      "daily_pct": -1.1076,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7516.04,
+      "prev_close": 7493.18,
+      "daily_pct": 0.3051,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23613.5,
+      "prev_close": 23643.5,
+      "daily_pct": -0.1269,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8505.3,
+      "prev_close": 8630.8,
+      "daily_pct": -1.4541,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 23963.53,
+      "prev_close": 23963.53,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10208.91,
+      "prev_close": 10208.99,
+      "daily_pct": -0.0008,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7890.08,
+      "prev_close": 7890.5,
+      "daily_pct": -0.0053,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5796.72,
+      "prev_close": 5796.93,
+      "daily_pct": -0.0036,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16455,
+      "prev_close": 1.16621,
+      "daily_pct": -0.1421
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33811,
+      "prev_close": 1.33914,
+      "daily_pct": -0.0763
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.842,
+      "prev_close": 158.382,
+      "daily_pct": 0.2904
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71613,
+      "prev_close": 0.72143,
+      "daily_pct": -0.735
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27413,
+      "prev_close": 1.27522,
+      "daily_pct": -0.0854
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7410.75,
+      "prev_close": 7410.75,
+      "daily_pct": -0.2893
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29231.0,
+      "prev_close": 29231.0,
+      "daily_pct": -0.0847
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49325.0,
+      "prev_close": 49325.0,
+      "daily_pct": -0.5885
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4555.8,
+      "prev_close": 4555.8,
+      "daily_pct": 0.0
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.22,
+      "prev_close": 109.22,
+      "daily_pct": 0.0429
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 101.88,
+      "prev_close": 101.88,
+      "daily_pct": -3.358
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "White House touts deals on soybeans and rare earths after Trump-Xi summit, while China talks up tariff cuts",
+      "source": "CNBC",
+      "published": "Mon, 18 May 2026 04:58:00 GMT",
+      "url": "https://www.cnbc.com/2026/05/18/us-china-announce-deals-after-trump-xi-summit.html",
+      "summary": "The meeting between U.S. President Donald Trump and Chinese President Xi Jinping last week yielded new pacts, though the sides have provided differing details."
+    },
+    {
+      "headline": "High energy prices could derail Europe\u2019s AI race with U.S. and China",
+      "source": "CNBC",
+      "published": "Mon, 18 May 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/18/europe-ai-energy-electricity-costs-data-centers-china-us.html",
+      "summary": "Energy costs vary widely across Europe, creating clear winners and losers in attracting investment."
+    },
+    {
+      "headline": "One of the market's hottest stock themes is buying everything AI can't replace",
+      "source": "CNBC",
+      "published": "Sun, 17 May 2026 14:21:26 GMT",
+      "url": "https://www.cnbc.com/2026/05/17/ai-stock-market-trade-halo-investing.html",
+      "summary": "The search for HALO stocks is a hot theme in the stock market. There is now an ETF to invest in it."
+    },
+    {
+      "headline": "G7 finance ministers to meet amid warning of economic consequences of prolonged Strait of Hormuz closure",
+      "source": "CNBC",
+      "published": "Sun, 17 May 2026 12:14:30 GMT",
+      "url": "https://www.cnbc.com/2026/05/17/opening-strait-of-hormuz-is-of-utmost-importance-eurogroup-head.html",
+      "summary": "G7 finance ministers are due to meet in Paris on Monday and Tuesday as long-term borrowing costs surge."
+    },
+    {
+      "headline": "Ryanair has plans for 'armageddon' scenario as CFO warns weaker European carriers may not survive jet fuel crunch",
+      "source": "CNBC",
+      "published": "Mon, 18 May 2026 07:54:44 GMT",
+      "url": "https://www.cnbc.com/2026/05/18/ryanair-earnings-fy-jet-fuel-crunch-airlines.html",
+      "summary": "Ryanair said it has plans for an \"armageddon situation,\" amid the jet fuel crisis."
+    },
+    {
+      "headline": "European markets slide after Trump threatens Iran",
+      "source": "CNBC",
+      "published": "Mon, 18 May 2026 08:38:35 GMT",
+      "url": "https://www.cnbc.com/2026/05/18/european-markets-stoxx-600-ftse-dax-iran-latest-uk-news.html",
+      "summary": "European stocks start the new trading week in negative territory as investors react to the latest developments in the U.S.-Iran war."
+    },
+    {
+      "headline": "China's economy loses steam in April as retail sales hit 40-month low",
+      "source": "CNBC",
+      "published": "Mon, 18 May 2026 05:08:49 GMT",
+      "url": "https://www.cnbc.com/2026/05/18/china-april-retail-sales-industrial-output-investment-unemployment-iran-war.html",
+      "summary": "China's economy stumbled in April with consumption, industrial output and investment growth missing expectations."
+    },
+    {
+      "headline": "South Korea market volatility nears record high after $13 billion foreign investor selloff",
+      "source": "CNBC",
+      "published": "Mon, 18 May 2026 02:37:40 GMT",
+      "url": "https://www.cnbc.com/2026/05/18/s-korea-market-volatility-near-record-as-foreigners-sell-13-billion.html",
+      "summary": "South Korea's stock market volatility surged near record highs on Monday after foreign investors dumped $13.2 billion worth of local equities last week."
+    }
+  ]
+}
