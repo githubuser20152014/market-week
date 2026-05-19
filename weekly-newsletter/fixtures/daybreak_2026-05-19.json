@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "date": "2026-05-19",
+    "generated_at": "2026-05-19T10:45:58.455764Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7408.5,
+      "close": 7403.0498,
+      "daily_pct": -0.0736,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49526.1719,
+      "close": 49686.1211,
+      "daily_pct": 0.323,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26225.1406,
+      "close": 26090.7305,
+      "daily_pct": -0.5125,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2793.3,
+      "close": 2775.1001,
+      "daily_pct": -0.6516,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4552.5,
+      "close": 4544.7002,
+      "daily_pct": -0.1713,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.595,
+      "close": 4.623,
+      "daily_pct": 0.6094,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.97,
+      "close": 99.222,
+      "daily_pct": 0.2546,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 108.66,
+      "close": 103.08,
+      "daily_pct": -5.1353,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 60550.59,
+      "prev_close": 60815.95,
+      "daily_pct": -0.4363,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25797.85,
+      "prev_close": 25675.18,
+      "daily_pct": 0.4778,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7271.66,
+      "prev_close": 7516.04,
+      "daily_pct": -3.2514,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23618.0,
+      "prev_close": 23649.95,
+      "daily_pct": -0.1351,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8604.7,
+      "prev_close": 8505.3,
+      "daily_pct": 1.1687,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24647.76,
+      "prev_close": 24647.76,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10396.19,
+      "prev_close": 10396.19,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8060.15,
+      "prev_close": 8060.15,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5894.3,
+      "prev_close": 5894.3,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16171,
+      "prev_close": 1.16144,
+      "daily_pct": 0.0232
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33962,
+      "prev_close": 1.33085,
+      "daily_pct": 0.6591
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.16499,
+      "prev_close": 158.84399,
+      "daily_pct": 0.2021
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71134,
+      "prev_close": 0.71302,
+      "daily_pct": -0.2358
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26936,
+      "prev_close": 1.27018,
+      "daily_pct": -0.0647
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7397.75,
+      "prev_close": 7397.75,
+      "daily_pct": -0.3771
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28910.25,
+      "prev_close": 28910.25,
+      "daily_pct": -0.6384
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49701.0,
+      "prev_close": 49701.0,
+      "daily_pct": -0.1346
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4543.9,
+      "prev_close": 4543.9,
+      "daily_pct": -0.1889
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.17,
+      "prev_close": 109.17,
+      "daily_pct": 0.1433
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 103.06,
+      "prev_close": 103.06,
+      "daily_pct": -5.1537
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.7%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Cuba condemns U.S. sanctions, accuses Washington of building \u2018fraudulent case\u2019 for military action",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 09:57:51 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/cuba-us-sanctions-military-fraudulent-case.html",
+      "summary": "The comments come after a fresh wave of U.S. sanctions and amid mounting speculation that the U.S. could carry out military strikes against Cuba."
+    },
+    {
+      "headline": "Oil prices fall as Trump postpones Iran strike, easing supply disruption fears",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 10:11:34 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/oil-today-brent-wti-iran-trump-hormuz-iea-supply-crude.html",
+      "summary": "Oil prices fell after U.S. President Donald Trump said he would postpone a planned military strike on Iran following requests from key Middle Eastern leaders."
+    },
+    {
+      "headline": "Putin in Beijing: 3 things Russia needs from China",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 09:58:15 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/putin-xi-beijing-russia-ukraine-china-energy.html",
+      "summary": "Russia will be looking for energy and trade deals with China, as well as continuing geopolitical support."
+    },
+    {
+      "headline": "After U.S. SEC, Treasury and Justice Department offer billionaire Gautam Adani legal relief",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 04:02:39 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/adani-treasury-justice-department-sec-settlement.html",
+      "summary": "The U.S. Treasury Department settled a case against Adani Enterprises, involving the purchase of sanctioned Iranian energy between November 2023 and June 2025."
+    },
+    {
+      "headline": "Trump pivots to midterms, affordability after China summit as Iran war persists",
+      "source": "CNBC",
+      "published": "Mon, 18 May 2026 20:43:07 GMT",
+      "url": "https://www.cnbc.com/2026/05/18/trump-hegseth-economy-2026-election-midterms-iran-china.html",
+      "summary": "Trump, at a White House event Monday, is expected to announce an expansion of the number of discounted prescription drugs offered through TrumpRX."
+    },
+    {
+      "headline": "The Iran war is exposing weak spots in the AI supply chain",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 08:30:37 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/iran-war-ai-chip-supply-chain-costs.html",
+      "summary": "Stocks continue to rally amid the AI boom, but the chip sector is scrambling to shore up access to key materials as costs rise."
+    },
+    {
+      "headline": "Putin heads to Beijing days after Trump in test of China's balancing act",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 01:27:24 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/putin-russia-visit-china-beijing-trump-summit-ukraine-war-energy-shock-.html",
+      "summary": "Beijing walks into the summit with the stronger hand while Moscow seeks reassurance that China has not drifted toward Washington after Trump's visit."
+    }
+  ]
+}
