@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-05-21",
+    "generated_at": "2026-05-21T09:14:50.972593Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7353.6099,
+      "close": 7432.9702,
+      "daily_pct": 1.0792,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49363.8789,
+      "close": 50009.3516,
+      "daily_pct": 1.3076,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25870.7109,
+      "close": 26270.3594,
+      "daily_pct": 1.5448,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2747.0701,
+      "close": 2817.3701,
+      "daily_pct": 2.5591,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4531.2998,
+      "close": 4533.7002,
+      "daily_pct": 0.053,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.667,
+      "close": 4.572,
+      "daily_pct": -2.0356,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -9.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.11,
+      "close": 99.169,
+      "daily_pct": 0.0595,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 98.26,
+      "close": 98.32,
+      "daily_pct": 0.0611,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 61684.14,
+      "prev_close": 59804.41,
+      "daily_pct": 3.1431,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25386.52,
+      "prev_close": 25651.12,
+      "daily_pct": -1.0315,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7815.59,
+      "prev_close": 7208.95,
+      "daily_pct": 8.4151,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23671.05,
+      "prev_close": 23659.0,
+      "daily_pct": 0.0509,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8621.7,
+      "prev_close": 8496.6,
+      "daily_pct": 1.4724,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24802.96,
+      "prev_close": 24802.96,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10419.07,
+      "prev_close": 10419.22,
+      "daily_pct": -0.0014,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8126.64,
+      "prev_close": 8126.64,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5988.65,
+      "prev_close": 5988.79,
+      "daily_pct": -0.0023,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16306,
+      "prev_close": 1.16071,
+      "daily_pct": 0.2024
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34428,
+      "prev_close": 1.3396,
+      "daily_pct": 0.3495
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.966,
+      "prev_close": 159.035,
+      "daily_pct": -0.0434
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71403,
+      "prev_close": 0.71066,
+      "daily_pct": 0.4743
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27123,
+      "prev_close": 1.26775,
+      "daily_pct": 0.2746
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7452.75,
+      "prev_close": 7452.75,
+      "daily_pct": 0.0134
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29375.75,
+      "prev_close": 29375.75,
+      "daily_pct": -0.0502
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50125.0,
+      "prev_close": 50125.0,
+      "daily_pct": 0.0619
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4533.6,
+      "prev_close": 4533.6,
+      "daily_pct": 0.0508
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.33,
+      "prev_close": 109.33,
+      "daily_pct": -0.0714
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 98.26,
+      "prev_close": 98.26,
+      "daily_pct": 0.0
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Nvidia says it has \u2018largely conceded\u2019 China\u2019s AI chip market to Huawei",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 05:03:10 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/nvidia-jensen-huang-china-ai-chip-market-huawei.html",
+      "summary": "Nvidia CEO Jensen Huang said the company has \"largely conceded\" China's advanced artificial intelligence chip market to Huawei."
+    },
+    {
+      "headline": "Iran reviews U.S. peace proposal as Trump says he\u2019s willing to wait 'a few days'",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 07:54:49 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/iran-war-us-peace-talks-trump-hormuz.html",
+      "summary": "It comes after President Donald Trump said he was prepared to wait a few more days to \"get the right answers\" from Tehran."
+    },
+    {
+      "headline": "Ubisoft shares plunge 14% after Assassin\u2019s Creed maker warns of annual profit loss",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 08:51:14 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/ubisoft-fy-earnings-profit-loss-assassins-creed.html",
+      "summary": "Ubisoft shares plunged on Thursday after the Assassin's Creed maker warned of further losses this year."
+    },
+    {
+      "headline": "Three key takeaways from Putin's Beijing trip \u2014 and what they reveal about China-Russia ties",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 05:34:36 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/china-russia-putin-xi-jinping-ties-deals-energy-siberia-pipeline-trump-visits-.html",
+      "summary": "Putin left Beijing with declarations of enduring friendship with China and a stack of bilateral agreements \u2014 but without the energy breakthrough Moscow desperately sought."
+    },
+    {
+      "headline": "Tesla brings 'Full Self-Driving' to China after years of delays as local EV rivals race ahead",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 08:44:56 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/tesla-full-self-driving-china-launch-fsd.html",
+      "summary": "Tesla's full self-driving (FSD) capabilities are now available in China after years of delay, the company said in an X post on Thursday."
+    },
+    {
+      "headline": "Jim Cramer says the world of tech investing has changed and it's not going back",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 22:41:07 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/jim-cramer-says-the-world-of-tech-investing-has-changed-and-its-not-going-back.html",
+      "summary": "CNBC's Jim Cramer said semiconductor and AI infrastructure stocks have replaced software as the market's technology leaders."
+    },
+    {
+      "headline": "Bezos brushes off concerns of an AI bubble: 'You shouldn't worry about it'",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 15:09:47 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/bezos-ai-bubble-concerns-amazon-prometheum-blue-origin.html",
+      "summary": "Amazon founder Jeff Bezos shrugged off concerns of a looming AI bubble, saying the massive investments will ultimately drive the technology forward over time."
+    },
+    {
+      "headline": "AI frenzy sees these European stocks gain over 100% this year in blockbuster rally",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/ai-frenzy-european-stocks-rally-nokia-aixtron.html",
+      "summary": "Europe has long lagged behind the U.S. and China in AI, but these stocks are riding the wave of investor interest."
+    }
+  ]
+}
