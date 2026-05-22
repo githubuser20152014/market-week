@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-05-20",
+    "generated_at": "2026-05-20T10:30:32.497432Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7403.0498,
+      "close": 7353.6099,
+      "daily_pct": -0.6678,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49686.1211,
+      "close": 49363.8789,
+      "daily_pct": -0.6486,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26090.7305,
+      "close": 25870.7109,
+      "daily_pct": -0.8433,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2775.1001,
+      "close": 2747.0701,
+      "daily_pct": -1.0101,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4506.2998,
+      "close": 4491.1001,
+      "daily_pct": -0.3373,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.623,
+      "close": 4.667,
+      "daily_pct": 0.9518,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.3,
+      "close": 99.4,
+      "daily_pct": 0.1007,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 107.77,
+      "close": 102.3,
+      "daily_pct": -5.0756,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59804.41,
+      "prev_close": 60550.59,
+      "daily_pct": -1.2323,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25651.12,
+      "prev_close": 25797.85,
+      "daily_pct": -0.5688,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7208.95,
+      "prev_close": 7271.66,
+      "daily_pct": -0.8624,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23659.0,
+      "prev_close": 23618.0,
+      "daily_pct": 0.1736,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8496.6,
+      "prev_close": 8604.7,
+      "daily_pct": -1.2563,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24543.93,
+      "prev_close": 24543.93,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10343.13,
+      "prev_close": 10343.24,
+      "daily_pct": -0.0011,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8033.57,
+      "prev_close": 8033.57,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 5899.64,
+      "prev_close": 5899.64,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15982,
+      "prev_close": 1.16551,
+      "daily_pct": -0.4883
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33897,
+      "prev_close": 1.3432,
+      "daily_pct": -0.3147
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.034,
+      "prev_close": 158.86099,
+      "daily_pct": 0.1089
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71235,
+      "prev_close": 0.71729,
+      "daily_pct": -0.6884
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26577,
+      "prev_close": 1.27475,
+      "daily_pct": -0.7038
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7403.75,
+      "prev_close": 7403.75,
+      "daily_pct": 0.349
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29123.5,
+      "prev_close": 29123.5,
+      "daily_pct": 0.6889
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 49534.0,
+      "prev_close": 49534.0,
+      "daily_pct": 0.1516
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4491.2,
+      "prev_close": 4491.2,
+      "daily_pct": -0.3351
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.92,
+      "prev_close": 108.92,
+      "daily_pct": 0.2012
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 102.31,
+      "prev_close": 102.31,
+      "daily_pct": -5.0663
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "China confirms order for 200 Boeing planes, calls aviation key area for U.S. cooperation",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 05:22:20 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/china-confirms-200-boeing-aircraft-order.html",
+      "summary": "China has agreed to buy 200 Boeing jets, its first major order in nearly a decade, U.S. President Donald Trump said last week."
+    },
+    {
+      "headline": "Putin-Xi talks revive stalled Russian gas pipeline as Iran war rattles energy markets",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 08:15:15 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/putin-xi-gas-pipeline-power-of-siberia-iran-war-.html",
+      "summary": "Putin is expected to hold talks with Chinese leader Xi Jinping on Wednesday, with the long-stalled Power of Siberia 2 natural gas pipeline topping the agenda."
+    },
+    {
+      "headline": "EU clears major hurdle to finalize U.S. trade pact \u2014 and sidestep Trump tariff hikes",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 07:19:59 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/eu-us-trade-deal-trump-autos.html",
+      "summary": "European Commission President Ursula von der Leyen on Wednesday welcomed a provisional agreement on legislation to remove import duties on U.S. goods."
+    },
+    {
+      "headline": "Pentagon taps Shield AI for low-cost drone program as Iran war accelerates demand for cheap drones",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 19:49:18 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/pentagon-taps-shield-ai-for-low-cost-missile-program.html",
+      "summary": "Shield AI is fresh off a $1 billion funding round, which valued the company at $12.7 billion"
+    },
+    {
+      "headline": "U.S. indicts four Chinese container manufacturers alleging pandemic-era price-fixing cartel",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 06:26:59 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/china-shipping-companies-department-of-justice-indictment-pandemic.html",
+      "summary": "China International Marine Containers, Singamas Container Holdings, Shanghai Universal Logistics Equipment, and CXIC Group Containers colluded to cut container output: DOJ"
+    },
+    {
+      "headline": "AI boom reshuffles global stock market pecking order as South Korea and Taiwan surge",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 09:13:52 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/global-market-reordering-is-accelerating-as-the-ai-rally-gains-pace.html",
+      "summary": "A global reshuffling in stock-market hierarchy is underway. AI is propelling Taiwan and South Korea past a couple long-established Western countries."
+    },
+    {
+      "headline": "Asia markets fall as Treasury yields climb and Iran tensions linger",
+      "source": "CNBC",
+      "published": "Wed, 20 May 2026 08:26:58 GMT",
+      "url": "https://www.cnbc.com/2026/05/20/asia-pacific-markets-today-live-updates-treasury-yields-nikkei-225-kospi-hang-seng-nifty.html",
+      "summary": "Asia-Pacific markets fell on Wednesday as investors weighed elevated bond yields and renewed geopolitical tensions."
+    },
+    {
+      "headline": "Trump says it's not a 'war.' Insurers with money on the line say it is",
+      "source": "CNBC",
+      "published": "Tue, 19 May 2026 15:51:26 GMT",
+      "url": "https://www.cnbc.com/2026/05/19/trump-says-its-not-a-war-insurers-with-money-on-the-line-say-it-is.html",
+      "summary": "Businesses in the Middle East bought insurance that protects against terrorism or sabotage, but far fewer purchased coverage explicitly designed to cover \"war.\""
+    }
+  ]
+}

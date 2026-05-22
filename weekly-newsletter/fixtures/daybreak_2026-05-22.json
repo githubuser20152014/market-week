@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-05-22",
+    "generated_at": "2026-05-22T09:34:41.546627Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7432.9702,
+      "close": 7445.7202,
+      "daily_pct": 0.1715,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50009.3516,
+      "close": 50285.6602,
+      "daily_pct": 0.5525,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26270.3594,
+      "close": 26293.0996,
+      "daily_pct": 0.0866,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2817.3701,
+      "close": 2843.45,
+      "daily_pct": 0.9257,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4539.7998,
+      "close": 4520.1001,
+      "daily_pct": -0.4339,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.572,
+      "close": 4.586,
+      "daily_pct": 0.3062,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.19,
+      "close": 99.331,
+      "daily_pct": 0.1422,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.35,
+      "close": 98.85,
+      "daily_pct": 2.5947,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 63339.07,
+      "prev_close": 61684.14,
+      "daily_pct": 2.6829,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25606.03,
+      "prev_close": 25386.52,
+      "daily_pct": 0.8647,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7847.71,
+      "prev_close": 7815.59,
+      "daily_pct": 0.411,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23707.55,
+      "prev_close": 23654.7,
+      "daily_pct": 0.2234,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8657.0,
+      "prev_close": 8621.7,
+      "daily_pct": 0.4094,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24741.73,
+      "prev_close": 24741.73,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10479.89,
+      "prev_close": 10479.89,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8112.08,
+      "prev_close": 8112.08,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6002.13,
+      "prev_close": 6002.13,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16036,
+      "prev_close": 1.16253,
+      "daily_pct": -0.1868
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34225,
+      "prev_close": 1.3434,
+      "daily_pct": -0.0859
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.117,
+      "prev_close": 158.888,
+      "daily_pct": 0.1441
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71286,
+      "prev_close": 0.715,
+      "daily_pct": -0.2994
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27165,
+      "prev_close": 1.27078,
+      "daily_pct": 0.0687
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7479.0,
+      "prev_close": 7479.0,
+      "daily_pct": 0.1741
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29518.5,
+      "prev_close": 29518.5,
+      "daily_pct": 0.242
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50500.0,
+      "prev_close": 50500.0,
+      "daily_pct": 0.2402
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4520.2,
+      "prev_close": 4520.2,
+      "daily_pct": -0.4317
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.42,
+      "prev_close": 109.42,
+      "daily_pct": 0.1716
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 98.86,
+      "prev_close": 98.86,
+      "daily_pct": 2.6051
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Job training for robots: How China is getting machines ready to join the workforce",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 21:07:25 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/china-robots-humanoid-job-training.html",
+      "summary": "Tesla CEO Elon Musk said on the company's fourth-quarter earnings call that China is the biggest competition for humanoid robots."
+    },
+    {
+      "headline": "How Walmart's gas price warning shapes our retail outlook \u2014 plus, Honeywell's quantum connection",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 18:13:09 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/how-walmarts-gas-price-warning-shapes-our-retail-outlook-plus-honeywells-quantum-connection.html",
+      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+    },
+    {
+      "headline": "China calls for APEC cooperation as commerce minister skips opening over \u2018urgent official business\u2019",
+      "source": "CNBC",
+      "published": "Fri, 22 May 2026 07:14:13 GMT",
+      "url": "https://www.cnbc.com/2026/05/22/china-apec-trade-meeting-li-chenggang-cooperation-us-china-deals.html",
+      "summary": "China's international trade representative Li Chenggang said he was chairing Friday's meeting as Commerce Minister Wang Wentao had urgent matters to attend to."
+    },
+    {
+      "headline": "Lenovo shares jump nearly 20% on record earnings as AI revenue nearly doubles",
+      "source": "CNBC",
+      "published": "Fri, 22 May 2026 07:51:12 GMT",
+      "url": "https://www.cnbc.com/2026/05/22/lenovo-shares-jump-15percent-on-record-earnings-as-ai-revenue-nearly-doubles.html",
+      "summary": "Shares of Lenovo surged over 15% on Friday, after the electronics giant posted strong revenue growth bolstered by its artificial intelligence business."
+    },
+    {
+      "headline": "AI spending expected to top $1 trillion in 2 years. That estimate's way too low if Jensen Huang's right",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 19:39:20 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/ai-spending-expected-to-top-1-trillion-in-2-years-why-that-estimate-may-be-too-low.html",
+      "summary": "\"The capex is at a trillion dollars, and it's growing toward the three to four [trillion-dollar mark],\" said Nvidia CEO Jensen Huang."
+    },
+    {
+      "headline": "Airlines are struggling but China's 'Big Three' face a tougher year than most",
+      "source": "CNBC",
+      "published": "Fri, 22 May 2026 04:51:25 GMT",
+      "url": "https://www.cnbc.com/2026/05/22/china-airlines-expect-losses-iran-war-fuel-shortage-railway-.html",
+      "summary": "China's carriers face sky-high jet fuel, lack of hedging strategies, and a customer base that can easily pivot to cheaper high-speed rail services."
+    },
+    {
+      "headline": "McConnell calls DOJ Trump fund 'utterly stupid, morally wrong' after Blanche meeting",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 22:18:29 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/trump-doj-lawfare-fund-congress-blanche.html",
+      "summary": "Critics of the \"Anti-Weaponization Fund\" fear it will give money to Trump supporters who attacked police defending the U.S. Capitol on Jan. 6, 2021."
+    },
+    {
+      "headline": "Spotify soars 13% after announcing AI music deal with UMG, guidance",
+      "source": "CNBC",
+      "published": "Thu, 21 May 2026 20:02:31 GMT",
+      "url": "https://www.cnbc.com/2026/05/21/spotify-spot-stock-guidance-investor-day-ai.html",
+      "summary": "Spotify, which is holding its first investor day in four years, is now under the direction of co-CEOs Gustav S\u00f6derstr\u00f6m and Alex Norstr\u00f6m."
+    }
+  ]
+}
