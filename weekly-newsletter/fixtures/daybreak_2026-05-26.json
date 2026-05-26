@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-05-26",
+    "generated_at": "2026-05-26T09:06:49.449560Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7445.7202,
+      "close": 7473.4702,
+      "daily_pct": 0.3727,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50285.6602,
+      "close": 50579.6992,
+      "daily_pct": 0.5847,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26293.0996,
+      "close": 26343.9707,
+      "daily_pct": 0.1935,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2843.45,
+      "close": 2869.23,
+      "daily_pct": 0.9066,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4521.0,
+      "close": 4524.2002,
+      "daily_pct": 0.0708,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.586,
+      "close": 4.558,
+      "daily_pct": -0.6106,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.32,
+      "close": 99.065,
+      "daily_pct": -0.2567,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.6,
+      "close": 93.35,
+      "daily_pct": -3.3644,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64996.09,
+      "prev_close": 65158.19,
+      "daily_pct": -0.2488,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25599.45,
+      "prev_close": 25606.03,
+      "daily_pct": -0.0257,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8047.51,
+      "prev_close": 7847.71,
+      "daily_pct": 2.546,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23911.2,
+      "prev_close": 24031.7,
+      "daily_pct": -0.5014,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8657.8,
+      "prev_close": 8692.0,
+      "daily_pct": -0.3935,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25200.31,
+      "prev_close": 25200.44,
+      "daily_pct": -0.0005,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10538.7,
+      "prev_close": 10538.7,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8182.18,
+      "prev_close": 8182.18,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6087.22,
+      "prev_close": 6087.22,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16387,
+      "prev_close": 1.16423,
+      "daily_pct": -0.0303
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34764,
+      "prev_close": 1.34816,
+      "daily_pct": -0.0391
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.192,
+      "prev_close": 158.946,
+      "daily_pct": 0.1548
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71638,
+      "prev_close": 0.71572,
+      "daily_pct": 0.0927
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27496,
+      "prev_close": 1.2783,
+      "daily_pct": -0.2614
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7531.75,
+      "prev_close": 7531.75,
+      "daily_pct": 0.544
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29802.75,
+      "prev_close": 29802.75,
+      "daily_pct": 0.8255
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50902.0,
+      "prev_close": 50902.0,
+      "daily_pct": 0.4737
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4524.1,
+      "prev_close": 4524.1,
+      "daily_pct": 0.0686
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.72,
+      "prev_close": 109.72,
+      "daily_pct": 0.4291
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 93.34,
+      "prev_close": 93.34,
+      "daily_pct": -3.3747
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Brent crude rises 3% as Iran vows retaliation against ceasefire violations after U.S. military strikes",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 08:52:37 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/oil-prices-today-brent-wti-iran-trump-hormuz.html",
+      "summary": "Donald Trump had said negotiations with Iran were \"proceeding nicely,\" while warning that the U.S. could resume military action if discussions were to collapse."
+    },
+    {
+      "headline": "Russia tells Marco Rubio U.S. citizens should leave Kyiv ahead of 'systematic' strikes on Ukrainian capital",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 08:11:14 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/russia-ukraine-war-rubio-trump-lavrov-kyiv.html",
+      "summary": "Moscow said it would be launching \u201csystematic and consistent strikes\u201d on the city of Kyiv."
+    },
+    {
+      "headline": "U.S. conducts 'self-defense strikes' in Iran as Trump pushes for peace deal",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 02:56:12 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/us-conducts-self-defense-strikes-in-iran-as-trump-seeks-peace-deal.html",
+      "summary": "Targets included missile launch sites and Iranian boats attempting to emplace mines."
+    },
+    {
+      "headline": "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 06:59:06 GMT",
+      "url": "https://www.cnbc.com/2026/05/25/iran-in-the-process-of-blinking-over-the-strait-ofoh-ex-cia-director.html",
+      "summary": "Ex-CIA director David Petraeus said that an initial successful peace deal with Tehran would see the Strait opened without any conditions."
+    },
+    {
+      "headline": "European stocks edge lower amid U.S-Iran peace talks uncertainty",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 07:37:28 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/european-markets-stoxx-600-ftse-dax-cac-iran-news.html",
+      "summary": "European stocks edged lower Tuesday, as traders watched developments in the Middle East and Ukraine."
+    },
+    {
+      "headline": "Boosting retirement savings has a less-appreciated benefit",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/24/retirement-savings-contributions.html",
+      "summary": "Saving more money has a dual benefit that often goes unnoticed, according to financial advisors."
+    },
+    {
+      "headline": "CNBC's The China Connection newsletter: Tariffs eased. Trust didn't.",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 23:01:25 GMT",
+      "url": "https://www.cnbc.com/2026/05/25/cnbcs-the-china-connection-newsletter-tariffs-eased-trust-didnt.html",
+      "summary": "As the largest consumer market globally, the U.S. still remains a prized destination for Chinese companies that are finding ways to address local concerns."
+    },
+    {
+      "headline": "South Korea's Kospi hits new high amid mixed trading in Asia",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 07:57:44 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/asia-markets-today-sensex-kospi-nikkei-hang-seng-iran-us-oil-.html",
+      "summary": "Asia-Pacific markets were set to open broadly higher Tuesday, amid hopes for a breakthrough in the U.S.-Iran peace negotiations."
+    }
+  ]
+}
