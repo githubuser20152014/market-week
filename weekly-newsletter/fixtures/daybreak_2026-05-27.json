@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-05-27",
+    "generated_at": "2026-05-27T10:58:09.835331Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7473.4702,
+      "close": 7519.1201,
+      "daily_pct": 0.6108,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50579.6992,
+      "close": 50461.6797,
+      "daily_pct": -0.2333,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26343.9707,
+      "close": 26656.1797,
+      "daily_pct": 1.1851,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2869.23,
+      "close": 2920.54,
+      "daily_pct": 1.7883,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4500.3999,
+      "close": 4480.0,
+      "daily_pct": -0.4533,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.558,
+      "close": 4.493,
+      "daily_pct": -1.4261,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -6.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.15,
+      "close": 99.125,
+      "daily_pct": -0.0252,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 93.89,
+      "close": 90.3,
+      "daily_pct": -3.8236,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64999.41,
+      "prev_close": 64996.09,
+      "daily_pct": 0.0051,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25328.23,
+      "prev_close": 25599.45,
+      "daily_pct": -1.0595,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8228.7,
+      "prev_close": 8047.51,
+      "daily_pct": 2.2515,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23907.15,
+      "prev_close": 23913.7,
+      "daily_pct": -0.0274,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8717.7,
+      "prev_close": 8657.8,
+      "daily_pct": 0.6919,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25344.03,
+      "prev_close": 25344.03,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10513.39,
+      "prev_close": 10513.39,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8240.83,
+      "prev_close": 8242.71,
+      "daily_pct": -0.0228,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6111.52,
+      "prev_close": 6113.48,
+      "daily_pct": -0.0321,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16428,
+      "prev_close": 1.16374,
+      "daily_pct": 0.0466
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3441,
+      "prev_close": 1.34964,
+      "daily_pct": -0.41
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.381,
+      "prev_close": 158.95399,
+      "daily_pct": 0.2686
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71367,
+      "prev_close": 0.71703,
+      "daily_pct": -0.468
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27226,
+      "prev_close": 1.27711,
+      "daily_pct": -0.3791
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7561.25,
+      "prev_close": 7561.25,
+      "daily_pct": 0.3217
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30226.75,
+      "prev_close": 30226.75,
+      "daily_pct": 0.5096
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50781.0,
+      "prev_close": 50781.0,
+      "daily_pct": 0.4629
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4480.3,
+      "prev_close": 4480.3,
+      "daily_pct": -0.4466
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.78,
+      "prev_close": 109.78,
+      "daily_pct": -0.0427
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 90.29,
+      "prev_close": 90.29,
+      "daily_pct": -3.8343
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.7%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "SpaceX-Tesla merger chatter reignites as Musk pushes rocket company towards Nasdaq",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 22:32:58 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/spacex-tesla-merger-chatter-reignites-as-musk-rocket-company-nears-ipo.html",
+      "summary": "With SpaceX headed for the public markets next month, industry experts and people close to Elon Musk are speculating about a potential tie-up with Tesla."
+    },
+    {
+      "headline": "New bull market in software stocks hinges on this report",
+      "source": "CNBC",
+      "published": "Wed, 27 May 2026 10:31:32 GMT",
+      "url": "https://www.cnbc.com/2026/05/27/new-bull-market-in-software-stocks-hinges-on-this-report.html",
+      "summary": "Options traders are convinced the \"SAAS-pocalypse\" is over. Whether that's true will likely depend on the market's reaction to one earnings report Wednesday."
+    },
+    {
+      "headline": "Taiwan chip stocks climb after Nvidia announces $150 billion spending plans",
+      "source": "CNBC",
+      "published": "Wed, 27 May 2026 09:41:14 GMT",
+      "url": "https://www.cnbc.com/2026/05/27/nvidia-taiwan-investment-150-billion-spending.html",
+      "summary": "Mainland China-based chip giants such as Cambricon saw their shares tumble on Wednesday."
+    },
+    {
+      "headline": "Russia just passed a law allowing its central bank to down drones",
+      "source": "CNBC",
+      "published": "Wed, 27 May 2026 09:55:13 GMT",
+      "url": "https://www.cnbc.com/2026/05/27/russia-drones-central-bank-sberbank-ukraine-war.html",
+      "summary": "Russia's State Duma has passed a law allowing certain financial institutions to operate anti-drone defense systems after attacks on its territory."
+    },
+    {
+      "headline": "Trump officials split over Pope Leo\u2019s AI warning as Vatican feud enters new front",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 21:18:58 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/pope-leo-xiv-ai-warning-trump-jd-vance-doug-burgum-anthropic-iran.html",
+      "summary": "Pope Leo XIV\u2019s AI warning shows split among Trump officials as the White House resists new guardrails, upping stakes with Catholic voters and Silicon Valley allies."
+    },
+    {
+      "headline": "Pope Leo is concerned about AI replacing human work. Traders share his concern long term",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 19:31:51 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/traders-share-pope-leos-worries-on-ais-job-market-impact.html",
+      "summary": "The leader of the Catholic Church warned about artificial intelligence upending the labor market. Traders on Kalshi see unemployment jumping before 2030."
+    },
+    {
+      "headline": "Treasury yields fall as investors remain optimistic on Iran peace deal prospects despite U.S. strikes",
+      "source": "CNBC",
+      "published": "Wed, 27 May 2026 09:31:27 GMT",
+      "url": "https://www.cnbc.com/2026/05/27/treasury-yields-investor-optimism-ceasefire-prospects-rise.html",
+      "summary": "The yield on the 10-year U.S. Treasury note \u2014 the key benchmark for U.S. government borrowing \u2014 fell more than 2 basis points to 4.465%."
+    },
+    {
+      "headline": "Piper Sandler says Strait of Hormuz to remain closed for months and oil to hit new highs",
+      "source": "CNBC",
+      "published": "Tue, 26 May 2026 19:43:54 GMT",
+      "url": "https://www.cnbc.com/2026/05/26/piper-sandler-says-strait-of-hormuz-to-remain-closed-for-months-and-oil-to-hit-new-highs.html",
+      "summary": "Prolonged closure of Strait of Hormuz could send crude oil prices to new highs this summer."
+    }
+  ]
+}
