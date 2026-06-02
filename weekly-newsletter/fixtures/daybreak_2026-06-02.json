@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-06-02",
+    "generated_at": "2026-06-02T10:59:01.024251Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7580.0601,
+      "close": 7599.96,
+      "daily_pct": 0.2625,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51032.4609,
+      "close": 51078.8789,
+      "daily_pct": 0.091,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26972.6191,
+      "close": 27086.8105,
+      "daily_pct": 0.4234,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2919.3401,
+      "close": 2905.76,
+      "daily_pct": -0.4652,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4475.2002,
+      "close": 4561.5,
+      "daily_pct": 1.9284,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.453,
+      "close": 4.475,
+      "daily_pct": 0.494,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.2,
+      "close": 99.12,
+      "daily_pct": -0.0806,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 92.16,
+      "close": 91.05,
+      "daily_pct": -1.2044,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66734.24,
+      "prev_close": 66934.33,
+      "daily_pct": -0.2989,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26038.32,
+      "prev_close": 25398.18,
+      "daily_pct": 2.5204,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8801.49,
+      "prev_close": 8788.38,
+      "daily_pct": 0.1492,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23483.55,
+      "prev_close": 23382.6,
+      "daily_pct": 0.4317,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8724.4,
+      "prev_close": 8729.4,
+      "daily_pct": -0.0573,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25246.61,
+      "prev_close": 25246.61,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10377.55,
+      "prev_close": 10377.55,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8204.47,
+      "prev_close": 8204.47,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6092.64,
+      "prev_close": 6092.64,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16469,
+      "prev_close": 1.16489,
+      "daily_pct": -0.0175
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34686,
+      "prev_close": 1.34515,
+      "daily_pct": 0.1266
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.724,
+      "prev_close": 159.353,
+      "daily_pct": 0.2328
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71849,
+      "prev_close": 0.71805,
+      "daily_pct": 0.0619
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27312,
+      "prev_close": 1.279,
+      "daily_pct": -0.4596
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7600.25,
+      "prev_close": 7600.25,
+      "daily_pct": -0.1708
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30535.5,
+      "prev_close": 30535.5,
+      "daily_pct": -0.1006
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50953.0,
+      "prev_close": 50953.0,
+      "daily_pct": -0.354
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4561.2,
+      "prev_close": 4561.2,
+      "daily_pct": 1.9217
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.94,
+      "prev_close": 109.94,
+      "daily_pct": 0.0711
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 91.06,
+      "prev_close": 91.06,
+      "daily_pct": -1.1936
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.7%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Trump tells CNBC: 'I don't care' if Iran negotiations are over",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 20:12:48 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/trump-iran-war-negotiations-oil-israel-interview.html",
+      "summary": "President Trump spoke with CNBC's Eamon Javers about the latest with the Iran war in an interview Monday."
+    },
+    {
+      "headline": "HPE skyrockets 30% on biggest earnings beat since 2018",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 21:30:07 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/hpe-stock-earnings-q2.html",
+      "summary": "HPE's blowout second-quarter earnings report was highlighted by a strong Cloud & AI segment that showed soaring server revenue."
+    },
+    {
+      "headline": "Nvidia's Jensen Huang says Marvell could be the next trillion-dollar company; stock jumps 25%",
+      "source": "CNBC",
+      "published": "Tue, 02 Jun 2026 10:14:51 GMT",
+      "url": "https://www.cnbc.com/2026/06/02/jensen-huang-nvidia-marvell-technology-trillion-dollar-ai.html",
+      "summary": "Nvidia's CEO, Jensen Huang, hailed this chip designer as the next trillion-dollar firm, sending its shares up sharply in early market trading."
+    },
+    {
+      "headline": "The stock market just did something eerily similar to the dot-com bubble top in 2000",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 14:14:19 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/the-stock-market-just-did-something-eerily-similar-to-the-dotcom-bubble-top-in-2000.html",
+      "summary": "Surging stock performance in May was concentrated in the AI adjacent."
+    },
+    {
+      "headline": "Blackstone closes its largest Asia private equity fund at over $13 billion",
+      "source": "CNBC",
+      "published": "Tue, 02 Jun 2026 03:18:25 GMT",
+      "url": "https://www.cnbc.com/2026/06/02/blackstone-largest-asia-private-equity-fund.html",
+      "summary": "Blackstone raised $13.1 billion for its latest Asia private equity vehicle, marking the largest private equity fundraise the firm has done in the region."
+    },
+    {
+      "headline": "Trump administration proposes 25% tariff on Brazilian goods over unfair trade practices",
+      "source": "CNBC",
+      "published": "Tue, 02 Jun 2026 04:55:24 GMT",
+      "url": "https://www.cnbc.com/2026/06/02/trump-proposes-25-tariff-on-brazil.html",
+      "summary": "U.S Trade Representative Jamieson Greer said that the investigation under Section 301 was launched at the direction of U.S. President Donald Trump."
+    },
+    {
+      "headline": "Treasury yields fall as investors pin hopes on Israel-Hezbollah ceasefire",
+      "source": "CNBC",
+      "published": "Tue, 02 Jun 2026 10:13:11 GMT",
+      "url": "https://www.cnbc.com/2026/06/02/treasury-yields-investors-pin-hopes-israel-hezbollah-ceasefire.html",
+      "summary": "U.S. Treasury yields fell on Tuesday, following global yields lower after Lebanon announced a ceasefire between Israel and Iran-backed Hezbollah."
+    },
+    {
+      "headline": "Stock market corrections will happen: Here's how we navigate the ups and downs",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 19:31:30 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/market-corrections-happen-heres-how-we-navigate-the-ups-and-downs.html",
+      "summary": "We concern ourselves far more with making sure we are investing in the right companies."
+    }
+  ]
+}
