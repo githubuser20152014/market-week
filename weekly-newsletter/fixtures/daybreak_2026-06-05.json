@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-06-05",
+    "generated_at": "2026-06-05T10:56:18.736201Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7553.6802,
+      "close": 7584.3101,
+      "daily_pct": 0.4055,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50687.0703,
+      "close": 51561.9297,
+      "daily_pct": 1.726,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26853.9805,
+      "close": 26830.9609,
+      "daily_pct": -0.0857,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2893.51,
+      "close": 2935.3301,
+      "daily_pct": 1.4453,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4475.7998,
+      "close": 4494.0,
+      "daily_pct": 0.4066,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.491,
+      "close": 4.477,
+      "daily_pct": -0.3117,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.41,
+      "close": 99.18,
+      "daily_pct": -0.2314,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 93.04,
+      "close": 92.86,
+      "daily_pct": -0.1935,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66588.12,
+      "prev_close": 67470.69,
+      "daily_pct": -1.3081,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24961.95,
+      "prev_close": 25253.4,
+      "daily_pct": -1.1541,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8160.59,
+      "prev_close": 8639.41,
+      "daily_pct": -5.5423,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23366.7,
+      "prev_close": 23416.55,
+      "daily_pct": -0.2129,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8625.1,
+      "prev_close": 8686.1,
+      "daily_pct": -0.7023,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24995.85,
+      "prev_close": 24995.85,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10396.93,
+      "prev_close": 10396.93,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8290.88,
+      "prev_close": 8290.95,
+      "daily_pct": -0.0008,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6110.19,
+      "prev_close": 6110.07,
+      "daily_pct": 0.002,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16428,
+      "prev_close": 1.16094,
+      "daily_pct": 0.2876
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34756,
+      "prev_close": 1.34271,
+      "daily_pct": 0.3611
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.903,
+      "prev_close": 159.94,
+      "daily_pct": -0.0231
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71434,
+      "prev_close": 0.71345,
+      "daily_pct": 0.1243
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26973,
+      "prev_close": 1.26417,
+      "daily_pct": 0.4393
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7572.75,
+      "prev_close": 7572.75,
+      "daily_pct": -0.3717
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30224.0,
+      "prev_close": 30224.0,
+      "daily_pct": -0.8667
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51746.0,
+      "prev_close": 51746.0,
+      "daily_pct": 0.1451
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4494.0,
+      "prev_close": 4494.0,
+      "daily_pct": 0.4066
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.61,
+      "prev_close": 109.61,
+      "daily_pct": -0.2134
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 92.87,
+      "prev_close": 92.87,
+      "daily_pct": -0.1827
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Nonfarm Payrolls / Unemployment",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "The May jobs report will be released Friday. Here's what to expect",
+      "source": "CNBC",
+      "published": "Thu, 04 Jun 2026 22:12:06 GMT",
+      "url": "https://www.cnbc.com/2026/06/04/the-may-jobs-report-will-be-released-friday-heres-what-to-expect.html",
+      "summary": "The stronger-than-expected start this year for job creation could be in for a reality check."
+    },
+    {
+      "headline": "Lululemon cuts annual outlook, citing 'negative' media commentary and disappointing product launches",
+      "source": "CNBC",
+      "published": "Thu, 04 Jun 2026 23:09:14 GMT",
+      "url": "https://www.cnbc.com/2026/06/04/lululemon-lulu-earnings-q1-2026.html",
+      "summary": "Lululemon is expecting its situation to get a lot worse before it gets better, as it issued weak guidance for the full year."
+    },
+    {
+      "headline": "Warren invites Nvidia CEO Jensen Huang to Senate hearing on China AI chip sales",
+      "source": "CNBC",
+      "published": "Fri, 05 Jun 2026 00:58:02 GMT",
+      "url": "https://www.cnbc.com/2026/06/04/nvidia-ceo-jensen-huang-warren-senate-hearing-china-ai-chips.html",
+      "summary": "Sen. Elizabeth Warren is pressing Jensen Huang's Nvidia over export controls, China sales, Trump and data-center policy as Congress scrutinizes the AI chip boom."
+    },
+    {
+      "headline": "Trump says he could meet Iran's supreme leader 'if it was to make a deal'",
+      "source": "CNBC",
+      "published": "Thu, 04 Jun 2026 21:14:21 GMT",
+      "url": "https://www.cnbc.com/2026/06/04/trump-iran-supreme-leader.html",
+      "summary": "Khamenei was named the supreme leader in Iran after his father, Ayatollah Ali Khamenei, was killed on the first day of fighting."
+    },
+    {
+      "headline": "Ships stranded in Persian Gulf quietly coordinate with U.S. Navy to exit Hormuz",
+      "source": "CNBC",
+      "published": "Thu, 04 Jun 2026 20:52:54 GMT",
+      "url": "https://www.cnbc.com/2026/06/04/iran-war-strait-hormuz-persian-gulf-oil-tanker-transit.html",
+      "summary": "Clashes erupted between the U.S. and Iran over commercial ships earlier this week."
+    },
+    {
+      "headline": "China poaches more AI talent from the U.S. as it eyes the next 'super-app'",
+      "source": "CNBC",
+      "published": "Fri, 05 Jun 2026 07:50:47 GMT",
+      "url": "https://www.cnbc.com/2026/06/05/china-may-move-toward-us-path-on-ai-as-firms-poach-employees.html",
+      "summary": "Tencent Chief AI Scientist Yao Shunyu, who joined the company from OpenAI, said Friday he aims to pursue artificial general intelligence."
+    },
+    {
+      "headline": "Quantinuum closes flat in Nasdaq debut, after upsized offering",
+      "source": "CNBC",
+      "published": "Thu, 04 Jun 2026 20:22:22 GMT",
+      "url": "https://www.cnbc.com/2026/06/04/quantinuum-qnt-stock-first-trade-ipo.html",
+      "summary": "Honeywell will retain a majority stake in Quantinuum and will continue to be a strategic customer and partner following the listing."
+    },
+    {
+      "headline": "Meet the big winners of 2026 oil price volatility \u2014 and why their strategies are now shifting focus",
+      "source": "CNBC",
+      "published": "Fri, 05 Jun 2026 08:40:52 GMT",
+      "url": "https://www.cnbc.com/2026/06/05/oil-price-iran-hedge-funds-quant-traders-trends-energy-shock.html",
+      "summary": "Computer-based trend-following hedge funds have successfully capitalized on huge price moves in energy markets."
+    }
+  ]
+}
