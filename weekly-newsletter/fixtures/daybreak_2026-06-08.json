@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-06-08",
+    "generated_at": "2026-06-08T10:43:14.569977Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7584.3101,
+      "close": 7383.7402,
+      "daily_pct": -2.6445,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51561.9297,
+      "close": 50866.7812,
+      "daily_pct": -1.3482,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26830.9609,
+      "close": 25709.4297,
+      "daily_pct": -4.18,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2935.3301,
+      "close": 2833.5,
+      "daily_pct": -3.4691,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4337.1001,
+      "close": 4317.2998,
+      "daily_pct": -0.4565,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.477,
+      "close": 4.536,
+      "daily_pct": 1.3178,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.07,
+      "close": 100.073,
+      "daily_pct": 0.003,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 90.54,
+      "close": 94.59,
+      "daily_pct": 4.4732,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64024.6,
+      "prev_close": 66588.12,
+      "daily_pct": -3.8498,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24657.06,
+      "prev_close": 24961.95,
+      "daily_pct": -1.2214,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7484.41,
+      "prev_close": 8160.59,
+      "daily_pct": -8.2859,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23123.0,
+      "prev_close": 23366.7,
+      "daily_pct": -1.0429,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8625.1,
+      "prev_close": 8686.1,
+      "daily_pct": -0.7023,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24589.27,
+      "prev_close": 24589.27,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10368.92,
+      "prev_close": 10368.92,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8183.67,
+      "prev_close": 8183.67,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6033.96,
+      "prev_close": 6034.02,
+      "daily_pct": -0.001,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1526,
+      "prev_close": 1.16126,
+      "daily_pct": -0.7457
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3338,
+      "prev_close": 1.3427,
+      "daily_pct": -0.6632
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.978,
+      "prev_close": 159.99001,
+      "daily_pct": -0.0075
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70607,
+      "prev_close": 0.71322,
+      "daily_pct": -1.0026
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25397,
+      "prev_close": 1.26759,
+      "daily_pct": -1.0746
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7419.75,
+      "prev_close": 7419.75,
+      "daily_pct": 0.2601
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29189.25,
+      "prev_close": 29189.25,
+      "daily_pct": 0.5607
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50859.0,
+      "prev_close": 50859.0,
+      "daily_pct": -0.1512
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4317.1,
+      "prev_close": 4317.1,
+      "daily_pct": -0.4611
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.94,
+      "prev_close": 108.94,
+      "daily_pct": -0.3715
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 94.59,
+      "prev_close": 94.59,
+      "daily_pct": 4.4732
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Trump tells Iran and Israel to stop 'shooting' after they exchange strikes",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 10:27:39 GMT",
+      "url": "https://www.cnbc.com/2026/06/07/iran-fires-missiles-israel-ceasefire-strains.html",
+      "summary": "Iran and Israel striking each other threatens the fragile ceasefire between the U.S. and Iran has been in place since early April."
+    },
+    {
+      "headline": "Foreign investors have dumped billions of dollars of Korean stocks this year despite record rally. Here's why",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 07:39:36 GMT",
+      "url": "https://www.cnbc.com/2026/06/08/kospi-sk-hynix-samsung-electronics-why-foreign-investors-are-selling.html",
+      "summary": "The selling intensified Monday as the benchmark Kospi plunged more than 8% at the open, even as it emerged as one of the world's standout performers thus far."
+    },
+    {
+      "headline": "Inside the Obama-era Iran nuclear deal that Trump withdrew from",
+      "source": "CNBC",
+      "published": "Sat, 06 Jun 2026 12:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/06/06/trump-iran-jcpoa-nuclear-deal-obama.html",
+      "summary": "The U.S. and Iran have yet to reach a peace deal or address Iran's nuclear ambitions, despite signals from Trump that talks are progressing."
+    },
+    {
+      "headline": "Bidding war erupts for world\u2019s oldest bank as Italy\u2019s Intesa gatecrashes BPM offer",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 08:38:16 GMT",
+      "url": "https://www.cnbc.com/2026/06/08/bidding-war-erupts-worlds-oldest-bank-intesa-gatecrashes-bpm-bid.html",
+      "summary": "Intesa on Monday announced an unsolicited offer of $35.3 billion, hoping to usurp its rival and create Europe's second-biggest \u200bbank by market capitalization."
+    },
+    {
+      "headline": "U.S. confirms second Texas screwworm case, Canada restricts livestock imports",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 10:41:48 GMT",
+      "url": "https://www.cnbc.com/2026/06/06/us-confirms-second-texas-screwworm-case.html",
+      "summary": "New World screwworm larvae feed on the living tissue of warm-blooded animals, creating severe wounds that can be fatal if left untreated."
+    },
+    {
+      "headline": "Bitcoin is cratering, but a new Wall Street crypto hype is on the rise",
+      "source": "CNBC",
+      "published": "Sun, 07 Jun 2026 18:56:25 GMT",
+      "url": "https://www.cnbc.com/2026/06/06/bitcoin-price-crash-crypto-hype-hyperliquid-etfs.html",
+      "summary": "As bitcoin dropped to its lowest price since 2024, investors flock to a new type of crypto investment linked to the hyperliquid platforms, HYPE ETFs."
+    },
+    {
+      "headline": "Chinese EVs may hit U.S. within a few years, one way or another",
+      "source": "CNBC",
+      "published": "Sat, 06 Jun 2026 13:35:07 GMT",
+      "url": "https://www.cnbc.com/2026/06/06/chinese-evs-auto-sales-manufacturing-us.html",
+      "summary": "Chinese electric vehicles are likely to be sold in the U.S. within years, despite tariffs, strict laws and opposition from the auto industry and politicians."
+    },
+    {
+      "headline": "Warren Buffett disciple\u00a0Guy Spier built career on value investing. A rare cancer changed everything",
+      "source": "CNBC",
+      "published": "Fri, 05 Jun 2026 10:55:02 GMT",
+      "url": "https://www.cnbc.com/2026/06/05/warren-buffett-disciple-guy-spiers-rare-cancer-made-him-revalue-everything.html",
+      "summary": "After a glioblastoma diagnosis, value investor Guy Spier rethought wealth, time and legacy \u2014 and the impact he can have on rare disease research."
+    }
+  ]
+}
