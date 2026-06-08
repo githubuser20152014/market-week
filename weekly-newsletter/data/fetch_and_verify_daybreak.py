@@ -29,7 +29,7 @@ class AssetBounds:
 SANITY_BOUNDS = {
     "S&P 500":       AssetBounds(3000, 8000),
     "Dow Jones":     AssetBounds(20000, 55000),
-    "Nasdaq":        AssetBounds(8000, 25000),
+    "Nasdaq":        AssetBounds(8000, 30000),
     "Russell 2000":  AssetBounds(1000, 4000),
     "Gold":          AssetBounds(1500, 6000),
     "WTI Crude Oil": AssetBounds(40, 200),
