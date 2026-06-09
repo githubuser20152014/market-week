@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-06-09",
+    "generated_at": "2026-06-09T10:30:20.845054Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7383.7402,
+      "close": 7405.73,
+      "daily_pct": 0.2978,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50866.7812,
+      "close": 50786.0117,
+      "daily_pct": -0.1588,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25709.4297,
+      "close": 25929.6602,
+      "daily_pct": 0.8566,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2833.5,
+      "close": 2855.4199,
+      "daily_pct": 0.7736,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4335.8999,
+      "close": 4358.6001,
+      "daily_pct": 0.5235,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.536,
+      "close": 4.552,
+      "daily_pct": 0.3527,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.05,
+      "close": 99.781,
+      "daily_pct": -0.2689,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 91.3,
+      "close": 89.34,
+      "daily_pct": -2.1468,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65416.63,
+      "prev_close": 64024.6,
+      "daily_pct": 2.1742,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24565.9,
+      "prev_close": 24657.06,
+      "daily_pct": -0.3697,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8096.93,
+      "prev_close": 7484.41,
+      "daily_pct": 8.1839,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23242.1,
+      "prev_close": 23123.0,
+      "daily_pct": 0.5151,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8604.2,
+      "prev_close": 8625.1,
+      "daily_pct": -0.2423,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24813.74,
+      "prev_close": 24813.74,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10350.87,
+      "prev_close": 10350.87,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8274.25,
+      "prev_close": 8274.73,
+      "daily_pct": -0.0058,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6121.22,
+      "prev_close": 6122.07,
+      "daily_pct": -0.0139,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15687,
+      "prev_close": 1.15226,
+      "daily_pct": 0.4003
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33966,
+      "prev_close": 1.33356,
+      "daily_pct": 0.4568
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 160.16499,
+      "prev_close": 160.327,
+      "daily_pct": -0.101
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70602,
+      "prev_close": 0.70435,
+      "daily_pct": 0.2365
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25612,
+      "prev_close": 1.25562,
+      "daily_pct": 0.0402
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7445.25,
+      "prev_close": 7445.25,
+      "daily_pct": 0.3944
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29655.25,
+      "prev_close": 29655.25,
+      "daily_pct": 0.6807
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50945.0,
+      "prev_close": 50945.0,
+      "daily_pct": 0.175
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4358.5,
+      "prev_close": 4358.5,
+      "daily_pct": 0.5212
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.02,
+      "prev_close": 109.02,
+      "daily_pct": -0.2573
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 89.38,
+      "prev_close": 89.38,
+      "daily_pct": -2.103
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.7%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Jim Cramer warns key pillars of the bull market are beginning to crumble",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 22:18:39 GMT",
+      "url": "https://www.cnbc.com/2026/06/08/jim-cramer-key-pillars-of-bull-market-beginning-to-crumble.html",
+      "summary": "CNBC's Jim Cramer said that he's becoming more cautious on stocks after several pillars of his bullish outlook have come under pressure."
+    },
+    {
+      "headline": "Nvidia CEO Jensen Huang declines Senate testimony on AI, China and exports",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 20:54:34 GMT",
+      "url": "https://www.cnbc.com/2026/06/08/nvidia-jensen-huang-senate-elizabeth-warren-ai-china-export-controls.html",
+      "summary": "Sen. Elizabeth Warren said Nvidia\u2019s CEO should answer questions publicly as lawmakers scrutinize AI chip sales to China and export controls."
+    },
+    {
+      "headline": "Pentagon expands list of China military-linked firms to include Alibaba, Baidu in fresh blow to diplomatic thaw",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 08:22:14 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/alibaba-baidu-byd-named-on-pentagons-china-military-list-.html",
+      "summary": "The Pentagon briefly posted a similar expanded list in February, then withdrew it without explanation before Trump's China trip."
+    },
+    {
+      "headline": "Congress moves toward approving $70 billion for ICE and CBP through Trump's presidency",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 19:25:46 GMT",
+      "url": "https://www.cnbc.com/2026/06/08/ice-cbp-immigration-funding-bill-congress-trump.html",
+      "summary": "The U.S. House is expected to vote this week on a $70 billion measure to fund Immigration and Customs Enforcement and Customs and Border Protection after delay."
+    },
+    {
+      "headline": "Corning strikes another multibillion-dollar AI deal. What the new Amazon pact means for the stock",
+      "source": "CNBC",
+      "published": "Mon, 08 Jun 2026 20:33:32 GMT",
+      "url": "https://www.cnbc.com/2026/06/08/corning-strikes-another-big-ai-deal-what-the-new-amazon-pact-means-for-the-stock.html",
+      "summary": "Amazon joins the laundry list of partnerships Corning has secured in 2026, which includes Meta Platforms and Nvidia."
+    },
+    {
+      "headline": "Electric vehicle giant BYD predicts 80% of China car sales will soon be electric",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 06:52:53 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/electric-vehicle-giant-byd-predicts-80percent-of-china-car-sales-will-soon-be-electric.html",
+      "summary": "BYD expects China's competitive electric vehicle market to continue growing, even as manufacturers and analysts anticipate domestic demand to taper further."
+    },
+    {
+      "headline": "China's May shipments to U.S. clock 5-year high growth at 35% as overall exports jump on tech boost",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 09:02:27 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/china-trade-exports-imports-iran-war.html",
+      "summary": "Exports to the U.S. surged the most since March 2021, extending a rebound following a long streak of double-digit declines for the most of last year."
+    },
+    {
+      "headline": "Asia chip-linked shares recover after U.S. peers bounce back",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 01:25:56 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/asia-tech-stocks-rebound-after-wall-street-chip-shares-recover-.html",
+      "summary": "In the U.S., chip stocks powered gains on Monday, helping the S&amp;P 500 gain 0.3%, while the tech-heavy Nasdaq Composite advanced 0.86%."
+    }
+  ]
+}
