@@ -1,0 +1,279 @@
+{
+  "meta": {
+    "date": "2026-06-10",
+    "generated_at": "2026-06-10T09:09:56.708398Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7383.7402,
+      "close": 7405.73,
+      "daily_pct": 0.2978,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50866.7812,
+      "close": 50786.0117,
+      "daily_pct": -0.1588,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25709.4297,
+      "close": 25929.6602,
+      "daily_pct": 0.8566,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2833.5,
+      "close": 2855.4199,
+      "daily_pct": 0.7736,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4260.0,
+      "close": 4191.7998,
+      "daily_pct": -1.6009,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.536,
+      "close": 4.552,
+      "daily_pct": 0.3527,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.05,
+      "close": 99.906,
+      "daily_pct": -0.1439,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 88.2,
+      "close": 87.61,
+      "daily_pct": -0.6689,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64179.27,
+      "prev_close": 64024.6,
+      "daily_pct": 0.2416,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24407.96,
+      "prev_close": 24657.06,
+      "daily_pct": -1.0103,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7730.82,
+      "prev_close": 7484.41,
+      "daily_pct": 3.2923,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23284.25,
+      "prev_close": 23123.0,
+      "daily_pct": 0.6974,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8653.3,
+      "prev_close": 8625.1,
+      "daily_pct": 0.327,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24330.98,
+      "prev_close": 24330.98,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10204.56,
+      "prev_close": 10204.56,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8196.66,
+      "prev_close": 8196.66,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6029.94,
+      "prev_close": 6029.94,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15594,
+      "prev_close": 1.15284,
+      "daily_pct": 0.2682
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3388,
+      "prev_close": 1.33333,
+      "daily_pct": 0.4097
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 160.41299,
+      "prev_close": 160.174,
+      "daily_pct": 0.1492
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70107,
+      "prev_close": 0.70405,
+      "daily_pct": -0.4239
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.252,
+      "prev_close": 1.25287,
+      "daily_pct": -0.0689
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7335.75,
+      "prev_close": 7335.75,
+      "daily_pct": -0.771
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28760.0,
+      "prev_close": 28760.0,
+      "daily_pct": -1.2261
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50587.0,
+      "prev_close": 50587.0,
+      "daily_pct": -0.6325
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4191.6,
+      "prev_close": 4191.6,
+      "daily_pct": -1.6056
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.19,
+      "prev_close": 109.19,
+      "daily_pct": -0.2712
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 87.63,
+      "prev_close": 87.63,
+      "daily_pct": -0.6463
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "CPI",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil choppy after U.S. completes Iran strikes following Apache helicopter attack",
+      "source": "CNBC",
+      "published": "Wed, 10 Jun 2026 08:58:46 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/oil-price-us-completes-iran-strikes-after-apache-helicopter-attack.html",
+      "summary": "Oil prices rose after the U.S. launched military strikes against Iran, raising concerns that renewed clashes may threaten shipping through the Strait of Hormuz."
+    },
+    {
+      "headline": "Beijing escalating AI espionage to catch up with the U.S. on tech, cybersecurity firm says",
+      "source": "CNBC",
+      "published": "Wed, 10 Jun 2026 05:02:45 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/crowdstrike-warns-of-increasing-chinese-ai-cyberattacks-on-us-tech.html",
+      "summary": "U.S. cybersecurity giant CrowdStrike said China-based entities made over half of state-sponsored cyberattacks on tech firms for artificial intelligence assets."
+    },
+    {
+      "headline": "The 'SaaSpocalypse' is over, says private equity giant Thoma Bravo. Here's why it sees an AI boom for software",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 12:50:10 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/orlando-bravo-saaspocalypse-over-ai-software.html",
+      "summary": "Thoma Bravo founder Orlando Bravo says AI offers an \"enormous tailwind\" for software companies."
+    },
+    {
+      "headline": "Apple shares slide after big Siri AI reveal",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 20:35:14 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/apple-stock-siri-ai-reaction.html",
+      "summary": "Apple unveiled new artificial intelligence software at WWDC, highlighted by its long-awaited update to Siri."
+    },
+    {
+      "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 14:41:20 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/bitcoins-brutal-sell-off-sparks-a-flurry-of-trading-in-related-stocks-including-one-big-bullish-bet.html",
+      "summary": "The year has been a rocky one for the flagship cryptocurrency, but traders aren't backing away from the space."
+    },
+    {
+      "headline": "Energy Secretary Chris Wright says traffic in Strait of Hormuz is rising 'very meaningfully'",
+      "source": "CNBC",
+      "published": "Tue, 09 Jun 2026 22:27:19 GMT",
+      "url": "https://www.cnbc.com/2026/06/09/chris-wright-hormuz-oil-iran-trump.html",
+      "summary": "Wright said that describing the volume of oil exports out of Hormuz as increasing is a \"fair statement.\""
+    }
+  ]
+}
