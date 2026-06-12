@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "date": "2026-06-12",
+    "generated_at": "2026-06-12T09:15:20.323838Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7266.9902,
+      "close": 7394.2998,
+      "daily_pct": 1.7519,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 49918.7812,
+      "close": 50848.75,
+      "daily_pct": 1.863,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25169.5,
+      "close": 25809.6602,
+      "daily_pct": 2.5434,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2835.46,
+      "close": 2921.03,
+      "daily_pct": 3.0179,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4090.3,
+      "close": 4243.8999,
+      "daily_pct": 3.7552,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.542,
+      "close": 4.463,
+      "daily_pct": -1.7393,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -7.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.86,
+      "close": 99.738,
+      "daily_pct": -0.1222,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 87.71,
+      "close": 83.63,
+      "daily_pct": -4.6517,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66020.04,
+      "prev_close": 64217.27,
+      "daily_pct": 2.8073,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24718.1,
+      "prev_close": 24249.29,
+      "daily_pct": 1.9333,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8123.62,
+      "prev_close": 7763.95,
+      "daily_pct": 4.6326,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23569.25,
+      "prev_close": 23161.6,
+      "daily_pct": 1.76,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8804.0,
+      "prev_close": 8633.2,
+      "daily_pct": 1.9784,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24628.27,
+      "prev_close": 24628.27,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10436.23,
+      "prev_close": 10436.23,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8366.36,
+      "prev_close": 8366.57,
+      "daily_pct": -0.0025,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6173.28,
+      "prev_close": 6172.88,
+      "daily_pct": 0.0065,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15808,
+      "prev_close": 1.15356,
+      "daily_pct": 0.3914
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34154,
+      "prev_close": 1.3362,
+      "daily_pct": 0.3998
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 160.05,
+      "prev_close": 160.52699,
+      "daily_pct": -0.2971
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70457,
+      "prev_close": 0.69942,
+      "daily_pct": 0.7367
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25677,
+      "prev_close": 1.25008,
+      "daily_pct": 0.5354
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7421.0,
+      "prev_close": 7421.0,
+      "daily_pct": 0.338
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29517.0,
+      "prev_close": 29517.0,
+      "daily_pct": 0.1773
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51545.0,
+      "prev_close": 51545.0,
+      "daily_pct": 1.317
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4244.0,
+      "prev_close": 4244.0,
+      "daily_pct": 3.7577
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.83,
+      "prev_close": 109.83,
+      "daily_pct": -0.0995
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 83.63,
+      "prev_close": 83.63,
+      "daily_pct": -4.6517
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Proposed Iran-U.S. deal would reopen Hormuz strait and lift oil sanctions, Iran state media says",
+      "source": "CNBC",
+      "published": "Fri, 12 Jun 2026 09:06:45 GMT",
+      "url": "https://www.cnbc.com/2026/06/12/iran-us-peace-memo-strait-hormuz-oil-sanctions.html",
+      "summary": "U.S. President Donald Trump said Thursday that the Strait of Hormuz would be reopened as soon as a deal is signed."
+    },
+    {
+      "headline": "Luxury stocks spike on proposed U.S.-Iran peace deal; LVMH up 5%",
+      "source": "CNBC",
+      "published": "Fri, 12 Jun 2026 09:13:33 GMT",
+      "url": "https://www.cnbc.com/2026/06/12/luxury-stocks-lvmh-hermes-burberry-iran-war-peace-deal.html",
+      "summary": "Luxury stocks have been hard hit by the Iran war, as the Middle East had been a fast-growing market for the otherwise largely muted sector."
+    },
+    {
+      "headline": "From startup to $1.8 trillion: The investors who took a chance on SpaceX now reap the rewards",
+      "source": "CNBC",
+      "published": "Thu, 11 Jun 2026 22:53:14 GMT",
+      "url": "https://www.cnbc.com/2026/06/11/spacex-investors-reap-rewards-1-8-trillion-valuation.html",
+      "summary": "With SpaceX seeking an IPO valuation of nearly $1.8 trillion, early bets are poised to generate some of the biggest paper gains in venture capital history."
+    },
+    {
+      "headline": "SpaceX cuts retail IPO allocation to low 20% range, source says",
+      "source": "CNBC",
+      "published": "Thu, 11 Jun 2026 22:21:47 GMT",
+      "url": "https://www.cnbc.com/2026/06/11/spacex-cuts-retail-ipo-allocation-to-low-20percent-range-source-says.html",
+      "summary": "The Elon Musk-led company plans to direct a percentage in the low 20s of the offering to retail buyers, according to a person familiar with the matter."
+    },
+    {
+      "headline": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
+      "source": "CNBC",
+      "published": "Thu, 11 Jun 2026 23:35:43 GMT",
+      "url": "https://www.cnbc.com/2026/06/11/spacex-raises-75-billion-in-record-setting-ipo-ahead-of-nasdaq-debut.html",
+      "summary": "SpaceX is selling 555.6 shares at $135 a piece, raising $75 billion in the largest IPO on record."
+    },
+    {
+      "headline": "A Chinese start-up's unfolding dilemma exposes cracks in Beijing's tech funding machine",
+      "source": "CNBC",
+      "published": "Fri, 12 Jun 2026 01:21:00 GMT",
+      "url": "https://www.cnbc.com/2026/06/12/a-chinese-start-ups-dilemma-exposes-cracks-in-beijings-tech-funding.html",
+      "summary": "While the U.S. channels support to tech winners indirectly via incentives, Chinese governments at every level take direct equity stakes."
+    },
+    {
+      "headline": "SpaceX IPO won\u2019t \u2018break\u2019 the bull market. But investors are worried about what comes next",
+      "source": "CNBC",
+      "published": "Thu, 11 Jun 2026 18:26:15 GMT",
+      "url": "https://www.cnbc.com/2026/06/11/spacex-ipo-wont-break-the-bull-market-but-investors-are-worried-about-what-comes-next.html",
+      "summary": "As far as Wall Street is concerned, the stock market has what it takes to absorb the new supply."
+    },
+    {
+      "headline": "Warren questions SpaceX IPO oversight in new letter to stock indexes",
+      "source": "CNBC",
+      "published": "Thu, 11 Jun 2026 22:26:44 GMT",
+      "url": "https://www.cnbc.com/2026/06/11/warren-spacex-ipo-exchanges.html",
+      "summary": "Sen. Elizabeth Warren seeking answers on changes to index provider waiting periods, protections for retail investors, in a letter obtained first by CNBC."
+    }
+  ]
+}
