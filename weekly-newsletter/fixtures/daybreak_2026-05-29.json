@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "date": "2026-05-29",
+    "generated_at": "2026-05-29T10:56:51.183777Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7520.3599,
+      "close": 7563.6299,
+      "daily_pct": 0.5754,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50644.2812,
+      "close": 50668.9688,
+      "daily_pct": 0.0487,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26674.7305,
+      "close": 26917.4707,
+      "daily_pct": 0.91,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2919.9399,
+      "close": 2936.5701,
+      "daily_pct": 0.5695,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4499.2998,
+      "close": 4569.8999,
+      "daily_pct": 1.5691,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.481,
+      "close": 4.455,
+      "daily_pct": -0.5802,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.02,
+      "close": 99.081,
+      "daily_pct": 0.0616,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 88.9,
+      "close": 86.95,
+      "daily_pct": -2.1935,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66329.5,
+      "prev_close": 64693.12,
+      "daily_pct": 2.5294,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25182.39,
+      "prev_close": 25006.16,
+      "daily_pct": 0.7047,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8476.15,
+      "prev_close": 8185.29,
+      "daily_pct": 3.5535,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23547.75,
+      "prev_close": 23907.15,
+      "daily_pct": -1.5033,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8731.7,
+      "prev_close": 8592.9,
+      "daily_pct": 1.6153,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25132.37,
+      "prev_close": 25132.37,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10453.16,
+      "prev_close": 10453.16,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8255.75,
+      "prev_close": 8255.75,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6087.29,
+      "prev_close": 6087.29,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16455,
+      "prev_close": 1.16179,
+      "daily_pct": 0.2376
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34138,
+      "prev_close": 1.34165,
+      "daily_pct": -0.0201
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.28101,
+      "prev_close": 159.56799,
+      "daily_pct": -0.1799
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71587,
+      "prev_close": 0.71332,
+      "daily_pct": 0.3576
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27707,
+      "prev_close": 1.26926,
+      "daily_pct": 0.6155
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7590.75,
+      "prev_close": 7590.75,
+      "daily_pct": 0.1187
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30346.25,
+      "prev_close": 30346.25,
+      "daily_pct": 0.1295
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50832.0,
+      "prev_close": 50832.0,
+      "daily_pct": 0.1754
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4569.9,
+      "prev_close": 4569.9,
+      "daily_pct": 1.5691
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.86,
+      "prev_close": 109.86,
+      "daily_pct": -0.1704
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 86.97,
+      "prev_close": 86.97,
+      "daily_pct": -2.171
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "GDP",
+        "actual": "1.6",
+        "expected": "See tradingeconomics.com",
+        "previous": "0.5",
+        "unit": "%",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "+0.5%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Michael Dell courted Trump early. His company has reaped rewards",
+      "source": "CNBC",
+      "published": "Fri, 29 May 2026 01:26:30 GMT",
+      "url": "https://www.cnbc.com/2026/05/28/michael-dell-trump-accounts-dod.html",
+      "summary": "The dynamic is emblematic of how business is seeking to sow favor with the president in his second term, and has departed from the norms of big business philanthropy."
+    },
+    {
+      "headline": "Trump's Oman outburst throws 'Switzerland of the Middle East' into the spotlight",
+      "source": "CNBC",
+      "published": "Fri, 29 May 2026 09:42:44 GMT",
+      "url": "https://www.cnbc.com/2026/05/29/oman-trump-sanctions-iran-war-bessent.html",
+      "summary": "The Trump administration has threatened sanctions and military action against Oman, a longtime ally and close security partner."
+    },
+    {
+      "headline": "NATO chief says alliance \u2018ready to defend every inch of Allied territory\u2019 after Russian drone hits member state Romania",
+      "source": "CNBC",
+      "published": "Fri, 29 May 2026 08:59:53 GMT",
+      "url": "https://www.cnbc.com/2026/05/29/russian-drone-hits-apartment-block-in-nato-state-romania-.html",
+      "summary": "Romania\u2019s president said the collision demands a \u201cfirm, coordinated, and appropriate response.\""
+    },
+    {
+      "headline": "Iran reportedly launches missiles as Trump mulls deal to pause war for two months",
+      "source": "CNBC",
+      "published": "Thu, 28 May 2026 20:58:13 GMT",
+      "url": "https://www.cnbc.com/2026/05/28/trump-bessent-iran-war-sanctions-hormuz-strait-kuwait.html",
+      "summary": "The latest military and economic actions come as President Trump insists he feels no pressure to make a deal with Iran before November's midterm elections."
+    },
+    {
+      "headline": "Exxon warns oil inventories will hit dangerously low levels in weeks, forcing prices to shoot higher",
+      "source": "CNBC",
+      "published": "Thu, 28 May 2026 22:25:04 GMT",
+      "url": "https://www.cnbc.com/2026/05/28/oil-inventory-exxon-strait-hormuz-iran-war.html",
+      "summary": "The price of physical Brent oil cargoes will spike to $150 to $160 per barrel once inventories hit all-time lows, Exxon executive Neil Chapman said."
+    },
+    {
+      "headline": "Gap shares tumble 14% as retailer cuts sales guidance after disappointing Old Navy performance",
+      "source": "CNBC",
+      "published": "Thu, 28 May 2026 22:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/28/gap-gap-earnings-q1-2026.html",
+      "summary": "Gap issued mixed results as sales at its largest brand, Old Navy, fell short of estimates."
+    },
+    {
+      "headline": "Costco issues a lukewarm quarter, but delivers on the metric that matters most",
+      "source": "CNBC",
+      "published": "Fri, 29 May 2026 00:54:38 GMT",
+      "url": "https://www.cnbc.com/2026/05/28/costco-issues-a-lukewarm-quarter-but-delivers-on-the-metric-that-matters-most.html",
+      "summary": "It was not the best quarter, but far from bad."
+    },
+    {
+      "headline": "South Korea's Kospi, Japan's Topix hit record highs as investors shrug off Iran tensions",
+      "source": "CNBC",
+      "published": "Fri, 29 May 2026 07:52:37 GMT",
+      "url": "https://www.cnbc.com/2026/05/29/asia-markets-today-live-updates-nikkei-225-hang-seng-index-kospi-nifty-50-csi-300.html",
+      "summary": "Asia-Pacific markets rose as investors shrugged off renewed Iran tensions against ceasefire optimism."
+    }
+  ]
+}

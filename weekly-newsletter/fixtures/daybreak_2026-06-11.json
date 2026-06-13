@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "date": "2026-06-11",
+    "generated_at": "2026-06-11T09:21:26.260931Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7386.6499,
+      "close": 7266.99,
+      "daily_pct": -1.6197,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50872.1094,
+      "close": 49918.78,
+      "daily_pct": -1.8739,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25678.8203,
+      "close": 25169.50,
+      "daily_pct": -1.9836,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2855.4199,
+      "close": 2867.02,
+      "daily_pct": 0.4062,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4108.2002,
+      "close": 4104.3999,
+      "daily_pct": -0.0925,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.552,
+      "close": 4.528,
+      "daily_pct": -0.5272,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.91,
+      "close": 100.108,
+      "daily_pct": 0.1982,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 90.03,
+      "close": 89.52,
+      "daily_pct": -0.5665,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64217.27,
+      "prev_close": 65416.63,
+      "daily_pct": -1.8334,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24249.29,
+      "prev_close": 24565.9,
+      "daily_pct": -1.2888,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7763.95,
+      "prev_close": 8096.93,
+      "daily_pct": -4.1124,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23170.4,
+      "prev_close": 23242.1,
+      "daily_pct": -0.3085,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8633.2,
+      "prev_close": 8604.2,
+      "daily_pct": 0.337,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24207.23,
+      "prev_close": 24207.23,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10315.04,
+      "prev_close": 10315.08,
+      "daily_pct": -0.0004,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8200.3,
+      "prev_close": 8200.3,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6052.94,
+      "prev_close": 6052.94,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1538,
+      "prev_close": 1.15354,
+      "daily_pct": 0.0231
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33672,
+      "prev_close": 1.33722,
+      "daily_pct": -0.0374
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 160.54401,
+      "prev_close": 160.384,
+      "daily_pct": 0.0998
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69979,
+      "prev_close": 0.70231,
+      "daily_pct": -0.359
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25028,
+      "prev_close": 1.25116,
+      "daily_pct": -0.07
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7332.25,
+      "prev_close": 7332.25,
+      "daily_pct": 0.7385
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28875.75,
+      "prev_close": 28875.75,
+      "daily_pct": 1.1268
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50328.0,
+      "prev_close": 50328.0,
+      "daily_pct": 0.6761
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4104.2,
+      "prev_close": 4104.2,
+      "daily_pct": -0.0974
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.19,
+      "prev_close": 109.19,
+      "daily_pct": -0.1999
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 89.56,
+      "prev_close": 89.56,
+      "daily_pct": -0.522
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "CPI",
+        "actual": "+0.5% MoM / +4.2% YoY",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Kuwait closes airspace, Israel warns of launches from Lebanon after U.S strikes in Iran",
+      "source": "CNBC",
+      "published": "Thu, 11 Jun 2026 08:03:30 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/trump-iran-war-attacks-deal.html",
+      "summary": "President Donald Trump promised more attacks on Iran after strikes resumed this week. Earlier this week, he said a deal to end the war was near."
+    },
+    {
+      "headline": "Oracle beats on earnings, but stock drops on plans to raise another $20 billion",
+      "source": "CNBC",
+      "published": "Thu, 11 Jun 2026 00:19:00 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/oracle-orcl-q4-earnings-report-2026.html",
+      "summary": "Oracle topped quarterly expectations, but free cash flow is negative, and the company plans to raise more capital for data center projects."
+    },
+    {
+      "headline": "College sticker prices top $100,000 at 16 schools \u2014 but many students pay significantly less",
+      "source": "CNBC",
+      "published": "Wed, 10 Jun 2026 20:13:37 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/college-six-figure-sticker-price.html",
+      "summary": "The cost of attendance at a growing number of colleges is now more than six figures a year, according to data from The Princeton Review."
+    },
+    {
+      "headline": "Trump says U.S. secretly moved more than 100 million barrels of oil through Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Wed, 10 Jun 2026 19:28:38 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/trump-strait-hormuz-iran-oil-tanker-navy.html",
+      "summary": "Trump's comments come after Energy Secretary Chris Wright said Tuesday that oil exports through Hormuz are \"rising very meaningfully.\""
+    },
+    {
+      "headline": "As gold's tumble continues, traders bet the pain may last for two more years",
+      "source": "CNBC",
+      "published": "Wed, 10 Jun 2026 18:23:22 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/as-golds-tumble-continues-traders-bet-the-pain-may-last-for-two-more-years.html",
+      "summary": "Selling in the precious metal just keeps getting worse, with the GLD ETF now down 25% from its intraday record in February."
+    },
+    {
+      "headline": "Sen. Warren calls on SEC to delay SpaceX IPO, flagging concerns about valuation and governance",
+      "source": "CNBC",
+      "published": "Wed, 10 Jun 2026 16:52:57 GMT",
+      "url": "https://www.cnbc.com/2026/06/10/spacex-elizabeth-warren-elon-musk-sec-ipo.html",
+      "summary": "Sen. Elizabeth Warren noted Elon Musk's \"uniquely unchecked\" power as SpaceX's majority shareholder and other concerns in a letter to the SEC."
+    }
+  ]
+}

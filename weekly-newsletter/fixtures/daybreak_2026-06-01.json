@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-06-01",
+    "generated_at": "2026-06-01T09:17:18.536595Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7563.6299,
+      "close": 7580.0601,
+      "daily_pct": 0.2172,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50668.9688,
+      "close": 51032.4609,
+      "daily_pct": 0.7174,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26917.4707,
+      "close": 26972.6191,
+      "daily_pct": 0.2049,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2936.5701,
+      "close": 2919.3401,
+      "daily_pct": -0.5867,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4560.5,
+      "close": 4528.6001,
+      "daily_pct": -0.6995,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.455,
+      "close": 4.453,
+      "daily_pct": -0.0449,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -0.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.91,
+      "close": 98.998,
+      "daily_pct": 0.089,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 87.36,
+      "close": 90.94,
+      "daily_pct": 4.098,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66934.33,
+      "prev_close": 66329.5,
+      "daily_pct": 0.9119,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25398.18,
+      "prev_close": 25182.39,
+      "daily_pct": 0.8569,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8788.38,
+      "prev_close": 8476.15,
+      "daily_pct": 3.6836,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23419.45,
+      "prev_close": 23547.75,
+      "daily_pct": -0.5449,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8729.4,
+      "prev_close": 8731.7,
+      "daily_pct": -0.0263,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25168.22,
+      "prev_close": 25168.22,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10391.03,
+      "prev_close": 10391.03,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8203.95,
+      "prev_close": 8203.7,
+      "daily_pct": 0.003,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6062.28,
+      "prev_close": 6062.3,
+      "daily_pct": -0.0003,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16564,
+      "prev_close": 1.16528,
+      "daily_pct": 0.0303
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34669,
+      "prev_close": 1.34445,
+      "daily_pct": 0.167
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.46201,
+      "prev_close": 159.27,
+      "daily_pct": 0.1206
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71839,
+      "prev_close": 0.71642,
+      "daily_pct": 0.2751
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27629,
+      "prev_close": 1.27606,
+      "daily_pct": 0.0179
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7613.5,
+      "prev_close": 7613.5,
+      "daily_pct": 0.2337
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30501.25,
+      "prev_close": 30501.25,
+      "daily_pct": 0.3157
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51196.0,
+      "prev_close": 51196.0,
+      "daily_pct": 0.233
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4528.1,
+      "prev_close": 4528.1,
+      "daily_pct": -0.7104
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.66,
+      "prev_close": 109.66,
+      "daily_pct": -0.3833
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 90.94,
+      "prev_close": 90.94,
+      "daily_pct": 4.098
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Fed's Powell warns Trump's political 'stress test' will wreck public trust in central bank",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 08:40:34 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/federal-reserve-trump-political-pressure-powell-stress-test.html",
+      "summary": "Jerome Powell said White House pressure on the Fed will damage public trust in the U.S. central bank."
+    },
+    {
+      "headline": "Trump hits out at \u2018chirping\u2019 critics as U.S. and Iran launch fresh wave of strikes",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 09:10:53 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/iran-war-trump-hits-out-at-critics-says-tehran-really-wants-a-deal.html",
+      "summary": "Trump's Truth Social post comes as air strikes between the U.S. and Iran resumed over the weekend."
+    },
+    {
+      "headline": "Oil climbs over 3% as U.S. and Iran exchange strikes, Israel expands Lebanon offensive",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 08:16:50 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/oil-prices-wti-brent-crude-israel-lebanon-hezbollah-iran-trump-us.html",
+      "summary": "Oil prices rose on Monday after Israel instructed troops to push deeper into Lebanon amid renewed clashes with the Iran-backed Hezbollah group."
+    },
+    {
+      "headline": "European defense stocks are cooling off after the military spending boom. Here's what's next",
+      "source": "CNBC",
+      "published": "Sat, 30 May 2026 06:01:49 GMT",
+      "url": "https://www.cnbc.com/2026/05/30/defense-stocks-consolidation-rheinmetall-saab-renk.html",
+      "summary": "Analysts see 2026 as a period of consolidation for the sector, as excitement over Europe's increased defense budget is replaced by company-specific drivers."
+    },
+    {
+      "headline": "Berkshire Hathaway makes $6.8 billion housing bet with Taylor Morrison deal",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 00:16:39 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/berkshire-hathaway-taylor-morrison-home-acquisition-housing-market.html",
+      "summary": "The acquisition marks one of the first major strategic deals under Warren Buffett's successor Greg Abel, who took over as CEO in the beginning of 2026."
+    },
+    {
+      "headline": "China\u2019s factory activity beats forecasts in May, private survey shows, despite softer official data",
+      "source": "CNBC",
+      "published": "Mon, 01 Jun 2026 02:34:38 GMT",
+      "url": "https://www.cnbc.com/2026/06/01/chinas-factory-activity-beats-forecasts-in-may-private-survey-shows-despite-softer-official-data.html",
+      "summary": "China\u2019s manufacturing activity expanded faster than expected in May, according to a private survey released Monday, although growth slowed from April."
+    },
+    {
+      "headline": "Defense spending, China in Asia and lessons from Ukraine: Takeways from the 2026 IISS Shangri-La Dialogue",
+      "source": "CNBC",
+      "published": "Sun, 31 May 2026 09:35:52 GMT",
+      "url": "https://www.cnbc.com/2026/05/31/takeways-from-the-2026-shangri-la-dialogue-.html",
+      "summary": "The summit sees top world leaders, defence officials and key executives gathering in Singapore from May 29 to 31"
+    },
+    {
+      "headline": "U.S. and Iran still without deal to end war after Trump says he's not in a 'hurry'",
+      "source": "CNBC",
+      "published": "Sun, 31 May 2026 16:22:08 GMT",
+      "url": "https://www.cnbc.com/2026/05/31/still-no-deal-to-end-us-iran-war-trump-says-hes-not-in-a-hurry.html",
+      "summary": "Trump threatened further military action if negotiations break down and the U.S. does not receive the concessions from Iran it desires."
+    }
+  ]
+}

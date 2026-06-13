@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-05-25",
+    "generated_at": "2026-05-25T10:49:15.401821Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7445.7202,
+      "close": 7473.4702,
+      "daily_pct": 0.3727,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 50285.6602,
+      "close": 50579.6992,
+      "daily_pct": 0.5847,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26293.0996,
+      "close": 26343.9707,
+      "daily_pct": 0.1935,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2843.45,
+      "close": 2869.23,
+      "daily_pct": 0.9066,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4521.0,
+      "close": 4523.2002,
+      "daily_pct": 0.0487,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.586,
+      "close": 4.558,
+      "daily_pct": -0.6106,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.32,
+      "close": 98.995,
+      "daily_pct": -0.3272,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.6,
+      "close": 96.6,
+      "daily_pct": 0.0,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65158.19,
+      "prev_close": 63339.07,
+      "daily_pct": 2.872,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25606.03,
+      "prev_close": 25386.52,
+      "daily_pct": 0.8647,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7847.71,
+      "prev_close": 7815.59,
+      "daily_pct": 0.411,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24031.7,
+      "prev_close": 23719.3,
+      "daily_pct": 1.3171,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8692.0,
+      "prev_close": 8657.0,
+      "daily_pct": 0.4043,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25239.16,
+      "prev_close": 25239.16,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10474.73,
+      "prev_close": 10466.3,
+      "daily_pct": 0.0806,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8239.63,
+      "prev_close": 8239.28,
+      "daily_pct": 0.0042,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6027.38,
+      "prev_close": 6106.71,
+      "daily_pct": -1.2991,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16469,
+      "prev_close": 1.16212,
+      "daily_pct": 0.2213
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34925,
+      "prev_close": 1.34326,
+      "daily_pct": 0.4466
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.933,
+      "prev_close": 159.01801,
+      "daily_pct": -0.0535
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71705,
+      "prev_close": 0.71483,
+      "daily_pct": 0.3108
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.27987,
+      "prev_close": 1.27146,
+      "daily_pct": 0.6617
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7491.0,
+      "prev_close": 7491.0,
+      "daily_pct": 0.0
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29558.75,
+      "prev_close": 29558.75,
+      "daily_pct": 0.0
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 50662.0,
+      "prev_close": 50662.0,
+      "daily_pct": 0.0
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4523.2,
+      "prev_close": 4523.2,
+      "daily_pct": 0.0487
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.25,
+      "prev_close": 109.25,
+      "daily_pct": 0.0
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 96.6,
+      "prev_close": 96.6,
+      "daily_pct": 0.0
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Iran is in the 'process of blinking' over the Strait of Hormuz, Petraeus says",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 06:59:06 GMT",
+      "url": "https://www.cnbc.com/2026/05/25/iran-in-the-process-of-blinking-over-the-strait-ofoh-ex-cia-director.html",
+      "summary": "Ex-CIA director David Petraeus said that an initial successful peace deal with Tehran would see the Strait opened without any conditions."
+    },
+    {
+      "headline": "Oil market at 'tank bottoms' in Asia, and Europe isn't far behind, warns market veteran Jeff Currie",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 06:25:49 GMT",
+      "url": "https://www.cnbc.com/2026/05/25/oil-prices-iran-war-carlyle-currie.html",
+      "summary": "Oil markets are nearing minimum operating levels in Asia, with Europe likely next and the U.S. potentially facing shortages by July, said Carlyle's Jeff Currie."
+    },
+    {
+      "headline": "European stocks highest since March 2 as U.S.-Iran talks continue; euro zone bond yields drop on peace hopes",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 10:48:05 GMT",
+      "url": "https://www.cnbc.com/2026/05/25/european-stocks-us-iran-talks-continue-markets-oil.html",
+      "summary": "Stocks in Europe are tracking their Asian counterparts higher after Japan's Nikkei 225 breached 65,000 for the first time."
+    },
+    {
+      "headline": "Boosting retirement savings has a less-appreciated benefit",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/05/24/retirement-savings-contributions.html",
+      "summary": "Saving more money has a dual benefit that often goes unnoticed, according to financial advisors."
+    },
+    {
+      "headline": "Beware the boom and bust cycle of memory stocks, investors warn amid AI boom",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 07:33:36 GMT",
+      "url": "https://www.cnbc.com/2026/05/25/memory-stocks-cyclical-boom-bust-samsung-sk-hynix.html",
+      "summary": "\"In the long run, it's a pretty dreadful industry,\" William de Gale of BlueBox Asset Management, told CNBC's Europe Early Edition on Wednesday."
+    },
+    {
+      "headline": "Japan\u2019s Nikkei 225 tops 65,000 for first time as oil falls on Hormuz reopening hopes",
+      "source": "CNBC",
+      "published": "Mon, 25 May 2026 07:49:13 GMT",
+      "url": "https://www.cnbc.com/2026/05/25/asia-markets-today-live-updates-asx-nikkei-sensei-iran-us-trump-oil-hormuz.html",
+      "summary": "Japan\u2019s Nikkei 225 breached 65,000 for the first time Monday as a sharp decline in oil prices lifted risk sentiment in holiday-thinned trading."
+    },
+    {
+      "headline": "'The Mandalorian and Grogu' is Disney's lowest-ever Star Wars film opening",
+      "source": "CNBC",
+      "published": "Sun, 24 May 2026 16:04:57 GMT",
+      "url": "https://www.cnbc.com/2026/05/24/the-mandalorian-and-grogu-is-disneys-lowest-star-wars-film-opening.html",
+      "summary": "Disney's \"The Mandalorian and Grogu\" tallied and estimated $82 million in domestic ticket sales through its first three days in theaters."
+    },
+    {
+      "headline": "Bulls push the S&P 500 back near records \u2014 here\u2019s what drove the market last week",
+      "source": "CNBC",
+      "published": "Sat, 23 May 2026 17:21:36 GMT",
+      "url": "https://www.cnbc.com/2026/05/23/bulls-push-sp-500-back-near-records-what-drove-the-market-last-week.html",
+      "summary": "The combination of higher oil prices and bond market volatility nearly snapped the S&amp;P 500's winning streak."
+    }
+  ]
+}
