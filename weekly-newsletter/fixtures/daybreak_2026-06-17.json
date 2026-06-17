@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-06-17",
+    "generated_at": "2026-06-17T09:15:19.671153Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7554.29,
+      "close": 7511.3501,
+      "daily_pct": -0.5684,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51671.0312,
+      "close": 51999.6719,
+      "daily_pct": 0.636,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26683.9395,
+      "close": 26376.3398,
+      "daily_pct": -1.1528,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2965.0901,
+      "close": 2939.2,
+      "daily_pct": -0.8732,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4330.8999,
+      "close": 4343.3999,
+      "daily_pct": 0.2886,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.463,
+      "close": 4.487,
+      "daily_pct": 0.5378,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.54,
+      "close": 99.571,
+      "daily_pct": 0.0311,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 76.05,
+      "close": 75.47,
+      "daily_pct": -0.7627,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 69902.25,
+      "prev_close": 69404.5,
+      "daily_pct": 0.7172,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24312.16,
+      "prev_close": 24493.95,
+      "daily_pct": -0.7422,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8864.24,
+      "prev_close": 8726.6,
+      "daily_pct": 1.5773,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24041.0,
+      "prev_close": 23989.15,
+      "daily_pct": 0.2161,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8966.3,
+      "prev_close": 8917.7,
+      "daily_pct": 0.545,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24830.93,
+      "prev_close": 24831.44,
+      "daily_pct": -0.0021,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10479.47,
+      "prev_close": 10479.47,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8451.6,
+      "prev_close": 8450.58,
+      "daily_pct": 0.0121,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6270.52,
+      "prev_close": 6270.47,
+      "daily_pct": 0.0008,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1605,
+      "prev_close": 1.15942,
+      "daily_pct": 0.0928
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3416,
+      "prev_close": 1.3416,
+      "daily_pct": -0.0001
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 160.19099,
+      "prev_close": 160.229,
+      "daily_pct": -0.0237
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70631,
+      "prev_close": 0.7073,
+      "daily_pct": -0.1394
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.26322,
+      "prev_close": 1.25876,
+      "daily_pct": 0.3537
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7599.0,
+      "prev_close": 7599.0,
+      "daily_pct": 1.0707
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30513.25,
+      "prev_close": 30513.25,
+      "daily_pct": 1.7278
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52448.0,
+      "prev_close": 52448.0,
+      "daily_pct": 0.7763
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4343.4,
+      "prev_close": 4343.4,
+      "daily_pct": 0.2886
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.88,
+      "prev_close": 109.88,
+      "daily_pct": -0.2836
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 75.45,
+      "prev_close": 75.45,
+      "daily_pct": -0.789
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Fed Chair Warsh expected to withhold 'dot' from central bank's interest rate outlook",
+      "source": "CNBC",
+      "published": "Tue, 16 Jun 2026 19:12:13 GMT",
+      "url": "https://www.cnbc.com/2026/06/16/fed-chair-warsh-expected-to-withhold-dot-from-central-banks-interest-rate-outlook.html",
+      "summary": "The central bank's Federal Open Market Committee is set to release its quarterly update of where individual officials expect interest rates to head."
+    },
+    {
+      "headline": "Three Iranian tankers exit U.S. blockade for first time in months as shipowners eye Hormuz in 'wary disbelief'",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 07:23:05 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/iranian-tankers-oil-shipment-us-iran-deal-strait-of-hormuz-.html",
+      "summary": "At least three Iranian tankers carrying nearly five million barrels of crude oil have exited the U.S. Navy blockade."
+    },
+    {
+      "headline": "From supply shock to oil glut: IEA flags scale of demand destruction caused by Iran war",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 08:39:42 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/global-oil-demand-suppy-energy-prices-iea-inventories.html",
+      "summary": "The energy supply shock triggered by the Iran War has prompted the IEA to slash its global oil demand forecast."
+    },
+    {
+      "headline": "'A signal of where power sits': Trump and world leaders joined by OpenAI, Anthropic, Google at G7",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 08:47:54 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/g7-trump-ai-tech-leaders-openai-anthropic-google.html",
+      "summary": "Frontier AI risks, infrastructure and sovereignty are all expected to be discussed at the world leaders' summit."
+    },
+    {
+      "headline": "China pushes for AI safety as G7 summit wraps up without Beijing",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 08:04:21 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/china-pushes-for-ai-safety-as-g7-summit-wraps-up-without-beijing.html",
+      "summary": "China included artificial intelligence in its global governance whitepaper published Wednesday, and said Beijing was speeding up cooperation efforts."
+    },
+    {
+      "headline": "Central banks are bringing gold reserves home as geopolitical risks rise",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 07:28:36 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/central-banks-gold-reserves-domestic-storage.html",
+      "summary": "Central banks expect gold reserves to rise and more are storing bullion at home amid geopolitical and currency risks."
+    },
+    {
+      "headline": "New Wharton forecast puts Social Security trust fund depletion later than official projections",
+      "source": "CNBC",
+      "published": "Tue, 16 Jun 2026 16:33:40 GMT",
+      "url": "https://www.cnbc.com/2026/06/16/social-security-trust-funds-wharton-analysis.html",
+      "summary": "Social Security's retirement trust fund may dry up in February 2033, according to a new report from the Penn Wharton Budget Model shared exclusively with CNBC."
+    },
+    {
+      "headline": "CNBC Daily Open: AI protectionism opens new front for G7",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 06:12:13 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/cnbc-daily-open-ai-protectionism-opens-new-front-for-g7.html",
+      "summary": "G7 attention shifts to AI as the U.S. imposes protectionist policies on access to certain models."
+    }
+  ]
+}
