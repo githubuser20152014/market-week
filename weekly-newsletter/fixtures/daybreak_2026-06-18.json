@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-06-18",
+    "generated_at": "2026-06-18T10:07:22.313742Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7511.3501,
+      "close": 7420.1001,
+      "daily_pct": -1.2148,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51999.6719,
+      "close": 51492.5508,
+      "daily_pct": -0.9752,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26376.3398,
+      "close": 26021.6602,
+      "daily_pct": -1.3447,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2939.2,
+      "close": 2917.98,
+      "daily_pct": -0.722,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4358.8999,
+      "close": 4288.8999,
+      "daily_pct": -1.6059,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.463,
+      "close": 4.487,
+      "daily_pct": 0.5378,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.09,
+      "close": 100.605,
+      "daily_pct": 0.5145,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 76.79,
+      "close": 73.72,
+      "daily_pct": -3.9979,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 71053.49,
+      "prev_close": 69902.25,
+      "daily_pct": 1.6469,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23924.81,
+      "prev_close": 24312.16,
+      "daily_pct": -1.5932,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9063.84,
+      "prev_close": 8864.24,
+      "daily_pct": 2.2517,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24168.0,
+      "prev_close": 24085.7,
+      "daily_pct": 0.3417,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8911.1,
+      "prev_close": 8966.3,
+      "daily_pct": -0.6156,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24978.66,
+      "prev_close": 24978.64,
+      "daily_pct": 0.0001,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10419.53,
+      "prev_close": 10419.53,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8439.05,
+      "prev_close": 8439.05,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6311.18,
+      "prev_close": 6311.18,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14692,
+      "prev_close": 1.161,
+      "daily_pct": -1.2123
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32289,
+      "prev_close": 1.34264,
+      "daily_pct": -1.4711
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 160.854,
+      "prev_close": 160.41901,
+      "daily_pct": 0.2712
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70107,
+      "prev_close": 0.70655,
+      "daily_pct": -0.7762
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.24457,
+      "prev_close": 1.26086,
+      "daily_pct": -1.2919
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7563.5,
+      "prev_close": 7563.5,
+      "daily_pct": 1.8722
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30492.0,
+      "prev_close": 30492.0,
+      "daily_pct": 2.7099
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52257.0,
+      "prev_close": 52257.0,
+      "daily_pct": 1.4325
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4289.2,
+      "prev_close": 4289.2,
+      "daily_pct": -1.599
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.52,
+      "prev_close": 109.52,
+      "daily_pct": -0.2703
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 73.76,
+      "prev_close": 73.76,
+      "daily_pct": -3.9458
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Trump and Iran's President Pezeshkian sign memorandum aimed to end war",
+      "source": "CNBC",
+      "published": "Thu, 18 Jun 2026 03:09:58 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/trump-vance-iran-deal-nuclear-g7.html",
+      "summary": "President Trump earlier said at the G7 summit that the memorandum of understanding with Iran \"might not be the kind of document that I should be signing.\""
+    },
+    {
+      "headline": "Here are the five big takeaways from Kevin Warsh's first meeting as Fed chairman",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 23:51:33 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/here-are-the-five-big-takeaways-from-kevin-warshs-first-meeting-as-fed-chairman.html",
+      "summary": "The Federal Reserve and Chairman Kevin Warsh on Wednesday followed the script on interest rates closely."
+    },
+    {
+      "headline": "Hegseth warns NATO allies that some nations will 'fail' U.S. defense review",
+      "source": "CNBC",
+      "published": "Thu, 18 Jun 2026 09:23:31 GMT",
+      "url": "https://www.cnbc.com/2026/06/18/hegseth-nato-defense-review-fail-europe.html",
+      "summary": "The U.S. defense secretary also said it was \"shameful\" that European allies refused to give U.S. forces access to bases to strike Iran."
+    },
+    {
+      "headline": "JetBlue to reduce Newark, LaGuardia footprint as it forges ahead in Fort Lauderdale",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 21:20:34 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/jetblue-to-reduce-newark-laguardia-footprint-as-it-expands-in-florida.html",
+      "summary": "JetBlue is planning to cut some employee bases at Newark Liberty International Airport in New Jersey and tech bases at New York's LaGuardia Airport."
+    },
+    {
+      "headline": "Trump-Modi bromance back on display in meeting on sidelines of G7",
+      "source": "CNBC",
+      "published": "Thu, 18 Jun 2026 08:58:18 GMT",
+      "url": "https://www.cnbc.com/2026/06/18/trump-modi-bromance-display-g7.html",
+      "summary": "U.S. President Donald Trump pledged to defend India, but only if Narendra Modi is the leader."
+    },
+    {
+      "headline": "Swiss central bank readies for FX intervention if safe haven franc strengthens",
+      "source": "CNBC",
+      "published": "Thu, 18 Jun 2026 09:44:14 GMT",
+      "url": "https://www.cnbc.com/2026/06/18/swiss-national-bank-franc-switzerland-iran-inflation-currency.html",
+      "summary": "The SNB left interest rates unchanged, as it highlighted the risk of renewed upward pressure on the Swiss franc amid ongoing uncertainty."
+    },
+    {
+      "headline": "CEOs of Anthropic and Google DeepMind call for U.S.-led AI coalition in meeting at G7",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 20:42:27 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/anthropic-amodei-google-hassabis-us-ai-coalition-g7.html",
+      "summary": "Tech leaders and heads of state, including President Donald Trump, joined a meeting about AI standards at the G7 Summit."
+    },
+    {
+      "headline": "The market didn't like what it heard from the Fed and its new leader Kevin Warsh",
+      "source": "CNBC",
+      "published": "Wed, 17 Jun 2026 20:55:56 GMT",
+      "url": "https://www.cnbc.com/2026/06/17/the-market-didnt-like-what-it-heard-from-the-fed-and-its-new-leader-kevin-warsh.html",
+      "summary": "The S&amp;P 500 closed down 1.2%, as bond yields rose."
+    }
+  ]
+}
