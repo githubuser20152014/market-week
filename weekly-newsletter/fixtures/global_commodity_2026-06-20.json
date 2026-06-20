@@ -1,0 +1,224 @@
+{
+  "WTI Crude Oil": {
+    "symbol": "CL=F",
+    "etf_proxy": "USO",
+    "data": [
+      {
+        "date": "2026-06-15",
+        "open": 81.4,
+        "high": 82.42,
+        "low": 79.7,
+        "close": 80.75,
+        "volume": 208395
+      },
+      {
+        "date": "2026-06-16",
+        "open": 81.1,
+        "high": 81.58,
+        "low": 75.52,
+        "close": 76.05,
+        "volume": 205050
+      },
+      {
+        "date": "2026-06-17",
+        "open": 76.59,
+        "high": 80.03,
+        "low": 74.59,
+        "close": 76.79,
+        "volume": 100474
+      },
+      {
+        "date": "2026-06-18",
+        "open": 75.53,
+        "high": 76.99,
+        "low": 73.58,
+        "close": 76.6,
+        "volume": 97813
+      },
+      {
+        "date": "2026-06-19",
+        "open": 75.4,
+        "high": 76.78,
+        "low": 74.98,
+        "close": 76.54,
+        "volume": 86466
+      }
+    ]
+  },
+  "Natural Gas": {
+    "symbol": "NG=F",
+    "etf_proxy": "UNG",
+    "data": [
+      {
+        "date": "2026-06-15",
+        "open": 3.09,
+        "high": 3.16,
+        "low": 3.02,
+        "close": 3.15,
+        "volume": 139274
+      },
+      {
+        "date": "2026-06-16",
+        "open": 3.15,
+        "high": 3.27,
+        "low": 3.13,
+        "close": 3.24,
+        "volume": 148973
+      },
+      {
+        "date": "2026-06-17",
+        "open": 3.26,
+        "high": 3.3,
+        "low": 3.12,
+        "close": 3.14,
+        "volume": 170489
+      },
+      {
+        "date": "2026-06-18",
+        "open": 3.15,
+        "high": 3.25,
+        "low": 3.12,
+        "close": 3.23,
+        "volume": 147984
+      },
+      {
+        "date": "2026-06-19",
+        "open": 3.22,
+        "high": 3.25,
+        "low": 3.18,
+        "close": 3.2,
+        "volume": 21800
+      }
+    ]
+  },
+  "Gold": {
+    "symbol": "GC=F",
+    "etf_proxy": "GLD",
+    "data": [
+      {
+        "date": "2026-06-15",
+        "open": 4271.2,
+        "high": 4362.0,
+        "low": 4269.1,
+        "close": 4328.0,
+        "volume": 1666
+      },
+      {
+        "date": "2026-06-16",
+        "open": 4309.5,
+        "high": 4345.8,
+        "low": 4309.5,
+        "close": 4330.9,
+        "volume": 158
+      },
+      {
+        "date": "2026-06-17",
+        "open": 4339.0,
+        "high": 4377.0,
+        "low": 4296.0,
+        "close": 4358.9,
+        "volume": 1961
+      },
+      {
+        "date": "2026-06-18",
+        "open": 4279.8,
+        "high": 4323.2,
+        "low": 4223.7,
+        "close": 4224.1,
+        "volume": 738
+      },
+      {
+        "date": "2026-06-19",
+        "open": 4231.2,
+        "high": 4231.4,
+        "low": 4138.7,
+        "close": 4172.9,
+        "volume": 73110
+      }
+    ]
+  },
+  "Silver": {
+    "symbol": "SI=F",
+    "etf_proxy": "SLV",
+    "data": [
+      {
+        "date": "2026-06-15",
+        "open": 70.07,
+        "high": 70.07,
+        "low": 70.07,
+        "close": 70.07,
+        "volume": 0
+      },
+      {
+        "date": "2026-06-16",
+        "open": 69.9,
+        "high": 69.9,
+        "low": 69.9,
+        "close": 69.9,
+        "volume": 2
+      },
+      {
+        "date": "2026-06-17",
+        "open": 70.31,
+        "high": 70.95,
+        "low": 68.76,
+        "close": 70.7,
+        "volume": 22
+      },
+      {
+        "date": "2026-06-18",
+        "open": 66.25,
+        "high": 66.25,
+        "low": 66.25,
+        "close": 66.25,
+        "volume": 22
+      },
+      {
+        "date": "2026-06-19",
+        "open": 65.79,
+        "high": 65.94,
+        "low": 63.35,
+        "close": 64.91,
+        "volume": 19075
+      }
+    ]
+  },
+  "US 30Y": {
+    "symbol": "^TYX",
+    "etf_proxy": "TLT",
+    "data": [
+      {
+        "date": "2026-06-09",
+        "open": 5.03,
+        "high": 5.03,
+        "low": 5.01,
+        "close": 5.01,
+        "volume": 0
+      },
+      {
+        "date": "2026-06-10",
+        "open": 5.01,
+        "high": 5.04,
+        "low": 5.0,
+        "close": 5.03,
+        "volume": 0
+      },
+      {
+        "date": "2026-06-11",
+        "open": 5.0,
+        "high": 5.02,
+        "low": 4.95,
+        "close": 4.95,
+        "volume": 0
+      },
+      {
+        "date": "2026-06-12",
+        "open": 4.97,
+        "high": 4.99,
+        "low": 4.96,
+        "close": 4.97,
+        "volume": 0
+      }
+    ]
+  }
+}
