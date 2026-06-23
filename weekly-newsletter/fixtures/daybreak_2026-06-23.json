@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "date": "2026-06-23",
+    "generated_at": "2026-06-23T11:05:18.274182Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7500.5801,
+      "close": 7472.79,
+      "daily_pct": -0.3705,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51564.6992,
+      "close": 51712.7109,
+      "daily_pct": 0.287,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26517.9297,
+      "close": 26166.5996,
+      "daily_pct": -1.3249,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2979.77,
+      "close": 3004.3999,
+      "daily_pct": 0.8266,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4181.8999,
+      "close": 4140.0,
+      "daily_pct": -1.0019,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.463,
+      "close": 4.451,
+      "daily_pct": -0.2689,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.02,
+      "close": 101.243,
+      "daily_pct": 0.2207,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 74.82,
+      "close": 73.8,
+      "daily_pct": -1.3633,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 69788.38,
+      "prev_close": 72353.96,
+      "daily_pct": -3.5459,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23336.28,
+      "prev_close": 23768.52,
+      "daily_pct": -1.8185,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8203.84,
+      "prev_close": 9114.55,
+      "daily_pct": -9.9918,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23824.1,
+      "prev_close": 24102.9,
+      "daily_pct": -1.1567,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8787.0,
+      "prev_close": 8816.1,
+      "daily_pct": -0.3301,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24862.79,
+      "prev_close": 24862.79,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10403.28,
+      "prev_close": 10402.93,
+      "daily_pct": 0.0034,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8337.89,
+      "prev_close": 8338.27,
+      "daily_pct": -0.0046,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6234.1,
+      "prev_close": 6234.7,
+      "daily_pct": -0.0096,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14038,
+      "prev_close": 1.14628,
+      "daily_pct": -0.5143
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32221,
+      "prev_close": 1.32079,
+      "daily_pct": 0.1071
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 161.474,
+      "prev_close": 161.433,
+      "daily_pct": 0.0254
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69473,
+      "prev_close": 0.70029,
+      "daily_pct": -0.7934
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23439,
+      "prev_close": 1.23767,
+      "daily_pct": -0.2654
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7434.25,
+      "prev_close": 7434.25,
+      "daily_pct": -1.4189
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29799.0,
+      "prev_close": 29799.0,
+      "daily_pct": -2.7876
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51846.0,
+      "prev_close": 51846.0,
+      "daily_pct": -0.5238
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4140.0,
+      "prev_close": 4140.0,
+      "daily_pct": -1.0019
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.47,
+      "prev_close": 109.47,
+      "daily_pct": 0.2146
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 73.8,
+      "prev_close": 73.8,
+      "daily_pct": -1.3633
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.1%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "U.S. issues sweeping Iran oil sanctions waivers, unlocking billions in revenue for Tehran",
+      "source": "CNBC",
+      "published": "Tue, 23 Jun 2026 08:10:24 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/us-iran-oil-sanction-relief-strait-of-hormuz-peace-deal-.html",
+      "summary": "The U.S. issued a sweeping rollback of sanctions on Iranian oil, offering Tehran an economic lifeline as negotiations toward a peace deal proceed."
+    },
+    {
+      "headline": "U.S. fights with Brazil for China's giant soybean market",
+      "source": "CNBC",
+      "published": "Tue, 23 Jun 2026 09:43:57 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/us-fights-with-brazil-for-chinas-giant-soybean-market.html",
+      "summary": "The U.S. Soybean Export Council makes claims to higher quality a selling point over Brazil's crop, as American farmers attempt to win back business from the world's largest importer"
+    },
+    {
+      "headline": "China's 618 shopping festival growth slows sharply as consumer spending malaise persists",
+      "source": "CNBC",
+      "published": "Tue, 23 Jun 2026 03:19:02 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/china-618-shopping-festival-sales-growth-consumer-spending-slowdown-syntun.html",
+      "summary": "The latest consumer data reinforce how consumption in China remains subdued."
+    },
+    {
+      "headline": "'We'll see' \u2014 Trump hedges on guarantee Iran won't use oil profits to rebuild military",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 23:09:43 GMT",
+      "url": "https://www.cnbc.com/2026/06/22/trump-iran-war-oil-profits-rebuild-military.html",
+      "summary": "Treasury Secretary Scott Bessent authorized the import of Iranian oil and refined products into the U.S. through at least August."
+    },
+    {
+      "headline": "'Reward for failure': Investor support for Target Chair Brian Cornell falls to lowest level ever",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 17:55:37 GMT",
+      "url": "https://www.cnbc.com/2026/06/22/target-brian-cornell-shareholder-support.html",
+      "summary": "Target Chair Brian Cornell built the retailer into a $100 billion-plus giant, but recent struggles and underperformance have fueled investor calls for change."
+    },
+    {
+      "headline": "Senate advances housing bill to limit private equity purchases of single-family homes",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 22:38:59 GMT",
+      "url": "https://www.cnbc.com/2026/06/22/affordable-housing-bill-private-equity-single-family-homes.html",
+      "summary": "The House is also expected to advance a sprawling housing package this week that's aimed at creating more supply and making homes more affordable."
+    },
+    {
+      "headline": "Treasury Department authorizes Iranian oil sales through August",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 17:56:43 GMT",
+      "url": "https://www.cnbc.com/2026/06/22/treasury-iran-oil-sales.html",
+      "summary": "Iranian supertankers have switched on their transponders, after going dark during the war, as they depart the Persian Gulf loaded with oil."
+    },
+    {
+      "headline": "Alan Greenspan, former chairman of the Fed, dies at age 100",
+      "source": "CNBC",
+      "published": "Mon, 22 Jun 2026 14:39:38 GMT",
+      "url": "https://www.cnbc.com/2026/06/22/alan-greenspan-former-chairman-of-the-fed-dies-at-age-100.html",
+      "summary": "Alan Greenspan presided over the Federal Reserve for 19 years under four presidents and mastered the art of obfuscation known as Fedspeak."
+    }
+  ]
+}
