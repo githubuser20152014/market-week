@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-06-24",
+    "generated_at": "2026-06-24T09:55:32.256335Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7472.79,
+      "close": 7365.46,
+      "daily_pct": -1.4363,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51712.7109,
+      "close": 51666.8398,
+      "daily_pct": -0.0887,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26166.5996,
+      "close": 25587.0391,
+      "daily_pct": -2.2149,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3004.3999,
+      "close": 2975.48,
+      "daily_pct": -0.9626,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4129.8999,
+      "close": 4084.8999,
+      "daily_pct": -1.0896,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.463,
+      "close": 4.451,
+      "daily_pct": -0.2689,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.41,
+      "close": 101.639,
+      "daily_pct": 0.2258,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 73.21,
+      "close": 71.87,
+      "daily_pct": -1.8303,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 69174.97,
+      "prev_close": 69788.38,
+      "daily_pct": -0.879,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23412.18,
+      "prev_close": 23336.28,
+      "daily_pct": 0.3252,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8471.02,
+      "prev_close": 8203.84,
+      "daily_pct": 3.2568,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24016.85,
+      "prev_close": 23824.1,
+      "daily_pct": 0.8091,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8808.4,
+      "prev_close": 8787.0,
+      "daily_pct": 0.2435,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24667.26,
+      "prev_close": 24667.26,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10423.64,
+      "prev_close": 10423.64,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8358.61,
+      "prev_close": 8358.61,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6219.47,
+      "prev_close": 6219.47,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1352,
+      "prev_close": 1.14271,
+      "daily_pct": -0.6573
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.31806,
+      "prev_close": 1.32471,
+      "daily_pct": -0.5022
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 161.73399,
+      "prev_close": 161.57001,
+      "daily_pct": 0.1015
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.68932,
+      "prev_close": 0.69946,
+      "daily_pct": -1.4497
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23166,
+      "prev_close": 1.2364,
+      "daily_pct": -0.383
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7440.0,
+      "prev_close": 7440.0,
+      "daily_pct": 0.0336
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29761.25,
+      "prev_close": 29761.25,
+      "daily_pct": 0.3211
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51969.0,
+      "prev_close": 51969.0,
+      "daily_pct": -0.217
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4084.7,
+      "prev_close": 4084.7,
+      "daily_pct": -1.0945
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.42,
+      "prev_close": 109.42,
+      "daily_pct": 0.0429
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 71.86,
+      "prev_close": 71.86,
+      "daily_pct": -1.844
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Brent falls below $76, notching its lowest level since day before U.S.-Iran war",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 09:05:09 GMT",
+      "url": "https://www.cnbc.com/2026/06/24/oil-prices-wti-brent-crude-trump-doj-gasoline-prices-strait-of-hormuz.html",
+      "summary": "U.S. President Donald Trump intensified pressure on oil companies to lower gasoline prices following the recent decline in crude."
+    },
+    {
+      "headline": "Ukraine is raising the cost of war for Russia \u2014 and testing Putin's resolve",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 09:15:42 GMT",
+      "url": "https://www.cnbc.com/2026/06/24/ukraine-russia-drone-strikes-moscow-escalation.html",
+      "summary": "A string of political victories and deep-strike successes has bolstered confidence in Ukraine amid its long-running war with Russia."
+    },
+    {
+      "headline": "House passes affordable housing bill, sends it to Trump's desk",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 02:02:51 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/house-affordable-housing-bill-trump.html",
+      "summary": "The House on Tuesday gave final passage to a bill aimed at lowering costs for homebuyers and reining in private equity."
+    },
+    {
+      "headline": "Defense stocks plummet on report Germany is scrapping warships; Rheinmetall stock down 13%",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 08:33:13 GMT",
+      "url": "https://www.cnbc.com/2026/06/24/rheinmetall-stock-defense-germany-warship-scrap-plans.html",
+      "summary": "Berlin is planning to scrap a multi-billion-euro project to build the F126 frigates, according to the Financial Times."
+    },
+    {
+      "headline": "Cerebras falls 10% after chipmaker forecasts shrinking margin in first earnings report since IPO",
+      "source": "CNBC",
+      "published": "Tue, 23 Jun 2026 22:11:21 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/cerebras-cbrs-q1-earnings-report-2026.html",
+      "summary": "Cerebras went public on the Nasdaq in May, giving Wall Street access to a pureplay AI company."
+    },
+    {
+      "headline": "Alphabet added to Dow Jones Industrial Average, replacing Verizon",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 01:40:44 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/alphabet-verizon-dow-djia.html",
+      "summary": "Alphabet will replace Verizon in the Dow Jones Industrial Average."
+    },
+    {
+      "headline": "Inside Kevin Warsh's selection process for the next Atlanta Fed president",
+      "source": "CNBC",
+      "published": "Tue, 23 Jun 2026 18:25:44 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/fed-warsh-atlanta-michael-faulkender.html",
+      "summary": "Choosing a new head for the Federal Reserve Bank of Atlanta is an opportunity for new Fed Chairman Kevin Warsh to reshape the central bank."
+    },
+    {
+      "headline": "Senate backs Iran war powers resolution as GOP pressure grows on Trump's deal to end war",
+      "source": "CNBC",
+      "published": "Tue, 23 Jun 2026 20:51:52 GMT",
+      "url": "https://www.cnbc.com/2026/06/23/thune-congress-vote-trump-iran-deal.html",
+      "summary": "Senate Republicans want more details on Trump\u2019s Iran deal as questions swirl around sanctions relief, nuclear restrictions and congressional approval."
+    }
+  ]
+}
