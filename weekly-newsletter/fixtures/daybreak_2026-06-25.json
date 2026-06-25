@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-06-25",
+    "generated_at": "2026-06-25T12:07:23.786016Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7365.46,
+      "close": 7358.2202,
+      "daily_pct": -0.0983,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51666.8398,
+      "close": 51848.8984,
+      "daily_pct": 0.3524,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25587.0391,
+      "close": 25476.6406,
+      "daily_pct": -0.4315,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2975.48,
+      "close": 2986.6299,
+      "daily_pct": 0.3747,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 3990.3,
+      "close": 3996.3,
+      "daily_pct": 0.1504,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": null,
+      "close": 4.451,
+      "daily_pct": null,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": null
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.61,
+      "close": 101.743,
+      "daily_pct": 0.1309,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 70.34,
+      "close": 69.79,
+      "daily_pct": -0.7819,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 72366.34,
+      "prev_close": 69174.97,
+      "daily_pct": 4.6135,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23076.91,
+      "prev_close": 23412.18,
+      "daily_pct": -1.432,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8930.3,
+      "prev_close": 8471.02,
+      "daily_pct": 5.4218,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24056.0,
+      "prev_close": 24021.65,
+      "daily_pct": 0.143,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8748.7,
+      "prev_close": 8808.4,
+      "daily_pct": -0.6778,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24919.26,
+      "prev_close": 24919.26,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10527.81,
+      "prev_close": 10527.81,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8434.73,
+      "prev_close": 8434.73,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6264.46,
+      "prev_close": 6264.46,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.13417,
+      "prev_close": 1.13795,
+      "daily_pct": -0.3323
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.31569,
+      "prev_close": 1.32001,
+      "daily_pct": -0.3276
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 161.871,
+      "prev_close": 161.599,
+      "daily_pct": 0.1683
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.68932,
+      "prev_close": 0.69156,
+      "daily_pct": -0.3236
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22962,
+      "prev_close": 1.23501,
+      "daily_pct": -0.4365
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7475.0,
+      "prev_close": 7475.0,
+      "daily_pct": 0.6294
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30125.75,
+      "prev_close": 30125.75,
+      "daily_pct": 2.0719
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52342.0,
+      "prev_close": 52342.0,
+      "daily_pct": 0.1205
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 3996.3,
+      "prev_close": 3996.3,
+      "daily_pct": 0.1504
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.86,
+      "prev_close": 109.86,
+      "daily_pct": -0.1278
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 69.79,
+      "prev_close": 69.79,
+      "daily_pct": -0.7819
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "GDP",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "GameStop\u2019s CEO just sacrificed a $35 billion pay package. Here\u2019s how it could impact his effort to buy eBay",
+      "source": "CNBC",
+      "published": "Thu, 25 Jun 2026 12:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/06/25/gamestops-ceo-sacrificed-pay-it-could-impact-the-effort-to-buy-ebay-.html",
+      "summary": "Ryan Cohen has shared few details on how he'll move forward with his $56 billion offer for eBay since the company rejected the proposal in May."
+    },
+    {
+      "headline": "Chevron says no quick fix for gas prices as Trump takes on Big Oil: \u2018It\u2019s going to take time\u2019",
+      "source": "CNBC",
+      "published": "Thu, 25 Jun 2026 11:01:35 GMT",
+      "url": "https://www.cnbc.com/2026/06/25/chevron-gas-prices-trump-big-oil.html",
+      "summary": "Her comments come shortly after President Donald Trump ordered an investigation into Big Oil, accusing them of \"gouging\" consumers."
+    },
+    {
+      "headline": "Darden Restaurants earnings beat estimates but Olive Garden growth weakens",
+      "source": "CNBC",
+      "published": "Thu, 25 Jun 2026 11:41:01 GMT",
+      "url": "https://www.cnbc.com/2026/06/25/darden-restaurants-dri-q4-2026-earnings.html",
+      "summary": "Same-store sales growth at Darden's fine-dining restaurants and Olive Garden fell short of expectations."
+    },
+    {
+      "headline": "Iraq piles pressure on OPEC over quota dispute after UAE exit",
+      "source": "CNBC",
+      "published": "Thu, 25 Jun 2026 11:58:16 GMT",
+      "url": "https://www.cnbc.com/2026/06/25/iraq-opec-oil-supply-quota-exports-subdued.html",
+      "summary": "Reuters reported that though Iraq had considered leaving OPEC, the \u200bcurrent plan is to remain a member of the group while seeking a higher output quota."
+    },
+    {
+      "headline": "Iran warns ships it's 'unacceptable and dangerous' to transit the Strait of Hormuz without their approval",
+      "source": "CNBC",
+      "published": "Thu, 25 Jun 2026 06:08:46 GMT",
+      "url": "https://www.cnbc.com/2026/06/25/iran-navy-shipping-recovery-strait-of-hormuz-unauthorized-routes-us-fragile-mou-.html",
+      "summary": "The stern warning underscores Tehran's resolve to retain control over the Strait of Hormuz and to resist transits that bypass its authorization."
+    },
+    {
+      "headline": "Micron is tech's new margin king as memory crisis pushes company past Nvidia and Meta",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 22:33:45 GMT",
+      "url": "https://www.cnbc.com/2026/06/24/micron-is-techs-margin-king-memory-crisis-pushes-it-past-nvidia-meta.html",
+      "summary": "Micron said in its earnings report that its gross margin jumped to 84.9% from 39% a year ago."
+    },
+    {
+      "headline": "Identity theft victims face 'unconscionable' IRS delays, report says",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 20:50:28 GMT",
+      "url": "https://www.cnbc.com/2026/06/24/identity-theft-victims-face-unconscionable-irs-delays-report-says.html",
+      "summary": "Victims currently face wait times of almost two years to resolve their cases, according to the National Taxpayer Advocate."
+    },
+    {
+      "headline": "Qualcomm stock pops 15% after chipmaker almost doubles projection for 2029 non-handset revenue",
+      "source": "CNBC",
+      "published": "Wed, 24 Jun 2026 20:44:53 GMT",
+      "url": "https://www.cnbc.com/2026/06/24/qualcomm-data-center-cpu-meta.html",
+      "summary": "Qualcomm's primary business has been smartphones, which accounted for two-thirds of the company's product revenue in it's most recent quarter."
+    }
+  ]
+}
