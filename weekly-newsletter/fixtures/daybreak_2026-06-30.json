@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-06-30",
+    "generated_at": "2026-06-30T10:31:00.339495Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7354.02,
+      "close": 7440.4302,
+      "daily_pct": 1.175,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51876.1094,
+      "close": 52182.7383,
+      "daily_pct": 0.5911,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25297.6191,
+      "close": 25820.1406,
+      "daily_pct": 2.0655,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3010.0801,
+      "close": 3010.4199,
+      "daily_pct": 0.0113,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4022.3,
+      "close": 4038.7,
+      "daily_pct": 0.4077,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.392,
+      "close": 4.372,
+      "daily_pct": -0.4554,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.11,
+      "close": 101.365,
+      "daily_pct": 0.2522,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 70.75,
+      "close": 70.97,
+      "daily_pct": 0.311,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 70062.32,
+      "prev_close": 69468.11,
+      "daily_pct": 0.8554,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22881.02,
+      "prev_close": 23026.68,
+      "daily_pct": -0.6326,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8476.48,
+      "prev_close": 8394.65,
+      "daily_pct": 0.9748,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23865.75,
+      "prev_close": 23946.25,
+      "daily_pct": -0.3362,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8778.7,
+      "prev_close": 8823.4,
+      "daily_pct": -0.5066,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24936.32,
+      "prev_close": 24936.32,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10596.13,
+      "prev_close": 10596.11,
+      "daily_pct": 0.0002,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8413.27,
+      "prev_close": 8413.27,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6303.3,
+      "prev_close": 6303.3,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.13986,
+      "prev_close": 1.13856,
+      "daily_pct": 0.114
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32352,
+      "prev_close": 1.31971,
+      "daily_pct": 0.2885
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.33701,
+      "prev_close": 161.787,
+      "daily_pct": 0.34
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.68875,
+      "prev_close": 0.68962,
+      "daily_pct": -0.126
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23536,
+      "prev_close": 1.23446,
+      "daily_pct": 0.0729
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7507.0,
+      "prev_close": 7507.0,
+      "daily_pct": 0.09
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30100.25,
+      "prev_close": 30100.25,
+      "daily_pct": 0.1581
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52649.0,
+      "prev_close": 52649.0,
+      "daily_pct": 0.1465
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4038.6,
+      "prev_close": 4038.6,
+      "daily_pct": 0.4052
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 110.25,
+      "prev_close": 110.25,
+      "daily_pct": 0.0567
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 70.97,
+      "prev_close": 70.97,
+      "daily_pct": 0.311
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.1%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "U.S. crude oil hovers above $70 as Trump, Iran issue mixed messages on talks in Qatar",
+      "source": "CNBC",
+      "published": "Tue, 30 Jun 2026 10:13:57 GMT",
+      "url": "https://www.cnbc.com/2026/06/30/oil-prices-brent-wti-crude-trump-iran.html",
+      "summary": "The moves come as oil traders monitor the prospect of U.S.-Iran talks in Doha on Tuesday."
+    },
+    {
+      "headline": "AeroVironment soars 19% on earnings beat, backlog grows to $1.2 billion",
+      "source": "CNBC",
+      "published": "Mon, 29 Jun 2026 23:25:39 GMT",
+      "url": "https://www.cnbc.com/2026/06/29/aerovironment-stock-soars-on-earnings-beat-backlog-grows-to-1point2b.html",
+      "summary": "Dronemaker AeroVironment's autonomous system revenue beat expectations by $90 million and its backlog continued to grow."
+    },
+    {
+      "headline": "Japanese yen sinks to 40-year low, keeping intervention risks in focus",
+      "source": "CNBC",
+      "published": "Tue, 30 Jun 2026 05:40:22 GMT",
+      "url": "https://www.cnbc.com/2026/06/30/japan-yen-falls-lowest-level-since-1986-dollar-intervention-risk.html",
+      "summary": "The Japanese yen weakened to its lowest level against the U.S. dollar since 1986 on Tuesday, keeping investors on alert for possible intervention from Japanese authorities."
+    },
+    {
+      "headline": "Apple supplier Luxshare seeks up to $3.1 billion in Hong Kong share sale",
+      "source": "CNBC",
+      "published": "Tue, 30 Jun 2026 00:11:03 GMT",
+      "url": "https://www.cnbc.com/2026/06/30/apple-supplier-luxshare-seeks-3point1-billion-in-hong-kong-share-sale-.html",
+      "summary": "Apple supplier Luxshare Precision Industry is seeking to raise as much as $24.27 billion Hong Kong dollars ($3.1 billion) through a Hong Kong share sale."
+    },
+    {
+      "headline": "China factory activity grows faster than expected in June on tech export demand",
+      "source": "CNBC",
+      "published": "Tue, 30 Jun 2026 02:35:39 GMT",
+      "url": "https://www.cnbc.com/2026/06/30/china-factory-activity-june-tech-export-demand-pmi-nbs.html",
+      "summary": "China's manufacturing engine held up this year as surging demand for artificial intelligence technology helped offset the drag from Middle East turmoil."
+    },
+    {
+      "headline": "Supreme Court rules Trump cannot fire Fed Governor Lisa Cook for now",
+      "source": "CNBC",
+      "published": "Mon, 29 Jun 2026 17:29:44 GMT",
+      "url": "https://www.cnbc.com/2026/06/29/supreme-court-lisa-cook-trump-federal-reserve.html",
+      "summary": "The ruling by the Supreme Court means that Lisa Cook will remain as a Federal Reserve governor as her lawsuit challenging Trump's effort to fire her proceeds."
+    },
+    {
+      "headline": "Micron's monster post-earnings rally is almost gone. Traders divided on where it goes next",
+      "source": "CNBC",
+      "published": "Mon, 29 Jun 2026 18:28:08 GMT",
+      "url": "https://www.cnbc.com/2026/06/29/micron-shares-fall-how-bulls-and-bears-are-positioned-in-chip-trade.html",
+      "summary": "The maker of memory chips slid to start the week, marking an about-face from its post-earnings surge."
+    },
+    {
+      "headline": "Oil prices near pre-war levels  \u2014  but persistent supply risks could spark a rebound, analysts warn",
+      "source": "CNBC",
+      "published": "Mon, 29 Jun 2026 14:46:14 GMT",
+      "url": "https://www.cnbc.com/2026/06/29/strait-of-hormuz-shipping-iran-oil-war-us.html",
+      "summary": "Commodity strategists warn that Iranian leverage in the Strait of Hormuz will continue to weigh on oil markets and shipping costs."
+    }
+  ]
+}
