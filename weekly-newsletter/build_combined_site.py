@@ -12,9 +12,12 @@ import json as _json
 import markdown
 import re
 import shutil
+import socket
 import sys
 from datetime import datetime
 from pathlib import Path
+
+socket.setdefaulttimeout(15)
 
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
@@ -1734,7 +1737,7 @@ def _yf_monthly(ticker_sym, limit=5):
         start = end - timedelta(days=limit * 40)
         df = yf.download(ticker_sym, start=start.strftime("%Y-%m-%d"),
                          end=end.strftime("%Y-%m-%d"), interval="1mo",
-                         progress=False, auto_adjust=True)
+                         progress=False, auto_adjust=True, timeout=10)
         if df.empty:
             return []
         close_col = df["Close"]
@@ -4016,7 +4019,13 @@ def build(use_mock=True):
     # Build Global issue pages
     global_ctxs = {}
     for date_str in global_dates:
-        print(f"Building Global {date_str} …")
+        from datetime import date as _date3
+        global_html_path = SITE_DIR / "global" / date_str / "index.html"
+        skip_narrative = global_html_path.exists() and date_str != _date3.today().isoformat()
+        if skip_narrative:
+            print(f"Building Global {date_str} … (already published, skipping live narrative call)")
+        else:
+            print(f"Building Global {date_str} …")
         try:
             raw_equity    = fetch_global_equity_data(date_str, use_mock=use_mock)
             raw_fx        = fetch_global_fx_data(date_str, use_mock=use_mock)
@@ -4025,7 +4034,7 @@ def build(use_mock=True):
             eq_data       = process_global_equity_data(raw_equity)
             fx_data       = process_global_fx_data(raw_fx)
             com_data      = process_global_commodity_data(raw_commodity)
-            ctx           = build_global_template_context(eq_data, fx_data, com_data, econ, date_str)
+            ctx           = build_global_template_context(eq_data, fx_data, com_data, econ, date_str, skip_narrative=skip_narrative)
         except Exception as e:
             print(f"  WARNING: could not build global context for {date_str}: {e}")
             continue

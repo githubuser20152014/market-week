@@ -314,29 +314,32 @@ Return ONLY valid JSON - no markdown fences, no extra keys, no commentary outsid
 """
 
 
+_NARRATIVE_FALLBACK = {
+    "big_theme_title":       "Markets Navigating Macro Crosscurrents",
+    "big_theme_body":        "Global markets moved cautiously this week as investors weighed mixed signals from major economies.",
+    "equity_subtitle":       "Regional Divergence Across US, Europe, and Asia-Pacific",
+    "equity_narrative":      "Equity markets showed regional divergence across US, Europe, and Asia-Pacific.",
+    "fx_subtitle":           "Dollar Steady as Rate Expectations Shift",
+    "fx_narrative":          "Currency markets reflected shifting rate expectations and risk sentiment.",
+    "commodities_subtitle":  "Energy and Metals Respond to Global Demand Signals",
+    "commodities_narrative": "Commodity prices responded to global demand signals and USD movements.",
+    "events_commentary":     "Economic data releases were broadly in line with expectations.",
+    "next_week_commentary":  "Key data releases next week will provide further clarity on the macro outlook.",
+    "one_trade_ticker":      "EFA",
+    "one_trade_direction":   "Long",
+    "one_trade_body":        "International developed markets offer diversification away from US-centric risk.\n\n**Confirms:** EFA holds above prior week's close with dollar weakness continuing.\n**Risk:** Dollar reverses sharply higher on strong US data, compressing international returns.",
+    "plain_summary":         "This week's key risk for global portfolios is energy-driven inflation. Hold your positions and watch next week's data before making changes.",
+    "positioning":           "- Maintain diversified global ETF exposure\n- Monitor rate sensitive sectors\n- Watch USD for EM signals",
+}
+
+
 def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_regime, digest_context=""):
     """Call Claude API to generate narrative sections.
 
     Returns:
         dict with 8 narrative keys (falls back to placeholder strings on error).
     """
-    _FALLBACK = {
-        "big_theme_title":       "Markets Navigating Macro Crosscurrents",
-        "big_theme_body":        "Global markets moved cautiously this week as investors weighed mixed signals from major economies.",
-        "equity_subtitle":       "Regional Divergence Across US, Europe, and Asia-Pacific",
-        "equity_narrative":      "Equity markets showed regional divergence across US, Europe, and Asia-Pacific.",
-        "fx_subtitle":           "Dollar Steady as Rate Expectations Shift",
-        "fx_narrative":          "Currency markets reflected shifting rate expectations and risk sentiment.",
-        "commodities_subtitle":  "Energy and Metals Respond to Global Demand Signals",
-        "commodities_narrative": "Commodity prices responded to global demand signals and USD movements.",
-        "events_commentary":     "Economic data releases were broadly in line with expectations.",
-        "next_week_commentary":  "Key data releases next week will provide further clarity on the macro outlook.",
-        "one_trade_ticker":      "EFA",
-        "one_trade_direction":   "Long",
-        "one_trade_body":        "International developed markets offer diversification away from US-centric risk.\n\n**Confirms:** EFA holds above prior week's close with dollar weakness continuing.\n**Risk:** Dollar reverses sharply higher on strong US data, compressing international returns.",
-        "plain_summary":         "This week's key risk for global portfolios is energy-driven inflation. Hold your positions and watch next week's data before making changes.",
-        "positioning":           "- Maintain diversified global ETF exposure\n- Monitor rate sensitive sectors\n- Watch USD for EM signals",
-    }
+    _FALLBACK = _NARRATIVE_FALLBACK
 
     api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not api_key:
@@ -359,19 +362,40 @@ def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_
 
     try:
         import anthropic
-        client = anthropic.Anthropic(api_key=api_key)
-        response = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=4096,
-            system=_GLOBAL_SYSTEM_PROMPT,
-            messages=[
-                {
-                    "role": "user",
-                    "content": json.dumps(payload, default=str),
-                }
-            ],
-        )
-        raw_text = response.content[0].text.strip()
+        import threading
+
+        # httpx/anthropic client-level timeouts have been observed to not fire
+        # reliably against a stalled connection in some network environments, so
+        # enforce a hard deadline via a daemon thread join as a backstop.
+        _outcome = {}
+
+        def _call_claude():
+            try:
+                client = anthropic.Anthropic(api_key=api_key, timeout=15.0)
+                _outcome["response"] = client.messages.create(
+                    model="claude-sonnet-4-6",
+                    max_tokens=4096,
+                    system=_GLOBAL_SYSTEM_PROMPT,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": json.dumps(payload, default=str),
+                        }
+                    ],
+                )
+            except Exception as e:
+                _outcome["error"] = e
+
+        t = threading.Thread(target=_call_claude, daemon=True)
+        t.start()
+        t.join(20)
+        if t.is_alive():
+            print("WARNING: Claude API call timed out after 20s — using placeholder narrative.")
+            return _FALLBACK
+        if "error" in _outcome:
+            raise _outcome["error"]
+
+        raw_text = _outcome["response"].content[0].text.strip()
         # Strip markdown fences if present
         raw_text = re.sub(r'^```(?:json)?\s*', '', raw_text)
         raw_text = re.sub(r'\s*```$', '', raw_text).strip()
@@ -389,7 +413,7 @@ def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_
 
 def build_global_template_context(
     equity_data, fx_data, commodity_data, econ, date_str,
-    digest_dir=None, data_date=None,
+    digest_dir=None, data_date=None, skip_narrative=False,
 ):
     """Assemble the full context dict for Jinja2 / HTML rendering.
 
@@ -399,6 +423,10 @@ def build_global_template_context(
         commodity_data: output of process_global_commodity_data()
         econ:           dict with 'past_week' and 'upcoming_week' lists
         date_str:       YYYY-MM-DD
+        skip_narrative: when True, skip the live Claude API call and use
+            placeholder narrative text. Use this for already-published
+            editions where the caller immediately overrides narrative
+            fields from the approved markdown anyway.
 
     Returns:
         dict ready for template rendering.
@@ -413,9 +441,12 @@ def build_global_template_context(
     if digest_context:
         print(f"Digest context loaded ({len(digest_context)} chars from {data_date or date_str} week).")
 
-    narrative = generate_global_narrative(
-        equity_data, fx_data, commodity_data, econ, macro_regime, digest_context
-    )
+    if skip_narrative:
+        narrative = dict(_NARRATIVE_FALLBACK)
+    else:
+        narrative = generate_global_narrative(
+            equity_data, fx_data, commodity_data, econ, macro_regime, digest_context
+        )
 
     # Flatten all equities for the data appendix
     all_equities = (

@@ -263,14 +263,35 @@ def generate_daybreak_claude_narrative(
 
     try:
         import anthropic
-        client = anthropic.Anthropic(api_key=api_key)
-        response = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=2500,
-            system=_DAYBREAK_SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": _json.dumps(payload, default=str)}],
-        )
-        raw = response.content[0].text.strip()
+        import threading
+
+        # httpx/anthropic client-level timeouts have been observed to not fire
+        # reliably against a stalled connection in some network environments, so
+        # enforce a hard deadline via a daemon thread join as a backstop.
+        _outcome = {}
+
+        def _call_claude():
+            try:
+                client = anthropic.Anthropic(api_key=api_key, timeout=15.0)
+                _outcome["response"] = client.messages.create(
+                    model="claude-sonnet-4-6",
+                    max_tokens=2500,
+                    system=_DAYBREAK_SYSTEM_PROMPT,
+                    messages=[{"role": "user", "content": _json.dumps(payload, default=str)}],
+                )
+            except Exception as e:
+                _outcome["error"] = e
+
+        t = threading.Thread(target=_call_claude, daemon=True)
+        t.start()
+        t.join(20)
+        if t.is_alive():
+            print("WARNING: Daybreak Claude API call timed out after 20s — using template narrative.")
+            return None
+        if "error" in _outcome:
+            raise _outcome["error"]
+
+        raw = _outcome["response"].content[0].text.strip()
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):
