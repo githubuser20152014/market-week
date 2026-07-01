@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-07-01",
+    "generated_at": "2026-07-01T09:01:52.288747Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7440.4302,
+      "close": 7499.3599,
+      "daily_pct": 0.792,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52182.7383,
+      "close": 52319.1992,
+      "daily_pct": 0.2615,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25820.1406,
+      "close": 26213.7207,
+      "daily_pct": 1.5243,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3010.4199,
+      "close": 3024.3701,
+      "daily_pct": 0.4634,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4022.8999,
+      "close": 3989.0,
+      "daily_pct": -0.8427,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.392,
+      "close": 4.372,
+      "daily_pct": -0.4554,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.19,
+      "close": 101.336,
+      "daily_pct": 0.1443,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 69.5,
+      "close": 68.68,
+      "daily_pct": -1.1799,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 70474.96,
+      "prev_close": 70062.32,
+      "daily_pct": 0.589,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22881.02,
+      "prev_close": 23026.68,
+      "daily_pct": -0.6326,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8303.41,
+      "prev_close": 8476.48,
+      "daily_pct": -2.0418,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24026.7,
+      "prev_close": 23865.75,
+      "daily_pct": 0.6744,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8722.9,
+      "prev_close": 8778.7,
+      "daily_pct": -0.6356,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25061.71,
+      "prev_close": 25061.71,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10488.98,
+      "prev_close": 10488.7,
+      "daily_pct": 0.0027,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8377.36,
+      "prev_close": 8377.36,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6323.04,
+      "prev_close": 6323.04,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.13999,
+      "prev_close": 1.1422,
+      "daily_pct": -0.1938
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3248,
+      "prev_close": 1.3254,
+      "daily_pct": -0.045
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.666,
+      "prev_close": 161.923,
+      "daily_pct": 0.4589
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.68937,
+      "prev_close": 0.68824,
+      "daily_pct": 0.1642
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23498,
+      "prev_close": 1.23824,
+      "daily_pct": -0.263
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7526.75,
+      "prev_close": 7526.75,
+      "daily_pct": -0.2848
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30359.0,
+      "prev_close": 30359.0,
+      "daily_pct": -0.5389
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52548.0,
+      "prev_close": 52548.0,
+      "daily_pct": -0.2316
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 3989.0,
+      "prev_close": 3989.0,
+      "daily_pct": -0.8427
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.64,
+      "prev_close": 109.64,
+      "daily_pct": -0.2275
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 68.67,
+      "prev_close": 68.67,
+      "daily_pct": -1.1942
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Trump's annual financial disclosure shows more than $580M in crypto-related income",
+      "source": "CNBC",
+      "published": "Tue, 30 Jun 2026 22:53:43 GMT",
+      "url": "https://www.cnbc.com/2026/06/30/trump-financial-disclosure-released.html",
+      "summary": "Trump's 927-page financial disclosure report for 2025 totals more than 900 pages detailing holdings in cryptocurrency and stocks."
+    },
+    {
+      "headline": "Europe\u2019s defense boom faces a new test: Can it actually deliver weapons?",
+      "source": "CNBC",
+      "published": "Wed, 01 Jul 2026 07:18:52 GMT",
+      "url": "https://www.cnbc.com/2026/07/01/europe-defense-stocks-rearmament.html",
+      "summary": "Europe\u2019s defense boom faces a test as investors weigh whether budgets and backlogs can become weapons, factories and returns."
+    },
+    {
+      "headline": "Oil prices wobble as breakdown in U.S.-Iran talks casts doubt over peace process",
+      "source": "CNBC",
+      "published": "Wed, 01 Jul 2026 08:34:42 GMT",
+      "url": "https://www.cnbc.com/2026/07/01/oil-prices-brent-wti-crude-trump-iran.html",
+      "summary": "Oil prices were lower on Wednesday after Iran said it would not meet with U.S. delegates for talks in Qatar, amplifying concern about the peace process."
+    },
+    {
+      "headline": "North Sea oil and renewables: The UK\u2019s next PM faces a defining energy policy decision",
+      "source": "CNBC",
+      "published": "Wed, 01 Jul 2026 06:28:00 GMT",
+      "url": "https://www.cnbc.com/2026/07/01/burnham-north-sea-oil-energy-security.html",
+      "summary": "Andy Burnham could face an early test over North Sea oil drilling as energy shocks revive the UK energy security debate."
+    },
+    {
+      "headline": "Japan spent $74 billion propping up the yen. Investors say the real battle is with the Fed",
+      "source": "CNBC",
+      "published": "Wed, 01 Jul 2026 05:33:43 GMT",
+      "url": "https://www.cnbc.com/2026/07/01/japan-yen-40-year-low-intervention-fed-boj-carry-trade.html",
+      "summary": "Yen intervention alone is unlikely to reverse losses while wide U.S.-Japan rate differentials keep supporting the dollar, said analysts."
+    },
+    {
+      "headline": "Trump's massive defense budget, depleted war machine, spark U.S. state battle for business and jobs",
+      "source": "CNBC",
+      "published": "Tue, 30 Jun 2026 15:31:39 GMT",
+      "url": "https://www.cnbc.com/2026/06/30/trump-trillion-dollar-defense-budget-missile-contracts.html",
+      "summary": "Trump's huge defense budget request and a race to replenish weapons stocks while building hypersonic missiles lead to war between U.S. states for jobs."
+    },
+    {
+      "headline": "Jim Cramer says the AI trade has shifted \u2014 and these stocks are leading now",
+      "source": "CNBC",
+      "published": "Tue, 30 Jun 2026 22:24:43 GMT",
+      "url": "https://www.cnbc.com/2026/06/30/jim-cramer-ai-trade-shifted-stocks-leading-now.html",
+      "summary": "CNBC's Jim Cramer said Wall Street is rewarding the companies supplying the artificial intelligence boom rather than the technology giants funding it."
+    },
+    {
+      "headline": "LNG market disruption may continue for months as a top producer withholds some Italian shipments",
+      "source": "CNBC",
+      "published": "Wed, 01 Jul 2026 06:34:15 GMT",
+      "url": "https://www.cnbc.com/2026/07/01/qatarenergy-extend-force-majeure-september-italys-edison-iran-war-.html",
+      "summary": "QatarEnergy extended its force majeure, withholding four additional LNG cargoes until September, as damage from the war prolongs supply constraints."
+    }
+  ]
+}
