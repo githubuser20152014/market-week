@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-06",
+    "generated_at": "2026-07-06T08:51:26.343735Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7483.23,
+      "close": 7483.2402,
+      "daily_pct": 0.0001,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52305.2383,
+      "close": 52900.0703,
+      "daily_pct": 1.1372,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26040.0293,
+      "close": 25832.6699,
+      "daily_pct": -0.7963,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3012.5901,
+      "close": 2996.1101,
+      "daily_pct": -0.547,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4112.7002,
+      "close": 4164.2998,
+      "daily_pct": 1.2546,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.475,
+      "close": 4.485,
+      "daily_pct": 0.2235,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.86,
+      "close": 101.071,
+      "daily_pct": 0.2092,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 68.69,
+      "close": 68.24,
+      "daily_pct": -0.6551,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 69737.69,
+      "prev_close": 69744.07,
+      "daily_pct": -0.0092,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23616.32,
+      "prev_close": 23350.03,
+      "daily_pct": 1.1404,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8051.33,
+      "prev_close": 8088.34,
+      "daily_pct": -0.4576,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24405.2,
+      "prev_close": 24270.85,
+      "daily_pct": 0.5535,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8831.0,
+      "prev_close": 8844.4,
+      "daily_pct": -0.1515,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25840.48,
+      "prev_close": 25840.48,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10721.36,
+      "prev_close": 10721.36,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8554.3,
+      "prev_close": 8554.3,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6419.24,
+      "prev_close": 6419.24,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14194,
+      "prev_close": 1.14227,
+      "daily_pct": -0.0285
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33316,
+      "prev_close": 1.33387,
+      "daily_pct": -0.0536
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.23199,
+      "prev_close": 161.44901,
+      "daily_pct": 0.485
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69324,
+      "prev_close": 0.6916,
+      "daily_pct": 0.2372
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.24136,
+      "prev_close": 1.24315,
+      "daily_pct": -0.144
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7562.0,
+      "prev_close": 7562.0,
+      "daily_pct": 0.4483
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29850.0,
+      "prev_close": 29850.0,
+      "daily_pct": 0.9947
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53252.0,
+      "prev_close": 53252.0,
+      "daily_pct": 0.1297
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4164.3,
+      "prev_close": 4164.3,
+      "daily_pct": 1.2546
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.72,
+      "prev_close": 109.72,
+      "daily_pct": 0.1283
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 68.24,
+      "prev_close": 68.24,
+      "daily_pct": -0.6551
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Lockheed Martin leading race for $3.5 billion purchase of naval defense firm Ultra Maritime",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 02:51:03 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/lockheed-martin-leading-race-for-3point5-billion-buy-of-ultra-maritime-.html",
+      "summary": "Ultra is owned by private equity firm Advent International, and specialises in anti-submarine technology."
+    },
+    {
+      "headline": "Trump's calls, Ukraine's strikes and Russia's barrage on Kyiv put markets on alert",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 08:50:04 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/ukraine-russia-kyiv-trump-putin-zelenskyy.html",
+      "summary": "Trump reportedly spoke with Putin and Zelenskyy as Ukraine struck Russian targets and Moscow launched another deadly attack on Kyiv."
+    },
+    {
+      "headline": "'NATO 3.0': Defense spending pledges face the Trump test",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/nato-summit-turkey-us-trump-defense-spending.html",
+      "summary": "Leaders are expected to focus on whether Europe can turn higher defense spending into military power as Washington pushes allies to shoulder more of the burden."
+    },
+    {
+      "headline": "Why Iran may find it difficult to clear its oil inventories even after sanctions relief",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 06:50:12 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/iran-oil-supply-hormuz-china-energy.html",
+      "summary": "Iran may face challenges in clearing oil inventories even after restrictions have been lifted, amid oil supplies elsewhere while China becomes less enthusiastic"
+    },
+    {
+      "headline": "Ebola outbreak containment hampered by USAID closure, experts say",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/ebola-drc-uganda-usaid-trump-musk.html",
+      "summary": "Foreign aid cuts have \"demonstrably worsened\" the Ebola crisis, a virologist told CNBC."
+    },
+    {
+      "headline": "Cargo vessel in Red Sea reports coming under attack, UK maritime body says",
+      "source": "CNBC",
+      "published": "Sun, 05 Jul 2026 12:57:45 GMT",
+      "url": "https://www.cnbc.com/2026/07/05/cargo-vessel-in-red-sea-reports-attack-uk-maritime-body-says.html",
+      "summary": "The incident was reported in one of the world's most crucial trade transit routes amid a fragile ceasefire between Iran and the U.S."
+    },
+    {
+      "headline": "Oman walks a diplomatic tightrope over Strait of Hormuz fees, creating a \u2018blind spot\u2019 for markets",
+      "source": "CNBC",
+      "published": "Fri, 03 Jul 2026 07:59:34 GMT",
+      "url": "https://www.cnbc.com/2026/07/03/oman-strait-hormuz-fees-iran-trump.html",
+      "summary": "Oman is using strategic ambiguity as talks over possible Strait of Hormuz fees raise legal, diplomatic and oil market concerns."
+    },
+    {
+      "headline": "American Express and Chase move luxury lounge wars beyond the airport",
+      "source": "CNBC",
+      "published": "Fri, 03 Jul 2026 18:03:34 GMT",
+      "url": "https://www.cnbc.com/2026/07/03/amex-chase-credit-card-lounges.html",
+      "summary": "Credit card companies are increasingly offering access to lounges and perks at festivals and sporting events, often exclusively for premium cardholders."
+    }
+  ]
+}
