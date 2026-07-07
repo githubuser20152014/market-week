@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-07",
+    "generated_at": "2026-07-07T10:21:01.706229Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7483.2402,
+      "close": 7537.4302,
+      "daily_pct": 0.7242,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52900.0703,
+      "close": 53055.9102,
+      "daily_pct": 0.2946,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25832.6699,
+      "close": 26121.1602,
+      "daily_pct": 1.1168,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2996.1101,
+      "close": 3009.54,
+      "daily_pct": 0.4482,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4155.1001,
+      "close": 4144.7002,
+      "daily_pct": -0.2503,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.475,
+      "close": 4.485,
+      "daily_pct": 0.2235,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.85,
+      "close": 100.97,
+      "daily_pct": 0.119,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 68.55,
+      "close": 69.13,
+      "daily_pct": 0.8461,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 68256.96,
+      "prev_close": 69737.69,
+      "daily_pct": -2.1233,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23496.89,
+      "prev_close": 23616.32,
+      "daily_pct": -0.5057,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7656.31,
+      "prev_close": 8051.33,
+      "daily_pct": -4.9063,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24398.7,
+      "prev_close": 24430.35,
+      "daily_pct": -0.1296,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8803.9,
+      "prev_close": 8831.0,
+      "daily_pct": -0.3069,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25706.85,
+      "prev_close": 25706.85,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10701.52,
+      "prev_close": 10701.52,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8514.07,
+      "prev_close": 8514.07,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6377.33,
+      "prev_close": 6377.33,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14325,
+      "prev_close": 1.14377,
+      "daily_pct": -0.0457
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33801,
+      "prev_close": 1.33531,
+      "daily_pct": 0.202
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 161.90401,
+      "prev_close": 161.452,
+      "daily_pct": 0.28
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69473,
+      "prev_close": 0.6937,
+      "daily_pct": 0.149
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23914,
+      "prev_close": 1.24409,
+      "daily_pct": -0.3978
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7581.75,
+      "prev_close": 7581.75,
+      "daily_pct": -0.1284
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29661.5,
+      "prev_close": 29661.5,
+      "daily_pct": -0.9335
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53478.0,
+      "prev_close": 53478.0,
+      "daily_pct": 0.1986
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4144.7,
+      "prev_close": 4144.7,
+      "daily_pct": -0.2503
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.55,
+      "prev_close": 109.55,
+      "daily_pct": -0.0855
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 69.13,
+      "prev_close": 69.13,
+      "daily_pct": 0.8461
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.1%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices rise after report of Iranian attack on commercial ships in Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Tue, 07 Jul 2026 10:10:40 GMT",
+      "url": "https://www.cnbc.com/2026/07/07/oil-prices-iran-strait-hormuz.html",
+      "summary": "Brent and U.S. crude futures rose after a report of an Iranian attack on commercial ships in the Strait of Hormuz."
+    },
+    {
+      "headline": "Trump heads to Turkey as NATO is strained by Russian attacks, U.S. impatience",
+      "source": "CNBC",
+      "published": "Tue, 07 Jul 2026 07:18:55 GMT",
+      "url": "https://www.cnbc.com/2026/07/07/trump-nato-turkey-russia-ukraine-spending.html",
+      "summary": "Trump frequently vented about NATO members' refusal to heed U.S. calls for help clearing the Strait of Hormuz during its campaign against Iran."
+    },
+    {
+      "headline": "Google backs nuclear fusion startup targeting Europe\u2019s first commercial power plant",
+      "source": "CNBC",
+      "published": "Tue, 07 Jul 2026 06:24:28 GMT",
+      "url": "https://www.cnbc.com/2026/07/07/google-proxima-fusion-funding.html",
+      "summary": "Proxima Fusion has raised $468 million as it looks to move towards commercializing the promising but infamously difficult technical challenge of nuclear fusion."
+    },
+    {
+      "headline": "China's Alibaba bans Anthropic AI for employees after 'distillation attack' accusation",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 21:26:17 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/alibaba-anthropic-ai-ban-claude-china.html",
+      "summary": "Chinese e-commerce giant Alibaba has put Anthropic's Claude Code on a high-risk software list."
+    },
+    {
+      "headline": "Here's how SpaceX's Nasdaq-100 inclusion might affect options pricing",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 18:27:06 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/heres-how-spacexs-nasdaq-100-inclusion-might-affect-options-pricing.html",
+      "summary": "About half-a-million SpaceX options traded by midday Monday, a little below the average since inception."
+    },
+    {
+      "headline": "Microsoft cuts 4,800 jobs, as Xbox unit downsizes and plans to spin off four gaming studios",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 21:37:58 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/microsoft-cuts-2point1percent-of-employees-as-xbox-unit-plans-to-spin-studios.html",
+      "summary": "Microsoft is cutting jobs in its commercial business and its Xbox gaming group, where revenue has been shrinking."
+    },
+    {
+      "headline": "Lockheed Martin to buy naval defense firm Ultra Maritime for $3.45 billion",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 12:54:26 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/lockheed-martin-leading-race-for-3point5-billion-buy-of-ultra-maritime-.html",
+      "summary": "Ultra is owned by private equity firm Advent International, and specialises in anti-submarine technology."
+    },
+    {
+      "headline": "Versant agrees to buy golf simulator company Full Swing for $530 million",
+      "source": "CNBC",
+      "published": "Mon, 06 Jul 2026 12:53:00 GMT",
+      "url": "https://www.cnbc.com/2026/07/06/versant-to-buy-golf-simulator-company-full-swing.html",
+      "summary": "The deal for Full Swing will expand Versant's nontraditional media assets in an effort to diversify revenue from cable television."
+    }
+  ]
+}
