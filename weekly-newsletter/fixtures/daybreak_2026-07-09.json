@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-07-09",
+    "generated_at": "2026-07-09T10:53:01.936837Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7503.8501,
+      "close": 7482.71,
+      "daily_pct": -0.2817,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52925.1484,
+      "close": 52348.3906,
+      "daily_pct": -1.0898,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25818.6895,
+      "close": 25870.6504,
+      "daily_pct": 0.2013,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2982.49,
+      "close": 2956.3899,
+      "daily_pct": -0.8751,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4070.8999,
+      "close": 4112.7998,
+      "daily_pct": 1.0293,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.529,
+      "close": 4.569,
+      "daily_pct": 0.8832,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.05,
+      "close": 100.973,
+      "daily_pct": -0.0762,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 73.52,
+      "close": 73.77,
+      "daily_pct": 0.34,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 67743.85,
+      "prev_close": 66819.05,
+      "daily_pct": 1.384,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24030.18,
+      "prev_close": 24199.46,
+      "daily_pct": -0.6995,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7291.91,
+      "prev_close": 7246.79,
+      "daily_pct": 0.6226,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23962.8,
+      "prev_close": 23882.05,
+      "daily_pct": 0.3381,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8762.5,
+      "prev_close": 8785.1,
+      "daily_pct": -0.2572,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24941.94,
+      "prev_close": 24941.94,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10419.36,
+      "prev_close": 10419.36,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8278.36,
+      "prev_close": 8278.36,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6241.78,
+      "prev_close": 6241.78,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14273,
+      "prev_close": 1.14038,
+      "daily_pct": 0.2057
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34011,
+      "prev_close": 1.33489,
+      "daily_pct": 0.3906
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.493,
+      "prev_close": 162.36301,
+      "daily_pct": 0.0801
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69343,
+      "prev_close": 0.69226,
+      "daily_pct": 0.1695
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23799,
+      "prev_close": 1.23637,
+      "daily_pct": 0.1312
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7537.75,
+      "prev_close": 7537.75,
+      "daily_pct": 0.1195
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29637.5,
+      "prev_close": 29637.5,
+      "daily_pct": 0.5735
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52560.0,
+      "prev_close": 52560.0,
+      "daily_pct": -0.1216
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4113.2,
+      "prev_close": 4113.2,
+      "daily_pct": 1.0391
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.97,
+      "prev_close": 108.97,
+      "daily_pct": -0.0287
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 73.79,
+      "prev_close": 73.79,
+      "daily_pct": 0.3673
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "PepsiCo earnings miss estimates as North American consumers tighten their budgets",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 10:29:51 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/pepsico-pep-q2-2026-earnings.html",
+      "summary": "PepsiCo reported weaker-than-expected quarterly earnings despite strong international demand."
+    },
+    {
+      "headline": "From 'dear Donald' to 'Trump trillion': Inside NATO chief Mark Rutte's U.S. strategy",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 10:08:31 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/nato-rutte-trump-europe.html",
+      "summary": "NATO chief Mark Rutte lavished praise on U.S. President Donald Trump during a fractious summit in Turkey this week."
+    },
+    {
+      "headline": "Ukraine\u2019s drone playbook is wreaking havoc in Russia - and upending where NATO wants to invest",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 05:15:02 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/ukraine-drone-strikes-russia-nato.html",
+      "summary": "Ukraine\u2019s deep drone strikes on Russian refineries are reshaping the war and pushing NATO toward a $40 billion counter-drone plan."
+    },
+    {
+      "headline": "Fed officials were split on direction of interest rates at last meeting, minutes show",
+      "source": "CNBC",
+      "published": "Wed, 08 Jul 2026 19:05:47 GMT",
+      "url": "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html",
+      "summary": "The Federal Reserve on Wednesday released minutes from its June 16-17 meeting."
+    },
+    {
+      "headline": "Levi Strauss beats quarterly expectations, raises guidance and dividend",
+      "source": "CNBC",
+      "published": "Wed, 08 Jul 2026 21:32:49 GMT",
+      "url": "https://www.cnbc.com/2026/07/08/levi-strauss-levi-q2-2026-earnings.html",
+      "summary": "Levi Strauss beat quarterly expectations on the top and bottom lines during its fiscal 2026 second quarter."
+    },
+    {
+      "headline": "Jim Cramer sees a big risk to the bull market resurfacing - and it's not the Iran war",
+      "source": "CNBC",
+      "published": "Wed, 08 Jul 2026 22:14:51 GMT",
+      "url": "https://www.cnbc.com/2026/07/08/jim-cramer-risk-bull-market-resurfacing.html",
+      "summary": "CNBC's Jim Cramer said the growing wave of stock offerings and debt issuance is the next big threat to the bull market."
+    },
+    {
+      "headline": "Why the world\u2019s best-performing stock market this year fell into bear territory",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 08:48:32 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/kospi-bear-territory-ai-samsung-skhynix-chipmakers.html",
+      "summary": "The Kospi fell more than 5% on Wednesday, which brought it 20% below its June 19 record high, according to LSEG data."
+    },
+    {
+      "headline": "Used EVs keep getting more expensive amid Iran war, high gas prices",
+      "source": "CNBC",
+      "published": "Wed, 08 Jul 2026 16:11:15 GMT",
+      "url": "https://www.cnbc.com/2026/07/08/used-ev-prices-gas-war.html",
+      "summary": "The Manheim Used Vehicle Value Index for EVs - which tracks prices of used vehicles sold at its U.S. wholesale auctions -\u00a0increased 12% compared to June 2025."
+    }
+  ]
+}
