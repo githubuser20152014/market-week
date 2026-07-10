@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-10",
+    "generated_at": "2026-07-10T09:15:18.385540Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7482.71,
+      "close": 7543.6401,
+      "daily_pct": 0.8143,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52348.3906,
+      "close": 52487.4102,
+      "daily_pct": 0.2656,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25870.6504,
+      "close": 26206.8906,
+      "daily_pct": 1.2997,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2956.3899,
+      "close": 2992.54,
+      "daily_pct": 1.2228,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4130.6001,
+      "close": 4107.2002,
+      "daily_pct": -0.5665,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.569,
+      "close": 4.539,
+      "daily_pct": -0.6566,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -3.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.94,
+      "close": 100.84,
+      "daily_pct": -0.0991,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 72.08,
+      "close": 72.0,
+      "daily_pct": -0.111,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 68557.73,
+      "prev_close": 67743.85,
+      "daily_pct": 1.2014,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24175.12,
+      "prev_close": 24030.18,
+      "daily_pct": 0.6032,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7475.94,
+      "prev_close": 7291.91,
+      "daily_pct": 2.5238,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24206.75,
+      "prev_close": 23962.8,
+      "daily_pct": 1.018,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8806.0,
+      "prev_close": 8762.5,
+      "daily_pct": 0.4964,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25090.18,
+      "prev_close": 25090.18,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10473.58,
+      "prev_close": 10473.58,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8322.55,
+      "prev_close": 8322.23,
+      "daily_pct": 0.0038,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6264.59,
+      "prev_close": 6264.34,
+      "daily_pct": 0.004,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14364,
+      "prev_close": 1.1422,
+      "daily_pct": 0.1258
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34147,
+      "prev_close": 1.33962,
+      "daily_pct": 0.1382
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 161.69901,
+      "prev_close": 162.539,
+      "daily_pct": -0.5168
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69469,
+      "prev_close": 0.69363,
+      "daily_pct": 0.1522
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.24034,
+      "prev_close": 1.23753,
+      "daily_pct": 0.227
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7576.5,
+      "prev_close": 7576.5,
+      "daily_pct": -0.1614
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29769.75,
+      "prev_close": 29769.75,
+      "daily_pct": -0.5587
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52826.0,
+      "prev_close": 52826.0,
+      "daily_pct": 0.1232
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4107.2,
+      "prev_close": 4107.2,
+      "daily_pct": -0.5665
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.28,
+      "prev_close": 109.28,
+      "daily_pct": 0.0143
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 72.03,
+      "prev_close": 72.03,
+      "daily_pct": -0.0694
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Meet SK Hynix, the trillion-dollar South Korean chipmaker debuting on U.S. markets",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 15:13:29 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/meet-sk-hynix-the-trillion-dollar-chipmaker-debuting-on-us-markets-.html",
+      "summary": "Following a more than sevenfold rally in its stock price over the past year, South Korea's SK Hynix is listing on the Nasdaq."
+    },
+    {
+      "headline": "World oil demand set for first annual decline since 2020, IEA says",
+      "source": "CNBC",
+      "published": "Fri, 10 Jul 2026 09:13:40 GMT",
+      "url": "https://www.cnbc.com/2026/07/10/iea-world-oil-demand-declines-iran-war.html",
+      "summary": "Renewed escalation in the U.S.-Iran war could complicate matters and further cloud the outlook, the IEA warned Friday."
+    },
+    {
+      "headline": "U.S. to continue 'technical talks' with Iran after Trump said ceasefire was 'over'",
+      "source": "CNBC",
+      "published": "Fri, 10 Jul 2026 02:51:57 GMT",
+      "url": "https://www.cnbc.com/2026/07/10/us-iran-war-strikes-strait-of-hormuz-technical-talks-progress-.html",
+      "summary": "The ceasefire signed last month came under serious strain in recent days as the U.S. and Iranian forces exchanged attacks for consecutive days this week."
+    },
+    {
+      "headline": "Inside NATO's extraordinary 48 hours that revealed Trump's grip on global diplomacy",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 23:00:52 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/nato-trump-rutte-ukraine-russia-us-iran.html",
+      "summary": "Steve Sedgwick goes behind the scenes of NATO's dramatic 48 hours, where Trump's changing tone reshaped diplomacy and left allies guessing."
+    },
+    {
+      "headline": "EasyJet pops 13% as airline weighs $7.7 billion rival takeover bid from Apollo",
+      "source": "CNBC",
+      "published": "Fri, 10 Jul 2026 08:00:03 GMT",
+      "url": "https://www.cnbc.com/2026/07/10/easyjet-apollo-takeover-bid-castlelake-share-price.html",
+      "summary": "A bidding war has broken out for budget carrier easyJet after Apollo and Castlelake have both submitted takeover offers."
+    },
+    {
+      "headline": "Kevin Warsh names members of his Federal Reserve task forces, including Marc Andreessen, Doug McMillon",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 19:53:20 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/kevin-warsh-names-members-of-his-federal-reserve-task-forces-including-marc-andreessen-doug-mcmillon.html",
+      "summary": "Federal Reserve Chairman Kevin Warsh on Thursday released names of the experts who will comprise five task forces to examine the institution's operations."
+    },
+    {
+      "headline": "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 19:26:44 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/a-huge-trade-just-happened-on-the-nasdaq-100-bulls-are-taking-notice.html",
+      "summary": "Tech bulls may not have to wait much longer for fresh highs, if the single-biggest trade in the Invesco QQQ Trust ETF on Thursday is any indication."
+    },
+    {
+      "headline": "Why the world\u2019s best-performing stock market this year fell into bear territory",
+      "source": "CNBC",
+      "published": "Thu, 09 Jul 2026 08:48:32 GMT",
+      "url": "https://www.cnbc.com/2026/07/09/kospi-bear-territory-ai-samsung-skhynix-chipmakers.html",
+      "summary": "The Kospi fell more than 5% on Wednesday, which brought it 20% below its June 19 record high, according to LSEG data."
+    }
+  ]
+}
