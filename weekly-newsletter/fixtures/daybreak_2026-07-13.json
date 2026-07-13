@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-13",
+    "generated_at": "2026-07-13T09:15:16.535480Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7543.6401,
+      "close": 7575.3901,
+      "daily_pct": 0.4209,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52487.4102,
+      "close": 52637.0117,
+      "daily_pct": 0.285,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26206.8906,
+      "close": 26281.6094,
+      "daily_pct": 0.2851,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2992.54,
+      "close": 2977.8101,
+      "daily_pct": -0.4922,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4104.1001,
+      "close": 4083.5,
+      "daily_pct": -0.5019,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.539,
+      "close": 4.569,
+      "daily_pct": 0.6609,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.97,
+      "close": 100.864,
+      "daily_pct": -0.105,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 71.41,
+      "close": 72.84,
+      "daily_pct": 2.0025,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 67242.73,
+      "prev_close": 68557.73,
+      "daily_pct": -1.9181,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24213.72,
+      "prev_close": 24175.12,
+      "daily_pct": 0.1597,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6806.93,
+      "prev_close": 7475.94,
+      "daily_pct": -8.9488,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24229.7,
+      "prev_close": 24206.9,
+      "daily_pct": 0.0942,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8808.5,
+      "prev_close": 8806.0,
+      "daily_pct": 0.0284,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25113.96,
+      "prev_close": 25114.1,
+      "daily_pct": -0.0006,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10515.76,
+      "prev_close": 10515.76,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8351.06,
+      "prev_close": 8351.39,
+      "daily_pct": -0.004,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6276.07,
+      "prev_close": 6276.92,
+      "daily_pct": -0.0135,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14351,
+      "prev_close": 1.14334,
+      "daily_pct": 0.0149
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33917,
+      "prev_close": 1.34156,
+      "daily_pct": -0.1781
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.035,
+      "prev_close": 162.36301,
+      "daily_pct": -0.202
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6943,
+      "prev_close": 0.69444,
+      "daily_pct": -0.0202
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23628,
+      "prev_close": 1.23986,
+      "daily_pct": -0.2893
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7596.0,
+      "prev_close": 7596.0,
+      "daily_pct": -0.3182
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29726.5,
+      "prev_close": 29726.5,
+      "daily_pct": -1.0181
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52941.0,
+      "prev_close": 52941.0,
+      "daily_pct": 0.0662
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4083.3,
+      "prev_close": 4083.3,
+      "daily_pct": -0.5068
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.02,
+      "prev_close": 109.02,
+      "daily_pct": -0.0143
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 72.85,
+      "prev_close": 72.85,
+      "daily_pct": 2.0165
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "U.S. and Iran exchange strikes as Strait of Hormuz standoff escalates",
+      "source": "CNBC",
+      "published": "Mon, 13 Jul 2026 09:00:32 GMT",
+      "url": "https://www.cnbc.com/2026/07/13/us-iran-war-hormuz-oil-trump.html",
+      "summary": "Iran responded to a fresh wave of strikes by U.S. forces by launching an attack on American military bases in several Gulf states."
+    },
+    {
+      "headline": "TSMC, the world's largest contract chipmaker, reports 68% surge in June revenue",
+      "source": "CNBC",
+      "published": "Mon, 13 Jul 2026 07:29:26 GMT",
+      "url": "https://www.cnbc.com/2026/07/13/tsmc-june-revenue-rises-percent-ahead-second-quarter.html",
+      "summary": "Ahead of its second-quarter earnings, TSMC reported its June and first-half revenue for 2026."
+    },
+    {
+      "headline": "SK Hynix South Korean shares clock worst day, sinking over 15%, after stellar Nasdaq debut",
+      "source": "CNBC",
+      "published": "Mon, 13 Jul 2026 07:59:21 GMT",
+      "url": "https://www.cnbc.com/2026/07/13/sk-hynix-shares-fall-after-stellar-nasdaq-debut.html",
+      "summary": "SK Hynix Inc. shares tumbled over 15% in Seoul on Monday after the chipmaker's blockbuster Nasdaq debut."
+    },
+    {
+      "headline": "Majority of U.S. workers support an AI wealth fund as tech layoffs surge, survey finds",
+      "source": "CNBC",
+      "published": "Sun, 12 Jul 2026 12:27:55 GMT",
+      "url": "https://www.cnbc.com/2026/07/12/majority-of-us-workers-support-ai-fund-amid-tech-layoffs-survey.html",
+      "summary": "A majority of U.S. employees now want an AI sovereign wealth fund to hold corporations more accountable, according to a recent survey, as tech layoffs rise."
+    },
+    {
+      "headline": "How the U.S.-Iran deal set the stage for renewed fighting over the Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Fri, 10 Jul 2026 17:26:08 GMT",
+      "url": "https://www.cnbc.com/2026/07/10/iran-strait-hormuz-oil-tanker-mou-trump.html",
+      "summary": "The U.S. and Iran's contradictory interperations of the memorandum of understanding have led to renewed fighting over the Strait of Hormuz."
+    },
+    {
+      "headline": "Trump threatens to 'decimate' Iran if it tries to kill him, as Treasury sanctions alleged Iranian financier",
+      "source": "CNBC",
+      "published": "Sat, 11 Jul 2026 22:58:53 GMT",
+      "url": "https://www.cnbc.com/2026/07/11/trump-threat.html",
+      "summary": "Trump says 1,000 missiles are \"locked and loaded\" and will hit Iran if it carries out its threats to assassinate the U.S. president."
+    },
+    {
+      "headline": "These underperforming trades could yield big returns over next six months",
+      "source": "CNBC",
+      "published": "Sat, 11 Jul 2026 15:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/11/mag-7-and-software-could-boost-portfolio-in-second-half-etf-action.html",
+      "summary": "ETF Action's Mike Akins is encouraging investors to boost exposure to groups that underperformed compared with major artificial intelligence stocks."
+    },
+    {
+      "headline": "Berkshire Hathaway gains ground, but still trails the S&P 500 as '26 enters second half",
+      "source": "CNBC",
+      "published": "Sat, 11 Jul 2026 13:07:41 GMT",
+      "url": "https://www.cnbc.com/2026/07/11/berkshire-hathaway-gains-ground-but-still-trails-the-sp-500-as-26-enters-second-half.html",
+      "summary": "With 2026 a bit more than half over, Berkshire Hathaway's B shares are down 1.8% year-to-date and 12.4 percentage points behind the S&amp;P 500's 10.7% gain."
+    }
+  ]
+}
