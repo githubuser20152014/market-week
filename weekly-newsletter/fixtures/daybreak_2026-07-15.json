@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "date": "2026-07-15",
+    "generated_at": "2026-07-15T11:07:17.542004Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7575.3901,
+      "close": 7515.3398,
+      "daily_pct": -0.7927,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52637.0117,
+      "close": 52498.6406,
+      "daily_pct": -0.2629,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26281.6094,
+      "close": 25873.1797,
+      "daily_pct": -1.5541,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2977.8101,
+      "close": 2953.1699,
+      "daily_pct": -0.8275,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4061.1001,
+      "close": 4034.0,
+      "daily_pct": -0.6673,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.569,
+      "close": 4.609,
+      "daily_pct": 0.8755,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.28,
+      "close": 101.002,
+      "daily_pct": -0.2745,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 79.34,
+      "close": 79.99,
+      "daily_pct": 0.8193,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 68751.51,
+      "prev_close": 67242.73,
+      "daily_pct": 2.2438,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24681.1,
+      "prev_close": 24213.72,
+      "daily_pct": 1.9302,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7284.41,
+      "prev_close": 6806.93,
+      "daily_pct": 7.0146,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24078.5,
+      "prev_close": 24211.0,
+      "daily_pct": -0.5473,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8841.1,
+      "prev_close": 8808.5,
+      "daily_pct": 0.3701,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24944.89,
+      "prev_close": 24944.89,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10507.08,
+      "prev_close": 10507.03,
+      "daily_pct": 0.0005,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8350.98,
+      "prev_close": 8351.54,
+      "daily_pct": -0.0067,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6271.45,
+      "prev_close": 6271.39,
+      "daily_pct": 0.001,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14207,
+      "prev_close": 1.13843,
+      "daily_pct": 0.3198
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34002,
+      "prev_close": 1.33479,
+      "daily_pct": 0.3913
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.356,
+      "prev_close": 162.429,
+      "daily_pct": -0.0449
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69867,
+      "prev_close": 0.69182,
+      "daily_pct": 0.9893
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23373,
+      "prev_close": 1.2274,
+      "daily_pct": 0.5157
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7601.75,
+      "prev_close": 7601.75,
+      "daily_pct": 0.1383
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29930.0,
+      "prev_close": 29930.0,
+      "daily_pct": 0.4691
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52807.0,
+      "prev_close": 52807.0,
+      "daily_pct": 0.0303
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4034.0,
+      "prev_close": 4034.0,
+      "daily_pct": -0.6673
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.78,
+      "prev_close": 108.78,
+      "daily_pct": -0.1291
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 79.99,
+      "prev_close": 79.99,
+      "daily_pct": 0.8193
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "CPI",
+        "actual": "-0.4% MoM / +3.5% YoY",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Morgan Stanley is set to report second-quarter earnings \u2014 here's what the Street expects",
+      "source": "CNBC",
+      "published": "Wed, 15 Jul 2026 11:05:14 GMT",
+      "url": "https://www.cnbc.com/2026/07/15/morgan-stanley-ms-earnings-q2-2026-.html",
+      "summary": "Morgan Stanley is expected to benefit from higher trading and investment banking revenue in the quarter, as rivals JPMorgan Chase and Goldman Sachs have shown."
+    },
+    {
+      "headline": "ASML rises 4% after hiking sales forecast for second time this year on strong AI chip demand",
+      "source": "CNBC",
+      "published": "Wed, 15 Jul 2026 10:14:45 GMT",
+      "url": "https://www.cnbc.com/2026/07/15/asml-2q-earnings-ai-chips-orders.html",
+      "summary": "ASML on Wednesday raised its guidance for a second time this year as its customers continue to ramp up their production capacity of AI chips."
+    },
+    {
+      "headline": "The AI boom just found two new winners: Goldman Sachs and JPMorgan Chase",
+      "source": "CNBC",
+      "published": "Tue, 14 Jul 2026 19:50:48 GMT",
+      "url": "https://www.cnbc.com/2026/07/14/goldman-sachs-and-jpmorgan-chase-are-emerging-as-ai-winners.html",
+      "summary": "Goldman Sachs and JPMorgan showed that Wall Street is a major beneficiary of the AI boom, with record revenue driven by surging trading and investment banking."
+    },
+    {
+      "headline": "Bipartisan group of senators propose Social Security reform process ahead of funding shortfall",
+      "source": "CNBC",
+      "published": "Tue, 14 Jul 2026 19:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/14/social-security-reform.html",
+      "summary": "Social Security's trust fund that helps pay retirement benefits may run out in about six years. A bipartisan group of senators is calling for earlier reform."
+    },
+    {
+      "headline": "Jim Cramer says concerns about AI market froth are overblown. Here's why",
+      "source": "CNBC",
+      "published": "Tue, 14 Jul 2026 22:20:46 GMT",
+      "url": "https://www.cnbc.com/2026/07/14/jim-cramer-concerns-ai-market-froth-overblown.html",
+      "summary": "CNBC's Jim Cramer said today's stock market is far less concerning than it was during the dot-com bubble."
+    },
+    {
+      "headline": "Warren Buffett is accelerating his charitable donations with aim to give away Berkshire wealth by 2034",
+      "source": "CNBC",
+      "published": "Tue, 14 Jul 2026 18:34:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/14/warren-buffett-is-accelerating-his-charitable-donations-with-aim-to-give-away-berkshire-wealth-by-2034.html",
+      "summary": "Warren Buffett is speeding up the pace of his annual donations of Berkshire Hathaway shares to four family foundations, giving them a total of almost $6 billion now."
+    },
+    {
+      "headline": "Renewed Hormuz hostilities drive ECB rates rethin amid \u2018extremely volatile\u2019 outlook",
+      "source": "CNBC",
+      "published": "Wed, 15 Jul 2026 10:52:29 GMT",
+      "url": "https://www.cnbc.com/2026/07/15/ecb-interest-rates-outlook-iran-war-hormuz.html",
+      "summary": "Several consecutive days of strikes exchanged between the U.S. and Iran have cast uncertainty on the European Central Bank's interest rate decision next week."
+    },
+    {
+      "headline": "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+      "source": "CNBC",
+      "published": "Tue, 14 Jul 2026 19:43:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/14/johnson-johnson-has-a-chance-to-show-its-more-than-just-a-rotation-winner.html",
+      "summary": "The healthcare giant's second-quarter earnings will shine the spotlight on its exciting new products and pipeline."
+    }
+  ]
+}
