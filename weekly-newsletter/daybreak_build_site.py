@@ -392,7 +392,7 @@ def render_html(ctx: dict) -> str:
 
             f'    <div class="one-trade-meta"><strong>Confirms:</strong> {_ot_fmt(confirm)}</div>\n'
 
-            f'    <div class="one-trade-meta"><strong>Risk:</strong> {_ot_fmt(risk)}</div>\n'
+            f'    <div class="one-trade-meta"><strong>Kill switch:</strong> {_ot_fmt(risk)}</div>\n'
 
             '  </div>\n'
 

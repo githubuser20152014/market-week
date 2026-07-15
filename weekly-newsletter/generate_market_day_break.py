@@ -96,7 +96,7 @@ def _override_from_approved_md(ctx: dict, md_path: Path) -> dict:
             if m2 and confirm is None:
                 confirm = m2.group(1).strip()
                 continue
-            m3 = re.match(r"\*?\*?Risk:\*?\*?\s*(.*)", s)
+            m3 = re.match(r"\*?\*?(?:Kill switch|Risk):\*?\*?\s*(.*)", s)
             if m3 and risk is None:
                 risk = m3.group(1).strip()
         if ticker and direction:
@@ -111,6 +111,21 @@ def _override_from_approved_md(ctx: dict, md_path: Path) -> dict:
                 if re.match(r"^[-*]\s", l.strip())]
         if tips:
             ctx["tips"] = tips
+
+    if "Market-Moving Headlines" in sections:
+        rows = []
+        for line in sections["Market-Moving Headlines"].splitlines():
+            line = line.strip()
+            if not line.startswith("|"):
+                continue
+            cells = [c.strip() for c in line.strip("|").split("|")]
+            if len(cells) < 3 or not cells[0].isdigit():
+                continue
+            m = re.match(r"\[([^\]]+)\]\((https?://[^)]+)\)", cells[1])
+            headline, url = (m.group(1), m.group(2)) if m else (cells[1], "#")
+            rows.append({"headline": headline, "url": url, "source": cells[2], "summary": ""})
+        if rows:
+            ctx["market_news"] = rows
 
     return ctx
 
