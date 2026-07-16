@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-16",
+    "generated_at": "2026-07-16T12:09:38.344734Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7543.5898,
+      "close": 7572.3999,
+      "daily_pct": 0.3819,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52508.2695,
+      "close": 52658.6406,
+      "daily_pct": 0.2864,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26107.0098,
+      "close": 26269.2305,
+      "daily_pct": 0.6214,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2964.76,
+      "close": 2976.26,
+      "daily_pct": 0.3879,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4044.0,
+      "close": 4044.0,
+      "daily_pct": 0.0,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.585,
+      "close": 4.545,
+      "daily_pct": -0.8724,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -4.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.5,
+      "close": 100.529,
+      "daily_pct": 0.0289,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 79.6,
+      "close": 79.72,
+      "daily_pct": 0.1508,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66835.54,
+      "prev_close": 68751.51,
+      "daily_pct": -2.7868,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25008.6,
+      "prev_close": 24681.1,
+      "daily_pct": 1.3269,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6820.6,
+      "prev_close": 7284.41,
+      "daily_pct": -6.3672,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24072.75,
+      "prev_close": 24078.5,
+      "daily_pct": -0.0239,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8840.7,
+      "prev_close": 8841.1,
+      "daily_pct": -0.0045,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24757.45,
+      "prev_close": 24757.45,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10480.59,
+      "prev_close": 10480.59,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8299.17,
+      "prev_close": 8299.17,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6221.48,
+      "prev_close": 6221.48,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14718,
+      "prev_close": 1.14247,
+      "daily_pct": 0.413
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35124,
+      "prev_close": 1.33971,
+      "daily_pct": 0.8607
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.18401,
+      "prev_close": 162.187,
+      "daily_pct": -0.0018
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70107,
+      "prev_close": 0.69765,
+      "daily_pct": 0.4896
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23986,
+      "prev_close": 1.236,
+      "daily_pct": 0.3124
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7596.75,
+      "prev_close": 7596.75,
+      "daily_pct": -0.2364
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29446.0,
+      "prev_close": 29446.0,
+      "daily_pct": -0.8327
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52986.0,
+      "prev_close": 52986.0,
+      "daily_pct": 0.1626
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4043.1,
+      "prev_close": 4043.1,
+      "daily_pct": -0.0223
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.11,
+      "prev_close": 109.11,
+      "daily_pct": -0.1716
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 79.68,
+      "prev_close": 79.68,
+      "daily_pct": 0.1005
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Iran warns U.S. of Hormuz \u2018red line,\u2019 says it will retaliate to Trump\u2019s strike threats",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 09:18:55 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/iran-warns-of-hormuz-red-line-retaliation-to-trumps-strike-threats.html",
+      "summary": "Trump warned that the U.S. will target Iranian infrastructure next week if negotiations do not resume."
+    },
+    {
+      "headline": "UnitedHealth blows past estimates, hikes earnings outlook as it reins in costs",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 10:07:33 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/unitedhealth-group-unh-earnings-q2-2026.html",
+      "summary": "The healthcare giant is working to stabilize margins by shrinking membership, exiting unprofitable contracts and pouring $1.5 billion into AI."
+    },
+    {
+      "headline": "TSMC to invest additional $100 billion in Arizona after second-quarter profit soars 77%",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 08:24:49 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/tsmc-second-quarter-profit-.html",
+      "summary": "TSMC announced a second-quarter profit, following its June revenue figures released earlier this week."
+    },
+    {
+      "headline": "U.S. slaps 25% tariff on most Brazilian goods over 'unfair trade practices'",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 06:32:39 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/us-tariffs-brazil-unfair-trade-practices-section-301-.html",
+      "summary": "A separate U.S. probe into forced-labor enforcement could see an additional 12.5% duty on Brazilian goods on top of the 25%, with the decision due next week."
+    },
+    {
+      "headline": "United earnings top estimates but airline expects $6 billion in added fuel costs",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 12:07:11 GMT",
+      "url": "https://www.cnbc.com/2026/07/15/united-airlines-ual-2q-2026-earnings.html",
+      "summary": "United reported higher revenue for premium, corporate and no-frills basic economy tickets and higher revenue for both domestic and international trips."
+    },
+    {
+      "headline": "Trump's pick to head national intelligence, Jay Clayton, won't tell senators Biden won the 2020 election",
+      "source": "CNBC",
+      "published": "Wed, 15 Jul 2026 19:48:29 GMT",
+      "url": "https://www.cnbc.com/2026/07/15/trump-dni-jay-clayton-senate-2020-election.html",
+      "summary": "The Senate Intelligence Committee is considering Jay Clayton's nomination to be the director of national intelligence."
+    },
+    {
+      "headline": "Ex-Fed advisor gets over three years in prison for lying about China ties",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 08:59:24 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/ex-fed-adviser-gets-jailtime-lying-about-china-ties-economic-espionage-.html",
+      "summary": "The case marks one of the most prominent U.S. prosecutions alleging Chinese intelligence targeting of U.S. institutions, as Trump intensifies its pursuit of foreign economic espionage."
+    },
+    {
+      "headline": "Fed Chairman Warsh says he meets 'often' with Trump administration, defends independence",
+      "source": "CNBC",
+      "published": "Wed, 15 Jul 2026 22:48:57 GMT",
+      "url": "https://www.cnbc.com/2026/07/15/feds-warsh-says-he-meets-often-with-trump-administration.html",
+      "summary": "Kevin Warsh said Wednesday that he speaks with Treasury Secretary Scott Bessent frequently outside their regular weekly meetings."
+    }
+  ]
+}
