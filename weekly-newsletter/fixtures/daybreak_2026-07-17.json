@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-17",
+    "generated_at": "2026-07-17T10:04:01.540342Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7572.3999,
+      "close": 7533.77,
+      "daily_pct": -0.5101,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52658.6406,
+      "close": 52552.9688,
+      "daily_pct": -0.2007,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26269.2305,
+      "close": 25881.9492,
+      "daily_pct": -1.4743,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2976.26,
+      "close": 2974.5701,
+      "daily_pct": -0.0568,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 3985.6001,
+      "close": 4001.3999,
+      "daily_pct": 0.3964,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.545,
+      "close": 4.569,
+      "daily_pct": 0.528,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.73,
+      "close": 100.775,
+      "daily_pct": 0.0447,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 78.95,
+      "close": 79.86,
+      "daily_pct": 1.1526,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64141.12,
+      "prev_close": 66835.54,
+      "daily_pct": -4.0314,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24562.24,
+      "prev_close": 25008.6,
+      "daily_pct": -1.7848,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6820.6,
+      "prev_close": 7284.41,
+      "daily_pct": -6.3672,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24334.3,
+      "prev_close": 24072.75,
+      "daily_pct": 1.0865,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8796.7,
+      "prev_close": 8840.7,
+      "daily_pct": -0.4977,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24670.87,
+      "prev_close": 24670.87,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10563.14,
+      "prev_close": 10563.14,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8287.18,
+      "prev_close": 8287.18,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6203.98,
+      "prev_close": 6203.98,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14403,
+      "prev_close": 1.14703,
+      "daily_pct": -0.2609
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34365,
+      "prev_close": 1.35413,
+      "daily_pct": -0.7737
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.369,
+      "prev_close": 162.07201,
+      "daily_pct": 0.1833
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69725,
+      "prev_close": 0.70081,
+      "daily_pct": -0.5076
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23825,
+      "prev_close": 1.24276,
+      "daily_pct": -0.3628
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7509.0,
+      "prev_close": 7509.0,
+      "daily_pct": -0.9073
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28715.0,
+      "prev_close": 28715.0,
+      "daily_pct": -1.7476
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52412.0,
+      "prev_close": 52412.0,
+      "daily_pct": -0.7085
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4001.7,
+      "prev_close": 4001.7,
+      "daily_pct": 0.404
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 109.41,
+      "prev_close": 109.41,
+      "daily_pct": 0.2434
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 79.85,
+      "prev_close": 79.85,
+      "daily_pct": 1.14
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Iran says civilian infrastructure hit by latest U.S. strikes, expands attacks to Syria, Bahrain",
+      "source": "CNBC",
+      "published": "Fri, 17 Jul 2026 08:20:28 GMT",
+      "url": "https://www.cnbc.com/2026/07/17/iran-war-us-trump-syria-bahrain.html",
+      "summary": "The escalating standoff comes as the fragile truce signed by the U.S. and Iran last month showed further signs of unravelling"
+    },
+    {
+      "headline": "Netflix stock falls as earnings forecast disappoints, company says it will give fewer engagement updates",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 21:53:56 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/netflix-nflx-earnings-q2-2026.html",
+      "summary": "The streaming giant said it would cut back on the frequency of its \"What We Watched\" reports, which provide a picture of engagement."
+    },
+    {
+      "headline": "Chinese startup Moonshot AI unveils Kimi model it says rivals OpenAI, Anthropic",
+      "source": "CNBC",
+      "published": "Fri, 17 Jul 2026 08:53:55 GMT",
+      "url": "https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html",
+      "summary": "It's the latest AI model from China to close the performance gap with leading U.S. AI labs."
+    },
+    {
+      "headline": "Trump doubles down on 2020 election claims in national address, alleging China meddling",
+      "source": "CNBC",
+      "published": "Fri, 17 Jul 2026 02:24:46 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/trump-primetime-address-elections-2020.html",
+      "summary": "Trump also repeated his calls for the Republican-led Congress to pass the \"SAVE America Act,\" a controversial election bill that lacks support to pass."
+    },
+    {
+      "headline": "World\u2019s largest olive oil company says market has 'definitively' entered new phase",
+      "source": "CNBC",
+      "published": "Fri, 17 Jul 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/17/spain-olive-oil-europe-heat-climate.html",
+      "summary": "The update comes as analysts raise concerns about the prospect of global olive oil supplies swinging dramatically from one season to the next."
+    },
+    {
+      "headline": "BP, ConocoPhillips to back Iraq with major investments as U.S. seeks to weaken Iran's energy hold",
+      "source": "CNBC",
+      "published": "Fri, 17 Jul 2026 08:10:21 GMT",
+      "url": "https://www.cnbc.com/2026/07/17/bp-conocophillips-to-back-iraq-with-major-energy-investment-.html",
+      "summary": "BP and ConocoPhillips are set to announce billions of dollars of new investments in Iraq on Friday."
+    },
+    {
+      "headline": "Oil pipelines around the Strait of Hormuz won't end the threat Iran poses to Middle East crude exports",
+      "source": "CNBC",
+      "published": "Thu, 16 Jul 2026 19:13:07 GMT",
+      "url": "https://www.cnbc.com/2026/07/16/oil-pipeline-iran-strait-hormuz-red-sea-iraq-uae-saudi.html",
+      "summary": "Oil producers are building or contemplating new pipeline projects to bypass the Strait of Hormuz, but this infrastructure is still vulnerable, analysts said."
+    },
+    {
+      "headline": "Xi pitches China as AI partner to developing world, warns against risks and security overreach",
+      "source": "CNBC",
+      "published": "Fri, 17 Jul 2026 06:16:04 GMT",
+      "url": "https://www.cnbc.com/2026/07/17/x-china-ai-summit-risks-security.html",
+      "summary": "China will provide developing countries with 5,000 opportunities in AI training and seminar programs, as well as develop AI cooperation with various blocs."
+    }
+  ]
+}
