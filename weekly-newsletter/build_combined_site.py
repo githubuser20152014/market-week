@@ -1315,14 +1315,58 @@ def find_daybreak_dates():
 
 
 def find_global_dates():
-    """Sorted (newest first) list of Global Investor Edition dates in fixtures/."""
-    dates = []
+    """Sorted (newest first) list of Global Investor Edition site dates to
+    build, plus a date_str -> fixture_date_str map for fetching market data.
+
+    Most editions publish same-day as their data (site date == fixture date).
+    Weekend editions (Sat/Sun pub) use the prior Friday's data but are still
+    keyed for the site/URL/markdown-override lookup by PUB_DATE, per
+    output/global_newsletter_{PUB_DATE}.md (see generate_global_newsletter.py,
+    which already keeps this same PUB_DATE/DATA_DATE split). Union the two
+    discovery sources so a PUB_DATE that differs from its DATA_DATE still
+    gets its own site page, without changing the fixture-keyed entries that
+    already exist and build correctly today.
+    """
     fixtures_dir = BASE_DIR / "fixtures"
+    fixture_dates = set()
     for f in fixtures_dir.glob("global_equity_*.json"):
         m = re.match(r"global_equity_(\d{4}-\d{2}-\d{2})\.json$", f.name)
         if m:
-            dates.append(m.group(1))
-    return sorted(dates, reverse=True)
+            fixture_dates.add(m.group(1))
+
+    date_to_fetch_date = {d: d for d in fixture_dates}
+
+    for f in OUTPUT_DIR.glob("global_newsletter_*.md"):
+        m = re.match(r"global_newsletter_(\d{4}-\d{2}-\d{2})\.md$", f.name)
+        if not m:
+            continue
+        pub_date_str = m.group(1)
+        if pub_date_str in date_to_fetch_date:
+            continue
+        from datetime import date as _date_cls, timedelta as _timedelta_cls
+        d = _date_cls.fromisoformat(pub_date_str)
+        if d.weekday() == 5:      # Saturday publish -> prior Friday's data
+            data_date = (d - _timedelta_cls(days=1)).isoformat()
+        elif d.weekday() == 6:    # Sunday publish -> Friday before that
+            data_date = (d - _timedelta_cls(days=2)).isoformat()
+        else:
+            data_date = pub_date_str
+        if data_date in fixture_dates:
+            date_to_fetch_date[pub_date_str] = data_date
+
+    # A fixture-only date that solely feeds a different PUB_DATE's edition
+    # (the weekend data-date shift) and was never itself published as a
+    # standalone page shouldn't be minted as a new orphan page just because
+    # its fixture exists on disk. Dates that *were* already published stay,
+    # so existing live URLs never break.
+    consumed_by = {fd: pd for pd, fd in date_to_fetch_date.items() if pd != fd}
+    for fd in consumed_by:
+        already_published = (SITE_DIR / "global" / fd / "index.html").exists()
+        if not already_published:
+            date_to_fetch_date.pop(fd, None)
+
+    dates = sorted(date_to_fetch_date, reverse=True)
+    return dates, date_to_fetch_date
 
 
 def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
@@ -1404,8 +1448,8 @@ def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
             if m2 and confirm is None:
                 confirm = m2.group(1).strip()
                 continue
-            # Risk:
-            m3 = re.match(r"\*?\*?Risk:\*?\*?\s*(.*)", s)
+            # Risk: or Kill switch:
+            m3 = re.match(r"\*?\*?(?:Kill switch|Risk):\*?\*?\s*(.*)", s)
             if m3 and risk is None:
                 risk = m3.group(1).strip()
                 continue
@@ -1417,6 +1461,22 @@ def _override_ctx_from_approved_md(ctx: dict, date_str: str) -> dict:
                 "confirm":   confirm or "",
                 "risk":      risk or "",
             }
+
+    # Override market news from "Market-Moving Headlines"
+    if "Market-Moving Headlines" in sections:
+        rows = []
+        for line in sections["Market-Moving Headlines"].splitlines():
+            line = line.strip()
+            if not line.startswith("|"):
+                continue
+            cells = [c.strip() for c in line.strip("|").split("|")]
+            if len(cells) < 3 or not cells[0].isdigit():
+                continue
+            m = re.match(r"\[([^\]]+)\]\((https?://[^)]+)\)", cells[1])
+            headline, url = (m.group(1), m.group(2)) if m else (cells[1], "#")
+            rows.append({"headline": headline, "url": url, "source": cells[2], "summary": ""})
+        if rows:
+            ctx["market_news"] = rows
 
     # Override tips from "Positioning Notes"
     if "Positioning Notes" in sections:
@@ -3891,7 +3951,7 @@ def build(use_mock=True):
     us_dates       = find_us_dates()
     intl_dates     = find_intl_dates()
     daybreak_dates = find_daybreak_dates()
-    global_dates   = find_global_dates()
+    global_dates, global_fetch_date_map = find_global_dates()
 
     for date_str in us_dates:
         src = find_pdf_src(date_str, "us")
@@ -4020,17 +4080,24 @@ def build(use_mock=True):
     global_ctxs = {}
     for date_str in global_dates:
         from datetime import date as _date3
+        fetch_date_str = global_fetch_date_map.get(date_str, date_str)
         global_html_path = SITE_DIR / "global" / date_str / "index.html"
-        skip_narrative = global_html_path.exists() and date_str != _date3.today().isoformat()
+        has_approved_md = (OUTPUT_DIR / f"global_newsletter_{date_str}.md").exists()
+        # Never call the live narrative API when an approved .md exists for
+        # this date — it's the human-reviewed content source and must not be
+        # silently overwritten by a fresh, un-reviewed, digest-less regen.
+        skip_narrative = has_approved_md or (
+            global_html_path.exists() and date_str != _date3.today().isoformat()
+        )
         if skip_narrative:
-            print(f"Building Global {date_str} … (already published, skipping live narrative call)")
+            print(f"Building Global {date_str} … (skipping live narrative call)")
         else:
             print(f"Building Global {date_str} …")
         try:
-            raw_equity    = fetch_global_equity_data(date_str, use_mock=use_mock)
-            raw_fx        = fetch_global_fx_data(date_str, use_mock=use_mock)
-            raw_commodity = fetch_global_commodity_data(date_str, use_mock=use_mock)
-            econ          = fetch_econ_calendar(date_str, use_mock=use_mock)
+            raw_equity    = fetch_global_equity_data(fetch_date_str, use_mock=use_mock)
+            raw_fx        = fetch_global_fx_data(fetch_date_str, use_mock=use_mock)
+            raw_commodity = fetch_global_commodity_data(fetch_date_str, use_mock=use_mock)
+            econ          = fetch_econ_calendar(fetch_date_str, use_mock=use_mock)
             eq_data       = process_global_equity_data(raw_equity)
             fx_data       = process_global_fx_data(raw_fx)
             com_data      = process_global_commodity_data(raw_commodity)

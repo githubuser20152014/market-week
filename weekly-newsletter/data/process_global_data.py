@@ -206,7 +206,7 @@ def compute_macro_regime(us_indices, fixed_income, vix):
 
 # ── News digest context ───────────────────────────────────────────────────────
 
-_DIGEST_SECTIONS = ["Markets & Macro", "Global Events", "Major Events"]
+_DIGEST_SECTIONS = ["Markets & Macro", "Global Events", "Global Signals", "Major Events"]
 
 
 def load_digest_context(data_date: str, digest_dir) -> str:
@@ -362,40 +362,25 @@ def generate_global_narrative(equity_data, fx_data, commodity_data, econ, macro_
 
     try:
         import anthropic
-        import threading
 
-        # httpx/anthropic client-level timeouts have been observed to not fire
-        # reliably against a stalled connection in some network environments, so
-        # enforce a hard deadline via a daemon thread join as a backstop.
-        _outcome = {}
+        # A background-thread watchdog was tried here as a timeout backstop, but
+        # on this environment it made the call far less reliable than calling
+        # synchronously (observed hangs past 120s in-thread vs. a clean ~75s
+        # direct call). Rely on the SDK's own client-level timeout instead.
+        client = anthropic.Anthropic(api_key=api_key, timeout=100.0)
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=4096,
+            system=_GLOBAL_SYSTEM_PROMPT,
+            messages=[
+                {
+                    "role": "user",
+                    "content": json.dumps(payload, default=str),
+                }
+            ],
+        )
 
-        def _call_claude():
-            try:
-                client = anthropic.Anthropic(api_key=api_key, timeout=15.0)
-                _outcome["response"] = client.messages.create(
-                    model="claude-sonnet-4-6",
-                    max_tokens=4096,
-                    system=_GLOBAL_SYSTEM_PROMPT,
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": json.dumps(payload, default=str),
-                        }
-                    ],
-                )
-            except Exception as e:
-                _outcome["error"] = e
-
-        t = threading.Thread(target=_call_claude, daemon=True)
-        t.start()
-        t.join(20)
-        if t.is_alive():
-            print("WARNING: Claude API call timed out after 20s — using placeholder narrative.")
-            return _FALLBACK
-        if "error" in _outcome:
-            raise _outcome["error"]
-
-        raw_text = _outcome["response"].content[0].text.strip()
+        raw_text = response.content[0].text.strip()
         # Strip markdown fences if present
         raw_text = re.sub(r'^```(?:json)?\s*', '', raw_text)
         raw_text = re.sub(r'\s*```$', '', raw_text).strip()
