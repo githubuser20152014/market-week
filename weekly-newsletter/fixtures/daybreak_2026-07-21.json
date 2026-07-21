@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-21",
+    "generated_at": "2026-07-21T09:42:46.135383Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7457.6899,
+      "close": 7443.2798,
+      "daily_pct": -0.1932,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52146.4219,
+      "close": 51839.2617,
+      "daily_pct": -0.589,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25520.2402,
+      "close": 25508.0703,
+      "daily_pct": -0.0477,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2962.22,
+      "close": 2942.4299,
+      "daily_pct": -0.6681,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4010.3,
+      "close": 4068.3,
+      "daily_pct": 1.4463,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.541,
+      "close": 4.598,
+      "daily_pct": 1.2552,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.99,
+      "close": 100.929,
+      "daily_pct": -0.0604,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 83.23,
+      "close": 82.68,
+      "daily_pct": -0.6608,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66232.19,
+      "prev_close": 64141.12,
+      "daily_pct": 3.2601,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25132.29,
+      "prev_close": 25143.05,
+      "daily_pct": -0.0428,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6747.95,
+      "prev_close": 6516.27,
+      "daily_pct": 3.5554,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24185.3,
+      "prev_close": 24238.5,
+      "daily_pct": -0.2195,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8793.3,
+      "prev_close": 8791.3,
+      "daily_pct": 0.0227,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 24914.57,
+      "prev_close": 24914.57,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10546.5,
+      "prev_close": 10546.5,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8360.33,
+      "prev_close": 8360.33,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6265.37,
+      "prev_close": 6265.37,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1426,
+      "prev_close": 1.14277,
+      "daily_pct": -0.0149
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34297,
+      "prev_close": 1.34463,
+      "daily_pct": -0.1236
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 162.66499,
+      "prev_close": 162.51199,
+      "daily_pct": 0.0941
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70264,
+      "prev_close": 0.69791,
+      "daily_pct": 0.678
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23455,
+      "prev_close": 1.23698,
+      "daily_pct": -0.1963
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7524.75,
+      "prev_close": 7524.75,
+      "daily_pct": 0.5411
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29170.25,
+      "prev_close": 29170.25,
+      "daily_pct": 1.3604
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52257.0,
+      "prev_close": 52257.0,
+      "daily_pct": 0.3534
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4068.3,
+      "prev_close": 4068.3,
+      "daily_pct": 1.4463
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.89,
+      "prev_close": 108.89,
+      "daily_pct": 0.0287
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 82.68,
+      "prev_close": 82.68,
+      "daily_pct": -0.6608
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.1%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "U.S. strikes Iran and Houthis threaten Saudi Arabia shipping as mediators push 10-day ceasefire",
+      "source": "CNBC",
+      "published": "Tue, 21 Jul 2026 09:33:09 GMT",
+      "url": "https://www.cnbc.com/2026/07/21/us-iran-war-trump-hormuz-houthis.html",
+      "summary": "The latest cycle of strikes comes amid reports that regional mediators have presented Washington and Tehran with a proposal for a 10-day ceasefire."
+    },
+    {
+      "headline": "Jamie Dimon says markets underestimate risks and he wouldn't buy stocks or Treasurys at current prices",
+      "source": "CNBC",
+      "published": "Mon, 20 Jul 2026 23:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/20/jpmorgan-chase-ceo-jamie-dimon-market-risk.html",
+      "summary": "Comments from JPMorgan Chase CEO Jamie Dimon contrast with investors' recent willingness to look past wars, tariffs and other shocks."
+    },
+    {
+      "headline": "General Motors is set to report earnings before the bell. Here's what Wall Street expects",
+      "source": "CNBC",
+      "published": "Tue, 21 Jul 2026 04:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/21/general-motors-gm-earnings-q2-2026.html",
+      "summary": "Wall Street analysts expect General Motors to report adjusted earnings per share of $3.20 and revenue of $47.01 billion."
+    },
+    {
+      "headline": "Trump imposing 50% tariffs on certain Canadian goods over alleged trade discrimination",
+      "source": "CNBC",
+      "published": "Mon, 20 Jul 2026 22:13:57 GMT",
+      "url": "https://www.cnbc.com/2026/07/20/trump-tariffs-canada-trade.html",
+      "summary": "Canada's relationship with the U.S. has frayed amid Trump's tariff-heavy agenda and vocal displeasure with the nations' trilateral trade pact with Mexico."
+    },
+    {
+      "headline": "Trump administration's head of AI safety agency resigns after 3 months on job",
+      "source": "CNBC",
+      "published": "Mon, 20 Jul 2026 20:26:20 GMT",
+      "url": "https://www.cnbc.com/2026/07/20/trumps-head-of-ai-safety-agency-caisi-resigns-after-months-on-job.html",
+      "summary": "Arvind Raman, the director of National Institute of Standards and Technology, will serve as acting director of CAISI, according to a spokesperson"
+    },
+    {
+      "headline": "Abu Dhabi approves $6.2 billion gas project to boost UAE supply",
+      "source": "CNBC",
+      "published": "Tue, 21 Jul 2026 06:49:21 GMT",
+      "url": "https://www.cnbc.com/2026/07/21/abu-dhabi-gas-project-uae-energy-supply.html",
+      "summary": "Abu Dhabi's National Oil Company will invest $6.2 billion to develop the Umm Shaif Gas Cap to expand natural gas production and liquefied natural gas exports."
+    },
+    {
+      "headline": "Paramount and Warner Bros. merger hit with temporary restraining order",
+      "source": "CNBC",
+      "published": "Mon, 20 Jul 2026 19:20:38 GMT",
+      "url": "https://www.cnbc.com/2026/07/20/paramount-wbd-merger-delay.html",
+      "summary": "A California judge granted a temporary restraining order as part of the lawsuit brought by state attorneys general due to antitrust concerns."
+    },
+    {
+      "headline": "Treasury yields edge lower as investors map geopolitical risks",
+      "source": "CNBC",
+      "published": "Tue, 21 Jul 2026 08:25:56 GMT",
+      "url": "https://www.cnbc.com/2026/07/21/treasury-yields-bonds-iran-us-politics.html",
+      "summary": "The yield on the 10-year U.S. Treasury note \u2014 the key benchmark for U.S. government borrowing \u2014 was broadly flat at 4.594%."
+    }
+  ]
+}
