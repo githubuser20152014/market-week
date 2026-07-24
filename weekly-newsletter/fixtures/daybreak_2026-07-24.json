@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-24",
+    "generated_at": "2026-07-24T10:12:19.758814Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7498.96,
+      "close": 7408.2998,
+      "daily_pct": -1.209,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52218.5781,
+      "close": 51711.6484,
+      "daily_pct": -0.9708,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25690.9004,
+      "close": 25137.6895,
+      "daily_pct": -2.1533,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2959.9399,
+      "close": 2940.1599,
+      "daily_pct": -0.6683,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4046.6001,
+      "close": 4062.0,
+      "daily_pct": 0.3806,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.657,
+      "close": 4.703,
+      "daily_pct": 0.9878,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.43,
+      "close": 101.358,
+      "daily_pct": -0.071,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 92.19,
+      "close": 89.0,
+      "daily_pct": -3.4602,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64611.15,
+      "prev_close": 66422.6,
+      "daily_pct": -2.7272,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24963.23,
+      "prev_close": 25210.81,
+      "daily_pct": -0.982,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6690.62,
+      "prev_close": 7096.89,
+      "daily_pct": -5.7246,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23767.45,
+      "prev_close": 23869.6,
+      "daily_pct": -0.428,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8772.3,
+      "prev_close": 8839.0,
+      "daily_pct": -0.7546,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25000.09,
+      "prev_close": 25000.09,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10680.43,
+      "prev_close": 10680.43,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8335.56,
+      "prev_close": 8336.58,
+      "daily_pct": -0.0122,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6266.15,
+      "prev_close": 6266.15,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.13921,
+      "prev_close": 1.14117,
+      "daily_pct": -0.172
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33168,
+      "prev_close": 1.33752,
+      "daily_pct": -0.4368
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 163.72301,
+      "prev_close": 163.08099,
+      "daily_pct": 0.3937
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69945,
+      "prev_close": 0.69897,
+      "daily_pct": 0.0683
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22451,
+      "prev_close": 1.2282,
+      "daily_pct": -0.3
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7465.25,
+      "prev_close": 7465.25,
+      "daily_pct": 0.272
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28691.0,
+      "prev_close": 28691.0,
+      "daily_pct": 0.2455
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52187.0,
+      "prev_close": 52187.0,
+      "daily_pct": 0.5646
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4061.7,
+      "prev_close": 4061.7,
+      "daily_pct": 0.3731
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.27,
+      "prev_close": 108.27,
+      "daily_pct": 0.159
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 89.0,
+      "prev_close": 89.0,
+      "daily_pct": -3.4602
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Trump to slap 'sweeping' new tariffs on 60 trade partners as global duties expire",
+      "source": "CNBC",
+      "published": "Thu, 23 Jul 2026 21:43:10 GMT",
+      "url": "https://www.cnbc.com/2026/07/23/trump-tariffs-trade-deadline.html",
+      "summary": "The Trump administration has ramped its tariff actions back up since the president's trade  agenda suffered major legal setbacks earlier this year."
+    },
+    {
+      "headline": "Intel's stock jumps as chipmaker rides AI boom to fastest revenue growth in almost 15 years",
+      "source": "CNBC",
+      "published": "Thu, 23 Jul 2026 22:17:09 GMT",
+      "url": "https://www.cnbc.com/2026/07/23/intel-intc-earnings-report-q2-2026.html",
+      "summary": "Intel rallied after the company reported blowout earnings and guidance."
+    },
+    {
+      "headline": "Pentagon lowers official Iran war death toll, omitting four killed this month",
+      "source": "CNBC",
+      "published": "Fri, 24 Jul 2026 06:09:43 GMT",
+      "url": "https://www.cnbc.com/2026/07/24/pentagon-removed-four-official-iran-war-death-toll.html",
+      "summary": "The Pentagon lowered its official Iran war death toll to 14 from 18, removing four service members killed this month."
+    },
+    {
+      "headline": "Trump's new global tariff draws rebukes from trade partners over forced-labor justification",
+      "source": "CNBC",
+      "published": "Fri, 24 Jul 2026 05:47:21 GMT",
+      "url": "https://www.cnbc.com/2026/07/24/trump-global-tariffs-trade-imbalance-forced-labor.html",
+      "summary": "U.S. trading partners have rejected the forced-labor rationale behind Trump's new global tariffs, while most signaled plans to keep negotiating."
+    },
+    {
+      "headline": "Oracle signs 10-year software contract with Pentagon worth up to $7 billion",
+      "source": "CNBC",
+      "published": "Thu, 23 Jul 2026 21:56:31 GMT",
+      "url": "https://www.cnbc.com/2026/07/23/oracle-wins-10-year-pentagon-software-contract-worth-up-to-7-billion.html",
+      "summary": "Oracle will supply on-premises software to the U.S. Department of Defense."
+    },
+    {
+      "headline": "Shortsighted stock market can no longer brush off war: 'It's too hard to ignore $100 oil'",
+      "source": "CNBC",
+      "published": "Thu, 23 Jul 2026 19:19:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/23/short-sighted-stock-market-can-no-longer-brush-off-war-investors-say.html",
+      "summary": "After staying flat as the U.S.-Iran war heated up again, equities tumbled on Thursday after oil prices crossed $100 per barrel."
+    },
+    {
+      "headline": "U.S., other nations back open-source AI with 'strong security' at China summit",
+      "source": "CNBC",
+      "published": "Fri, 24 Jul 2026 02:42:21 GMT",
+      "url": "https://www.cnbc.com/2026/07/24/china-ai-open-source-apec.html",
+      "summary": "The APEC statement is the first to include open-source cooperation at a minister level, said Li Lecheng, China's industry and information technology minister."
+    },
+    {
+      "headline": "Tesla, Alphabet lose hundreds of billions in value in post-earnings stock plunge",
+      "source": "CNBC",
+      "published": "Thu, 23 Jul 2026 20:26:38 GMT",
+      "url": "https://www.cnbc.com/2026/07/23/tesla-tsla-alphabet-googl-stock-today.html",
+      "summary": "Both Tesla and Alphabet signaled higher spending as they invest in artificial intelligence."
+    }
+  ]
+}
