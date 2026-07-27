@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-27",
+    "generated_at": "2026-07-27T12:46:16.395496Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7408.2998,
+      "close": 7411.98,
+      "daily_pct": 0.0497,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51711.6484,
+      "close": 51947.25,
+      "daily_pct": 0.4556,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25137.6895,
+      "close": 24975.8203,
+      "daily_pct": -0.6439,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2940.1599,
+      "close": 2930.0,
+      "daily_pct": -0.3456,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4067.6001,
+      "close": 4088.2,
+      "daily_pct": 0.5064,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.679,
+      "close": 4.647,
+      "daily_pct": -0.6839,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -3.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.47,
+      "close": 101.397,
+      "daily_pct": -0.0719,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 89.31,
+      "close": 83.89,
+      "daily_pct": -6.0687,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64931.19,
+      "prev_close": 64611.15,
+      "daily_pct": 0.4953,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25207.18,
+      "prev_close": 24963.23,
+      "daily_pct": 0.9772,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6755.75,
+      "prev_close": 6690.62,
+      "daily_pct": 0.9735,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23995.95,
+      "prev_close": 23767.45,
+      "daily_pct": 0.9614,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8894.0,
+      "prev_close": 8772.3,
+      "daily_pct": 1.3873,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25494.41,
+      "prev_close": 25494.47,
+      "daily_pct": -0.0002,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10779.47,
+      "prev_close": 10779.44,
+      "daily_pct": 0.0003,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8439.94,
+      "prev_close": 8440.61,
+      "daily_pct": -0.0079,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6355.0,
+      "prev_close": 6355.58,
+      "daily_pct": -0.0091,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1383,
+      "prev_close": 1.13768,
+      "daily_pct": 0.0546
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33097,
+      "prev_close": 1.33127,
+      "daily_pct": -0.0226
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 163.68401,
+      "prev_close": 163.832,
+      "daily_pct": -0.0903
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69984,
+      "prev_close": 0.69672,
+      "daily_pct": 0.4477
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22599,
+      "prev_close": 1.22418,
+      "daily_pct": 0.1471
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7510.5,
+      "prev_close": 7510.5,
+      "daily_pct": 0.8459
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28660.75,
+      "prev_close": 28660.75,
+      "daily_pct": 1.3383
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52712.0,
+      "prev_close": 52712.0,
+      "daily_pct": 1.1281
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4088.2,
+      "prev_close": 4088.2,
+      "daily_pct": 0.5064
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.52,
+      "prev_close": 108.52,
+      "daily_pct": 0.1731
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 83.91,
+      "prev_close": 83.91,
+      "daily_pct": -6.0463
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Nvidia, SpaceX, Microsoft launch AI safety initiative as OpenAI cyberattack fallout continues",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 11:32:45 GMT",
+      "url": "https://www.cnbc.com/2026/07/27/nvidia-ai-initiative-openai-cyber-attack.html",
+      "summary": "Microsoft, SpaceX, Palantir, alongside dozens of other tech companies from the U.S. and Europe, have joined the Open Secure AI Alliance."
+    },
+    {
+      "headline": "Why Trump's new tariff blitz is very different this time around",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 10:47:12 GMT",
+      "url": "https://www.cnbc.com/2026/07/27/donald-trump-tariffs-trade-war-iran.html",
+      "summary": "President Trump on Friday launched a fresh round of tariffs targeting 60 trading partners, including the European Union, China, and the U.K."
+    },
+    {
+      "headline": "Federal Reserve is likely to hold interest rates steady. Here's what that means for consumers",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 12:15:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/27/fed-interest-rates-july.html",
+      "summary": "The Federal Reserve is expected to keep its overnight rate unchanged at the conclusion of its July meeting."
+    },
+    {
+      "headline": "Apple options are doing something unusual into earnings",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 10:58:27 GMT",
+      "url": "https://www.cnbc.com/2026/07/27/apple-options-are-doing-something-unusual-into-earnings.html",
+      "summary": "After going nowhere for seven months, Apple stock is up 20% since its late-June low and less than two dollars below a fresh all-time record."
+    },
+    {
+      "headline": "Spain and France wildfires force more than 300,000 to flee as Macron calls crisis meeting",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 09:27:09 GMT",
+      "url": "https://www.cnbc.com/2026/07/27/wildfires-spain-france-bordeaux-heatwave.html",
+      "summary": "The impact of a gigantic wildfire ravaging France's Bordeaux region and Spain has been like a \"clap of thunder\" for the local economy, a minister said."
+    },
+    {
+      "headline": "Chipmaker CXMT\u2019s 466% market debut surge makes it the most valuable China-listed company",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 08:03:51 GMT",
+      "url": "https://www.cnbc.com/2026/07/27/cxmt-china-market-debut-chipmaker-ipo.html",
+      "summary": "The Hefei-based company raised 57.92 billion yuan ($8.6 billion) after pricing its IPO at 8.66 yuan per share."
+    },
+    {
+      "headline": "Jim Cramer's top 10 things to watch in the stock market Monday",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 12:43:36 GMT",
+      "url": "https://www.cnbc.com/2026/07/27/jim-cramers-top-10-things-to-watch-in-the-stock-market-monday.html",
+      "summary": "Futures are surging after a pause in fighting in the Middle East. Plus, a bunch of AI infrastructure deals."
+    },
+    {
+      "headline": "Cocoa prices are easing. So why is chocolate still so expensive?",
+      "source": "CNBC",
+      "published": "Mon, 27 Jul 2026 09:39:57 GMT",
+      "url": "https://www.cnbc.com/2026/07/26/cocoa-prices-chocolate-lindt-barry-callebaut-nestle.html",
+      "summary": "Chocolate firms look to win shoppers back with premium products and social media trends after poor weather conditions, tariffs, and the Iran war hit sales."
+    }
+  ]
+}
