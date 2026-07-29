@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-07-29",
+    "generated_at": "2026-07-29T11:06:48.311367Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7413.1802,
+      "close": 7428.7798,
+      "daily_pct": 0.2104,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52210.0781,
+      "close": 52747.3203,
+      "daily_pct": 1.029,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24932.0801,
+      "close": 24876.9102,
+      "daily_pct": -0.2213,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2948.04,
+      "close": 2953.8,
+      "daily_pct": 0.1954,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4036.3,
+      "close": 4085.8999,
+      "daily_pct": 1.2288,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.641,
+      "close": 4.604,
+      "daily_pct": -0.7972,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -3.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.38,
+      "close": 101.426,
+      "daily_pct": 0.0454,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 79.26,
+      "close": 83.23,
+      "daily_pct": 5.0088,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 61434.19,
+      "prev_close": 62364.92,
+      "daily_pct": -1.4924,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25807.92,
+      "prev_close": 25310.85,
+      "daily_pct": 1.9639,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5663.24,
+      "prev_close": 6023.66,
+      "daily_pct": -5.9834,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24250.2,
+      "prev_close": 23985.35,
+      "daily_pct": 1.1042,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9038.6,
+      "prev_close": 8947.8,
+      "daily_pct": 1.0148,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25466.65,
+      "prev_close": 25466.65,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10899.24,
+      "prev_close": 10899.24,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8412.82,
+      "prev_close": 8412.82,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6261.22,
+      "prev_close": 6261.22,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.13895,
+      "prev_close": 1.13695,
+      "daily_pct": 0.1765
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32915,
+      "prev_close": 1.32899,
+      "daily_pct": 0.012
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 163.681,
+      "prev_close": 163.771,
+      "daily_pct": -0.055
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69449,
+      "prev_close": 0.69872,
+      "daily_pct": -0.6049
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21971,
+      "prev_close": 1.22058,
+      "daily_pct": -0.0715
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7478.0,
+      "prev_close": 7478.0,
+      "daily_pct": 0.1708
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27950.75,
+      "prev_close": 27950.75,
+      "daily_pct": 0.103
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52797.0,
+      "prev_close": 52797.0,
+      "daily_pct": -0.2777
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4085.9,
+      "prev_close": 4085.9,
+      "daily_pct": 1.2288
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.58,
+      "prev_close": 108.58,
+      "daily_pct": -0.2154
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 83.24,
+      "prev_close": 83.24,
+      "daily_pct": 5.0214
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Iran launches surprise ballistic missile attack on U.S. forces in the Middle East",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 07:49:55 GMT",
+      "url": "https://www.cnbc.com/2026/07/29/us-iran-war-hormuz-centcom.html",
+      "summary": "Centcom in a post on X said that the attack originated from Iran, but all missiles were intercepted."
+    },
+    {
+      "headline": "Nike was once China's sneaker king. Here's why its sales have fallen 30%",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/29/nike-china-sales-decline.html",
+      "summary": "China was once Nike's fastest-growing region but the company has lost relevance among young consumers and ceded market share to smaller, domestic brands."
+    },
+    {
+      "headline": "Cyclospora outbreak tied to Taco Bell will steal the spotlight from Yum Brands' earnings",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/29/cyclospora-outbreak-taco-bell-yum-brands-earnings.html",
+      "summary": "Wall Street is projecting a strong second quarter for Yum Brands, but investors' focus will be on updates related to the cyclospora outbreak tied to Taco Bell."
+    },
+    {
+      "headline": "Ukraine has found a new pressure point in Russia\u2019s wartime economy",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 10:33:29 GMT",
+      "url": "https://www.cnbc.com/2026/07/29/ukraine-russia-wildberries-putin-trump.html",
+      "summary": "Ukraine's drone attacks on Russia's biggest online retailer Wildberries have ratcheted up the pressure on Moscow's wartime economy."
+    },
+    {
+      "headline": "Warren probes Pentagon program to hire highly paid private sector workers",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 10:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/29/warren-probes-pentagon-program-to-hire-highly-paid-private-sector-workers.html",
+      "summary": "Sen. Elizabeth Warren, D-Mass., said she is concerned about a Pentagon program to pay high salaries to Wall Street recruits."
+    },
+    {
+      "headline": "UBS CEO says the AI pullback is healthy \u2014 but there\u2019s a bigger risk investors should watch",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 09:40:12 GMT",
+      "url": "https://www.cnbc.com/2026/07/29/ubs-earnings-ai-correction-stocks-swiss-bank.html",
+      "summary": "The Swiss banking gian reported pre-tax profits of $3.6 billion for the quarter, as CEO Sergio Ermotti warned of geopolitical volatility ahead."
+    },
+    {
+      "headline": "Audi continues U.S. product push with three-row Q9 SUV",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 01:56:52 GMT",
+      "url": "https://www.cnbc.com/2026/07/28/audi-q9-suv.html",
+      "summary": "Audi sales have struggled in the U.S. over the last several quarters. The brand has been hit by tariffs and a market shift away from EVs. New product may help."
+    },
+    {
+      "headline": "Trump, DOJ ask Supreme Court to toss $83.3M defamation award to E. Jean Carroll",
+      "source": "CNBC",
+      "published": "Wed, 29 Jul 2026 01:17:13 GMT",
+      "url": "https://www.cnbc.com/2026/07/28/trump-asks-supreme-court-to-toss-83point3m-defamation-award-to-e-jean-carroll.html",
+      "summary": "The Supreme Court recently rejected President Donald Trump's bid to hear his appeal of another $5 million verdict in favor of Carroll."
+    }
+  ]
+}
