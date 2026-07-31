@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "date": "2026-07-31",
+    "generated_at": "2026-07-31T11:37:36.195762Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7316.1499,
+      "close": 7437.6299,
+      "daily_pct": 1.6604,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51594.1406,
+      "close": 52208.0586,
+      "daily_pct": 1.1899,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 24442.9395,
+      "close": 25122.1797,
+      "daily_pct": 2.7789,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2906.3101,
+      "close": 2946.1001,
+      "daily_pct": 1.3691,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4100.1001,
+      "close": 4116.3999,
+      "daily_pct": 0.3975,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.622,
+      "close": 4.663,
+      "daily_pct": 0.8871,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.1
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.01,
+      "close": 100.248,
+      "daily_pct": 0.238,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 83.59,
+      "close": 84.72,
+      "daily_pct": 1.3518,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64362.02,
+      "prev_close": 61867.43,
+      "daily_pct": 4.0322,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25884.43,
+      "prev_close": 25858.88,
+      "daily_pct": 0.0988,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6595.45,
+      "prev_close": 5593.56,
+      "daily_pct": 17.9115,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24383.6,
+      "prev_close": 24317.15,
+      "daily_pct": 0.2733,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8976.8,
+      "prev_close": 8967.7,
+      "daily_pct": 0.1015,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25760.74,
+      "prev_close": 25760.74,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10930.93,
+      "prev_close": 10930.93,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8555.54,
+      "prev_close": 8555.54,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6399.39,
+      "prev_close": 6399.39,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14956,
+      "prev_close": 1.14672,
+      "daily_pct": 0.2472
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34302,
+      "prev_close": 1.33673,
+      "daily_pct": 0.4706
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 160.129,
+      "prev_close": 163.3,
+      "daily_pct": -1.9418
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70269,
+      "prev_close": 0.69593,
+      "daily_pct": 0.9718
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.2353,
+      "prev_close": 1.22942,
+      "daily_pct": 0.4781
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7502.25,
+      "prev_close": 7502.25,
+      "daily_pct": 0.3981
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28565.5,
+      "prev_close": 28565.5,
+      "daily_pct": 1.1607
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52648.0,
+      "prev_close": 52648.0,
+      "daily_pct": 0.5116
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4116.4,
+      "prev_close": 4116.4,
+      "daily_pct": 0.3975
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.39,
+      "prev_close": 108.39,
+      "daily_pct": -0.1439
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 84.72,
+      "prev_close": 84.72,
+      "daily_pct": 1.3518
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "GDP",
+        "actual": "1.5",
+        "expected": "See tradingeconomics.com",
+        "previous": "2.1",
+        "unit": "%",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "+0.3%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Exxon and Chevron profits surge on rising oil prices due to Iran war",
+      "source": "CNBC",
+      "published": "Fri, 31 Jul 2026 11:29:32 GMT",
+      "url": "https://www.cnbc.com/2026/07/31/exxon-xom-chevron-cvx-q2-earnings.html",
+      "summary": "ExxonMobil and Chevron on Friday reported second-quarter profits that surged on rising oil prices due to the Iran war."
+    },
+    {
+      "headline": "Apple drops 7%, Amazon surges 12% as investors pick AI winners after earnings",
+      "source": "CNBC",
+      "published": "Fri, 31 Jul 2026 08:50:14 GMT",
+      "url": "https://www.cnbc.com/2026/07/31/apple-aapl-amazon-amzn-stock-today.html",
+      "summary": "Shares of Amazon jumped sharply in premarket trading on Friday while Apple dropped as investors digest earnings."
+    },
+    {
+      "headline": "Hamas says Trump's Gaza 'disarmament' claim depends on Israel honoring commitments",
+      "source": "CNBC",
+      "published": "Fri, 31 Jul 2026 10:46:49 GMT",
+      "url": "https://www.cnbc.com/2026/07/31/trump-hamas-disarmament-conditions.html",
+      "summary": "Hamas says it will only disarm after Israel meets previous ceasefire commitments, despite President Donald Trump's announcement of a breakthrough U.S.-brokered agreement."
+    },
+    {
+      "headline": "Iran targets strategic U.S. assets in Kuwait, Bahrain after Egypt drone attack",
+      "source": "CNBC",
+      "published": "Fri, 31 Jul 2026 10:32:14 GMT",
+      "url": "https://www.cnbc.com/2026/07/31/us-iran-war-trump-hormuz.html",
+      "summary": "Iran's army said it launched attacks on strategic U.S. assets and military bases in Kuwait and Bahrain."
+    },
+    {
+      "headline": "IBM CEO says quantum computing will have a 'measurable impact' on earnings by 2028 or 2029",
+      "source": "CNBC",
+      "published": "Thu, 30 Jul 2026 22:46:32 GMT",
+      "url": "https://www.cnbc.com/2026/07/30/ibm-ceo-quantum-computing-measurable-impact-earnings-2028-2029.html",
+      "summary": "IBM CEO Arvind Krishna said the company's investments in quantum computing should begin to have \"a measurable impact\" on revenue and earnings by 2028 or 2029."
+    },
+    {
+      "headline": "Amazon got $600 million in Trump tariff refunds and will pass return along to some customers",
+      "source": "CNBC",
+      "published": "Thu, 30 Jul 2026 22:46:47 GMT",
+      "url": "https://www.cnbc.com/2026/07/30/amazon-trump-tariff-refunds.html",
+      "summary": "The company previously hadn't disclosed whether it would recoup tariff costs after the Supreme Court ruled many of President Donald Trump's levies were illegal."
+    },
+    {
+      "headline": "New Medicaid work rules could cause patients to lose coverage, rare disease advocates warn",
+      "source": "CNBC",
+      "published": "Fri, 31 Jul 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/07/31/new-medicaid-work-rules-insurance-coverage-rare-disease-patients.html",
+      "summary": "New Medicaid work requirements could put rare disease patients\u2019 coverage at risk. NORD CEO Pamela Gavin explains how families can prepare."
+    },
+    {
+      "headline": "AI investor Leopold Aschenbrenner forced to unwind all public stock positions after steep losses, sources say",
+      "source": "CNBC",
+      "published": "Thu, 30 Jul 2026 21:29:19 GMT",
+      "url": "https://www.cnbc.com/2026/07/30/leopold-aschenbrenners-hedge-fund-is-facing-steep-ai-losses.html",
+      "summary": "Leopold Aschenbrenner's hedge fund has sold all of its public stock holdings, according to people familiar with the matter."
+    }
+  ]
+}
