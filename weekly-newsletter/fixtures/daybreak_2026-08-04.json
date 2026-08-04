@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-04",
+    "generated_at": "2026-08-04T10:44:43.392301Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7489.7202,
+      "close": 7600.50,
+      "daily_pct": 1.4787,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52485.0312,
+      "close": 53178.41,
+      "daily_pct": 1.3214,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25373.8496,
+      "close": 25913.90,
+      "daily_pct": 2.1291,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2946.1001,
+      "close": 2931.3401,
+      "daily_pct": -0.501,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4049.1001,
+      "close": 4106.2998,
+      "daily_pct": 1.4127,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.663,
+      "close": 4.745,
+      "daily_pct": 1.7585,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 8.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.8,
+      "close": 100.012,
+      "daily_pct": 0.2124,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 84.67,
+      "close": 81.75,
+      "daily_pct": -3.4487,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 63957.53,
+      "prev_close": 64362.02,
+      "daily_pct": -0.6285,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25852.92,
+      "prev_close": 25884.43,
+      "daily_pct": -0.1217,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6358.95,
+      "prev_close": 6595.45,
+      "daily_pct": -3.5858,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24614.9,
+      "prev_close": 24383.6,
+      "daily_pct": 0.9486,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9145.8,
+      "prev_close": 8976.8,
+      "daily_pct": 1.8826,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26104.05,
+      "prev_close": 26104.05,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10883.33,
+      "prev_close": 10883.33,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8609.95,
+      "prev_close": 8609.95,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6455.06,
+      "prev_close": 6455.06,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15141,
+      "prev_close": 1.1544,
+      "daily_pct": -0.2591
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3441,
+      "prev_close": 1.34916,
+      "daily_pct": -0.375
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.787,
+      "prev_close": 157.582,
+      "daily_pct": 0.1301
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70304,
+      "prev_close": 0.70459,
+      "daily_pct": -0.22
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23492,
+      "prev_close": 1.23916,
+      "daily_pct": -0.3421
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7641.0,
+      "prev_close": 7641.0,
+      "daily_pct": 1.6192
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29099.5,
+      "prev_close": 29099.5,
+      "daily_pct": 2.4477
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53674.0,
+      "prev_close": 53674.0,
+      "daily_pct": 1.974
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4106.3,
+      "prev_close": 4106.3,
+      "daily_pct": 1.4127
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.3,
+      "prev_close": 108.3,
+      "daily_pct": 0.2749
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 81.75,
+      "prev_close": 81.75,
+      "daily_pct": -3.4487
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.1%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Palantir jumps 16% on 'otherworldly' commercial revenue \u2014 here's what's driving the demand",
+      "source": "CNBC",
+      "published": "Tue, 04 Aug 2026 10:27:09 GMT",
+      "url": "https://www.cnbc.com/2026/08/04/palantir-2q-earnings-ai-sovereign-tools.html",
+      "summary": "\"Our customers have declined to become vassal states of the language labs,\" Palantir's co-founder and CEO Alex Karp said after blowout second-quarter earnings."
+    },
+    {
+      "headline": "Merck hikes revenue outlook as new drug sales grow, but cuts profit guidance due to deal charges",
+      "source": "CNBC",
+      "published": "Tue, 04 Aug 2026 10:34:21 GMT",
+      "url": "https://www.cnbc.com/2026/08/04/merck-mrk-earnings-q2-2026.html",
+      "summary": "Merck cut its profit guidance due to a charge tied to its acquisition of biotech company Terns Pharmaceuticals."
+    },
+    {
+      "headline": "McDonald's is about to report earnings. Here's what to expect",
+      "source": "CNBC",
+      "published": "Tue, 04 Aug 2026 04:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/04/mcdonalds-mcd-q2-2026-earnings.html",
+      "summary": "McDonald's stock has fallen more than 11% this year, dragging its market cap down to roughly $191 billion."
+    },
+    {
+      "headline": "BP profit more than doubles as Trump blasts Big Oil for \u2018making too much money\u2019",
+      "source": "CNBC",
+      "published": "Tue, 04 Aug 2026 08:11:48 GMT",
+      "url": "https://www.cnbc.com/2026/08/04/bp-2q-earnings-oil-iran-war.html",
+      "summary": "The result come after U.S. President Donald Trump lashed out\u00a0at Big Oil for making \"too much money\" off higher fuel prices amid the Iran war."
+    },
+    {
+      "headline": "Analysis: Federal Reserve may be pulled into Bessent\u2019s effort to support Japan\u2019s yen",
+      "source": "CNBC",
+      "published": "Mon, 03 Aug 2026 23:20:54 GMT",
+      "url": "https://www.cnbc.com/2026/08/03/bessent-fed-japan-yen-fima-repo-facility.html",
+      "summary": "Treasury Secretary Scott Bessent wants to defend the yen without selling Treasurys into a sensitive U.S. bond market. The Federal Reserve could help."
+    },
+    {
+      "headline": "Palantir's Karp renews attacks on frontier AI labs that are 'trying to drug addict us'",
+      "source": "CNBC",
+      "published": "Mon, 03 Aug 2026 22:20:56 GMT",
+      "url": "https://www.cnbc.com/2026/08/03/palantir-karp-open-ai-anthropic-open-weight.html",
+      "summary": "Karp said Chinese models can't be blamed for distilling U.S. models when the frontier labs \"distilled all the value of IP, everywhere.\""
+    },
+    {
+      "headline": "Jim Cramer says the market has warmed up to Big Tech's AI spending. Here's what flipped the switch",
+      "source": "CNBC",
+      "published": "Mon, 03 Aug 2026 22:20:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/03/jim-cramer-market-warmed-up-big-tech-ai-spending.html",
+      "summary": "Cramer said Amazon CEO Andy Jassy finally explained how Amazon's massive AI spending will generate long-term returns."
+    },
+    {
+      "headline": "Snap's stock jumps 8% on earnings beat and strong sales forecast",
+      "source": "CNBC",
+      "published": "Mon, 03 Aug 2026 22:03:52 GMT",
+      "url": "https://www.cnbc.com/2026/08/03/snap-q2-earnings-report-2026.html",
+      "summary": "Snap beat analysts' estimates across the board in its second-quarter earnings report."
+    }
+  ]
+}
