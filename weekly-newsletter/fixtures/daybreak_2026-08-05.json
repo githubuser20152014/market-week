@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-08-05",
+    "generated_at": "2026-08-05T09:37:16.130598Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7600.5,
+      "close": 7736.52,
+      "daily_pct": 1.7896,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53178.4102,
+      "close": 54085.8789,
+      "daily_pct": 1.7065,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25913.9004,
+      "close": 26584.9902,
+      "daily_pct": 2.5897,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2981.9099,
+      "close": 3036.98,
+      "daily_pct": 1.8468,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4095.3999,
+      "close": 4216.2002,
+      "daily_pct": 2.9497,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.686,
+      "close": 4.627,
+      "daily_pct": -1.2591,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -5.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.89,
+      "close": 99.822,
+      "daily_pct": -0.0681,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 75.77,
+      "close": 76.29,
+      "daily_pct": 0.6863,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66300.44,
+      "prev_close": 63957.53,
+      "daily_pct": 3.6632,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25915.82,
+      "prev_close": 25852.92,
+      "daily_pct": 0.2433,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6598.26,
+      "prev_close": 6358.95,
+      "daily_pct": 3.7634,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24536.7,
+      "prev_close": 24614.9,
+      "daily_pct": -0.3177,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9227.8,
+      "prev_close": 9145.8,
+      "daily_pct": 0.8966,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26216.61,
+      "prev_close": 26216.61,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10897.66,
+      "prev_close": 10897.61,
+      "daily_pct": 0.0005,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8666.54,
+      "prev_close": 8667.22,
+      "daily_pct": -0.0078,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6484.67,
+      "prev_close": 6484.63,
+      "daily_pct": 0.0006,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15447,
+      "prev_close": 1.15073,
+      "daily_pct": 0.3244
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34657,
+      "prev_close": 1.3427,
+      "daily_pct": 0.2879
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.76401,
+      "prev_close": 157.52901,
+      "daily_pct": 0.1492
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70477,
+      "prev_close": 0.69976,
+      "daily_pct": 0.7161
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23583,
+      "prev_close": 1.234,
+      "daily_pct": 0.1483
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7787.5,
+      "prev_close": 7787.5,
+      "daily_pct": 0.2833
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29853.5,
+      "prev_close": 29853.5,
+      "daily_pct": -0.0335
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 54398.0,
+      "prev_close": 54398.0,
+      "daily_pct": 0.2396
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4216.2,
+      "prev_close": 4216.2,
+      "daily_pct": 2.9497
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.89,
+      "prev_close": 108.89,
+      "daily_pct": 0.0431
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 76.29,
+      "prev_close": 76.29,
+      "daily_pct": 0.6863
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "SpaceX dives 10% after AI spending surge rattles investors",
+      "source": "CNBC",
+      "published": "Wed, 05 Aug 2026 09:04:08 GMT",
+      "url": "https://www.cnbc.com/2026/08/05/spacex-spcx-stock-today-earnings.html",
+      "summary": "CEO Elon Musk said SpaceX would hit $1 trillion in annual revenue in 2030 versus a previous forecast of 2031 as he looked to strike an bullish tone."
+    },
+    {
+      "headline": "Hormuz deal could be agreed today as Trump hails \u2018very good\u2019 Iran talks",
+      "source": "CNBC",
+      "published": "Wed, 05 Aug 2026 09:18:41 GMT",
+      "url": "https://www.cnbc.com/2026/08/05/us-iran-war-trump-hormuz-bessent-iran-deal-close.html",
+      "summary": "U.S. Central Command said the \"southern route of the Strait of Hormuz remains free and open\""
+    },
+    {
+      "headline": "Russian attack kills at least 17 in Kyiv as Ukraine hammers more Wildberries warehouses",
+      "source": "CNBC",
+      "published": "Wed, 05 Aug 2026 08:55:42 GMT",
+      "url": "https://www.cnbc.com/2026/08/05/russia-ukraine-kyiv-putin-wildberries.html",
+      "summary": "The bombardment comes as each side ramps up air attacks on critical infrastructure and logistics hubs."
+    },
+    {
+      "headline": "Here's what to expect when Disney reports earnings before the bell",
+      "source": "CNBC",
+      "published": "Wed, 05 Aug 2026 04:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/05/disney-dis-earnings-q3-2026.html",
+      "summary": "Disney reports its fiscal third-quarter earnings before the bell Wednesday as the market awaits further updates and changes under newly minted CEO Josh D'Amaro."
+    },
+    {
+      "headline": "China's super-rich 'in shock' and hunting for cash as Beijing issues surprise tax on offshore trusts",
+      "source": "CNBC",
+      "published": "Wed, 05 Aug 2026 06:33:47 GMT",
+      "url": "https://www.cnbc.com/2026/08/05/wealthy-chinese-race-for-tax-advice-as-beijing-targets-offshore-trusts.html",
+      "summary": "Beijing's move to tax offshore trusts, long used by China's ultra-rich to hold money, has set off a rush to lawyers and a scramble for cash."
+    },
+    {
+      "headline": "Jim Cramer says one hedge fund's collapse cleared the way for tech's rally",
+      "source": "CNBC",
+      "published": "Tue, 04 Aug 2026 22:22:22 GMT",
+      "url": "https://www.cnbc.com/2026/08/04/cramer-one-hedge-fund-collapse-cleared-way-for-tech-rally.html",
+      "summary": "CNBC's Jim Cramer said the collapse of AI-focused hedge fund Situational Awareness removed a major source of forced selling."
+    },
+    {
+      "headline": "Paramount Skydance raises full-year profit guidance, remains 'confident' about WBD merger",
+      "source": "CNBC",
+      "published": "Tue, 04 Aug 2026 21:15:03 GMT",
+      "url": "https://www.cnbc.com/2026/08/04/paramount-skydance-psky-earnings-q2-2026.html",
+      "summary": "Paramount Skydance reported second-quarter earnings after the bell and said it continues to prepare for its proposed merger with Warner Bros. Discovery."
+    },
+    {
+      "headline": "Lucid begins 'operational reset' as CEO says EV maker will delay midsize vehicle",
+      "source": "CNBC",
+      "published": "Tue, 04 Aug 2026 22:47:49 GMT",
+      "url": "https://www.cnbc.com/2026/08/04/lucid-group-lcid-earnings-q2-2026.html",
+      "summary": "The company didn't provide updated guidance. New CEO Silvio Napoli earlier this year suspended production expectations."
+    }
+  ]
+}
