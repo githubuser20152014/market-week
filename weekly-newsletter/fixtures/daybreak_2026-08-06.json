@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-08-06",
+    "generated_at": "2026-08-06T12:09:17.739202Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7736.52,
+      "close": 7723.5498,
+      "daily_pct": -0.1676,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 54085.8789,
+      "close": 54349.1211,
+      "daily_pct": 0.4867,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26584.9902,
+      "close": 26363.4395,
+      "daily_pct": -0.8334,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3036.98,
+      "close": 3019.1899,
+      "daily_pct": -0.5858,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4245.7998,
+      "close": 4321.1001,
+      "daily_pct": 1.7735,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.627,
+      "close": 4.617,
+      "daily_pct": -0.2161,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.69,
+      "close": 99.738,
+      "daily_pct": 0.0481,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 75.22,
+      "close": 75.74,
+      "daily_pct": 0.6913,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65683.26,
+      "prev_close": 66300.44,
+      "daily_pct": -0.9309,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25530.28,
+      "prev_close": 25915.82,
+      "daily_pct": -1.4877,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6296.38,
+      "prev_close": 6598.26,
+      "daily_pct": -4.5751,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24636.0,
+      "prev_close": 24624.65,
+      "daily_pct": 0.0461,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9271.6,
+      "prev_close": 9227.8,
+      "daily_pct": 0.4747,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26162.82,
+      "prev_close": 26162.58,
+      "daily_pct": 0.0009,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10897.75,
+      "prev_close": 10897.75,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8718.66,
+      "prev_close": 8718.29,
+      "daily_pct": 0.0042,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6508.98,
+      "prev_close": 6509.2,
+      "daily_pct": -0.0034,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15447,
+      "prev_close": 1.15324,
+      "daily_pct": 0.1062
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34671,
+      "prev_close": 1.3451,
+      "daily_pct": 0.1199
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.845,
+      "prev_close": 157.692,
+      "daily_pct": 0.097
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70452,
+      "prev_close": 0.70467,
+      "daily_pct": -0.0209
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23516,
+      "prev_close": 1.23591,
+      "daily_pct": -0.0605
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7759.75,
+      "prev_close": 7759.75,
+      "daily_pct": 0.1323
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29469.5,
+      "prev_close": 29469.5,
+      "daily_pct": -0.4913
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 54588.0,
+      "prev_close": 54588.0,
+      "daily_pct": 0.1725
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4320.9,
+      "prev_close": 4320.9,
+      "daily_pct": 1.7688
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.7,
+      "prev_close": 108.7,
+      "daily_pct": -0.1722
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 75.73,
+      "prev_close": 75.73,
+      "daily_pct": 0.678
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "U.S. ready to return to \u2018commitments,\u2019 Iran says as Strait of Hormuz deal looms",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 10:19:33 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/us-iran-war-hormuz-trump-bessent-deal.html",
+      "summary": "Iran denied it was in talks with Washington, despite claims by Trump to the contrary."
+    },
+    {
+      "headline": "Warner Bros. Discovery reports 10% jump in streaming revenue ahead of proposed Paramount combination",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 11:51:22 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/warner-bros-discovery-streaming-revenue-paramount-combination.html",
+      "summary": "Warner Bros. Discovery's streaming segment surpassed $3 million in revenue for the second quarter, marking a 10% increase from the year prior"
+    },
+    {
+      "headline": "Ukraine\u2019s military hits one of Russia\u2019s biggest oil refineries in long-range drone attack",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 11:46:34 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/ukraine-war-russia-zelenskyy-oil-refinery.html",
+      "summary": "The Slavneft-Yanos facility in Yaroslavl, which is situated hundreds of miles from the Ukraine border, is one of Russia's biggest oil refineries."
+    },
+    {
+      "headline": "Restaurant Brands International earnings beat as Burger King's U.S. business soars",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 11:38:35 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/restaurant-brands-international-q2-2026-earnings.html",
+      "summary": "Burger King's U.S. business reported same-store sales growth of 8.5%."
+    },
+    {
+      "headline": "Versant raises 2026 outlook on strength of platforms segment and advertising momentum",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 11:02:05 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/versant-vsnt-earnings-q2-2026.html",
+      "summary": "Versant noted revenue growth in its platforms business, which includes Fandango and GolfNow, and now, the recent acquisition of Full Swing."
+    },
+    {
+      "headline": "JPMorgan's Jamie Dimon warns of high leverage: 'Somebody will disrupt the market'",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 02:02:39 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/jpmorgan-jamie-dimon-leverage-market-disruption.html",
+      "summary": "JPMorgan Chief Executive Officer Jamie Dimon warned that leverage across financial markets remains elevated, adding that investors should be mindful that hidden borrowing could amplify market disrupti"
+    },
+    {
+      "headline": "Beijing flips the script on the U.S. tech war \u2014 and tests the truce weeks before Xi's visit",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 07:59:32 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/us-china-trump-xi-summit-trade-technology-restrictions.html",
+      "summary": "China unleashed its broadest package of trade countermeasures since last October's trade truce, pushing back against a string of recent U.S. restrictions."
+    },
+    {
+      "headline": "We're downgrading Honeywell Aerospace after a shockingly bad earnings debut",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 00:09:36 GMT",
+      "url": "https://www.cnbc.com/2026/08/05/were-downgrading-honeywell-aerospace-after-a-shockingly-bad-earnings-debut.html",
+      "summary": "The company slashed its full-year guidance on key metrics in its first earnings report since separating from the Honeywell conglomerate in June."
+    }
+  ]
+}
