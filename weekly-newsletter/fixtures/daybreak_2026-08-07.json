@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-08-07",
+    "generated_at": "2026-08-07T10:18:19.619061Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7723.5498,
+      "close": 7709.96,
+      "daily_pct": -0.176,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 54349.1211,
+      "close": 53885.1016,
+      "daily_pct": -0.8538,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26363.4395,
+      "close": 26348.3496,
+      "daily_pct": -0.0572,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3019.1899,
+      "close": 3001.55,
+      "daily_pct": -0.5843,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4242.0,
+      "close": 4373.1001,
+      "daily_pct": 3.0905,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.617,
+      "close": 4.67,
+      "daily_pct": 1.1479,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.97,
+      "close": 99.915,
+      "daily_pct": -0.055,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 77.29,
+      "close": 77.13,
+      "daily_pct": -0.207,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65606.71,
+      "prev_close": 65683.26,
+      "daily_pct": -0.1165,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25668.03,
+      "prev_close": 25530.28,
+      "daily_pct": 0.5396,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6258.77,
+      "prev_close": 6296.38,
+      "daily_pct": -0.5973,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24570.65,
+      "prev_close": 24636.0,
+      "daily_pct": -0.2653,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9263.6,
+      "prev_close": 9271.6,
+      "daily_pct": -0.0863,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26330.43,
+      "prev_close": 26330.43,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10930.7,
+      "prev_close": 10930.73,
+      "daily_pct": -0.0003,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8729.44,
+      "prev_close": 8729.63,
+      "daily_pct": -0.0022,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6540.42,
+      "prev_close": 6540.16,
+      "daily_pct": 0.004,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.153,
+      "prev_close": 1.15574,
+      "daily_pct": -0.2364
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34383,
+      "prev_close": 1.34696,
+      "daily_pct": -0.2325
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.38499,
+      "prev_close": 157.60001,
+      "daily_pct": 0.4981
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70413,
+      "prev_close": 0.70573,
+      "daily_pct": -0.2273
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23393,
+      "prev_close": 1.23966,
+      "daily_pct": -0.4627
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7747.0,
+      "prev_close": 7747.0,
+      "daily_pct": 0.1584
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29621.5,
+      "prev_close": 29621.5,
+      "daily_pct": 0.4519
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 54034.0,
+      "prev_close": 54034.0,
+      "daily_pct": 0.0389
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4372.5,
+      "prev_close": 4372.5,
+      "daily_pct": 3.0764
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.59,
+      "prev_close": 108.59,
+      "daily_pct": 0.0864
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 77.13,
+      "prev_close": 77.13,
+      "daily_pct": -0.207
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Nonfarm Payrolls / Unemployment",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "The July jobs numbers are due out Friday. Here's what to expect",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 20:15:22 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/the-july-jobs-numbers-are-due-out-friday-heres-what-to-expect.html",
+      "summary": "Nonfarm payrolls are expected to post a gain of just 83,000 with an unchanged unemployment rate at 4.2%."
+    },
+    {
+      "headline": "Oil rises as Iran's draft plan sees U.S. and Israel banned from Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Fri, 07 Aug 2026 05:27:03 GMT",
+      "url": "https://www.cnbc.com/2026/08/07/oil-rises-supply-fears-iran-draft-plan-strait-hormuz.html",
+      "summary": "News of Iran's restrictive draft plan for the\u00a0Strait of Hormuz sent oil prices higher, renewing concerns over supply disruptions."
+    },
+    {
+      "headline": "The 72-hour crisis that could upend Meta\u2019s business in India as firm risks losing legal protection",
+      "source": "CNBC",
+      "published": "Fri, 07 Aug 2026 04:11:09 GMT",
+      "url": "https://www.cnbc.com/2026/08/07/meta-india-zuckerberg-apology-genz-protest.html",
+      "summary": "U.S. social media giant Meta is facing increasing pressure from Indian regulators, including demands to revoke the firm's safe harbor immunity in the country."
+    },
+    {
+      "headline": "Gas prices could remain high this fall even if crude prices stabilize. Here's why",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 20:34:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/refinery-gas-oil-prices-iran-ukraine-war.html",
+      "summary": "The refining market is very tight due to the Ukraine and Iran wars, keeping gas prices elevated even as crude prices fall."
+    },
+    {
+      "headline": "Jim Cramer highlights 5 investing themes \u2014 and the stocks to buy for each",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 22:23:25 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/jim-cramer-5-investing-themes-stocks-to-buy.html",
+      "summary": "CNBC\u2019s Jim Cramer said earnings season reinforced five investing themes he thinks will produce the market's best buying opportunities."
+    },
+    {
+      "headline": "Airbnb stock soars 9% on earnings and revenue beat, strong guidance for third quarter",
+      "source": "CNBC",
+      "published": "Thu, 06 Aug 2026 22:01:34 GMT",
+      "url": "https://www.cnbc.com/2026/08/06/airbnb-abnb-q2-earningsreport.html",
+      "summary": "Airbnb said it's seeing strong demand \"across all regions,\" contributing to the company's better-than-expected forecast."
+    },
+    {
+      "headline": "Yen rally fades a week after U.S.-Japan intervention as focus shifts to policy",
+      "source": "CNBC",
+      "published": "Fri, 07 Aug 2026 09:18:47 GMT",
+      "url": "https://www.cnbc.com/2026/08/07/us-japan-intervention-yen-unwinds-gains.html",
+      "summary": "The coordinated involvement from the Treasury and BoJ had initially lifted the yen as low as 155 to the dollar, down from just above 163 beforehand."
+    },
+    {
+      "headline": "Wildfire costs are surging \u2014 but much of the damage in Europe isn\u2019t insured",
+      "source": "CNBC",
+      "published": "Fri, 07 Aug 2026 09:26:05 GMT",
+      "url": "https://www.cnbc.com/2026/08/07/wildfires-insurance-cover-zurich-allianz-munich.html",
+      "summary": "Insurers warn that Europe is facing a \"protection gap\" in wildfire cover as disaster recovery costs outpace insurance coverage."
+    }
+  ]
+}
