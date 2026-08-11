@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-11",
+    "generated_at": "2026-08-11T09:54:02.660681Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7757.6401,
+      "close": 7753.1099,
+      "daily_pct": -0.0584,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 54036.9297,
+      "close": 53975.9805,
+      "daily_pct": -0.1128,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26690.6191,
+      "close": 26605.3594,
+      "daily_pct": -0.3194,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3034.49,
+      "close": 3017.3999,
+      "daily_pct": -0.5632,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4361.7998,
+      "close": 4430.7998,
+      "daily_pct": 1.5819,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.66,
+      "close": 4.699,
+      "daily_pct": 0.8369,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.81,
+      "close": 99.869,
+      "daily_pct": 0.0591,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 82.13,
+      "close": 84.23,
+      "daily_pct": 2.5569,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66970.22,
+      "prev_close": 65606.71,
+      "daily_pct": 2.0783,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25652.82,
+      "prev_close": 25937.49,
+      "daily_pct": -1.0975,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6345.53,
+      "prev_close": 6299.66,
+      "daily_pct": 0.7281,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24450.25,
+      "prev_close": 24583.8,
+      "daily_pct": -0.5432,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9250.6,
+      "prev_close": 9232.6,
+      "daily_pct": 0.195,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26259.27,
+      "prev_close": 26259.27,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10847.59,
+      "prev_close": 10847.59,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8705.59,
+      "prev_close": 8705.59,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6536.65,
+      "prev_close": 6536.65,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15393,
+      "prev_close": 1.15564,
+      "daily_pct": -0.1477
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35042,
+      "prev_close": 1.34907,
+      "daily_pct": 0.1001
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.278,
+      "prev_close": 157.89101,
+      "daily_pct": 0.8784
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70572,
+      "prev_close": 0.70635,
+      "daily_pct": -0.0896
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23289,
+      "prev_close": 1.23736,
+      "daily_pct": -0.3612
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7779.75,
+      "prev_close": 7779.75,
+      "daily_pct": 0.0386
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29779.0,
+      "prev_close": 29779.0,
+      "daily_pct": 0.1412
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 54024.0,
+      "prev_close": 54024.0,
+      "daily_pct": -0.0721
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4431.0,
+      "prev_close": 4431.0,
+      "daily_pct": 1.5865
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.16,
+      "prev_close": 108.16,
+      "daily_pct": -0.2018
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 84.24,
+      "prev_close": 84.24,
+      "daily_pct": 2.5691
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.1%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "'That's a good idea': U.S. and Iran trade reparation demands as Hormuz deal hopes fade",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 09:46:04 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/us-iran-war-trump-hormuz-control-reparation-talks-.html",
+      "summary": "The dueling positions Washington and Tehran staked out showed how far apart the two sides remain even as both talked of winding down regional hostilities."
+    },
+    {
+      "headline": "Nvidia lines up $500 billion in financing as CEO Jensen Huang tells CNBC his chips are \u2018investable asset\u2019",
+      "source": "CNBC",
+      "published": "Mon, 10 Aug 2026 22:09:00 GMT",
+      "url": "https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html",
+      "summary": "Nvidia CEO Jensen Huang argued that because its hardware is broadly adopted, flexible and transferable, lenders can underwrite compute as revenue-generating."
+    },
+    {
+      "headline": "Interest rates may stay higher for longer. What that means for consumers",
+      "source": "CNBC",
+      "published": "Mon, 10 Aug 2026 16:10:05 GMT",
+      "url": "https://www.cnbc.com/2026/08/10/fed-rate-hike-prospects-higher-interest-rates.html",
+      "summary": "Any move toward higher rates would increase borrowing costs for consumers at a time when affordability pressures are already mounting."
+    },
+    {
+      "headline": "Zelenskyy warns Putin is preparing for escalation by bringing in North Korean military equipment",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 08:20:02 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/ukraine-war-zelenskyy-russia-putin-north-korea.html",
+      "summary": "His comments come shortly after deadly Russian attacks on cities across Ukraine overnight."
+    },
+    {
+      "headline": "Oil in U.S. Strategic Petroleum Reserve falls below 300 million barrels, lowest since 1983",
+      "source": "CNBC",
+      "published": "Mon, 10 Aug 2026 18:43:06 GMT",
+      "url": "https://www.cnbc.com/2026/08/10/oil-in-strategic-petroleum-reserve-falls-below-300-million-barrels-lowest-since-1983.html",
+      "summary": "U.S. presidents have increasingly ordered massive releases from the SPR in recent years."
+    },
+    {
+      "headline": "Trump says he spoke recently to Fed Chairman Warsh, denies regular calls",
+      "source": "CNBC",
+      "published": "Mon, 10 Aug 2026 21:23:04 GMT",
+      "url": "https://www.cnbc.com/2026/08/10/trump-spoke-to-fed-chair-kevin-warsh-denies-regular-calls.html",
+      "summary": "The president said he had recently been in touch with the Fed chairman, but denied regular contact amid concerns about central bank independence."
+    },
+    {
+      "headline": "Singapore revises its annual growth forecast sharply higher on AI-related boost",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 02:58:27 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/singapore-gdp-forecast-ai-boost-oil.html",
+      "summary": "GDP growth for 2026 is now expected to come in at 4.5% to 5.5%, more than double the low end of its previous forecast of 2%-4%"
+    },
+    {
+      "headline": "SpaceX stock rebounds, closing above $135 IPO price for first time in weeks",
+      "source": "CNBC",
+      "published": "Mon, 10 Aug 2026 20:08:55 GMT",
+      "url": "https://www.cnbc.com/2026/08/10/spacex-spcx-stock-ipo-price.html",
+      "summary": "SpaceX reported better-than-expected revenue in its second-quarter earnings report last week."
+    }
+  ]
+}
