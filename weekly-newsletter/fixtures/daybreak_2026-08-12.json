@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-12",
+    "generated_at": "2026-08-12T09:54:56.491074Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7753.1099,
+      "close": 7728.2002,
+      "daily_pct": -0.3213,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53975.9805,
+      "close": 53791.8516,
+      "daily_pct": -0.3411,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26605.3594,
+      "close": 26445.4492,
+      "daily_pct": -0.601,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3017.3999,
+      "close": 3027.1201,
+      "daily_pct": 0.3221,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4383.0,
+      "close": 4472.7998,
+      "daily_pct": 2.0488,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.699,
+      "close": 4.684,
+      "daily_pct": -0.3192,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.82,
+      "close": 99.828,
+      "daily_pct": 0.008,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 83.2,
+      "close": 82.71,
+      "daily_pct": -0.5889,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 67524.06,
+      "prev_close": 66970.22,
+      "daily_pct": 0.827,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25440.17,
+      "prev_close": 25652.82,
+      "daily_pct": -0.829,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6579.04,
+      "prev_close": 6345.53,
+      "daily_pct": 3.6799,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24361.7,
+      "prev_close": 24471.7,
+      "daily_pct": -0.4495,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9209.4,
+      "prev_close": 9250.6,
+      "daily_pct": -0.4454,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26501.5,
+      "prev_close": 26501.5,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10852.74,
+      "prev_close": 10852.74,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8706.49,
+      "prev_close": 8706.49,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6565.05,
+      "prev_close": 6565.05,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15393,
+      "prev_close": 1.15464,
+      "daily_pct": -0.0612
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3513,
+      "prev_close": 1.35113,
+      "daily_pct": 0.0122
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.11099,
+      "prev_close": 159.15601,
+      "daily_pct": -0.0283
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70666,
+      "prev_close": 0.70553,
+      "daily_pct": 0.1607
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23065,
+      "prev_close": 1.23484,
+      "daily_pct": -0.3397
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7769.25,
+      "prev_close": 7769.25,
+      "daily_pct": 0.2807
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29829.25,
+      "prev_close": 29829.25,
+      "daily_pct": 0.6861
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53961.0,
+      "prev_close": 53961.0,
+      "daily_pct": 0.1503
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4473.3,
+      "prev_close": 4473.3,
+      "daily_pct": 2.0602
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.61,
+      "prev_close": 108.61,
+      "daily_pct": 0.1152
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 82.71,
+      "prev_close": 82.71,
+      "daily_pct": -0.5889
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "CPI",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "CoreWeave stock pops 14% as revenue doubles on accelerating AI infrastructure demand",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 22:51:06 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/coreweave-crwv-q2-earnings-report-2026.html",
+      "summary": "CoreWeave's revenue is surging as the AI boom continues, but the company is also sitting on $35 billion in debt."
+    },
+    {
+      "headline": "Hormuz closure squeezes global economy as oil demand destruction intensifies, IEA says",
+      "source": "CNBC",
+      "published": "Wed, 12 Aug 2026 08:31:06 GMT",
+      "url": "https://www.cnbc.com/2026/08/12/iea-oil-demand-hormuz.html",
+      "summary": "The IEA expects oil demand to fall by 1.6 million barrels a day in 2026 as high fuel prices and Strait of Hormuz disruptions weigh on consumption."
+    },
+    {
+      "headline": "Chinese tech giant Tencent posts revenue beat on accelerating games sales, AI-driven ads",
+      "source": "CNBC",
+      "published": "Wed, 12 Aug 2026 09:15:43 GMT",
+      "url": "https://www.cnbc.com/2026/08/12/china-tencent-earnings-q2-2026-gaming-ai-advertising.html",
+      "summary": "Tencent stock was down 26% so far in 2026 as the company faces intense competition in China in AI and investors grow jittery about its rising spending."
+    },
+    {
+      "headline": "EVs dominate China\u2019s car market: 5 takeaways from the country's latest auto sales data",
+      "source": "CNBC",
+      "published": "Wed, 12 Aug 2026 01:20:13 GMT",
+      "url": "https://www.cnbc.com/2026/08/12/china-car-sales-data-byd-tesla-geely-vw.html",
+      "summary": "The China Passenger Car Association released data Tuesday showing penetration of new energy vehicles rose in July. Tesla's Model Y remained popular."
+    },
+    {
+      "headline": "Parents could put pretax paycheck money into Trump Accounts, with employers matching, Treasury says",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 15:29:22 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/trump-accounts-employer-match-paycheck-contributions-treasury.html",
+      "summary": "The U.S. Department of the Treasury issued guidance that could allow parents to make pretax contributions to a child's Trump Account directly from their paycheck."
+    },
+    {
+      "headline": "Cramer says ask yourself these 3 questions to figure out what's really happening in the market",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 22:15:30 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/cramer-questions-figure-out-market.html",
+      "summary": "CNBC\u2019s Jim Cramer said investors can quickly gauge the market by focusing on three things: bonds, oil and Nvidia."
+    },
+    {
+      "headline": "Why Jensen Huang\u2019s $500 billion AI financing plan faces a big risk from China",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 21:01:13 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/nvidia-ai-funding-jensen-huang-china-risk.html",
+      "summary": "Nvidia CEO Jensen Huang is pitching GPUs as long-term collateral to unlock $500 billion in funding. The question is how fast will his chips depreciate?"
+    },
+    {
+      "headline": "Wall Street just endorsed Jensen Huang's 'big concept' for AI. What now?",
+      "source": "CNBC",
+      "published": "Tue, 11 Aug 2026 14:11:05 GMT",
+      "url": "https://www.cnbc.com/2026/08/11/wall-street-endorsed-jensen-huangs-big-concept-for-ai-what-now.html",
+      "summary": "The first three-plus years of the AI build-out have been funded by record amounts of equity and debt issued by leading tech companies. Nvidia has a new idea."
+    }
+  ]
+}
