@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "date": "2026-08-13",
+    "generated_at": "2026-08-13T10:27:30.459520Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7728.2002,
+      "close": 7748.5,
+      "daily_pct": 0.2627,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53791.8516,
+      "close": 53770.2695,
+      "daily_pct": -0.0401,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26445.4492,
+      "close": 26588.4902,
+      "daily_pct": 0.5409,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3027.1201,
+      "close": 3045.48,
+      "daily_pct": 0.6065,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4408.8999,
+      "close": 4440.1001,
+      "daily_pct": 0.7077,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.684,
+      "close": 4.682,
+      "daily_pct": -0.0427,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -0.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.01,
+      "close": 99.902,
+      "daily_pct": -0.108,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 83.27,
+      "close": 82.11,
+      "daily_pct": -1.3931,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 68308.59,
+      "prev_close": 67524.06,
+      "daily_pct": 1.1619,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25396.51,
+      "prev_close": 25440.17,
+      "daily_pct": -0.1716,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6813.34,
+      "prev_close": 6579.04,
+      "daily_pct": 3.5613,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24395.85,
+      "prev_close": 24435.95,
+      "daily_pct": -0.1641,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9188.5,
+      "prev_close": 9209.4,
+      "daily_pct": -0.2269,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26469.1,
+      "prev_close": 26469.1,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10805.73,
+      "prev_close": 10805.73,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8695.84,
+      "prev_close": 8695.84,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6570.49,
+      "prev_close": 6570.49,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15393,
+      "prev_close": 1.15437,
+      "daily_pct": -0.0381
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34986,
+      "prev_close": 1.35099,
+      "daily_pct": -0.0837
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.326,
+      "prev_close": 159.265,
+      "daily_pct": 0.0383
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70587,
+      "prev_close": 0.7064,
+      "daily_pct": -0.0756
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23139,
+      "prev_close": 1.23302,
+      "daily_pct": -0.1318
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7783.75,
+      "prev_close": 7783.75,
+      "daily_pct": 0.1705
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29877.5,
+      "prev_close": 29877.5,
+      "daily_pct": 0.0812
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53980.0,
+      "prev_close": 53980.0,
+      "daily_pct": 0.2023
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4440.1,
+      "prev_close": 4440.1,
+      "daily_pct": 0.7077
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.69,
+      "prev_close": 108.69,
+      "daily_pct": 0.1296
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 82.11,
+      "prev_close": 82.11,
+      "daily_pct": -1.3931
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "CPI",
+        "actual": "+0.1% MoM / +3.4% YoY",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil prices fall as investors weigh falling demand against Middle East tensions",
+      "source": "CNBC",
+      "published": "Thu, 13 Aug 2026 08:43:23 GMT",
+      "url": "https://www.cnbc.com/2026/08/13/oil-spill-near-oman-worries-over-supply-.html",
+      "summary": "Oil futures retreated early Wednesday morning after prices rose overnight."
+    },
+    {
+      "headline": "Shipping giants warn ports and trucks could hold up deliveries and push up prices",
+      "source": "CNBC",
+      "published": "Thu, 13 Aug 2026 09:17:39 GMT",
+      "url": "https://www.cnbc.com/2026/08/13/maersk-earnings-shipping-hormuz-red-sea.html",
+      "summary": "Global shipping demand remains strong despite geopolitical turmoil, but port and trucking bottlenecks are increasing congestion and putting upward pressure on freight rates."
+    },
+    {
+      "headline": "Ukraine attacks Russian grain export terminals in Black Sea, prompting warning about food markets",
+      "source": "CNBC",
+      "published": "Thu, 13 Aug 2026 10:01:40 GMT",
+      "url": "https://www.cnbc.com/2026/08/13/ukraine-russia-novorossiysk-grain.html",
+      "summary": "Ukraine has launched a heavy drone assault on warships and major Russian grain export terminals in the Black Sea port city of Novorossiysk."
+    },
+    {
+      "headline": "China\u2019s answer to Boeing and Airbus makes first international flight \u2014 could COMAC challenge the aviation duopoly?",
+      "source": "CNBC",
+      "published": "Wed, 12 Aug 2026 13:15:36 GMT",
+      "url": "https://www.cnbc.com/2026/08/12/china-comac-boeing-airbus.html",
+      "summary": "China\u2019s C919 has made its first scheduled international commercial flight, a milestone in COMAC\u2019s bid to challenge Boeing and Airbus globally."
+    },
+    {
+      "headline": "\u2018Hormuz remains blocked\u2019: Iran disputes Trump claims as traffic sinks to near 3-month lows",
+      "source": "CNBC",
+      "published": "Thu, 13 Aug 2026 08:28:14 GMT",
+      "url": "https://www.cnbc.com/2026/08/13/us-iran-war-trump-hormuz-irgc.html",
+      "summary": "The Persian Strait Gulf Authority said \"the Strait of Hormuz remains blocked and will not be reopened until Iran's conditions are accepted.\""
+    },
+    {
+      "headline": "Cerebras stock plunges 14% after second earnings report following IPO",
+      "source": "CNBC",
+      "published": "Wed, 12 Aug 2026 23:49:23 GMT",
+      "url": "https://www.cnbc.com/2026/08/12/cerebras-cbrs-q2-earnings-report-2026.html",
+      "summary": "Cerebras Systems reported better-than-expected second-quarter revenue and raised its full-year guidance."
+    },
+    {
+      "headline": "U.S. budget deficit surged in July to highest level since March 2021",
+      "source": "CNBC",
+      "published": "Wed, 12 Aug 2026 18:56:15 GMT",
+      "url": "https://www.cnbc.com/2026/08/12/us-budget-deficit-surged-in-july-to-highest-level-since-march-2021.html",
+      "summary": "Beyond the big single-month jump, the collective red ink over the 10 months of the fiscal year rose to nearly $1.8 trillion, surpassing the same period in 2025."
+    },
+    {
+      "headline": "Saudi Arabia ramps up oil exports through Mediterranean pipeline to avoid attacks in Red Sea",
+      "source": "CNBC",
+      "published": "Wed, 12 Aug 2026 21:04:18 GMT",
+      "url": "https://www.cnbc.com/2026/08/12/saudi-arabia-iran-oil-red-sea-houthi-suez-canal-strait-hormuz.html",
+      "summary": "Oil exports from Egypt's Mediterranean port of Sidi Kerir have more than doubled. The crude is mostly from Saudi Arabia, according to Kpler."
+    }
+  ]
+}
