@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "date": "2026-08-14",
+    "generated_at": "2026-08-14T11:39:51.721325Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7748.5,
+      "close": 7798.9902,
+      "daily_pct": 0.6516,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53770.2695,
+      "close": 53839.9883,
+      "daily_pct": 0.1297,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26588.4902,
+      "close": 26803.0293,
+      "daily_pct": 0.8069,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3045.48,
+      "close": 3052.8501,
+      "daily_pct": 0.242,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4363.6001,
+      "close": 4412.8999,
+      "daily_pct": 1.1298,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.682,
+      "close": 4.641,
+      "daily_pct": -0.8757,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -4.1
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.96,
+      "close": 99.659,
+      "daily_pct": -0.3011,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 81.25,
+      "close": 81.7,
+      "daily_pct": 0.5538,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 68713.8,
+      "prev_close": 68308.59,
+      "daily_pct": 0.5932,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25116.85,
+      "prev_close": 25396.51,
+      "daily_pct": -1.1012,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6977.94,
+      "prev_close": 6813.34,
+      "daily_pct": 2.4159,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24366.0,
+      "prev_close": 24395.85,
+      "daily_pct": -0.1224,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9115.2,
+      "prev_close": 9188.5,
+      "daily_pct": -0.7977,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26495.73,
+      "prev_close": 26495.73,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10773.82,
+      "prev_close": 10773.85,
+      "daily_pct": -0.0003,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8656.24,
+      "prev_close": 8656.24,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6564.25,
+      "prev_close": 6564.25,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15727,
+      "prev_close": 1.153,
+      "daily_pct": 0.3703
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35408,
+      "prev_close": 1.34978,
+      "daily_pct": 0.3182
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.104,
+      "prev_close": 159.328,
+      "daily_pct": -0.1406
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70847,
+      "prev_close": 0.70639,
+      "daily_pct": 0.2939
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23168,
+      "prev_close": 1.23016,
+      "daily_pct": 0.1232
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7827.0,
+      "prev_close": 7827.0,
+      "daily_pct": 0.0575
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30247.25,
+      "prev_close": 30247.25,
+      "daily_pct": 0.1946
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53827.0,
+      "prev_close": 53827.0,
+      "daily_pct": -0.2002
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4413.1,
+      "prev_close": 4413.1,
+      "daily_pct": 1.1344
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.88,
+      "prev_close": 108.88,
+      "daily_pct": -0.043
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 81.67,
+      "prev_close": 81.67,
+      "daily_pct": 0.5169
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Treasury yields rise as U.S. threatens Iran with more economic sanctions",
+      "source": "CNBC",
+      "published": "Fri, 14 Aug 2026 08:55:17 GMT",
+      "url": "https://www.cnbc.com/2026/08/14/treasury-yields-us-iran-economic-sanctions.html",
+      "summary": "The yield on the 10-year U.S. Treasury note \u2014 the key benchmark for U.S. government borrowing \u2014 rose 2 basis points to 4.661%."
+    },
+    {
+      "headline": "How a niche copper trade became a real-time gauge of Trump\u2019s next tariff move",
+      "source": "CNBC",
+      "published": "Fri, 14 Aug 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/14/copper-trump-tariffs-metal-commodities-trade-war.html",
+      "summary": "The widening price of copper between two metals exchanges is offering investors a gauge of U.S. tariff risk."
+    },
+    {
+      "headline": "NATO aircraft shoot down drone over Latvia, which blames 'Russian electromagnetic warfare'",
+      "source": "CNBC",
+      "published": "Fri, 14 Aug 2026 10:46:33 GMT",
+      "url": "https://www.cnbc.com/2026/08/14/nato-drone-latvia.html",
+      "summary": "NATO fighters shot down a foreign drone over Latvia as Finland briefly restricted airspace and sea areas amid heightened Baltic security concerns."
+    },
+    {
+      "headline": "Uber partners with China's Pony.ai for 2,000 robotaxis in Europe",
+      "source": "CNBC",
+      "published": "Fri, 14 Aug 2026 01:02:39 GMT",
+      "url": "https://www.cnbc.com/2026/08/14/uber-partners-with-chinas-ponyai-for-2000-robotaxis-in-europe.html",
+      "summary": "The rollout comes as robotaxi fleet sizes become increasingly critical for commercialization."
+    },
+    {
+      "headline": "From Apple to Ford: How Chinese tech is becoming harder for global companies to ignore",
+      "source": "CNBC",
+      "published": "Fri, 14 Aug 2026 00:09:11 GMT",
+      "url": "https://www.cnbc.com/2026/08/14/china-tech-global-appeal-apple-ford-catl-deepseek.html",
+      "summary": "Global companies are increasingly tapping Chinese technology for its growing capabilities and scale, even as geopolitical risks remain."
+    },
+    {
+      "headline": "China built robots that can do backflips \u2013 but can they make money?",
+      "source": "CNBC",
+      "published": "Fri, 14 Aug 2026 08:24:24 GMT",
+      "url": "https://www.cnbc.com/2026/08/14/china-humanoid-robots-unitree-ipo-tesla-optimus.html",
+      "summary": "Unitree\u2019s IPO will gauge investors\u2019 appetite for a technology that has yet to prove its commercial viability amid intensifying geopolitical tensions."
+    },
+    {
+      "headline": "OpenAI loses revenue chief Denise Dresser, second major executive departure in days",
+      "source": "CNBC",
+      "published": "Thu, 13 Aug 2026 19:59:46 GMT",
+      "url": "https://www.cnbc.com/2026/08/13/openai-denise-dresser-executive-exits.html",
+      "summary": "Denise Dresser's sudden departure could be a major blow to OpenAI as it pursues a blockbuster IPO."
+    },
+    {
+      "headline": "Reddit stock jumps on inclusion in S&P 500",
+      "source": "CNBC",
+      "published": "Thu, 13 Aug 2026 23:04:21 GMT",
+      "url": "https://www.cnbc.com/2026/08/13/reddit-shares-jump-11percent-on-inclusion-in-sp-500.html",
+      "summary": "Reddit shares jumped on the company's inclusion in the S&amp;P 500."
+    }
+  ]
+}
