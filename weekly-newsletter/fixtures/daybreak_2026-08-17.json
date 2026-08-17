@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-17",
+    "generated_at": "2026-08-17T11:37:19.350630Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7798.9902,
+      "close": 7785.7598,
+      "daily_pct": -0.1696,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53839.9883,
+      "close": 53732.4102,
+      "daily_pct": -0.1998,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26803.0293,
+      "close": 26729.1602,
+      "daily_pct": -0.2756,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3052.8501,
+      "close": 3068.4199,
+      "daily_pct": 0.51,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4380.3999,
+      "close": 4461.0,
+      "daily_pct": 1.84,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.641,
+      "close": 4.696,
+      "daily_pct": 1.1851,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.67,
+      "close": 99.474,
+      "daily_pct": -0.1966,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 82.4,
+      "close": 82.67,
+      "daily_pct": 0.3277,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 69220.25,
+      "prev_close": 68713.8,
+      "daily_pct": 0.737,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25453.23,
+      "prev_close": 25116.85,
+      "daily_pct": 1.3393,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6977.94,
+      "prev_close": 6813.34,
+      "daily_pct": 2.4159,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24287.65,
+      "prev_close": 24366.0,
+      "daily_pct": -0.3216,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9073.2,
+      "prev_close": 9115.2,
+      "daily_pct": -0.4608,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26443.76,
+      "prev_close": 26443.76,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10768.88,
+      "prev_close": 10768.88,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8623.42,
+      "prev_close": 8623.58,
+      "daily_pct": -0.0019,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6558.76,
+      "prev_close": 6559.0,
+      "daily_pct": -0.0037,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15942,
+      "prev_close": 1.153,
+      "daily_pct": 0.5565
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35566,
+      "prev_close": 1.34907,
+      "daily_pct": 0.488
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.224,
+      "prev_close": 159.42599,
+      "daily_pct": -0.1267
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71276,
+      "prev_close": 0.70637,
+      "daily_pct": 0.9044
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23437,
+      "prev_close": 1.23016,
+      "daily_pct": 0.3419
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7815.5,
+      "prev_close": 7815.5,
+      "daily_pct": 0.1345
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30299.75,
+      "prev_close": 30299.75,
+      "daily_pct": 0.5242
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53721.0,
+      "prev_close": 53721.0,
+      "daily_pct": -0.1598
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4460.4,
+      "prev_close": 4460.4,
+      "daily_pct": 1.8263
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.66,
+      "prev_close": 108.66,
+      "daily_pct": 0.072
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 82.7,
+      "prev_close": 82.7,
+      "daily_pct": 0.3641
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Strait of Hormuz shipping grinds to a halt ahead of U.S.-Iran ceasefire expiry",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 08:06:38 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/us-iran-war-trump-hormuz.html",
+      "summary": "Shipping traffic in the Strait of Hormuz sank to a new low as a ceasefire between the U.S. and Iran is set to expire on Monday with no deal in sight."
+    },
+    {
+      "headline": "Vista Energy up 5% after billionaire Peter Thiel buys stake in the Argentine shale oil producer",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 11:05:58 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/peter-thiel-hedge-fund-vista-energy-argentina-stake.html",
+      "summary": "Peter Thiel\u2019s hedge fund disclosed a $76 million stake in Argentine oil producer Vista Energy, sending its shares higher in premarket trading."
+    },
+    {
+      "headline": "Santoli: Earnings bonanza that lifted market to record may not be all that it appears to be",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 10:31:33 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/santoli-earnings-bonanza-that-lifted-market-to-record-may-not-be-all-that-it-appears-to-be.html",
+      "summary": "The S&amp;P 500 is up more than 6% in 12 trading days to record levels."
+    },
+    {
+      "headline": "Russia targets Danube port after one of Ukraine\u2019s largest aerial attacks of the war",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 09:46:08 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/ukraine-war-russia-putin-moscow.html",
+      "summary": "Russia struck port infrastructure in Ukraine\u2019s Odesa region, damaging a Togo-flagged civilian vessel near Izmail after Kyiv launched a major drone attack on Moscow."
+    },
+    {
+      "headline": "Between earn-nothing cash, broken long-term bonds, these are the safety trades of 2026 market",
+      "source": "CNBC",
+      "published": "Sat, 15 Aug 2026 12:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/15/cash-money-market-funds-bonds.html",
+      "summary": "Investors have flocked to short-term investments like ultra-short bond funds in anticipation of a stock market correction and with long-term bonds broken."
+    },
+    {
+      "headline": "Depleted strategic oil reserve nears level that raises concerns about damage to caverns, operations",
+      "source": "CNBC",
+      "published": "Sat, 15 Aug 2026 14:19:35 GMT",
+      "url": "https://www.cnbc.com/2026/08/15/strategic-petroleum-reserve-spr-oil-iran-war-caverns.html",
+      "summary": "The rapid drawdown of the U.S. Strategic Petroleum Reserve could damage the caverns that store the oil, experts warn."
+    },
+    {
+      "headline": "China's economy slows further in July as retail sales barely grow, investment slump steepens",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 08:26:04 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/china-economy-sales-investment-july-.html",
+      "summary": "The data is reinforcing concerns about the health of the world's second-largest economy, which has grappled with a deepening supply-demand imbalance."
+    },
+    {
+      "headline": "Extreme heat spurs earliest-ever Champagne harvest, putting its famous taste to the test",
+      "source": "CNBC",
+      "published": "Sat, 15 Aug 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/15/heatwave-champagne-harvest-climate.html",
+      "summary": "Producers of the iconic French fizz face a challenge to preserve its taste profile while they also battle tariff complications and fewer drinkers."
+    }
+  ]
+}
