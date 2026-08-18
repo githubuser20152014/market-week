@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-18",
+    "generated_at": "2026-08-18T08:46:04.863121Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7785.7598,
+      "close": 7745.06,
+      "daily_pct": -0.5228,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53732.4102,
+      "close": 53459.78,
+      "daily_pct": -0.5074,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26729.1602,
+      "close": 26644.91,
+      "daily_pct": -0.3151,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3052.8501,
+      "close": 3068.4199,
+      "daily_pct": 0.51,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4417.7998,
+      "close": 4452.2998,
+      "daily_pct": 0.7809,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.641,
+      "close": 4.696,
+      "daily_pct": 1.1851,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.67,
+      "close": 99.655,
+      "daily_pct": -0.015,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 84.5,
+      "close": 84.05,
+      "daily_pct": -0.5325,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 67460.73,
+      "prev_close": 68713.8,
+      "daily_pct": -1.8236,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25471.15,
+      "prev_close": 25116.85,
+      "daily_pct": 1.4106,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6869.83,
+      "prev_close": 6977.94,
+      "daily_pct": -1.5493,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24193.55,
+      "prev_close": 24366.0,
+      "daily_pct": -0.7077,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9070.0,
+      "prev_close": 9115.2,
+      "daily_pct": -0.4959,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26216.21,
+      "prev_close": 26215.73,
+      "daily_pct": 0.0018,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10713.68,
+      "prev_close": 10713.68,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8534.69,
+      "prev_close": 8534.69,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6490.35,
+      "prev_close": 6490.35,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15781,
+      "prev_close": 1.15739,
+      "daily_pct": 0.0359
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.353,
+      "prev_close": 1.35466,
+      "daily_pct": -0.1231
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.66,
+      "prev_close": 159.22301,
+      "daily_pct": 0.2745
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71063,
+      "prev_close": 0.70852,
+      "daily_pct": 0.298
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23209,
+      "prev_close": 1.23054,
+      "daily_pct": 0.1257
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7731.25,
+      "prev_close": 7731.25,
+      "daily_pct": -0.4827
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29790.5,
+      "prev_close": 29790.5,
+      "daily_pct": -1.0151
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53465.0,
+      "prev_close": 53465.0,
+      "daily_pct": -0.1475
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4453.0,
+      "prev_close": 4453.0,
+      "daily_pct": 0.7968
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.38,
+      "prev_close": 108.38,
+      "daily_pct": -0.072
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 84.08,
+      "prev_close": 84.08,
+      "daily_pct": -0.497
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.1%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "The 30-year Treasury yield just hit a 19-year high. Three things could drive it even higher",
+      "source": "CNBC",
+      "published": "Tue, 18 Aug 2026 06:11:52 GMT",
+      "url": "https://www.cnbc.com/2026/08/18/30-year-treasury-yield-three-things-that-could-drive-it-even-higher.html",
+      "summary": "The yield on the 30-year U.S. Treasury has surged to its highest level in 19 years, and some strategists see scope for the move to go further."
+    },
+    {
+      "headline": "South Korea must brace for \u2018worst-case scenario,\u2019 President Lee says, as Trump cuts military drills",
+      "source": "CNBC",
+      "published": "Tue, 18 Aug 2026 05:16:51 GMT",
+      "url": "https://www.cnbc.com/2026/08/18/trump-south-korea-military-exercises-iran-north-korea.html",
+      "summary": "The annual exercises, are defensive and not intended to attack North Korea or raise tensions on the peninsula, Lee said."
+    },
+    {
+      "headline": "CNBC's The China Connection newsletter: Money or power? The key to winning the AI race",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 23:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/money-or-power-the-key-to-winning-the-us-china-ai-race.html",
+      "summary": "The U.S. can outspend China in financing artificial intelligence development, but is that the only factor that matters?"
+    },
+    {
+      "headline": "Trump won't extend Iran ceasefire, threatens to 'bomb' Oman if it 'gets in the way'",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 19:24:32 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/us-iran-war-trump-hormuz.html",
+      "summary": "Shipping traffic in the Strait of Hormuz sank to a new low as a ceasefire between the U.S. and Iran is set to expire on Monday with no deal in sight."
+    },
+    {
+      "headline": "30-year Treasury yield tops 5.31%, the highest in 19 years",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 20:04:53 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/treasury-yields-federal-reserve-fomc-minutes.html",
+      "summary": "Treasury yields were higher as traders awaited the latest FOMC minutes due later this week."
+    },
+    {
+      "headline": "Eli Lilly and J&J bounce on new data, as software stocks give up last week's gains",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 18:42:54 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/eli-lilly-and-jj-bounce-on-new-data-as-software-gives-up-gains.html",
+      "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+    },
+    {
+      "headline": "Anthropic tells investors annualized revenue run rate climbed to $65 billion in July",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 22:55:31 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/anthropic-says-annualized-revenue-climbed-to-65-billion-in-july.html",
+      "summary": "Anthropic's revenue run rate is up about sevenfold from a year earlier."
+    },
+    {
+      "headline": "Japanese automakers vulnerable to one-two punch of Iran war, yen rally",
+      "source": "CNBC",
+      "published": "Mon, 17 Aug 2026 05:18:44 GMT",
+      "url": "https://www.cnbc.com/2026/08/17/japanese-automakers-vulnerable-iran-war-yen-rally.html",
+      "summary": "Japanese automakers vulnerable to one-two punch of Iran war, yen rally"
+    }
+  ]
+}
