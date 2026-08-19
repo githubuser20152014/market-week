@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-08-19",
+    "generated_at": "2026-08-19T10:11:13.486811Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7745.0601,
+      "close": 7691.7598,
+      "daily_pct": -0.6882,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53459.7812,
+      "close": 53343.3984,
+      "daily_pct": -0.2177,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26644.9102,
+      "close": 26289.7109,
+      "daily_pct": -1.3331,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3057.54,
+      "close": 3017.8899,
+      "daily_pct": -1.2968,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4366.0,
+      "close": 4415.7002,
+      "daily_pct": 1.1383,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.724,
+      "close": 4.706,
+      "daily_pct": -0.381,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.65,
+      "close": 99.399,
+      "daily_pct": -0.2519,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 84.94,
+      "close": 85.05,
+      "daily_pct": 0.1295,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65326.42,
+      "prev_close": 67460.73,
+      "daily_pct": -3.1638,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25495.07,
+      "prev_close": 25471.15,
+      "daily_pct": 0.0939,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6471.17,
+      "prev_close": 6869.83,
+      "daily_pct": -5.8031,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24078.3,
+      "prev_close": 24154.9,
+      "daily_pct": -0.3171,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9053.8,
+      "prev_close": 9070.0,
+      "daily_pct": -0.1786,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26100.75,
+      "prev_close": 26100.75,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10706.95,
+      "prev_close": 10706.95,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8533.86,
+      "prev_close": 8534.54,
+      "daily_pct": -0.008,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6469.58,
+      "prev_close": 6469.93,
+      "daily_pct": -0.0054,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16104,
+      "prev_close": 1.15828,
+      "daily_pct": 0.238
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35582,
+      "prev_close": 1.35503,
+      "daily_pct": 0.0583
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.092,
+      "prev_close": 159.34,
+      "daily_pct": -0.1556
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70796,
+      "prev_close": 0.71082,
+      "daily_pct": -0.4017
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23429,
+      "prev_close": 1.23368,
+      "daily_pct": 0.0494
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7712.5,
+      "prev_close": 7712.5,
+      "daily_pct": -0.0194
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29540.75,
+      "prev_close": 29540.75,
+      "daily_pct": -0.1529
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53409.0,
+      "prev_close": 53409.0,
+      "daily_pct": 0.0112
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4415.5,
+      "prev_close": 4415.5,
+      "daily_pct": 1.1338
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.62,
+      "prev_close": 108.62,
+      "daily_pct": 0.0576
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 85.04,
+      "prev_close": 85.04,
+      "daily_pct": 0.1177
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Iran reportedly weighs attacks on U.S. targets in Europe as UAE severs trade with Tehran",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 08:51:29 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/us-iran-war-trump-hormuz.html",
+      "summary": "Washington and Tehran are considering next steps after negotiations fell apart, while the UAE has suspended trade with Iran."
+    },
+    {
+      "headline": "Target is set to report earnings before the bell. Here's what to expect",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 10:06:56 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/target-tgt-q2-2026-earnings.html",
+      "summary": "Target is expected to report its fiscal second-quarter results Wednesday morning as the retailer offers a window into its turnaround progress."
+    },
+    {
+      "headline": "Trump pauses 50% scheduled tariffs on Canada for three days, announces 'deal' with Ottawa",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 03:18:57 GMT",
+      "url": "https://www.cnbc.com/2026/08/18/trump-carney-canada-tariffs-dealine-talks.html",
+      "summary": "Trump has already imposed a variety of tariffs on Canada and its specific exports, including metals, lumber and auto parts."
+    },
+    {
+      "headline": "World\u2019s largest olive oil company pops over 15% as rivals circle in takeover battle",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 09:48:27 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/deoleo-takeover-battle-olive-oil-dcoop.html",
+      "summary": "Shares of Spain's Deoleo jumped on Wednesday morning amid an intensifying takeover battle for the world's largest olive oil bottler and marketer."
+    },
+    {
+      "headline": "China\u2019s backflipping robot maker Unitree pops 542% in Shanghai debut",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 07:20:10 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/china-backflipping-robot-maker-unitree-jumps-shanghai-ipo.html",
+      "summary": "Unitree Robotics shares rise 542% on their first day of trading in Shanghai"
+    },
+    {
+      "headline": "Zelenskyy faces challenge to his wartime rule as former defense chief calls for election",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 09:30:25 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/ukraine-war-fedorov-zelenskky-election.html",
+      "summary": "Former Ukraine Defense Minister Mykhailo Fedorov has called for wartime elections, saying Kyiv must restore its democratic process despite the ongoing war."
+    },
+    {
+      "headline": "Bond yields are climbing. Here\u2019s what that means for mortgages and other consumer borrowing",
+      "source": "CNBC",
+      "published": "Tue, 18 Aug 2026 16:58:29 GMT",
+      "url": "https://www.cnbc.com/2026/08/18/mortgage-rates-treasury-bond-yields-consumer-loans.html",
+      "summary": "Long-term government bond yields have risen sharply in recent days. Higher bond yields push consumer borrowing costs up, sometimes immediately."
+    },
+    {
+      "headline": "Treasury yields pull back from multi-decade highs ahead of FOMC minutes",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 08:33:21 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/treasury-yields-multi-decade-highs-bonds-inflation.html",
+      "summary": "The yield on the 10-year U.S. Treasury note \u2014 the key benchmark for U.S. government borrowing \u2014 fell 2 basis points to 4.686%."
+    }
+  ]
+}
