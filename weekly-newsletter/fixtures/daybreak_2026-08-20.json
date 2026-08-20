@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-08-20",
+    "generated_at": "2026-08-20T10:33:03.382985Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7691.7598,
+      "close": 7707.98,
+      "daily_pct": 0.2109,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53343.3984,
+      "close": 53463.0508,
+      "daily_pct": 0.2243,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26289.7109,
+      "close": 26331.0898,
+      "daily_pct": 0.1574,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3017.8899,
+      "close": 3032.9399,
+      "daily_pct": 0.4987,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4489.3999,
+      "close": 4543.2998,
+      "daily_pct": 1.2006,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.706,
+      "close": 4.653,
+      "daily_pct": -1.1262,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -5.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.83,
+      "close": 98.602,
+      "daily_pct": -0.2307,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 85.83,
+      "close": 86.58,
+      "daily_pct": 0.8738,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66216.79,
+      "prev_close": 65326.42,
+      "daily_pct": 1.363,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25698.49,
+      "prev_close": 25495.07,
+      "daily_pct": 0.7979,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6852.58,
+      "prev_close": 6471.17,
+      "daily_pct": 5.894,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24231.85,
+      "prev_close": 24078.3,
+      "daily_pct": 0.6377,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9083.8,
+      "prev_close": 9053.8,
+      "daily_pct": 0.3314,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25985.24,
+      "prev_close": 25985.24,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10723.4,
+      "prev_close": 10723.36,
+      "daily_pct": 0.0004,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8475.42,
+      "prev_close": 8475.42,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6428.27,
+      "prev_close": 6428.27,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1711,
+      "prev_close": 1.15794,
+      "daily_pct": 1.136
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3656,
+      "prev_close": 1.35367,
+      "daily_pct": 0.8808
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.28999,
+      "prev_close": 159.55,
+      "daily_pct": -0.7897
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71337,
+      "prev_close": 0.70815,
+      "daily_pct": 0.7369
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25713,
+      "prev_close": 1.23116,
+      "daily_pct": 2.1095
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7727.75,
+      "prev_close": 7727.75,
+      "daily_pct": -0.0162
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29549.25,
+      "prev_close": 29549.25,
+      "daily_pct": 0.1237
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53456.0,
+      "prev_close": 53456.0,
+      "daily_pct": -0.1382
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4543.3,
+      "prev_close": 4543.3,
+      "daily_pct": 1.2006
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.69,
+      "prev_close": 108.69,
+      "daily_pct": -0.0862
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 86.58,
+      "prev_close": 86.58,
+      "daily_pct": 0.8738
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Trump threatens 'Economic D-Day' for Iran and \u2018tremendous\u2019 consequences for its backers",
+      "source": "CNBC",
+      "published": "Thu, 20 Aug 2026 09:30:49 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/us-iran-war-trump-hormuz-economic-warfare.html",
+      "summary": "The announcement extends a pressure campaign the Trump administration has waged since April under the banner Operation Economic Fury."
+    },
+    {
+      "headline": "Bitcoin, ether surge as Trump urges Congress to pass crypto Clarity Act",
+      "source": "CNBC",
+      "published": "Thu, 20 Aug 2026 09:42:00 GMT",
+      "url": "https://www.cnbc.com/2026/08/20/cryptocurrencies-trump-bitcoin-ethereum.html",
+      "summary": "Bitcoin and ether surged after U.S. President Donald Trump urged Congress to pass a bill that would set a regulatory framework for the cryptocurrency sector."
+    },
+    {
+      "headline": "Walmart will report second-quarter earnings before the bell. Here's what to expect",
+      "source": "CNBC",
+      "published": "Thu, 20 Aug 2026 04:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html",
+      "summary": "Walmart is expected to report its fiscal second-quarter earnings on Thursday, offering a read on the consumer and the K-shaped economy."
+    },
+    {
+      "headline": "Bond yields edge higher as traders digest Treasury debt buyback plan",
+      "source": "CNBC",
+      "published": "Thu, 20 Aug 2026 08:57:47 GMT",
+      "url": "https://www.cnbc.com/2026/08/20/bond-yields-edge-higher-as-traders-digest-treasury-debt-buyback-plan.html",
+      "summary": "Bond yields edged higher after pulling back sharply during Wednesday's session."
+    },
+    {
+      "headline": "Trump bemoans Fed interest rate policy, says U.S. should be paying much less",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 21:29:38 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/trump-bemoans-fed-interest-rate-policy-says-us-should-be-paying-much-less.html",
+      "summary": "As he has done in the past, Trump accused Fed officials of having political motives."
+    },
+    {
+      "headline": "Trump touted a deal to avert new tariffs on Canada. Here's what we know so far",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 20:10:14 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/trump-canada-tariffs-deal-carney.html",
+      "summary": "Trump's new tariffs on about $20 billion worth of Canadian goods were set to take effect Wednesday, but were postponed by three days."
+    },
+    {
+      "headline": "Treasury, IRS move to restrict refundable tax credits to certain immigrants",
+      "source": "CNBC",
+      "published": "Wed, 19 Aug 2026 21:19:21 GMT",
+      "url": "https://www.cnbc.com/2026/08/19/treasury-irs-refundable-tax-credits-immigrants.html",
+      "summary": "The move would likely impact hundreds of thousands of immigrants who have Social Security numbers and have received authorization to work in the U.S., experts said."
+    },
+    {
+      "headline": "Trump says Iran's economy is collapsing. A former central bank adviser in Tehran pushes back",
+      "source": "CNBC",
+      "published": "Thu, 20 Aug 2026 08:38:11 GMT",
+      "url": "https://www.cnbc.com/2026/08/20/iran-economy-worries-trump-sanction-war-hormuz-uae-.html",
+      "summary": "Iran's economy is deteriorating under the weight of mounting sanctions, but far from unraveling, a former adviser to Iran's central bank told CNBC."
+    }
+  ]
+}
