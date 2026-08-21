@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-21",
+    "generated_at": "2026-08-21T11:48:53.140055Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7707.98,
+      "close": 7641.1602,
+      "daily_pct": -0.8669,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53463.0508,
+      "close": 52759.2109,
+      "daily_pct": -1.3165,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26331.0898,
+      "close": 26067.1699,
+      "daily_pct": -1.0023,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3032.9399,
+      "close": 2992.4299,
+      "daily_pct": -1.3357,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4516.2998,
+      "close": 4658.2998,
+      "daily_pct": 3.1442,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.653,
+      "close": 4.696,
+      "daily_pct": 0.9241,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.9,
+      "close": 98.644,
+      "daily_pct": -0.2589,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 87.83,
+      "close": 86.3,
+      "daily_pct": -1.742,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66016.36,
+      "prev_close": 66216.79,
+      "daily_pct": -0.3027,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 26009.46,
+      "prev_close": 25698.49,
+      "daily_pct": 1.2101,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6912.95,
+      "prev_close": 6852.58,
+      "daily_pct": 0.881,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24252.0,
+      "prev_close": 24231.85,
+      "daily_pct": 0.0832,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9058.9,
+      "prev_close": 9083.8,
+      "daily_pct": -0.2741,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26061.84,
+      "prev_close": 26061.84,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10768.13,
+      "prev_close": 10768.13,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8463.94,
+      "prev_close": 8463.94,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6444.29,
+      "prev_close": 6444.29,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.17014,
+      "prev_close": 1.16738,
+      "daily_pct": 0.2364
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.36537,
+      "prev_close": 1.35999,
+      "daily_pct": 0.396
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.674,
+      "prev_close": 158.276,
+      "daily_pct": 0.2515
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71659,
+      "prev_close": 0.7125,
+      "daily_pct": 0.5733
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.25067,
+      "prev_close": 1.25349,
+      "daily_pct": -0.2251
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7697.75,
+      "prev_close": 7697.75,
+      "daily_pct": 0.46
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29522.5,
+      "prev_close": 29522.5,
+      "daily_pct": 0.7577
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53127.0,
+      "prev_close": 53127.0,
+      "daily_pct": 0.526
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4657.9,
+      "prev_close": 4657.9,
+      "daily_pct": 3.1353
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.61,
+      "prev_close": 108.61,
+      "daily_pct": 0.1008
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 86.34,
+      "prev_close": 86.34,
+      "daily_pct": -1.6965
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Why some of America's biggest brands are losing ground in China",
+      "source": "CNBC",
+      "published": "Fri, 21 Aug 2026 11:30:02 GMT",
+      "url": "https://www.cnbc.com/2026/08/21/us-brands-china-competition.html",
+      "summary": "Nike, Starbucks and GM have lost ground in China as domestic rivals, geopolitics and changing consumer preferences reshape the market."
+    },
+    {
+      "headline": "'A delicate dance': JD Vance says economic pressure is the best way to achieve Washington's objectives in Iran",
+      "source": "CNBC",
+      "published": "Fri, 21 Aug 2026 08:10:55 GMT",
+      "url": "https://www.cnbc.com/2026/08/21/us-iran-war-trump-hormuz-vance-economic-pressure.html",
+      "summary": "Vance said \"what has been true over the last couple of weeks is they felt a lot more pressure than we have.\""
+    },
+    {
+      "headline": "NATO member Romania scrambles F-16 fighter jets to destroy drone near critical European gas project",
+      "source": "CNBC",
+      "published": "Fri, 21 Aug 2026 10:15:18 GMT",
+      "url": "https://www.cnbc.com/2026/08/21/romania-russia-ukraine-drone-gas-nato.html",
+      "summary": "It comes weeks after Romania\u2019s Air Force destroyed a Russian drone in its airspace."
+    },
+    {
+      "headline": "Gold rebounds as bond jitters, debt fears and weaker dollar revive bullion demand",
+      "source": "CNBC",
+      "published": "Fri, 21 Aug 2026 11:35:46 GMT",
+      "url": "https://www.cnbc.com/2026/08/21/gold-prices-us-debt-dollar.html",
+      "summary": "Gold is rebounding as investors weigh U.S. debt concerns, a weaker dollar and stubbornly high Treasury yields."
+    },
+    {
+      "headline": "U.S. bond intervention is like 'paying your mortgage with your credit card,' JPMorgan's Sullivan says",
+      "source": "CNBC",
+      "published": "Fri, 21 Aug 2026 02:48:10 GMT",
+      "url": "https://www.cnbc.com/2026/08/21/us-bond-intervention-shifting-problem-future-jpmorgan.html",
+      "summary": "The U.S. government's efforts to manage pressure in the Treasury market risk merely shifting the problem down the road, according to JPMorgan's James Sullivan."
+    },
+    {
+      "headline": "Goldman says hedge funds suffered worst underperformance vs S&P 500 in July in more than 20 years of data",
+      "source": "CNBC",
+      "published": "Fri, 21 Aug 2026 05:27:28 GMT",
+      "url": "https://www.cnbc.com/2026/08/21/goldman-hedge-funds-historic-underperformance-sp500-degrossing.html",
+      "summary": "Goldman says hedge funds suffered worst underperformance vs S&amp;P 500 in July in more than 20 years of data."
+    },
+    {
+      "headline": "Bitcoin on track for 20% weekly gain as investor optimism floods back",
+      "source": "CNBC",
+      "published": "Fri, 21 Aug 2026 11:24:25 GMT",
+      "url": "https://www.cnbc.com/2026/08/21/bitcoin-gain-cryptocurrency-investors-optimistic.html",
+      "summary": "The flagship digital currency has enjoyed a strong week boosted by several contributing factors."
+    },
+    {
+      "headline": "Warsh faces Fed independence test as Bessent moves in on central bank's turf",
+      "source": "CNBC",
+      "published": "Thu, 20 Aug 2026 21:53:44 GMT",
+      "url": "https://www.cnbc.com/2026/08/20/bessent-warsh-fed-bond-market-treasury-yields.html",
+      "summary": "Bessent\u2019s effort to tamp down long-term Treasury yields could force Warsh to clarify how far the Fed should go in coordinating on bonds and the balance sheet."
+    }
+  ]
+}
