@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-24",
+    "generated_at": "2026-08-24T10:05:51.464051Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7641.1602,
+      "close": 7674.3701,
+      "daily_pct": 0.4346,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52759.2109,
+      "close": 53277.0117,
+      "daily_pct": 0.9814,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26067.1699,
+      "close": 26180.4609,
+      "daily_pct": 0.4346,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2992.4299,
+      "close": 3017.8701,
+      "daily_pct": 0.8502,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4624.1001,
+      "close": 4700.6001,
+      "daily_pct": 1.6544,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.696,
+      "close": 4.738,
+      "daily_pct": 0.8944,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.8,
+      "close": 98.975,
+      "daily_pct": 0.1771,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 87.06,
+      "close": 85.02,
+      "daily_pct": -2.3432,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65528.09,
+      "prev_close": 66016.36,
+      "daily_pct": -0.7396,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25517.33,
+      "prev_close": 26009.46,
+      "daily_pct": -1.8921,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6696.96,
+      "prev_close": 6912.95,
+      "daily_pct": -3.1244,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24219.05,
+      "prev_close": 24252.0,
+      "daily_pct": -0.1359,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9103.1,
+      "prev_close": 9058.9,
+      "daily_pct": 0.4879,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26140.63,
+      "prev_close": 26140.63,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10833.01,
+      "prev_close": 10833.01,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8481.31,
+      "prev_close": 8481.31,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6459.48,
+      "prev_close": 6459.48,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16686,
+      "prev_close": 1.16878,
+      "daily_pct": -0.1645
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.36338,
+      "prev_close": 1.36435,
+      "daily_pct": -0.0709
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.19099,
+      "prev_close": 158.883,
+      "daily_pct": 0.1939
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71669,
+      "prev_close": 0.71194,
+      "daily_pct": 0.6675
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.24653,
+      "prev_close": 1.25064,
+      "daily_pct": -0.3291
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7680.5,
+      "prev_close": 7680.5,
+      "daily_pct": -0.1398
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29233.75,
+      "prev_close": 29233.75,
+      "daily_pct": -0.524
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53334.0,
+      "prev_close": 53334.0,
+      "daily_pct": -0.0356
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4700.7,
+      "prev_close": 4700.7,
+      "daily_pct": 1.6565
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.44,
+      "prev_close": 108.44,
+      "daily_pct": 0.1588
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 85.03,
+      "prev_close": 85.03,
+      "daily_pct": -2.3317
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "'They asked too much': Canadian dollar slides as Ottawa and Washington head for all-out trade war",
+      "source": "CNBC",
+      "published": "Mon, 24 Aug 2026 09:54:46 GMT",
+      "url": "https://www.cnbc.com/2026/08/24/canada-us-trade-war-deal.html",
+      "summary": "\"As a smaller, more open economy, Canada has more to lose from this,\" ING strategists said Monday."
+    },
+    {
+      "headline": "U.S. to unveil 'greatest financial offensive' against Iran as Tehran threatens ship seizures",
+      "source": "CNBC",
+      "published": "Mon, 24 Aug 2026 08:54:42 GMT",
+      "url": "https://www.cnbc.com/2026/08/24/us-iran-war-trump-hormuz-bessent-economic-sanctions-.html",
+      "summary": "The escalation came as both sides have missed a 60-day ceasefire window to reach a deal, closing off the formal truce mechanism to end the six-month war."
+    },
+    {
+      "headline": "Treasury yields fall as investors brace for Warsh\u2019s Jackson Hole keynote amid bond fears",
+      "source": "CNBC",
+      "published": "Mon, 24 Aug 2026 08:24:46 GMT",
+      "url": "https://www.cnbc.com/2026/08/24/treasury-yields-warsh-jackson-hole.html",
+      "summary": "Treasury yields fell Monday as investors await Federal Reserve Chair Kevin Warsh's keynote speech at Jackson Hole later this week."
+    },
+    {
+      "headline": "Equal-weight S&P 500 is leading the 2026 market and its flagship trade just hit $100 billion",
+      "source": "CNBC",
+      "published": "Sun, 23 Aug 2026 13:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/23/stocks-market-investing-sp500-spx.html",
+      "summary": "Money is flooding into equal-weight stock market ETFs this year. Investing experts say it's not a fad."
+    },
+    {
+      "headline": "Nvidia customers reportedly warned about AI-related price hikes",
+      "source": "CNBC",
+      "published": "Sat, 22 Aug 2026 20:26:44 GMT",
+      "url": "https://www.cnbc.com/2026/08/22/nvidia-customers-reportedly-warned-about-ai-related-price-hikes-.html",
+      "summary": "The chipmaker has told some of its largest customers that the prices of servers containing its AI chips could move more than 15% higher, Bloomberg News reported."
+    },
+    {
+      "headline": "Shein targets $27 billion Hong Kong IPO \u2014 a fraction of its 2022 valuation",
+      "source": "CNBC",
+      "published": "Mon, 24 Aug 2026 07:34:17 GMT",
+      "url": "https://www.cnbc.com/2026/08/24/shein-ipo-valuation-hong-kong.html",
+      "summary": "Shein is planning to raise up to $13.86 billion in Hong Kong dollars ($1.77 billion) in its initial public offering, according to a filing on Monday."
+    },
+    {
+      "headline": "Small UK power generator shut down after cyberattack linked to Iran: Telegraph",
+      "source": "CNBC",
+      "published": "Sun, 23 Aug 2026 12:46:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/23/small-uk-power-plant-shut-down-after-iran-linked-cyberattack-report.html",
+      "summary": "The U.K. government says the incident did not pose a risk to the country's energy system, adding that it briefed CEOs of companies in the sector with advice."
+    },
+    {
+      "headline": "Paramount, California AG office reportedly plan to meet Monday to discuss settling WBD lawsuit",
+      "source": "CNBC",
+      "published": "Sun, 23 Aug 2026 17:30:14 GMT",
+      "url": "https://www.cnbc.com/2026/08/22/paramount-california-ag-said-to-plan-meeting-on-settling-wbd-suit-.html",
+      "summary": "Paramount and the California A.G. office are set to meet Monday to discuss a settlement of the antitrust lawsuit over Paramount's Warner Bros. Discovery deal."
+    }
+  ]
+}
