@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-08-27",
+    "generated_at": "2026-08-27T09:55:23.689957Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7677.2798,
+      "close": 7675.7002,
+      "daily_pct": -0.0206,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53577.3984,
+      "close": 53463.8789,
+      "daily_pct": -0.2119,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26151.3008,
+      "close": 26130.1992,
+      "daily_pct": -0.0807,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3010.02,
+      "close": 3005.8999,
+      "daily_pct": -0.1369,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4598.2002,
+      "close": 4635.2998,
+      "daily_pct": 0.8068,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.639,
+      "close": 4.664,
+      "daily_pct": 0.5389,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.17,
+      "close": 99.241,
+      "daily_pct": 0.0716,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 82.23,
+      "close": 82.04,
+      "daily_pct": -0.2311,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66131.98,
+      "prev_close": 66262.16,
+      "daily_pct": -0.1965,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25565.74,
+      "prev_close": 25652.97,
+      "daily_pct": -0.34,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6912.37,
+      "prev_close": 6808.21,
+      "daily_pct": 1.5299,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24133.05,
+      "prev_close": 24207.75,
+      "daily_pct": -0.3086,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9038.2,
+      "prev_close": 9127.8,
+      "daily_pct": -0.9816,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26345.18,
+      "prev_close": 26345.18,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10814.82,
+      "prev_close": 10814.82,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8385.3,
+      "prev_close": 8385.3,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6460.18,
+      "prev_close": 6460.18,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16482,
+      "prev_close": 1.16747,
+      "daily_pct": -0.2271
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35805,
+      "prev_close": 1.3647,
+      "daily_pct": -0.4875
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.44701,
+      "prev_close": 159.22301,
+      "daily_pct": 0.1407
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71803,
+      "prev_close": 0.71653,
+      "daily_pct": 0.2089
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.24123,
+      "prev_close": 1.24732,
+      "daily_pct": -0.4878
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7727.0,
+      "prev_close": 7727.0,
+      "daily_pct": 0.4811
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29616.5,
+      "prev_close": 29616.5,
+      "daily_pct": 1.1164
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53519.0,
+      "prev_close": 53519.0,
+      "daily_pct": -0.0037
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4635.0,
+      "prev_close": 4635.0,
+      "daily_pct": 0.8003
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.38,
+      "prev_close": 108.38,
+      "daily_pct": -0.2588
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 82.06,
+      "prev_close": 82.06,
+      "daily_pct": -0.2067
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "GDP",
+        "actual": "1.5",
+        "expected": "See tradingeconomics.com",
+        "previous": "2.1",
+        "unit": "%",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "+0.2%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Nvidia jumps 7% after blockbuster earnings boost AI confidence",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 08:43:20 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/nvidia-nvda-q2-earnings.html",
+      "summary": "Nvidia shares rose on Thursday after the chip giant's revenue guidance reassured investors that AI demand will remain strong."
+    },
+    {
+      "headline": "CIA chief John Ratcliffe reportedly made secretive Moscow trip to warn Russia against attacking NATO",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 09:36:30 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/ratcliffe-moscow-russia-nato-ukraine-iran.html",
+      "summary": "Russia and Ukraine have intensified long-range drone and missile strikes as fears of further escalation grow."
+    },
+    {
+      "headline": "Qatari PM heads to Iran to 'de-escalate tensions' as tanker attack tests Trump\u2019s Hormuz claim",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 08:22:29 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/us-iran-war-trump-hormuz-attack-mine-.html",
+      "summary": "The Prime Minister of U.S.-ally Qatar is in Iran for talks on Thursday as part of efforts to \"de-escalate tensions\" between Tehran and Washington."
+    },
+    {
+      "headline": "Fed Gov Lisa Cook\u2019s lawyer fires back at Trump's renewed threat to oust her",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 00:15:35 GMT",
+      "url": "https://www.cnbc.com/2026/08/26/trump-lisa-cook-federal-reserve.html",
+      "summary": "The Supreme Court in late June blocked Trump from firing Cook from the Federal Reserve, but left the president with a path to try again to remove her."
+    },
+    {
+      "headline": "Economists want Warsh to share more on his view of the economy at Jackson Hole, says CNBC survey",
+      "source": "CNBC",
+      "published": "Wed, 26 Aug 2026 17:02:24 GMT",
+      "url": "https://www.cnbc.com/2026/08/26/fed-survey-warsh-economy-view.html",
+      "summary": "Eighty percent of CNBC Fed Survey respondents say the Federal Reserve Chairman Warsh should provide more insight into his economic views."
+    },
+    {
+      "headline": "Anthropic and Nscale strike $45 billion cloud deal, sources say",
+      "source": "CNBC",
+      "published": "Wed, 26 Aug 2026 18:07:15 GMT",
+      "url": "https://www.cnbc.com/2026/08/26/anthropic-and-nscale-strike-45-billion-cloud-deal-sources-say.html",
+      "summary": "Anthropic will rent around 460 megawatts of compute capacity at an Nscale data center development in West Virgina, according to sources."
+    },
+    {
+      "headline": "U.S. still watching allies for alignment of interests even amid defense pullback, analyst says",
+      "source": "CNBC",
+      "published": "Wed, 26 Aug 2026 23:53:45 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/trump-asia-allies-defense-washington-terms-political-analyst.html",
+      "summary": "The U.S. may be asking allies to step up their own defense, but it still wants them to align on geopolitical interests."
+    },
+    {
+      "headline": "Qantas shares jump after earnings as airline unveils new business-class seats",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 05:02:44 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/qantas-shares-jump-on-earnings-as-airline-updates-business-class-.html",
+      "summary": "Qantas shares jumped 4% after the airline reported full-year earnings and introduced new business-class seats amid strong demand for premium travel."
+    }
+  ]
+}
