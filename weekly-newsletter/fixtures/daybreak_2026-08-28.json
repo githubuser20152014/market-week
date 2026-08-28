@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-28",
+    "generated_at": "2026-08-28T10:54:25.197934Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7675.7002,
+      "close": 7730.9902,
+      "daily_pct": 0.7203,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53463.8789,
+      "close": 53569.4414,
+      "daily_pct": 0.1974,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26130.1992,
+      "close": 26541.3496,
+      "daily_pct": 1.5735,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3005.8999,
+      "close": 3014.3401,
+      "daily_pct": 0.2808,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4609.7002,
+      "close": 4656.0,
+      "daily_pct": 1.0044,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.664,
+      "close": 4.672,
+      "daily_pct": 0.1715,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.16,
+      "close": 99.179,
+      "daily_pct": 0.0192,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 83.53,
+      "close": 83.47,
+      "daily_pct": -0.0718,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66405.56,
+      "prev_close": 66131.98,
+      "daily_pct": 0.4137,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25584.79,
+      "prev_close": 25565.74,
+      "daily_pct": 0.0745,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6788.88,
+      "prev_close": 6912.37,
+      "daily_pct": -1.7865,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24175.65,
+      "prev_close": 24090.85,
+      "daily_pct": 0.352,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9092.3,
+      "prev_close": 9038.2,
+      "daily_pct": 0.5986,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26517.06,
+      "prev_close": 26517.06,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10812.85,
+      "prev_close": 10812.83,
+      "daily_pct": 0.0002,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8403.0,
+      "prev_close": 8403.0,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6472.98,
+      "prev_close": 6472.98,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16496,
+      "prev_close": 1.16549,
+      "daily_pct": -0.0454
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3589,
+      "prev_close": 1.35969,
+      "daily_pct": -0.0584
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.67599,
+      "prev_close": 159.255,
+      "daily_pct": 0.2643
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.7201,
+      "prev_close": 0.71815,
+      "daily_pct": 0.2713
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.2448,
+      "prev_close": 1.24216,
+      "daily_pct": 0.2129
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7737.5,
+      "prev_close": 7737.5,
+      "daily_pct": -0.0646
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29603.25,
+      "prev_close": 29603.25,
+      "daily_pct": -0.3115
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53640.0,
+      "prev_close": 53640.0,
+      "daily_pct": 0.0354
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4656.1,
+      "prev_close": 4656.1,
+      "daily_pct": 1.0066
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 108.25,
+      "prev_close": 108.25,
+      "daily_pct": -0.3022
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 83.46,
+      "prev_close": 83.46,
+      "daily_pct": -0.0838
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Marvell shares tumble 8% as outlook underwhelms despite 37% revenue growth",
+      "source": "CNBC",
+      "published": "Fri, 28 Aug 2026 10:19:13 GMT",
+      "url": "https://www.cnbc.com/2026/08/28/marvell-mrvl-q2-earnings-outlook.html",
+      "summary": "Marvell Technology shares fell 8% in premarket trading despite a second-quarter revenue beat, as its fiscal 2028 outlook failed to meet investors' expectations."
+    },
+    {
+      "headline": "Fed Chairman Kevin Warsh delivers his key Jackson Hole speech Friday. Here's what to expect",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 22:58:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/fed-chairman-kevin-warsh-delivers-his-key-jackson-hole-speech-friday.html",
+      "summary": "Prior Fed chairs have used the speech as an opportunity to lay out broad policy frameworks and intentions."
+    },
+    {
+      "headline": "Russian forces intensify attacks in Donetsk as Ukraine lauds fresh EU push to unlock frozen assets",
+      "source": "CNBC",
+      "published": "Fri, 28 Aug 2026 09:33:45 GMT",
+      "url": "https://www.cnbc.com/2026/08/28/russia-donetsk-ukraine-frozen-assets.html",
+      "summary": "Russia claims advances toward Sloviansk and Kramatorsk as fighting intensifies in Donetsk."
+    },
+    {
+      "headline": "Trump ratchets up rhetoric against Beijing as U.S.-China officials meet for Xi's Washington visit",
+      "source": "CNBC",
+      "published": "Fri, 28 Aug 2026 01:35:13 GMT",
+      "url": "https://www.cnbc.com/2026/08/28/trump-x-meeting-us-china-iran-sanctions.html",
+      "summary": "U.S. and Chinese officials met in Beijing this week, despite the White House's tough talk on China."
+    },
+    {
+      "headline": "Six months into the Iran war: Markets become accustomed to stalemate with no end in sight",
+      "source": "CNBC",
+      "published": "Fri, 28 Aug 2026 05:02:16 GMT",
+      "url": "https://www.cnbc.com/2026/08/28/us-iran-war-six-months-trump.html",
+      "summary": "The war has far exceeded the four to six weeks the Trump administration estimated it would take to meet its objectives in Iran."
+    },
+    {
+      "headline": "Trump\u2019s Greenland fixation puts security at the heart of Iceland\u2019s knife-edge EU vote",
+      "source": "CNBC",
+      "published": "Fri, 28 Aug 2026 07:07:12 GMT",
+      "url": "https://www.cnbc.com/2026/08/28/iceland-eu-referendum-trump-greenland-arctic.html",
+      "summary": "Trump\u2019s push to acquire Greenland and growing uncertainty over U.S. security commitments have added a geopolitical dimension to Iceland\u2019s EU debate."
+    },
+    {
+      "headline": "SpaceX shares are doing something very unusual. Options traders are taking note",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 18:50:29 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/spacex-shares-are-doing-something-very-unusual-options-traders-are-taking-note.html",
+      "summary": "After debuting as the most volatile stock among its large-cap peers, Elon Musk's astronomic equity hasn't moved in three weeks."
+    },
+    {
+      "headline": "CrowdStrike CEO: AI exposes dangerous cyber gaps that legacy tools can\u2019t handle",
+      "source": "CNBC",
+      "published": "Thu, 27 Aug 2026 22:45:42 GMT",
+      "url": "https://www.cnbc.com/2026/08/27/crowdstrike-ceo-ai-exposes-dangerous-cyber-gaps.html",
+      "summary": "CrowdStrike CEO said Thursday that AI is allowing attackers to find and exploit vulnerabilities faster, making the company's protection a must."
+    }
+  ]
+}
