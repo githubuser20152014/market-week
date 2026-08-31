@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-08-31",
+    "generated_at": "2026-08-31T10:16:48.253944Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7730.9902,
+      "close": 7711.7598,
+      "daily_pct": -0.2487,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53569.4414,
+      "close": 53559.9883,
+      "daily_pct": -0.0176,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26541.3496,
+      "close": 26402.4199,
+      "daily_pct": -0.5234,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3014.3401,
+      "close": 2972.3701,
+      "daily_pct": -1.3923,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4478.1001,
+      "close": 4500.7998,
+      "daily_pct": 0.5069,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.672,
+      "close": 4.72,
+      "daily_pct": 1.0274,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 4.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.7,
+      "close": 99.516,
+      "daily_pct": -0.1846,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 83.4,
+      "close": 86.52,
+      "daily_pct": 3.741,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66311.93,
+      "prev_close": 66405.56,
+      "daily_pct": -0.141,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25566.99,
+      "prev_close": 25584.79,
+      "daily_pct": -0.0696,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6820.02,
+      "prev_close": 6788.88,
+      "daily_pct": 0.4587,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24080.4,
+      "prev_close": 24175.65,
+      "daily_pct": -0.394,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9076.0,
+      "prev_close": 9092.3,
+      "daily_pct": -0.1793,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26372.88,
+      "prev_close": 26372.88,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10816.3,
+      "prev_close": 10824.3,
+      "daily_pct": -0.0739,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8400.46,
+      "prev_close": 8400.46,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6465.47,
+      "prev_close": 6465.47,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1605,
+      "prev_close": 1.16564,
+      "daily_pct": -0.441
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35443,
+      "prev_close": 1.35971,
+      "daily_pct": -0.3887
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.73199,
+      "prev_close": 159.321,
+      "daily_pct": 0.258
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71644,
+      "prev_close": 0.71951,
+      "daily_pct": -0.4274
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23678,
+      "prev_close": 1.24415,
+      "daily_pct": -0.5924
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7708.0,
+      "prev_close": 7708.0,
+      "daily_pct": -0.1813
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29452.0,
+      "prev_close": 29452.0,
+      "daily_pct": -0.1348
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53495.0,
+      "prev_close": 53495.0,
+      "daily_pct": -0.1661
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4500.8,
+      "prev_close": 4500.8,
+      "daily_pct": 0.5069
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 107.92,
+      "prev_close": 107.92,
+      "daily_pct": -0.1734
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 86.52,
+      "prev_close": 86.52,
+      "daily_pct": 3.741
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "U.S., Iran exchange strikes for first time since July as Trump threatens strategic oil hub",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 08:42:40 GMT",
+      "url": "https://www.cnbc.com/2026/08/30/us-iran-strikes-strait-hormuz.html",
+      "summary": "The last major U.S. strikes on Iran were carried out in late July."
+    },
+    {
+      "headline": "Coupang dispute fuels new U.S. tariff pressure on South Korea",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/coupang-south-korea-us-tariffs.html",
+      "summary": "South Korea's dismissal of Congress' allegations that it discriminated against U.S.-based Coupang is straining the country's ties with the U.S., sources said."
+    },
+    {
+      "headline": "Russia preparing 'massive strikes' on Ukraine's energy sites after deadliest attack of the year",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 07:29:27 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/russia-massive-strikes-ukraine-energy-infrastructure.html",
+      "summary": "Russia's Defense Ministry has announced preparations for \"massive strikes\" on Ukraine's energy infrastructure."
+    },
+    {
+      "headline": "France is becoming the \u2018poster child\u2019 of sovereign debt problems as government borrowing costs hit near 2008 highs",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 05:08:47 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/france-debt-bond-yields-budget.html",
+      "summary": "France's debt burden and political gridlock are pushing borrowing costs toward levels not seen since 2008."
+    },
+    {
+      "headline": "China's Xi builds diplomatic clout with multiple state visits ahead of Trump summit",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 04:57:24 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/china-xi-us-trump-visit-sco-brics-modi-india.html",
+      "summary": "Chinese President Xi Jinping is expected to make his first visit to India before traveling to the U.S. for a meeting with U.S. President Donald Trump."
+    },
+    {
+      "headline": "What new tariff walls in U.S.-Canada trade war mean for the economy's critical metals",
+      "source": "CNBC",
+      "published": "Sun, 30 Aug 2026 13:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/08/30/us-canada-trade-war-tariffs-steel-aluminum-metals-economy.html",
+      "summary": "When the U.S.-Canada trade war erupted, the market repriced metals and materials stocks and ETFs, but longer-term investors should be wary."
+    },
+    {
+      "headline": "Jackson Hole analyst roundup: Warsh's speech sends hike chances higher, may put Fed `at odds' with Treasury",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 03:47:28 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/jackson-hole-fed-chair-kevin-warsh-hawkish-rate-hikes-analysts.html",
+      "summary": "Fed Chair Kevin Warsh's hawkish stance reinforced expectations of a relatively tighter stance at the Federal Open Market Committee meeting in September."
+    },
+    {
+      "headline": "BYD shares slide as fierce China competition dents first-half earnings",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 04:01:47 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/byd-shares-slide-as-fierce-china-competition-dents-first-half-earnings.html",
+      "summary": "BYD shares slid after the automaker released its latest results on Friday, despite higher second-quarter profit and overseas growth."
+    }
+  ]
+}
