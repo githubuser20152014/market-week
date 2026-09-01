@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-01",
+    "generated_at": "2026-09-01T09:22:45.067146Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7730.9902,
+      "close": 7686.1401,
+      "daily_pct": -0.5801,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53569.4414,
+      "close": 53185.8984,
+      "daily_pct": -0.716,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26541.3496,
+      "close": 26370.8906,
+      "daily_pct": -0.6422,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 3014.3401,
+      "close": 2956.45,
+      "daily_pct": -1.9205,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4431.1001,
+      "close": 4422.2002,
+      "daily_pct": -0.2009,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.672,
+      "close": 4.758,
+      "daily_pct": 1.8408,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 8.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.43,
+      "close": 99.558,
+      "daily_pct": 0.1287,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 85.76,
+      "close": 87.77,
+      "daily_pct": 2.3437,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66215.34,
+      "prev_close": 66311.93,
+      "daily_pct": -0.1457,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25329.73,
+      "prev_close": 25566.99,
+      "daily_pct": -0.928,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6835.8,
+      "prev_close": 6820.02,
+      "daily_pct": 0.2314,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23978.55,
+      "prev_close": 24080.4,
+      "daily_pct": -0.423,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9066.7,
+      "prev_close": 9076.0,
+      "daily_pct": -0.1025,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25979.76,
+      "prev_close": 25979.76,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10707.21,
+      "prev_close": 10707.21,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8303.16,
+      "prev_close": 8303.16,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6369.2,
+      "prev_close": 6369.2,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15996,
+      "prev_close": 1.1589,
+      "daily_pct": 0.0916
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35428,
+      "prev_close": 1.35404,
+      "daily_pct": 0.0176
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.931,
+      "prev_close": 160.12199,
+      "daily_pct": -0.1193
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71429,
+      "prev_close": 0.7163,
+      "daily_pct": -0.2812
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23483,
+      "prev_close": 1.23634,
+      "daily_pct": -0.1223
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7653.75,
+      "prev_close": 7653.75,
+      "daily_pct": -0.5877
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29211.75,
+      "prev_close": 29211.75,
+      "daily_pct": -1.0207
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52941.0,
+      "prev_close": 52941.0,
+      "daily_pct": -0.5616
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4422.3,
+      "prev_close": 4422.3,
+      "daily_pct": -0.1986
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 107.48,
+      "prev_close": 107.48,
+      "daily_pct": -0.391
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 87.8,
+      "prev_close": 87.8,
+      "daily_pct": 2.3787
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.2%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Tehran urges return to June deal, oil prices rise as Trump vows to hit Iran 'hard'",
+      "source": "CNBC",
+      "published": "Tue, 01 Sep 2026 08:25:45 GMT",
+      "url": "https://www.cnbc.com/2026/09/01/us-iran-war-trump-hormuz-tanker-attack-shipping-sanctions-.html",
+      "summary": "Iran launched an attack on two American bases in Jordan on Monday in retaliation for the U.S. attack on its Larak Island."
+    },
+    {
+      "headline": "Indian Prime Minister Modi asks Putin to end Ukraine war amid U.S. tariff threat on Russian oil",
+      "source": "CNBC",
+      "published": "Tue, 01 Sep 2026 06:23:21 GMT",
+      "url": "https://www.cnbc.com/2026/09/01/russia-india-ukraine-war-oil-modi-putin.html",
+      "summary": "Indian PM Narendra Modi has urged Russia to end the Ukraine war and to cease hostilities."
+    },
+    {
+      "headline": "Venezuela grants U.S.-backed oil firm NABEP 100-year concessions for 17 oil fields, White House says",
+      "source": "CNBC",
+      "published": "Tue, 01 Sep 2026 01:56:53 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/venezuela-grants-north-american-blue-energy-partners-100-year-concessions-for-17-oil-fields-white-house-says.html",
+      "summary": "Venezuelan interim authorities have granted North American Blue Energy Partners 100-year concessions for 17 oil fields, White House says."
+    },
+    {
+      "headline": "Bessent reportedly tells Russia no economic relief until Ukraine war ends as Europe snubs Moscow at G20",
+      "source": "CNBC",
+      "published": "Tue, 01 Sep 2026 03:22:56 GMT",
+      "url": "https://www.cnbc.com/2026/09/01/bessent-russia-ukraine-war-sanctions-war-g20-.html",
+      "summary": "The meeting underscored Washington's willingness to reopen diplomatic talks with Moscow, as Europe intends to isolate the nation while the war continues."
+    },
+    {
+      "headline": "Japanese borrowing costs hit 30-year high as Bessent says Tokyo may intervene to boost yen",
+      "source": "CNBC",
+      "published": "Tue, 01 Sep 2026 08:41:57 GMT",
+      "url": "https://www.cnbc.com/2026/09/01/japan-bonds-yen-intervention-bessent.html",
+      "summary": "The yen weakened to 160 per dollar on Tuesday as bond yields came under pressure, as traders eyed the potential for Japan to hike interest rates."
+    },
+    {
+      "headline": "The $3 trillion oil market has just gotten more accessible than ever: No longer a 'rich man's game'",
+      "source": "CNBC",
+      "published": "Tue, 01 Sep 2026 00:49:51 GMT",
+      "url": "https://www.cnbc.com/2026/09/01/oil-market-is-getting-more-accessible-what-it-means-for-wti-brent.html",
+      "summary": "Oil trading is becoming more accessible to individual investors as smaller futures contracts, ETFs and online brokerages lower longtime barriers to the market."
+    },
+    {
+      "headline": "House Intelligence Committee warns of 'Black Swan' AI risks",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 21:18:37 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/ai-warning-house-intelligence-committee.html",
+      "summary": "Bipartisan lawmakers cautioned that existing safeguards may not be enough to keep up with AI's advances."
+    },
+    {
+      "headline": "Trump Account holders may receive $250 Dell grant starting Monday, Dell Foundation says",
+      "source": "CNBC",
+      "published": "Mon, 31 Aug 2026 21:10:05 GMT",
+      "url": "https://www.cnbc.com/2026/08/31/trump-account-holders-to-start-receiving-250-dell-grant-spokesperson.html",
+      "summary": "Eligible children with Trump Accounts will start receiving the $250 Dell gift this week, according to the Dell Foundation."
+    }
+  ]
+}
