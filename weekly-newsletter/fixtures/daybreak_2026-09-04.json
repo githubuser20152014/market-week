@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-09-04",
+    "generated_at": "2026-09-04T10:45:12.658631Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7666.6001,
+      "close": 7747.71,
+      "daily_pct": 1.058,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53061.9492,
+      "close": 53686.1094,
+      "daily_pct": 1.1763,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26217.8301,
+      "close": 26584.0605,
+      "daily_pct": 1.3969,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2953.1699,
+      "close": 2968.27,
+      "daily_pct": 0.5113,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4491.7002,
+      "close": 4519.2998,
+      "daily_pct": 0.6145,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.796,
+      "close": 4.762,
+      "daily_pct": -0.7089,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -3.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.0,
+      "close": 99.099,
+      "daily_pct": 0.1,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 91.3,
+      "close": 90.56,
+      "daily_pct": -0.8105,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65020.94,
+      "prev_close": 64214.48,
+      "daily_pct": 1.2559,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25650.87,
+      "prev_close": 25213.31,
+      "daily_pct": 1.7354,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6687.21,
+      "prev_close": 6579.48,
+      "daily_pct": 1.6374,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23897.7,
+      "prev_close": 23873.45,
+      "daily_pct": 0.1016,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9005.9,
+      "prev_close": 9020.1,
+      "daily_pct": -0.1574,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26076.67,
+      "prev_close": 26076.67,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10832.04,
+      "prev_close": 10832.04,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8281.26,
+      "prev_close": 8280.04,
+      "daily_pct": 0.0147,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6389.84,
+      "prev_close": 6388.86,
+      "daily_pct": 0.0153,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16239,
+      "prev_close": 1.15853,
+      "daily_pct": 0.3324
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35316,
+      "prev_close": 1.34836,
+      "daily_pct": 0.3559
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 156.353,
+      "prev_close": 158.923,
+      "daily_pct": -1.6171
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72041,
+      "prev_close": 0.71636,
+      "daily_pct": 0.5652
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.2358,
+      "prev_close": 1.23004,
+      "daily_pct": 0.4684
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7759.5,
+      "prev_close": 7759.5,
+      "daily_pct": 0.0613
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29673.0,
+      "prev_close": 29673.0,
+      "daily_pct": 0.5021
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53669.0,
+      "prev_close": 53669.0,
+      "daily_pct": -0.1414
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4519.5,
+      "prev_close": 4519.5,
+      "daily_pct": 0.6189
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 107.66,
+      "prev_close": 107.66,
+      "daily_pct": -0.2461
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 90.56,
+      "prev_close": 90.56,
+      "daily_pct": -0.8105
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Nonfarm Payrolls / Unemployment",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "World's biggest sovereign wealth fund plans to cut U.S. Treasury holdings",
+      "source": "CNBC",
+      "published": "Fri, 04 Sep 2026 06:46:35 GMT",
+      "url": "https://www.cnbc.com/2026/09/04/worlds-biggest-sovereign-wealth-fund-plans-to-cut-treasury-holdings.html",
+      "summary": "Norway's $2.3 trillion investment fund says it can diversify into new areas with greater risk and returns."
+    },
+    {
+      "headline": "U.S. 'Economic Outcast\u2019 operation gains momentum as EU joins sanctions; South Korea weighs military backing",
+      "source": "CNBC",
+      "published": "Fri, 04 Sep 2026 06:17:57 GMT",
+      "url": "https://www.cnbc.com/2026/09/04/us-iran-war-trump-hormuz-operation-economic-outcast-sanctions-campaign.html",
+      "summary": "The EU formally joined the U.S.-led sanctions campaign against Iran, while South Korea said it's weighing a military role to help reopen the Strait of Hormuz."
+    },
+    {
+      "headline": "Global bond sell-off likely not over yet, Mohamed El-Erian tells CNBC",
+      "source": "CNBC",
+      "published": "Fri, 04 Sep 2026 07:41:48 GMT",
+      "url": "https://www.cnbc.com/2026/09/04/el-erian-government-bond-selloff.html",
+      "summary": "In a wide-ranging interview, the renowned economist also said the U.S. Treasury had taken \"a step too far\" with its market intervention."
+    },
+    {
+      "headline": "Vance says Fed should lower interest rates: 'Would be nice to have some help'",
+      "source": "CNBC",
+      "published": "Thu, 03 Sep 2026 19:18:59 GMT",
+      "url": "https://www.cnbc.com/2026/09/03/vance-fed-interest-rates-trump-bond-yields.html",
+      "summary": "Vice President J.D. Vance's remarks came less than two weeks before the Federal Open Market Committee is set to convene and decide whether to adjust rates."
+    },
+    {
+      "headline": "Lululemon stock plunges 15% on disappointing earnings and outlook",
+      "source": "CNBC",
+      "published": "Thu, 03 Sep 2026 20:52:03 GMT",
+      "url": "https://www.cnbc.com/2026/09/03/lululemon-lulu-q2-2026-earnings.html",
+      "summary": "Lululemon posted another quarter of disappointing results and a sales slowdown as the company struggles to turn its business around."
+    },
+    {
+      "headline": "Argentina's Milei escalates Falklands dispute as Trump questions U.S. support for Britain",
+      "source": "CNBC",
+      "published": "Fri, 04 Sep 2026 07:50:49 GMT",
+      "url": "https://www.cnbc.com/2026/09/04/argentina-milei-falklands-oil-uk-trump.html",
+      "summary": "Argentina's President Javier Milei has renewed the country's claim to the Falkland Islands and threatened sanctions on oil companies."
+    },
+    {
+      "headline": "Trump admin targets tax-exempt status at private colleges \u2014 threatening a key tax break for donations",
+      "source": "CNBC",
+      "published": "Thu, 03 Sep 2026 21:00:21 GMT",
+      "url": "https://www.cnbc.com/2026/09/03/treasury-irs-proposal-tax-exempt-schools-charitable-donations.html",
+      "summary": "The Treasury has proposed regulations that would strip thousands of private schools of their tax-exempt status and threaten a valuable tax break for donations."
+    },
+    {
+      "headline": "Carney claps back at Lutnick, says Canada will resume trade talks 'when the Americans are ready'",
+      "source": "CNBC",
+      "published": "Thu, 03 Sep 2026 20:42:29 GMT",
+      "url": "https://www.cnbc.com/2026/09/03/carney-lutnick-trump-trade-canada.html",
+      "summary": "Canada has retaliated against President Donald Trump's 50% tariffs with \"dollar for dollar\" duties on U.S. goods, which are set to take effect next week."
+    }
+  ]
+}
