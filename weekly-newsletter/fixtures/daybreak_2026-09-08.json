@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-08",
+    "generated_at": "2026-09-08T08:56:31.060213Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7747.71,
+      "close": 7718.6001,
+      "daily_pct": -0.3757,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 53686.1094,
+      "close": 53414.25,
+      "daily_pct": -0.5064,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26584.0605,
+      "close": 26506.9902,
+      "daily_pct": -0.2899,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2968.27,
+      "close": 2975.6499,
+      "daily_pct": 0.2486,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4429.7998,
+      "close": 4441.3999,
+      "daily_pct": 0.2619,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.762,
+      "close": 4.784,
+      "daily_pct": 0.462,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.2
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.16,
+      "close": 98.971,
+      "daily_pct": -0.1906,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 91.48,
+      "close": 94.25,
+      "daily_pct": 3.028,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65269.33,
+      "prev_close": 66399.84,
+      "daily_pct": -1.7026,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25317.18,
+      "prev_close": 25413.12,
+      "daily_pct": -0.3775,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6954.52,
+      "prev_close": 6995.39,
+      "daily_pct": -0.5842,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23645.25,
+      "prev_close": 23779.15,
+      "daily_pct": -0.5631,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8920.8,
+      "prev_close": 9010.9,
+      "daily_pct": -0.9999,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25841.5,
+      "prev_close": 25841.5,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10793.25,
+      "prev_close": 10793.25,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8270.27,
+      "prev_close": 8270.27,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6371.31,
+      "prev_close": 6371.31,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16144,
+      "prev_close": 1.1614,
+      "daily_pct": 0.0035
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35256,
+      "prev_close": 1.35172,
+      "daily_pct": 0.0622
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 154.159,
+      "prev_close": 156.19701,
+      "daily_pct": -1.3048
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.72124,
+      "prev_close": 0.72064,
+      "daily_pct": 0.0837
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23201,
+      "prev_close": 1.23467,
+      "daily_pct": -0.2156
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7694.5,
+      "prev_close": 7694.5,
+      "daily_pct": -0.3561
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29522.75,
+      "prev_close": 29522.75,
+      "daily_pct": -0.1437
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52978.0,
+      "prev_close": 52978.0,
+      "daily_pct": -0.8645
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4441.6,
+      "prev_close": 4441.6,
+      "daily_pct": 0.2664
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 107.33,
+      "prev_close": 107.33,
+      "daily_pct": -0.3771
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 94.28,
+      "prev_close": 94.28,
+      "daily_pct": 3.0608
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Iran foreign ministry takes aim at Canada for support of U.S. actions in Strait of Hormuz",
+      "source": "CNBC",
+      "published": "Tue, 08 Sep 2026 05:29:00 GMT",
+      "url": "https://www.cnbc.com/2026/09/08/us-iran-war-trump-hormuz-canada-trade-talks-greenland.html",
+      "summary": "Canada had condemned Iran\u2019s \"destabilizing actions\" in the Middle East, saying that it would work with partners to maintain significant pressure on Iran."
+    },
+    {
+      "headline": "Pharma major Novartis falls nearly 10%, heading for worst day on record after three drug trial setbacks",
+      "source": "CNBC",
+      "published": "Tue, 08 Sep 2026 08:39:10 GMT",
+      "url": "https://www.cnbc.com/2026/09/08/novartis-novn-del-desiran-drug-trial.html",
+      "summary": "Shares of Novartis tanked on Tuesday after results from its del-desiran drug trial disappointed investors."
+    },
+    {
+      "headline": "Crypto platforms have lost over $3.63 billion to cyberattacks \u2014 even though most of them did security checks",
+      "source": "CNBC",
+      "published": "Tue, 08 Sep 2026 08:16:11 GMT",
+      "url": "https://www.cnbc.com/2026/09/08/crypto-platforms-lost-billions-to-cyberattacks-many-even-after-audits.html",
+      "summary": "More than 60% of cryptocurrency platforms that lost money due to cyberattacks had undergone independent security audits, CoinGecko said."
+    },
+    {
+      "headline": "Cholesterol drug setback casts doubt over multibillion-dollar race",
+      "source": "CNBC",
+      "published": "Tue, 08 Sep 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/08/novartis-cholesterol-setback-drug-race-eli-lilly-amgen.html",
+      "summary": "Novartis\u2019 failure raises the stakes for Amgen and Eli Lilly in the race to turn lower Lp(a) levels into fewer heart attacks and strokes."
+    },
+    {
+      "headline": "Treasury yields tick higher as traders look ahead to more economic data releases",
+      "source": "CNBC",
+      "published": "Tue, 08 Sep 2026 08:08:34 GMT",
+      "url": "https://www.cnbc.com/2026/09/08/us-treasury-yields-bonds.html",
+      "summary": "Treasury yields moved higher as investors look ahead to more key economic data releases this week."
+    },
+    {
+      "headline": "Canada's retaliatory tariffs worth $27.6 billion take effect as trade rift with U.S. deepens",
+      "source": "CNBC",
+      "published": "Tue, 08 Sep 2026 08:21:33 GMT",
+      "url": "https://www.cnbc.com/2026/09/08/canada-retaliatory-tariffs.html",
+      "summary": "Duties on U.S. steel and aluminum products have doubled to 50% as a war of words between Washington and Ottawa continues."
+    },
+    {
+      "headline": "CNBC's The China Connection newsletter: China's weak consumer becomes the world's problem",
+      "source": "CNBC",
+      "published": "Mon, 07 Sep 2026 23:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/07/cnbc-china-connection-weak-consumption-trade-deficit-g20.html",
+      "summary": "A Group of 20 finance meeting in the U.S. this month has now elevated the debate over whether China's exports have cost people in other countries their jobs."
+    },
+    {
+      "headline": "Global shipping authorities warn of maritime trade breakdown amid geopolitical turmoil",
+      "source": "CNBC",
+      "published": "Tue, 08 Sep 2026 07:28:41 GMT",
+      "url": "https://www.cnbc.com/2026/09/08/global-shipping-iran-war-hormuz-rules.html",
+      "summary": "Eighteen maritime bodies warned Tuesday that geopolitical tensions and a growing shadow fleet threaten to undermine international shipping and weaken trade."
+    }
+  ]
+}
