@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-10",
+    "generated_at": "2026-09-10T09:20:32.351875Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7673.52,
+      "close": 7636.3599,
+      "daily_pct": -0.4843,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52786.0703,
+      "close": 52380.6602,
+      "daily_pct": -0.768,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26421.4102,
+      "close": 26253.3398,
+      "daily_pct": -0.6361,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2960.2,
+      "close": 2921.24,
+      "daily_pct": -1.3161,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4416.0,
+      "close": 4434.8999,
+      "daily_pct": 0.428,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.806,
+      "close": 4.837,
+      "daily_pct": 0.645,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.1
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 98.77,
+      "close": 98.764,
+      "daily_pct": -0.0061,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.05,
+      "close": 97.22,
+      "daily_pct": 1.2181,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65270.95,
+      "prev_close": 65142.78,
+      "daily_pct": 0.1967,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24954.47,
+      "prev_close": 25274.96,
+      "daily_pct": -1.268,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7033.92,
+      "prev_close": 7051.64,
+      "daily_pct": -0.2513,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23428.75,
+      "prev_close": 23431.5,
+      "daily_pct": -0.0117,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8819.4,
+      "prev_close": 8911.4,
+      "daily_pct": -1.0324,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25526.36,
+      "prev_close": 25526.36,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10640.15,
+      "prev_close": 10640.83,
+      "daily_pct": -0.0064,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8167.05,
+      "prev_close": 8167.05,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6303.08,
+      "prev_close": 6303.08,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.16428,
+      "prev_close": 1.16274,
+      "daily_pct": 0.1327
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3556,
+      "prev_close": 1.35446,
+      "daily_pct": 0.0841
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 153.65199,
+      "prev_close": 153.478,
+      "daily_pct": 0.1134
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.7215,
+      "prev_close": 0.72204,
+      "daily_pct": -0.0747
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.23434,
+      "prev_close": 1.23593,
+      "daily_pct": -0.1284
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7652.5,
+      "prev_close": 7652.5,
+      "daily_pct": 0.1145
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29415.0,
+      "prev_close": 29415.0,
+      "daily_pct": -0.1146
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52527.0,
+      "prev_close": 52527.0,
+      "daily_pct": 0.1946
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4434.9,
+      "prev_close": 4434.9,
+      "daily_pct": 0.428
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.95,
+      "prev_close": 106.95,
+      "daily_pct": -0.3639
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 97.22,
+      "prev_close": 97.22,
+      "daily_pct": 1.2181
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Trump warns Tehran over Pickaxe Mountain activity; U.S.-Iran exchange attacks on ships near Hormuz",
+      "source": "CNBC",
+      "published": "Thu, 10 Sep 2026 09:03:53 GMT",
+      "url": "https://www.cnbc.com/2026/09/10/iran-us-war-hormuz-pickaxe-mountain.html",
+      "summary": "U.S. President Donald Trump has urged Iran \"not to get cute\" over activity at a suspected nuclear site on Pickaxe Mountain."
+    },
+    {
+      "headline": "World\u2019s largest contract chipmaker TSMC sees August revenue surge over 53% to record high",
+      "source": "CNBC",
+      "published": "Thu, 10 Sep 2026 06:45:55 GMT",
+      "url": "https://www.cnbc.com/2026/09/10/tsmc-august-revenue-chip-ai.html",
+      "summary": "TSMC reported monthly sales revenue for August on Thursday."
+    },
+    {
+      "headline": "'Saved the day': How China helped keep the lid on oil price surge as Iran war disrupted supplies",
+      "source": "CNBC",
+      "published": "Thu, 10 Sep 2026 06:23:14 GMT",
+      "url": "https://www.cnbc.com/2026/09/10/china-crude-oil-iran-hormuz-war-trump-brent-prices-.html",
+      "summary": "China's crude stockpiling and subsequent pullback on purchases since the war erupted in late February has helped the world avoid a deeper energy crisis."
+    },
+    {
+      "headline": "UBS CEO flags investor complacency as geopolitical and economic risks mount",
+      "source": "CNBC",
+      "published": "Thu, 10 Sep 2026 06:02:51 GMT",
+      "url": "https://www.cnbc.com/2026/09/10/ubs-ceo-sergio-ermotti-investor-complacency-piling-risks-.html",
+      "summary": "The UBS top boss cautioned that investors face an increasingly complicated environment given multiple headwinds."
+    },
+    {
+      "headline": "An ECB rate hike is \u2018all but certain\u2019 \u2014 but investors divided on what comes next",
+      "source": "CNBC",
+      "published": "Thu, 10 Sep 2026 09:02:12 GMT",
+      "url": "https://www.cnbc.com/2026/09/10/ecb-interest-rate-hike-lagarde-iran.html",
+      "summary": "The central bank is contending with rising prices, the consequences of the U.S.-Iran war, and surging government borrowing costs."
+    },
+    {
+      "headline": "Bessent\u2019s political turn in GOP speech tests his bond-market credibility",
+      "source": "CNBC",
+      "published": "Thu, 10 Sep 2026 02:54:56 GMT",
+      "url": "https://www.cnbc.com/2026/09/09/bessent-treasury-yields-buybacks-republican-convention.html",
+      "summary": "Treasury Secretary Scott Bessent's Republican convention speech in Dallas is raising questions about how politics could affect market confidence in him."
+    },
+    {
+      "headline": "Inside India newsletter: India\u2019s green push aims to boost energy security but exposes China dependency",
+      "source": "CNBC",
+      "published": "Thu, 10 Sep 2026 00:09:06 GMT",
+      "url": "https://www.cnbc.com/2026/09/10/india-green-energy-china-reliance-battery.html",
+      "summary": "India's ambition to create a self-reliant energy ecosystem by expanding its renewable energy footprint is facing a China problem."
+    },
+    {
+      "headline": "Trump's oil investments have gained millions during Iran war as his accounts keep trading",
+      "source": "CNBC",
+      "published": "Wed, 09 Sep 2026 10:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/09/trump-oil-gas-holdings-iran-war.html",
+      "summary": "Donald Trump retained major oil and gas investments as the Iran war has moved energy markets. CNBC analyzed his holdings, trades and estimated gains."
+    }
+  ]
+}
