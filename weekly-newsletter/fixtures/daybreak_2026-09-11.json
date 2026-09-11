@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "date": "2026-09-11",
+    "generated_at": "2026-09-11T11:31:13.262587Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7636.3599,
+      "close": 7591.7002,
+      "daily_pct": -0.5848,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52380.6602,
+      "close": 52064.1016,
+      "daily_pct": -0.6043,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26253.3398,
+      "close": 26081.7207,
+      "daily_pct": -0.6537,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2921.24,
+      "close": 2890.95,
+      "daily_pct": -1.0369,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4364.5,
+      "close": 4379.7998,
+      "daily_pct": 0.3506,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.837,
+      "close": 4.944,
+      "daily_pct": 2.2121,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 10.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.09,
+      "close": 99.167,
+      "daily_pct": 0.0777,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 102.48,
+      "close": 99.24,
+      "daily_pct": -3.1616,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64011.34,
+      "prev_close": 65270.95,
+      "daily_pct": -1.9298,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24805.63,
+      "prev_close": 24954.47,
+      "daily_pct": -0.5964,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6909.91,
+      "prev_close": 7033.92,
+      "daily_pct": -1.763,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23398.1,
+      "prev_close": 23477.8,
+      "daily_pct": -0.3395,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8741.2,
+      "prev_close": 8819.4,
+      "daily_pct": -0.8867,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25522.7,
+      "prev_close": 25522.7,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10670.44,
+      "prev_close": 10670.37,
+      "daily_pct": 0.0007,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8165.56,
+      "prev_close": 8166.19,
+      "daily_pct": -0.0077,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6311.88,
+      "prev_close": 6312.4,
+      "daily_pct": -0.0082,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15969,
+      "prev_close": 1.16339,
+      "daily_pct": -0.3178
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.35077,
+      "prev_close": 1.3552,
+      "daily_pct": -0.3269
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 154.022,
+      "prev_close": 153.573,
+      "daily_pct": 0.2924
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71762,
+      "prev_close": 0.72209,
+      "daily_pct": -0.6194
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22671,
+      "prev_close": 1.23457,
+      "daily_pct": -0.6367
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7637.75,
+      "prev_close": 7637.75,
+      "daily_pct": 0.5165
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29300.75,
+      "prev_close": 29300.75,
+      "daily_pct": 0.568
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52374.0,
+      "prev_close": 52374.0,
+      "daily_pct": 0.5356
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4380.5,
+      "prev_close": 4380.5,
+      "daily_pct": 0.3666
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.34,
+      "prev_close": 106.34,
+      "daily_pct": -0.2784
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 99.26,
+      "prev_close": 99.26,
+      "daily_pct": -3.1421
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "CPI",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Iran-backed Houthis seize key port in Yemen, advance on another vital oil choke point",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 08:44:52 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/iran-houthis-mokha-red-sea-yemen.html",
+      "summary": "The advance raises the threat to shipping near the Bab el-Mandeb Strait, a waterway that connects the Red Sea to the Gulf of Aden to global markets."
+    },
+    {
+      "headline": "Bessent says 'a large bank' will be sanctioned on Monday as part of Iran strategy",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 10:03:44 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/bessent-large-bank-sanctioned.html",
+      "summary": "U.S. Treasury Secretary\u00a0Scott Bessent said that a large bank would be sanctioned next week."
+    },
+    {
+      "headline": "Oracle jumps 6% after reporting 30% revenue growth fueled by AI cloud demand",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 11:22:05 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/oracle-stock-q1-earnings-ai-cloud.html",
+      "summary": "Oracle's cloud infrastructure revenue jumped 121% since last year, reflecting demand for its AI cloud services."
+    },
+    {
+      "headline": "Trump dismisses AI extinction risks as more than a dozen OpenAI, Anthropic insiders call for a slowdown",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 11:10:36 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/trump-ai-extinction-risks.html",
+      "summary": "Trump said he isn't concerned AI could cause human extinction as researchers at leading AI companies warn about rapid advances and lawmakers propose safeguards."
+    },
+    {
+      "headline": "U.S. diesel price tops $6 per gallon, a record high as Ukraine and Iran wars ripple through economy",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 11:27:39 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/diesel-price-iran-strait-hormuz-ukraine-russia.html",
+      "summary": "U.S. diesel prices hit their highest level ever as fuel supply disruption stemming from the Ukraine and Iran wars lifts transportation costs."
+    },
+    {
+      "headline": "Trump says he has no regrets about starting the Iran war as U.S. dials up economic pressure",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 08:13:05 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/us-iran-war-trump-hormuz-banks-oil-sanctions.html",
+      "summary": "Speaking to Fox News presenter Laura Ingraham, Trump said that he would have attacked Iran despite the impact on the midterm elections."
+    },
+    {
+      "headline": "Chinese AI labs secretly used millions of Claude exchanges to train their models, Anthropic says",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 00:59:45 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/chinese-ai-labs-moonshot-deepseek-alibaba-anthropic.html",
+      "summary": "Anthropic said it detected unauthorized efforts by China-based AI labs including Alibaba and Moonshot AI to use its Claude models to help improve their own AI systems."
+    },
+    {
+      "headline": "China-Philippines tensions simmer after Beijing rebukes Manila over Seoul clash",
+      "source": "CNBC",
+      "published": "Fri, 11 Sep 2026 03:44:43 GMT",
+      "url": "https://www.cnbc.com/2026/09/11/china-philippine-south-china-sea-disputes-tensions-.html",
+      "summary": "China and the Philippines have been locked in years of tension over their competing claims in the South China Sea, with friction intensifying in recent months."
+    }
+  ]
+}
