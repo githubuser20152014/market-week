@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-15",
+    "generated_at": "2026-09-15T10:53:29.401343Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7656.98,
+      "close": 7619.98,
+      "daily_pct": -0.4832,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52573.2891,
+      "close": 52421.1992,
+      "daily_pct": -0.2893,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26333.0391,
+      "close": 26186.4102,
+      "daily_pct": -0.5568,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2903.9399,
+      "close": 2892.24,
+      "daily_pct": -0.4029,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4351.8999,
+      "close": 4316.0,
+      "daily_pct": -0.8249,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.975,
+      "close": 4.961,
+      "daily_pct": -0.2814,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.46,
+      "close": 99.599,
+      "daily_pct": 0.1398,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.39,
+      "close": 103.14,
+      "daily_pct": 1.726,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 63484.1,
+      "prev_close": 63492.99,
+      "daily_pct": -0.014,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24667.24,
+      "prev_close": 24917.6,
+      "daily_pct": -1.0047,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6627.26,
+      "prev_close": 6684.37,
+      "daily_pct": -0.8544,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23118.6,
+      "prev_close": 23398.1,
+      "daily_pct": -1.1945,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8672.5,
+      "prev_close": 8749.9,
+      "daily_pct": -0.8846,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25401.39,
+      "prev_close": 25401.39,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10667.01,
+      "prev_close": 10667.01,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8093.55,
+      "prev_close": 8093.55,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6250.55,
+      "prev_close": 6250.55,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1542,
+      "prev_close": 1.15939,
+      "daily_pct": -0.4478
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34782,
+      "prev_close": 1.35258,
+      "daily_pct": -0.3518
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 154.79601,
+      "prev_close": 153.424,
+      "daily_pct": 0.8943
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71311,
+      "prev_close": 0.7152,
+      "daily_pct": -0.2917
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22275,
+      "prev_close": 1.22451,
+      "daily_pct": -0.1443
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7671.5,
+      "prev_close": 7671.5,
+      "daily_pct": 0.6098
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29364.0,
+      "prev_close": 29364.0,
+      "daily_pct": 0.7264
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52676.0,
+      "prev_close": 52676.0,
+      "daily_pct": 0.45
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4315.8,
+      "prev_close": 4315.8,
+      "daily_pct": -0.8295
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.88,
+      "prev_close": 105.88,
+      "daily_pct": -0.5139
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 103.18,
+      "prev_close": 103.18,
+      "daily_pct": 1.7655
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.2%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "10-year Treasury yield rises to highest since 2007 as Fed rate-hike expectations rise",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 10:31:24 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/10-year-treasury-yield-rises-to-highest-since-2007.html",
+      "summary": "The sell-off in U.S. government debt is deepening as investors increasingly price in an interest rate hike this week."
+    },
+    {
+      "headline": "Iranian foreign minister will head to China for talks, as Pentagon reveals financial cost of war",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 09:49:54 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/us-iran-war-trump-hormuz-munitions-dod-costs-aircraft.html",
+      "summary": "Iranian foreign minister Abbas Araqchi will visit China on Wednesday for talks, Beijing's foreign ministry announced on Tuesday."
+    },
+    {
+      "headline": "Warren to rip Clarity Act on Senate floor ahead of key preliminary vote",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 01:32:26 GMT",
+      "url": "https://www.cnbc.com/2026/09/14/warren-clarity-act-senate-key-preliminary-vote.html",
+      "summary": "Sen. Elizabeth Warren will call the latest Clarity Act ethics proposal blessed by Trump a \"weak fig leaf.\""
+    },
+    {
+      "headline": "Oil\u2019s next test: Saudi Arabia races to restore a key safety valve for prices",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 09:58:48 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/oil-prices-saudi-arabia-east-west-pipeline-iran.html",
+      "summary": "Analysts warn oil prices could rally sharply if the pipeline remains offline beyond an estimated five-to-seven-day inventory cushion."
+    },
+    {
+      "headline": "Oil and Treasury yields haven\u2019t moved this closely in seven years. That\u2019s bad news for markets",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 10:01:19 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/oil-us-treasurys-stocks-pressure.html",
+      "summary": "Oil and 10-year Treasury yields are moving in near lockstep, with their correlation at its strongest since 2019."
+    },
+    {
+      "headline": "U.S. seeks to seize $61 million of crypto it claims are proceeds from Iranian petroleum sales to Chinese buyers",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 07:05:14 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/us-attorney-crypto-tether-iran-china-.html",
+      "summary": "Two Chinese companies, are alleged to have used trading accounts in Binance to launder the illicit proceeds and funnel the funds to Tehran or its proxies."
+    },
+    {
+      "headline": "Trump goes scorched earth on AI warnings, raging about data center opposition and regulation",
+      "source": "CNBC",
+      "published": "Mon, 14 Sep 2026 21:15:56 GMT",
+      "url": "https://www.cnbc.com/2026/09/14/trump-ai-data-centers-anthropic-dario-amodei.html",
+      "summary": "The Trump administration has encouraged AI's rapid growth and the development of data centers as it seeks an insurmountable tech edge over China."
+    },
+    {
+      "headline": "What to watch as Treasury Secretary Scott Bessent testifies before Congress",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 09:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/scott-bessent-house-hearing-economy-midterms.html",
+      "summary": "Treasury Secretary Scott Bessent may face questions on rising energy prices, Federal Reserve policy, government debt and the Trump team's economic agenda."
+    }
+  ]
+}
