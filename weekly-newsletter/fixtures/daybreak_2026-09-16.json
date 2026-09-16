@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-09-16",
+    "generated_at": "2026-09-16T10:31:37.421161Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7619.98,
+      "close": 7585.73,
+      "daily_pct": -0.4495,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52421.1992,
+      "close": 52093.1094,
+      "daily_pct": -0.6259,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26186.4102,
+      "close": 25981.5703,
+      "daily_pct": -0.7822,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2892.24,
+      "close": 2870.29,
+      "daily_pct": -0.7589,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4332.7998,
+      "close": 4386.8999,
+      "daily_pct": 1.2486,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.961,
+      "close": 4.996,
+      "daily_pct": 0.7055,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 99.65,
+      "close": 99.656,
+      "daily_pct": 0.006,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 105.83,
+      "close": 103.6,
+      "daily_pct": -2.1072,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 63923.0,
+      "prev_close": 63484.1,
+      "daily_pct": 0.6914,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24713.78,
+      "prev_close": 24667.24,
+      "daily_pct": 0.1887,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6717.97,
+      "prev_close": 6627.26,
+      "daily_pct": 1.3687,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23217.6,
+      "prev_close": 23118.6,
+      "daily_pct": 0.4282,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8696.5,
+      "prev_close": 8672.5,
+      "daily_pct": 0.2767,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25441.76,
+      "prev_close": 25441.76,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10712.37,
+      "prev_close": 10712.37,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8119.82,
+      "prev_close": 8119.82,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6259.84,
+      "prev_close": 6259.84,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.15393,
+      "prev_close": 1.15485,
+      "daily_pct": -0.0796
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34675,
+      "prev_close": 1.35009,
+      "daily_pct": -0.2478
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 155.17999,
+      "prev_close": 154.38499,
+      "daily_pct": 0.5149
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71352,
+      "prev_close": 0.71378,
+      "daily_pct": -0.0364
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22064,
+      "prev_close": 1.22384,
+      "daily_pct": -0.2612
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7672.5,
+      "prev_close": 7672.5,
+      "daily_pct": 1.0969
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29371.25,
+      "prev_close": 29371.25,
+      "daily_pct": 1.4376
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52610.0,
+      "prev_close": 52610.0,
+      "daily_pct": 0.9498
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4386.9,
+      "prev_close": 4386.9,
+      "daily_pct": 1.2486
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.0,
+      "prev_close": 106.0,
+      "daily_pct": -0.1766
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 103.62,
+      "prev_close": 103.62,
+      "daily_pct": -2.0883
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Yield on 10-year Treasury hovers above 5% as investors await Fed decision",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 08:58:16 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/treasury-yield-bond-market-fed-decision.html",
+      "summary": "The Federal Reserve is widely expected to hike interest rates on Wednesday."
+    },
+    {
+      "headline": "Canada invited to become EU\u2019s first \u2018associate member\u2019 as Trump trade war intensifies",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 09:56:51 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/canada-eu-associate-member-von-der-leyen.html",
+      "summary": "EU chief Ursula von der Leyen said the bloc wants to open the door for Canada to become its first associate member, signaling a major deepening of ties."
+    },
+    {
+      "headline": "Flyers are happier with U.S. airports, despite near record travel levels, J.D. Power report shows",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/airport-satisfaction.html",
+      "summary": "Travelers gave higher ratings in part because of the newer gates and terminals many airports have opened in recent years, according to the study."
+    },
+    {
+      "headline": "Saudi says Houthis targeted Mecca with a drone, Iran-backed group rejects claim",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 06:38:40 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/us-iran-war-trump-hormuz.html",
+      "summary": "The Organization of Islamic Cooperation condemned the strike as a \"heinous\" attack. Mecca is Islam's holiest site and the focal point of the annual Hajj pilgrimage."
+    },
+    {
+      "headline": "Oil falls as U.S. crude inventories reportedly rise, traders weigh Saudi pipeline closure",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 05:39:38 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/oil-prices-today-brent-wti-hormuz-iran-war.html",
+      "summary": "Oil fell Wednesday, as an unexpected increase in U.S. crude inventories outweighed worries over supply disruptions after an Iran-backed attack on Saudi Arabia's East-West pipeline."
+    },
+    {
+      "headline": "AWS says it can't restore service to Bahrain, UAE facilities 6 months after Iran strikes",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 19:04:46 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/aws-cant-restore-service-to-bahrain-uae-6-months-after-iran-strikes.html",
+      "summary": "In March, two Amazon data centers in the UAE were struck by drones, while a site was also damaged by a nearby drone hit."
+    },
+    {
+      "headline": "China's AI leaders keep quiet despite U.S. 'publicity' on tech risks",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 04:01:59 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/chinas-ai-leaders-keep-quiet-despite-us-publicity-on-tech-risks.html",
+      "summary": "Z.ai, Moonshot, MiniMax, Alibaba and Tencent did not provide any statements when contacted by CNBC about the warnings on AI from Silicon Valley."
+    },
+    {
+      "headline": "Americans' incomes rose and poverty fell in 2025, Census Bureau says",
+      "source": "CNBC",
+      "published": "Tue, 15 Sep 2026 21:31:56 GMT",
+      "url": "https://www.cnbc.com/2026/09/15/income-poverty-census-fed-interest-rates.html",
+      "summary": "The data comes as the Federal Reserve is considering interest-rate increases that could slow economic growth."
+    }
+  ]
+}
