@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-09-17",
+    "generated_at": "2026-09-17T10:09:59.726665Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7585.73,
+      "close": 7551.8101,
+      "daily_pct": -0.4472,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52093.1094,
+      "close": 51461.8984,
+      "daily_pct": -1.2117,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25981.5703,
+      "close": 25978.4297,
+      "daily_pct": -0.0121,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2870.29,
+      "close": 2858.8101,
+      "daily_pct": -0.4,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4387.5,
+      "close": 4345.2002,
+      "daily_pct": -0.9641,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.996,
+      "close": 5.006,
+      "daily_pct": 0.2002,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.31,
+      "close": 100.207,
+      "daily_pct": -0.1027,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 102.43,
+      "close": 101.32,
+      "daily_pct": -1.0837,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64136.25,
+      "prev_close": 63923.0,
+      "daily_pct": 0.3336,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24604.29,
+      "prev_close": 24713.78,
+      "daily_pct": -0.443,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6715.41,
+      "prev_close": 6717.97,
+      "daily_pct": -0.0381,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23270.6,
+      "prev_close": 23217.6,
+      "daily_pct": 0.2283,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8732.4,
+      "prev_close": 8696.5,
+      "daily_pct": 0.4128,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25688.21,
+      "prev_close": 25688.16,
+      "daily_pct": 0.0002,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10733.83,
+      "prev_close": 10733.89,
+      "daily_pct": -0.0006,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8154.94,
+      "prev_close": 8154.94,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6303.49,
+      "prev_close": 6303.49,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14811,
+      "prev_close": 1.15376,
+      "daily_pct": -0.4902
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33993,
+      "prev_close": 1.34735,
+      "daily_pct": -0.5507
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 155.644,
+      "prev_close": 155.26601,
+      "daily_pct": 0.2434
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71134,
+      "prev_close": 0.71255,
+      "daily_pct": -0.17
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21096,
+      "prev_close": 1.2209,
+      "daily_pct": -0.8142
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7682.75,
+      "prev_close": 7682.75,
+      "daily_pct": 1.6707
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29559.0,
+      "prev_close": 29559.0,
+      "daily_pct": 2.056
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52269.0,
+      "prev_close": 52269.0,
+      "daily_pct": 1.4794
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4345.1,
+      "prev_close": 4345.1,
+      "daily_pct": -0.9664
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.91,
+      "prev_close": 105.91,
+      "daily_pct": -0.1326
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 101.35,
+      "prev_close": 101.35,
+      "daily_pct": -1.0544
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "'Hostile act': Trump threatens EU with tariffs over Canada associate-membership proposal",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 05:42:46 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/trump-canada-european-union-tariffs-associate-member-ukraine-.html",
+      "summary": "European Commission President Ursula von der Leyen said EU is opening the door for Canada to become the first associate member of the 27-member bloc."
+    },
+    {
+      "headline": "Trump says U.S. \u2018hopefully\u2019 nearing end of Iran war as Saudi Arabia-Houthis trade strikes",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 07:56:49 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/us-iran-war-trump-hormuz.html",
+      "summary": "Trump says the U.S. may be nearing the end of its nearly seven-month war with Iran, as he signals Tehran is open to a deal."
+    },
+    {
+      "headline": "Here are five key takeaways from Wednesday's Fed rate hike",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 21:23:51 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/here-are-five-key-takeaways-from-wednesdays-fed-rate-hike.html",
+      "summary": "The Fed on Wednesday delivered a much-expected interest rate hike."
+    },
+    {
+      "headline": "Salesforce issues revenue target of over $63 billion for fiscal 2030, beating estimates",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 23:13:45 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/salesforce-issues-revenue-target-of-63-billion-for-fiscal-2030.html",
+      "summary": "Salesforce issued some updated longer-term financials at its annual Dreamforce conference."
+    },
+    {
+      "headline": "Putin braces for election stress test as Russians \u2018feel the pain\u2019 of struggling economy",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 05:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/russia-putin-state-duma-election-ukraine-war.html",
+      "summary": "Russia\u2019s upcoming election is expected to cement United Russia\u2019s dominance, but voter turnout and its margin of victory could offer clues to public discontent."
+    },
+    {
+      "headline": "Analysis: How Trump could reignite the Fed independence fight after Warsh's rate hike",
+      "source": "CNBC",
+      "published": "Wed, 16 Sep 2026 21:50:48 GMT",
+      "url": "https://www.cnbc.com/2026/09/16/fed-interest-rates-kevin-warsh-trump.html",
+      "summary": "The Federal Reserve unanimously raised interest rates by a quarter point despite repeated calls from President Donald Trump for lower rates."
+    },
+    {
+      "headline": "NASCAR CEO Steve O\u2019Donnell talks growth opportunities, possible international expansion",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/nascar-steve-odonnell-media-international-expansion.html",
+      "summary": "CEO Steve O\u2019Donnell said NASCAR's media strategy and the upcoming film \"Days of Thunder 2\" will help raise brand awareness and broaden its fan base."
+    },
+    {
+      "headline": "Billionaire Kraft says Ed Sheeran sought $2 million aid donation from him amid fracas over Macklemore's Palestine comments",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 08:24:48 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/kraft-ed-sheeran-macklemore-palestine.html",
+      "summary": "Robert Kraft said Ed Sheeran asked him to commit $2 million toward humanitarian aid amid the controversy over Macklemore\u2019s removal from Sheeran\u2019s U.S. tour"
+    }
+  ]
+}
