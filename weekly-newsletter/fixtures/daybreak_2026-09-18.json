@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-18",
+    "generated_at": "2026-09-18T10:33:29.748611Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7551.8101,
+      "close": 7637.7598,
+      "daily_pct": 1.1381,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51461.8984,
+      "close": 51778.0391,
+      "daily_pct": 0.6143,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25978.4297,
+      "close": 26418.3008,
+      "daily_pct": 1.6932,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2858.8101,
+      "close": 2874.6299,
+      "daily_pct": 0.5534,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4399.7002,
+      "close": 4418.5,
+      "daily_pct": 0.4273,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.006,
+      "close": 4.947,
+      "daily_pct": -1.1786,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -5.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.22,
+      "close": 100.363,
+      "daily_pct": 0.1427,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.91,
+      "close": 96.01,
+      "daily_pct": -5.7894,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65018.95,
+      "prev_close": 64136.25,
+      "daily_pct": 1.3763,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24750.78,
+      "prev_close": 24604.29,
+      "daily_pct": 0.5954,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6894.23,
+      "prev_close": 6715.41,
+      "daily_pct": 2.6628,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23346.4,
+      "prev_close": 23270.6,
+      "daily_pct": 0.3257,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8731.2,
+      "prev_close": 8732.4,
+      "daily_pct": -0.0137,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25526.35,
+      "prev_close": 25526.35,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10740.92,
+      "prev_close": 10740.74,
+      "daily_pct": 0.0017,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8126.01,
+      "prev_close": 8126.01,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6270.41,
+      "prev_close": 6270.41,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1485,
+      "prev_close": 1.14699,
+      "daily_pct": 0.1321
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33652,
+      "prev_close": 1.33829,
+      "daily_pct": -0.1323
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.882,
+      "prev_close": 156.01401,
+      "daily_pct": 1.1973
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71281,
+      "prev_close": 0.70881,
+      "daily_pct": 0.5642
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21224,
+      "prev_close": 1.21165,
+      "daily_pct": 0.0485
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7719.5,
+      "prev_close": 7719.5,
+      "daily_pct": 1.0406
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29873.25,
+      "prev_close": 29873.25,
+      "daily_pct": 1.4484
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52238.0,
+      "prev_close": 52238.0,
+      "daily_pct": 0.8319
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4419.1,
+      "prev_close": 4419.1,
+      "daily_pct": 0.4409
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.06,
+      "prev_close": 106.06,
+      "daily_pct": -0.3231
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 96.0,
+      "prev_close": 96.0,
+      "daily_pct": -5.7992
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Warren Buffett stepping down as chairman of Berkshire Hathaway: 'Father Time always wins'",
+      "source": "CNBC",
+      "published": "Fri, 18 Sep 2026 10:09:35 GMT",
+      "url": "https://www.cnbc.com/2026/09/18/buffett-stepping-down-as-berkshire-chairman.html",
+      "summary": "Buffett's son, Howard, will replace him as chairman as dictated by a long-standing succession plan, Berkshire said."
+    },
+    {
+      "headline": "Trump administration advances $24.3 billion fighter jet deal to Saudi Arabia as Houthis escalate attacks",
+      "source": "CNBC",
+      "published": "Fri, 18 Sep 2026 08:02:20 GMT",
+      "url": "https://www.cnbc.com/2026/09/18/trump-saudi-arabia-f-35-houthis-iran-war.html",
+      "summary": "The deal comes as Iran-backed Houthis escalate attacks on Saudi Arabia and seek control of the strategically important Bab el-Mandeb Strait."
+    },
+    {
+      "headline": "Oil prices fall for third day on Saudi Arabia supply hopes; U.S. crude briefly dips below $100",
+      "source": "CNBC",
+      "published": "Fri, 18 Sep 2026 08:29:35 GMT",
+      "url": "https://www.cnbc.com/2026/09/18/oil-prices-today-brent-wti-saudi-arabia-houthi.html",
+      "summary": "Oil prices fell on Friday as additional Saudi crude supplies help ease disruption fears."
+    },
+    {
+      "headline": "UN mission finds evidence signaling U.S. war crimes in Iran; Washington rejects report",
+      "source": "CNBC",
+      "published": "Fri, 18 Sep 2026 03:09:22 GMT",
+      "url": "https://www.cnbc.com/2026/09/18/us-iran-war-trump-hormuz.html",
+      "summary": "The UN mission pointed out the missile strike on a primary school that killed over 150 people, as well as another airstrike which killed 22 civilians."
+    },
+    {
+      "headline": "Jim Cramer says history offers a playbook for navigating a Fed rate-hiking cycle",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 22:58:28 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/jim-cramer-fed-rate-hike-investing.html",
+      "summary": "CNBC's Jim Cramer said investors shouldn\u2019t assume stocks will struggle for the entire period."
+    },
+    {
+      "headline": "Lawmakers must 'keep their options open' on Social Security reform, former Treasury Secretary Jack Lew says",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 19:57:41 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/social-security-reform-cant-wait-former-treasury-secretary-jack-lew.html",
+      "summary": "The next U.S. president and candidates for Senate this November will be tasked with addressing Social Security's funding shortfall."
+    },
+    {
+      "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
+      "source": "CNBC",
+      "published": "Thu, 17 Sep 2026 17:27:15 GMT",
+      "url": "https://www.cnbc.com/2026/09/17/stephen-curry-li-ning-signature-shoe.html",
+      "summary": "Golden State Warrior superstar Stephen Curry announced in June he was signing a long-term partnership with Chinese brand Li-Ning."
+    },
+    {
+      "headline": "Why Japan\u2019s markets flipped the usual script after central bank rate hike",
+      "source": "CNBC",
+      "published": "Fri, 18 Sep 2026 07:40:29 GMT",
+      "url": "https://www.cnbc.com/2026/09/18/japan-rate-hike-stocks-rise-bond-yields-yen-fall.html",
+      "summary": "The yen weakened past 157 against the dollar, the yield on the 10-year Japanese Government Bond slipped, while the Nikkei 225 gained 1.5%."
+    }
+  ]
+}
