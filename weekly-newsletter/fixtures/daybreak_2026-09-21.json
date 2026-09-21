@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-21",
+    "generated_at": "2026-09-21T12:39:21.089645Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7637.7598,
+      "close": 7650.5,
+      "daily_pct": 0.1668,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51778.0391,
+      "close": 51682.6406,
+      "daily_pct": -0.1842,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26418.3008,
+      "close": 26522.5391,
+      "daily_pct": 0.3946,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2860.3999,
+      "close": 2860.3965,
+      "daily_pct": -0.0001,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4424.8999,
+      "close": 4390.2998,
+      "daily_pct": -0.7819,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.998,
+      "close": 4.957,
+      "daily_pct": -0.8203,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -4.1
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.22,
+      "close": 100.261,
+      "daily_pct": 0.0409,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 100.3,
+      "close": 93.51,
+      "daily_pct": -6.7697,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65018.95,
+      "prev_close": 64136.25,
+      "daily_pct": 1.3763,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25042.71,
+      "prev_close": 24750.78,
+      "daily_pct": 1.1795,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7007.72,
+      "prev_close": 6894.23,
+      "daily_pct": 1.6462,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23414.3,
+      "prev_close": 23346.4,
+      "daily_pct": 0.2908,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8731.9,
+      "prev_close": 8731.2,
+      "daily_pct": 0.008,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25595.91,
+      "prev_close": 25595.91,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10769.31,
+      "prev_close": 10769.31,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8145.03,
+      "prev_close": 8145.03,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6321.0,
+      "prev_close": 6321.0,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14877,
+      "prev_close": 1.1476,
+      "daily_pct": 0.1011
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33915,
+      "prev_close": 1.3358,
+      "daily_pct": 0.2511
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.31799,
+      "prev_close": 156.129,
+      "daily_pct": 0.7615
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.71388,
+      "prev_close": 0.71155,
+      "daily_pct": 0.3272
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21703,
+      "prev_close": 1.2123,
+      "daily_pct": 0.3907
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7763.25,
+      "prev_close": 7763.25,
+      "daily_pct": 1.383
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30228.0,
+      "prev_close": 30228.0,
+      "daily_pct": 2.0744
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52521.0,
+      "prev_close": 52521.0,
+      "daily_pct": 1.4683
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4390.2,
+      "prev_close": 4390.2,
+      "daily_pct": -0.7842
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.08,
+      "prev_close": 106.08,
+      "daily_pct": 0.0
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 93.55,
+      "prev_close": 93.55,
+      "daily_pct": -6.7298
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Iranian President Pezeshkian to head to New York for UN meeting as Trump warns of no-deal consequences",
+      "source": "CNBC",
+      "published": "Mon, 21 Sep 2026 08:58:46 GMT",
+      "url": "https://www.cnbc.com/2026/09/21/us-iran-war-trump-hormuz.html",
+      "summary": "Trump threatened to destroy Iran's economy or eliminate its leadership if Tehran doesn't strike a deal, complicating efforts at diplomacy."
+    },
+    {
+      "headline": "\u2018It's awful\u2019: How tariffs, soaring fuel costs and higher interest rates are squeezing American companies",
+      "source": "CNBC",
+      "published": "Sun, 20 Sep 2026 12:47:23 GMT",
+      "url": "https://www.cnbc.com/2026/09/20/tariffs-fuel-prices-and-interest-rates-squeeze-us-companies.html",
+      "summary": "Tariffs, fuel prices and interest rates are squeezing American companies, particularly manufacturers, auto suppliers, retailers and transportation businesses."
+    },
+    {
+      "headline": "Bessent calls meeting with China Vice Premier He Lifeng 'successful' ahead of Trump-Xi summit",
+      "source": "CNBC",
+      "published": "Mon, 21 Sep 2026 00:45:26 GMT",
+      "url": "https://www.cnbc.com/2026/09/20/bessent-he-lifeng-trump-xi-summit.html",
+      "summary": "Treasury Secretary Scott Bessent said his meeting with Chinese Vice Premier He Lifeng was \"successful\" ahead of the Sept. 24 Trump-Xi summit."
+    },
+    {
+      "headline": "Russia\u2019s pro-Putin party set to win election as Ukraine exposes war\u2019s growing reach into Moscow",
+      "source": "CNBC",
+      "published": "Mon, 21 Sep 2026 09:36:23 GMT",
+      "url": "https://www.cnbc.com/2026/09/21/russia-election-putin-moscow-attack-ukraine.html",
+      "summary": "Ukraine launched more than 1,000 drones at Russia on the State Duma election\u2019s final day, including hundreds targeting Moscow."
+    },
+    {
+      "headline": "Volkswagen woes deepen as blue-chip index exit follows latest profit warning",
+      "source": "CNBC",
+      "published": "Mon, 21 Sep 2026 09:56:27 GMT",
+      "url": "https://www.cnbc.com/2026/09/21/volkswagens-latest-profit-warning-compounds-exit-from-blue-chip-index.html",
+      "summary": "Deutsche Bank analysts said the cut to VW's operating profit forecast initially looks severe but keeps cash generation intact."
+    },
+    {
+      "headline": "Treasury yields ease as global borrowing costs tumble",
+      "source": "CNBC",
+      "published": "Mon, 21 Sep 2026 12:26:10 GMT",
+      "url": "https://www.cnbc.com/2026/09/21/treasury-yields-government-bonds.html",
+      "summary": "Treasury yields were lower on Monday following last week's interest rate bonanza."
+    },
+    {
+      "headline": "Here are the 3 big things we're watching in the stock market this week",
+      "source": "CNBC",
+      "published": "Sun, 20 Sep 2026 23:42:00 GMT",
+      "url": "https://www.cnbc.com/2026/09/20/here-are-the-3-big-things-were-watching-in-the-stock-market-this-week.html",
+      "summary": "The week ahead is light on macroeconomic data, but investors can still expect plenty of market-moving headlines."
+    },
+    {
+      "headline": "Buffett takes next step in plan to keep Berkshire from straying",
+      "source": "CNBC",
+      "published": "Sat, 19 Sep 2026 12:43:56 GMT",
+      "url": "https://www.cnbc.com/2026/09/19/warren-buffett-takes-next-step-in-plan-to-keep-berkshire-from-straying.html",
+      "summary": "Warren Buffett steps down as Berkshire Hathaway's chairman, passing the job to his son, Howard."
+    }
+  ]
+}
