@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-23",
+    "generated_at": "2026-09-23T10:32:26.507326Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7764.7002,
+      "close": 7764.64,
+      "daily_pct": -0.0008,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52048.8281,
+      "close": 51863.69,
+      "daily_pct": -0.3557,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 27122.0898,
+      "close": 27244.28,
+      "daily_pct": 0.4506,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2860.3999,
+      "close": 2875.3601,
+      "daily_pct": 0.523,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4376.3999,
+      "close": 4352.8999,
+      "daily_pct": -0.537,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.998,
+      "close": 4.963,
+      "daily_pct": -0.7003,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -3.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.43,
+      "close": 100.869,
+      "daily_pct": 0.4371,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 94.59,
+      "close": 89.64,
+      "daily_pct": -5.2331,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65018.95,
+      "prev_close": 64136.25,
+      "daily_pct": 1.3763,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24834.12,
+      "prev_close": 25042.71,
+      "daily_pct": -0.8329,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7080.92,
+      "prev_close": 7007.72,
+      "daily_pct": 1.0446,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23446.8,
+      "prev_close": 23414.3,
+      "daily_pct": 0.1388,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8765.3,
+      "prev_close": 8731.9,
+      "daily_pct": 0.3825,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25466.46,
+      "prev_close": 25466.19,
+      "daily_pct": 0.0011,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10719.01,
+      "prev_close": 10719.01,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8147.2,
+      "prev_close": 8147.2,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6312.99,
+      "prev_close": 6312.99,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14116,
+      "prev_close": 1.14646,
+      "daily_pct": -0.4622
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32792,
+      "prev_close": 1.33709,
+      "daily_pct": -0.6861
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.856,
+      "prev_close": 157.369,
+      "daily_pct": 0.3095
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70817,
+      "prev_close": 0.7119,
+      "daily_pct": -0.5246
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21513,
+      "prev_close": 1.21832,
+      "daily_pct": -0.2625
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7838.0,
+      "prev_close": 7838.0,
+      "daily_pct": 0.0798
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 31029.0,
+      "prev_close": 31029.0,
+      "daily_pct": 0.0016
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52310.0,
+      "prev_close": 52310.0,
+      "daily_pct": 0.0593
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4352.9,
+      "prev_close": 4352.9,
+      "daily_pct": -0.537
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.08,
+      "prev_close": 106.08,
+      "daily_pct": 0.0737
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 89.64,
+      "prev_close": 89.64,
+      "daily_pct": -5.2331
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Iran says Trump\u2019s threats a sign of \u2018strategic desperation,\u2019 floats conditions for Hormuz reopening",
+      "source": "CNBC",
+      "published": "Wed, 23 Sep 2026 09:05:23 GMT",
+      "url": "https://www.cnbc.com/2026/09/23/us-iran-war-trump-hormuz.html",
+      "summary": "Tehran's proposal could pave the way for restoring traffic through the Strait of Hormuz, reviving fragile hopes for a diplomatic off-ramp."
+    },
+    {
+      "headline": "AI drone maker hits $6.4 billion valuation as Ukraine war spurs defense tech",
+      "source": "CNBC",
+      "published": "Wed, 23 Sep 2026 09:47:31 GMT",
+      "url": "https://www.cnbc.com/2026/09/23/ai-drone-maker-ukraine-war-defense-tech.html",
+      "summary": "Tekever is one of a number of European defense tech startups raising sizable rounds amid a rearmament campaign from countries in the region."
+    },
+    {
+      "headline": "Zelenskyy says Ukraine ready for \u2018energy ceasefire\u2019, calls for trilateral meeting with Putin, Trump",
+      "source": "CNBC",
+      "published": "Wed, 23 Sep 2026 08:06:50 GMT",
+      "url": "https://www.cnbc.com/2026/09/23/ukraine-war-zelenskyy-putin-trump-russia.html",
+      "summary": "Zelenskyy said Ukraine is ready for an \u201cenergy ceasefire\u201d with Russia, provided Moscow stops attacks on critical infrastructure."
+    },
+    {
+      "headline": "In photos: Key takeaways from day one of the UN General Assembly",
+      "source": "CNBC",
+      "published": "Wed, 23 Sep 2026 03:13:02 GMT",
+      "url": "https://www.cnbc.com/2026/09/23/unga-trump-iran-china-greenland-ukraine-russia-.html",
+      "summary": "World leaders descended on New York for the annual United Nations General Assembly, where the agenda covers topics from wars to the risks posed by AI."
+    },
+    {
+      "headline": "Trump administration is examining whether a diesel export ban is feasible, Treasury Secretary says",
+      "source": "CNBC",
+      "published": "Tue, 22 Sep 2026 23:43:48 GMT",
+      "url": "https://www.cnbc.com/2026/09/22/trump-diesel-export-ban-urkaine-russia-iran.html",
+      "summary": "Republican lawmakers have called for an export ban as high diesel prices hit farmers and truckers ahead of the November midterm elections."
+    },
+    {
+      "headline": "Treasury yields little changed as oil price oscillates",
+      "source": "CNBC",
+      "published": "Wed, 23 Sep 2026 08:44:59 GMT",
+      "url": "https://www.cnbc.com/2026/09/23/treasury-yields-oil-inflation-fed.html",
+      "summary": "Yields on U.S. Treasurys held steady early Wednesday, as oil prices were volatile."
+    },
+    {
+      "headline": "Royal Caribbean nears $3 billion deal to take 50% equity stake in Sandals",
+      "source": "CNBC",
+      "published": "Tue, 22 Sep 2026 21:25:42 GMT",
+      "url": "https://www.cnbc.com/2026/09/22/royal-caribbean-sandals.html",
+      "summary": "Royal Caribbean has been trying to diversify beyond cruises and become a leader overall in vacations."
+    },
+    {
+      "headline": "Sullivan: Wall Street admits it doesn't know where oil is headed. There's one stock they do agree on",
+      "source": "CNBC",
+      "published": "Tue, 22 Sep 2026 16:05:57 GMT",
+      "url": "https://www.cnbc.com/2026/09/22/sullivan-wall-street-admits-it-doesnt-know-where-oil-is-headed-theres-one-stock-they-do-agree-on.html",
+      "summary": "JPMorgan\u2019s commodity team admitted what many are thinking on the Iran situation and oil: We just don't know."
+    }
+  ]
+}
