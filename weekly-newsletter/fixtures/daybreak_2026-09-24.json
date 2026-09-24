@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "date": "2026-09-24",
+    "generated_at": "2026-09-24T16:37:38.623120Z",
+    "generation_source": "perplexity+manual_verified",
+    "verification_notes": [
+      "Original yfinance fetch (11:45 ET) captured Sep 24 intraday as 'yesterday close'; discarded.",
+      "US closes verified (AP/Reuters/Xinhua/eOption): S&P 7706.03, Dow 51511.59, Nasdaq 26936.04, R2K 2838.66.",
+      "10Y close 5.11% (Reuters 5.106, CNN/Yahoo 5.11, others 5.113); yfinance 5.162 was intraday.",
+      "Gold = Dec COMEX settle 4318.40 (-1.33%); spot closed ~4283-4289 (-1.6/-1.7%).",
+      "WTI settle 92.16 (+1.8%), Brent 103.08. Futures block is ESTIMATED (intraday ~11:45 ET, Nasdaq/Dow levels unavailable).",
+      "Nikkei 65861.04 per Reuters (ET live blog showed 65513.99); KOSPI closed Chuseok. Europe single-source. AUD/USD estimated."
+    ]
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7764.64,
+      "close": 7706.03,
+      "daily_pct": -0.7548,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51863.69,
+      "close": 51511.59,
+      "daily_pct": -0.6789,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 27244.28,
+      "close": 26936.04,
+      "daily_pct": -1.1314,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2889.92,
+      "close": 2838.66,
+      "daily_pct": -1.7738,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4376.4,
+      "close": 4318.4,
+      "daily_pct": -1.3253,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.966,
+      "close": 5.113,
+      "daily_pct": 2.9601,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 14.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 100.604,
+      "close": 101.096,
+      "daily_pct": 0.489,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 90.52,
+      "close": 92.16,
+      "daily_pct": 1.8118,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65861.04,
+      "prev_close": 65018.95,
+      "daily_pct": 1.2951,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24761.13,
+      "prev_close": 24834.12,
+      "daily_pct": -0.2939,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "holiday",
+      "close": null,
+      "prev_close": 7080.92,
+      "daily_pct": null,
+      "session_note": "Holiday: Chuseok"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23063.1,
+      "prev_close": null,
+      "daily_pct": -1.64,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8702.0,
+      "prev_close": 8765.3,
+      "daily_pct": -0.7222,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25256.28,
+      "prev_close": 25410.63,
+      "daily_pct": -0.6074,
+      "session_note": "Sep 24 session (yfinance, ~11:45 ET, single-source)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10679.82,
+      "prev_close": 10705.26,
+      "daily_pct": -0.2376,
+      "session_note": "Sep 24 session (yfinance, ~11:45 ET, single-source)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8082.82,
+      "prev_close": 8123.41,
+      "daily_pct": -0.4997,
+      "session_note": "Sep 24 session (yfinance, ~11:45 ET, single-source)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6273.95,
+      "prev_close": 6301.0,
+      "daily_pct": -0.4293,
+      "session_note": "Sep 24 session (yfinance, ~11:45 ET, single-source)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1387,
+      "prev_close": 1.1442,
+      "daily_pct": -0.4807
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3243,
+      "prev_close": 1.3335,
+      "daily_pct": -0.6899
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.27,
+      "prev_close": 157.5,
+      "daily_pct": 0.4889
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70116,
+      "prev_close": 0.70817,
+      "daily_pct": -1.41
+    },
+    "USD/CNH": {
+      "symbol": "USDCNH=X",
+      "rate": null,
+      "prev_close": null,
+      "daily_pct": null
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21301,
+      "prev_close": 1.21773,
+      "daily_pct": -0.3876
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7732.0,
+      "prev_close": 7772.42,
+      "daily_pct": -0.52
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": null,
+      "prev_close": 31029.0,
+      "daily_pct": -0.91
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51505.0,
+      "prev_close": null,
+      "daily_pct": -0.71
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4284.1,
+      "prev_close": 4318.4,
+      "daily_pct": -0.7943
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 93.53,
+      "prev_close": 92.16,
+      "daily_pct": 1.4865
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "30-year Treasury yield hits highest level since 2004 as bond market rout continues",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 15:41:37 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/us-treasury-yields-bonds-fed-inflation.html",
+      "summary": "U.S. Treasury yields continued their upward momentum after hitting a 19-year high on Wednesday."
+    },
+    {
+      "headline": "Big business warns Trump against diesel export ban in joint letter",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 14:23:33 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/chamber-commerce-business-roundtable-trump-diesel-export-ban-iran-war.html",
+      "summary": "The national average for a gallon of diesel reached $6.51 on Thursday, nearly $3 more than the same period a year ago, according to data from AAA."
+    },
+    {
+      "headline": "Trump, Xi to talk Taiwan, AI, trade and Iran as DC summit kicks off",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 16:26:47 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/trump-xi-meeting-china-washington.html",
+      "summary": "Trump greeted China's Xi at Joint Base Andrews, marking the U.S. president's first time traveling to the facility to welcome a foreign leader."
+    },
+    {
+      "headline": "Our top 10 things to watch in the stock market Thursday",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 13:24:44 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/our-top-10-things-to-watch-in-the-stock-market-thursday.html",
+      "summary": "The Trump-Xi summit kicks off today, and Meta delivers a big boost to its hardware lineup."
+    },
+    {
+      "headline": "Russia \u2018truly\u2019 appreciates U.S. invite to G20 summit \u2014 but hasn't decided if Putin will go",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 12:36:08 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/russia-putin-trump-ukraine-war-zelenskyy.html",
+      "summary": "European leaders have sharply criticized the move."
+    },
+    {
+      "headline": "New York Fed\u2019s Williams says it's 'reasonable' to expect another rate hike by year-end",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 09:06:18 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/feds-williams-another-rate-hike-by-year-end.html",
+      "summary": "John Williams was speaking at the London Macro Policy Forum on Thursday."
+    },
+    {
+      "headline": "America\u2019s Asian allies want a Trump-Xi truce \u2014 but not at their expense",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 01:56:26 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/uss-asian-allies-want-a-trump-xi-truce-but-not-at-their-expense.html",
+      "summary": "There are concerns that Trump could soften Washington's position on Taiwan or other regional security issues in return for concessions from Beijing."
+    },
+    {
+      "headline": "China confirms first AI talks with U.S. have taken place, hints at trade truce extension",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 14:16:27 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/china-confirms-first-ai-talks-with-us-have-taken-place-hints-at-trade-truce-extension.html",
+      "summary": "Chinese confirmation of the AI discussions came just hours before President Xi Jinping was scheduled to begin talks with U.S. President Donald Trump."
+    }
+  ]
+}
