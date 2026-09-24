@@ -127,6 +127,17 @@ def _override_from_approved_md(ctx: dict, md_path: Path) -> dict:
         if rows:
             ctx["market_news"] = rows
 
+    # Preserve the human-approved title/email subject if one was already
+    # written to disk (e.g. after the user picked from the 5 generated
+    # options) - otherwise the subject-line fallback below regenerates a
+    # fresh, unapproved title on every --publish run.
+    date_str = md_path.stem.replace("market_day_break_", "")
+    title_path = md_path.parent / f"title_{date_str}.txt"
+    if title_path.exists():
+        approved_title = title_path.read_text(encoding="utf-8").strip()
+        if approved_title:
+            ctx["email_subject"] = approved_title
+
     return ctx
 
 BASE_DIR     = Path(__file__).resolve().parent
