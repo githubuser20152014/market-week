@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-25",
+    "generated_at": "2026-09-25T13:33:13.001951Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7704.1299,
+      "close": 7714.7402,
+      "daily_pct": 0.1377,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51349.9805,
+      "close": 51435.6094,
+      "daily_pct": 0.1668,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26939.3691,
+      "close": 26969.8848,
+      "daily_pct": 0.1133,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2838.6599,
+      "close": 2835.5701,
+      "daily_pct": -0.1088,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4298.0,
+      "close": 4323.7998,
+      "daily_pct": 0.6003,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.162,
+      "close": 5.169,
+      "daily_pct": 0.1356,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.29,
+      "close": 100.964,
+      "daily_pct": -0.3219,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 94.61,
+      "close": 92.85,
+      "daily_pct": -1.8603,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 66364.2,
+      "prev_close": 65513.99,
+      "daily_pct": 1.2978,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24510.09,
+      "prev_close": 24761.13,
+      "daily_pct": -1.0139,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 7080.92,
+      "prev_close": 7017.91,
+      "daily_pct": 0.8978,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23140.5,
+      "prev_close": 23063.1,
+      "daily_pct": 0.3356,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8665.0,
+      "prev_close": 8702.0,
+      "daily_pct": -0.4252,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25455.53,
+      "prev_close": 25455.0,
+      "daily_pct": 0.0021,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10707.32,
+      "prev_close": 10707.37,
+      "daily_pct": -0.0005,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8091.11,
+      "prev_close": 8091.11,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6316.15,
+      "prev_close": 6316.15,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.14051,
+      "prev_close": 1.13819,
+      "daily_pct": 0.2042
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32579,
+      "prev_close": 1.32415,
+      "daily_pct": 0.1233
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.136,
+      "prev_close": 158.265,
+      "daily_pct": -0.7134
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70284,
+      "prev_close": 0.70341,
+      "daily_pct": -0.0808
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.20738,
+      "prev_close": 1.21206,
+      "daily_pct": -0.3864
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7782.25,
+      "prev_close": 7782.25,
+      "daily_pct": 0.1963
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30867.75,
+      "prev_close": 30867.75,
+      "daily_pct": 0.3283
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51831.0,
+      "prev_close": 51831.0,
+      "daily_pct": 0.2204
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4324.7,
+      "prev_close": 4324.7,
+      "daily_pct": 0.6212
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 104.8,
+      "prev_close": 104.8,
+      "daily_pct": -0.0596
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 92.87,
+      "prev_close": 92.87,
+      "daily_pct": -1.8391
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Iran offers to reopen Strait of Hormuz within 7 days and restart nuclear talks",
+      "source": "CNBC",
+      "published": "Fri, 25 Sep 2026 13:31:26 GMT",
+      "url": "https://www.cnbc.com/2026/09/25/us-iran-trump-hormuz-.html",
+      "summary": "The remarks came as the Houthis launched a new wave of missile and drone attacks at Saudi targets Friday morning."
+    },
+    {
+      "headline": "Details on U.S.-China trade negotiations coming Monday, USTR Greer says",
+      "source": "CNBC",
+      "published": "Fri, 25 Sep 2026 13:24:29 GMT",
+      "url": "https://www.cnbc.com/2026/09/25/trump-xi-china-trade-greer.html",
+      "summary": "Top White House trade official Jamieson Greer said the two days of talks between President Trump and Chinese leader Xi brought some trade matter agreements."
+    },
+    {
+      "headline": "History shows financial calamities occur when rates rise rapidly like this: 'Something always breaks'",
+      "source": "CNBC",
+      "published": "Thu, 24 Sep 2026 20:57:11 GMT",
+      "url": "https://www.cnbc.com/2026/09/24/history-shows-financial-calamities-occur-when-rates-rise-rapidly-like-this-something-always-breaks.html",
+      "summary": "The 10-year Treasury note yield is spiking to levels not seen in years, and that may be a bad omen for financial markets."
+    },
+    {
+      "headline": "Warsh's regime change at the Fed pushes ahead \u2013 and meets resistance",
+      "source": "CNBC",
+      "published": "Fri, 25 Sep 2026 10:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/25/kevin-warsh-fed-interest-rates-balance-sheet.html",
+      "summary": "Fed Chairman Kevin Warsh is driving rapid change in some areas, while his emerging policy framework suggests further rate hikes remain possible."
+    },
+    {
+      "headline": "Atlanta is getting pandas: China's Xi revives a longtime diplomatic strategy at summit with U.S.",
+      "source": "CNBC",
+      "published": "Fri, 25 Sep 2026 01:12:19 GMT",
+      "url": "https://www.cnbc.com/2026/09/25/china-us-xi-trump-visit-panda-student-visa-.html",
+      "summary": "Chinese President Xi Jinping promised two giant pandas to Zoo Atlanta, reviving Beijing's decades-old charm offensive."
+    },
+    {
+      "headline": "Top 10 things to watch in the stock market Friday",
+      "source": "CNBC",
+      "published": "Fri, 25 Sep 2026 13:09:58 GMT",
+      "url": "https://www.cnbc.com/2026/09/25/top-10-things-to-watch-in-the-stock-market-friday.html",
+      "summary": "Stocks are heading for a higher open, and the S&amp;P 500 and Nasdaq are poised to post winning weeks."
+    },
+    {
+      "headline": "Trump and Xi dined with AI's biggest names. Here's what we know about tech talks so far",
+      "source": "CNBC",
+      "published": "Fri, 25 Sep 2026 11:10:43 GMT",
+      "url": "https://www.cnbc.com/2026/09/25/the-tech-download-trump-xi-ai-talks.html",
+      "summary": "AI was a key topic during Trump-Xi talks on Thursday, after safety concerns shot to the top of the global geopolitical agenda in recent weeks."
+    },
+    {
+      "headline": "China saw 'surprise' jump in U.S. orders ahead of Trump-Xi summit, private survey shows",
+      "source": "CNBC",
+      "published": "Fri, 25 Sep 2026 10:25:01 GMT",
+      "url": "https://www.cnbc.com/2026/09/25/china-exports-surplus-trade-tariffs-.html",
+      "summary": "A private survey shows a rebound in China's exports to the U.S. as companies position for continued stability between the world's two largest economies."
+    }
+  ]
+}
