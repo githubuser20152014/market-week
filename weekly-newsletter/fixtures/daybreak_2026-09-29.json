@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-09-29",
+    "generated_at": "2026-09-29T10:44:58.819269Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7743.4102,
+      "close": 7683.6899,
+      "daily_pct": -0.7712,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51828.6211,
+      "close": 51481.5117,
+      "daily_pct": -0.6697,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 27068.7207,
+      "close": 26820.3809,
+      "daily_pct": -0.9174,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2837.55,
+      "close": 2817.9099,
+      "daily_pct": -0.6922,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4168.3999,
+      "close": 4179.6001,
+      "daily_pct": 0.2687,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.184,
+      "close": 5.24,
+      "daily_pct": 1.0802,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.2,
+      "close": 101.424,
+      "daily_pct": 0.2214,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 92.6,
+      "close": 92.31,
+      "daily_pct": -0.3132,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65481.27,
+      "prev_close": 65877.62,
+      "daily_pct": -0.6016,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24523.57,
+      "prev_close": 24642.51,
+      "daily_pct": -0.4827,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6870.81,
+      "prev_close": 6889.74,
+      "daily_pct": -0.2748,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22716.2,
+      "prev_close": 22780.25,
+      "daily_pct": -0.2812,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8709.3,
+      "prev_close": 8679.7,
+      "daily_pct": 0.341,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25513.76,
+      "prev_close": 25513.76,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10722.76,
+      "prev_close": 10722.67,
+      "daily_pct": 0.0008,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8091.26,
+      "prev_close": 8091.26,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6353.71,
+      "prev_close": 6353.71,
+      "daily_pct": 0.0,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.13456,
+      "prev_close": 1.1378,
+      "daily_pct": -0.2848
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32343,
+      "prev_close": 1.32293,
+      "daily_pct": 0.0384
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.412,
+      "prev_close": 157.463,
+      "daily_pct": -0.0324
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.6994,
+      "prev_close": 0.70091,
+      "daily_pct": -0.2156
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.19891,
+      "prev_close": 1.20523,
+      "daily_pct": -0.5239
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7743.75,
+      "prev_close": 7743.75,
+      "daily_pct": -0.0387
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30595.0,
+      "prev_close": 30595.0,
+      "daily_pct": 0.0941
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51784.0,
+      "prev_close": 51784.0,
+      "daily_pct": -0.1022
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4179.6,
+      "prev_close": 4179.6,
+      "daily_pct": 0.2687
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 104.48,
+      "prev_close": 104.48,
+      "daily_pct": 0.0
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 92.3,
+      "prev_close": 92.3,
+      "daily_pct": -0.324
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.0%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "U.S., Iran hold separate mediator talks as Mideast oil exports hit war-time high",
+      "source": "CNBC",
+      "published": "Tue, 29 Sep 2026 04:02:47 GMT",
+      "url": "https://www.cnbc.com/2026/09/29/us-iran-war-trump-hormuz-.html",
+      "summary": "Iranian and U.S. officials reportedly met separately with mediators Monday to push for a ceasefire, as Middle Eastern crude exports rebounded to war-time high."
+    },
+    {
+      "headline": "Putin orders army expansion as Zelenskyy warns Russia preparing to deploy 10,000 North Korean troops",
+      "source": "CNBC",
+      "published": "Tue, 29 Sep 2026 08:44:42 GMT",
+      "url": "https://www.cnbc.com/2026/09/29/putin-russia-army-ukraine-zelenskyy-north-korea.html",
+      "summary": "The decree marks the fourth increase in Russia\u2019s military staffing levels this year as the war in Ukraine continues into a fifth winter."
+    },
+    {
+      "headline": "Boeing 737 Max 10 certification delayed by software issue, FAA says",
+      "source": "CNBC",
+      "published": "Mon, 28 Sep 2026 20:16:04 GMT",
+      "url": "https://www.cnbc.com/2026/09/28/faa-boeing-737-max-10-certification-delay-software-issue.html",
+      "summary": "The FAA administrator said the Max 10 will be delayed until the agency can assess a software issue on the aircraft."
+    },
+    {
+      "headline": "India readies $25 billion for Deep Tech investment as U.S. and China race ahead",
+      "source": "CNBC",
+      "published": "Tue, 29 Sep 2026 05:12:10 GMT",
+      "url": "https://www.cnbc.com/2026/09/29/india-investment-billions-tech-ai-us-china.html",
+      "summary": "In a bid to cut its reliance on foreign tech, India tries to catch up with China and the U.S. by readying an investment of $25 billion in Deep Tech startups."
+    },
+    {
+      "headline": "Khanna to introduce AI safety bill with ban on 'recursive' technology until safeguards exist",
+      "source": "CNBC",
+      "published": "Mon, 28 Sep 2026 21:43:40 GMT",
+      "url": "https://www.cnbc.com/2026/09/28/khanna-ai-safety-bill.html",
+      "summary": "The proposal joins a chorus of other measures being put forward in Congress as the body mulls how to regulate AI."
+    },
+    {
+      "headline": "China has three new criteria for humanoid robot IPOs. Few, if any, meet them",
+      "source": "CNBC",
+      "published": "Tue, 29 Sep 2026 07:19:38 GMT",
+      "url": "https://www.cnbc.com/2026/09/29/china-criteria-humanoid-robot-ipos.html",
+      "summary": "China's securities regulator is raising the bar for public listings of humanoid robot startups with three specific criteria, according to three sources."
+    },
+    {
+      "headline": "Meta's Muse agent is attacking one of the economy's most profitable weak spots",
+      "source": "CNBC",
+      "published": "Mon, 28 Sep 2026 14:03:43 GMT",
+      "url": "https://www.cnbc.com/2026/09/27/meta-muse-ai-personal-agent.html",
+      "summary": "Meta's Muse AI personal agent will work over your credit card spending if you don't mind the invasion. How big a threat is it to the subscription economy?"
+    },
+    {
+      "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
+      "source": "CNBC",
+      "published": "Mon, 28 Sep 2026 21:52:10 GMT",
+      "url": "https://www.cnbc.com/2026/09/28/elections-dhs-counterterrorism.html",
+      "summary": "The judge said FEMA never explained how the election changes it wanted were \"tied to the goal of shoring up vulnerabilities to terrorist attacks.\""
+    }
+  ]
+}
