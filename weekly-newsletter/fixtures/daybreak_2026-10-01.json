@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "date": "2026-10-01",
+    "generated_at": "2026-10-01T11:02:16.505220Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7670.8398,
+      "close": 7651.54,
+      "daily_pct": -0.2516,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51349.9219,
+      "close": 50906.0508,
+      "daily_pct": -0.8644,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26797.5391,
+      "close": 26861.0605,
+      "daily_pct": 0.237,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2807.9199,
+      "close": 2796.8601,
+      "daily_pct": -0.3939,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4186.7002,
+      "close": 4205.1001,
+      "daily_pct": 0.4395,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.255,
+      "close": 5.293,
+      "daily_pct": 0.7231,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.8
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.45,
+      "close": 101.775,
+      "daily_pct": 0.3204,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 90.42,
+      "close": 91.31,
+      "daily_pct": 0.9843,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 68956.72,
+      "prev_close": 66753.72,
+      "daily_pct": 3.3002,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24613.27,
+      "prev_close": 24523.57,
+      "daily_pct": 0.3658,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6971.35,
+      "prev_close": 6838.04,
+      "daily_pct": 1.9495,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22421.95,
+      "prev_close": 22620.45,
+      "daily_pct": -0.8775,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8614.4,
+      "prev_close": 8789.3,
+      "daily_pct": -1.9899,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25172.84,
+      "prev_close": 25199.19,
+      "daily_pct": -0.1046,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10487.11,
+      "prev_close": 10606.0,
+      "daily_pct": -1.121,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7912.21,
+      "prev_close": 7964.51,
+      "daily_pct": -0.6567,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6248.56,
+      "prev_close": 6269.02,
+      "daily_pct": -0.3264,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12956,
+      "prev_close": 1.13408,
+      "daily_pct": -0.3987
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32233,
+      "prev_close": 1.32328,
+      "daily_pct": -0.0714
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.13,
+      "prev_close": 157.40401,
+      "daily_pct": 0.4612
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69483,
+      "prev_close": 0.6989,
+      "daily_pct": -0.5823
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.19634,
+      "prev_close": 1.19872,
+      "daily_pct": -0.1986
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7743.5,
+      "prev_close": 7743.5,
+      "daily_pct": 0.3629
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30934.25,
+      "prev_close": 30934.25,
+      "daily_pct": 0.7671
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51319.0,
+      "prev_close": 51319.0,
+      "daily_pct": 0.08
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4205.5,
+      "prev_close": 4205.5,
+      "daily_pct": 0.449
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 104.27,
+      "prev_close": 104.27,
+      "daily_pct": 0.06
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 91.3,
+      "prev_close": 91.3,
+      "daily_pct": 0.9732
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "GDP",
+        "actual": "2.2",
+        "expected": "See tradingeconomics.com",
+        "previous": "2.5",
+        "unit": "%",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "+0.9%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "10-year Treasury yield hits highest level since 2002 as global bond rout gathers pace",
+      "source": "CNBC",
+      "published": "Thu, 01 Oct 2026 10:22:44 GMT",
+      "url": "https://www.cnbc.com/2026/10/01/us-treasury-bond-yield.html",
+      "summary": "Treasury yields were higher on Thursday amid a global sell-off in government debt."
+    },
+    {
+      "headline": "Oil prices rise as Chinese refiners reportedly ban October fuel exports; Brent crude back above $100",
+      "source": "CNBC",
+      "published": "Thu, 01 Oct 2026 10:39:15 GMT",
+      "url": "https://www.cnbc.com/2026/10/01/oil-prices-today-wti-brent.html",
+      "summary": "It comes after a report that Chinese refiners suspended October fuel exports to protect domestic supplies."
+    },
+    {
+      "headline": "Micron beats on earnings and issues strong guidance as data center revenue jumps 11-fold",
+      "source": "CNBC",
+      "published": "Wed, 30 Sep 2026 20:59:05 GMT",
+      "url": "https://www.cnbc.com/2026/09/30/micron-mu-q4-earnings-report-2026.html",
+      "summary": "Micron is up over 500% in the past year as the company benefits from soaring AI demand."
+    },
+    {
+      "headline": "Russia launches massive strikes on Ukraine\u2019s energy grid, forcing power cuts ahead of winter",
+      "source": "CNBC",
+      "published": "Thu, 01 Oct 2026 09:48:06 GMT",
+      "url": "https://www.cnbc.com/2026/10/01/russia-ukraine-war-energy-power-winter.html",
+      "summary": "Seven people were killed in the attack and emergency power cuts were imposed in Kyiv and three other regions."
+    },
+    {
+      "headline": "Passengers and crew foil co-pilot's apparent attempt to crash FlyDubai flight to Israel",
+      "source": "CNBC",
+      "published": "Thu, 01 Oct 2026 01:09:18 GMT",
+      "url": "https://www.cnbc.com/2026/10/01/dubai-israel-flight-pilot-crash-indian.html",
+      "summary": "One of the pilots on a FlyDubai flight headed for Israel stabbed the second pilot, according to Israeli Prime Minister Benjamin Netanyahu."
+    },
+    {
+      "headline": "David Ellison names Ynon Kreiz co-CEO of Paramount and Warner Bros. Discovery",
+      "source": "CNBC",
+      "published": "Wed, 30 Sep 2026 23:01:40 GMT",
+      "url": "https://www.cnbc.com/2026/09/30/david-ellison-ynon-kreiz-co-ceo-paramount-wbd.html",
+      "summary": "Paramount CEO David Ellison announced outgoing Mattel chief Ynon Kreiz will serve as the co-CEO of the anticipated combination of Paramount and WBD."
+    },
+    {
+      "headline": "Elon Musk, Palmer Luckey and Newt Gingrich to help Pentagon with warfare initiative, Hegseth says",
+      "source": "CNBC",
+      "published": "Wed, 30 Sep 2026 21:21:10 GMT",
+      "url": "https://www.cnbc.com/2026/09/30/musk-luckey-gingrich-pentagon-hegseth-.html",
+      "summary": "Pete Hegseth, in remarks about the state of the military, announced a project led by two GOP-supporting tech executives to examine military capabilities."
+    },
+    {
+      "headline": "We're raising our Micron price target after an incredible quarter and robust guidance",
+      "source": "CNBC",
+      "published": "Thu, 01 Oct 2026 00:07:47 GMT",
+      "url": "https://www.cnbc.com/2026/09/30/were-raising-our-micron-price-target-after-an-incredible-quarter-and-robust-outlook.html",
+      "summary": "Micron signaled that fiscal 2027 will be another strong year as demand for its memory products continues to exceed supply."
+    }
+  ]
+}
