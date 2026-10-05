@@ -2,8 +2,8 @@
 name: Substack One Trade heading — ticker must be Yahoo Finance hyperlink
 description: In the Substack HTML h2 heading for The One Trade, the ticker must always be an anchor tag linking to Yahoo Finance, not plain text
 type: feedback
+originSessionId: 38a8355b-079a-4929-9dea-857180a1891d
 ---
-
 In the Substack note HTML, the One Trade heading must use this format:
 
 ```html

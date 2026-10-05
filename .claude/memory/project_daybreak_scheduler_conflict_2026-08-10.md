@@ -1,8 +1,11 @@
 ---
 name: project-daybreak-scheduler-conflict-2026-08-10
 description: A known daily 5:15 AM automation runs the Daybreak pipeline + headless polish and can overwrite an in-progress human review if a /daybreak session is active at the same time
-metadata:
+metadata: 
+  node_type: memory
   type: project
+  originSessionId: 3912cfe4-bf22-4d78-96f0-bbfa2d041752
+  modified: 2026-08-10T11:20:26.706Z
 ---
 
 On 2026-08-10, mid-review of the Daybreak draft for 2026-08-10 during a `/daybreak` session, the `.md` on disk changed out from under an in-progress edit (reintroduced em dashes, rewrote narrative and positioning-notes wording) — content diverged from what had just been written moments earlier.
