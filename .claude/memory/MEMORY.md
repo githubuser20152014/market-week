@@ -78,6 +78,7 @@
 
 ## Workflow Preferences
 - End-of-session commit: ask "Ready to commit the code changes to GitHub?" before committing source code — `publish.py --daybreak` auto-commits generated content, but source changes need separate explicit sign-off.
+- [feedback_push_manually.md](feedback_push_manually.md) — user runs `! git push` themselves; do not retry denied pushes or loosen auto-mode
 
 ## Expat Magazine
 - [project_expat_magazine_issue02.md](project_expat_magazine_issue02.md) — Issue 02 (Spain) live 2026-04-21, missing OG image, content review pending
