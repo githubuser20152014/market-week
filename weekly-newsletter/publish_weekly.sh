@@ -7,6 +7,7 @@
 #   bash publish_weekly.sh 2026-02-28 --publish         # build site + commit + push + email
 #   bash publish_weekly.sh 2026-02-28 --global-only     # generate global edition only
 #   bash publish_weekly.sh 2026-02-28 --global-only --publish
+#   bash publish_weekly.sh 2026-02-28 --global-only --publish --send-email  # also email global subscribers
 
 set -euo pipefail
 
@@ -17,10 +18,12 @@ DATE_STR="${1:-$(date +%Y-%m-%d)}"
 # Parse flags
 PUBLISH=""
 GLOBAL_ONLY=""
+SEND_EMAIL=""
 for arg in "${@:2}"; do
   case "$arg" in
     --publish)     PUBLISH="--publish" ;;
     --global-only) GLOBAL_ONLY="--global-only" ;;
+    --send-email)  SEND_EMAIL="--send-email" ;;
   esac
 done
 
@@ -69,9 +72,21 @@ if [[ -n "${DIGEST_DIR:-}" && -d "$DIGEST_DIR" ]]; then
   DIGEST_FLAG="--digest-dir $DIGEST_DIR"
 fi
 
-GLOBAL_EQ_LIVE=$(_live_flag "$SCRIPT_DIR/fixtures/global_equity_${DATE_STR}.json")
-echo "==> Generating global edition for $DATE_STR ${GLOBAL_EQ_LIVE:+(live)}..."
-python generate_global_newsletter.py --date "$DATE_STR" $GLOBAL_EQ_LIVE $DIGEST_FLAG
+GLOBAL_MD="$SCRIPT_DIR/output/global_newsletter_${DATE_STR}.md"
+if [[ "$PUBLISH" != "--publish" ]]; then
+  GLOBAL_EQ_LIVE=$(_live_flag "$SCRIPT_DIR/fixtures/global_equity_${DATE_STR}.json")
+  echo "==> Generating global edition for $DATE_STR ${GLOBAL_EQ_LIVE:+(live)}..."
+  python generate_global_newsletter.py --date "$DATE_STR" $GLOBAL_EQ_LIVE $DIGEST_FLAG
+else
+  # --publish must never regenerate: it would silently overwrite the
+  # human-approved markdown with a fresh, unreviewed Claude API call.
+  if [[ ! -f "$GLOBAL_MD" ]]; then
+    echo "ERROR: No approved global edition found at $GLOBAL_MD" >&2
+    echo "Run without --publish first to generate and review it." >&2
+    exit 1
+  fi
+  echo "==> Using approved global edition at $GLOBAL_MD (not regenerating)."
+fi
 
 echo ""
 echo "Newsletters ready for review:"
@@ -124,11 +139,20 @@ git push origin master
 echo ""
 echo "Done. Live at https://frameworkfoundry.info/"
 
-echo ""
-echo "==> Sending email to subscribers ..."
 cd "$SCRIPT_DIR"
 if [[ "$GLOBAL_ONLY" != "--global-only" ]]; then
+  echo ""
+  echo "==> Sending email to subscribers (weekly + intl) ..."
   python send_email.py --edition weekly --date "$DATE_STR"
   python send_email.py --edition intl   --date "$DATE_STR"
 fi
-python send_email.py --edition global  --date "$DATE_STR"
+
+if [[ "$SEND_EMAIL" == "--send-email" ]]; then
+  echo ""
+  echo "==> Sending email to subscribers (global) ..."
+  python send_email.py --edition global --date "$DATE_STR"
+else
+  echo ""
+  echo "Skipping global subscriber email (pass --send-email to send)."
+  echo "  bash weekly-newsletter/publish_weekly.sh $DATE_STR --global-only --publish --send-email"
+fi

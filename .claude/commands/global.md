@@ -94,7 +94,9 @@ Using the approved markdown as the sole content source, write the Substack HTML 
 
 Format requirements:
 - **Opening hook:** 2–3 short punchy paragraphs. Lead with the week's dominant theme, anomaly, or divergence — not a summary. First visible section ends with a kicker in `<em>italics</em>`.
-- **`<h2>Here's my read:</h2>`** — the macro driver paragraph. Bold key data points. Italics on punchline phrases.
+- **`<h2>Here's my read:</h2>`** — the macro driver paragraph. Bold key data points. Italics on punchline phrases. This section MUST also include, as separate paragraphs within it (this is a Global Investor Edition, not a US-only one):
+  - An **international equities paragraph** covering Europe (DAX, Euro Stoxx 50, FTSE 100) and Asia-Pacific (Nikkei 225, Hang Seng, MSCI EM), pulled from the approved markdown's Equity Markets section.
+  - A **currencies, commodities & metals paragraph** covering the USD Index, EUR/USD, GBP/USD, CHF, JPY, plus WTI/natural gas and gold/silver, pulled from the approved markdown's Currency Markets and Commodities & Metals sections.
 - **`<h2>The One Trade: DIRECTION <a href="https://finance.yahoo.com/quote/TICKER">$TICKER</a></h2>`** — the ticker MUST be a Yahoo Finance hyperlink, never plain text. Use "Kill switch:" not "Risk:". Italics on the consequence ("get out *fast*").
 - **`<h2>What else I'm watching</h2>`** — global positioning bullets with personality. Use language like "don't you dare sell it", "stay away from", "the trade nobody is talking about".
 - Bold key numbers and verdicts. Italics on punchlines. Don't over-emphasize — save it for the moments that land hardest.
@@ -108,6 +110,8 @@ Pre-flight check before displaying:
 - [ ] Uses "Kill switch:" not "Risk:"
 - [ ] No banned phrases: "amid concerns", "market participants", "investors remain cautious", "volatility persists", "risk sentiment"
 - [ ] Footer links to `/global/PUB_DATE/` (not `/daily/`)
+- [ ] "Here's my read" includes an international equities paragraph (Europe + Asia-Pacific) — flag if the post is US-only
+- [ ] "Here's my read" includes a currencies/commodities/metals paragraph — flag if missing
 
 Fix any violations, then display the full HTML to the user. Ask:
 > "Here's the Substack draft for [PUB_DATE]. Any changes?"

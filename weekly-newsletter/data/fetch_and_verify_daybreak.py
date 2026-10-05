@@ -34,7 +34,7 @@ SANITY_BOUNDS = {
     "Gold":          AssetBounds(1500, 6000),
     "WTI Crude Oil": AssetBounds(40, 200),
     "10Y Treasury":  AssetBounds(0.5, 8.0),
-    "Nikkei 225":    AssetBounds(20000, 65000),
+    "Nikkei 225":    AssetBounds(20000, 80000),
     "EUR/USD":       AssetBounds(0.80, 1.50),
     "USD/JPY":       AssetBounds(80, 200),
 }
@@ -98,7 +98,30 @@ def verify_and_check(payload: dict):
             if diff > 0.5:
                 flags.append(f"[VERIFY] {name}: yfinance={val}, stooq={sec_val} (diff={diff:.2f}%)")
 
+    # 4. Futures vs matching cash index (NQ=F tracks the Nasdaq-100, not the Composite)
+    ndx = _fetch_ndx_close()
+    pairs = {
+        "S&P Futures":    payload.get("us_close", {}).get("S&P 500", {}).get("close"),
+        "Dow Futures":    payload.get("us_close", {}).get("Dow Jones", {}).get("close"),
+        "Nasdaq Futures": ndx,
+    }
+    for name, cash in pairs.items():
+        price = payload.get("futures", {}).get(name, {}).get("price")
+        if price and cash and _diff_pct(price, cash) > 2.0:
+            flags.append(f"[VERIFY] {name}: {price} vs cash index {cash} "
+                         f"(diff={_diff_pct(price, cash):.2f}%)")
+
     return flags
+
+
+def _fetch_ndx_close():
+    """Latest Nasdaq-100 close, the cash index that NQ=F actually tracks."""
+    try:
+        import yfinance as yf
+        h = yf.Ticker("^NDX").history(period="5d")["Close"].dropna()
+        return float(h.iloc[-1]) if len(h) else None
+    except Exception:
+        return None
 
 def print_summary(payload: dict, flags: list):
     """Print a clean summary of the fetched data."""

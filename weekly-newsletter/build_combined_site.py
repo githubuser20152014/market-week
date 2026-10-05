@@ -1535,13 +1535,22 @@ def _override_global_ctx_from_md(ctx: dict, date_str: str) -> dict:
             out.append(line)
         return "\n".join(out).strip()
 
-    # big_theme: first ### heading that isn't a known subsection
-    known = {"Macro Regime Snapshot", "Equity Markets", "Currency Markets",
+    # Real headings often carry a descriptive suffix (e.g. "Equity Markets -
+    # Europe Gains as US Tech Rout Deepens"), so match by case-insensitive
+    # prefix rather than exact equality.
+    def _matches(heading: str, known_prefix: str) -> bool:
+        return heading.strip().lower().startswith(known_prefix.lower())
+
+    # big_theme: first ### heading that isn't a known subsection.
+    # "What This Means For You" is the older (pre-2026-04-25) heading text;
+    # "What it means for you" replaced it. Accept both.
+    known = ["Macro Regime Snapshot", "Equity Markets", "Currency Markets",
              "Commodities & Metals", "This Week's Economic Events",
              "Next Week: What to Watch", "Global Investor Positioning",
-             "What This Means For You", "The One Trade"}
+             "What it means for you", "What This Means For You",
+             "The One Trade"]
     for heading, body in sections.items():
-        if heading not in known:
+        if not any(_matches(heading, k) for k in known):
             ctx["big_theme_title"] = heading
             ctx["big_theme_body"]  = _clean(body)
             break
@@ -1552,17 +1561,25 @@ def _override_global_ctx_from_md(ctx: dict, date_str: str) -> dict:
         "Commodities & Metals":         "commodities_narrative",
         "This Week's Economic Events":  "events_commentary",
         "Next Week: What to Watch":     "next_week_commentary",
+        "What it means for you":        "what_this_means",
         "What This Means For You":      "what_this_means",
         "The One Trade":                "the_one_trade",
     }
     for md_heading, ctx_key in mapping.items():
-        if md_heading in sections:
-            ctx[ctx_key] = _clean(sections[md_heading])
+        for actual_heading, body in sections.items():
+            if _matches(actual_heading, md_heading):
+                ctx[ctx_key] = _clean(body)
+                break
 
     # Positioning: extract bullet lines
-    if "Global Investor Positioning" in sections:
+    positioning_body = next(
+        (body for heading, body in sections.items()
+         if _matches(heading, "Global Investor Positioning")),
+        None,
+    )
+    if positioning_body is not None:
         bullets = []
-        for line in sections["Global Investor Positioning"].splitlines():
+        for line in positioning_body.splitlines():
             s = line.strip()
             if re.match(r"^[-*]\s", s):
                 bullets.append(re.sub(r"^[-*]\s+", "", s))

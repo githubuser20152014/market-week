@@ -442,14 +442,18 @@ def _fetch_intl_overnight(date_str: str, index_cfg: dict) -> dict:
                         if isinstance(df_1m.columns, __import__("pandas").MultiIndex):
                             df_1m.columns = df_1m.columns.droplevel(1)
                         live_price = float(df_1m["Close"].iloc[-1])
-                        # For Europe, daily_pct is usually vs YESTERDAY'S close
-                        daily_pct = ((live_price / last_close) - 1) * 100
+                        # yfinance daily history includes today's in-progress bar,
+                        # so last_close can already equal the live price. Use the
+                        # last bar strictly before today as yesterday's close.
+                        prior = df_filtered[df_filtered.index.date < target.date()]
+                        ref_close = float(prior["Close"].iloc[-1]) if len(prior) else last_close
+                        daily_pct = ((live_price / ref_close) - 1) * 100
                         result[name] = {
                             "symbol":       symbol,
                             "region":       region,
                             "status":       "partial",
                             "close":        round(live_price, 2),
-                            "prev_close":   round(last_close, 2),
+                            "prev_close":   round(ref_close, 2),
                             "daily_pct":    round(daily_pct, 4),
                             "session_note": "Intraday (early session)",
                         }
