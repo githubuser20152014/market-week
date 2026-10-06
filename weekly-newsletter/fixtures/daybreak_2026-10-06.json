@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "date": "2026-10-06",
+    "generated_at": "2026-10-06T11:33:14.801118Z",
+    "generation_source": "verified_code",
+    "manual_corrections": "Gold overridden 2026-10-06 from web sources: GC=F Oct5 settle 4156.80, Oct2 settle 4162.30 (sources conflict, others cite 4166.60), futures 4146.80 at 02:15 ET. Fetcher had spot value duplicated into futures. | USD Index, WTI close were live Oct 6 quotes in the close slot; replaced with Oct 5 closes (DXY 102.183 vs 101.896; WTI ~89.43-90.20, sources conflict, pct left null). Brent flat ~$100, not a surge."
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7722.7202,
+      "close": 7773.9502,
+      "daily_pct": 0.6634,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51176.9609,
+      "close": 51267.8984,
+      "daily_pct": 0.1777,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 27190.8594,
+      "close": 27477.3105,
+      "daily_pct": 1.0535,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2832.8999,
+      "close": 2847.1399,
+      "daily_pct": 0.5027,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4162.3,
+      "close": 4156.8,
+      "daily_pct": -0.1321,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.277,
+      "close": 5.311,
+      "daily_pct": 0.6443,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.4
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.896,
+      "close": 102.183,
+      "daily_pct": 0.282,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 89.43,
+      "close": 89.43,
+      "daily_pct": null,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 70683.98,
+      "prev_close": 69946.86,
+      "daily_pct": 1.0538,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24280.56,
+      "prev_close": 24040.34,
+      "daily_pct": 0.9992,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6941.39,
+      "prev_close": 7003.74,
+      "daily_pct": -0.8902,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22776.1,
+      "prev_close": 22555.75,
+      "daily_pct": 0.9769,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8735.7,
+      "prev_close": 8686.4,
+      "daily_pct": 0.5676,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25421.32,
+      "prev_close": 25254.21,
+      "daily_pct": 0.6617,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10545.16,
+      "prev_close": 10497.9,
+      "daily_pct": 0.4502,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7883.49,
+      "prev_close": 7834.1,
+      "daily_pct": 0.6305,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6285.77,
+      "prev_close": 6242.14,
+      "daily_pct": 0.699,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12663,
+      "prev_close": 1.12545,
+      "daily_pct": 0.1048
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32679,
+      "prev_close": 1.32429,
+      "daily_pct": 0.1884
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.07201,
+      "prev_close": 157.73399,
+      "daily_pct": 0.2143
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69828,
+      "prev_close": 0.69518,
+      "daily_pct": 0.4452
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.20418,
+      "prev_close": 1.20757,
+      "daily_pct": -0.2806
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7860.75,
+      "prev_close": 7860.75,
+      "daily_pct": 0.4408
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 31524.75,
+      "prev_close": 31524.75,
+      "daily_pct": 0.661
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51867.0,
+      "prev_close": 51867.0,
+      "daily_pct": 0.5993
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4146.8,
+      "prev_close": 4156.8,
+      "daily_pct": -0.241
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 104.53,
+      "prev_close": 104.53,
+      "daily_pct": 0.2999
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 87.57,
+      "prev_close": 87.57,
+      "daily_pct": -2.0798
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.0%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Paramount's hard-fought takeover of Warner Bros. Discovery closes Tuesday. Here's how we got here",
+      "source": "CNBC",
+      "published": "Tue, 06 Oct 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/paramount-wbd-deal-timeline.html",
+      "summary": "Paramount has faced competing bids and an antitrust hurdle since its earliest attempts to take over WBD. Here's a timeline of key events."
+    },
+    {
+      "headline": "Yemen forces reclaim key Red Sea port city from Iran-backed Houthis in major counteroffensive",
+      "source": "CNBC",
+      "published": "Tue, 06 Oct 2026 08:53:50 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/iran-war-yemen-saudi-arabia-mokha-oil.html",
+      "summary": "Oil markets remain on edge over potential Middle East supply disruptions, with Brent trading around $100 a barrel as the risk of further escalation persists."
+    },
+    {
+      "headline": "How quant funds beat the market by being 'early, contrarian and right'",
+      "source": "CNBC",
+      "published": "Tue, 06 Oct 2026 06:57:42 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/trend-following-hedge-funds-beat-stock-market.html",
+      "summary": "Quantitative hedge funds have captured big trends in bonds and oil to outperform the stock market this year."
+    },
+    {
+      "headline": "Barbie maker Mattel faces investor pressure to consider a sale amid stagnating growth",
+      "source": "CNBC",
+      "published": "Tue, 06 Oct 2026 10:07:03 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/mattel-barbie-ariel-sale-investor-pressure.html",
+      "summary": "Mattel is facing pressure from a major investor to consider a sale amid struggling sales and profitability, according to various reports on Monday."
+    },
+    {
+      "headline": "Britain is on 'thin ice,' warns ex-Bank of England chief economist \u2014 and it must act to 'appease financial markets'",
+      "source": "CNBC",
+      "published": "Tue, 06 Oct 2026 07:53:22 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/burnham-healey-budget-tax-bonds-gilts.html",
+      "summary": "Britain has the highest government borrowing costs in the G7."
+    },
+    {
+      "headline": "Russian gold floods Hong Kong as Western sanctions redraw bullion trade",
+      "source": "CNBC",
+      "published": "Mon, 05 Oct 2026 23:14:39 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/russia-gold-hong-kong-china-western-sanctions.html",
+      "summary": "The surge underscores how Russia's gold trade has been rerouted after its invasion of Ukraine in 2022 shut its producers out of major Western markets."
+    },
+    {
+      "headline": "House China committee chair urges Fed to review Hong Kong\u2019s access to dollar lifeline",
+      "source": "CNBC",
+      "published": "Tue, 06 Oct 2026 09:58:14 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/hong-kong-fed-fima-dollar-liquidity-china-moolenaar.html",
+      "summary": "Rep. John Moolenaar wants the Fed to rethink Hong Kong\u2019s access to a dollar-liquidity facility as China promotes the renminbi as a global currency."
+    },
+    {
+      "headline": "Little room for \u2018giving and taking\u2019: India\u2019s finance minister confirms trade impasse with the U.S.",
+      "source": "CNBC",
+      "published": "Tue, 06 Oct 2026 02:39:19 GMT",
+      "url": "https://www.cnbc.com/2026/10/06/india-us-trade-deal-deal-sitharaman.html",
+      "summary": "In the latest sign of growing skepticism around the closure of the trade deal between New Delhi and Washington, an Indian minister said there is little room for \u2018giving and taking.\u2019"
+    }
+  ]
+}
