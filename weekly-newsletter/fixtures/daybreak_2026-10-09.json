@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "date": "2026-10-09",
+    "generated_at": "2026-10-09T12:00:09.917901Z",
+    "generation_source": "verified_code",
+    "manual_corrections": "2026-10-09: Gold/WTI/USD Index patched (Oct 8 settle). 10Y flag verified false positive (FRED 5.28 = Oct 7)."
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7801.77,
+      "close": 7765.3599,
+      "daily_pct": -0.4667,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51179.8711,
+      "close": 51231.6406,
+      "daily_pct": 0.1012,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 27538.6895,
+      "close": 27193.3398,
+      "daily_pct": -1.2541,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2793.2,
+      "close": 2794.1299,
+      "daily_pct": 0.0333,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4140.7,
+      "close": 4157.0,
+      "daily_pct": 0.3937,
+      "table": true,
+      "manual_correction": "close/prev_close shifted back one day; fetcher returned Friday live quote as close"
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.277,
+      "close": 5.231,
+      "daily_pct": -0.8717,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -4.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 102.24,
+      "close": 102.14,
+      "daily_pct": -0.0978,
+      "table": true,
+      "manual_correction": "close/prev_close shifted back one day; fetcher returned Friday live quote as close"
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 88.28,
+      "close": 91.49,
+      "daily_pct": 3.6362,
+      "table": true,
+      "manual_correction": "close/prev_close shifted back one day; fetcher returned Friday live quote as close"
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 69030.92,
+      "prev_close": 69042.11,
+      "daily_pct": -0.0162,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24211.35,
+      "prev_close": 23785.79,
+      "daily_pct": 1.7891,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6625.93,
+      "prev_close": 6803.9,
+      "daily_pct": -2.6157,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22520.45,
+      "prev_close": 22231.8,
+      "daily_pct": 1.2984,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8716.6,
+      "prev_close": 8660.9,
+      "daily_pct": 0.6431,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25125.32,
+      "prev_close": 24806.97,
+      "daily_pct": 1.2833,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10562.19,
+      "prev_close": 10441.6,
+      "daily_pct": 1.1549,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7803.44,
+      "prev_close": 7729.69,
+      "daily_pct": 0.9541,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6192.18,
+      "prev_close": 6126.73,
+      "daily_pct": 1.0683,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1212,
+      "prev_close": 1.12013,
+      "daily_pct": 0.0953
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3227,
+      "prev_close": 1.32149,
+      "daily_pct": 0.0913
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.25999,
+      "prev_close": 158.06,
+      "daily_pct": 0.1265
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69857,
+      "prev_close": 0.6964,
+      "daily_pct": 0.3113
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.20325,
+      "prev_close": 1.20051,
+      "daily_pct": 0.2286
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7847.75,
+      "prev_close": 7847.75,
+      "daily_pct": 0.403
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 31227.25,
+      "prev_close": 31227.25,
+      "daily_pct": 0.8323
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51565.0,
+      "prev_close": 51565.0,
+      "daily_pct": 0.1398
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4207.6,
+      "prev_close": 4207.6,
+      "daily_pct": 1.2172
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 104.62,
+      "prev_close": 104.62,
+      "daily_pct": -0.0895
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 90.45,
+      "prev_close": 90.45,
+      "daily_pct": -1.1367
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Delta Air Lines cuts 2026 forecast on fuel surge, but CEO says demand is still strong",
+      "source": "CNBC",
+      "published": "Fri, 09 Oct 2026 11:31:28 GMT",
+      "url": "https://www.cnbc.com/2026/10/09/delta-air-lines-dal-q3-2026-earnings.html",
+      "summary": "Delta Air Lines reported third-quarter earnings and missed Wall Street estimates for the first time in two years."
+    },
+    {
+      "headline": "Treasury's Bessent hires Trump's controversial former Fed board pick, Judy Shelton, as adviser",
+      "source": "CNBC",
+      "published": "Fri, 09 Oct 2026 11:50:39 GMT",
+      "url": "https://www.cnbc.com/2026/10/09/judy-shelton-scott-bessent-treasury.html",
+      "summary": "Shelton's controversial economic ideas led the Senate to block her nomination to the Federal Reserve. Now she's be a counselor to the Treasury secretary."
+    },
+    {
+      "headline": "Pilot killed in attacks by Iran-backed Houthis on Riyadh airport; Saudi-led coalition vows 'firm' response",
+      "source": "CNBC",
+      "published": "Fri, 09 Oct 2026 11:51:11 GMT",
+      "url": "https://www.cnbc.com/2026/10/09/saudi-us-iran-war-trump-hormuz.html",
+      "summary": "Two attacks were launched on Saudi Arabia's King Khalid International Airport Thursday, officials said."
+    },
+    {
+      "headline": "South Africa lawyer 'Navi' Pillay wins Nobel Peace Prize for efforts to prosecute war crimes, genocide",
+      "source": "CNBC",
+      "published": "Fri, 09 Oct 2026 11:11:55 GMT",
+      "url": "https://www.cnbc.com/2026/10/09/nobel-peace-prize-navanethem-navi-pillay-winner.html",
+      "summary": "Navanethem \"Navi\" Pillay was awarded the Nobel Peace Prize on Friday for her work promoting peace and international law."
+    },
+    {
+      "headline": "Ferrari\u2019s chairman is bullish on AI. He\u2019s less certain how businesses will cash in",
+      "source": "CNBC",
+      "published": "Fri, 09 Oct 2026 11:54:21 GMT",
+      "url": "https://www.cnbc.com/2026/10/09/john-elkann-ferrari-ai-technology.html",
+      "summary": "Ferrari chair John Elkann played down AI bubble fears, but acknowledged investment in the technology could outpace revenue generation."
+    },
+    {
+      "headline": "Nobel winner Krugman says France may have become 'too big to save'",
+      "source": "CNBC",
+      "published": "Fri, 09 Oct 2026 11:33:48 GMT",
+      "url": "https://www.cnbc.com/2026/10/09/nobel-krugman-france-debt.html",
+      "summary": "Economist Paul Krugman sounded the alarm on a looming \"ugly crisis,\" while former ECB head Jean-Claude Trichet said French politicians must compromise."
+    },
+    {
+      "headline": "Tokenization could unleash tens of billions of dollars in trapped capital, Nasdaq CEO says",
+      "source": "CNBC",
+      "published": "Fri, 09 Oct 2026 06:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/09/nasdaq-ceo-tokenization-could-unleash-billions-in-trapped-capital-.html",
+      "summary": "Nasdaq CEO Adena Friedman said tokenization could free up tens of billions of dollars in trapped capital."
+    },
+    {
+      "headline": "Trump Accounts top 70 million as new stock-donation rules open door to 'mega donors,' official says",
+      "source": "CNBC",
+      "published": "Thu, 08 Oct 2026 16:31:50 GMT",
+      "url": "https://www.cnbc.com/2026/10/08/trump-accounts-70-million-enrolled.html",
+      "summary": "The Trump administration said new changes to Trump Accounts could pave the way for several multimillion-dollar donations."
+    }
+  ]
+}
