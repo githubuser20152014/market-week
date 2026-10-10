@@ -1,0 +1,279 @@
+{
+  "CPI": {
+    "current_value": "3.4%",
+    "current_value_period": "YoY \u00b7 Aug '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 4.2}, {\"label\": \"Jun '26\", \"value\": 3.5}, {\"label\": \"Jul '26\", \"value\": 3.4}, {\"label\": \"Aug '26\", \"value\": 3.4}]",
+    "stat1_value": "2.4%",
+    "trend": "up",
+    "trend_label": "\u2191 Elevated",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Aug '26"
+  },
+  "Fed Funds Rate": {
+    "current_value": "3.75\u20134.00%",
+    "current_value_period": "Target \u00b7 Sep '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"rate\": \"3.50\\u20133.75%\", \"label\": \"Jun '26\"}, {\"rate\": \"3.50\\u20133.75%\", \"label\": \"Jul '26\"}, {\"rate\": \"3.50\\u20133.75%\", \"label\": \"Aug '26\"}, {\"rate\": \"3.75\\u20134.00%\", \"label\": \"Sep '26\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Hold",
+    "source": "Federal Reserve \u00b7 Sep '26 FOMC"
+  },
+  "Non-Farm Payrolls": {
+    "current_value": "+29K",
+    "current_value_period": "Sep '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 31, \"displayValue\": \"31K\"}, {\"label\": \"Jul '26\", \"value\": -10, \"displayValue\": \"-10K\"}, {\"label\": \"Aug '26\", \"value\": 133, \"displayValue\": \"133K\"}, {\"label\": \"Sep '26\", \"value\": 29, \"displayValue\": \"29K\"}]",
+    "stat1_value": "4.2%",
+    "stat2_value": "+3.0%",
+    "trend": "down",
+    "trend_label": "\u2193 Softening",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Sep '26"
+  },
+  "PCE": {
+    "current_value": "3.0%",
+    "current_value_period": "Core YoY \u00b7 Aug '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 3.2}, {\"label\": \"Jun '26\", \"value\": 3.0}, {\"label\": \"Jul '26\", \"value\": 3.0}, {\"label\": \"Aug '26\", \"value\": 3.0}]",
+    "stat1_value": "3.4%",
+    "trend": "up",
+    "trend_label": "\u2191 Above Target",
+    "source": "U.S. Bureau of Economic Analysis \u00b7 Aug '26"
+  },
+  "Yield Curve": {
+    "current_value": "+0.34%",
+    "current_value_period": "Sep '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 0.36, \"displayValue\": \"+0.36%\"}, {\"label\": \"Jul '26\", \"value\": 0.38, \"displayValue\": \"+0.38%\"}, {\"label\": \"Aug '26\", \"value\": 0.46, \"displayValue\": \"+0.46%\"}, {\"label\": \"Sep '26\", \"value\": 0.34, \"displayValue\": \"+0.34%\"}]",
+    "stat1_value": "4.99%",
+    "stat2_value": "4.65%",
+    "trend": "up",
+    "trend_label": "\u2192 Normalizing",
+    "source": "U.S. Treasury / FRED \u00b7 Sep '26"
+  },
+  "GDP": {
+    "current_value": "2.2%",
+    "current_value_period": "Q2 '26 (Annualized)",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Q3 '25\", \"value\": 3.9}, {\"label\": \"Q4 '25\", \"value\": 0.2}, {\"label\": \"Q1 '26\", \"value\": 2.5}, {\"label\": \"Q2 '26\", \"value\": 2.2}]",
+    "stat1_value": "2.2%",
+    "trend": "flat",
+    "trend_label": "\u2192 Steady",
+    "source": "U.S. Bureau of Economic Analysis \u00b7 Q2 '26"
+  },
+  "PPI": {
+    "current_value": "9.9%",
+    "current_value_period": "YoY \u00b7 Aug '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 12.2}, {\"label\": \"Jun '26\", \"value\": 9.8}, {\"label\": \"Jul '26\", \"value\": 8.7}, {\"label\": \"Aug '26\", \"value\": 9.9}]",
+    "trend": "up",
+    "trend_label": "\u2191 Elevated",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Aug '26"
+  },
+  "VIX": {
+    "current_value": "15.8",
+    "current_value_period": "Monthly Avg \u00b7 Sep '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 17.9, \"displayValue\": \"17.9\"}, {\"label\": \"Jul '26\", \"value\": 17.1, \"displayValue\": \"17.1\"}, {\"label\": \"Aug '26\", \"value\": 15.2, \"displayValue\": \"15.2\"}, {\"label\": \"Sep '26\", \"value\": 15.8, \"displayValue\": \"15.8\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Moderate",
+    "source": "CBOE / FRED \u00b7 Sep '26"
+  },
+  "DXY": {
+    "current_value": "119.2",
+    "current_value_period": "Broad Index \u00b7 Sep '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 120.1, \"displayValue\": \"120.1\"}, {\"label\": \"Jul '26\", \"value\": 120.6, \"displayValue\": \"120.6\"}, {\"label\": \"Aug '26\", \"value\": 118.9, \"displayValue\": \"118.9\"}, {\"label\": \"Sep '26\", \"value\": 119.2, \"displayValue\": \"119.2\"}]",
+    "trend": "flat",
+    "trend_label": "\u2191 Strengthening",
+    "source": "Federal Reserve / FRED \u00b7 Sep '26"
+  },
+  "JOLTS": {
+    "current_value": "7.1M",
+    "current_value_period": "Aug '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 7.5, \"displayValue\": \"7.5M\"}, {\"label\": \"Jun '26\", \"value\": 7.2, \"displayValue\": \"7.2M\"}, {\"label\": \"Jul '26\", \"value\": 7.3, \"displayValue\": \"7.3M\"}, {\"label\": \"Aug '26\", \"value\": 7.1, \"displayValue\": \"7.1M\"}]",
+    "trend": "down",
+    "trend_label": "\u2193 Cooling",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Aug '26"
+  },
+  "Claims": {
+    "current_value": "197,000",
+    "current_value_period": "Week of 2026-10-03",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"09-12\", \"value\": 198000, \"displayValue\": \"198,000\"}, {\"label\": \"09-19\", \"value\": 198000, \"displayValue\": \"198,000\"}, {\"label\": \"09-26\", \"value\": 199000, \"displayValue\": \"199,000\"}, {\"label\": \"10-03\", \"value\": 197000, \"displayValue\": \"197,000\"}]",
+    "trend": "up",
+    "trend_label": "\u2191 Rising",
+    "source": "U.S. Department of Labor \u00b7 2026-10-03"
+  },
+  "Retail Sales": {
+    "current_value": "+1.1%",
+    "current_value_period": "MoM \u00b7 Aug '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 1.0, \"displayValue\": \"+1.0%\"}, {\"label\": \"Jun '26\", \"value\": 0.2, \"displayValue\": \"+0.2%\"}, {\"label\": \"Jul '26\", \"value\": -0.5, \"displayValue\": \"-0.5%\"}, {\"label\": \"Aug '26\", \"value\": 1.1, \"displayValue\": \"+1.1%\"}]",
+    "trend": "up",
+    "trend_label": "\u2191 Solid",
+    "source": "U.S. Census Bureau \u00b7 Aug '26"
+  },
+  "Housing Starts": {
+    "current_value": "1.27M",
+    "current_value_period": "Ann. Rate \u00b7 Aug '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 1.18, \"displayValue\": \"1.18M\"}, {\"label\": \"Jun '26\", \"value\": 1.44, \"displayValue\": \"1.44M\"}, {\"label\": \"Jul '26\", \"value\": 1.31, \"displayValue\": \"1.31M\"}, {\"label\": \"Aug '26\", \"value\": 1.27, \"displayValue\": \"1.27M\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Steady",
+    "source": "U.S. Census Bureau \u00b7 Aug '26"
+  },
+  "Credit Spreads": {
+    "current_value": "2 bps",
+    "current_value_period": "HY OAS \u00b7 Sep '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 2, \"displayValue\": \"2\"}, {\"label\": \"Jul '26\", \"value\": 2, \"displayValue\": \"2\"}, {\"label\": \"Aug '26\", \"value\": 2, \"displayValue\": \"2\"}, {\"label\": \"Sep '26\", \"value\": 2, \"displayValue\": \"2\"}]",
+    "trend": "down",
+    "trend_label": "\u2193 Tight",
+    "source": "ICE BofA / FRED \u00b7 Sep '26"
+  },
+  "Real Rate": {
+    "current_value": "2.64%",
+    "current_value_period": "10Y TIPS \u00b7 Sep '26",
+    "current_value_color": "red",
+    "stat1_value": "2.64%",
+    "trend": "up",
+    "trend_label": "\u2191 Restrictive",
+    "source": "U.S. Treasury / FRED \u00b7 Sep '26"
+  },
+  "Michigan Sentiment": {
+    "current_value": "51.7",
+    "current_value_period": "Aug '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 44.8, \"displayValue\": \"44.8\"}, {\"label\": \"Jun '26\", \"value\": 49.5, \"displayValue\": \"49.5\"}, {\"label\": \"Jul '26\", \"value\": 55.2, \"displayValue\": \"55.2\"}, {\"label\": \"Aug '26\", \"value\": 51.7, \"displayValue\": \"51.7\"}]",
+    "trend": "down",
+    "trend_label": "\u2193 Pessimistic",
+    "source": "University of Michigan \u00b7 Aug '26"
+  },
+  "Industrial Production": {
+    "current_value": "+0.0%",
+    "current_value_period": "MoM \u00b7 Aug '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 0.1, \"displayValue\": \"+0.1%\"}, {\"label\": \"Jun '26\", \"value\": 0.2, \"displayValue\": \"+0.2%\"}, {\"label\": \"Jul '26\", \"value\": 0.2, \"displayValue\": \"+0.2%\"}, {\"label\": \"Aug '26\", \"value\": 0.0, \"displayValue\": \"+0.0%\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Flat",
+    "source": "Federal Reserve \u00b7 Aug '26"
+  },
+  "Durable Goods": {
+    "current_value": "-0.1%",
+    "current_value_period": "MoM \u00b7 Aug '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": -4.0, \"displayValue\": \"-4.0%\"}, {\"label\": \"Jun '26\", \"value\": 0.6, \"displayValue\": \"+0.6%\"}, {\"label\": \"Jul '26\", \"value\": 0.9, \"displayValue\": \"+0.9%\"}, {\"label\": \"Aug '26\", \"value\": -0.1, \"displayValue\": \"-0.1%\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Mixed",
+    "source": "U.S. Census Bureau \u00b7 Aug '26"
+  },
+  "Breakeven Inflation": {
+    "current_value": "2.35%",
+    "current_value_period": "10Y Breakeven \u00b7 Sep '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 2.29}, {\"label\": \"Jul '26\", \"value\": 2.25}, {\"label\": \"Aug '26\", \"value\": 2.29}, {\"label\": \"Sep '26\", \"value\": 2.35}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Stable",
+    "source": "Federal Reserve / FRED \u00b7 Sep '26"
+  },
+  "Import Prices": {
+    "current_value": "+0.7%",
+    "current_value_period": "MoM \u00b7 Aug '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 1.8, \"displayValue\": \"+1.8%\"}, {\"label\": \"Jun '26\", \"value\": -0.3, \"displayValue\": \"-0.3%\"}, {\"label\": \"Jul '26\", \"value\": -0.3, \"displayValue\": \"-0.3%\"}, {\"label\": \"Aug '26\", \"value\": 0.7, \"displayValue\": \"+0.7%\"}]",
+    "trend": "up",
+    "trend_label": "\u2191 Rising",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Aug '26"
+  },
+  "Income & Spending": {
+    "current_value": "+0.9%",
+    "current_value_period": "Spending MoM \u00b7 Aug '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 0.8, \"displayValue\": \"+0.8%\"}, {\"label\": \"Jun '26\", \"value\": 0.3, \"displayValue\": \"+0.3%\"}, {\"label\": \"Jul '26\", \"value\": 0.1, \"displayValue\": \"+0.1%\"}, {\"label\": \"Aug '26\", \"value\": 0.9, \"displayValue\": \"+0.9%\"}]",
+    "trend": "up",
+    "trend_label": "\u2191 Strong",
+    "source": "U.S. Bureau of Economic Analysis \u00b7 Aug '26"
+  },
+  "U-6": {
+    "current_value": "7.6%",
+    "current_value_period": "Sep '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 7.9, \"displayValue\": \"7.9%\"}, {\"label\": \"Jul '26\", \"value\": 7.9, \"displayValue\": \"7.9%\"}, {\"label\": \"Aug '26\", \"value\": 7.7, \"displayValue\": \"7.7%\"}, {\"label\": \"Sep '26\", \"value\": 7.6, \"displayValue\": \"7.6%\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Stable",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Sep '26"
+  },
+  "LFPR": {
+    "current_value": "61.8%",
+    "current_value_period": "Sep '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 61.5, \"displayValue\": \"61.5%\"}, {\"label\": \"Jul '26\", \"value\": 61.4, \"displayValue\": \"61.4%\"}, {\"label\": \"Aug '26\", \"value\": 61.6, \"displayValue\": \"61.6%\"}, {\"label\": \"Sep '26\", \"value\": 61.8, \"displayValue\": \"61.8%\"}]",
+    "trend": "down",
+    "trend_label": "\u2193 Declining",
+    "source": "U.S. Bureau of Labor Statistics \u00b7 Sep '26"
+  },
+  "QT": {
+    "current_value": "$6.74T",
+    "current_value_period": "Total Assets \u00b7 Sep '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 6.74, \"displayValue\": \"$6.74T\"}, {\"label\": \"Jul '26\", \"value\": 6.74, \"displayValue\": \"$6.74T\"}, {\"label\": \"Aug '26\", \"value\": 6.73, \"displayValue\": \"$6.73T\"}, {\"label\": \"Sep '26\", \"value\": 6.74, \"displayValue\": \"$6.74T\"}]",
+    "trend": "flat",
+    "trend_label": "\u2193 Shrinking",
+    "source": "Federal Reserve / FRED \u00b7 Sep '26"
+  },
+  "M2": {
+    "current_value": "+5.7%",
+    "current_value_period": "YoY \u00b7 Aug '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": 5.4, \"displayValue\": \"+5.4%\"}, {\"label\": \"Jun '26\", \"value\": 5.3, \"displayValue\": \"+5.3%\"}, {\"label\": \"Jul '26\", \"value\": 5.4, \"displayValue\": \"+5.4%\"}, {\"label\": \"Aug '26\", \"value\": 5.7, \"displayValue\": \"+5.7%\"}]",
+    "trend": "up",
+    "trend_label": "\u2191 Expanding",
+    "source": "Federal Reserve / FRED \u00b7 Aug '26"
+  },
+  "SLOOS": {
+    "current_value": "+0.0%",
+    "current_value_period": "Net Tightening \u00b7 Q3 '26",
+    "current_value_color": "gray",
+    "chart_data": "[{\"label\": \"Q4 '25\", \"value\": 6.5, \"displayValue\": \"6.5%\"}, {\"label\": \"Q1 '26\", \"value\": 5.3, \"displayValue\": \"5.3%\"}, {\"label\": \"Q2 '26\", \"value\": 8.1, \"displayValue\": \"8.1%\"}, {\"label\": \"Q3 '26\", \"value\": 0.0, \"displayValue\": \"0.0%\"}]",
+    "trend": "flat",
+    "trend_label": "\u2192 Neutral",
+    "source": "Federal Reserve / FRED \u00b7 Q3 '26"
+  },
+  "Gold": {
+    "current_value": "$4,216",
+    "current_value_period": "USD/oz \u00b7 Oct '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Jul '26\", \"value\": 4107, \"displayValue\": \"$4,107\"}, {\"label\": \"Aug '26\", \"value\": 4481, \"displayValue\": \"$4,482\"}, {\"label\": \"Sep '26\", \"value\": 4186, \"displayValue\": \"$4,187\"}, {\"label\": \"Oct '26\", \"value\": 4216, \"displayValue\": \"$4,216\"}]",
+    "trend": "up",
+    "trend_label": "\u2191 Rising",
+    "source": "COMEX / yfinance \u00b7 Oct '26"
+  },
+  "WTI": {
+    "current_value": "$97.3",
+    "current_value_period": "USD/bbl \u00b7 Sep '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 84.8, \"displayValue\": \"$84.8\"}, {\"label\": \"Jul '26\", \"value\": 80.5, \"displayValue\": \"$80.5\"}, {\"label\": \"Aug '26\", \"value\": 83.9, \"displayValue\": \"$83.9\"}, {\"label\": \"Sep '26\", \"value\": 97.3, \"displayValue\": \"$97.3\"}]",
+    "trend": "up",
+    "trend_label": "\u2191 High",
+    "source": "EIA / FRED \u00b7 Sep '26"
+  },
+  "Trade Balance": {
+    "current_value": "$-106B",
+    "current_value_period": "Aug '26",
+    "current_value_color": "red",
+    "chart_data": "[{\"label\": \"May '26\", \"value\": -75.8, \"displayValue\": \"$-76B\"}, {\"label\": \"Jun '26\", \"value\": -71.2, \"displayValue\": \"$-71B\"}, {\"label\": \"Jul '26\", \"value\": -92.8, \"displayValue\": \"$-93B\"}, {\"label\": \"Aug '26\", \"value\": -105.6, \"displayValue\": \"$-106B\"}]",
+    "trend": "down",
+    "trend_label": "\u2193 Widening",
+    "source": "U.S. Bureau of Economic Analysis \u00b7 Aug '26"
+  },
+  "USD/CNY": {
+    "current_value": "6.71",
+    "current_value_period": "CNY per USD \u00b7 Sep '26",
+    "current_value_color": "green",
+    "chart_data": "[{\"label\": \"Jun '26\", \"value\": 6.78, \"displayValue\": \"6.78\"}, {\"label\": \"Jul '26\", \"value\": 6.78, \"displayValue\": \"6.78\"}, {\"label\": \"Aug '26\", \"value\": 6.74, \"displayValue\": \"6.74\"}, {\"label\": \"Sep '26\", \"value\": 6.71, \"displayValue\": \"6.71\"}]",
+    "trend": "down",
+    "trend_label": "\u2193 Strengthening CNY",
+    "source": "Federal Reserve / FRED \u00b7 Sep '26"
+  }
+}
