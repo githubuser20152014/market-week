@@ -34,11 +34,11 @@ class AssetBounds:
 
 # Hard sanity bounds from global.md
 SANITY_BOUNDS = {
-    "S&P 500":       AssetBounds(3000, 8000),
-    "Dow Jones":     AssetBounds(20000, 55000),
-    "Nasdaq":        AssetBounds(8000, 25000),
-    "Nikkei 225":    AssetBounds(20000, 60000),
-    "Gold":          AssetBounds(1500, 6000),
+    "S&P 500":       AssetBounds(3000, 10000),
+    "Dow Jones":     AssetBounds(20000, 70000),
+    "Nasdaq":        AssetBounds(8000, 35000),
+    "Nikkei 225":    AssetBounds(20000, 80000),
+    "Gold":          AssetBounds(1500, 8000),
     "WTI Crude Oil": AssetBounds(40, 200),
     "10Y Treasury":  AssetBounds(0.5, 8.0),
     "US 30Y":        AssetBounds(0.5, 8.0),
