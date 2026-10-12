@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-10-12",
+    "generated_at": "2026-10-12T11:23:38.654918Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7765.3599,
+      "close": 7811.54,
+      "daily_pct": 0.5947,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51231.6406,
+      "close": 51654.9492,
+      "daily_pct": 0.8263,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 27193.3398,
+      "close": 27366.1699,
+      "daily_pct": 0.6356,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2794.1299,
+      "close": 2806.98,
+      "daily_pct": 0.4599,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4216.2998,
+      "close": 4197.7998,
+      "daily_pct": -0.4388,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.231,
+      "close": 5.244,
+      "daily_pct": 0.2485,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 1.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 102.21,
+      "close": 102.443,
+      "daily_pct": 0.228,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 91.85,
+      "close": 92.85,
+      "daily_pct": 1.0887,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 69030.92,
+      "prev_close": 69042.11,
+      "daily_pct": -0.0162,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24271.2,
+      "prev_close": 24211.35,
+      "daily_pct": 0.2472,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6384.24,
+      "prev_close": 6625.93,
+      "daily_pct": -3.6476,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22363.35,
+      "prev_close": 22520.45,
+      "daily_pct": -0.6976,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8783.2,
+      "prev_close": 8716.6,
+      "daily_pct": 0.7641,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25251.12,
+      "prev_close": 25087.27,
+      "daily_pct": 0.6531,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10628.78,
+      "prev_close": 10552.1,
+      "daily_pct": 0.7267,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7823.45,
+      "prev_close": 7803.33,
+      "daily_pct": 0.2578,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6202.89,
+      "prev_close": 6173.37,
+      "daily_pct": 0.4782,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.11782,
+      "prev_close": 1.1213,
+      "daily_pct": -0.3108
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32317,
+      "prev_close": 1.32291,
+      "daily_pct": 0.0198
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.625,
+      "prev_close": 158.063,
+      "daily_pct": 0.3556
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69725,
+      "prev_close": 0.6959,
+      "daily_pct": 0.1944
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.20024,
+      "prev_close": 1.20282,
+      "daily_pct": -0.2148
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7862.0,
+      "prev_close": 7862.0,
+      "daily_pct": 0.0286
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 31037.25,
+      "prev_close": 31037.25,
+      "daily_pct": -0.2298
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 51960.0,
+      "prev_close": 51960.0,
+      "daily_pct": 0.0655
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4198.0,
+      "prev_close": 4198.0,
+      "daily_pct": -0.434
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 104.5,
+      "prev_close": 104.5,
+      "daily_pct": -0.0896
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 92.83,
+      "prev_close": 92.83,
+      "daily_pct": 1.067
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Brent tops $105 as doubts grow over supply boost from Trump\u2019s \u2018energy ceasefire\u2019",
+      "source": "CNBC",
+      "published": "Mon, 12 Oct 2026 11:19:41 GMT",
+      "url": "https://www.cnbc.com/2026/10/12/oil-prics-today-iran-us-saudi-arabia-crude-.html",
+      "summary": "Ukrainian President Volodymyr Zelenskyy said that \"Ukraine supports the ceasefire, and it is important that Russia support it as well.\""
+    },
+    {
+      "headline": "Nobel prize in economics awarded to Robert E. Hall and Michael Woodford",
+      "source": "CNBC",
+      "published": "Mon, 12 Oct 2026 10:42:49 GMT",
+      "url": "https://www.cnbc.com/2026/10/12/nobel-economics-prize-winner-woodford-hall.html",
+      "summary": "The U.S. economists were awarded for work that underpins the models used by central banks and governments to stabilize the economy."
+    },
+    {
+      "headline": "Global travel warnings after Iran-backed Houthi\u00a0militants strike Riyadh airport",
+      "source": "CNBC",
+      "published": "Mon, 12 Oct 2026 10:48:00 GMT",
+      "url": "https://www.cnbc.com/2026/10/12/us-iran-war-trump-hormuz-saudi.html",
+      "summary": "The Saudi-led coalition responding to the attacks said Monday it was dealing with more drones and missiles heading toward the Kingdom."
+    },
+    {
+      "headline": "Intel, Broadcom CEOs warn capital crunch could become AI's biggest bottleneck",
+      "source": "CNBC",
+      "published": "Mon, 12 Oct 2026 08:27:52 GMT",
+      "url": "https://www.cnbc.com/2026/10/12/intel-broadcom-ceos-warn-capital-crunch-could-become-ai-bottleneck.html",
+      "summary": "The CEOs of Intel and Broadcom warned that access to capital could emerge as a major constraint on the artificial intelligence boom."
+    },
+    {
+      "headline": "AI may change the price of your Big Mac and groceries \u2014 what this means for shoppers",
+      "source": "CNBC",
+      "published": "Mon, 12 Oct 2026 06:02:18 GMT",
+      "url": "https://www.cnbc.com/2026/10/11/ai-dynamic-pricing-shoppers-groceries.html",
+      "summary": "As retailers turn to AI tools to streamline operations, experts warn that collecting more detailed consumer data increases the risk of personalized pricing."
+    },
+    {
+      "headline": "Trump turns to Russian diesel ahead of midterms, but analysts see little price relief",
+      "source": "CNBC",
+      "published": "Mon, 12 Oct 2026 09:31:22 GMT",
+      "url": "https://www.cnbc.com/2026/10/12/russia-ukraine-energy-ceasefire-diesel-prices.html",
+      "summary": "President Donald Trump's latest effort to ease a diesel supply crunch ahead of November's midterm elections is unlikely to make a dent on prices."
+    },
+    {
+      "headline": "Trump says he is 'going to look at' joining Saudi Arabia in the fight against Iran-backed Houthis after deadly airport strike",
+      "source": "CNBC",
+      "published": "Sun, 11 Oct 2026 21:30:45 GMT",
+      "url": "https://www.cnbc.com/2026/10/11/trump-saudi-arabia-iran-houthis.html",
+      "summary": "U.S. military involvement in the fight against the Houthis would stretch resources in the Middle East already committed to fighting Iran, analysts said."
+    },
+    {
+      "headline": "Why China is importing a record amount of gold \u2014 and what it means for prices",
+      "source": "CNBC",
+      "published": "Mon, 12 Oct 2026 00:51:10 GMT",
+      "url": "https://www.cnbc.com/2026/10/12/china-gold-buying-interest-rate-.html",
+      "summary": "Beijing\u2019s push to diversify away from the dollar and Chinese households\u2019 search for a safe place to put their savings has fueled China\u2019s record gold buying."
+    }
+  ]
+}
