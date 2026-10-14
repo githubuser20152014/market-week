@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "date": "2026-10-14",
+    "generated_at": "2026-10-14T11:15:23.561376Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7807.2402,
+      "close": 7805.4502,
+      "daily_pct": -0.0229,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51850.5508,
+      "close": 51670.1016,
+      "daily_pct": -0.348,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 27245.9004,
+      "close": 27204.3809,
+      "daily_pct": -0.1524,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2794.48,
+      "close": 2783.3701,
+      "daily_pct": -0.3976,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4177.2998,
+      "close": 4159.2998,
+      "daily_pct": -0.4309,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.24,
+      "close": 5.217,
+      "daily_pct": -0.4389,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -2.3
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 102.18,
+      "close": 102.262,
+      "daily_pct": 0.0803,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 94.14,
+      "close": 95.63,
+      "daily_pct": 1.5827,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 67744.29,
+      "prev_close": 67777.52,
+      "daily_pct": -0.049,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24314.17,
+      "prev_close": 24345.22,
+      "daily_pct": -0.1275,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6008.81,
+      "prev_close": 6035.35,
+      "daily_pct": -0.4397,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22622.7,
+      "prev_close": 22721.95,
+      "daily_pct": -0.4368,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8727.9,
+      "prev_close": 8783.9,
+      "daily_pct": -0.6375,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25416.37,
+      "prev_close": 25259.9,
+      "daily_pct": 0.6194,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10685.45,
+      "prev_close": 10650.3,
+      "daily_pct": 0.33,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7871.02,
+      "prev_close": 7827.63,
+      "daily_pct": 0.5543,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6198.08,
+      "prev_close": 6167.01,
+      "daily_pct": 0.5038,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.11944,
+      "prev_close": 1.11602,
+      "daily_pct": 0.3067
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32633,
+      "prev_close": 1.32098,
+      "daily_pct": 0.4051
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.465,
+      "prev_close": 158.52,
+      "daily_pct": -0.0347
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70072,
+      "prev_close": 0.69561,
+      "daily_pct": 0.7349
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.19975,
+      "prev_close": 1.19891,
+      "daily_pct": 0.0696
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7866.5,
+      "prev_close": 7866.5,
+      "daily_pct": 0.1368
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30729.25,
+      "prev_close": 30729.25,
+      "daily_pct": -0.2022
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52085.0,
+      "prev_close": 52085.0,
+      "daily_pct": 0.2888
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4159.4,
+      "prev_close": 4159.4,
+      "daily_pct": -0.4285
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 104.81,
+      "prev_close": 104.81,
+      "daily_pct": 0.0746
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 95.62,
+      "prev_close": 95.62,
+      "daily_pct": 1.5721
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Industrial Production",
+        "actual": "+0.0%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "CPI",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "Factory Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Bank of America posts third-quarter profit drop due to $1.2 billion Treasury fine",
+      "source": "CNBC",
+      "published": "Wed, 14 Oct 2026 11:12:04 GMT",
+      "url": "https://www.cnbc.com/2026/10/14/bank-of-america-bac-q3-2026-earnings.html",
+      "summary": "The U.S. Treasury Department announced a $1.2 billion penalty against Bank of America on Tuesday."
+    },
+    {
+      "headline": "Oil prices rise after IEA warns on market constraints; Saudi officials say Aramco facilities attacked",
+      "source": "CNBC",
+      "published": "Wed, 14 Oct 2026 10:33:13 GMT",
+      "url": "https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html",
+      "summary": "Worries over supply disruptions due to escalating tensions in the Middle East helped to push oil prices higher."
+    },
+    {
+      "headline": "Even more borrowers choose riskier mortgages, as higher interest rates crush affordability",
+      "source": "CNBC",
+      "published": "Wed, 14 Oct 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/14/even-more-borrowers-choose-riskier-mortgages-as-higher-interest-rates-crush-affordability.html",
+      "summary": "Interest rates on mortgages continue to rise, leaving some buyers to choose riskier, adjustable-rate mortgages to find savings."
+    },
+    {
+      "headline": "Ukraine warns Starlink limits are disrupting military operations as Russia pounds its energy infrastructure",
+      "source": "CNBC",
+      "published": "Wed, 14 Oct 2026 09:18:18 GMT",
+      "url": "https://www.cnbc.com/2026/10/14/russia-ukraine-energy-ceasefire-power-outages.html",
+      "summary": "A ballistic missile has struck energy infrastructure supposedly covered by the \"energy ceasefire\" announced by Trump on Sunday, Zelenskyy said."
+    },
+    {
+      "headline": "How Trump\u2019s tariffs and Iran war are becoming liabilities in Michigan\u2019s Senate race",
+      "source": "CNBC",
+      "published": "Wed, 14 Oct 2026 10:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/14/mike-rogers-trump-tariffs-michigan-senate-election.html",
+      "summary": "Republicans are largely leaving Trump out of general election ads, with some battleground candidates breaking from him on tariffs and Iran."
+    },
+    {
+      "headline": "Diesel squeeze set to last well into 2027 as Iran war disrupts supply, IEA says",
+      "source": "CNBC",
+      "published": "Wed, 14 Oct 2026 10:37:42 GMT",
+      "url": "https://www.cnbc.com/2026/10/14/diesel-deal-oil-price-iea-report.html",
+      "summary": "Diesel supply is expected to remain tight into 2027 as Iran war-related disruption, falling inventories and resilient demand strain the market, the IEA said."
+    },
+    {
+      "headline": "More Republicans come out against Trump's diesel deal with Putin",
+      "source": "CNBC",
+      "published": "Tue, 13 Oct 2026 18:19:42 GMT",
+      "url": "https://www.cnbc.com/2026/10/13/trump-russia-diesel-republicans.html",
+      "summary": "Senators told Trump, the deal with Russian President Vladimir Putin \"will not achieve just ends, nor will it benefit Americans.\""
+    },
+    {
+      "headline": "JPMorgan Chase blocks outside AI agents like Muse, Instinct from directly accessing accounts",
+      "source": "CNBC",
+      "published": "Tue, 13 Oct 2026 20:48:37 GMT",
+      "url": "https://www.cnbc.com/2026/10/13/jpmorgan-ai-agents-account-access.html",
+      "summary": "JPMorgan Chase CEO Jamie Dimon warned of rogue agents operating at scale and said the bank is building defensive tools."
+    }
+  ]
+}
