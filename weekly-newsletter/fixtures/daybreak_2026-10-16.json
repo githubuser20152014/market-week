@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "date": "2026-10-16",
+    "generated_at": "2026-10-16T11:26:44.874311Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7718.9399,
+      "close": 7744.0601,
+      "daily_pct": 0.3254,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51621.4805,
+      "close": 52177.6914,
+      "daily_pct": 1.0775,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26692.8691,
+      "close": 26713.0293,
+      "daily_pct": 0.0755,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2729.53,
+      "close": 2767.27,
+      "daily_pct": 1.3827,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4170.1001,
+      "close": 4196.1001,
+      "daily_pct": 0.6235,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.19,
+      "close": 5.089,
+      "daily_pct": -1.946,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -10.1
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 102.0,
+      "close": 101.675,
+      "daily_pct": -0.3186,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 97.97,
+      "close": 95.98,
+      "daily_pct": -2.0312,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 65324.29,
+      "prev_close": 64425.95,
+      "daily_pct": 1.3944,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24186.83,
+      "prev_close": 24062.72,
+      "daily_pct": 0.5158,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5668.05,
+      "prev_close": 5554.22,
+      "daily_pct": 2.0494,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23146.15,
+      "prev_close": 22997.35,
+      "daily_pct": 0.647,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8806.7,
+      "prev_close": 8719.7,
+      "daily_pct": 0.9977,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25626.8,
+      "prev_close": 25382.62,
+      "daily_pct": 0.962,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10836.11,
+      "prev_close": 10840.4,
+      "daily_pct": -0.0396,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7959.16,
+      "prev_close": 7934.7,
+      "daily_pct": 0.3083,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6210.48,
+      "prev_close": 6168.26,
+      "daily_pct": 0.6845,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12625,
+      "prev_close": 1.11951,
+      "daily_pct": 0.6025
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.3339,
+      "prev_close": 1.32301,
+      "daily_pct": 0.823
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.03,
+      "prev_close": 157.957,
+      "daily_pct": 0.0462
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69643,
+      "prev_close": 0.69783,
+      "daily_pct": -0.201
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21524,
+      "prev_close": 1.2025,
+      "daily_pct": 1.0597
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7803.5,
+      "prev_close": 7803.5,
+      "daily_pct": 0.1604
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 30123.75,
+      "prev_close": 30123.75,
+      "daily_pct": -0.0663
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52490.0,
+      "prev_close": 52490.0,
+      "daily_pct": 0.1144
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4196.7,
+      "prev_close": 4196.7,
+      "daily_pct": 0.6379
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.39,
+      "prev_close": 105.39,
+      "daily_pct": -0.1333
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 95.98,
+      "prev_close": 95.98,
+      "daily_pct": -2.0312
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Durable Goods Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Trump says he won't use nuclear weapons or send ground troops to Iran",
+      "source": "CNBC",
+      "published": "Fri, 16 Oct 2026 09:46:54 GMT",
+      "url": "https://www.cnbc.com/2026/10/16/us-iran-war-trump-hormuz.html",
+      "summary": "Trump said he would not use nuclear weapons against Iran or send ground troops as the U.S. reportedly weighs new strike options."
+    },
+    {
+      "headline": "Nike's India campus is a long-term growth bet amid turnaround",
+      "source": "CNBC",
+      "published": "Fri, 16 Oct 2026 11:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/16/nike-india-campus-china-sales.html",
+      "summary": "Nike announced earlier this month that it's expanding into India. The retailer has been broadly struggling, especially in the China market."
+    },
+    {
+      "headline": "Banking tax raid fears hit London lenders' shares ahead of crucial budget",
+      "source": "CNBC",
+      "published": "Fri, 16 Oct 2026 11:19:29 GMT",
+      "url": "https://www.cnbc.com/2026/10/16/banking-tax-london-uk-lenders.html",
+      "summary": "Shares in some U.K. banks fell Friday after reports that the government is considering a higher surcharge on bank profits in the Oct. 28 Budget."
+    },
+    {
+      "headline": "Marco Rubio to visit Indian billionaire Ambani's refinery in Gujarat as U.S. diesel prices surge",
+      "source": "CNBC",
+      "published": "Fri, 16 Oct 2026 06:45:02 GMT",
+      "url": "https://www.cnbc.com/2026/10/16/marco-rubio-reliance-jamnagar-refinery.html",
+      "summary": "Not only is Ambani's Reliance investing in a U.S. refinery and buying Venezuelan oil, but its strong ability to supply diesel has put Jamnagar on the map during Rubio's visit."
+    },
+    {
+      "headline": "Netflix Chief Content Officer Bela Bajaria is leaving, will be replaced by Peter Rice",
+      "source": "CNBC",
+      "published": "Thu, 15 Oct 2026 23:08:05 GMT",
+      "url": "https://www.cnbc.com/2026/10/15/netflix-bela-bajaria-peter-rice.html",
+      "summary": "Netflix announced Bela Bajaria will be replaced by former Disney exec Peter Rice as the company's chief content officer."
+    },
+    {
+      "headline": "U.S. Starlink curbs embolden Russia to intensify attacks on Ukraine, minister tells CNBC",
+      "source": "CNBC",
+      "published": "Fri, 16 Oct 2026 10:25:46 GMT",
+      "url": "https://www.cnbc.com/2026/10/16/zelenskyy-trump-eu-summit-russia-ukraine.html",
+      "summary": "Ukraine is seeking winter energy and air-defense support as Russian strikes intensify and Starlink limits disrupt military operations."
+    },
+    {
+      "headline": "Russia returns to G20 table in Bangkok on U.S. invitation that angers Europe",
+      "source": "CNBC",
+      "published": "Fri, 16 Oct 2026 06:11:35 GMT",
+      "url": "https://www.cnbc.com/2026/10/16/g20-russia-ukraine-trump-diesel-europe-.html",
+      "summary": "Russia\u2019s return to the G20 table has tested how far Washington\u2019s outreach to Moscow will strain ties with European allies."
+    },
+    {
+      "headline": "Elon Musk helps GOP Senate super PAC raise record $273 million",
+      "source": "CNBC",
+      "published": "Thu, 15 Oct 2026 23:53:29 GMT",
+      "url": "https://www.cnbc.com/2026/10/15/elon-musk-senate-leadership-fund-fundraising.html",
+      "summary": "Elon Musk gave a record $158 million to the GOP\u2019s Senate Leadership Fund, boosting its war chest as Republicans pour money into Texas to defend Ken Paxton."
+    }
+  ]
+}
