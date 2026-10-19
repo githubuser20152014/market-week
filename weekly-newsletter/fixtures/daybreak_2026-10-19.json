@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-10-19",
+    "generated_at": "2026-10-19T11:09:51.768002Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7744.0601,
+      "close": 7659.4399,
+      "daily_pct": -1.0927,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52177.6914,
+      "close": 52002.4102,
+      "daily_pct": -0.3359,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26713.0293,
+      "close": 26140.0293,
+      "daily_pct": -2.145,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2767.27,
+      "close": 2721.3701,
+      "daily_pct": -1.6587,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4181.1001,
+      "close": 4189.2002,
+      "daily_pct": 0.1937,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.089,
+      "close": 5.098,
+      "daily_pct": 0.1768,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.84,
+      "close": 101.882,
+      "daily_pct": 0.0412,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.41,
+      "close": 98.01,
+      "daily_pct": -3.3527,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64916.7,
+      "prev_close": 65324.29,
+      "daily_pct": -0.6239,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24186.83,
+      "prev_close": 24062.72,
+      "daily_pct": 0.5158,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5768.01,
+      "prev_close": 5668.05,
+      "daily_pct": 1.7636,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22888.95,
+      "prev_close": 23146.15,
+      "daily_pct": -1.1112,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8845.7,
+      "prev_close": 8806.7,
+      "daily_pct": 0.4428,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25350.39,
+      "prev_close": 25622.61,
+      "daily_pct": -1.0624,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10780.12,
+      "prev_close": 10881.9,
+      "daily_pct": -0.9353,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7850.17,
+      "prev_close": 7956.7,
+      "daily_pct": -1.3389,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6144.21,
+      "prev_close": 6204.23,
+      "daily_pct": -0.9674,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12259,
+      "prev_close": 1.12132,
+      "daily_pct": 0.1134
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33365,
+      "prev_close": 1.32732,
+      "daily_pct": 0.4775
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.177,
+      "prev_close": 158.14301,
+      "daily_pct": 0.0215
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.69891,
+      "prev_close": 0.69185,
+      "daily_pct": 1.0204
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21178,
+      "prev_close": 1.20809,
+      "daily_pct": 0.3054
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7749.25,
+      "prev_close": 7749.25,
+      "daily_pct": 0.5841
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29754.5,
+      "prev_close": 29754.5,
+      "daily_pct": 1.2351
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52203.0,
+      "prev_close": 52203.0,
+      "daily_pct": -0.0211
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4189.3,
+      "prev_close": 4189.3,
+      "daily_pct": 0.1961
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.56,
+      "prev_close": 105.56,
+      "daily_pct": 0.1037
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 97.99,
+      "prev_close": 97.99,
+      "daily_pct": -3.3725
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Putin reportedly proposes three-way summit with Trump and Xi on Ukraine war \u2014 without Zelenskyy",
+      "source": "CNBC",
+      "published": "Mon, 19 Oct 2026 10:36:47 GMT",
+      "url": "https://www.cnbc.com/2026/10/19/putin-trump-xi-ukraine-war-energy.html",
+      "summary": "The report comes amid mounting tensions between Ukraine and the United States, its largest military backer."
+    },
+    {
+      "headline": "Robot factories and hypersonic missiles: JPMorgan Chase\u2019s first $5 billion of defense investments",
+      "source": "CNBC",
+      "published": "Mon, 19 Oct 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/19/jpmorgan-security-defense-investments.html",
+      "summary": "With $5 billion already deployed off its balance sheet, JPMorgan Chase is racing ahead on direct investments in defense tech, hardware and supply chains."
+    },
+    {
+      "headline": "French unrest compounds debt crisis fears. Paris-listed stocks, bonds and the euro fall",
+      "source": "CNBC",
+      "published": "Mon, 19 Oct 2026 10:37:43 GMT",
+      "url": "https://www.cnbc.com/2026/10/19/france-protests-bond-yields-markets.html",
+      "summary": "\"It looks like either the bond markets riot, or the people riot, or both,\" one analyst told CNBC."
+    },
+    {
+      "headline": "Why hedge funds could be making a bond market shock more likely",
+      "source": "CNBC",
+      "published": "Sun, 18 Oct 2026 06:13:05 GMT",
+      "url": "https://www.cnbc.com/2026/10/18/hedge-funds-bond-market-turmoil.html",
+      "summary": "The Bank of England's deputy governor has warned that hedge funds' activities could raise the risk of a global bond market shock."
+    },
+    {
+      "headline": "Boomers are buying into the promise of monthly income from options ETFs, but there's a tax catch",
+      "source": "CNBC",
+      "published": "Sun, 18 Oct 2026 13:10:33 GMT",
+      "url": "https://www.cnbc.com/2026/10/18/retirement-income-funds-taxes.html",
+      "summary": "Covered call ETFs have been widely adopted by baby boomers to meet monthly income needs, but unlike most ETFs, the tax implications can be significant."
+    },
+    {
+      "headline": "Roth conversions: When the \u2018juice isn't really worth the squeeze,\u2019 according to a top-ranked advisor",
+      "source": "CNBC",
+      "published": "Sun, 18 Oct 2026 13:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/18/roth-conversion-2026.html",
+      "summary": "If you're considering a year-end Roth conversion for 2026, there are some key things to know, experts say."
+    },
+    {
+      "headline": "Software\u2019s new consolidator gets big vote of confidence from Berkshire",
+      "source": "CNBC",
+      "published": "Sat, 17 Oct 2026 15:11:30 GMT",
+      "url": "https://www.cnbc.com/2026/10/17/bending-spoons-wants-to-revive-software-castoffs-berkshire-investing.html",
+      "summary": "Less than four months into life as a public company, Bending Spoons got a big vote of confidence this week from Berkshire Hathaway."
+    },
+    {
+      "headline": "China's third-quarter economic growth quickens to 4.5% as exports surge, beating estimates",
+      "source": "CNBC",
+      "published": "Mon, 19 Oct 2026 04:36:39 GMT",
+      "url": "https://www.cnbc.com/2026/10/19/chinas-economic-growth-quickens-to-4point6percent-as-exports-surge-stimulus-rolls-out.html",
+      "summary": "China's economic growth accelerated in the third quarter, as foreign demand for the country's technological goods largely offset sluggish consumer demand."
+    }
+  ]
+}
