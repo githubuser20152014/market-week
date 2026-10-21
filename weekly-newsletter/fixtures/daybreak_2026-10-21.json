@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-10-21",
+    "generated_at": "2026-10-21T11:51:21.350887Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7690.73,
+      "close": 7712.5698,
+      "daily_pct": 0.284,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51966.0312,
+      "close": 52495.8789,
+      "daily_pct": 1.0196,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26430.8906,
+      "close": 26424.8203,
+      "daily_pct": -0.023,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2728.3,
+      "close": 2773.4199,
+      "daily_pct": 1.6538,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4142.6001,
+      "close": 4155.2998,
+      "daily_pct": 0.3066,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.136,
+      "close": 5.117,
+      "daily_pct": -0.3699,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -1.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.73,
+      "close": 101.679,
+      "daily_pct": -0.0501,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 101.79,
+      "close": 98.61,
+      "daily_pct": -3.1241,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 64621.24,
+      "prev_close": 64075.42,
+      "daily_pct": 0.8518,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23651.87,
+      "prev_close": 23867.74,
+      "daily_pct": -0.9044,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5735.66,
+      "prev_close": 5552.74,
+      "daily_pct": 3.2942,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22811.35,
+      "prev_close": 22888.95,
+      "daily_pct": -0.339,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8831.3,
+      "prev_close": 8816.9,
+      "daily_pct": 0.1633,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25492.84,
+      "prev_close": 25304.42,
+      "daily_pct": 0.7446,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10734.97,
+      "prev_close": 10733.0,
+      "daily_pct": 0.0184,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7885.73,
+      "prev_close": 7838.49,
+      "daily_pct": 0.6027,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6174.01,
+      "prev_close": 6121.66,
+      "daily_pct": 0.8552,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1236,
+      "prev_close": 1.12158,
+      "daily_pct": 0.1798
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33996,
+      "prev_close": 1.33085,
+      "daily_pct": 0.6847
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.929,
+      "prev_close": 158.52299,
+      "daily_pct": -0.3747
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70343,
+      "prev_close": 0.69828,
+      "daily_pct": 0.7379
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21306,
+      "prev_close": 1.20941,
+      "daily_pct": 0.3021
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7772.25,
+      "prev_close": 7772.25,
+      "daily_pct": 0.2192
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29849.5,
+      "prev_close": 29849.5,
+      "daily_pct": 0.5872
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52769.0,
+      "prev_close": 52769.0,
+      "daily_pct": 0.0948
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4155.4,
+      "prev_close": 4155.4,
+      "daily_pct": 0.309
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.36,
+      "prev_close": 105.36,
+      "daily_pct": 0.0445
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 98.61,
+      "prev_close": 98.61,
+      "daily_pct": -3.1241
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "SpaceX up over 8% in premarket after earnings beat and Musk hints at Tesla tie-up",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 10:52:39 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/spacex-spcx-stock-musk-merger-tesla.html",
+      "summary": "SpaceX shares jumped after the company reported surging revenue growth in its third quarter, and owner Elon Musk floated a potential SpaceX-Tesla merger."
+    },
+    {
+      "headline": "House committee says Webull messages point to China access to U.S. customer data",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 11:05:18 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/webull-us-customer-data-china-access.html",
+      "summary": "The House Select Committee on China earlier this month said online investing platform Webull is quietly \"tied in structural ways\" to China's government."
+    },
+    {
+      "headline": "OpenAI's most powerful AI models disabled their own safety monitoring \u2014 and one lied about it",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 07:49:48 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/openai-ai-models-safety-monitoring.html",
+      "summary": "Warnings about the risks of developing increasingly advanced AI systems have ramped up in recent months, amid cyberattacks from rogue AI models."
+    },
+    {
+      "headline": "Witkoff heads to Russia for Putin talks as Zelenskyy insists 'nothing about Ukraine without Ukraine'",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 10:32:40 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/witkoff-russia-putin-ukraine-zelenskyy.html",
+      "summary": "Speaking in Oslo on Tuesday, Zelenskyy said Washington had reaffirmed its commitment to providing Ukraine with security guarantees."
+    },
+    {
+      "headline": "Housing is flashing warning signs just as the Fed weighs more interest rate hikes",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 11:20:58 GMT",
+      "url": "https://www.cnbc.com/2026/10/20/housing-mortgage-rates-real-estate-federal-reserve.html",
+      "summary": "Housing data deteriorated further in September, according to separate reports Tuesday."
+    },
+    {
+      "headline": "French 10-year bond yield hits 5% for first time since 2002 amid unrest",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 10:40:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/france-protests-bonds-debt.html",
+      "summary": "France is grappling with intense pressure to slash spending, while trying to quell violent protests demanding the government spends more."
+    },
+    {
+      "headline": "Trump sued over 50% tariffs on Canada in latest trade challenge",
+      "source": "CNBC",
+      "published": "Tue, 20 Oct 2026 18:06:13 GMT",
+      "url": "https://www.cnbc.com/2026/10/20/trump-tariffs-canada-section-338-lawsuit.html",
+      "summary": "A new lawsuit challenges President Donald Trump's tariffs on a range of Canadian goods using Section 338 of the Tariff Act of 1930."
+    },
+    {
+      "headline": "Capital One's strong quarter and progressing Discover integration are rewarded on Wall Street",
+      "source": "CNBC",
+      "published": "Tue, 20 Oct 2026 23:34:14 GMT",
+      "url": "https://www.cnbc.com/investingclub/2026/10/20/capital-one-strong-quarter-and-progressing-discover-integration-are-rewarded.html",
+      "summary": "Stronger net interest income and credit performance were the stars of the bank's earnings."
+    }
+  ]
+}
