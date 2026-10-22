@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "date": "2026-10-22",
+    "generated_at": "2026-10-22T10:22:35.099724Z",
+    "generation_source": "live"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7712.5698,
+      "close": 7757.1699,
+      "daily_pct": 0.5783,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52495.8789,
+      "close": 52856.0898,
+      "daily_pct": 0.6862,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26424.8203,
+      "close": 26702.8594,
+      "daily_pct": 1.0522,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2773.4199,
+      "close": 2781.02,
+      "daily_pct": 0.274,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4150.0,
+      "close": 4104.6001,
+      "daily_pct": -1.094,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.117,
+      "close": 5.146,
+      "daily_pct": 0.5667,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 2.9
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.78,
+      "close": 101.622,
+      "daily_pct": -0.1552,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 97.15,
+      "close": 99.46,
+      "daily_pct": 2.3778,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62907.84,
+      "prev_close": 64621.24,
+      "daily_pct": -2.6514,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22934.68,
+      "prev_close": 23651.87,
+      "daily_pct": -3.0323,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5533.77,
+      "prev_close": 5735.66,
+      "daily_pct": -3.5199,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22687.65,
+      "prev_close": 22811.35,
+      "daily_pct": -0.5423,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8793.2,
+      "prev_close": 8831.3,
+      "daily_pct": -0.4314,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25385.73,
+      "prev_close": 25645.04,
+      "daily_pct": -1.0111,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10700.0,
+      "prev_close": 10752.9,
+      "daily_pct": -0.492,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7810.62,
+      "prev_close": 7921.68,
+      "daily_pct": -1.402,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6105.22,
+      "prev_close": 6207.52,
+      "daily_pct": -1.648,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12233,
+      "prev_close": 1.12267,
+      "daily_pct": -0.0303
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33849,
+      "prev_close": 1.33733,
+      "daily_pct": 0.087
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 156.933,
+      "prev_close": 158.26801,
+      "daily_pct": -0.8435
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70175,
+      "prev_close": 0.70066,
+      "daily_pct": 0.1565
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21819,
+      "prev_close": 1.2112,
+      "daily_pct": 0.5774
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7721.25,
+      "prev_close": 7721.25,
+      "daily_pct": -1.0128
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29478.75,
+      "prev_close": 29478.75,
+      "daily_pct": -1.7604
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52754.0,
+      "prev_close": 52754.0,
+      "daily_pct": -0.5748
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4104.6,
+      "prev_close": 4104.6,
+      "daily_pct": -1.094
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.62,
+      "prev_close": 105.62,
+      "daily_pct": 0.4906
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 99.46,
+      "prev_close": 99.46,
+      "daily_pct": 2.3778
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Critical web security flaws spark global alarm as Google, OpenAI and Amazon respond",
+      "source": "CNBC",
+      "published": "Thu, 22 Oct 2026 01:05:15 GMT",
+      "url": "https://www.cnbc.com/2026/10/22/php-google-openai-and-amazon-cyber.html",
+      "summary": "Critical PHP security flaws trigger global warnings as Google, OpenAI and Amazon respond to potential cyber threats."
+    },
+    {
+      "headline": "CoreWeave\u2019s market confidence erodes as bond yields spike and stock sinks",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 22:50:35 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/coreweaves-market-confidence-erodes-as-bond-yields-spike-stock-sinks.html",
+      "summary": "CoreWeave shares are down 29% in October, and the spreads in its credit default swaps are widening."
+    },
+    {
+      "headline": "Netflix has dipped its toe into theatrical. Is it ready to jump in?",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 18:32:12 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/netflix-theatrical-strategy.html",
+      "summary": "Co-CEO Ted Sarandos has said the streamer needs new avenues for growth and to improve execution around its content strategy."
+    },
+    {
+      "headline": "GM aims to develop vehicles in as little as two years with AI, software push",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 20:14:36 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/gm-vehicle-development-ai-software.html",
+      "summary": "General Motors is targeting a roughly two-year vehicle development cycle as it expands its use of artificial intelligence, simulation and vehicle software."
+    },
+    {
+      "headline": "China's stock market sinks into bear territory as CSI 300 extends 10-week rout",
+      "source": "CNBC",
+      "published": "Thu, 22 Oct 2026 04:02:18 GMT",
+      "url": "https://www.cnbc.com/2026/10/22/chinas-stock-market-csi-300-bear-market.html",
+      "summary": "China's benchmark CSI 300 index has entered bear-market territory, falling 20% from its June peak, as a prolonged selloff in mainland equities deepens."
+    },
+    {
+      "headline": "How Ukraine\u2019s drone strikes on Russia crippled the world\u2019s second-largest diesel supplier",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 17:27:34 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/ukraine-russia-drone-diesel-refinery-trump-putin-zelenskyy.html",
+      "summary": "President Donald Trump has blamed Ukraine for surging diesel prices that are hurting Republicans' election chances with the midterms just two weeks away."
+    },
+    {
+      "headline": "Trump denies ordering Starlink slowdown in Ukraine, says he doesn't know who did",
+      "source": "CNBC",
+      "published": "Wed, 21 Oct 2026 21:48:02 GMT",
+      "url": "https://www.cnbc.com/2026/10/21/trump-starlink-ukraine-elon-musk.html",
+      "summary": "Asked if Elon Musk ordered the slowdown, Trump said, \"I don't know who did it, but I was not involved.\""
+    },
+    {
+      "headline": "Sovereign wealth funds' China and Hong Kong investments surge 190% after a bruising slump",
+      "source": "CNBC",
+      "published": "Thu, 22 Oct 2026 02:20:50 GMT",
+      "url": "https://www.cnbc.com/2026/10/22/sovereign-wealth-funds-china-hong-kong.html",
+      "summary": "Sovereign wealth funds are pouring billions of dollars back into China after a sharp investment slump."
+    }
+  ]
+}
