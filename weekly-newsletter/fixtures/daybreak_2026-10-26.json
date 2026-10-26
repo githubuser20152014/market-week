@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "date": "2026-10-26",
+    "generated_at": "2026-10-26T09:50:41.035436Z",
+    "generation_source": "verified_code",
+    "dropped_values": [
+      "futures: Nasdaq Futures, Gold Futures, WTI Crude Oil",
+      "fx: CHF/USD"
+    ]
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7663.4302,
+      "close": 7623.6802,
+      "daily_pct": -0.5187,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52867.9805,
+      "close": 52215.1602,
+      "daily_pct": -1.2348,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26008.8594,
+      "close": 25955.3398,
+      "daily_pct": -0.2058,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2784.03,
+      "close": 2775.8999,
+      "daily_pct": -0.292,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4007.8999,
+      "close": 4032.0,
+      "daily_pct": 0.6013,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.953,
+      "close": 4.988,
+      "daily_pct": 0.7066,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 3.5
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.81,
+      "close": 101.785,
+      "daily_pct": -0.0245,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 103.27,
+      "close": 101.07,
+      "daily_pct": -2.1303,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62189.65,
+      "prev_close": 62693.16,
+      "daily_pct": -0.8031,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23211.81,
+      "prev_close": 23093.37,
+      "daily_pct": 0.5129,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5469.47,
+      "prev_close": 5550.3,
+      "daily_pct": -1.4563,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22717.05,
+      "prev_close": 22600.0,
+      "daily_pct": 0.5179,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8809.9,
+      "prev_close": 8795.2,
+      "daily_pct": 0.1671,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25404.9,
+      "prev_close": 25181.65,
+      "daily_pct": 0.8866,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10737.78,
+      "prev_close": 10690.4,
+      "daily_pct": 0.4432,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7844.22,
+      "prev_close": 7782.82,
+      "daily_pct": 0.7889,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6098.51,
+      "prev_close": 6068.22,
+      "daily_pct": 0.4992,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12133,
+      "prev_close": 1.12215,
+      "daily_pct": -0.0729
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.33485,
+      "prev_close": 1.34039,
+      "daily_pct": -0.4138
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.314,
+      "prev_close": 156.494,
+      "daily_pct": 0.524
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70408,
+      "prev_close": 0.70198,
+      "daily_pct": 0.2987
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7683.25,
+      "prev_close": 7683.25,
+      "daily_pct": 0.3068
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52630.0,
+      "prev_close": 52630.0,
+      "daily_pct": 0.4504
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.11,
+      "prev_close": 106.11,
+      "daily_pct": -0.0442
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Oil slides over 2% as traders weigh Saudi attack risks, demand destruction",
+      "source": "CNBC",
+      "published": "Mon, 26 Oct 2026 05:18:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/26/oil-prices-today-wti-brent.html",
+      "summary": "Oil prices fell as investors weighed the threat of further attacks on Saudi Arabian energy infrastructure against concerns that elevated prices could erode demand."
+    },
+    {
+      "headline": "How war, security and coalition math are shaping the Israeli election",
+      "source": "CNBC",
+      "published": "Mon, 26 Oct 2026 09:46:59 GMT",
+      "url": "https://www.cnbc.com/2026/10/26/israel-election-netanyahu-iran-gaza-palestine.html",
+      "summary": "Israeli voters will head to the polls to cast their votes in a general election on Tuesday."
+    },
+    {
+      "headline": "Audi defends plans for a $4 billion Georgia plant amid VW restructuring, tariffs",
+      "source": "CNBC",
+      "published": "Sun, 25 Oct 2026 16:42:42 GMT",
+      "url": "https://www.cnbc.com/2026/10/25/audi-georgia-us-plant-tariffs-volkswagen.html",
+      "summary": "Audi's CEO defended the company's plans for a $4 billion plant in Georgia, calling it a business decision to grow sales and reduce exposure to U.S. tariffs."
+    },
+    {
+      "headline": "\u2018Ticking time bomb\u2019: The world's pension funds face an ageing crisis",
+      "source": "CNBC",
+      "published": "Mon, 26 Oct 2026 05:22:30 GMT",
+      "url": "https://www.cnbc.com/2026/10/26/pension-funds-ageing-crisis-risk-investment.html",
+      "summary": "The world's pension systems are confronting a demographic crisis as longer lifespans and dwindling birth rates threaten to stretch retirement finances."
+    },
+    {
+      "headline": "Ukraine disputes Elon Musk\u2019s claim that its military violated Starlink terms during drone operations",
+      "source": "CNBC",
+      "published": "Sun, 25 Oct 2026 18:18:49 GMT",
+      "url": "https://www.cnbc.com/2026/10/25/ukraine-musk-starlink-terms-dispute.html",
+      "summary": "Ukraine challenged Musk\u2019s claim that its military violated Starlink terms, arguing that commercial Starlink limits prevented medium- and long-range strike use."
+    },
+    {
+      "headline": "Saudi Arabia says it intercepted missiles and drones from Iran-backed Houthis",
+      "source": "CNBC",
+      "published": "Sun, 25 Oct 2026 13:41:37 GMT",
+      "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html",
+      "summary": "Saudi Arabia says it intercepted Houthi missiles and drones, while the Houthis claimed attacks on airports and energy sites amid rising regional supply risks."
+    },
+    {
+      "headline": "Trump is pushing a massive AI buildout. His own voters are wary of what comes with it",
+      "source": "CNBC",
+      "published": "Sat, 24 Oct 2026 10:59:16 GMT",
+      "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
+      "summary": "A new CNBC survey finds broad voter opposition to nearby AI data centers, creating a political challenge for Trump and Republicans ahead of the midterm election."
+    },
+    {
+      "headline": "Defense tech investment boom sparks bubble warning as private equity pours in",
+      "source": "CNBC",
+      "published": "Mon, 26 Oct 2026 06:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/10/26/defense-tech-private-equity-investment.html",
+      "summary": "Private equity growth investments in defense reached $4 billion in the first nine months of 2026, up from $500 million in 2024."
+    }
+  ]
+}
