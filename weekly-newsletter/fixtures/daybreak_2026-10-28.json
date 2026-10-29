@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "date": "2026-10-28",
+    "generated_at": "2026-10-28T10:21:21.203555Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7676.77,
+      "close": 7722.6001,
+      "daily_pct": 0.597,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52361.5781,
+      "close": 52377.5703,
+      "daily_pct": 0.0305,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26169.3809,
+      "close": 26477.8105,
+      "daily_pct": 1.1786,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2786.4199,
+      "close": 2818.8701,
+      "daily_pct": 1.1646,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4074.6001,
+      "close": 4064.6001,
+      "daily_pct": -0.2454,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.986,
+      "close": 4.993,
+      "daily_pct": 0.1404,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 0.7
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 102.32,
+      "close": 102.402,
+      "daily_pct": 0.0801,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 99.9,
+      "close": 101.68,
+      "daily_pct": 1.7818,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 63954.19,
+      "prev_close": 63268.37,
+      "daily_pct": 1.084,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23094.83,
+      "prev_close": 23041.32,
+      "daily_pct": 0.2322,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 6012.44,
+      "prev_close": 5638.34,
+      "daily_pct": 6.6349,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 22698.85,
+      "prev_close": 22749.75,
+      "daily_pct": -0.2237,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8847.3,
+      "prev_close": 8850.1,
+      "daily_pct": -0.0316,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25576.91,
+      "prev_close": 25590.77,
+      "daily_pct": -0.0542,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10653.24,
+      "prev_close": 10686.5,
+      "daily_pct": -0.3112,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7884.3,
+      "prev_close": 7887.14,
+      "daily_pct": -0.036,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6149.04,
+      "prev_close": 6164.69,
+      "daily_pct": -0.2539,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.11297,
+      "prev_close": 1.11738,
+      "daily_pct": -0.3951
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32825,
+      "prev_close": 1.33451,
+      "daily_pct": -0.4689
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.864,
+      "prev_close": 157.528,
+      "daily_pct": 0.2133
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70284,
+      "prev_close": 0.70194,
+      "daily_pct": 0.1281
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.20449,
+      "prev_close": 1.20839,
+      "daily_pct": -0.3228
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7764.75,
+      "prev_close": 7764.75,
+      "daily_pct": 0.0838
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 29920.0,
+      "prev_close": 29920.0,
+      "daily_pct": 0.3623
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52445.0,
+      "prev_close": 52445.0,
+      "daily_pct": -0.2549
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4064.6,
+      "prev_close": 4064.6,
+      "daily_pct": -0.2454
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.95,
+      "prev_close": 105.95,
+      "daily_pct": -0.0884
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 101.68,
+      "prev_close": 101.68,
+      "daily_pct": 1.7818
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Existing Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Kylian Mbapp\u00e9 faces China backlash as sponsors cut ties over viral meme",
+      "source": "CNBC",
+      "published": "Wed, 28 Oct 2026 03:33:53 GMT",
+      "url": "https://www.cnbc.com/2026/10/28/china-mbappe-football-sponsor-meme-controversy.html",
+      "summary": "Chinese state media has warned Kylian Mbapp\u00e9 that his apology over remarks referring to Mao Zedong as a dictator will be judged against his actions."
+    },
+    {
+      "headline": "Robinhood shares fall as crypto slump weighs on profits, offsetting gains in new businesses",
+      "source": "CNBC",
+      "published": "Wed, 28 Oct 2026 09:29:26 GMT",
+      "url": "https://www.cnbc.com/2026/10/27/robinhood-hood-q3-2026-earnings.html",
+      "summary": "Robinhood's third-quarter revenue met expectations, fueled by the company's expansion into options, predictions markets and other financial services."
+    },
+    {
+      "headline": "Treasury yields tick higher ahead of Federal Reserve interest rate decision",
+      "source": "CNBC",
+      "published": "Wed, 28 Oct 2026 09:22:26 GMT",
+      "url": "https://www.cnbc.com/2026/10/28/us-treasurys-bonds-yields-federal-reserve.html",
+      "summary": "Treasury yields edged higher as traders await the Federal Reserve's latest monetary policy decision."
+    },
+    {
+      "headline": "Labubu-maker Pop Mart's shares extend declines as third-quarter sales plunge",
+      "source": "CNBC",
+      "published": "Wed, 28 Oct 2026 02:57:36 GMT",
+      "url": "https://www.cnbc.com/2026/10/28/labubu-pop-mart-third-quarter-earnings.html",
+      "summary": "The company reported a 45% to 50% year-on-year drop in third-quarter revenue."
+    },
+    {
+      "headline": "Trump administration may let more Russian diesel onto market, energy secretary tells CNBC",
+      "source": "CNBC",
+      "published": "Tue, 27 Oct 2026 22:18:59 GMT",
+      "url": "https://www.cnbc.com/2026/10/27/trump-putin-zelenskyy-russia-ukraine-diesel.html",
+      "summary": "The diesel volumes in the Trump-Putin deal won't materially lower prices because the shipments are small compared to total demand, analysts say."
+    },
+    {
+      "headline": "China and Russia are redrawing Arctic trade. Can Europe fight back?",
+      "source": "CNBC",
+      "published": "Wed, 28 Oct 2026 07:46:39 GMT",
+      "url": "https://www.cnbc.com/2026/10/27/arctic-shipping-china-and-russia-expand-grip-can-europe-fight-back.html",
+      "summary": "China and Russia are tightening their grip on Arctic shipping routes, turning the rapidly warming region into a new geopolitical battleground with Europe."
+    },
+    {
+      "headline": "From Wall Street to Silicon Valley, Anthropic IPO poised to have massive 'trickle-down effect'",
+      "source": "CNBC",
+      "published": "Mon, 26 Oct 2026 22:50:07 GMT",
+      "url": "https://www.cnbc.com/2026/10/26/anthropic-ipo-might-trigger-tech-reset-if-ipo-underperforms.html",
+      "summary": "With the AI trade sputtering of late and interest rates on the rise, Anthropic's IPO is taking on outsized importance."
+    },
+    {
+      "headline": "Jim Cramer warns investors not to get fooled by the latest AI stock rally",
+      "source": "CNBC",
+      "published": "Tue, 27 Oct 2026 22:24:19 GMT",
+      "url": "https://www.cnbc.com/2026/10/27/jim-cramer-ai-trade-financing-risks.html",
+      "summary": "CNBC\u2019s Jim Cramer warned that the latest rally in AI stocks doesn't mean the data center trade is out of the woods."
+    }
+  ]
+}
