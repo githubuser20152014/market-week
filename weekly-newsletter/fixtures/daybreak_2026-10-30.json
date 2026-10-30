@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "date": "2026-10-30",
+    "generated_at": "2026-10-30T11:20:17.812338Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7743.98,
+      "close": 7720.3901,
+      "daily_pct": -0.3046,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52475.1016,
+      "close": 52342.5586,
+      "daily_pct": -0.2526,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 26549.8496,
+      "close": 26184.7207,
+      "daily_pct": -1.3753,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2830.51,
+      "close": 2859.22,
+      "daily_pct": 1.0143,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4031.3999,
+      "close": 3988.7,
+      "daily_pct": -1.0592,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.045,
+      "close": 4.989,
+      "daily_pct": -1.11,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -5.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 102.04,
+      "close": 101.622,
+      "daily_pct": -0.4096,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 102.0,
+      "close": 104.11,
+      "daily_pct": 2.0686,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 63290.11,
+      "prev_close": 64659.47,
+      "daily_pct": -2.1178,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23294.42,
+      "prev_close": 22958.65,
+      "daily_pct": 1.4625,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5730.74,
+      "prev_close": 5937.66,
+      "daily_pct": -3.4849,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23053.1,
+      "prev_close": 22936.75,
+      "daily_pct": 0.5073,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8908.1,
+      "prev_close": 8891.8,
+      "daily_pct": 0.1833,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 25914.07,
+      "prev_close": 26039.68,
+      "daily_pct": -0.4824,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10761.88,
+      "prev_close": 10722.1,
+      "daily_pct": 0.371,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 7987.88,
+      "prev_close": 7970.0,
+      "daily_pct": 0.2243,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6160.28,
+      "prev_close": 6207.07,
+      "daily_pct": -0.7538,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.1202,
+      "prev_close": 1.11557,
+      "daily_pct": 0.4145
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34311,
+      "prev_close": 1.3328,
+      "daily_pct": 0.7736
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 157.108,
+      "prev_close": 157.83299,
+      "daily_pct": -0.4593
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70388,
+      "prev_close": 0.7058,
+      "daily_pct": -0.2723
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.21772,
+      "prev_close": 1.2078,
+      "daily_pct": 0.8207
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7676.5,
+      "prev_close": 7676.5,
+      "daily_pct": -1.0027
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28851.75,
+      "prev_close": 28851.75,
+      "daily_pct": -2.4026
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52611.0,
+      "prev_close": 52611.0,
+      "daily_pct": 0.1885
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 3989.8,
+      "prev_close": 3989.8,
+      "daily_pct": -1.0319
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.75,
+      "prev_close": 106.75,
+      "daily_pct": 0.5297
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 104.13,
+      "prev_close": 104.13,
+      "daily_pct": 2.0882
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "GDP",
+        "actual": "3.4",
+        "expected": "See tradingeconomics.com",
+        "previous": "2.2",
+        "unit": "%",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      },
+      {
+        "event": "PCE / Personal Income",
+        "actual": "+0.5%",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 3,
+        "time_est": "8:30 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": [
+      {
+        "event": "New Home Sales",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Amazon falls 7%, Intel plunges 25% in premarket trading, as pressure mounts after earnings",
+      "source": "CNBC",
+      "published": "Fri, 30 Oct 2026 09:16:27 GMT",
+      "url": "https://www.cnbc.com/2026/10/30/amazon-intel-earnings-big-tech-ai-spending-concerns.html",
+      "summary": "Investors are nervous about the massive AI spending from the tech giants and whether that will pay off."
+    },
+    {
+      "headline": "Chevron and Exxon beat earnings expectations as refining profits soar on high diesel fuel prices",
+      "source": "CNBC",
+      "published": "Fri, 30 Oct 2026 10:58:24 GMT",
+      "url": "https://www.cnbc.com/2026/10/30/chevron-exxon-cvx-xom-earnings-q3-2026.html",
+      "summary": "Diesel prices have surged globally as Ukraine and Iran have bombed refineries in Russia and the Middle East."
+    },
+    {
+      "headline": "Iran claims four tankers struck mines in Hormuz as strike fears grow after U.S. midterms",
+      "source": "CNBC",
+      "published": "Fri, 30 Oct 2026 07:12:49 GMT",
+      "url": "https://www.cnbc.com/2026/10/30/iran-trump-hormuz-oil-middle-east-.html",
+      "summary": "Iran said four tankers struck mines in the Strait of Hormuz, while Tehran disputed a U.S. claim that key shipping lanes had been cleared."
+    },
+    {
+      "headline": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks",
+      "source": "CNBC",
+      "published": "Fri, 30 Oct 2026 00:28:45 GMT",
+      "url": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
+      "summary": "Reddit posts third-quarter earnings and reveals plans to require all users to create official accounts as Google search traffic shrinks"
+    },
+    {
+      "headline": "Rivian third-quarter earnings beat estimates as software revenue, R2 deliveries rise",
+      "source": "CNBC",
+      "published": "Thu, 29 Oct 2026 21:52:27 GMT",
+      "url": "https://www.cnbc.com/2026/10/29/rivian-rivn-earnings-q3-2026.html",
+      "summary": "Rivian also revised its 2026 guidance to mark expected improvements in its vehicle deliveries, pre-tax adjusted earnings and capital expenditures."
+    },
+    {
+      "headline": "Euro zone economy slows to 0.4% growth in Q3 as crisis-hit France contracts",
+      "source": "CNBC",
+      "published": "Fri, 30 Oct 2026 11:16:46 GMT",
+      "url": "https://www.cnbc.com/2026/10/30/euro-zone-gdp-france.html",
+      "summary": "The euro zone showed surprising resilience, but weak productivity, industrial competitiveness challenges and demographic pressures remain, analysts said."
+    },
+    {
+      "headline": "Amazon AWS posts 39% revenue growth as cloud rivals also accelerate",
+      "source": "CNBC",
+      "published": "Thu, 29 Oct 2026 21:59:31 GMT",
+      "url": "https://www.cnbc.com/2026/10/29/aws-q3-earnings-report-2026.html",
+      "summary": "Amazon's cloud signed deals with Meta and OpenAI during the quarter, helping revenue to exceed consensus."
+    },
+    {
+      "headline": "Alphabet earnings miss reflects first real sign that AI is taking a bite out of search",
+      "source": "CNBC",
+      "published": "Thu, 29 Oct 2026 20:16:03 GMT",
+      "url": "https://www.cnbc.com/2026/10/29/alphabet-google-search-ai-earnings.html",
+      "summary": "Wall Street hammered Alphabet for an earnings miss that included weaker-than-expected revenue out of the company's core business."
+    }
+  ]
+}
