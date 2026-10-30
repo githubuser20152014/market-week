@@ -12,13 +12,13 @@ Each Friday Fundaa should follow this multi-platform template to ensure consiste
 
 ## 2. LinkedIn Post
 - **Formatting**: Use the "Vibe Check" Signal/Impact/Vibe format.
-- **Emoji-Heavy**: Lead with 1-2 primary emojis (e.g., 🔥, 🚢).
+- **No emojis**: Lead with the Signal line instead. Emphasis comes from punctuation and word choice.
 - **Call to Action**: Direct to Substack link in comments.
 
 ## 3. X (Thread)
 - **Hooks**: Lead with the most shocking dollar figure.
 - **Thread Count**: 5-7 tweets.
-- **Visuals**: Describe or include charts/emojis.
+- **Visuals**: Describe or include charts. No emojis.
 
 ## 4. WhatsApp Blurb
 - **Length**: 150-250 words.

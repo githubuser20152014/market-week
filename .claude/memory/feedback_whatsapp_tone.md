@@ -14,3 +14,6 @@ WhatsApp posts should be punchy, cheeky, and irreverent — not a condensed vers
 - Let emoji carry emotional tone instead of full sentences
 - End with a one-liner that reframes the whole concept wryly
 - Still cover the key facts — just with attitude
+
+
+**UPDATE Oct 30, 2026:** No emojis in any Friday Fundaa output, WhatsApp included. This supersedes the emoji guidance above; keep the cheeky/irreverent voice but carry it with word choice and punctuation.

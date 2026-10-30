@@ -12,12 +12,7 @@ The Friday Fundaa must sound like a conversation between a cynical macro strateg
 - "Not financial advice. Just vibes and cold, hard signals."
 
 ## Emoji Usage
-- 🔥 (General chaos/hot topic)
-- 🚢 (Shipping/Trade)
-- 🛢️ (Energy/Oil)
-- ⛽ (Gas pump)
-- 🛒 (Consumer goods/Groceries)
-- ✈️ (Travel/Flights)
+None, in any mode and on any platform (rule set Oct 30, 2026). Carry the attitude with word choice and punctuation instead: dry one-liners, exclamation marks, ellipses for a beat, colons to lead into a section, plain numbered lists (`1.` `2.` `3.`). Older examples elsewhere in this skill and in past articles contain emojis; do not copy them.
 
 ## Examples
 
