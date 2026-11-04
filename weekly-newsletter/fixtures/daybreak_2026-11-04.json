@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "date": "2026-11-04",
+    "generated_at": "2026-11-04T11:50:27.105725Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7541.3999,
+      "close": 7568.9199,
+      "daily_pct": 0.3649,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51983.9805,
+      "close": 51786.7188,
+      "daily_pct": -0.3795,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25164.3105,
+      "close": 25372.0098,
+      "daily_pct": 0.8254,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2805.8799,
+      "close": 2812.45,
+      "daily_pct": 0.2342,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 3968.18,
+      "close": 3940.4,
+      "daily_pct": -0.7,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.914,
+      "close": 4.97,
+      "daily_pct": 1.1396,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5.6
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.87,
+      "close": 101.43,
+      "daily_pct": -0.4319,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.09,
+      "close": 95.21,
+      "daily_pct": -0.9158,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 62188.63,
+      "prev_close": 63081.86,
+      "daily_pct": -1.416,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23919.5,
+      "prev_close": 23525.97,
+      "daily_pct": 1.6727,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5683.8,
+      "prev_close": 5648.79,
+      "daily_pct": 0.6198,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23960.6,
+      "prev_close": 23810.85,
+      "daily_pct": 0.6289,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 8834.5,
+      "prev_close": 8886.8,
+      "daily_pct": -0.5885,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26254.04,
+      "prev_close": 25864.62,
+      "daily_pct": 1.5056,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10767.24,
+      "prev_close": 10638.4,
+      "daily_pct": 1.2111,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8141.95,
+      "prev_close": 8020.31,
+      "daily_pct": 1.5167,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6258.2,
+      "prev_close": 6144.56,
+      "daily_pct": 1.8494,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12575,
+      "prev_close": 1.11921,
+      "daily_pct": 0.5843
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34862,
+      "prev_close": 1.34099,
+      "daily_pct": 0.5691
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.407,
+      "prev_close": 157.91499,
+      "daily_pct": 0.3116
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70111,
+      "prev_close": 0.69999,
+      "daily_pct": 0.1607
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22426,
+      "prev_close": 1.2219,
+      "daily_pct": 0.1934
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7681.5,
+      "prev_close": 7681.5,
+      "daily_pct": 0.2
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28561.5,
+      "prev_close": 28561.5,
+      "daily_pct": 0.2
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52700.0,
+      "prev_close": 52700.0,
+      "daily_pct": 0.5
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 3940.4,
+      "prev_close": 3968.18,
+      "daily_pct": -0.7
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.61,
+      "prev_close": 106.61,
+      "daily_pct": 0.1027
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 95.2,
+      "prev_close": 95.2,
+      "daily_pct": -0.9262
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "What Trump losing power over Congress means for Iran, Ukraine and foreign policy",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 11:20:46 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/democrats-congress-trump-foreign-policy.html",
+      "summary": "Democratic control of Congress could bring greater scrutiny of Trump\u2019s handling of the Iran and Ukraine wars, while leaving him broad foreign-policy powers."
+    },
+    {
+      "headline": "McDonald's is about to report earnings. Here's what to expect",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 05:01:01 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/mcdonalds-is-about-to-report-earnings-heres-what-to-expect.html",
+      "summary": "McDonald's stock has fallen about 11% over the last year."
+    },
+    {
+      "headline": "Strand bookstore to pay nearly $1.5 million over Covid loan tied to Sen. Wyden's wife",
+      "source": "CNBC",
+      "published": "Tue, 03 Nov 2026 23:28:01 GMT",
+      "url": "https://www.cnbc.com/2026/11/03/strand-bookstore-ppp-loan-ron-wyden-wife-settlement.html",
+      "summary": "Nancy Bass Wyden, whose grandfather founded the New York City bookstore, had signed off on the PPP, which was off-limits because she is a senator's wife."
+    },
+    {
+      "headline": "Novo shares jump as Wegovy pill sales impress, drugmaker hikes outlook",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 10:40:51 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/novo-q3-earnings-wegovy-sales.html",
+      "summary": "Novo posted quarterly earnings ahead of expectations early Wednesday as sales of its Wegovy pill blew past estimates"
+    },
+    {
+      "headline": "Americans have said 'NO TO WAR,' Iran speaker says as Democrats take Congress",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 06:45:36 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/us-midterm-elections-iran-war-speaker.html",
+      "summary": "Ghalibaf said that \"Conscience or the cost of living, Americans said NO TO WAR, and we endorse this message.\""
+    },
+    {
+      "headline": "Treasury yields fall as investors crowd into bonds for safety amid election stock sell-off",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 10:02:00 GMT",
+      "url": "https://www.cnbc.com/2026/11/03/treasury-yields-fall-as-democrats-win-big-in-us-midterm-elections.html",
+      "summary": "Treasury yields fell on Tuesday night, as investors sought shelter from a sell-off in equity futures sparked by big victories from Democrats in the U.S. midterm elections."
+    },
+    {
+      "headline": "AMD stock jumps 8% on earnings as data center revenue nearly doubles",
+      "source": "CNBC",
+      "published": "Tue, 03 Nov 2026 23:04:37 GMT",
+      "url": "https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html",
+      "summary": "AMD reported better-than-expected third-quarter results, driven by booming sales of AI chips"
+    },
+    {
+      "headline": "Stock market after midterm elections: What S&P 500 history shows",
+      "source": "CNBC",
+      "published": "Tue, 03 Nov 2026 18:21:05 GMT",
+      "url": "https://www.cnbc.com/2026/11/02/stock-market-after-midterm-elections-sp-500-history.html",
+      "summary": "Midterms historically precede a strong year for the S&amp;P 500. What to know if Democrats win back Congress"
+    }
+  ],
+  "_manual_corrections": [
+    "2026-11-04 verified via Perplexity: Gold=Nov3 Dec GC close 3940.40 (-0.7%); 10Y=4.97 (+5.6bp, prev derived); equity futures pct = ~3:37 ET snapshot, levels unverified"
+  ]
+}
