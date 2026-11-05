@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "date": "2026-11-05",
+    "generated_at": "2026-11-05T11:16:26.558059Z",
+    "generation_source": "verified_code"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7568.9199,
+      "close": 7688.6201,
+      "daily_pct": 1.5815,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 51786.7188,
+      "close": 53356.1211,
+      "daily_pct": 3.0305,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25372.0098,
+      "close": 25736.5098,
+      "daily_pct": 1.4366,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2812.45,
+      "close": 2856.95,
+      "daily_pct": 1.5823,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 3940.4,
+      "close": 4073.0,
+      "daily_pct": 3.3651,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.97,
+      "close": 4.89,
+      "daily_pct": -1.6097,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": -8.0
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 101.51,
+      "close": 101.533,
+      "daily_pct": 0.0227,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 96.09,
+      "close": 88.12,
+      "daily_pct": -8.2943,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 61077.9,
+      "prev_close": 62188.63,
+      "daily_pct": -1.7861,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24796.98,
+      "prev_close": 23919.5,
+      "daily_pct": 3.6685,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5383.8,
+      "prev_close": 5683.8,
+      "daily_pct": -5.2782,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24536.6,
+      "prev_close": 23960.6,
+      "daily_pct": 2.4039,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9065.1,
+      "prev_close": 8834.5,
+      "daily_pct": 2.6102,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26616.85,
+      "prev_close": 26437.67,
+      "daily_pct": 0.6777,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10909.09,
+      "prev_close": 10829.2,
+      "daily_pct": 0.7377,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8235.94,
+      "prev_close": 8177.89,
+      "daily_pct": 0.7098,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6301.79,
+      "prev_close": 6265.71,
+      "daily_pct": 0.5758,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.12296,
+      "prev_close": 1.12072,
+      "daily_pct": 0.1999
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.34591,
+      "prev_close": 1.34342,
+      "daily_pct": 0.1857
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 158.34599,
+      "prev_close": 158.46899,
+      "daily_pct": -0.0776
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.70166,
+      "prev_close": 0.69684,
+      "daily_pct": 0.6911
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.22351,
+      "prev_close": 1.22048,
+      "daily_pct": 0.2484
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7731.75,
+      "prev_close": 7731.75,
+      "daily_pct": 0.1457
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28414.75,
+      "prev_close": 28414.75,
+      "daily_pct": -0.5321
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 53804.0,
+      "prev_close": 53804.0,
+      "daily_pct": 0.5626
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 4137.6,
+      "prev_close": 4137.6,
+      "daily_pct": 1.5861
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.94,
+      "prev_close": 106.94,
+      "daily_pct": 0.0439
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 88.75,
+      "prev_close": 88.75,
+      "daily_pct": 0.7149
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "What was really behind Wednesday's monster rally? Trump quickly making peace",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 22:55:22 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/stock-market-rally-trump-midterms.html",
+      "summary": "The stock market skyrocketed after a decisive sweep for Democrats in the 2026 midterm elections, a move that Trump's reaction added to."
+    },
+    {
+      "headline": "What the Democratic midterms sweep changes for U.S.-China relations",
+      "source": "CNBC",
+      "published": "Thu, 05 Nov 2026 06:54:52 GMT",
+      "url": "https://www.cnbc.com/2026/11/05/what-the-democrat-midterms-sweep-changes-for-us-china-tech-rivalry.html",
+      "summary": "Analysts note the growing risks around U.S. President Donald Trump's ability to maintain a fragile trade truce."
+    },
+    {
+      "headline": "Qualcomm stock drops 7% on weak earnings forecast as memory shortage weighs on smartphone sales",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 23:38:11 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/qualcomm-qcom-earnings-report-q4-2026.html",
+      "summary": "Qualcomm delivered better-than-expected results but issued a weak earnings forecast."
+    },
+    {
+      "headline": "Jim Cramer warns investors may be reading too much into Wall Street's post-election rally",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 23:18:56 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/cramer-midterms-ai-stocks.html",
+      "summary": "Cramer warned that Wall Street may be getting ahead of itself following the midterm elections."
+    },
+    {
+      "headline": "Figma sinks after earnings beat as company prioritizes long-term growth with AI changes",
+      "source": "CNBC",
+      "published": "Wed, 04 Nov 2026 23:02:39 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/figma-fig-q3-earnings-report-2026.html",
+      "summary": "Figma is letting clients use more artificial intelligence features for the same price. The company would like the move to boost results in the long term."
+    },
+    {
+      "headline": "Inside the chip talent war: Trade secrets and rising Chinese rivals",
+      "source": "CNBC",
+      "published": "Thu, 05 Nov 2026 03:53:18 GMT",
+      "url": "https://www.cnbc.com/2026/11/05/semiconductor-china-korea-talents-rivalry.html",
+      "summary": "Growing competition for semiconductor talent is fueling a battle over trade secrets as Chinese chipmakers gain ground."
+    },
+    {
+      "headline": "Snap shares fall over 10% on third-quarter revenue miss",
+      "source": "CNBC",
+      "published": "Thu, 05 Nov 2026 00:14:47 GMT",
+      "url": "https://www.cnbc.com/2026/11/04/snap-q3-earnings-report-2026.html",
+      "summary": "Snap misses on revenue and daily active users in third-quarter earnings reported Wednesday."
+    },
+    {
+      "headline": "Russia, China may be more aggressive if they feel Trump is on 'his way out': Brookings",
+      "source": "CNBC",
+      "published": "Thu, 05 Nov 2026 05:58:33 GMT",
+      "url": "https://www.cnbc.com/2026/11/05/trump-russia-china-summit-apec-midterms.html",
+      "summary": "Russia and China may be more aggressive if they feel that U.S. President Donald Trump is on \"his way out\" after the Democratic Party flipped the midterms."
+    }
+  ],
+  "_manual_corrections": [
+    "2026-11-05 verified via Perplexity (eOption, Investopedia, Admiral): fetcher put live overnight price in close and Nov 4 settle in prev_close for WTI/Gold.",
+    "WTI close=88.12 (prev 96.09, -8.3%); Gold=Dec GC settle 4073.00 (prev 3940.40, +3.37%); 10Y=4.89 (prev 4.97 per fixture continuity, -8bp; Admiral/eOption say -6.3bp from 4.951).",
+    "WTI/Gold futures kept as live overnight prices (levels unverified). USD Index 101.53 unverified (sources say dollar fell). Europe is early-session intraday."
+  ]
+}
