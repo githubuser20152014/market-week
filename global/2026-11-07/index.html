@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Framework Foundry &mdash; Global Investor Edition &middot; 2026-11-07</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Raleway:wght@200;300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --navy:      #0f1f3d;
+    --accent:    #4a7fb5;
+    --accent-lt: #7aabda;
+    --gold:      #c9a84c;
+    --white:     #ffffff;
+    --off-white: #f5f4f0;
+    --text:      #1a1a2e;
+    --border:    #ddd8cc;
+    --muted:     #6b7280;
+    --green:     #2a7d4f;
+    --red:       #b91c1c;
+    --amber:     #d97706;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #dde3ea;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--text);
+    padding: 32px 16px;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18);
+  }
+
+  /* HEADER */
+  .header { background: var(--navy); position: relative; overflow: hidden; }
+  .header::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .header-inner {
+    position: relative; display: flex; align-items: center;
+    justify-content: space-between; padding: 28px 40px 24px; gap: 24px;
+  }
+  .logo-icon { flex-shrink: 0; width: 64px; height: 64px; }
+  .logo-text { flex: 1; }
+  .logo-name-framework {
+    font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600;
+    letter-spacing: 4px; color: var(--white); display: block; line-height: 1;
+  }
+  .logo-name-foundry {
+    font-family: 'Raleway', sans-serif; font-size: 14px; font-weight: 300;
+    letter-spacing: 12px; color: var(--accent); display: block; margin-top: 5px; line-height: 1;
+  }
+  .logo-rule { height: 1px; background: rgba(255,255,255,0.15); margin: 8px 0 6px; }
+  .logo-tagline {
+    font-family: 'Raleway', sans-serif; font-size: 8.5px; font-weight: 300;
+    letter-spacing: 3.5px; color: rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+  .header-meta { text-align: right; flex-shrink: 0; }
+  .header-meta .issue-label {
+    font-family: 'Raleway', sans-serif; font-size: 9px; letter-spacing: 3px;
+    color: rgba(255,255,255,0.35); text-transform: uppercase; display: block;
+  }
+  .header-meta .issue-date {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300;
+    color: var(--white); display: block; margin-top: 3px; line-height: 1.1;
+  }
+  .header-meta .issue-edition {
+    font-family: 'Raleway', sans-serif; font-size: 9px; letter-spacing: 2px;
+    color: var(--gold); display: block; margin-top: 4px;
+  }
+  .header-accent {
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--accent-lt) 60%, transparent 100%);
+  }
+
+  /* REGION BANNER */
+  .region-banner {
+    background: var(--accent); padding: 7px 40px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .region-banner span {
+    font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 500;
+    letter-spacing: 3px; color: rgba(255,255,255,0.9); text-transform: uppercase;
+  }
+  .region-dots { display: flex; gap: 6px; margin-left: auto; }
+  .region-dot { font-size: 14px; line-height: 1; }
+
+  /* CONTENT */
+  .content { padding: 36px 40px; }
+  .section-block { margin-bottom: 40px; }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600;
+    color: var(--navy); letter-spacing: 0.5px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent); margin-bottom: 18px; display: inline-block;
+  }
+
+  /* SECTION DIVIDER */
+  .section-rule {
+    border: none; border-top: 1px solid var(--border); margin: 0 0 40px;
+  }
+
+  /* BIG THEME */
+  .big-theme-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600;
+    color: var(--navy); line-height: 1.3; margin-bottom: 18px;
+  }
+
+  /* PROSE */
+  .brief-text {
+    font-size: 14.5px; line-height: 1.8; color: #2c2c3e; font-weight: 300;
+  }
+  .brief-text + .brief-text { margin-top: 12px; }
+
+  /* MACRO REGIME */
+  .regime-table {
+    width: 100%; border-collapse: collapse;
+    font-family: 'Raleway', sans-serif; font-size: 12.5px;
+  }
+  .regime-table thead tr { background: var(--navy); color: var(--white); }
+  .regime-table thead th {
+    padding: 10px 14px; text-align: left; font-weight: 500;
+    letter-spacing: 1px; font-size: 10px; text-transform: uppercase;
+  }
+  .regime-table tbody tr { border-bottom: 1px solid var(--border); }
+  .regime-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .regime-table tbody td { padding: 10px 14px; }
+  .signal-green  { color: var(--green); font-weight: 700; }
+  .signal-yellow { color: var(--amber); font-weight: 700; }
+  .signal-red    { color: var(--red);   font-weight: 700; }
+
+  /* DATA TABLES */
+  .data-table {
+    width: 100%; border-collapse: collapse;
+    font-family: 'Raleway', sans-serif; font-size: 12.5px;
+  }
+  .data-table thead tr { background: var(--navy); color: var(--white); }
+  .data-table thead th {
+    padding: 9px 14px; text-align: left; font-weight: 500;
+    letter-spacing: 1px; font-size: 10px; text-transform: uppercase;
+  }
+  .data-table tbody tr { border-bottom: 1px solid var(--border); }
+  .data-table tbody tr:nth-child(even) { background: var(--off-white); }
+  .data-table tbody td { padding: 9px 14px; }
+  .data-table + .data-table { margin-top: 24px; }
+  .pct { font-weight: 600; }
+  .pct.positive { color: var(--green); }
+  .pct.negative { color: var(--red); }
+
+  .table-label {
+    font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
+    margin: 20px 0 6px;
+  }
+  .table-label:first-child { margin-top: 0; }
+
+  /* POSITIONING */
+  .positioning-list { list-style: none; padding: 0; }
+  .positioning-list li {
+    font-size: 14px; line-height: 1.7; color: #2c2c3e; font-weight: 300;
+    padding: 10px 14px 10px 28px; position: relative;
+    border-left: 3px solid var(--accent); background: var(--off-white);
+    margin-bottom: 8px;
+  }
+  .positioning-list li::before {
+    content: '\2192'; position: absolute; left: 10px; color: var(--accent); font-weight: 600;
+  }
+
+  /* UPCOMING EVENTS */
+  .imp-high   { color: var(--red);   font-weight: 700; font-size: 11px; }
+  .imp-medium { color: var(--amber); font-weight: 600; font-size: 11px; }
+  .imp-low    { color: var(--muted); font-weight: 400; font-size: 11px; }
+
+  /* SUBSCRIBE */
+  .subscribe-section { background: var(--navy); padding: 36px 40px; text-align: center; }
+  .subscribe-section h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
+    color: var(--white); margin: 0 0 6px; letter-spacing: 0.5px;
+  }
+  .subscribe-section p {
+    font-family: 'Raleway', sans-serif; font-size: 11px; color: rgba(255,255,255,0.55);
+    letter-spacing: 1px; text-transform: uppercase; margin: 0 0 20px;
+  }
+  .subscribe-form { display: flex; justify-content: center; max-width: 440px; margin: 0 auto; }
+  .subscribe-form input[type="email"] {
+    flex: 1; padding: 10px 16px; font-family: 'Raleway', sans-serif; font-size: 12px;
+    border: 1px solid rgba(255,255,255,0.2); border-right: none;
+    border-radius: 2px 0 0 2px; background: rgba(255,255,255,0.08);
+    color: var(--white); outline: none;
+  }
+  .subscribe-form input[type="email"]::placeholder { color: rgba(255,255,255,0.35); }
+  .subscribe-form button {
+    padding: 10px 20px; font-family: 'Raleway', sans-serif; font-size: 10px;
+    font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--accent); color: var(--white); border: none;
+    border-radius: 0 2px 2px 0; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+  }
+  .subscribe-form button:hover { background: var(--accent-lt); }
+
+  /* SHARE BAR */
+  .share-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 40px; border-top: 1px solid var(--border); background: var(--off-white);
+  }
+  .share-label {
+    font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
+  }
+  .share-buttons { display: flex; gap: 10px; }
+  .share-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 50%; background: var(--navy);
+    color: white; text-decoration: none; transition: background 0.2s;
+  }
+  .share-btn:hover { background: var(--accent); }
+  .share-btn svg { width: 16px; height: 16px; fill: white; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy); padding: 16px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif; font-size: 13px; font-weight: 400;
+    letter-spacing: 2px; color: rgba(255,255,255,0.5);
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-disclaimer {
+    font-family: 'Raleway', sans-serif; font-size: 8.5px;
+    color: rgba(255,255,255,0.3); letter-spacing: 0.5px;
+    text-align: right; max-width: 380px; line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 20px 20px 16px; flex-wrap: wrap; }
+    .content { padding: 24px 20px; }
+    .footer { padding: 14px 20px; flex-direction: column; gap: 10px; }
+    .share-bar { padding: 16px 20px; }
+  }
+
+      .header-home-link {
+      position: absolute; inset: 0; z-index: 1;
+      display: block; cursor: pointer;
+    }
+    .header-inner, .header-meta, .header-accent { position: relative; z-index: 2; }
+      .breadcrumb {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 500; letter-spacing: 1px;
+      color: var(--muted); margin-bottom: 28px; padding-top: 4px;
+    }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { margin: 0 8px; color: var(--border); }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header"><a href="../../index.html" class="header-home-link" aria-label="Go to Framework Foundry home"></a>
+    <div class="header-inner">
+      <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="34" fill="none" stroke="white" stroke-width="1.4" opacity="0.85"/>
+        <line x1="10" y1="30" x2="70" y2="30" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="8"  y1="40" x2="72" y2="40" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="10" y1="50" x2="70" y2="50" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="30" y1="8"  x2="30" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="40" y1="6"  x2="40" y2="74" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="50" y1="8"  x2="50" y2="72" stroke="white" stroke-width="0.7" opacity="0.3"/>
+        <line x1="18" y1="62" x2="62" y2="18" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="40" cy="40" r="3" fill="#c9a84c"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name-framework">FRAMEWORK</span>
+        <span class="logo-name-foundry">FOUNDRY</span>
+        <div class="logo-rule"></div>
+        <span class="logo-tagline">Global Investor Edition &nbsp;&middot;&nbsp; Research for the serious investor</span>
+      </div>
+      <div class="header-meta">
+        <span class="issue-label">Week Ending</span>
+        <span class="issue-date">November 7, 2026</span>
+        <span class="issue-edition">&#127758; Global Edition</span>
+      </div>
+    </div>
+    <div class="header-accent"></div>
+  </header>
+
+  <!-- REGION BANNER -->
+  <div class="region-banner">
+    <span>Coverage: US &middot; Europe &middot; Asia-Pacific &middot; FX &middot; Commodities &middot; Macro</span>
+    <div class="region-dots">
+      <span class="region-dot">&#127482;&#127480;</span>
+      <span class="region-dot">&#127466;&#127482;</span>
+      <span class="region-dot">&#127471;&#127477;</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <nav class="breadcrumb">
+      <a href="../../index.html">Framework Foundry</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#markets">Markets</a>
+      <span class="sep">/</span>
+      <span>Global — Nov 7, 2026</span>
+    </nav>
+
+    <!-- BIG THEME -->
+    <div class="section-block">
+      <div class="big-theme-title">Gridlock Was Supposed to Be Bullish. The S&P 500 Lost 3.1% by Friday.</div>
+      <p class="brief-text">Democrats swept Congress. The Dow celebrated on Wednesday, because apparently gridlock is a bullish catalyst. Then Thursday showed up. A Democratic House and Senate means oversight of AI data-center power use, tighter export controls, and War Powers limits on Iran policy. The Nasdaq fell <strong>5.5% in a single day</strong>. The VIX hit <strong>28.18</strong>. The S&P 500 finished the week down <strong>3.1%</strong>. The rally lasted roughly one news cycle.</p>
+<p class="brief-text">Oil ran its own horror show. WTI started the week above $100 and <strong>fell 11.3% to $90.83</strong> as Qatari mediators floated a Hormuz transit deal and Trump admitted that energy inflation cost Republicans Congress. Nothing lowers oil prices like losing an election. <strong>Gold took the opposite side of the room.</strong> Spot cleared $4,000 mid-week and closed near <strong>$4,066</strong>, up 4.5% on the week, as fiscal gridlock, Lagarde's early ECB exit and a Europe stuck in stagflation made bullion the only adult in the building.</p>
+<p class="brief-text">The regime signal is unusually clear: the U.S. political cycle has just structurally increased uncertainty around AI capex, tech regulation, and Middle East military posture. Europe is locked in stagflation, with <strong>Eurozone inflation jumping to 4.0%</strong> and the Bank of England hiking to <strong>4.0%</strong> with a forecast of <strong>5.0% UK CPI by mid-2027</strong>. Gold and defensive real assets are absorbing the inflows that were previously funding momentum tech. This is not a temporary rotation. The VIX closing at 25.6 after a week that included both an election-day Dow rally and a 1,833-point collapse tells you the regime is unstable.</p>
+
+    </div>
+
+    <hr class="section-rule"/>
+
+        <!-- WHAT THIS MEANS FOR YOU -->
+    <div class="section-block">
+      <div class="section-title">What This Means For You</div>
+<p class="brief-text">The 2026 U.S. midterm elections delivered a Democratic congressional sweep that initially rallied markets on gridlock optimism, then crashed them as investors priced the regulatory risk to AI infrastructure and hyperscaler capex. <strong>The S&P 500 fell 3.1% and the Nasdaq dropped 4.0%</strong> for the week, with semiconductors taking the worst of the institutional liquidation and VIX closing at 25.6. <strong>Gold broke $4,000/oz and ended the week up 4.5% near $4,066</strong>, the most important market signal of 2026 so far, driven by ECB leadership uncertainty, U.S. fiscal gridlock, and European stagflation. WTI crude collapsed 11.3% to $90.83 as Trump publicly acknowledged that energy inflation cost Republicans Congress, cementing the political incentive for Middle East de-escalation. For a patient globally diversified investor, the week's moves argue for holding or adding GLD, trimming overweight U.S. tech exposure via QQQ, and monitoring whether Beijing's capital-market support translates into durable upside for EWH after its 5.1% weekly gain.</p>
+    </div>
+
+    <hr class="section-rule"/>
+
+    <!-- THE ONE TRADE -->
+    <div class="section-block">
+      <div class="section-title">The One Trade</div>
+<p class="brief-text">Gold broke $4,000/oz this week on three simultaneous structural catalysts: a U.S. Congress now structurally prone to debt-ceiling brinkmanship, ECB President Lagarde's announced early departure creating a leadership vacuum at the exact moment Eurozone inflation hit <strong>4.0%</strong>, and a Bank of England that just told markets UK CPI will reach <strong>5.0% in mid-2027</strong>. This is not momentum chasing. The $3,900/oz floor held through margin-call liquidations on Monday, through crude oil's disinflationary plunge, and through a surging dollar mid-week. When an asset absorbs multiple downside catalysts without breaking support and then trades to new highs, the signal is directional.</p>
+<p class="brief-text">The fiscal math reinforces the trade. A divided U.S. Congress virtually guarantees a 2027 debt-ceiling standoff with no path to structural deficit reduction. European central banks are hiking into stagflation, which historically accelerates sovereign reserve diversification away from fiat bonds. Central banks globally have been net buyers of gold for twelve consecutive quarters. The jobs report already landed Friday: 165,000 October payrolls against a consensus near 60,000, which pushed the dollar and December hike odds higher and knocked gold off its highs. Gold still closed above $4,000. Dips toward $4,020-$4,050 represent the buy-the-pullback level, not a regime reversal. Gold above $4,000 is now institutional support, not speculative ceiling.</p>
+<p class="brief-text"><strong>Confirms:</strong> Spot gold holds the $4,000/oz level on a weekly closing basis through the aftermath of Friday's hot October NFP print, and the 10-year real yield remains below 2.0%.
+<strong>Risk:</strong> Friday's 165,000 October NFP print (against roughly 60,000 expected) feeding through to wage data and Fed hike pricing forces the 10-year yield back above 5.0% and the dollar index above 104, triggering a tactical flush toward $3,920/oz.</p>
+    </div>
+
+    <hr class="section-rule"/>
+
+
+    <!-- MACRO REGIME -->
+    <div class="section-block">
+      <div class="section-title">Macro Regime Snapshot</div>
+      <table class="regime-table">
+        <thead><tr><th>Variable</th><th>Signal</th><th>Note</th></tr></thead>
+        <tbody>
+            <tr>
+              <td>Growth</td>
+              <td class="signal-red">&#9679;&nbsp;RED</td>
+              <td>S&P 500 -3.1% - contraction signal</td>
+            </tr>
+            <tr>
+              <td>Inflation</td>
+              <td class="signal-yellow">&#9679;&nbsp;YELLOW</td>
+              <td>Inflation expectations mixed</td>
+            </tr>
+            <tr>
+              <td>Rate Direction</td>
+              <td class="signal-yellow">&#9679;&nbsp;YELLOW</td>
+              <td>10Y -4 bps - rates stable</td>
+            </tr>
+            <tr>
+              <td>Risk Appetite</td>
+              <td class="signal-red">&#9679;&nbsp;RED</td>
+              <td>VIX 25.6 - elevated fear, risk-off</td>
+            </tr></tbody>
+      </table>
+    </div>
+
+    <hr class="section-rule"/>
+
+    <!-- EQUITY MARKETS -->
+    <div class="section-block">
+      <div class="section-title">Equity Markets</div>
+      <p class="brief-text">U.S. equities had one of the most volatile weeks of 2026. The S&P 500 fell <strong>3.1%</strong> and the Nasdaq shed <strong>4.0%</strong>, with the worst damage concentrated in semiconductors: Nvidia dropped roughly 9% and AMD and Micron fell over 17% on Thursday as the newly elected Democratic Congress signaled scrutiny of AI infrastructure power subsidies and local ballot measures rejected data-center zoning expansions. The Russell 2000 fell <strong>2.7%</strong>, confirming this was not a narrow tech selloff. The Dow's <strong>1.4% decline</strong> was cushioned by its value tilt, but even that came after the index had briefly touched 53,356 on Wednesday before Thursday's 1,833-point reversal erased the gains. VIX at <strong>25.6</strong>, up 34.6% on the week, reflects the speed of the institutional repositioning.</p>
+<p class="brief-text">Europe and Asia-Pacific split cleanly. The CAC 40 gained <strong>2.3%</strong> and the Euro Stoxx 50 added <strong>0.6%</strong> despite Fitch revising France's credit outlook to negative and the ECB projecting <strong>3.0% Eurozone inflation against 1.0% GDP growth</strong>. European indices benefited from the dollar's mild weakness and from investors rotating out of U.S. tech, though the Fitch downgrade and ECB leadership vacuum will cap the rally. The Hang Seng was the week's standout, surging <strong>5.1%</strong> as Beijing convened major banks and brokerages to roll out capital-market support mechanisms. Japan's Nikkei was the week's worst performer by far, collapsing <strong>10.7%</strong>: the index reopened from Culture Day on Wednesday into the full force of the Thursday U.S. tech unwind, with semiconductor heavyweights Advantest and Kioxia bearing the brunt.</p>
+
+    </div>
+
+    <!-- CURRENCY MARKETS -->
+    <div class="section-block">
+      <div class="section-title">Currency Markets</div>
+      <p class="brief-text">The dollar index closed up a marginal <strong>0.3% at 102.3</strong>, masking significant intra-week volatility. The greenback weakened sharply after the midterm results as markets priced in legislative gridlock reducing deficit-expansion risk, pulling the <strong>10-year Treasury yield 4 basis points lower to 4.86%</strong>. That dollar softness was the mechanical catalyst for gold's $4,000/oz breakout. The Swiss franc was the week's strongest major currency, gaining <strong>1.2% against the dollar</strong> as risk-off positioning accelerated following Thursday's equity rout. The franc and gold moving in tandem confirms safe-haven demand was the dominant FX theme.</p>
+<p class="brief-text">The Australian dollar fell <strong>1.4%</strong>, the worst performer among the majors tracked, reflecting falling oil prices, Nikkei-linked risk-off sentiment in Asia-Pacific, and commodity demand concerns. The pound added <strong>0.5%</strong> as the Bank of England's hawkish <strong>8-1 vote to hike to 4.0%</strong>, with Catherine Mann dissenting for 50 basis points, reinforced sterling's yield advantage. The euro was essentially flat, down <strong>0.1%</strong>, caught between a hawkish ECB December hike signal and the leadership vacuum left by Lagarde's announced February 2027 departure. <strong>FXF (Swiss franc ETF) and FXB (sterling ETF)</strong> benefited from the week's flows; <strong>FXA (Australian dollar ETF)</strong> underperformed.</p>
+
+    </div>
+
+    <!-- COMMODITIES -->
+    <div class="section-block">
+      <div class="section-title">Commodities &amp; Metals</div>
+      <p class="brief-text"><strong>WTI crude fell 11.3% to $90.83</strong>, the week's most consequential commodity move. The collapse started on Monday when Qatari mediators circulated a Strait of Hormuz reopening proposal and Trump ruled out pre-election strikes on Iran. Each diplomatic step eroded the $15-20/bbl geopolitical risk premium that had been embedded in crude. By Wednesday, Qatar had circulated a draft MoU and WTI had fallen to $96. Then Trump publicly acknowledged the energy spike cost Republicans Congress, removing any remaining White House appetite for escalation. Oil rebounded modestly on Friday as Middle East nuclear friction flared again, but the weekly loss was severe. Midstream operators and integrated majors with low breakevens are better positioned than leveraged upstream names for the new $88-100 trading range.</p>
+<p class="brief-text">Gold's move in the opposite direction was historic. <strong>Spot gold gained 4.5% to $4,066</strong>, breaking cleanly above the $4,000/oz psychological barrier mid-week. The catalyst sequence: post-midterm dollar softness, retreating Treasury yields, Lagarde's ECB departure announcement (triggering European monetary uncertainty), and the structural U.S. fiscal gridlock that guarantees debt-ceiling brinkmanship in 2027. Silver also gained <strong>3.4%</strong>, confirming precious metals demand was broad. Natural gas added <strong>3.8%</strong>, a quiet but notable move as COP31 warnings and Indonesia's bioethanol mandate underscore longer-term energy security capex. Gold above $4,000/oz is not a trade at this point. It is a regime signal.</p>
+
+    </div>
+
+    <hr class="section-rule"/>
+
+    <!-- THIS WEEK'S EVENTS -->
+    <div class="section-block">
+      <div class="section-title">This Week&rsquo;s Economic Events</div>
+      <p class="brief-text">Economic data releases were secondary to political events this week but materially reinforced the macro narrative. The October ISM Manufacturing PMI printed <strong>55.5</strong>, beating the 54.6 consensus, while the Prices Paid sub-index cooled from 77.9 to 75.2. That combination, manufacturing expanding while input cost pressures ease, pulled the 10-year yield toward 4.88%-4.90% mid-week. The ADP private payrolls report showed <strong>86,000 October jobs added</strong>, beating forecasts and pushing the CME FedWatch probability of a December Fed hike to <strong>82%</strong>. The ISM Services PMI printed 54.5, below expectations but still comfortably in expansion. The economic data picture is one of solid-but-moderating U.S. growth with sticky-but-easing domestic inflation. That is a reasonable backdrop for equities. The problem is not the economy: it is the political and regulatory uncertainty layered on top of it.</p>
+<p class="brief-text">The Bank of England's decision was the most significant central bank event of the week. The <strong>8-1 vote to hike to 4.0%</strong>, with Catherine Mann pushing for 50 basis points, was more hawkish than markets anticipated. The BoE's November Monetary Policy Report projected UK CPI reaching <strong>5.0% by mid-2027</strong>, driven by Middle East energy pass-through and wage pressures from the Autumn Budget minimum wage changes. That forecast eliminates any near-term BoE pivot narrative. Simultaneously, the ECB's Survey of Professional Forecasters revised Eurozone 2026 inflation to <strong>3.0%</strong> against <strong>1.0% GDP growth</strong>, providing the clearest quantitative definition yet of Europe's stagflationary trap.</p>
+
+    </div>
+
+    <!-- NEXT WEEK -->
+    <div class="section-block">
+      <div class="section-title">Next Week: What to Watch</div>
+      <p class="brief-text">The October jobs report already landed Friday: 165,000 payrolls against roughly 60,000 expected, unemployment at 4.1%, and average hourly earnings up 0.4% on the month. December Fed hike odds rose further after the print. Watch the 10-year yield: if it breaks back above 4.95% as the market digests that number, the equity stabilization that began Friday will reverse. The November 10 EU-UK Joint Committee meeting sets the agenda for the November 20 Brussels summit between UK Prime Minister Burnham and EU leadership. Any signal of post-Brexit trade friction reduction would be GBP-positive and could modestly support UK-exposed ETFs like EWU. PBOC liquidity facility announcements following Beijing's bank-and-brokerage support meetings will determine whether the Hang Seng's 5% rally has institutional backing or is a one-week squeeze. And the Doha U.S.-Iran MoU, if formally signed, would remove the last structural support under $90 WTI.</p>
+
+      
+    </div>
+
+    <!-- POSITIONING -->
+    <div class="section-block">
+      <div class="section-title">Global Investor Positioning</div>
+      <ul class="positioning-list">
+<li><strong>GLD</strong>: Gold's clean break above $4,000/oz on fiscal gridlock, ECB leadership vacuum, and 4.0% Eurozone inflation makes this the highest-conviction long in the portfolio. Add on any NFP-driven dip toward $4,020-$4,050/oz.</li>
+<li><strong>TLT</strong>: With the 10-year at 4.86% and an 82% December Fed hike probability, long-duration Treasuries face headwinds. Keep duration underweight until the post-payrolls repricing settles and the Fed's December decision is in the rearview.</li>
+<li><strong>EWH</strong>: The Hang Seng's 5.1% weekly gain was backed by concrete Beijing bank-and-brokerage support meetings. Maintain a measured position and watch PBOC liquidity facility details this week before adding size.</li>
+<li><strong>QQQ</strong>: The VIX at 25.6 and ongoing margin liquidation in AI semiconductor names argue against adding here. Let the Thursday-Friday de-grossing settle and wait for the VIX to close below 20 before rebuilding tech exposure.</li>
+<li><strong>USO</strong>: WTI at $90.83 reflects a structural repricing of geopolitical risk premium, not a demand collapse. Trump's political incentive to keep oil below $90 is real. Trim leveraged upstream energy exposure and shift any remaining energy allocation toward integrated majors with sub-$60 breakevens.</li>
+</ul>
+    </div>
+
+    <hr class="section-rule"/>
+
+    <!-- DATA APPENDIX -->
+    <div class="section-block">
+      <div class="section-title">Data Appendix</div>
+      
+      <div class="table-label">US Equities</div>
+      <table class="data-table">
+        <thead><tr><th>Index</th><th>Close</th><th>Weekly %</th><th>Week Range</th></tr></thead>
+        <tbody>
+            <tr>
+              <td>Dow Jones</td>
+              <td>51,285.73</td>
+              <td class="pct negative">-1.39%</td>
+              <td>50,992.61 – 53,710.61</td>
+            </tr>
+            <tr>
+              <td>Russell 2000</td>
+              <td>2,754.11</td>
+              <td class="pct negative">-2.68%</td>
+              <td>2,721.00 – 2,875.14</td>
+            </tr>
+            <tr>
+              <td>S&P 500</td>
+              <td>7,376.86</td>
+              <td class="pct negative">-3.07%</td>
+              <td>7,350.35 – 7,715.57</td>
+            </tr>
+            <tr>
+              <td>Nasdaq</td>
+              <td>24,579.43</td>
+              <td class="pct negative">-3.99%</td>
+              <td>24,262.14 – 26,048.83</td>
+            </tr></tbody>
+      </table>
+      
+      <div class="table-label">Fixed Income &amp; USD</div>
+      <table class="data-table">
+        <thead><tr><th>Index</th><th>Close</th><th>Weekly %</th><th>Week Range</th></tr></thead>
+        <tbody>
+            <tr>
+              <td>USD Index</td>
+              <td>102.30</td>
+              <td class="pct positive">+0.32%</td>
+              <td>101.10 – 102.36</td>
+            </tr>
+            <tr>
+              <td>10Y Treasury</td>
+              <td>4.86</td>
+              <td class="pct negative">-4 bps</td>
+              <td>4.81 – 4.97</td>
+            </tr></tbody>
+      </table>
+      
+      <div class="table-label">European Equities</div>
+      <table class="data-table">
+        <thead><tr><th>Index</th><th>Close</th><th>Weekly %</th><th>Week Range</th></tr></thead>
+        <tbody>
+            <tr>
+              <td>CAC 40</td>
+              <td>8,139.00</td>
+              <td class="pct positive">+2.26%</td>
+              <td>7,944.72 – 8,286.43</td>
+            </tr>
+            <tr>
+              <td>Euro Stoxx 50</td>
+              <td>6,170.49</td>
+              <td class="pct positive">+0.58%</td>
+              <td>6,102.57 – 6,318.59</td>
+            </tr>
+            <tr>
+              <td>DAX</td>
+              <td>25,820.36</td>
+              <td class="pct positive">+0.07%</td>
+              <td>25,617.54 – 26,692.90</td>
+            </tr>
+            <tr>
+              <td>FTSE 100</td>
+              <td>10,673.90</td>
+              <td class="pct negative">-0.52%</td>
+              <td>10,528.10 – 10,948.20</td>
+            </tr></tbody>
+      </table>
+      
+      <div class="table-label">Asia-Pacific Equities</div>
+      <table class="data-table">
+        <thead><tr><th>Index</th><th>Close</th><th>Weekly %</th><th>Week Range</th></tr></thead>
+        <tbody>
+            <tr>
+              <td>Hang Seng</td>
+              <td>24,481.86</td>
+              <td class="pct positive">+5.06%</td>
+              <td>23,271.26 – 24,871.92</td>
+            </tr>
+            <tr>
+              <td>ASX 200</td>
+              <td>9,020.80</td>
+              <td class="pct positive">+1.27%</td>
+              <td>8,802.10 – 9,065.10</td>
+            </tr>
+            <tr>
+              <td>MSCI EM</td>
+              <td>59.33</td>
+              <td class="pct negative">-4.41%</td>
+              <td>58.00 – 62.37</td>
+            </tr>
+            <tr>
+              <td>Nikkei 225</td>
+              <td>57,434.77</td>
+              <td class="pct negative">-10.74%</td>
+              <td>56,745.81 – 64,589.04</td>
+            </tr></tbody>
+      </table>
+      
+      <div class="table-label">Currencies (vs. USD)</div>
+      <table class="data-table">
+        <thead><tr><th>Pair</th><th>Rate</th><th>Weekly %</th></tr></thead>
+        <tbody>
+            <tr>
+              <td>CHF/USD</td>
+              <td>1.2264</td>
+              <td class="pct positive">+1.15%</td>
+            </tr>
+            <tr>
+              <td>GBP/USD</td>
+              <td>1.3456</td>
+              <td class="pct positive">+0.52%</td>
+            </tr>
+            <tr>
+              <td>JPY/USD</td>
+              <td>0.0063</td>
+              <td class="pct positive">+0.11%</td>
+            </tr>
+            <tr>
+              <td>EUR/USD</td>
+              <td>1.1143</td>
+              <td class="pct negative">-0.13%</td>
+            </tr>
+            <tr>
+              <td>AUD/USD</td>
+              <td>0.6931</td>
+              <td class="pct negative">-1.37%</td>
+            </tr></tbody>
+      </table>
+      
+      <div class="table-label">Commodities &amp; Metals</div>
+      <table class="data-table">
+        <thead><tr><th>Asset</th><th>Close</th><th>Weekly %</th></tr></thead>
+        <tbody>
+            <tr>
+              <td>Gold</td>
+              <td>4,066.28</td>
+              <td class="pct positive">+4.53%</td>
+            </tr>
+            <tr>
+              <td>Natural Gas</td>
+              <td>3.00</td>
+              <td class="pct positive">+3.81%</td>
+            </tr>
+            <tr>
+              <td>Silver</td>
+              <td>51.80</td>
+              <td class="pct positive">+3.39%</td>
+            </tr>
+            <tr>
+              <td>US 30Y</td>
+              <td>5.26</td>
+              <td class="pct negative">-1 bps</td>
+            </tr>
+            <tr>
+              <td>WTI Crude Oil</td>
+              <td>90.83</td>
+              <td class="pct negative">-11.29%</td>
+            </tr></tbody>
+      </table>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- SUBSCRIBE -->
+  <div class="subscribe-section">
+    <h2>Stay in the loop</h2>
+    <p>Free weekly global market intelligence, every weekend.</p>
+    <form class="subscribe-form" action="https://formspree.io/f/mwpvyoal" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span class="share-label">Share this edition</span>
+    <div class="share-buttons">
+      <a class="share-btn" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://twitter.com/intent/tweet?text='+encodeURIComponent('Global markets this week via Framework Foundry — '+window.location.href);return true;"
+         title="Share on X / Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="share-btn" href="#" target="_blank" rel="noopener"
+         onclick="this.href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href);return true;"
+         title="Share on LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">FRAMEWORK <span>FOUNDRY</span> &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,0.35);font-size:10px;letter-spacing:1px;">GLOBAL EDITION</span></div>
+    <div class="footer-disclaimer">
+      Disclaimer: For informational purposes only. Not investment advice.<br/>
+      Past performance is not indicative of future results.
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
