@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "date": "2026-11-12",
+    "generated_at": "2026-11-12T11:25:31.904639Z",
+    "generation_source": "verified_code",
+    "manual_corrections": "2026-11-12: 10Y/Gold/WTI overridden from verified external sources (Reuters, CNBC, Kitco, Investing.com); equities verified against Yahoo/CNBC"
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7520.9302,
+      "close": 7619.3799,
+      "daily_pct": 1.309,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52231.8906,
+      "close": 52486.4883,
+      "daily_pct": 0.4874,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25065.8691,
+      "close": 25466.1895,
+      "daily_pct": 1.5971,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2821.3799,
+      "close": 2846.26,
+      "daily_pct": 0.8818,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 4032.28,
+      "close": 3987.93,
+      "daily_pct": -1.1,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 4.87,
+      "close": 4.99,
+      "daily_pct": 2.46,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 12,
+      "note": "Bond market closed Nov 11 (Veterans Day). Figures are the Nov 10 close."
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 102.91,
+      "close": 102.863,
+      "daily_pct": -0.0457,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 86.04,
+      "close": 86.53,
+      "daily_pct": 0.57,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 60819.36,
+      "prev_close": 61248.59,
+      "daily_pct": -0.7008,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 24008.55,
+      "prev_close": 24315.92,
+      "daily_pct": -1.2641,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5342.73,
+      "prev_close": 5375.36,
+      "daily_pct": -0.607,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25299.35,
+      "prev_close": 25255.05,
+      "daily_pct": 0.1754,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9146.8,
+      "prev_close": 9153.2,
+      "daily_pct": -0.0699,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26891.93,
+      "prev_close": 26662.77,
+      "daily_pct": 0.8595,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10875.3,
+      "prev_close": 10835.5,
+      "daily_pct": 0.3673,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8392.21,
+      "prev_close": 8332.87,
+      "daily_pct": 0.7121,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6417.98,
+      "prev_close": 6393.39,
+      "daily_pct": 0.3846,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.10939,
+      "prev_close": 1.11689,
+      "daily_pct": -0.6723
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.32695,
+      "prev_close": 1.33486,
+      "daily_pct": -0.5931
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.666,
+      "prev_close": 158.705,
+      "daily_pct": 0.6055
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.68301,
+      "prev_close": 0.68696,
+      "daily_pct": -0.5751
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.20211,
+      "prev_close": 1.21227,
+      "daily_pct": -0.8379
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7612.25,
+      "prev_close": 7612.25,
+      "daily_pct": -0.3697
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 28253.25,
+      "prev_close": 28253.25,
+      "daily_pct": -0.7727
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52612.0,
+      "prev_close": 52612.0,
+      "daily_pct": 0.0647
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 3953.4,
+      "prev_close": 3994.3,
+      "daily_pct": -1.02
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 106.11,
+      "prev_close": 106.11,
+      "daily_pct": 0.0737
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 85.99,
+      "prev_close": 85.99,
+      "daily_pct": -0.6241
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [
+      {
+        "event": "Factory Orders",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 1,
+        "time_est": "10:00 AM ET",
+        "source": "FRED"
+      }
+    ],
+    "today": []
+  },
+  "market_news": [
+    {
+      "headline": "Ukraine warns of fresh Starshield disruptions as U.S. envoys arrive in Moscow for talks with Putin",
+      "source": "CNBC",
+      "published": "Thu, 12 Nov 2026 11:23:04 GMT",
+      "url": "https://www.cnbc.com/2026/11/12/starlink-starshield-ukraine-restrictions-spacex.html",
+      "summary": "Starshield is SpaceX's military-grade satellite network designed for government and national security use, building on the technology developed for Starlink."
+    },
+    {
+      "headline": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+      "source": "CNBC",
+      "published": "Wed, 11 Nov 2026 23:31:37 GMT",
+      "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+      "summary": "Scott Colom will be the first Democrat elected to the Senate from the state since 1982, and Mississippi's first Black senator since Reconstruction."
+    },
+    {
+      "headline": "Jensen Huang affair in D.C.: Resignation calls and moves to tighten Nvidia China exports",
+      "source": "CNBC",
+      "published": "Wed, 11 Nov 2026 22:46:29 GMT",
+      "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-congress-resign-ai-chips.html",
+      "summary": "Huang was notably opposed to strict export controls on AI chips to China, which ruffled feathers with congressional China hawks."
+    },
+    {
+      "headline": "Canada\u2019s ambassador warns Trump tariffs are driving up costs, threatening U.S. investment",
+      "source": "CNBC",
+      "published": "Wed, 11 Nov 2026 22:30:57 GMT",
+      "url": "https://www.cnbc.com/2026/11/11/canada-ambassador-trump-tariffs-investments.html",
+      "summary": "U.S.-Canada trade tensions persist as Trump's tariffs drive up costs, threaten investment and complicate negotiations between the two countries."
+    },
+    {
+      "headline": "Jim Cramer says investors need to pay attention to CoreWeave. Here's why",
+      "source": "CNBC",
+      "published": "Wed, 11 Nov 2026 23:41:46 GMT",
+      "url": "https://www.cnbc.com/2026/11/11/jim-cramer-coreweave-earnings-ceo-interview.html",
+      "summary": "Cramer said he's becoming less skeptical of CoreWeave after strong earnings and reassuring comments from its CEO."
+    },
+    {
+      "headline": "Ukrainian defense tech startup hits $6 billion valuation as investors bet on battle-tested drones",
+      "source": "CNBC",
+      "published": "Thu, 12 Nov 2026 09:05:22 GMT",
+      "url": "https://www.cnbc.com/2026/11/12/uforce-defense-tech-drones-warfare-ukraine.html",
+      "summary": "UFORCE's NEMESIS drones have completed 300,000 combat flights, and its MAGURA naval vessels have contributed to the destruction of Russian warships."
+    },
+    {
+      "headline": "The world's super-rich are piling into alternative investments. Here's why",
+      "source": "CNBC",
+      "published": "Thu, 12 Nov 2026 03:36:44 GMT",
+      "url": "https://www.cnbc.com/2026/11/12/rich-wealth-alternative-assets-.html",
+      "summary": "Alternative investments now account for 60% of single-family office portfolios, surpassing traditional assets for the first time, according to BNY Wealth."
+    },
+    {
+      "headline": "Social Security could pay full benefits until 2059 if taxable payroll kept pace with GDP: AARP report",
+      "source": "CNBC",
+      "published": "Wed, 11 Nov 2026 19:54:27 GMT",
+      "url": "https://www.cnbc.com/2026/11/11/social-security-benefits-taxable-payroll-gdp.html",
+      "summary": "An aging work force is not the only reason Social Security's trust funds now have a looming shortfall, according to AARP Public Policy Institute research."
+    }
+  ]
+}
