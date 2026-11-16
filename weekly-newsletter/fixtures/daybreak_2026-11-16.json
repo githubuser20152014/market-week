@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "date": "2026-11-16",
+    "generated_at": "2026-11-16T11:16:33.395336Z",
+    "generation_source": "verified_code",
+    "manual_corrections": "2026-11-16: Fetcher us_close for Gold/WTI/10Y/DXY held Monday-morning live quotes, not Friday settles. Overridden with Friday 11-13 settles: Gold Dec GC 3886.30 (+1.00; Reuters/Barchart/Investrade), WTI Dec 88.56 (-0.18; Reuters/Bloomberg/Barchart), 10Y 5.15 (+5bps; Treasury.gov par), DXY 103.37 (+0.20; Dow Jones). S&P/Dow/Nasdaq verified vs AP/CNBC. ESTIMATED/unverified: Russell 2000, all futures (Nasdaq Futures NQ=F ~28k vs 25.1k index is a feed artifact), intl overnight, FX."
+  },
+  "us_close": {
+    "S&P 500": {
+      "symbol": "^GSPC",
+      "prev_close": 7592.3999,
+      "close": 7561.6699,
+      "daily_pct": -0.4047,
+      "table": true
+    },
+    "Dow Jones": {
+      "symbol": "^DJI",
+      "prev_close": 52297.0898,
+      "close": 52347.5508,
+      "daily_pct": 0.0965,
+      "table": true
+    },
+    "Nasdaq": {
+      "symbol": "^IXIC",
+      "prev_close": 25366.0898,
+      "close": 25136.2695,
+      "daily_pct": -0.906,
+      "table": true
+    },
+    "Russell 2000": {
+      "symbol": "^RUT",
+      "prev_close": 2799.0601,
+      "close": 2790.49,
+      "daily_pct": -0.3062,
+      "table": true
+    },
+    "Gold": {
+      "symbol": "GC=F",
+      "prev_close": 3885.3,
+      "close": 3886.3,
+      "daily_pct": 0.0257,
+      "table": true
+    },
+    "10Y Treasury": {
+      "symbol": "^TNX",
+      "prev_close": 5.1,
+      "close": 5.15,
+      "daily_pct": 0.9804,
+      "table": true,
+      "is_yield": true,
+      "yield_change_bps": 5,
+      "note": "Friday Nov 13 official Treasury par yield 5.15 vs 5.10 Thursday."
+    },
+    "USD Index": {
+      "symbol": "DX-Y.NYB",
+      "prev_close": 103.17,
+      "close": 103.37,
+      "daily_pct": 0.1939,
+      "table": true
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "prev_close": 88.74,
+      "close": 88.56,
+      "daily_pct": -0.2028,
+      "table": true
+    }
+  },
+  "intl_overnight": {
+    "Nikkei 225": {
+      "symbol": "^N225",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 59662.02,
+      "prev_close": 61142.35,
+      "daily_pct": -2.4211,
+      "session_note": "Previous close"
+    },
+    "Hang Seng": {
+      "symbol": "^HSI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 23753.84,
+      "prev_close": 23637.6,
+      "daily_pct": 0.4918,
+      "session_note": "Previous close"
+    },
+    "KOSPI": {
+      "symbol": "^KS11",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 5100.5,
+      "prev_close": 5290.53,
+      "daily_pct": -3.5919,
+      "session_note": "Previous close"
+    },
+    "Nifty 50": {
+      "symbol": "^NSEI",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 25291.1,
+      "prev_close": 25144.3,
+      "daily_pct": 0.5838,
+      "session_note": "Previous close"
+    },
+    "ASX 200": {
+      "symbol": "^AXJO",
+      "region": "Asia-Pacific",
+      "status": "closed",
+      "close": 9044.7,
+      "prev_close": 9082.2,
+      "daily_pct": -0.4129,
+      "session_note": "Previous close"
+    },
+    "DAX": {
+      "symbol": "^GDAXI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 26721.54,
+      "prev_close": 26749.95,
+      "daily_pct": -0.1062,
+      "session_note": "Intraday (early session)"
+    },
+    "FTSE 100": {
+      "symbol": "^FTSE",
+      "region": "Europe",
+      "status": "partial",
+      "close": 10936.54,
+      "prev_close": 10902.6,
+      "daily_pct": 0.3113,
+      "session_note": "Intraday (early session)"
+    },
+    "CAC 40": {
+      "symbol": "^FCHI",
+      "region": "Europe",
+      "status": "partial",
+      "close": 8377.65,
+      "prev_close": 8368.91,
+      "daily_pct": 0.1044,
+      "session_note": "Intraday (early session)"
+    },
+    "Euro Stoxx 50": {
+      "symbol": "^STOXX50E",
+      "region": "Europe",
+      "status": "partial",
+      "close": 6377.61,
+      "prev_close": 6386.86,
+      "daily_pct": -0.1448,
+      "session_note": "Intraday (early session)"
+    }
+  },
+  "fx": {
+    "EUR/USD": {
+      "symbol": "EURUSD=X",
+      "rate": 1.10084,
+      "prev_close": 1.10502,
+      "daily_pct": -0.3787
+    },
+    "GBP/USD": {
+      "symbol": "GBPUSD=X",
+      "rate": 1.31855,
+      "prev_close": 1.32314,
+      "daily_pct": -0.3468
+    },
+    "USD/JPY": {
+      "symbol": "JPY=X",
+      "rate": 159.63901,
+      "prev_close": 159.875,
+      "daily_pct": -0.1476
+    },
+    "AUD/USD": {
+      "symbol": "AUDUSD=X",
+      "rate": 0.67554,
+      "prev_close": 0.68069,
+      "daily_pct": -0.7567
+    },
+    "CHF/USD": {
+      "symbol": "CHFUSD=X",
+      "rate": 1.18948,
+      "prev_close": 1.19627,
+      "daily_pct": -0.5674
+    }
+  },
+  "futures": {
+    "S&P Futures": {
+      "symbol": "ES=F",
+      "price": 7561.0,
+      "prev_close": 7561.0,
+      "daily_pct": -0.2901
+    },
+    "Nasdaq Futures": {
+      "symbol": "NQ=F",
+      "price": 27804.0,
+      "prev_close": 27804.0,
+      "daily_pct": -0.8231
+    },
+    "Dow Futures": {
+      "symbol": "YM=F",
+      "price": 52453.0,
+      "prev_close": 52453.0,
+      "daily_pct": 0.0668
+    },
+    "Gold Futures": {
+      "symbol": "GC=F",
+      "price": 3874.0,
+      "prev_close": 3874.0,
+      "daily_pct": -0.3165
+    },
+    "10Y T-Note": {
+      "symbol": "ZN=F",
+      "price": 105.23,
+      "prev_close": 105.23,
+      "daily_pct": 0.0446
+    },
+    "WTI Crude Oil": {
+      "symbol": "CL=F",
+      "price": 88.44,
+      "prev_close": 88.44,
+      "daily_pct": -0.1355
+    }
+  },
+  "econ_calendar": {
+    "yesterday": [],
+    "today": [
+      {
+        "event": "Industrial Production",
+        "actual": "--",
+        "expected": "See tradingeconomics.com",
+        "previous": "--",
+        "unit": "",
+        "importance": 2,
+        "time_est": "9:15 AM ET",
+        "source": "FRED"
+      }
+    ]
+  },
+  "market_news": [
+    {
+      "headline": "Cantwell urges Lutnick to stop AI chip sales to China ahead of Xi meeting",
+      "source": "CNBC",
+      "published": "Mon, 16 Nov 2026 10:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/11/16/cantwell-lutnick-ai-chip-china.html",
+      "summary": "Commerce Secretary Howard Lutnick has drawn fire for his close relationship with Nvidia CEO Jensen Huang and the department's treatment of the company."
+    },
+    {
+      "headline": "China confirms Xi-Trump-Putin historic summit. What will be on the agenda?",
+      "source": "CNBC",
+      "published": "Mon, 16 Nov 2026 08:38:16 GMT",
+      "url": "https://www.cnbc.com/2026/11/16/trump-xi-putin-ukraine-nuclear-tariffs-russia-iran-.html",
+      "summary": "The talks are expected to focus on issues including nuclear non-proliferation, the Middle East war, trade policies and, possibly, the Ukraine war."
+    },
+    {
+      "headline": "\u2018Standing on one leg\u2019: IMF chief warns about global economy as AI circular financing hits $1 trillion",
+      "source": "CNBC",
+      "published": "Mon, 16 Nov 2026 09:14:46 GMT",
+      "url": "https://www.cnbc.com/2026/11/16/imf-georgieva-warning-ai-circular-financing.html",
+      "summary": "Kristalina Georgieva says circular financing among AI companies has grown to just over $1 trillion, two-thirds of it debt, as investor enthusiasm cools"
+    },
+    {
+      "headline": "NATO member Estonia to close Russia border after attempted 'sabotage' of drone maker",
+      "source": "CNBC",
+      "published": "Mon, 16 Nov 2026 10:44:02 GMT",
+      "url": "https://www.cnbc.com/2026/11/16/nato-estonia-russia-border-ukraine-war.html",
+      "summary": "Estonia says closing the crossings would help curb hostile activity and sanctions circumvention."
+    },
+    {
+      "headline": "Bessent calls for \u2018dramatic shakeup\u2019 at Nvidia, urges outside CEO",
+      "source": "CNBC",
+      "published": "Sun, 15 Nov 2026 18:10:18 GMT",
+      "url": "https://www.cnbc.com/2026/11/15/bessent-nvidia-ceo-lutnick-megaspeed.html",
+      "summary": "Bessent has criticized Howard Lutnick\u2019s department over suspected chip diversion to China while defending President Donald Trump\u2019s handling of the matter."
+    },
+    {
+      "headline": "Social Security and the blue wave: What could happen to payroll taxes and senior tax breaks",
+      "source": "CNBC",
+      "published": "Sun, 15 Nov 2026 14:30:01 GMT",
+      "url": "https://www.cnbc.com/2026/11/15/social-security-tax-changes-midterm-election.html",
+      "summary": "Democrats advocated taxing high earners to shore up Social Security in the runup to the midterms. Plus, a senior deduction is slated to expire in two years."
+    },
+    {
+      "headline": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
+      "source": "CNBC",
+      "published": "Sat, 14 Nov 2026 12:00:01 GMT",
+      "url": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
+      "summary": "Eric Trump-backed robot startup Foundation Future Industries has run low on cash and missed payroll, as CEO Sankaet Pathak faces scrutiny over a $4.6 million company loan."
+    },
+    {
+      "headline": "Lutnick faces questions over Nvidia spy scandal. His sons' firm has ties to the chipmaker",
+      "source": "CNBC",
+      "published": "Sun, 15 Nov 2026 19:58:21 GMT",
+      "url": "https://www.cnbc.com/2026/11/13/howard-lutnick-nvidia-jensen-huang-china-cantor-fitzgerald.html",
+      "summary": "Jensen Huang\u2019s resignation as Nvidia CEO has brought renewed scrutiny to Commerce Secretary Howard Lutnick and his family's financial ties to the chipmaker."
+    }
+  ]
+}
